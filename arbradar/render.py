@@ -27,11 +27,11 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str) -> str:
     """Used when no API key is set - deterministic, no model involved."""
     lines = ["# {} - {}".format(name, date), ""]
     if not items:
-        lines.append("_No qualifying developments in this window._")
+        lines.append("_Nothing in this window met the threshold._")
         return "\n".join(lines)
 
-    lines.append("{} developments ranked by how likely they are to convert into "
-                 "a mandate.".format(len(items)))
+    lines.append("{} developments this week, in order of how likely each is to lead to "
+                 "new instructions.".format(len(items)))
     lines.append("")
     lead, rest = items[0], items[1:]
     lines += ["## Lead", "", "### {}".format(lead["title"]), "",

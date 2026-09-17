@@ -23,8 +23,10 @@ SITE = os.path.join(OUT_DIR, "site")
 
 
 class Article(BaseModel):
-    headline: str = Field(description="At most 12 words. Lead with the commercial fact.")
-    dek: str = Field(description="One sentence, at most 28 words, that says why a practitioner cares.")
+    headline: str = Field(description="At most 12 words, sentence case, no colon. Lead with the "
+                                      "commercial fact: who, against whom, over what.")
+    dek: str = Field(description="One plain sentence, at most 28 words, on why a practitioner "
+                                 "cares. Not a summary of the headline.")
     paragraphs: List[str] = Field(description="Two or three paragraphs, 130-180 words in total. "
                                               "Only facts present in the source. No hedging.")
     angle: str = Field(description="One sentence naming where the mandate is and who may still need counsel.")
@@ -33,7 +35,9 @@ class Article(BaseModel):
 ARTICLE_SYSTEM = """You write short standalone pieces for arbitration practitioners who are looking \
 for cases to take. The reader is a partner. They know the law; they want the commercial fact, the \
 procedural posture, and where the work is. Never invent a party, amount, treaty or firm that is not \
-in the source. If counsel is on record, say so plainly - it tells the reader the seat is taken."""
+in the source. If counsel is on record, say so plainly - it tells the reader the seat is taken.
+
+""" + llm.HOUSE_STYLE
 
 
 def _slug(text: str, date: str) -> str:
@@ -65,20 +69,29 @@ def _facts(it: Dict[str, Any]) -> List[List[str]]:
 
 
 def _template_article(it: Dict[str, Any]) -> Article:
+    """No model available: assemble from the record, in plain professional English."""
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
     summary = re.sub(r"\s+", " ", it.get("summary") or "").strip()
-    paras = [p for p in re.split(r"(?<=[.!?])\s+(?=[A-Z])", summary) if p]
-    body = [" ".join(paras[:2])] if paras else [it.get("title", "")]
-    if len(paras) > 2:
-        body.append(" ".join(paras[2:5]))
+    sentences = [p for p in re.split(r"(?<=[.!?])\s+(?=[A-Z\u00c0-\u024f])", summary) if p]
+    body = [" ".join(sentences[:2])] if sentences else [it.get("title", "")]
+    if len(sentences) > 2:
+        body.append(" ".join(sentences[2:5]))
+
+    dek = sentences[0] if sentences else ev.get("why", "")
+    if len(dek.split()) > 30:
+        dek = " ".join(dek.split()[:30]).rstrip(",;:") + "."
+    if dek.lower().startswith(it.get("title", "").lower()[:30]):
+        dek = ev.get("why", "")
+
     counsel = it.get("counsel") or []
-    angle = (it.get("why_it_matters") or ev.get("why", ""))
+    parts = [it.get("why_it_matters") or ev.get("why", "")]
     if counsel:
-        angle += " Counsel already on record: {}.".format(", ".join(counsel[:3]))
+        parts.append("{} already on the record for at least one side.".format(
+            " and ".join(counsel[:2]) + (" are" if len(counsel) > 1 else " is")))
     elif (it.get("source_tier") or 2) == 1:
-        angle += " No counsel is listed on the record yet."
-    return Article(headline=it.get("title", "")[:120], dek=ev.get("why", ""),
-                   paragraphs=body, angle=angle.strip())
+        parts.append("The record shows no counsel yet.")
+    return Article(headline=it.get("title", "")[:120], dek=dek,
+                   paragraphs=body, angle=" ".join(parts).strip())
 
 
 def write_article(it: Dict[str, Any], model: str) -> Optional[Article]:

@@ -77,6 +77,23 @@ def _text(resp) -> str:
     return "".join(b.text for b in resp.content if b.type == "text")
 
 
+
+HOUSE_STYLE = """House style - this matters more than anything else in this brief:
+- Write as a senior practitioner writes to a peer. British spelling (arbitral, licence, favour, \
+centre). Vocabulary of the trade: a party is "instructed" or "retained"; a firm "acts for" or \
+"appears for"; a seat is "taken" or "open"; the respondent is "the State"; an award is \
+"rendered"; a challenge "succeeds" or "fails".
+- Short declarative sentences. One idea per sentence. No rhetorical questions, no exclamation \
+marks, no colons used for drama.
+- Never use: notably, crucially, importantly, landscape, navigate, delve, robust, leverage, \
+game-changer, unpack, "it is worth noting", "in today's", "this development", "underscores", \
+"highlights the importance", "a testament to", "moving forward", "at the end of the day".
+- No lists of three for rhythm. No em dashes as a substitute for a full stop. No sentence that \
+begins with "This" referring vaguely to the previous sentence.
+- Amounts as "US$350 million", not "$350M". Dates as "4 September 2026". Case names in italics \
+are the only italics. Firms as they style themselves (Three Crowns, not "Three Crowns LLP").
+- Say what is known. Where a fact is absent, leave it out; never write around it."""
+
 # --------------------------------------------------------------------------
 # stage 1 - triage (Haiku 4.5)
 # --------------------------------------------------------------------------
@@ -181,14 +198,17 @@ House style:
 - Never invent a fact that is not in the supplied items. If something is unknown, omit it \
 rather than writing around it.
 
+{style}
+
 Return GitHub-flavoured Markdown only. Structure:
 # {name} - {date}
-A two-to-three sentence opener naming the single most valuable development.
+Two or three sentences naming the single most valuable development and why.
 ## Lead
 The top item, three or four sentences.
 ## Where the work is
 Three to six items, each as `### <headline>` plus two or three sentences, ordered by the \
-score supplied. End each with a bolded **Angle:** line naming the specific pitch.
+score supplied. End each with a bolded **Where the work is:** line naming who may still \
+need counsel and in which forum.
 ## Also moving
 Bulleted one-liners for the remainder.
 """
@@ -223,7 +243,7 @@ def write_issue(items: List[Dict[str, Any]], model: str, name: str, date: str,
     kwargs = dict(
         model=model,
         max_tokens=16000,
-        system=EDITOR_SYSTEM.format(name=name, date=date),
+        system=EDITOR_SYSTEM.format(name=name, date=date, style=HOUSE_STYLE),
         output_config={"effort": effort},
         messages=[{"role": "user",
                    "content": "Today is {}. Write the issue from these items, "

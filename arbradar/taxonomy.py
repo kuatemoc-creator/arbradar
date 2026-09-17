@@ -12,62 +12,62 @@ EVENT_TYPES: Dict[str, Dict] = {
     "notice_of_intent": {
         "weight": 100,
         "label": "Notice of intent / dispute",
-        "why": "Cooling-off period running. Counsel is being selected right now.",
+        "why": "The cooling-off period is running and counsel is being chosen now.",
     },
     "s1782_application": {
         "weight": 85,
         "label": "s.1782 discovery application",
-        "why": "Evidence-gathering ahead of, or early in, an arbitration.",
+        "why": "Someone is gathering evidence for an arbitration that has not yet been reported.",
     },
     "new_case_filed": {
         "weight": 80,
         "label": "New case registered",
-        "why": "Respondent-side and co-counsel roles often still open.",
+        "why": "Registration comes first; the respondent side and co-counsel are often still to be settled.",
     },
     "enforcement_action": {
         "weight": 78,
         "label": "Enforcement / recognition",
-        "why": "Needs local counsel in every enforcement jurisdiction.",
+        "why": "Enforcement needs counsel in every jurisdiction where the assets sit.",
     },
     "annulment_setaside": {
         "weight": 72,
         "label": "Annulment / set-aside",
-        "why": "Fresh mandate, distinct team from the merits phase.",
+        "why": "A second mandate, and usually a different team from the merits.",
     },
     "distress_event": {
         "weight": 60,
         "label": "Expropriation / licence / sanctions event",
-        "why": "Treaty claim frequently follows within 6-24 months.",
+        "why": "Events of this kind tend to produce a treaty claim within a year or two.",
     },
     "award_issued": {
         "weight": 55,
         "label": "Award issued",
-        "why": "Starts the annulment and enforcement clock.",
+        "why": "The award starts the clock on annulment and enforcement.",
     },
     "treaty_action": {
         "weight": 45,
         "label": "Treaty signature / denunciation",
-        "why": "Sunset-clause races and standing changes.",
+        "why": "Treaty changes move the deadlines for everyone with an investment covered by it.",
     },
     "funding": {
         "weight": 42,
         "label": "Third-party funding",
-        "why": "Funded claimant is a buyer of legal services.",
+        "why": "A funded claimant has the money to instruct.",
     },
     "tribunal_constituted": {
         "weight": 35,
         "label": "Tribunal constituted / challenge",
-        "why": "Appointment intelligence and conflicts mapping.",
+        "why": "Who sits, and who put them there, is worth knowing before the next appointment.",
     },
     "lateral_move": {
         "weight": 30,
         "label": "Lateral move / team change",
-        "why": "Conflicts open up; clients become reachable.",
+        "why": "A move opens conflicts and makes clients reachable.",
     },
     "commentary": {
         "weight": 10,
         "label": "Commentary / analysis",
-        "why": "Context, not a lead.",
+        "why": "Context rather than a lead.",
     },
 }
 
