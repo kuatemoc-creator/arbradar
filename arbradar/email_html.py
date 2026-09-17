@@ -101,15 +101,30 @@ def meta_line(it: Dict[str, Any]) -> str:
 
 
 def who(it: Dict[str, Any]) -> str:
+    """Parties from the record where we have one; otherwise the names the text
+    contains, labelled as such - a press headline does not say who is suing whom."""
     cl = [c for c in (it.get("claimants") or []) if c]
-    rs = [r for r in (it.get("respondents") or []) if r] or [s for s in (it.get("states") or []) if s]
+    rs = [r for r in (it.get("respondents") or []) if r]
+    named = [s for s in (it.get("states") or []) if s]
     if cl and rs:
         return "{} v. {}".format(", ".join(cl[:2]), ", ".join(rs[:2]))
-    if cl:
-        return ", ".join(cl[:3])
     if rs:
         return "State: " + ", ".join(rs[:2])
+    if cl and named:
+        return "{}; State named: {}".format(", ".join(cl[:2]), ", ".join(named[:2]))
+    if cl:
+        return ", ".join(cl[:3])
+    if named:
+        return "Named: " + ", ".join(named[:3])
     return ""
+
+
+def _clip(text: str, n: int) -> str:
+    text = text.strip()
+    if len(text) <= n:
+        return text
+    cut = text[:n].rsplit(" ", 1)[0]
+    return cut.rstrip(",;:") + "\u2026"
 
 
 def what(it: Dict[str, Any]) -> str:
@@ -118,11 +133,12 @@ def what(it: Dict[str, Any]) -> str:
     if it.get("source") == "ICSID docket":
         m = re.search(r"Latest step, [^:]+: (.+?)\.?$", text)
         if m:
-            return "{}: {}".format(ev, m.group(1))
-        return "{}: {}".format(ev, "registered" if it.get("event_type") == "new_case_filed" else ev.lower())
+            return _clip(m.group(1), 140)
+        t = re.search(r"under the ([^.]+)\.", text)
+        return "Case registered at ICSID" + (" under the " + t.group(1) if t else "")
     if text:
         first = re.split(r"(?<=[.!?])\s", text, maxsplit=1)[0]
-        return "{}: {}".format(ev, first[:160].rstrip("."))
+        return "{}: {}".format(ev, _clip(first.rstrip("."), 120))
     return ev
 
 
@@ -134,8 +150,10 @@ def facts(it: Dict[str, Any]) -> str:
         when_label = date_label(when)
     except ValueError:
         when_label = ""
-    for k, v in (("Who", who(it)), ("When", when_label), ("What", what(it)),
-                 ("Why flagged", it.get("flag_reason") or "")):
+    why = it.get("flag_reason") or ""
+    if why.startswith("matched"):
+        why = "{}: {}".format((it.get("source") or "press").replace("Google News / ", ""), why)
+    for k, v in (("Who", who(it)), ("When", when_label), ("What", what(it)), ("Why flagged", why)):
         if not v:
             continue
         rows.append(

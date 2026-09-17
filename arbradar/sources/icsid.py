@@ -160,8 +160,13 @@ def _emit(case: Dict, proc: Dict, event_type: str, when: dt.date,
         "case_ref": caseno,
         "treaty": treaty or None,
         "sectors": [case["econsector"]] if case.get("econsector") else [],
-        "claimants": [_clean(proc.get("clmnt_nationality"))] if proc.get("clmnt_nationality") else [],
-        "respondents": [_clean(case.get("respondent_state") or case.get("partiessub") or "")] or [],
+        "claimants": [c.strip() for c in re.split(r",\s*(?=[A-Z])", _clean(proc.get("clmnt_nationality")))
+                      if c.strip() and not re.fullmatch(r"(Claimant|Respondent)\(s\)", c.strip())]
+                     or [_clean(case.get("casetitle")).split(" v. ")[0].strip()],
+        "respondents": [re.sub(r"\s*\([^)]*\)\s*$", "", _clean(proc.get("resp_nationality")))]
+                       if proc.get("resp_nationality") else [],
+        "states": [re.sub(r"\s*\([^)]*\)\s*$", "", _clean(proc.get("resp_nationality")))]
+                  if proc.get("resp_nationality") else [],
         "counsel": claimant_firms + respondent_firms,
         "arbitrators": [a for a in arbitrators if a],
         "flag_reason": "ICSID docket: " + ("case registered" if event_type == "new_case_filed" else
