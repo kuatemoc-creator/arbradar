@@ -63,7 +63,13 @@ def _meta_line(it: Dict[str, Any]) -> str:
     elif (it.get("source_tier") or 2) == 1:
         bits.append("_no counsel on record_")   # meaningful only from a docket
     bits.append("[{}]({})".format(it.get("source") or "source", it["url"]))
-    return " · ".join(bits)
+    line = " · ".join(bits)
+    also = it.get("also") or []
+    if also:
+        line += "  \nalso: " + ", ".join(
+            "[{}]({})".format((a.get("source") or "source").replace("Google News / ", ""), a["url"])
+            for a in also[:5])
+    return line
 
 
 def to_html(markdown_text: str, name: str, tagline: str, date: str,

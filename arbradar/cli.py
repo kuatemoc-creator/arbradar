@@ -61,8 +61,9 @@ def cmd_build(args, settings, conn):
         (dt.datetime.now().isoformat(timespec="seconds"), subject,
          paths["html"], paths["md"], len(items)))
     issue_id = cur.lastrowid
-    conn.executemany("UPDATE items SET issue_id=? WHERE id=?",
-                     [(issue_id, it["id"]) for it in items])
+    conn.executemany("UPDATE items SET issue_id=? WHERE url=? OR id=?",
+                     [(issue_id, a["url"], it["id"]) for it in items
+                      for a in ([{"url": it["url"]}] + (it.get("also") or []))])
     conn.commit()
 
     print("\n{} items\n  {}\n  {}".format(len(items), paths["md"], paths["html"]))

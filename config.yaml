@@ -39,6 +39,13 @@ mute:
   - vis moot
   - conference registration
   - podcast episode
+  - pulled over
+  - dui
+  - driver's licen
+  - driving licen
+  - drunk driving
+  - custody
+  - divorce
 
 sources:
   icsid: true
@@ -46,6 +53,8 @@ sources:
   edgar: true
   rss: true
   pca: true
+  gnews: true
+  gdelt: true
 
 recipients: []
 smtp:

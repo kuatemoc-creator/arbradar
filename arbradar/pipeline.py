@@ -179,6 +179,55 @@ def rescore(conn, settings) -> int:
     return n
 
 
+STOP = set("the a an of to in on for and or with by from at as is are was were be has have "
+           "had its their this that over under against into after before amid says said new "
+           "will could may how why who what when".split())
+
+
+def _tokens(title: str) -> set:
+    return {w for w in re.findall(r"[a-z0-9]+", (title or "").lower())
+            if len(w) >= 3 and w not in STOP}
+
+
+def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Greedy story clustering on headline overlap.
+
+    Google News brings the same development in from five outlets under five
+    headlines. Items arrive score-descending, so the best-scored version becomes
+    the story and the others hang off it as "also reported by". A cluster is
+    compared on the union of its members' tokens, so a terse trade-press
+    headline and a long wire headline still find each other.
+    """
+    reps: List[Dict[str, Any]] = []
+    for it in items:
+        toks = _tokens(it["title"])
+        home = None
+        for rep in reps:
+            inter = len(toks & rep["_toks"])
+            if not inter:
+                continue
+            jac = inter / len(toks | rep["_toks"])
+            if jac >= 0.5 or (inter >= 3 and jac >= 0.25):
+                home = rep
+                break
+        if home is None:
+            it["_toks"] = set(toks)
+            it["also"] = []
+            reps.append(it)
+            continue
+        home["_toks"] |= toks
+        home["also"].append({"source": it.get("source"), "url": it.get("url"),
+                             "title": it.get("title")})
+        # A duplicate from a primary record can carry evidence the lead lacks.
+        for f in ("counsel", "claimants", "respondents", "states", "sectors",
+                  "arbitrators", "treaty", "amount_usd", "case_ref"):
+            if not home.get(f) and it.get(f):
+                home[f] = it[f]
+    for r in reps:
+        r.pop("_toks", None)
+    return reps
+
+
 def select(conn, settings) -> List[Dict[str, Any]]:
     cutoff = (dt.date.today() - dt.timedelta(days=settings.lookback_days)).isoformat()
     # Pinned items always make the cut; excluded ones never do. Everything else
@@ -189,5 +238,6 @@ def select(conn, settings) -> List[Dict[str, Any]]:
         "AND (COALESCE(pinned,0)=1 OR (score >= ? "
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
-        (settings.min_score, cutoff, settings.max_items_per_issue)).fetchall()
-    return [db.row_to_dict(r) for r in rows]
+        (settings.min_score, cutoff, settings.max_items_per_issue * 4)).fetchall()
+    stories = cluster([db.row_to_dict(r) for r in rows])
+    return stories[:settings.max_items_per_issue]

@@ -1,0 +1,90 @@
+"""Google News RSS - the pre-dispute layer.
+
+A treaty claim is announced months before it is registered: an AIM-listed miner
+files an RNS saying it has served a notice of dispute, a wire carries a company
+"considering all legal remedies" after a licence is pulled, a minister says a
+concession will be "reviewed". Google News indexes all of that within the hour
+and exposes it as RSS with a full query language, for free.
+
+Two query families:
+  * generic distress terms, worldwide
+  * one query per watchlist State, so a country you care about is swept even
+    when the story never uses the word "arbitration"
+"""
+import calendar
+import datetime as dt
+import re
+import urllib.parse as up
+from typing import Dict, Iterator, List
+
+import feedparser
+
+from .. import config
+from ..fetch import get
+
+ENDPOINT = "https://news.google.com/rss/search"
+
+GENERIC: List[str] = [
+    '"notice of dispute" (treaty OR ICSID OR arbitration)',
+    '"notice of intent" (arbitration OR "investment treaty" OR ICSID)',
+    '"notice of arbitration" (government OR republic OR state OR ministry)',
+    '"investment treaty" (claim OR filed OR threatens OR "will pursue")',
+    '"international arbitration" (government OR ministry) (threatens OR "legal action" OR "all remedies")',
+    'expropriation (compensation OR arbitration OR "treaty claim")',
+    '(nationalisation OR nationalization) (compensation OR investors OR arbitration)',
+    '("licence revoked" OR "license revoked" OR "permit cancelled" OR "concession terminated") (mining OR energy OR company)',
+    '"ICSID" (files OR registered OR claim OR "notice")',
+    '"Energy Charter Treaty" (claim OR arbitration)',
+    '("windfall tax" OR "export ban" OR "asset freeze") investors arbitration',
+]
+
+COUNTRY = '"{state}" (arbitration OR ICSID OR "investment treaty" OR expropriation OR "notice of dispute" OR nationalisation OR "licence revoked")'
+
+_TRAIL = re.compile(r"\s+-\s+[^-]{2,60}$")     # "Headline - Outlet Name"
+
+
+def _queries(states: List[str]) -> Iterator[str]:
+    for q in GENERIC:
+        yield q
+    for s in states:
+        yield COUNTRY.format(state=s)
+
+
+def _published(entry) -> str:
+    tm = entry.get("published_parsed")
+    return dt.date.fromtimestamp(calendar.timegm(tm)).isoformat() if tm else ""
+
+
+def run(days: int = 7) -> Iterator[Dict]:
+    settings = config.load()
+    states = list((settings.states or {}).keys())
+    cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    seen = set()
+
+    for q in _queries(states):
+        full = "{} when:{}d".format(q, max(1, days))
+        url = "{}?q={}&hl=en-GB&gl=GB&ceid=GB:en".format(ENDPOINT, up.quote(full))
+        try:
+            raw = get(url, ttl=1800).content
+        except Exception:                             # noqa: BLE001 - boundary
+            continue
+        for e in feedparser.parse(raw).entries:
+            title = (e.get("title") or "").strip()
+            published = _published(e)
+            if not title or (published and published < cutoff):
+                continue
+            # The same story syndicates across outlets under near-identical
+            # headlines; collapse on the headline minus the outlet suffix.
+            key = re.sub(r"[^a-z0-9]+", " ", _TRAIL.sub("", title).lower()).strip()
+            if key in seen:
+                continue
+            seen.add(key)
+            outlet = (e.get("source") or {}).get("title") or ""
+            yield {
+                "url": e.get("link") or "",
+                "source": "Google News" + (" / " + outlet if outlet else ""),
+                "title": _TRAIL.sub("", title)[:300],
+                "summary": re.sub(r"<[^>]+>", " ", e.get("summary") or "")[:1500],
+                "published_at": published or None,
+                "matched_query": q,
+            }

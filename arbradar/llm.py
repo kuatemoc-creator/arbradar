@@ -217,6 +217,7 @@ def write_issue(items: List[Dict[str, Any]], model: str, name: str, date: str,
             "arbitrators": it.get("arbitrators"),
             "why_it_matters": it.get("why_it_matters"),
             "excerpt": (it.get("summary") or "")[:600],
+            "also_reported_by": [a.get("source") for a in (it.get("also") or [])],
         })
 
     kwargs = dict(
