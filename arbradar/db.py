@@ -63,12 +63,28 @@ CREATE TABLE IF NOT EXISTS fetch_log (
 
 LIST_FIELDS = ("sectors", "claimants", "respondents", "states", "counsel", "arbitrators")
 
+# Columns added after the first release; applied on every connect().
+MIGRATIONS = (
+    ("items", "excluded", "INTEGER DEFAULT 0"),
+    ("items", "pinned", "INTEGER DEFAULT 0"),
+    ("items", "editor_note", "TEXT"),
+)
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    for table, column, decl in MIGRATIONS:
+        cols = {r["name"] for r in conn.execute("PRAGMA table_info({})".format(table))}
+        if column not in cols:
+            conn.execute("ALTER TABLE {} ADD COLUMN {} {}".format(table, column, decl))
+    conn.commit()
+
 
 def connect(path: str = DB_PATH) -> sqlite3.Connection:
     os.makedirs(DATA_DIR, exist_ok=True)
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
 
 

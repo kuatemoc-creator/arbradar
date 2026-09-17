@@ -181,9 +181,13 @@ def rescore(conn, settings) -> int:
 
 def select(conn, settings) -> List[Dict[str, Any]]:
     cutoff = (dt.date.today() - dt.timedelta(days=settings.lookback_days)).isoformat()
+    # Pinned items always make the cut; excluded ones never do. Everything else
+    # competes on score within the window.
     rows = conn.execute(
         "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL "
-        "AND score >= ? AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "
-        "ORDER BY score DESC LIMIT ?",
+        "AND COALESCE(excluded,0)=0 "
+        "AND (COALESCE(pinned,0)=1 OR (score >= ? "
+        "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
+        "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
         (settings.min_score, cutoff, settings.max_items_per_issue)).fetchall()
     return [db.row_to_dict(r) for r in rows]

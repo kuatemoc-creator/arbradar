@@ -76,6 +76,66 @@ Issues are written to `out/` as Markdown and email-safe HTML. **Nothing is ever
 emailed as a side effect of building** — `send` is a separate command and dry-runs
 unless you pass `--confirm`.
 
+## Review UI
+
+```bash
+./.venv/bin/python -m arbradar.cli serve      # http://127.0.0.1:8765
+```
+
+Three screens:
+
+- **Review** — every candidate ranked, with the reason it ranked there (watchlist
+  hits, counsel status, event type). Filter by event type, source, text or window.
+  `pin` forces an item into the next issue regardless of score; `kill` removes it
+  permanently. Pinned and killed decisions persist across runs.
+- **Preview** — the built issue rendered exactly as it will arrive in the inbox,
+  with the send controls above it.
+- **Issues** — the archive, and which ones were actually sent.
+
+Bound to `127.0.0.1`. It is a desk tool, not a public service — do not expose it.
+
+## Sending
+
+Two rails, depending on who is receiving.
+
+### Small internal list (up to ~30 known recipients)
+
+Gmail SMTP with an app password. Gmail rejects your normal password, so:
+
+1. Google Account → Security → 2-Step Verification (must be on)
+2. → App passwords → generate one for "Mail"
+3. Put the 16-character value in the environment, never in `config.yaml`:
+
+```bash
+export SMTP_USER=you@yourfirm.com
+export SMTP_PASSWORD='xxxx xxxx xxxx xxxx'
+```
+
+```yaml
+# config.yaml
+recipients: [partner1@firm.com, partner2@firm.com]
+smtp: {host: smtp.gmail.com, port: 587, user: you@yourfirm.com, from: you@yourfirm.com}
+```
+
+```bash
+./.venv/bin/python -m arbradar.cli send --to you@yourfirm.com   # dry run
+./.venv/bin/python -m arbradar.cli send --to you@yourfirm.com --confirm   # real test
+./.venv/bin/python -m arbradar.cli send --confirm               # to the list
+```
+
+`send` dry-runs unless you pass `--confirm`. Building an issue never sends anything.
+
+### Real subscriber list (external readers)
+
+**Do not use Gmail SMTP for this.** A newsletter going to lawyers you do not
+personally know needs unsubscribe handling, bounce processing, sender
+authentication (SPF/DKIM/DMARC) and an archive. Without them you will land in
+spam and, depending on jurisdiction, breach direct-marketing rules.
+
+Use a sending platform and push the built HTML to it. Buttondown and Beehiiv both
+have simple APIs; Mailchimp works too. The issue HTML is already email-safe
+(tables, inline styles), so it drops straight in. Ask and I will wire the adapter.
+
 ## Tuning
 
 `config.yaml` holds the watchlists. The weights are additive multipliers, so

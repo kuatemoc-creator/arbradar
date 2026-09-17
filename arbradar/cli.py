@@ -95,12 +95,20 @@ def cmd_send(args, settings, conn):
     if not row:
         print("no issue built yet - run `build` first")
         return 1
+    to = [x.strip() for x in args.to.split(",")] if getattr(args, "to", None) else None
     print(sender.send(row["html_path"], row["md_path"], row["subject"],
-                      settings, dry_run=not args.confirm))
+                      settings, recipients=to, dry_run=not args.confirm))
     if args.confirm:
         conn.execute("UPDATE issues SET sent_at=? WHERE id=?",
                      (dt.datetime.now().isoformat(timespec="seconds"), row["id"]))
         conn.commit()
+    return 0
+
+
+def cmd_serve(args, settings, conn):
+    from .web import serve
+    print("Review UI on http://{}:{}  (Ctrl-C to stop)".format(args.host, args.port))
+    serve(host=args.host, port=args.port)
     return 0
 
 
@@ -130,6 +138,10 @@ def main(argv=None):
     t.add_argument("--why", action="store_true")
     s = sub.add_parser("send", parents=[common], help="email the latest issue")
     s.add_argument("--confirm", action="store_true", help="actually send")
+    s.add_argument("--to", help="override recipients (comma separated)")
+    w = sub.add_parser("serve", parents=[common], help="local review UI")
+    w.add_argument("--port", type=int, default=8765)
+    w.add_argument("--host", default="127.0.0.1")
 
     argv = list(sys.argv[1:] if argv is None else argv)
     args = p.parse_args(argv)
@@ -144,7 +156,8 @@ def main(argv=None):
 
     conn = db.connect()
     handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build,
-               "run": cmd_run, "top": cmd_top, "send": cmd_send}[args.cmd]
+               "run": cmd_run, "top": cmd_top, "send": cmd_send,
+               "serve": cmd_serve}[args.cmd]
     return handler(args, settings, conn)
 
 
