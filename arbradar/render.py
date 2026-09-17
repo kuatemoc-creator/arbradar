@@ -112,7 +112,7 @@ def _meta_line(it: Dict[str, Any]) -> str:
 
 
 def to_html(markdown_text: str, name: str, tagline: str, date: str,
-            items: List[Dict[str, Any]]) -> str:
+            items: List[Dict[str, Any]], site_url: str = "") -> str:
     body = md.markdown(markdown_text, extensions=["extra", "sane_lists"])
     # The issue title is already in the masthead; drop the generated h1.
     body = re.sub(r"<h1>.*?</h1>\s*", "", body, count=1, flags=re.S)
@@ -133,6 +133,14 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 
     sources = sorted({(it.get("source") or "").replace("Google News / ", "") for it in items} - {""})
     preheader = html.escape("{} - {}".format(tagline, date))
+    # CaseLens brand, linked. The mark is an image only when there is a public
+    # host to serve it from; mail clients do not render SVG or embedded images.
+    base = (site_url or "").rstrip("/")
+    mark = ('<img src="{}/caselens-mark.png" width="16" height="16" alt="" '
+            'style="vertical-align:-3px;border:0;margin-right:5px;">'.format(base)) if base else ""
+    brand = ('<a href="https://caselens.tech" style="font-family:{sans};font-size:13px;font-weight:700;'
+             'color:{ink};text-decoration:none;letter-spacing:-0.1px;">{mark}CaseLens</a>'
+             ).format(sans=SANS, ink=INK, mark=mark)
     return """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -153,7 +161,8 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
   <tr><td style="padding:0 0 14px;border-bottom:2px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td style="font-family:{serif};font-size:20px;font-weight:bold;letter-spacing:-0.2px;color:{ink};">{name}
-        <span style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};padding-left:10px;">by CaseLens</span></td>
+        <span style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};padding-left:10px;">by</span>
+        {brand}</td>
       <td align="right" style="font-family:{sans};font-size:12px;color:{mute};white-space:nowrap;">{date}</td>
     </tr></table>
   </td></tr>
@@ -171,7 +180,7 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 </body></html>""".format(
         title=html.escape("{} - {}".format(name, date)), preheader=preheader,
         name=html.escape(name), tagline=html.escape(tagline), date=html.escape(date),
-        body=body, sources=html.escape(", ".join(sources) or "primary sources"),
+        body=body, sources=html.escape(", ".join(sources) or "primary sources"), brand=brand,
         sans=SANS, serif=SERIF, ink=INK, mute=MUTE, line=LINE, link=LINK)
 
 
@@ -187,5 +196,5 @@ def write_issue(markdown_text: str, items: List[Dict[str, Any]], settings,
         fh.write(markdown_text)
     with open(html_path, "w", encoding="utf-8") as fh:
         fh.write(to_html(markdown_text, settings.newsletter_name,
-                         settings.tagline, date, items))
+                         settings.tagline, date, items, getattr(settings, "site_url", "")))
     return {"md": md_path, "html": html_path}
