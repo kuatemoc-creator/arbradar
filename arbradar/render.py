@@ -26,7 +26,31 @@ SERIF = "Georgia,'Times New Roman',Times,serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 
-def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, settings=None) -> str:
+def _docket_line(it: Dict[str, Any]) -> str:
+    t = _title(it)
+    return "- [{}]({})".format(t[:160], it["url"])
+
+
+def record_sections(extras: Dict[str, List[Dict[str, Any]]]) -> List[str]:
+    """Compact lists straight from the primary records: the ICSID docket, company
+    disclosures, and US court filings. These are the items the trade press reports
+    a fraction of, days later. Nothing here is written by a model."""
+    lines: List[str] = []
+    order = [("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
+             ("courts", "In the US courts")]
+    for key, heading in order:
+        rows = extras.get(key) or []
+        if not rows:
+            continue
+        lines += ["## {}".format(heading), ""]
+        for it in rows:
+            lines.append(_docket_line(it))
+        lines.append("")
+    return lines
+
+
+def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, settings=None,
+                      extras: Dict[str, List[Dict[str, Any]]] = None) -> str:
     """Used when no API key is set - deterministic, no model involved."""
     lines = ["# {} - {}".format(name, date), ""]
     if not items:
@@ -53,6 +77,9 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
             lines.append("- [{}]({}) - {}".format(
                 _title(it)[:120], it["url"],
                 EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")))
+        lines.append("")
+    if extras:
+        lines += record_sections(extras)
     return "\n".join(lines)
 
 

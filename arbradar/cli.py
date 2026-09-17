@@ -50,11 +50,14 @@ def cmd_build(args, settings, conn):
         try:
             text = llm.write_issue(items, settings.editor_model,
                                    settings.newsletter_name, date, effort=args.effort)
+            text += "\n\n" + "\n".join(render.record_sections(
+                pipeline.record_extras(conn, settings, items)))
         except Exception as exc:                      # noqa: BLE001 - boundary
             print("editorial pass failed ({}); falling back to template".format(exc))
             text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
     else:
-        text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
+        text = render.fallback_markdown(items, settings.newsletter_name, date, settings,
+                                        extras=pipeline.record_extras(conn, settings, items))
 
     paths = render.write_issue(text, items, settings, date=date)
     subject = "{} - {}".format(settings.newsletter_name, date)

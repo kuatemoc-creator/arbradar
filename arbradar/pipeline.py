@@ -260,6 +260,43 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return reps
 
 
+def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14) -> Dict[str, List[Dict[str, Any]]]:
+    """Primary-record lists for the issue: docket movements, disclosures, court filings.
+    Excludes anything already featured. Rule-based; the records are the story."""
+    cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    skip = {it["id"] for it in featured} | {a.get("url") for it in featured for a in (it.get("also") or [])}
+
+    def take(sql, params, limit, key=None):
+        out, seen = [], set()
+        for r in conn.execute(sql, params):
+            it = db.row_to_dict(r)
+            if it["id"] in skip or it["url"] in skip:
+                continue
+            k = key(it) if key else it["url"]
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append(it)
+            if len(out) >= limit:
+                break
+        return out
+
+    docket = take(
+        "SELECT * FROM items WHERE source='ICSID docket' AND relevant=1 AND published_at>=? "
+        "AND event_type IN ('new_case_filed','award_issued','annulment_setaside','tribunal_constituted') "
+        "ORDER BY published_at DESC", (cutoff,), 14)
+    disclosures = take(
+        "SELECT * FROM items WHERE source='SEC EDGAR' AND relevant=1 AND published_at>=? "
+        "ORDER BY published_at DESC", (cutoff,), 12,
+        key=lambda it: (it.get("title") or "").split(" discloses")[0])
+    courts = take(
+        "SELECT * FROM items WHERE source LIKE 'US federal docket%' AND relevant=1 AND published_at>=? "
+        "AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
+        "     OR title LIKE 'IN RE%' OR summary LIKE '%foreign%') "
+        "ORDER BY published_at DESC", (cutoff,), 10)
+    return {"docket": docket, "disclosures": disclosures, "courts": courts}
+
+
 def select(conn, settings) -> List[Dict[str, Any]]:
     cutoff = (dt.date.today() - dt.timedelta(days=settings.lookback_days)).isoformat()
     # Pinned items always make the cut; excluded ones never do. Everything else

@@ -216,9 +216,11 @@ def do_build():
             text = llm.write_issue(items, SETTINGS.editor_model,
                                    SETTINGS.newsletter_name, date)
         except Exception as exc:                      # noqa: BLE001 - boundary
-            text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS)
+            text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS,
+                                        extras=pipeline.record_extras(conn, SETTINGS, items))
     else:
-        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS)
+        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS,
+                                        extras=pipeline.record_extras(conn, SETTINGS, items))
     paths = render.write_issue(text, items, SETTINGS, date=date)
     subject = "{} - {}".format(SETTINGS.newsletter_name, date)
     cur = conn.execute(
