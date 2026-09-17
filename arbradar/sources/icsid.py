@@ -64,6 +64,81 @@ def _classify(text: str) -> str:
     return "commentary"
 
 
+_GEO = set("""U.S.A. U.K. D.C. France Spain Italy Germany Switzerland Austria Belgium Netherlands Luxembourg
+Sweden Norway Denmark Finland Portugal Ireland Canada Mexico Brazil Argentina Chile Peru Colombia Uruguay
+Venezuela Ecuador Bolivia Panama Australia Singapore Japan Korea China India Türkiye Turkey Egypt Nigeria Kenya
+Ukraine Russia Kazakhstan Uzbekistan Armenia Georgia Azerbaijan Malta Cyprus Greece Poland Romania Hungary Czechia
+Croatia Serbia Israel Lebanon Jordan Qatar Bahrain Kuwait Oman Morocco Algeria Tunisia Senegal Cameroon Ghana
+London Paris Washington Madrid Barcelona Houston Dallas Miami Chicago Boston Denver Philadelphia Geneva Zurich
+Zürich Frankfurt Munich Berlin Vienna Brussels Amsterdam Rotterdam Stockholm Oslo Copenhagen Helsinki Lisbon
+Dublin Milan Rome Toronto Vancouver Montreal Ottawa Sydney Melbourne Perth Tokyo Seoul Beijing Shanghai
+Delhi Mumbai Dubai Doha Riyadh Cairo Lagos Nairobi Johannesburg Istanbul Ankara Kyiv Moscow Yerevan Tbilisi
+Almaty Astana Tashkent Lima Bogotá Bogota Santiago Quito Caracas Montevideo Panamá Valletta Nicosia Athens
+Warsaw Bucharest Budapest Prague Zagreb Belgrade Beirut Amman Rabat Casablanca Algiers Tunis Dakar Yaoundé
+Accra Luxembourg TX NY CA FL IL MA DC PA CO GA WA""".split())
+_GEO |= {"New York", "Los Angeles", "San Francisco", "Hong Kong", "The Hague", "Mexico City", "Buenos Aires",
+         "Washington, D.C.", "United Kingdom", "United States", "Hong Kong SAR", "Abu Dhabi", "Tel Aviv"}
+
+
+def _firm(raw: str) -> str:
+    """ICSID lists counsel as 'Firm, City, Country [and City, Country]'. Multi-name
+    firms contain commas too, so strip trailing geography rather than cutting at
+    the first comma: 'Kellogg, Hansen, Todd, Figel & Frederick, Washington, D.C., U.S.A.'
+    must come back whole."""
+    raw = re.split(r"\s+and\s+(?=[A-Z][a-z]+,)", raw)[0]       # drop second offices
+    parts = [x.strip() for x in raw.split(",")]
+    while len(parts) > 1 and (parts[-1] in _GEO or re.fullmatch(r"[A-Z]{2}", parts[-1])
+                              or parts[-1].endswith((" S.A.R.", ".U.S.A."))):
+        parts.pop()
+    return ", ".join(parts).strip()
+
+
+def _seat(raw: str) -> str:
+    """'Jane DOE (British) - Appointed by the Claimant(s)' -> 'Jane Doe (claimant appointee)'."""
+    m = re.match(r"^(?P<name>.+?)\s*\((?P<nat>[^)]*)\)\s*-\s*Appointed by (?P<by>.+)$", raw)
+    if not m:
+        return raw
+    name = " ".join(w.capitalize() if w.isupper() else w for w in m.group("name").split())
+    by = m.group("by").lower()
+    who = ("claimant appointee" if "claimant" in by else "respondent appointee" if "respondent" in by
+           else "appointed by the parties" if "parties" in by else "appointed by the Chairman" if "chairman" in by
+           else "appointed")
+    return "{} ({})".format(name, who)
+
+
+def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
+    """The facts a practitioner reads first, in one paragraph, from the record."""
+    parts: List[str] = []
+    claimant = _clean(proc.get("clmnt_nationality"))
+    if not claimant or re.fullmatch(r"(Claimant|Respondent)\(s\)", claimant):
+        claimant = _clean(case.get("casetitle")).split(" v. ")[0].strip()   # the record's own placeholder
+    state = _clean(proc.get("resp_nationality"))
+    treaty = " and ".join(x for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
+    reg = proc.get("dateregistered")
+    if claimant or state:
+        parts.append("{} against {}.".format(claimant or "The claimant", state or "the State"))
+    if reg or treaty:
+        parts.append("Registered {}{}.".format(reg or "", (" under the " + treaty) if treaty else ""))
+    if case.get("econsector"):
+        parts.append("Sector: {}.".format(case["econsector"].lower()))
+    cf = [_firm(x) for x in _split_names(proc.get("claimant") or case.get("claimant"))]
+    rf = [_firm(x) for x in _split_names(proc.get("respondent") or case.get("respondent"))]
+    if cf:
+        parts.append("For the claimant: {}.".format(", ".join(dict.fromkeys(cf))))
+    if rf:
+        parts.append("For the State: {}.".format(", ".join(dict.fromkeys(rf))))
+    seats = [_seat(x) for x in _split_names(proc.get("president"))] + \
+            [_seat(x) for x in _split_names(proc.get("arbitrators"))]
+    if seats:
+        parts.append("Tribunal: {}{}.".format(seats[0] + " presiding" if len(seats) > 1 else seats[0],
+                                              ("; " + "; ".join(seats[1:])) if len(seats) > 1 else ""))
+    elif proc.get("dateconstituted") is None or not proc.get("dateconstituted"):
+        parts.append("Tribunal not yet constituted.")
+    if step:
+        parts.append("Latest step, {}: {}.".format(when_label, step.rstrip(".")))
+    return " ".join(parts)
+
+
 def _emit(case: Dict, proc: Dict, event_type: str, when: dt.date,
           headline: str, detail: str) -> Dict:
     caseno = case.get("caseno") or case.get("caseid") or ""
@@ -108,11 +183,7 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                     yield _emit(
                         case, proc, "new_case_filed", registered,
                         "New ICSID case registered: {}".format(title),
-                        "Registered {} under {}. Sector: {}. Subject: {}.".format(
-                            proc.get("dateregistered"),
-                            case.get("instrumentinvk1") or case.get("rulesapplied") or "ICSID rules",
-                            case.get("econsector") or "unstated",
-                            _clean(case.get("subject")) or "unstated"))
+                        describe(case, proc, proc.get("dateregistered") or ""))
 
                 m = _DATE.match(proc.get("lastproc") or "")
                 if not m:
@@ -126,5 +197,4 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                 yield _emit(
                     case, proc, _classify(detail), when,
                     "{}: {}".format(title, detail[:120]),
-                    "Procedural step of {} in ICSID Case No. {}. {}".format(
-                        m.group(1), case.get("caseno"), detail))
+                    describe(case, proc, m.group(1), detail))

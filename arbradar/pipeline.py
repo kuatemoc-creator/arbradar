@@ -249,6 +249,13 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         home["_names"] |= names
         home["also"].append({"source": it.get("source"), "url": it.get("url"),
                              "title": it.get("title")})
+        # A wire headline outscores a trade-press write-up on recency and reach;
+        # the write-up still has the better text. Keep the fullest summary.
+        def _real(txt, title):
+            txt = (txt or "").strip()
+            return txt if txt and not txt.lower().startswith((title or "").lower()[:40]) else ""
+        if len(_real(it.get("summary"), it.get("title"))) > len(_real(home.get("summary"), home.get("title"))):
+            home["summary"] = it["summary"]
         # A duplicate from a primary record can carry evidence the lead lacks.
         for f in ("counsel", "claimants", "respondents", "states", "sectors",
                   "arbitrators", "treaty", "amount_usd", "case_ref"):

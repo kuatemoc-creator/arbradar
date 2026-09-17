@@ -8,7 +8,41 @@ free and unauthenticated.
 import datetime as dt
 from typing import Dict, Iterator, List
 
+import html as _html
+import re
+
 from ..fetch import get
+
+_SIGNAL = re.compile(r"(received|served|filed|commenced|initiated|submitted|notified|delivered|claim|"
+                     r"seeking|damages|\$|US\$|million|billion|tribunal|ICSID|UNCITRAL|ICC|LCIA|treaty)", re.I)
+_CLAUSE = re.compile(r"(shall be (finally )?(settled|resolved)|agree(s)? to (submit|arbitrate)|"
+                     r"governed by|in accordance with the (rules|arbitration rules)|any dispute)", re.I)
+
+
+def passage(url: str, phrase: str) -> str:
+    """The sentences around the first substantive occurrence of the phrase in the
+    filing. A dispute-resolution clause ('any dispute shall be settled by...') is
+    skipped; a disclosure ('On 8 September the Company received a notice...') is kept."""
+    try:
+        doc = get(url, ttl=7 * 24 * 3600, timeout=60).text
+    except Exception:                                 # noqa: BLE001 - boundary
+        return ""
+    text = _html.unescape(re.sub(r"<[^>]+>", " ", doc))
+    text = re.sub(r"\s+", " ", text)
+    needle = phrase.strip('"').lower()
+    low = text.lower()
+    start = 0
+    for _ in range(6):
+        i = low.find(needle, start)
+        if i < 0:
+            break
+        a = max(0, text.rfind(". ", 0, max(0, i - 260)) + 2)
+        b = text.find(". ", i + len(needle) + 220)
+        snippet = text[a:(b + 1 if b > 0 else i + 400)].strip()
+        if _SIGNAL.search(snippet) and not _CLAUSE.search(snippet[:200]) and len(snippet) > 80:
+            return snippet[:700]
+        start = i + len(needle)
+    return ""
 
 ENDPOINT = "https://efts.sec.gov/LATEST/search-index"
 DOC_URL = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc_nodash}/{doc}"
@@ -54,13 +88,17 @@ def run(days: int = 7, forms: str = "8-K,6-K,20-F,10-Q,10-K") -> Iterator[Dict]:
             filer = names[0].split("  (")[0]
             if filer.isupper():
                 filer = filer.title().replace(" Ltd.", " Ltd.").replace(" Llc", " LLC").replace(" Inc", " Inc")
+            url = DOC_URL.format(cik=cik, acc_nodash=acc.replace("-", ""), doc=doc)
+            quoted = passage(url, q.split('" "')[0])
+            if not quoted:
+                continue                              # a clause, not a disclosure
             yield {
-                "url": DOC_URL.format(cik=cik, acc_nodash=acc.replace("-", ""), doc=doc),
+                "url": url,
                 "source": "SEC EDGAR",
                 "title": "{} discloses {} in {} filing".format(
                     filer, q.strip('"').replace('" "', " and "), src.get("form", "SEC")),
-                "summary": "{} filed {} ({}). Full-text hit on {}.".format(
-                    names[0], src.get("form"), src.get("file_date"), q),
+                "summary": "From the {} filed {}: \u201c{}\u201d".format(
+                    src.get("form"), src.get("file_date"), quoted),
                 "published_at": src.get("file_date"),
                 "case_ref": acc,
             }
