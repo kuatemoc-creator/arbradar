@@ -53,6 +53,11 @@ def score_item(item: Dict[str, Any], settings) -> Tuple[float, Dict[str, Any]]:
     recency = math.pow(0.5, age / HALF_LIFE_DAYS)
 
     boost, hits = _watchlist_boost(item, settings)
+    # An investor of means named in the story (set by the sweep) counts like a
+    # watchlist hit: they can instruct, and they will.
+    if item.get("claimants") and item.get("event_type") in ("state_measure", "distress_event"):
+        boost += 0.5
+        hits = hits + ["investor: " + item["claimants"][0]]
     tier = TIER_FACTOR.get(item.get("source_tier") or 2, 1.0)
 
     # Size of the dispute, damped - a $2bn claim is not 100x a $20m claim in

@@ -105,3 +105,72 @@ LANG_NAMES = {"hy": "Armenian", "ka": "Georgian", "az": "Azerbaijani", "ru": "Ru
               "uk": "Ukrainian", "uz": "Uzbek", "tr": "Turkish", "es": "Spanish",
               "pt": "Portuguese", "fr": "French", "ar": "Arabic", "id": "Indonesian",
               "vi": "Vietnamese", "en": "English"}
+
+
+# Foreign investors with the balance sheet to instruct. A State measure against one
+# of these is a lead even when nobody has said the word "arbitration" yet.
+MAJORS = [
+    # mining and metals
+    "Glencore", "Rio Tinto", "BHP", "Anglo American", "Barrick", "Newmont", "First Quantum",
+    "Freeport", "Vale", "Teck", "Antofagasta", "Southern Copper", "Ivanhoe", "AngloGold",
+    "Gold Fields", "Kinross", "B2Gold", "Endeavour Mining", "Centamin", "Fortescue",
+    "Lundin", "Eramet", "Albemarle", "SQM", "Ganfeng", "Tianqi", "Zijin", "CMOC",
+    # oil and gas
+    "TotalEnergies", "Shell", "BP", "Chevron", "ExxonMobil", "Eni", "Equinor", "Repsol",
+    "Galp", "OMV", "Woodside", "Santos", "Tullow", "Kosmos", "Perenco", "Vitol", "Trafigura",
+    "Gunvor", "Chariot", "Genel", "Gulf Keystone", "DNO", "Maurel", "Africa Oil",
+    # power and utilities
+    "Enel", "Iberdrola", "EDF", "Engie", "RWE", "Vattenfall", "Ørsted", "Orsted", "Scatec",
+    "Globeleq", "ACWA", "Masdar", "AES", "Veolia", "Suez", "Acciona", "Naturgy", "EDP",
+    # telecoms and tech
+    "Vodafone", "Telefónica", "Telefonica", "MTN", "Orange", "Airtel", "Millicom", "Veon",
+    "Ooredoo", "Zain", "Etisalat", "Meta", "Google", "Amazon", "Microsoft", "Apple", "Uber",
+    "Oracle", "Starlink", "SpaceX",
+    # consumer, pharma, finance, infrastructure
+    "Nestlé", "Nestle", "Unilever", "AB InBev", "Philip Morris", "British American Tobacco",
+    "Coca-Cola", "PepsiCo", "Diageo", "Heineken", "Carlsberg", "Pfizer", "Novartis", "Roche",
+    "Sanofi", "AstraZeneca", "Bayer", "Siemens", "Alstom", "Bombardier", "Airbus", "Boeing",
+    "Vinci", "Bouygues", "Eiffage", "Ferrovial", "ACS", "Sacyr", "Strabag", "Salini", "Webuild",
+    "DP World", "APM Terminals", "Maersk", "MSC", "CMA CGM", "Hutchison", "PSA International",
+    "HSBC", "Citi", "Standard Chartered", "Société Générale", "BNP Paribas", "Santander",
+    "BBVA", "Scotiabank", "Blackstone", "KKR", "Brookfield", "Macquarie", "Actis", "Carlyle",
+]
+
+# Measures a State takes that map onto treaty standards: expropriation, fair and
+# equitable treatment, umbrella clause, transfers. Queried in the editions' languages.
+MEASURES: Dict[str, List[str]] = {
+    "en": ['(revokes OR revoked OR cancels OR cancelled OR terminates OR terminated) (licence OR license OR concession OR permit OR contract) (foreign OR international OR "-owned" OR investor OR company)',
+           '("tax assessment" OR "back taxes" OR "windfall tax" OR "retroactive tax" OR "tax demand") (mining OR oil OR gas OR telecom OR "foreign company" OR multinational) (billion OR million)',
+           '(nationalise OR nationalize OR nationalisation OR nationalization OR expropriate OR expropriation OR "takes control" OR seizes OR seized) (mine OR plant OR refinery OR company OR assets OR subsidiary) government',
+           '(government OR ministry OR regulator OR president OR decree) (suspends OR halts OR freezes OR blocks OR bans) (exports OR operations OR project OR licence OR dividends OR transfers) (foreign OR investor OR company)',
+           '("renegotiate" OR "review" OR "reopen") (contract OR concession OR "production sharing" OR "power purchase" OR PPA OR tariff) government (foreign OR investor OR company)'],
+    "es": ['(revoca OR revocó OR cancela OR canceló OR rescinde OR rescindió OR caduca) (licencia OR concesión OR permiso OR contrato) (extranjera OR extranjero OR inversionista OR empresa OR minera OR petrolera)',
+           '(expropia OR expropiación OR nacionaliza OR nacionalización OR "toma el control" OR incauta OR embarga) (mina OR planta OR empresa OR activos OR filial) gobierno',
+           '(gobierno OR ministerio OR decreto OR regulador) (suspende OR bloquea OR prohíbe OR congela) (exportaciones OR operaciones OR proyecto OR tarifa OR dividendos) (extranjera OR inversionista OR empresa)',
+           '("renegociar" OR "revisar" OR "reabrir") (contrato OR concesión OR tarifa OR "contrato de exploración") gobierno (extranjera OR inversionista OR empresa)'],
+    "fr": ['(retire OR retrait OR annule OR annulation OR résilie OR résiliation) (licence OR permis OR concession OR contrat) (étrangère OR étranger OR investisseur OR société OR minière OR pétrolière)',
+           '(nationalise OR nationalisation OR exproprie OR expropriation OR saisit OR saisie OR "prend le contrôle") (mine OR usine OR société OR actifs OR filiale) gouvernement',
+           '(gouvernement OR ministère OR décret OR régulateur) (suspend OR bloque OR interdit OR gèle) (exportations OR activités OR projet OR tarif OR dividendes) (étrangère OR investisseur OR société)'],
+    "ru": ['(отзыв OR отозвал OR аннулировал OR расторг OR лишил) (лицензии OR лицензию OR концессии OR контракта OR разрешения) (иностранн OR инвестор OR компани)',
+           '(национализац OR экспроприац OR изъятие OR арест OR "передан в собственность государства") (завод OR рудник OR месторождение OR компани OR активы OR доля) (иностранн OR инвестор)',
+           '(правительство OR министерство OR указ OR суд) (приостановил OR запретил OR заморозил OR заблокировал) (экспорт OR деятельность OR проект OR дивиденды OR вывод) (иностранн OR инвестор OR компани)',
+           '(доначислил OR доначисление OR "налоговые претензии" OR "налоговая проверка") (иностранн OR компани) (млрд OR миллиард OR млн)'],
+    "tr": ['(iptal OR iptal etti OR feshetti OR askıya aldı) (lisans OR ruhsat OR imtiyaz OR sözleşme) (yabancı OR yatırımcı OR şirket)',
+           '(kamulaştırma OR millileştirme OR "el koydu" OR "el konuldu" OR TMSF) (şirket OR maden OR santral OR varlık) (yabancı OR yatırımcı)'],
+    "pt": ['(revoga OR revogou OR cancela OR cancelou OR rescinde OR rescindiu) (licença OR concessão OR contrato OR alvará) (estrangeira OR estrangeiro OR investidor OR empresa OR mineradora OR petrolífera)',
+           '(nacionaliza OR nacionalização OR expropria OR expropriação OR "assume o controle") (mina OR fábrica OR empresa OR ativos OR subsidiária) governo'],
+    "ar": ['(إلغاء OR سحب OR فسخ OR تعليق) (رخصة OR ترخيص OR امتياز OR عقد) (أجنبية OR أجنبي OR مستثمر OR شركة)',
+           '(تأميم OR مصادرة OR "الاستيلاء على") (شركة OR منجم OR مصنع OR أصول) (أجنبية OR مستثمر)'],
+    "id": ['(mencabut OR pencabutan OR membatalkan OR menghentikan) (izin OR IUP OR konsesi OR kontrak) (asing OR investor OR perusahaan)',
+           '(nasionalisasi OR pengambilalihan OR menyita OR "mengambil alih") (tambang OR pabrik OR perusahaan OR aset OR saham) pemerintah (asing OR investor)'],
+    "uk": ['(анулював OR анулювання OR скасував OR розірвав OR позбавив) (ліцензії OR ліцензію OR концесії OR контракту OR дозволу) (іноземн OR інвестор OR компані)',
+           '(націоналізац OR експропріац OR арешт OR вилучення OR "передано державі") (завод OR родовище OR компані OR активи OR частка) (іноземн OR інвестор)'],
+    "hy": ['(լիցենզիա OR թույլտվություն OR պայմանագիր) (զրկել OR դադարեցնել OR չեղարկել) (օտարերկրյա OR ներդրող OR ընկերություն)',
+           '(ազգայնացում OR բռնագրավում OR արգելանք) (ընկերություն OR հանք OR գործարան OR ակտիվներ) (օտարերկրյա OR ներդրող)'],
+    "ka": ['(გაუქმება OR შეჩერება OR ჩამორთმევა) (ლიცენზია OR ნებართვა OR კონცესია OR კონტრაქტი) (უცხოური OR ინვესტორი OR კომპანია)',
+           '(ნაციონალიზაცია OR ექსპროპრიაცია OR დაყადაღება OR "ჩამორთმევა") (კომპანია OR საწარმო OR აქტივები) (უცხოური OR ინვესტორი)'],
+    "az": ['(ləğv OR dayandırıl OR geri alın) (lisenziya OR icazə OR konsessiya OR müqavilə) (xarici OR investor OR şirkət)',
+           '(milliləşdirmə OR müsadirə OR "həbs qoyul") (şirkət OR mədən OR zavod OR aktiv) (xarici OR investor)'],
+    "vi": ['("thu hồi" OR "hủy bỏ" OR "đình chỉ" OR "chấm dứt") ("giấy phép" OR "hợp đồng" OR "dự án") ("nhà đầu tư nước ngoài" OR "doanh nghiệp FDI" OR "công ty nước ngoài")'],
+    "uz": ['(bekor OR toʻxtatildi OR "qaytarib olindi") (litsenziya OR ruxsatnoma OR shartnoma OR kontsessiya) (xorijiy OR investor OR kompaniya)'],
+}

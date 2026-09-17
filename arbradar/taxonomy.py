@@ -39,6 +39,11 @@ EVENT_TYPES: Dict[str, Dict] = {
         "label": "Annulment / set-aside",
         "why": "A second mandate, and usually a different team from the merits.",
     },
+    "state_measure": {
+        "weight": 70,
+        "label": "State measure against a foreign investor",
+        "why": "A licence, contract, tax or regulatory action against a foreign investor of means: the fact pattern of a treaty claim, before any notice.",
+    },
     "distress_event": {
         "weight": 60,
         "label": "Expropriation / licence / sanctions event",
