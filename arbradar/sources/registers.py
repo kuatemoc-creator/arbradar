@@ -65,7 +65,7 @@ def run(days: int = 7) -> Iterator[Dict]:
     cutoff = dt.date.today() - dt.timedelta(days=days)
     for label, state, index_url, link_re in REGISTERS:
         try:
-            index = get(index_url, ttl=6 * 3600, headers=BROWSER_UA).text
+            index = get(index_url, ttl=6 * 3600, headers=BROWSER_UA, timeout=20).text
         except Exception:                             # noqa: BLE001 - boundary
             continue
         tree = HTMLParser(index)
@@ -81,7 +81,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 continue
             seen.add(href)
             try:
-                text = _text(get(href, ttl=24 * 3600, headers=BROWSER_UA).text)
+                text = _text(get(href, ttl=24 * 3600, headers=BROWSER_UA, timeout=20).text)
             except Exception:                         # noqa: BLE001 - boundary
                 continue
             when, sentence = _latest_event(text)
