@@ -1,0 +1,55 @@
+newsletter_name: Arbitration Radar
+tagline: Mandate intelligence for arbitration counsel
+timezone: Asia/Yerevan
+
+lookback_days: 7
+max_items_per_issue: 25
+min_score: 20
+
+# Watchlists. The number is added to a multiplier, so 0.5 means "half again as
+# interesting". Tune these - they are the difference between a generic digest
+# and one aimed at your practice.
+states:
+  Armenia: 1.2
+  Azerbaijan: 0.9
+  Georgia: 0.8
+  Kazakhstan: 0.7
+  Uzbekistan: 0.6
+  Turkmenistan: 0.6
+  Ukraine: 0.5
+  Russia: 0.5
+  Turkey: 0.4
+  Türkiye: 0.4
+
+sectors:
+  Mining & metals: 0.5
+  Oil & gas: 0.4
+  Power & renewables: 0.4
+  Construction: 0.3
+
+companies: {}
+
+firms: {}
+
+# Items containing these terms are heavily demoted.
+mute:
+  - webinar
+  - call for papers
+  - moot
+  - vis moot
+  - conference registration
+  - podcast episode
+
+sources:
+  icsid: true
+  courtlistener: true
+  edgar: true
+  rss: true
+  pca: true
+
+recipients: []
+smtp:
+  host: smtp.gmail.com
+  port: 587
+  user: ""
+  from: ""
