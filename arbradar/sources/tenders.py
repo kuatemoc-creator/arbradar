@@ -8,6 +8,7 @@ or is about to sue. Nobody in the trade press reads procurement portals.
   * Prozorro - Ukraine, one of the most-sued States; free full-text search
 """
 import datetime as dt
+import re
 from typing import Dict, Iterator, List
 
 import httpx
@@ -109,8 +110,11 @@ def _prozorro(days: int) -> Iterator[Dict]:
                 if isinstance(period, dict) and period.get(key):
                     start = str(period[key])[:10]
                     break
-            if start and start < cutoff:
-                continue
+            if not start:                            # the ID carries the publication date
+                m = re.match(r"UA-(\d{4}-\d{2}-\d{2})", tid)
+                start = m.group(1) if m else ""
+            if not start or start < cutoff:
+                continue                              # undated is not the same as new
             buyer = ((t.get("procuringEntity") or {}).get("identifier") or {}).get("legalName") \
                 or (t.get("procuringEntity") or {}).get("name") or ""
             title = t.get("title") or ""
