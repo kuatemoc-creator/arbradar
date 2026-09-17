@@ -75,7 +75,7 @@ def _summary(it: Dict[str, Any]) -> str:
 def _meta_line(it: Dict[str, Any]) -> str:
     bits = []
     if (it.get("lang") or "en") != "en":
-        bits.append("from the {} press".format(LANG_NAMES.get(it["lang"], it["lang"])))
+        bits.append("{}-language press".format(LANG_NAMES.get(it["lang"], it["lang"])))
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
     if ev:
         bits.append("**{}**".format(ev.get("label")))

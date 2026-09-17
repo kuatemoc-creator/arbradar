@@ -71,6 +71,13 @@ def score_item(item: Dict[str, Any], settings) -> Tuple[float, Dict[str, Any]]:
 
     total = (base * recency * tier) * (1.0 + boost) + amount_bonus + unrepresented
 
+    # A non-English item classified by keyword alone is a guess: keyword "nationalisation"
+    # in Russian is as often a domestic policy story as a treaty lead. Damp it until
+    # the triage model has actually read it.
+    unverified = (item.get("lang") or "en") != "en" and (item.get("llm_stage") or "none") in ("none", "skipped")
+    if unverified:
+        total *= 0.55
+
     muted = [m for m in (settings.mute or [])
              if m.lower() in ((item.get("title") or "") + (item.get("summary") or "")).lower()]
     if muted:
@@ -82,6 +89,7 @@ def score_item(item: Dict[str, Any], settings) -> Tuple[float, Dict[str, Any]]:
         "watchlist_boost": round(boost, 2), "watchlist_hits": hits,
         "amount_bonus": round(amount_bonus, 1),
         "unrepresented_bonus": unrepresented,
+        "unverified_foreign": unverified,
         "muted": muted,
     }
     return round(total, 2), detail

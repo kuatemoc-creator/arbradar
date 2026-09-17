@@ -100,6 +100,9 @@ def cmd_send(args, settings, conn):
         print("no issue built yet - run `build` first")
         return 1
     to = [x.strip() for x in args.to.split(",")] if getattr(args, "to", None) else None
+    if getattr(args, "eml", False):
+        print("wrote " + sender.write_eml(row["html_path"], row["md_path"], row["subject"], settings, to))
+        return 0
     print(sender.send(row["html_path"], row["md_path"], row["subject"],
                       settings, recipients=to, dry_run=not args.confirm))
     if args.confirm:
@@ -188,6 +191,7 @@ def main(argv=None):
     s = sub.add_parser("send", parents=[common], help="email the latest issue")
     s.add_argument("--confirm", action="store_true", help="actually send")
     s.add_argument("--to", help="override recipients (comma separated)")
+    s.add_argument("--eml", action="store_true", help="write an .eml file instead of sending")
     i = sub.add_parser("intel", parents=[common], help="ICSID appointment intelligence")
     i.add_argument("--limit", type=int, default=15)
     a = sub.add_parser("articles", parents=[common, llm_opts], help="short shareable pieces -> out/site")

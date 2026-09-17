@@ -104,6 +104,5 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "summary": re.sub(r"<[^>]+>", " ", e.get("summary") or "")[:1500],
                 "published_at": published or None,
                 "lang": lang,
-                "country": country,
-                "states": [country] if country and lang != "en" else [],
+                "country": country,            # the edition it came through, not the subject
             }

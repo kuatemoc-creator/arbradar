@@ -10,6 +10,29 @@ from email.message import EmailMessage
 from typing import List
 
 
+def build_message(html_path: str, md_path: str, subject: str, settings,
+                  recipients: List[str]) -> EmailMessage:
+    cfg = settings.smtp or {}
+    sender = cfg.get("from") or cfg.get("user") or os.environ.get("SMTP_USER", "") or "newsletter@caselens.tech"
+    msg = EmailMessage()
+    msg["Subject"] = subject
+    msg["From"] = "{} <{}>".format(settings.newsletter_name, sender)
+    msg["To"] = ", ".join(recipients) if recipients else sender
+    msg.set_content(open(md_path, encoding="utf-8").read())
+    msg.add_alternative(open(html_path, encoding="utf-8").read(), subtype="html")
+    return msg
+
+
+def write_eml(html_path: str, md_path: str, subject: str, settings,
+              recipients: List[str] = None) -> str:
+    """The message as an .eml file - opens in Mail.app or Outlook exactly as sent."""
+    path = html_path[:-5] + ".eml"
+    msg = build_message(html_path, md_path, subject, settings, recipients or [])
+    with open(path, "wb") as fh:
+        fh.write(bytes(msg))
+    return path
+
+
 def send(html_path: str, md_path: str, subject: str, settings,
          recipients: List[str] = None, dry_run: bool = True) -> str:
     recipients = recipients or settings.recipients or []
@@ -23,12 +46,7 @@ def send(html_path: str, md_path: str, subject: str, settings,
     password = os.environ.get("SMTP_PASSWORD", "")
     sender = cfg.get("from") or user
 
-    msg = EmailMessage()
-    msg["Subject"] = subject
-    msg["From"] = "{} <{}>".format(settings.newsletter_name, sender)
-    msg["To"] = ", ".join(recipients)
-    msg.set_content(open(md_path, encoding="utf-8").read())
-    msg.add_alternative(open(html_path, encoding="utf-8").read(), subtype="html")
+    msg = build_message(html_path, md_path, subject, settings, recipients)
 
     if dry_run:
         return ("DRY RUN - would send '{}' to {} recipient(s): {}"

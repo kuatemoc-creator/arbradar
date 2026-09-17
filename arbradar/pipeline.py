@@ -205,6 +205,13 @@ def _tokens(title: str) -> set:
             if len(w) >= 3 and w not in STOP}
 
 
+def _propers(title: str) -> set:
+    """Capitalised words after the first, minus stop words - the names in a headline."""
+    words = re.findall(r"[A-Za-z][A-Za-z'\u00c0-\u024f]+", title or "")
+    return {_stem(w.lower()) for w in words[1:]
+            if w[0].isupper() and len(w) >= 4 and w.lower() not in STOP}
+
+
 def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Greedy story clustering on headline overlap.
 
@@ -217,6 +224,7 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     reps: List[Dict[str, Any]] = []
     for it in items:
         toks = _tokens(it.get("title_en") or it["title"])
+        names = _propers(it.get("title_en") or it["title"])
         home = None
         for rep in reps:
             # Two different case numbers are two different matters, full stop.
@@ -226,15 +234,18 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             if not inter:
                 continue
             jac = inter / len(toks | rep["_toks"])
-            if jac >= 0.5 or (inter >= 3 and jac >= 0.22):
+            shared_names = len(names & rep["_names"])
+            if jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2:
                 home = rep
                 break
         if home is None:
             it["_toks"] = set(toks)
+            it["_names"] = set(names)
             it["also"] = []
             reps.append(it)
             continue
         home["_toks"] |= toks
+        home["_names"] |= names
         home["also"].append({"source": it.get("source"), "url": it.get("url"),
                              "title": it.get("title")})
         # A duplicate from a primary record can carry evidence the lead lacks.
@@ -244,6 +255,7 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 home[f] = it[f]
     for r in reps:
         r.pop("_toks", None)
+        r.pop("_names", None)
     return reps
 
 
