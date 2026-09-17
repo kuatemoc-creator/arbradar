@@ -44,11 +44,15 @@ def run(days: int = 7, forms: str = "8-K,6-K,20-F,10-Q,10-K") -> Iterator[Dict]:
             acc, _, doc = ident.partition(":")
             cik = (src.get("ciks") or ["0"])[0].lstrip("0")
             names = src.get("display_names") or ["Unknown filer"]
+            # EDGAR shouts filer names in caps; a headline should not.
+            filer = names[0].split("  (")[0]
+            if filer.isupper():
+                filer = filer.title().replace(" Ltd.", " Ltd.").replace(" Llc", " LLC").replace(" Inc", " Inc")
             yield {
                 "url": DOC_URL.format(cik=cik, acc_nodash=acc.replace("-", ""), doc=doc),
                 "source": "SEC EDGAR",
-                "title": "{} - {} mentions {}".format(
-                    names[0].split("  (")[0], src.get("form", "filing"), q.strip('"')),
+                "title": "{} discloses {} in {} filing".format(
+                    filer, q.strip('"').replace('" "', " and "), src.get("form", "SEC")),
                 "summary": "{} filed {} ({}). Full-text hit on {}.".format(
                     names[0], src.get("form"), src.get("file_date"), q),
                 "published_at": src.get("file_date"),

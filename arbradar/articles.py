@@ -231,6 +231,7 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
     known = {e["file"] for e in manifest}
 
     written = []
+    fresh: List[Dict[str, Any]] = []
     for it in stories:
         art = write_article(it, settings.editor_model) if (use_llm and settings.use_llm) else None
         art = art or _template_article(it)
@@ -240,9 +241,11 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
         entry = {"file": fname, "date": date, "headline": art.headline, "dek": art.dek,
                  "event": EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")}
         if fname not in known:
-            manifest.insert(0, entry)
+            fresh.append(entry)
             known.add(fname)
         written.append(fname)
+    # Newest issue on top, and within it the strongest story first.
+    manifest = fresh + manifest
 
     with open(manifest_path, "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=1)
