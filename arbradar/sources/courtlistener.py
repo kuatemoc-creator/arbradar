@@ -43,6 +43,11 @@ def run(days: int = 7) -> Iterator[Dict]:
             continue
         for res in r.json().get("results", []):
             parties = res.get("party") or []
+            # Government prosecutions and domestic labour matters use the same
+            # statutory language; neither is an arbitration lead.
+            joined = " | ".join(parties).upper()
+            if joined.startswith("UNITED STATES") or " UNION" in joined or "LOCAL " in joined:
+                continue
             firms = [f for f in (res.get("firm") or []) if f]
             desc = ""
             docs = res.get("recap_documents") or []

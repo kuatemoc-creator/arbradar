@@ -115,7 +115,7 @@ EVENT_PATTERNS: List = [
     ("distress_event", [
         "expropriat", "nationalis", "nationaliz", "licence revoked", "license revoked",
         "permit cancelled", "permit canceled", "concession terminated", "seizure of",
-        "sanction", "asset freeze", "state of emergency", "windfall tax",
+        "asset freeze", "windfall tax", "sanctions-related claim",
         "forced divestment", "mining permit", "resource rent",
         "экспроприац", "национализац", "отзыв лицензии", "expropiación", "nacionalización",
         "revocación de licencia", "expropriação", "nacionalização", "kamulaştırma",

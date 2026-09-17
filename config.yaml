@@ -1,11 +1,11 @@
-newsletter_name: Arbitration Radar
+newsletter_name: ArbRadar
 tagline: Mandate intelligence for arbitration counsel
 timezone: Asia/Yerevan
 # Public base URL of the article site (GitHub Pages or caselens.tech). Leave empty until hosted.
 site_url: ""
 
 lookback_days: 7
-max_items_per_issue: 25
+max_items_per_issue: 12
 min_score: 20
 
 # Watchlists. The number is added to a multiplier, so 0.5 means "half again as
@@ -51,6 +51,11 @@ mute:
   - acele kamulaştırma
   - özelleştirme değil
   - в цифрах
+  - municipality
+  - development plan
+  - housing allocation
+  - visas
+  - trade union
   - печь
 
 sources:

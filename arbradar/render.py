@@ -86,7 +86,13 @@ def _meta_line(it: Dict[str, Any]) -> str:
     if it.get("amount_usd"):
         bits.append("US${:,.0f}m".format(it["amount_usd"] / 1e6))
     if it.get("counsel"):
-        bits.append("counsel: " + ", ".join(it["counsel"][:3]))
+        # ICSID lists "Firm, City, Country"; the reader wants the firm.
+        firms = []
+        for c in it["counsel"]:
+            f = c.split(",")[0].strip()
+            if f and f not in firms:
+                firms.append(f)
+        bits.append("counsel: " + ", ".join(firms[:4]))
     elif (it.get("source_tier") or 2) == 1:
         bits.append("_no counsel on record_")   # meaningful only from a docket
     bits.append("[{}]({})".format(it.get("source") or "source", it["url"]))
