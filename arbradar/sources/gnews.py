@@ -19,8 +19,11 @@ from typing import Dict, Iterator, List
 
 import feedparser
 
+import time
+
 from .. import config
 from ..fetch import get
+from .editions import EDITIONS, TERMS
 
 ENDPOINT = "https://news.google.com/rss/search"
 
@@ -55,19 +58,33 @@ def _published(entry) -> str:
     return dt.date.fromtimestamp(calendar.timegm(tm)).isoformat() if tm else ""
 
 
-def run(days: int = 7) -> Iterator[Dict]:
+def _sweep(days: int):
+    """(query, hl, gl, ceid, lang, country) for the global edition plus every
+    configured local edition in its own language."""
     settings = config.load()
     states = list((settings.states or {}).keys())
+    for q in _queries(states):
+        yield q, "en-GB", "GB", "GB:en", "en", ""
+    wanted = set(getattr(settings, "editions", None) or [])
+    for label, hl, gl, ceid, lang in EDITIONS:
+        if wanted and label not in wanted:
+            continue
+        for q in TERMS.get(lang, TERMS["en"]):
+            yield q, hl, gl, ceid, lang, label
+
+
+def run(days: int = 7) -> Iterator[Dict]:
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     seen = set()
 
-    for q in _queries(states):
+    for q, hl, gl, ceid, lang, country in _sweep(days):
         full = "{} when:{}d".format(q, max(1, days))
-        url = "{}?q={}&hl=en-GB&gl=GB&ceid=GB:en".format(ENDPOINT, up.quote(full))
+        url = "{}?q={}&hl={}&gl={}&ceid={}".format(ENDPOINT, up.quote(full), hl, gl, ceid)
         try:
             raw = get(url, ttl=1800).content
         except Exception:                             # noqa: BLE001 - boundary
             continue
+        time.sleep(0.3)                               # polite; ~100 feeds a run
         for e in feedparser.parse(raw).entries:
             title = (e.get("title") or "").strip()
             published = _published(e)
@@ -86,5 +103,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "title": _TRAIL.sub("", title)[:300],
                 "summary": re.sub(r"<[^>]+>", " ", e.get("summary") or "")[:1500],
                 "published_at": published or None,
-                "matched_query": q,
+                "lang": lang,
+                "country": country,
+                "states": [country] if country and lang != "en" else [],
             }

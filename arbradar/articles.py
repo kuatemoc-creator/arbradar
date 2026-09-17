@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, Field
 
 from . import db, llm
+from .render import story_slug
 from .config import FALLBACK_BETA, OUT_DIR
 from .taxonomy import EVENT_TYPES
 
@@ -71,7 +72,7 @@ def _facts(it: Dict[str, Any]) -> List[List[str]]:
 def _template_article(it: Dict[str, Any]) -> Article:
     """No model available: assemble from the record, in plain professional English."""
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    summary = re.sub(r"\s+", " ", it.get("summary") or "").strip()
+    summary = re.sub(r"\s+", " ", it.get("summary_en") or it.get("summary") or "").strip()
     sentences = [p for p in re.split(r"(?<=[.!?])\s+(?=[A-Z\u00c0-\u024f])", summary) if p]
     body = [" ".join(sentences[:2])] if sentences else [it.get("title", "")]
     if len(sentences) > 2:
@@ -90,7 +91,7 @@ def _template_article(it: Dict[str, Any]) -> Article:
             " and ".join(counsel[:2]) + (" are" if len(counsel) > 1 else " is")))
     elif (it.get("source_tier") or 2) == 1:
         parts.append("The record shows no counsel yet.")
-    return Article(headline=it.get("title", "")[:120], dek=dek,
+    return Article(headline=(it.get("title_en") or it.get("title", ""))[:120], dek=dek,
                    paragraphs=body, angle=" ".join(parts).strip())
 
 
@@ -240,7 +241,7 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
     for it in stories:
         art = write_article(it, settings.editor_model) if (use_llm and settings.use_llm) else None
         art = art or _template_article(it)
-        fname = _slug(art.headline, date) + ".html"
+        fname = story_slug(it, date)
         with open(os.path.join(SITE, fname), "w", encoding="utf-8") as fh:
             fh.write(render_article(art, it, settings, date))
         entry = {"file": fname, "date": date, "headline": art.headline, "dek": art.dek,

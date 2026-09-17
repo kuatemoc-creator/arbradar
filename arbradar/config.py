@@ -26,6 +26,7 @@ class Settings:
     newsletter_name: str = "Arbitration Radar"
     tagline: str = "Mandate intelligence for arbitration counsel"
     editor: str = ""
+    site_url: str = ""          # public base URL of the article site; empty = link sources only
     timezone: str = "Asia/Yerevan"
     lookback_days: int = 7
     max_items_per_issue: int = 25
@@ -42,6 +43,7 @@ class Settings:
     companies: Dict[str, float] = field(default_factory=dict)
     firms: Dict[str, float] = field(default_factory=dict)
     mute: List[str] = field(default_factory=list)
+    editions: List[str] = field(default_factory=list)   # empty = all
 
     sources: Dict[str, bool] = field(default_factory=dict)
     smtp: Dict[str, str] = field(default_factory=dict)

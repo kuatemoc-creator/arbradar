@@ -68,6 +68,10 @@ MIGRATIONS = (
     ("items", "excluded", "INTEGER DEFAULT 0"),
     ("items", "pinned", "INTEGER DEFAULT 0"),
     ("items", "editor_note", "TEXT"),
+    ("items", "lang", "TEXT"),
+    ("items", "country", "TEXT"),
+    ("items", "title_en", "TEXT"),
+    ("items", "summary_en", "TEXT"),
 )
 
 

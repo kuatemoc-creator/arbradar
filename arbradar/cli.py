@@ -42,6 +42,9 @@ def cmd_build(args, settings, conn):
         return 1
     date = dt.date.today().isoformat()
 
+    base = (settings.site_url or "").rstrip("/")
+    for it in items:
+        it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
     if settings.use_llm and not args.no_llm:
         print("Writing issue with {} ...".format(settings.editor_model))
         try:
@@ -49,9 +52,9 @@ def cmd_build(args, settings, conn):
                                    settings.newsletter_name, date, effort=args.effort)
         except Exception as exc:                      # noqa: BLE001 - boundary
             print("editorial pass failed ({}); falling back to template".format(exc))
-            text = render.fallback_markdown(items, settings.newsletter_name, date)
+            text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
     else:
-        text = render.fallback_markdown(items, settings.newsletter_name, date)
+        text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
 
     paths = render.write_issue(text, items, settings, date=date)
     subject = "{} - {}".format(settings.newsletter_name, date)

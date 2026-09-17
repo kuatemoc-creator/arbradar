@@ -86,6 +86,11 @@ EVENT_PATTERNS: List = [
         "case registered", "new case", "files claim", "filed a claim",
         "commenced arbitration", "initiated arbitration", "statement of claim",
         "request for the institution",
+        # native-language triggers - the LLM tier does this properly; these catch the obvious
+        "подал в icsid", "подал иск", "иск против", "иск в icsid", "иск в мцуис",
+        "demanda ante el ciadi", "presentó una demanda", "demanda de arbitraje",
+        "a déposé une demande", "recours au cirdi", "tahkim davası", "tahkime başvurdu",
+        "ação de arbitragem", "icsid-ի", "հայց",
     ]),
     ("enforcement_action", [
         "enforcement of the award", "recognition and enforcement", "new york convention",
@@ -112,6 +117,10 @@ EVENT_PATTERNS: List = [
         "permit cancelled", "permit canceled", "concession terminated", "seizure of",
         "sanction", "asset freeze", "state of emergency", "windfall tax",
         "forced divestment", "mining permit", "resource rent",
+        "экспроприац", "национализац", "отзыв лицензии", "expropiación", "nacionalización",
+        "revocación de licencia", "expropriação", "nacionalização", "kamulaştırma",
+        "millileştirme", "lisans iptali", "nationalisation des", "retrait de licence",
+        "ազգայնաց", "բռնագրավ", "ექსპროპრიაცია", "ნაციონალიზაცია", "مصادرة", "تأميم",
     ]),
     ("treaty_action", [
         "bilateral investment treaty", " bit ", "energy charter treaty", "denounc",

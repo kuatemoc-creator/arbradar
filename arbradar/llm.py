@@ -49,6 +49,9 @@ class TriageBatch(BaseModel):
 
 class Extraction(BaseModel):
     event_type: str
+    headline_en: str = Field(description="English headline, at most 14 words, sentence case. "
+                                         "A faithful rendering if the source is not in English.")
+    summary_en: str = Field(description="Two sentences in English stating what happened.")
     claimants: List[str] = []
     respondents: List[str] = []
     states: List[str] = []
@@ -99,6 +102,9 @@ are the only italics. Firms as they style themselves (Three Crowns, not "Three C
 # --------------------------------------------------------------------------
 TRIAGE_SYSTEM = """You screen news for a newsletter read by international arbitration \
 practitioners who are looking for new mandates.
+
+Items arrive in any language - Armenian, Georgian, Russian, Spanish, Arabic and others. \
+Judge each in its own language; do not mark an item irrelevant for being non-English.
 
 Mark an item relevant ONLY if it plausibly signals legal work that is available or \
 about to become available: a dispute starting, escalating, being enforced, annulled, \
@@ -200,6 +206,8 @@ rather than writing around it.
 
 {style}
 
+Where an item carries a site_link, make its ### headline a Markdown link to it.
+
 Return GitHub-flavoured Markdown only. Structure:
 # {name} - {date}
 Two or three sentences naming the single most valuable development and why.
@@ -220,8 +228,11 @@ def write_issue(items: List[Dict[str, Any]], model: str, name: str, date: str,
     payload = []
     for it in items:
         payload.append({
-            "headline": it.get("title"),
+            "headline": it.get("title_en") or it.get("title"),
+            "original_language": it.get("lang") or "en",
+            "original_headline": it.get("title") if it.get("title_en") else None,
             "url": it.get("url"),
+            "site_link": it.get("site_link"),
             "source": it.get("source"),
             "published": it.get("published_at"),
             "event_type": it.get("event_type"),
@@ -236,7 +247,7 @@ def write_issue(items: List[Dict[str, Any]], model: str, name: str, date: str,
             "counsel_on_record": it.get("counsel"),
             "arbitrators": it.get("arbitrators"),
             "why_it_matters": it.get("why_it_matters"),
-            "excerpt": (it.get("summary") or "")[:600],
+            "excerpt": (it.get("summary_en") or it.get("summary") or "")[:600],
             "also_reported_by": [a.get("source") for a in (it.get("also") or [])],
         })
 

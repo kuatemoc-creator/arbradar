@@ -13,6 +13,7 @@ import markdown as md
 
 from .config import OUT_DIR
 from .taxonomy import EVENT_TYPES
+from .sources.editions import LANG_NAMES
 
 # CaseLens light palette as plain hex. Mail clients do not understand CSS
 # variables, oklch, web fonts, flexbox or dark-mode media queries, so the
@@ -23,7 +24,7 @@ SERIF = "Georgia,'Times New Roman',Times,serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 
-def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str) -> str:
+def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, settings=None) -> str:
     """Used when no API key is set - deterministic, no model involved."""
     lines = ["# {} - {}".format(name, date), ""]
     if not items:
@@ -34,26 +35,47 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str) -> str:
                  "new instructions.".format(len(items)))
     lines.append("")
     lead, rest = items[0], items[1:]
-    lines += ["## Lead", "", "### {}".format(lead["title"]), "",
-              (lead.get("why_it_matters") or lead.get("summary") or "")[:600], "",
-              _meta_line(lead), ""]
+    lines += ["## Lead", "", _headline(lead, settings, date), "",
+              _summary(lead)[:600], "", _meta_line(lead), ""]
     if rest:
         lines += ["## Where the work is", ""]
         for it in rest[:8]:
-            lines += ["### {}".format(it["title"]), "",
-                      (it.get("why_it_matters") or it.get("summary") or "")[:400], "",
-                      _meta_line(it), ""]
+            lines += [_headline(it, settings, date), "",
+                      _summary(it)[:400], "", _meta_line(it), ""]
     if len(rest) > 8:
         lines += ["## Also moving", ""]
         for it in rest[8:]:
             lines.append("- [{}]({}) - {}".format(
-                it["title"][:120], it["url"],
+                _title(it)[:120], it["url"],
                 EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")))
     return "\n".join(lines)
 
 
+def _title(it: Dict[str, Any]) -> str:
+    return it.get("title_en") or it.get("title") or ""
+
+
+def story_slug(it: Dict[str, Any], date: str) -> str:
+    """Shared with the article site so the email can deep-link each story."""
+    s = re.sub(r"[^a-z0-9]+", "-", _title(it).lower()).strip("-")[:70]
+    return "{}-{}.html".format(date, s)
+
+
+def _headline(it: Dict[str, Any], settings, date: str) -> str:
+    base = (getattr(settings, "site_url", "") or "").rstrip("/")
+    if base:
+        return "### [{}]({}/{})".format(_title(it), base, story_slug(it, date))
+    return "### {}".format(_title(it))
+
+
+def _summary(it: Dict[str, Any]) -> str:
+    return it.get("summary_en") or it.get("why_it_matters") or it.get("summary") or ""
+
+
 def _meta_line(it: Dict[str, Any]) -> str:
     bits = []
+    if (it.get("lang") or "en") != "en":
+        bits.append("from the {} press".format(LANG_NAMES.get(it["lang"], it["lang"])))
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
     if ev:
         bits.append("**{}**".format(ev.get("label")))

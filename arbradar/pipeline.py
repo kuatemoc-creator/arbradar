@@ -99,6 +99,8 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
                     "states": raw.get("states") or [],
                     "counsel": raw.get("counsel") or [],
                     "arbitrators": raw.get("arbitrators") or [],
+                    "lang": raw.get("lang") or "en",
+                    "country": raw.get("country") or None,
                 }
                 item.update(rule_classify(item))
                 if db.upsert_item(conn, item):
@@ -161,7 +163,8 @@ def enrich(conn, settings) -> Dict[str, int]:
             amount_usd=ex.amount_usd,
             counsel=ex.counsel or item.get("counsel"),
             arbitrators=ex.arbitrators or item.get("arbitrators"),
-            why_it_matters=ex.why_it_matters)
+            why_it_matters=ex.why_it_matters,
+            title_en=ex.headline_en or None, summary_en=ex.summary_en or None)
     conn.commit()
     return counts
 
@@ -213,7 +216,7 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     reps: List[Dict[str, Any]] = []
     for it in items:
-        toks = _tokens(it["title"])
+        toks = _tokens(it.get("title_en") or it["title"])
         home = None
         for rep in reps:
             # Two different case numbers are two different matters, full stop.

@@ -94,6 +94,8 @@ def _row(it: Dict[str, Any]) -> str:
         cn = '<span style="color:#aaa">counsel not stated</span>'
 
     bits = [html.escape(it.get("source") or ""), html.escape(str(it.get("published_at") or "")[:10])]
+    if (it.get("lang") or "en") != "en":
+        bits.append('<span class="tag">{}</span>'.format(html.escape(it.get("country") or it["lang"])))
     if it.get("institution"):
         bits.append(html.escape(it["institution"]))
     if it.get("treaty"):
@@ -115,7 +117,8 @@ def _row(it: Dict[str, Any]) -> str:
         id=it["id"], cls="out" if it.get("excluded") else "",
         score="{:.0f}".format(it.get("score") or 0),
         ev=html.escape(ev.get("label", "")), why=html.escape(ev.get("why", "")),
-        url=html.escape(it.get("url") or "#"), title=html.escape(it.get("title") or "")[:160],
+        url=html.escape(it.get("url") or "#"),
+        title=html.escape(it.get("title_en") or it.get("title") or "")[:160],
         bits=" &middot; ".join(bits), cn=cn,
         pon="on" if it.get("pinned") else "", eon="on" if it.get("excluded") else "")
 
@@ -213,9 +216,9 @@ def do_build():
             text = llm.write_issue(items, SETTINGS.editor_model,
                                    SETTINGS.newsletter_name, date)
         except Exception as exc:                      # noqa: BLE001 - boundary
-            text = render.fallback_markdown(items, SETTINGS.newsletter_name, date)
+            text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS)
     else:
-        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date)
+        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS)
     paths = render.write_issue(text, items, SETTINGS, date=date)
     subject = "{} - {}".format(SETTINGS.newsletter_name, date)
     cur = conn.execute(
