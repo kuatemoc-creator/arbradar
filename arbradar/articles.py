@@ -232,7 +232,12 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
     date = str(row["created_at"])[:10]
     rows = conn.execute("SELECT * FROM items WHERE issue_id=? AND relevant=1 ORDER BY score DESC",
                         (row["id"],)).fetchall()
-    stories = pipeline.cluster([db.row_to_dict(r) for r in rows])[:limit]
+    stories = pipeline.cluster([db.row_to_dict(r) for r in rows])
+    starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application", "state_measure")
+    lead = next((it for it in stories[:5] if it.get("event_type") in starters), stories[0] if stories else None)
+    if lead is not None:
+        stories = [lead] + [it for it in stories if it is not lead]
+    stories = stories[:limit]
 
     os.makedirs(SITE, exist_ok=True)
     manifest_path = os.path.join(SITE, "manifest.json")
