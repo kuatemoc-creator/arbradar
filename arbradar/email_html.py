@@ -232,9 +232,13 @@ _DOCKET = re.compile(r"^(?:New ICSID case registered: )?(?P<case>.+?) \(ICSID Ca
 
 
 def _docket_parts(it: Dict[str, Any]):
-    m = _DOCKET.match(title_of(it))
+    t = title_of(it)
+    if " \u2014 " in t:                       # "Party v. State — step"
+        case, _, step = t.partition(" \u2014 ")
+        return case, it.get("case_ref") or "", step[:1].upper() + step[1:]
+    m = _DOCKET.match(t)
     if not m:
-        return title_of(it), "", ""
+        return t, "", ""
     step = (m.group("step") or "").strip().rstrip(".")
     if not step and title_of(it).startswith("New ICSID case registered"):
         step = "Registered"

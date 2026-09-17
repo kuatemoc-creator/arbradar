@@ -108,6 +108,41 @@ def _seat(raw: str) -> str:
     return "{} ({})".format(name, who)
 
 
+_SUFFIX = re.compile(r",?\s+(S\.?A\.?U?\.?|S\.?p\.?A\.?|S\.?A\.?R\.?L\.?|S\.?à\s?r\.?l\.?|B\.?V\.?|N\.?V\.?|GmbH|AG|"
+                     r"Ltd\.?|Limited|LLC|L\.?P\.?|Inc\.?|Corp\.?|Corporation|plc|PLC|Co\.?|Company|Holdings?|"
+                     r"International|Pte\.?|S\.?A\.?S\.?|S\.?L\.?|A\.?S\.?|Public Company Limited|and others|et al\.?)\b\.?", re.I)
+_STATE = re.compile(r"^(The )?(Republic|Kingdom|State|Commonwealth|Federal Republic|Federative Republic|People's Republic|"
+                    r"Oriental Republic|Bolivarian Republic|Plurinational State|Argentine Republic|Italian Republic|"
+                    r"Hellenic Republic|United Mexican States|Union|Sultanate|Principality|Grand Duchy) (of )?", re.I)
+_STATE_MAP = {"Argentine Republic": "Argentina", "Italian Republic": "Italy", "United Mexican States": "Mexico",
+              "Hellenic Republic": "Greece", "Swiss Confederation": "Switzerland", "Kingdom of Spain": "Spain",
+              "Republic of Türkiye": "Türkiye", "Russian Federation": "Russia", "Czech Republic": "Czechia",
+              "Slovak Republic": "Slovakia", "Kyrgyz Republic": "Kyrgyzstan", "Lao People's Democratic Republic": "Laos",
+              "Bolivarian Republic of Venezuela": "Venezuela", "Plurinational State of Bolivia": "Bolivia",
+              "Oriental Republic of Uruguay": "Uruguay", "Federal Republic of Germany": "Germany",
+              "Federal Republic of Nigeria": "Nigeria", "United Arab Emirates": "UAE", "United States of America": "United States"}
+
+
+def short_party(name: str) -> str:
+    name = _clean(name)
+    for k, v in _STATE_MAP.items():
+        if name.startswith(k):
+            return v
+    name = _STATE.sub("", name)
+    first = re.split(r",| and ", name)[0].strip()
+    first = _SUFFIX.sub("", first).strip(" ,.")
+    return first or name
+
+
+def headline(case: Dict, step: str) -> str:
+    title = _clean(case.get("casetitle"))
+    left, _, right = title.partition(" v. ")
+    right = re.sub(r"\s*\(ICSID Case No\..*$", "", right)
+    if not right:
+        return title
+    return "{} v. {} \u2014 {}".format(short_party(left), short_party(right), step)
+
+
 def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
     """The facts a practitioner reads first, in one paragraph, from the record."""
     parts: List[str] = []
@@ -194,7 +229,7 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                 if registered and registered >= cutoff:
                     yield _emit(
                         case, proc, "new_case_filed", registered,
-                        "New ICSID case registered: {}".format(title),
+                        headline(case, "new case registered at ICSID"),
                         describe(case, proc, proc.get("dateregistered") or ""))
 
                 m = _DATE.match(proc.get("lastproc") or "")
@@ -208,5 +243,5 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                     continue                          # already emitted above
                 yield _emit(
                     case, proc, _classify(detail), when,
-                    "{}: {}".format(title, detail[:120]),
+                    headline(case, detail[:110].rstrip(".")[0].lower() + detail[:110].rstrip(".")[1:]),
                     describe(case, proc, m.group(1), detail))
