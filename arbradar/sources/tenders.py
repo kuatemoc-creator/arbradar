@@ -43,7 +43,7 @@ def _first(v):
 INTERNATIONAL = ("international arbitration", "investment treaty", "investment arbitration",
                  "icsid", "uncitral", "bilateral investment", "arbitrage international",
                  "arbitraje internacional", "arbitrato internazionale", "investor-state",
-                 "міжнародн", "інвестиційн", "arbitration and conciliation")
+                 "міжнародн", "інвестиційн")
 LEGAL = ("legal", "juridique", "jurídic", "юридичн", "адвокат", "arbitr", "арбітраж", "представництв")
 UAH_PER_USD = 41.5
 
@@ -102,12 +102,13 @@ def _prozorro(days: int) -> Iterator[Dict]:
             if not tid or tid in seen:
                 continue
             seen.add(tid)
+            # The enquiry period opens on publication; that is the tender's date.
             start = ""
-            for period in (t.get("tenderPeriod"), t.get("enquiryPeriod")):
-                if isinstance(period, dict):
-                    start = str(period.get("startDate") or period.get("endDate") or "")[:10]
-                    if start:
-                        break
+            for period, key in ((t.get("enquiryPeriod"), "startDate"), (t.get("tenderPeriod"), "startDate"),
+                                (t.get("enquiryPeriod"), "endDate"), (t.get("tenderPeriod"), "endDate")):
+                if isinstance(period, dict) and period.get(key):
+                    start = str(period[key])[:10]
+                    break
             if start and start < cutoff:
                 continue
             buyer = ((t.get("procuringEntity") or {}).get("identifier") or {}).get("legalName") \
@@ -118,6 +119,11 @@ def _prozorro(days: int) -> Iterator[Dict]:
             value = t.get("value") or {}
             amount = value.get("amount")
             usd = (amount / UAH_PER_USD) if amount and (value.get("currency") == "UAH") else amount
+            # A municipal utility's US$5k legal-aid contract matched "arbitration" somewhere
+            # in its description. Keep a tender only if it says international, or is big
+            # enough that international counsel is the plausible buyer.
+            if not any(k in (title + " " + buyer).lower() for k in INTERNATIONAL) and (usd or 0) < 50000:
+                continue
             yield {
                 "url": "https://prozorro.gov.ua/tender/{}".format(tid),
                 "source": "Prozorro procurement (Ukraine)",
