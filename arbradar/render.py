@@ -61,7 +61,7 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
     lines.append("")
     # The lead is the strongest story that starts a dispute, if one is near the top;
     # enforcement and award stories are later-stage and go below.
-    starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application")
+    starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application", "state_measure")
     lead = next((it for it in items[:5] if it.get("event_type") in starters), items[0])
     rest = [it for it in items if it is not lead]
     lines += ["## Lead", "", _headline(lead, settings, date), ""]
