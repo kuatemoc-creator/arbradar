@@ -99,6 +99,7 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
                     "states": raw.get("states") or [],
                     "counsel": raw.get("counsel") or [],
                     "arbitrators": raw.get("arbitrators") or [],
+                    "amount_usd": raw.get("amount_usd"),
                     "lang": raw.get("lang") or "en",
                     "country": raw.get("country") or None,
                 }

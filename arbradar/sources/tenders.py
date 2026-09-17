@@ -18,8 +18,9 @@ TED = "https://api.ted.europa.eu/v3/notices/search"
 TED_FIELDS = ["publication-number", "notice-title", "buyer-name", "publication-date",
               "buyer-country", "links"]
 TED_QUERIES = [
-    '(TI~"arbitration" OR TI~"arbitrage" OR TI~"arbitraje" OR TI~"Schiedsverfahren" OR TI~"arbitrato")',
-    '(FT~"investment treaty" OR FT~"investment arbitration" OR FT~"ICSID") AND TI~"legal services"',
+    'TI~"arbitration and conciliation"',
+    'TI~"legal services" AND (FT~"international arbitration" OR FT~"investment treaty" OR FT~"ICSID" OR FT~"UNCITRAL")',
+    'TI~"legal" AND (FT~"arbitrage international" OR FT~"arbitraje internacional" OR FT~"CIRDI" OR FT~"CIADI")',
 ]
 
 PROZORRO = "https://prozorro.gov.ua/api/search/tenders"
@@ -28,11 +29,23 @@ PROZORRO_QUERIES = ["міжнародний арбітраж", "інвестиц
 
 
 def _first(v):
-    if isinstance(v, dict):
-        return v.get("eng") or v.get("ENG") or next(iter(v.values()), "")
-    if isinstance(v, list):
-        return v[0] if v else ""
-    return v or ""
+    """TED nests language maps inside lists inside maps; take the first leaf."""
+    for _ in range(4):
+        if isinstance(v, dict):
+            v = v.get("eng") or v.get("ENG") or next(iter(v.values()), "")
+        elif isinstance(v, list):
+            v = v[0] if v else ""
+        else:
+            break
+    return v if isinstance(v, str) else ""
+
+
+INTERNATIONAL = ("international arbitration", "investment treaty", "investment arbitration",
+                 "icsid", "uncitral", "bilateral investment", "arbitrage international",
+                 "arbitraje internacional", "arbitrato internazionale", "investor-state",
+                 "міжнародн", "інвестиційн", "arbitration and conciliation")
+LEGAL = ("legal", "juridique", "jurídic", "юридичн", "адвокат", "arbitr", "арбітраж", "представництв")
+UAH_PER_USD = 41.5
 
 
 def _ted(days: int) -> Iterator[Dict]:
@@ -56,6 +69,9 @@ def _ted(days: int) -> Iterator[Dict]:
             title = _first(n.get("notice-title"))
             buyer = _first(n.get("buyer-name"))
             country = _first(n.get("buyer-country"))
+            text = (title + " " + buyer).lower()
+            if not any(k in text for k in LEGAL):
+                continue
             yield {
                 "url": url,
                 "source": "TED procurement",
@@ -63,8 +79,11 @@ def _ted(days: int) -> Iterator[Dict]:
                 "summary": "Tender published {} by {} ({}). {}".format(
                     str(n.get("publication-date", ""))[:10], buyer, country, title),
                 "published_at": str(n.get("publication-date", ""))[:10] or None,
-                "event_type": "counsel_tender",
+                # Domestic adjudication panels tender under the same CPV heading;
+                # only an international marker earns the lead weight.
+                "event_type": "counsel_tender" if any(k in text for k in INTERNATIONAL) else "commentary",
                 "respondents": [buyer] if buyer else [],
+                "states": [country] if country else [],
                 "case_ref": pub,
             }
 
@@ -83,14 +102,22 @@ def _prozorro(days: int) -> Iterator[Dict]:
             if not tid or tid in seen:
                 continue
             seen.add(tid)
-            period = t.get("tenderPeriod") or t.get("enquiryPeriod") or {}
-            start = str(period.get("startDate") or "")[:10]
+            start = ""
+            for period in (t.get("tenderPeriod"), t.get("enquiryPeriod")):
+                if isinstance(period, dict):
+                    start = str(period.get("startDate") or period.get("endDate") or "")[:10]
+                    if start:
+                        break
             if start and start < cutoff:
                 continue
             buyer = ((t.get("procuringEntity") or {}).get("identifier") or {}).get("legalName") \
                 or (t.get("procuringEntity") or {}).get("name") or ""
+            title = t.get("title") or ""
+            if not any(k in (title + " " + buyer).lower() for k in LEGAL):
+                continue                              # full-text search is loose; keep legal buys only
             value = t.get("value") or {}
             amount = value.get("amount")
+            usd = (amount / UAH_PER_USD) if amount and (value.get("currency") == "UAH") else amount
             yield {
                 "url": "https://prozorro.gov.ua/tender/{}".format(tid),
                 "source": "Prozorro procurement (Ukraine)",
@@ -104,6 +131,7 @@ def _prozorro(days: int) -> Iterator[Dict]:
                 "respondents": [buyer] if buyer else [],
                 "states": ["Ukraine"],
                 "case_ref": tid,
+                "amount_usd": usd,
                 "lang": "uk",
             }
 
