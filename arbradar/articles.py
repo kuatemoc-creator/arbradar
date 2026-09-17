@@ -81,7 +81,7 @@ def _template_article(it: Dict[str, Any]) -> Article:
     # A dek is one whole sentence or nothing. Never chop a sentence and stamp a
     # full stop on the stump - use the ranking reason instead.
     dek = sentences[0] if sentences else ""
-    if len(dek.split()) > 34 or dek.lower().startswith(it.get("title", "").lower()[:30]):
+    if len(dek.split()) > 48 or dek.lower().startswith(it.get("title", "").lower()[:30]):
         dek = ""
 
     return Article(headline=(it.get("title_en") or it.get("title", ""))[:120], dek=dek,
