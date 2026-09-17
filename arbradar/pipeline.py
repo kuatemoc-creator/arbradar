@@ -189,7 +189,7 @@ PAYWALL = ("you are not logged in", "subscribe to read", "please log in", "log i
 
 def is_paywall(text: str) -> bool:
     t = (text or "").strip().lower()
-    return not t or any(t.startswith(p) or t == p.rstrip(".") for p in PAY)
+    return not t or any(t.startswith(p) or t == p.rstrip(".") for p in PAYWALL)
 
 
 STOP = set("the a an of to in on for and or with by from at as is are was were be has have "
