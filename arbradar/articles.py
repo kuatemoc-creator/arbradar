@@ -136,8 +136,8 @@ a{color:var(--link)}
 .wrap{max-width:720px;margin:0 auto;padding:40px 24px 80px}
 .mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
 padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:28px}
-.brand{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink);text-decoration:none}
-.brand span{color:var(--mute);font-weight:500}
+.brand{font-family:var(--display);font-size:1.25rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;padding-left:8px}
 .mast .date{font-family:var(--mono);font-size:.75rem;color:var(--mute)}
 .eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
 h1{font-family:var(--display);font-size:2.125rem;line-height:1.15;letter-spacing:-.015em;
@@ -189,7 +189,7 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
         for x in (it.get("also") or [])[:4]]
     src_html = "".join('<a href="{}" rel="noopener">{}</a>'.format(html.escape(u or "#"), html.escape(s))
                        for s, u in srcs if u)
-    body = """<header class="mast"><a class="brand" href="index.html">{name} <span>· by CaseLens</span></a>
+    body = """<header class="mast"><a class="brand" href="index.html">{name} <span>by CaseLens</span></a>
 <span class="date">{date}</span></header>
 <div class="eyebrow">{ev}</div>
 <h1>{h}</h1>
@@ -210,7 +210,7 @@ def render_index(entries: List[Dict[str, Any]], settings) -> str:
         d=html.escape(e["date"]), f=html.escape(e["file"]), h=html.escape(e["headline"]),
         dek=html.escape(e["dek"]), ev=html.escape(e["event"]))
         for e in entries)
-    body = """<header class="mast"><a class="brand" href="index.html">{name} <span>· by CaseLens</span></a>
+    body = """<header class="mast"><a class="brand" href="index.html">{name} <span>by CaseLens</span></a>
 <span class="date">{n} pieces</span></header>
 <h1>{tag}</h1>
 <p class="dek">Short, sourced pieces on where arbitration work is opening up. Each stands alone and can be shared.</p>

@@ -152,8 +152,8 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
   <tr><td style="padding:0 0 14px;border-bottom:2px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:{ink};">{name}
-        <span style="color:{mute};font-weight:500;">&nbsp;&middot;&nbsp;by CaseLens</span></td>
+      <td style="font-family:{serif};font-size:20px;font-weight:bold;letter-spacing:-0.2px;color:{ink};">{name}
+        <span style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};padding-left:10px;">by CaseLens</span></td>
       <td align="right" style="font-family:{sans};font-size:12px;color:{mute};white-space:nowrap;">{date}</td>
     </tr></table>
   </td></tr>
