@@ -24,6 +24,11 @@ apis:
     enabled: true
     what: global news with country tagging, non-English press; throttled to one request per 5 s
     endpoint: https://api.gdeltproject.org/api/v2/doc/doc
+  registers:
+    enabled: true
+    what: government ISDS registers - notices of intent and cases published by Canada (GAC) and the United States (State Dept L/CID)
+    endpoints: [https://www.international.gc.ca/trade-agreements-accords-commerciaux/topics-domaines/disp-diff/gov.aspx?lang=eng, https://www.state.gov/office-of-international-claims-and-investment-disputes/usmca-investor-state-arbitrations, https://www.state.gov/nafta-investor-state-arbitrations]
+    note: Mexico's Secretaría de Economía register (gob.mx) sits behind a bot challenge; its press is covered by the Google News sweep
   pca:
     enabled: true
     what: PCA news page (the case list itself is client-rendered and not available)
