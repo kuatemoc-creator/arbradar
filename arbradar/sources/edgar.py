@@ -40,6 +40,12 @@ def run(days: int = 7, forms: str = "8-K,6-K,20-F,10-Q,10-K") -> Iterator[Dict]:
             continue
         for hit in r.json().get("hits", {}).get("hits", []):
             src = hit.get("_source", {})
+            # Exhibit 10 (material contracts), 2 (merger agreements) and 4 (instruments)
+            # carry dispute-resolution clauses by the thousand. A dispute is disclosed in
+            # the filing body or a press release (EX-99), not in a template clause.
+            ftype = (src.get("file_type") or "").upper()
+            if ftype.startswith(("EX-10", "EX-2", "EX-4", "EX-3")):
+                continue
             ident = hit.get("_id", "")
             acc, _, doc = ident.partition(":")
             cik = (src.get("ciks") or ["0"])[0].lstrip("0")

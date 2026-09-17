@@ -283,18 +283,23 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
 
     docket = take(
         "SELECT * FROM items WHERE source='ICSID docket' AND relevant=1 AND published_at>=? "
-        "AND event_type IN ('new_case_filed','award_issued','annulment_setaside','tribunal_constituted') "
-        "ORDER BY published_at DESC", (cutoff,), 14)
+        "AND (event_type IN ('new_case_filed','award_issued') "
+        "     OR (event_type='annulment_setaside' AND (title LIKE '%application for annulment%' "
+        "         OR title LIKE '%decision on annulment%' OR title LIKE '%issues its decision%' "
+        "         OR title LIKE '%Committee is constituted%')) "
+        "     OR title LIKE '%resignation%' OR title LIKE '%disqualif%') "
+        "ORDER BY published_at DESC", (cutoff,), 8)
     disclosures = take(
         "SELECT * FROM items WHERE source='SEC EDGAR' AND relevant=1 AND published_at>=? "
-        "ORDER BY published_at DESC", (cutoff,), 12,
+        "AND url NOT LIKE '%ex10%' AND url NOT LIKE '%ex2-%' AND url NOT LIKE '%ex4%' AND url NOT LIKE '%ex3%' "
+        "ORDER BY published_at DESC", (cutoff,), 6,
         key=lambda it: (it.get("title") or "").split(" discloses")[0])
     courts = take(
         "SELECT * FROM items WHERE source LIKE 'US federal docket%' AND relevant=1 AND published_at>=? "
         "AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
         "     OR title LIKE 'IN RE%' OR summary LIKE '%foreign%') "
         "ORDER BY published_at DESC",
-        ((dt.date.today() - dt.timedelta(days=30)).isoformat(),), 10)   # sovereign petitions are rarer
+        ((dt.date.today() - dt.timedelta(days=30)).isoformat(),), 5)    # sovereign petitions are rarer
     return {"docket": docket, "disclosures": disclosures, "courts": courts}
 
 

@@ -59,21 +59,25 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
 
     lines.append("{} developments this week.".format(len(items)))
     lines.append("")
-    lead, rest = items[0], items[1:]
+    # The lead is the strongest story that starts a dispute, if one is near the top;
+    # enforcement and award stories are later-stage and go below.
+    starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application")
+    lead = next((it for it in items[:5] if it.get("event_type") in starters), items[0])
+    rest = [it for it in items if it is not lead]
     lines += ["## Lead", "", _headline(lead, settings, date), ""]
     if _summary(lead):
         lines += [_summary(lead)[:600], ""]
     lines += [_meta_line(lead), ""]
     if rest:
         lines += ["## Developments", ""]
-        for it in rest[:8]:
+        for it in rest[:6]:
             lines += [_headline(it, settings, date), ""]
             if _summary(it):
                 lines += [_summary(it)[:400], ""]
             lines += [_meta_line(it), ""]
-    if len(rest) > 8:
+    if len(rest) > 6:
         lines += ["## In brief", ""]
-        for it in rest[8:]:
+        for it in rest[6:9]:
             lines.append("- [{}]({}) - {}".format(
                 _title(it)[:120], it["url"],
                 EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")))
