@@ -106,6 +106,41 @@ def cmd_send(args, settings, conn):
     return 0
 
 
+def cmd_intel(args, settings, conn):
+    """Appointment intelligence from the full ICSID corpus -> out/intel.json + summary."""
+    import os
+    from . import intel
+    from .config import OUT_DIR
+    cases = intel.load_cases()
+    rows = intel.appointments(cases)
+    table = intel.arbitrator_table(rows)
+    recon = intel.reconstitutions(cases)
+    recent = intel.recent_appointments(rows, days=365)
+    data = {"generated": dt.date.today().isoformat(),
+            "totals": {"cases": len(cases), "seats": len(rows), "arbitrators": len(table),
+                       "concentration": intel.concentration(table)},
+            "arbitrators": table[:60], "reconstitutions": recon,
+            "recent": recent, "affinity": intel.firm_affinity(rows, min_count=2),
+            "counsel": intel.counsel_table(rows)[:60]}
+    os.makedirs(OUT_DIR, exist_ok=True)
+    path = os.path.join(OUT_DIR, "intel.json")
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=1)
+
+    print("{} cases, {} seats, {} arbitrators; top 20 hold {:.1%} of seats".format(
+        len(cases), len(rows), len(table), data["totals"]["concentration"]["top_n_share"]))
+    print("\nBusiest, with claimant lean (1.0 = only ever claimant-appointed):")
+    for r in table[:args.limit]:
+        print("  {:<30} {:>4} seats  {:>3} pending  lean {:.2f}".format(
+            r["arbitrator"][:30], r["total"], r["pending"], r["claimant_lean"]))
+    dq = [r for r in recon if r["reason"] == "disqualification"]
+    print("\nDisqualifications on record: {}".format(len(dq)))
+    for r in dq[:5]:
+        print("  {}  {:<26} {}  {}".format(r["date"], r["outgoing"][:26], r["case"], r["respondent_state"][:28]))
+    print("\nfull data: {}".format(path))
+    return 0
+
+
 def cmd_serve(args, settings, conn):
     from .web import serve
     print("Review UI on http://{}:{}  (Ctrl-C to stop)".format(args.host, args.port))
@@ -140,6 +175,8 @@ def main(argv=None):
     s = sub.add_parser("send", parents=[common], help="email the latest issue")
     s.add_argument("--confirm", action="store_true", help="actually send")
     s.add_argument("--to", help="override recipients (comma separated)")
+    i = sub.add_parser("intel", parents=[common], help="ICSID appointment intelligence")
+    i.add_argument("--limit", type=int, default=15)
     w = sub.add_parser("serve", parents=[common], help="local review UI")
     w.add_argument("--port", type=int, default=8765)
     w.add_argument("--host", default="127.0.0.1")
@@ -158,7 +195,7 @@ def main(argv=None):
     conn = db.connect()
     handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build,
                "run": cmd_run, "top": cmd_top, "send": cmd_send,
-               "serve": cmd_serve}[args.cmd]
+               "serve": cmd_serve, "intel": cmd_intel}[args.cmd]
     return handler(args, settings, conn)
 
 

@@ -181,11 +181,24 @@ def rescore(conn, settings) -> int:
 
 STOP = set("the a an of to in on for and or with by from at as is are was were be has have "
            "had its their this that over under against into after before amid says said new "
-           "will could may how why who what when".split())
+           "will could may how why who what when "
+           # registry boilerplate - every ICSID headline carries these
+           "icsid case registered arb republic kingdom state states united".split())
+_SUFFIX = re.compile(r"(ments?|ations?|ings?|ies|es|ed|s)$")
+
+
+def _stem(w: str) -> str:
+    """Crude but sufficient: enforce / enforces / enforcement -> enforc."""
+    if w.isdigit():
+        return w
+    if re.match(r"^\d+[mkb]n?$", w):          # 350m, 1bn -> 350, 1
+        return re.sub(r"[a-z]+$", "", w)
+    st = _SUFFIX.sub("", w)
+    return st if len(st) >= 3 else w
 
 
 def _tokens(title: str) -> set:
-    return {w for w in re.findall(r"[a-z0-9]+", (title or "").lower())
+    return {_stem(w) for w in re.findall(r"[a-z0-9]+", (title or "").lower())
             if len(w) >= 3 and w not in STOP}
 
 
@@ -203,11 +216,14 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         toks = _tokens(it["title"])
         home = None
         for rep in reps:
+            # Two different case numbers are two different matters, full stop.
+            if it.get("case_ref") and rep.get("case_ref") and it["case_ref"] != rep["case_ref"]:
+                continue
             inter = len(toks & rep["_toks"])
             if not inter:
                 continue
             jac = inter / len(toks | rep["_toks"])
-            if jac >= 0.5 or (inter >= 3 and jac >= 0.25):
+            if jac >= 0.5 or (inter >= 3 and jac >= 0.22):
                 home = rep
                 break
         if home is None:

@@ -10,7 +10,7 @@ import datetime as dt
 import time
 from typing import Dict, Iterator
 
-from ..fetch import get
+from ..fetch import get, Blocked
 
 ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
 
@@ -23,16 +23,21 @@ QUERIES = [
 
 
 def run(days: int = 7) -> Iterator[Dict]:
-    for i, q in enumerate(QUERIES):
-        if i:
-            time.sleep(5.2)
-        try:
-            r = get(ENDPOINT, params={
-                "query": q, "mode": "artlist", "maxrecords": 75,
-                "format": "json", "timespan": "{}d".format(days), "sort": "datedesc",
-            }, ttl=3600, timeout=60)
-            arts = r.json().get("articles", [])
-        except Exception:                             # noqa: BLE001 - boundary
+    params = {"mode": "artlist", "maxrecords": 75, "format": "json",
+              "timespan": "{}d".format(days), "sort": "datedesc"}
+    for q in QUERIES:
+        arts = None
+        for wait in (6, 20):
+            time.sleep(wait)
+            try:
+                r = get(ENDPOINT, params=dict(params, query=q), ttl=3600, timeout=60)
+                arts = r.json().get("articles", [])
+                break
+            except Blocked:
+                continue                              # 429 - back off and retry once
+            except Exception:                         # noqa: BLE001 - boundary
+                break
+        if not arts:
             continue
         for a in arts:
             seen = a.get("seendate") or ""
