@@ -44,7 +44,17 @@ def lookup(headline: str) -> Optional[Dict[str, str]]:
     words = _sig(headline)
     if len(words) < 2:
         return None
-    query = " ".join(words[:6])
+    proper = [w for w in words if w[0].isupper()]
+    for query in dict.fromkeys([" ".join(words[:6]), " ".join(proper[:4]), " ".join(words[:3])]):
+        if len(query.split()) < 2:
+            continue
+        found = _search(query, words)
+        if found:
+            return found
+    return None
+
+
+def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
     try:
         raw = get(BING.format(up.quote(query)), ttl=6 * 3600, headers=UA, timeout=25).content
     except Exception:                                 # noqa: BLE001 - boundary

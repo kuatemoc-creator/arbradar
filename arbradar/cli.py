@@ -42,6 +42,9 @@ def cmd_build(args, settings, conn):
         return 1
     date = dt.date.today().isoformat()
 
+    filled = enrich.enrich(conn, items)
+    if filled:
+        print("filled in text for {} headline-only stories".format(filled))
     base = (settings.site_url or "").rstrip("/")
     for it in items:
         it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
