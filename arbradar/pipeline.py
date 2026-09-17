@@ -293,7 +293,8 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         "SELECT * FROM items WHERE source LIKE 'US federal docket%' AND relevant=1 AND published_at>=? "
         "AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
         "     OR title LIKE 'IN RE%' OR summary LIKE '%foreign%') "
-        "ORDER BY published_at DESC", (cutoff,), 10)
+        "ORDER BY published_at DESC",
+        ((dt.date.today() - dt.timedelta(days=30)).isoformat(),), 10)   # sovereign petitions are rarer
     return {"docket": docket, "disclosures": disclosures, "courts": courts}
 
 
