@@ -233,6 +233,8 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
     manifest: List[Dict[str, Any]] = []
     if os.path.exists(manifest_path):
         manifest = json.load(open(manifest_path, encoding="utf-8"))
+        # an entry whose page was removed is a dead link on the index
+        manifest = [e for e in manifest if os.path.exists(os.path.join(SITE, e["file"]))]
     known = {e["file"] for e in manifest}
 
     written = []
