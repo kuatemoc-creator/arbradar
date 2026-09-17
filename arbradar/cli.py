@@ -5,7 +5,7 @@ import json
 import logging
 import sys
 
-from . import config, db, email_html, llm, pipeline, render, send as sender
+from . import config, db, email_html, enrich, llm, pipeline, render, send as sender
 
 
 def _log(verbose: bool) -> None:

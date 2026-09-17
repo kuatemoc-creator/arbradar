@@ -14,7 +14,7 @@ from typing import Any, Dict, List
 
 from flask import Flask, jsonify, redirect, request, url_for
 
-from . import config, db, email_html, llm, pipeline, render, send as sender
+from . import config, db, email_html, enrich, llm, pipeline, render, send as sender
 from .taxonomy import EVENT_TYPES
 
 app = Flask(__name__)
@@ -211,6 +211,7 @@ def do_build():
     if not items:
         return redirect(url_for("index", msg="Nothing qualified - lower min_score or widen the window."))
     date = dt.date.today().isoformat()
+    enrich.enrich(conn, items)
     if SETTINGS.use_llm:
         try:
             text = llm.write_issue(items, SETTINGS.editor_model,
