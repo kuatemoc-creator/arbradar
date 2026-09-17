@@ -136,10 +136,12 @@ a{color:var(--link)}
 .wrap{max-width:720px;margin:0 auto;padding:40px 24px 80px}
 .mast{display:flex;justify-content:flex-start;align-items:baseline;gap:0;flex-wrap:wrap;
 padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:28px}
-.brand{font-family:var(--display);font-size:1.25rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-.by{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;padding-left:10px}
-.by a.cl{font-size:.875rem;letter-spacing:-.01em;text-transform:none;font-weight:700;color:var(--ink);text-decoration:none;padding-left:6px}
-.by a.cl:hover{color:var(--link)}
+.brand{font-family:var(--display);font-size:1.375rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.foot{margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+.pub{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.pub span{display:flex;flex-direction:column;font-weight:700;font-size:1rem;line-height:1.2}
+.pub small{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:2px}
+.pub:hover{color:var(--link)}
 .mast .date{font-family:var(--mono);font-size:.75rem;color:var(--mute);margin-left:auto}
 .eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
 h1{font-family:var(--display);font-size:2.125rem;line-height:1.15;letter-spacing:-.015em;
@@ -191,7 +193,7 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
         for x in (it.get("also") or [])[:4]]
     src_html = "".join('<a href="{}" rel="noopener">{}</a>'.format(html.escape(u or "#"), html.escape(s))
                        for s, u in srcs if u)
-    body = """<header class="mast"><a class="brand" href="index.html">{name}</a><span class="by">by <a class="cl" href="https://caselens.tech"><svg width="18" height="18" style="vertical-align:-3px;margin-right:6px;border-radius:4px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg>CaseLens</a></span>
+    body = """<header class="mast"><a class="brand" href="index.html">{name}</a>
 <span class="date">{date}</span></header>
 <div class="eyebrow">{ev}</div>
 <h1>{h}</h1>
@@ -199,7 +201,8 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
 <dl class="facts">{facts}</dl>
 <div class="body">{paras}</div>
 <div class="angle"><b>The angle</b>{angle}</div>
-<div class="src">Sources: {src}</div>""".format(
+<div class="src">Sources: {src}</div>
+<footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(
         name=html.escape(settings.newsletter_name), date=html.escape(date),
         ev=html.escape(ev.get("label", "")), h=html.escape(a.headline), dek=html.escape(a.dek),
         facts=facts, paras=paras, angle=html.escape(a.angle), src=src_html)
@@ -212,11 +215,12 @@ def render_index(entries: List[Dict[str, Any]], settings) -> str:
         d=html.escape(e["date"]), f=html.escape(e["file"]), h=html.escape(e["headline"]),
         dek=html.escape(e["dek"]), ev=html.escape(e["event"]))
         for e in entries)
-    body = """<header class="mast"><a class="brand" href="index.html">{name}</a><span class="by">by <a class="cl" href="https://caselens.tech"><svg width="18" height="18" style="vertical-align:-3px;margin-right:6px;border-radius:4px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg>CaseLens</a></span>
+    body = """<header class="mast"><a class="brand" href="index.html">{name}</a>
 <span class="date">{n} pieces</span></header>
 <h1>{tag}</h1>
 <p class="dek">Short, sourced pieces on where arbitration work is opening up. Each stands alone and can be shared.</p>
-<div class="list">{items}</div>""".format(name=html.escape(settings.newsletter_name), n=len(entries),
+<div class="list">{items}</div>
+<footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(name=html.escape(settings.newsletter_name), n=len(entries),
                                            tag=html.escape(settings.tagline), items=items)
     return _page(settings.newsletter_name, body, settings.tagline, settings.newsletter_name)
 

@@ -144,11 +144,11 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
     else:
         with open(os.path.join(ROOT, "assets", "caselens-mark-64.png"), "rb") as fh:
             src = "data:image/png;base64," + base64.b64encode(fh.read()).decode()
-    mark = ('<img src="{}" width="16" height="16" alt="CaseLens" '
-            'style="vertical-align:-3px;border:0;margin-right:5px;display:inline-block;">'.format(src))
-    brand = ('<a href="https://caselens.tech" style="font-family:{sans};font-size:13px;font-weight:700;'
-             'color:{ink};text-decoration:none;letter-spacing:-0.1px;">{mark}CaseLens</a>'
-             ).format(sans=SANS, ink=INK, mark=mark)
+    mark_lg = ('<a href="https://caselens.tech"><img src="{}" width="32" height="32" alt="CaseLens" '
+               'style="border:0;display:block;"></a>'.format(src))
+    brand = ('<a href="https://caselens.tech" style="font-family:{sans};font-size:15px;font-weight:700;'
+             'color:{ink};text-decoration:none;letter-spacing:-0.1px;">CaseLens</a>'
+             ).format(sans=SANS, ink=INK)
     return """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -168,9 +168,7 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
   <tr><td style="padding:0 0 14px;border-bottom:2px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{serif};font-size:20px;font-weight:bold;letter-spacing:-0.2px;color:{ink};">{name}
-        <span style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};padding-left:10px;">by</span>
-        {brand}</td>
+      <td style="font-family:{serif};font-size:22px;font-weight:bold;letter-spacing:-0.2px;color:{ink};">{name}</td>
       <td align="right" style="font-family:{sans};font-size:12px;color:{mute};white-space:nowrap;">{date}</td>
     </tr></table>
   </td></tr>
@@ -178,7 +176,15 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
     <div style="font-family:{serif};font-size:26px;line-height:1.2;font-weight:bold;color:{ink};">{tagline}</div>
   </td></tr>
   <tr><td style="padding:0 0 8px;">{body}</td></tr>
-  <tr><td style="padding:22px 0 0;border-top:1px solid {line};font-family:{sans};font-size:12px;line-height:1.6;color:{mute};">
+  <tr><td style="padding:26px 0 0;border-top:1px solid {line};">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="padding-right:10px;vertical-align:middle;">{mark_lg}</td>
+      <td style="vertical-align:middle;font-family:{sans};font-size:13px;line-height:1.4;color:{ink};">
+        <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};">Published by</span><br>
+        {brand}</td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="padding:16px 0 0;font-family:{sans};font-size:12px;line-height:1.6;color:{mute};">
     Compiled from {sources}.<br>
     Ranked by likelihood of an open mandate, not by news value. Verify against the underlying record before acting.
   </td></tr>
@@ -188,7 +194,8 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 </body></html>""".format(
         title=html.escape("{} - {}".format(name, date)), preheader=preheader,
         name=html.escape(name), tagline=html.escape(tagline), date=html.escape(date),
-        body=body, sources=html.escape(", ".join(sources) or "primary sources"), brand=brand,
+        body=body, sources=html.escape(", ".join(sources) or "primary sources"),
+        brand=brand, mark_lg=mark_lg,
         sans=SANS, serif=SERIF, ink=INK, mute=MUTE, line=LINE, link=LINK)
 
 
