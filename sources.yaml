@@ -39,17 +39,17 @@ google_news:
 
 # --- RSS feeds (tier 2: reported news) ------------------------------------------
 rss:
-  - {name: GAR,                     url: https://globalarbitrationreview.com/rss,                                 enabled: true}
-  - {name: IAReporter,              url: https://www.iareporter.com/feed/,                                        enabled: true}
-  - {name: Kluwer Arbitration Blog, url: http://arbitrationblog.kluwerarbitration.com/feed/,                     enabled: true}
-  - {name: Jus Mundi,               url: https://blog.jusmundi.com/rss/,                                          enabled: true}
-  - {name: PCA,                     url: https://pca-cpa.org/feed/,                                               enabled: true}
-  - {name: SCC,                     url: https://sccarbitrationinstitute.se/en/feed,                              enabled: true}
-  - {name: HKIAC,                   url: https://www.hkiac.org/rss.xml,                                           enabled: true}
-  - {name: SIAC,                    url: https://siac.org.sg/feed,                                                enabled: true}
-  - {name: IISD ITN,                url: https://www.iisd.org/itn/feed/,                                          enabled: true}
-  - {name: Burford,                 url: https://www.burfordcapital.com/insights/rss/,                            enabled: true}
-  - {name: Reuters Legal,           url: https://www.reuters.com/arc/outboundfeeds/rss/category/legal/?outputType=xml, enabled: true}
+  - {name: GAR,                     url: "https://globalarbitrationreview.com/rss",                                 enabled: true}
+  - {name: IAReporter,              url: "https://www.iareporter.com/feed/",                                        enabled: true}
+  - {name: Kluwer Arbitration Blog, url: "http://arbitrationblog.kluwerarbitration.com/feed/",                     enabled: true}
+  - {name: Jus Mundi,               url: "https://blog.jusmundi.com/rss/",                                          enabled: true}
+  - {name: PCA,                     url: "https://pca-cpa.org/feed/",                                               enabled: true}
+  - {name: SCC,                     url: "https://sccarbitrationinstitute.se/en/feed",                              enabled: true}
+  - {name: HKIAC,                   url: "https://www.hkiac.org/rss.xml",                                           enabled: true}
+  - {name: SIAC,                    url: "https://siac.org.sg/feed",                                                enabled: true}
+  - {name: IISD ITN,                url: "https://www.iisd.org/itn/feed/",                                          enabled: true}
+  - {name: Burford,                 url: "https://www.burfordcapital.com/insights/rss/",                            enabled: true}
+  - {name: Reuters Legal,           url: "https://www.reuters.com/arc/outboundfeeds/rss/category/legal/?outputType=xml", enabled: true}
   # add law-firm newsrooms, funders, institutions here - one line each
 
 # --- Tried and not usable (for the record) ------------------------------------
