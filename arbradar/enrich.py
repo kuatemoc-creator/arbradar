@@ -18,6 +18,9 @@ from .fetch import get
 BING = "https://www.bing.com/news/search?q={}&format=RSS"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/128 Safari/537.36"}
+_NEWSY = ("notice", "dispute", "arbitrat", "claim", "tribunal", "decree", "revok", "award", "seiz", " tax",
+          "licence", "license", "expropriat", "nationalis", "nationaliz", "court", "filed", "million", "billion",
+          "treaty", "icsid", "government", "ministry")
 STOP = set("the a an of to in on for and or with by from at as is are was were be has have had its their "
            "this that over under against into after amid says said new will could may how why who what when "
            "orders order tests test fight ".split())
