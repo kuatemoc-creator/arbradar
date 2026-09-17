@@ -24,7 +24,7 @@ STOP = set("the a an of to in on for and or with by from at as is are was were b
 
 
 def _sig(text: str) -> List[str]:
-    return [w for w in re.findall(r"[A-Za-z][A-Za-z\\-']+", text or "") if len(w) >= 4 and w.lower() not in STOP]
+    return [w for w in re.findall(r"[A-Za-z][A-Za-z'-]+", text or "") if len(w) >= 4 and w.lower() not in STOP]
 
 
 def _stem(w: str) -> str:
