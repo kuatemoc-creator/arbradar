@@ -136,6 +136,39 @@ Use a sending platform and push the built HTML to it. Buttondown and Beehiiv bot
 have simple APIs; Mailchimp works too. The issue HTML is already email-safe
 (tables, inline styles), so it drops straight in. Ask and I will wire the adapter.
 
+## Pre-dispute sources
+
+`gnews` sweeps Google News RSS with a bank of distress queries (notice of dispute,
+notice of intent, expropriation, licence revoked, nationalisation, ECT claims) plus
+one query per watchlist State, so a country you care about is covered even when
+the story never says "arbitration". `gdelt` does the same across non-English press
+with country tagging, throttled to GDELT's one-request-per-five-seconds limit.
+
+Syndicated coverage is clustered into one story per development (`pipeline.cluster`):
+the best-scored version leads, the other outlets hang off it as "also reported by".
+Items with different case numbers are never merged.
+
+## Appointment intelligence
+
+```bash
+./.venv/bin/python -m arbradar.cli intel        # -> out/intel.json + summary
+```
+
+Mines the full ICSID corpus (1,158 cases, 3,195 seats) for who appoints whom:
+claimant/respondent lean per arbitrator, every disqualification and resignation
+with dates, firm-to-arbitrator repeat pairings, tribunals constituted in the last
+year, and a counsel league table split by side.
+
+## Shareable articles
+
+```bash
+./.venv/bin/python -m arbradar.cli articles --limit 6   # -> out/site/
+```
+
+One standalone page per story from the latest issue, in the CaseLens house style,
+with an index. Static HTML - host it as an Artifact, on GitHub Pages, or on your
+own domain. `manifest.json` accumulates across issues so the index becomes an archive.
+
 ## Tuning
 
 `config.yaml` holds the watchlists. The weights are additive multipliers, so

@@ -141,6 +141,16 @@ def cmd_intel(args, settings, conn):
     return 0
 
 
+def cmd_articles(args, settings, conn):
+    from . import articles
+    out = articles.build(conn, settings, limit=args.limit, use_llm=not args.no_llm)
+    print("{} pieces written, {} on the site\n  {}/index.html".format(
+        len(out["written"]), out["total"], out["site"]))
+    for f in out["written"]:
+        print("  " + f)
+    return 0
+
+
 def cmd_serve(args, settings, conn):
     from .web import serve
     print("Review UI on http://{}:{}  (Ctrl-C to stop)".format(args.host, args.port))
@@ -177,6 +187,8 @@ def main(argv=None):
     s.add_argument("--to", help="override recipients (comma separated)")
     i = sub.add_parser("intel", parents=[common], help="ICSID appointment intelligence")
     i.add_argument("--limit", type=int, default=15)
+    a = sub.add_parser("articles", parents=[common, llm_opts], help="short shareable pieces -> out/site")
+    a.add_argument("--limit", type=int, default=6)
     w = sub.add_parser("serve", parents=[common], help="local review UI")
     w.add_argument("--port", type=int, default=8765)
     w.add_argument("--host", default="127.0.0.1")
@@ -195,7 +207,7 @@ def main(argv=None):
     conn = db.connect()
     handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build,
                "run": cmd_run, "top": cmd_top, "send": cmd_send,
-               "serve": cmd_serve, "intel": cmd_intel}[args.cmd]
+               "serve": cmd_serve, "intel": cmd_intel, "articles": cmd_articles}[args.cmd]
     return handler(args, settings, conn)
 
 
