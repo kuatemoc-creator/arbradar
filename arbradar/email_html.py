@@ -100,6 +100,57 @@ def meta_line(it: Dict[str, Any]) -> str:
     return p(line, size=13, lh=1.5, color=MUTE, mb=0)
 
 
+def who(it: Dict[str, Any]) -> str:
+    cl = [c for c in (it.get("claimants") or []) if c]
+    rs = [r for r in (it.get("respondents") or []) if r] or [s for s in (it.get("states") or []) if s]
+    if cl and rs:
+        return "{} v. {}".format(", ".join(cl[:2]), ", ".join(rs[:2]))
+    if cl:
+        return ", ".join(cl[:3])
+    if rs:
+        return "State: " + ", ".join(rs[:2])
+    return ""
+
+
+def what(it: Dict[str, Any]) -> str:
+    ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")
+    text = summary_of(it)
+    if it.get("source") == "ICSID docket":
+        m = re.search(r"Latest step, [^:]+: (.+?)\.?$", text)
+        if m:
+            return "{}: {}".format(ev, m.group(1))
+        return "{}: {}".format(ev, "registered" if it.get("event_type") == "new_case_filed" else ev.lower())
+    if text:
+        first = re.split(r"(?<=[.!?])\s", text, maxsplit=1)[0]
+        return "{}: {}".format(ev, first[:160].rstrip("."))
+    return ev
+
+
+def facts(it: Dict[str, Any]) -> str:
+    """The four questions, answered in the same place every time."""
+    rows = []
+    when = str(it.get("published_at") or "")[:10]
+    try:
+        when_label = date_label(when)
+    except ValueError:
+        when_label = ""
+    for k, v in (("Who", who(it)), ("When", when_label), ("What", what(it)),
+                 ("Why flagged", it.get("flag_reason") or "")):
+        if not v:
+            continue
+        rows.append(
+            '<tr><td valign="top" style="font-family:{sans};font-size:10px;letter-spacing:1.5px;text-transform:uppercase;'
+            'font-weight:700;color:{mute};padding:3px 12px 3px 0;white-space:nowrap;width:74px;">{k}</td>'
+            '<td valign="top" style="font-family:{sans};font-size:13px;line-height:1.45;color:{ink};padding:3px 0;">{v}</td></tr>'.format(
+                sans=SANS, mute=MUTE, ink=INK, k=esc(k), v=esc(v)))
+    if not rows:
+        return ""
+    return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{bg}" '
+            'style="background-color:{bg};margin:8px 0 12px;"><tr><td style="padding:8px 12px;">'
+            '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table>'
+            '</td></tr></table>').format(bg=SUNKEN, rows="".join(rows))
+
+
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
     href = it.get("site_link") or it.get("url") or "#"
     size, lh, mb = (24, 1.2, 8) if lead else (19, 1.3, 6)
@@ -108,6 +159,7 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
             ).format(n=n, serif=SERIF, size=size, lh=lh, ink=INK, mb=mb, href=esc(href), t=esc(title_of(it)))
     body = summary_of(it)
     body_html = p(esc(body[:700 if lead else 420]), size=16 if lead else 15, lh=1.55, mb=8) if body else ""
+    body_html = facts(it) + body_html
     sep = "" if lead else 'border-bottom:1px solid {};'.format(HAIR)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
             '<tr><td style="padding:{pt}px 0 18px;{sep}">{head}{body}{meta}</td></tr></table>').format(

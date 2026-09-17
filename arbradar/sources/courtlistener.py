@@ -73,4 +73,8 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "claimants": parties[:1],
                 "respondents": parties[1:3],
                 "counsel": firms[:5],
+                "flag_reason": ("US federal docket: petition to confirm or enforce an award against a State (FSIA)"
+                                if event_type.endswith(":sovereign") else
+                                "US federal docket: \u00a71782 application" if event_type.startswith("s1782") else
+                                "US federal docket: petition to confirm or vacate an award"),
             }

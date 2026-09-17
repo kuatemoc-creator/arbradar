@@ -72,6 +72,7 @@ MIGRATIONS = (
     ("items", "country", "TEXT"),
     ("items", "title_en", "TEXT"),
     ("items", "summary_en", "TEXT"),
+    ("items", "flag_reason", "TEXT"),
 )
 
 

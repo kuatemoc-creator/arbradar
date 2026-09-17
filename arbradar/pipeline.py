@@ -10,6 +10,7 @@ from urllib.parse import urlsplit, urlunsplit
 from . import db, llm, score as scoring
 from .sources import REGISTRY, TIERS
 from .taxonomy import EVENT_PATTERNS, INSTITUTIONS, SECTORS
+from .sources.editions import states_in
 
 log = logging.getLogger(__name__)
 TRACKING = re.compile(r"^(utm_|fbclid|gclid|mc_|ref$)")
@@ -43,11 +44,17 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
 
     if not item.get("event_type"):
         for event_type, phrases in EVENT_PATTERNS:
-            if any(p in text for p in phrases):
+            hit = next((p for p in phrases if p in text), None)
+            if hit:
                 out["event_type"] = event_type
+                out["flag_reason"] = "matched \u2018{}\u2019 in the text".format(hit.strip())
                 break
         else:
             out["event_type"] = "commentary"
+    if not item.get("states"):
+        found = states_in((item.get("title") or "") + " " + (item.get("summary") or ""))
+        if found:
+            out["states"] = found[:3]
 
     if not item.get("institution"):
         for name, phrases in INSTITUTIONS.items():
@@ -100,6 +107,7 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
                     "counsel": raw.get("counsel") or [],
                     "arbitrators": raw.get("arbitrators") or [],
                     "amount_usd": raw.get("amount_usd"),
+                    "flag_reason": raw.get("flag_reason"),
                     "lang": raw.get("lang") or "en",
                     "country": raw.get("country") or None,
                 }

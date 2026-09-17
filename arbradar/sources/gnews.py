@@ -129,4 +129,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 # A measure story only earns the lead weight when it names an
                 # investor who can pay; otherwise it is policy news.
                 item["event_type"] = "state_measure" if majors else "distress_event"
+                item["flag_reason"] = ("State-measure sweep ({} edition); investor of means named: {}".format(
+                    country or "global", ", ".join(majors[:2])) if majors else
+                    "State-measure sweep ({} edition); no listed investor named".format(country or "global"))
             yield item

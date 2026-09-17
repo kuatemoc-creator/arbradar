@@ -174,3 +174,65 @@ MEASURES: Dict[str, List[str]] = {
     "vi": ['("thu hồi" OR "hủy bỏ" OR "đình chỉ" OR "chấm dứt") ("giấy phép" OR "hợp đồng" OR "dự án") ("nhà đầu tư nước ngoài" OR "doanh nghiệp FDI" OR "công ty nước ngoài")'],
     "uz": ['(bekor OR toʻxtatildi OR "qaytarib olindi") (litsenziya OR ruxsatnoma OR shartnoma OR kontsessiya) (xorijiy OR investor OR kompaniya)'],
 }
+
+
+# State names and demonyms -> canonical State. Used to answer "who" for a press
+# item that no model has read yet.
+COUNTRIES = {}
+for _canon, _forms in {
+    "Argentina": ["Argentina", "Argentine", "Argentinian"], "Armenia": ["Armenia", "Armenian"],
+    "Australia": ["Australia", "Australian"], "Azerbaijan": ["Azerbaijan", "Azerbaijani", "Azeri"],
+    "Belgium": ["Belgium", "Belgian"], "Bolivia": ["Bolivia", "Bolivian"], "Brazil": ["Brazil", "Brazilian"],
+    "Bulgaria": ["Bulgaria", "Bulgarian"], "Burkina Faso": ["Burkina Faso", "Burkinabe"],
+    "Cameroon": ["Cameroon", "Cameroonian"], "Canada": ["Canada", "Canadian"], "Chile": ["Chile", "Chilean"],
+    "China": ["China", "Chinese"], "Colombia": ["Colombia", "Colombian"], "Congo (DRC)": ["DRC", "Congo", "Congolese"],
+    "Croatia": ["Croatia", "Croatian"], "Cyprus": ["Cyprus", "Cypriot"], "Czechia": ["Czech Republic", "Czechia", "Czech"],
+    "Ecuador": ["Ecuador", "Ecuadorian", "Ecuadorean"], "Egypt": ["Egypt", "Egyptian"],
+    "Georgia": ["Georgia", "Georgian"], "Germany": ["Germany", "German"], "Ghana": ["Ghana", "Ghanaian"],
+    "Greece": ["Greece", "Greek"], "Guatemala": ["Guatemala", "Guatemalan"], "Guinea": ["Guinea", "Guinean"],
+    "Honduras": ["Honduras", "Honduran"], "Hungary": ["Hungary", "Hungarian"], "India": ["India", "Indian"],
+    "Indonesia": ["Indonesia", "Indonesian"], "Iraq": ["Iraq", "Iraqi"], "Ireland": ["Ireland", "Irish"],
+    "Italy": ["Italy", "Italian"], "Kazakhstan": ["Kazakhstan", "Kazakh"], "Kenya": ["Kenya", "Kenyan"],
+    "Korea": ["South Korea", "Korea", "Korean"], "Kyrgyzstan": ["Kyrgyzstan", "Kyrgyz"], "Lebanon": ["Lebanon", "Lebanese"],
+    "Libya": ["Libya", "Libyan"], "Malaysia": ["Malaysia", "Malaysian"], "Mali": ["Mali", "Malian"],
+    "Malta": ["Malta", "Maltese"], "Mexico": ["Mexico", "Mexican"], "Moldova": ["Moldova", "Moldovan"],
+    "Mongolia": ["Mongolia", "Mongolian"], "Montenegro": ["Montenegro", "Montenegrin"], "Morocco": ["Morocco", "Moroccan"],
+    "Mozambique": ["Mozambique", "Mozambican"], "Netherlands": ["Netherlands", "Dutch"], "Niger": ["Niger", "Nigerien"],
+    "Nigeria": ["Nigeria", "Nigerian"], "Norway": ["Norway", "Norwegian"], "Pakistan": ["Pakistan", "Pakistani"],
+    "Panama": ["Panama", "Panamanian"], "Paraguay": ["Paraguay", "Paraguayan"], "Peru": ["Peru", "Peruvian"],
+    "Philippines": ["Philippines", "Philippine", "Filipino"], "Poland": ["Poland", "Polish"], "Portugal": ["Portugal", "Portuguese"],
+    "Qatar": ["Qatar", "Qatari"], "Romania": ["Romania", "Romanian"], "Russia": ["Russia", "Russian", "Kremlin", "Putin"],
+    "Saudi Arabia": ["Saudi Arabia", "Saudi"], "Senegal": ["Senegal", "Senegalese"], "Serbia": ["Serbia", "Serbian"],
+    "Slovakia": ["Slovakia", "Slovak"], "Slovenia": ["Slovenia", "Slovenian"], "South Africa": ["South Africa", "South African"],
+    "Spain": ["Spain", "Spanish"], "Sri Lanka": ["Sri Lanka", "Sri Lankan"], "Tanzania": ["Tanzania", "Tanzanian"],
+    "Tajikistan": ["Tajikistan", "Tajik"], "Turkey": ["Turkey", "Türkiye", "Turkish"], "Turkmenistan": ["Turkmenistan", "Turkmen"],
+    "Uganda": ["Uganda", "Ugandan"], "Ukraine": ["Ukraine", "Ukrainian"], "United Arab Emirates": ["UAE", "United Arab Emirates", "Emirati"],
+    "United Kingdom": ["United Kingdom", "Britain", "British", "UK"], "United States": ["United States", "U.S.", "US government"],
+    "Uruguay": ["Uruguay", "Uruguayan"], "Uzbekistan": ["Uzbekistan", "Uzbek"], "Venezuela": ["Venezuela", "Venezuelan"],
+    "Vietnam": ["Vietnam", "Vietnamese"], "Zambia": ["Zambia", "Zambian"], "Zimbabwe": ["Zimbabwe", "Zimbabwean"],
+    "Algeria": ["Algeria", "Algerian"], "Angola": ["Angola", "Angolan"], "Bangladesh": ["Bangladesh", "Bangladeshi"],
+    "Bosnia and Herzegovina": ["Bosnia", "Bosnian"], "Costa Rica": ["Costa Rica", "Costa Rican"], "Dominican Republic": ["Dominican Republic", "Dominican"],
+    "El Salvador": ["El Salvador", "Salvadoran"], "Ethiopia": ["Ethiopia", "Ethiopian"], "Jordan": ["Jordan", "Jordanian"],
+    "Kuwait": ["Kuwait", "Kuwaiti"], "Laos": ["Laos", "Lao"], "Latvia": ["Latvia", "Latvian"], "Lithuania": ["Lithuania", "Lithuanian"],
+    "Madagascar": ["Madagascar", "Malagasy"], "Myanmar": ["Myanmar", "Burmese"], "Nicaragua": ["Nicaragua", "Nicaraguan"],
+    "Oman": ["Oman", "Omani"], "Papua New Guinea": ["Papua New Guinea", "PNG"], "Sierra Leone": ["Sierra Leone"],
+    "Sudan": ["Sudan", "Sudanese"], "Tunisia": ["Tunisia", "Tunisian"], "Yemen": ["Yemen", "Yemeni"],
+}.items():
+    for _f in _forms:
+        COUNTRIES[_f] = _canon
+
+_COUNTRY_RE = None
+
+
+def states_in(text: str):
+    """Canonical States named in a text, longest form first, whole words only."""
+    global _COUNTRY_RE
+    if _COUNTRY_RE is None:
+        forms = sorted(COUNTRIES, key=len, reverse=True)
+        _COUNTRY_RE = __import__("re").compile(r"(?<![\w-])(" + "|".join(__import__("re").escape(f) for f in forms) + r")(?![\w-])")
+    out = []
+    for m in _COUNTRY_RE.finditer(text or ""):
+        c = COUNTRIES[m.group(1)]
+        if c not in out:
+            out.append(c)
+    return out

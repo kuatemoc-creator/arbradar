@@ -164,6 +164,11 @@ def _emit(case: Dict, proc: Dict, event_type: str, when: dt.date,
         "respondents": [_clean(case.get("respondent_state") or case.get("partiessub") or "")] or [],
         "counsel": claimant_firms + respondent_firms,
         "arbitrators": [a for a in arbitrators if a],
+        "flag_reason": "ICSID docket: " + ("case registered" if event_type == "new_case_filed" else
+                                           "award rendered" if event_type == "award_issued" else
+                                           "annulment step" if event_type == "annulment_setaside" else
+                                           "tribunal change" if event_type == "tribunal_constituted" else
+                                           "procedural step"),
     }
 
 

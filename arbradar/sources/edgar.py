@@ -101,4 +101,5 @@ def run(days: int = 7, forms: str = "8-K,6-K,20-F,10-Q,10-K") -> Iterator[Dict]:
                     src.get("form"), src.get("file_date"), quoted),
                 "published_at": src.get("file_date"),
                 "case_ref": acc,
+                "flag_reason": "SEC {} filing text contains \u2018{}\u2019".format(src.get("form"), q.strip('"').split('" "')[0]),
             }

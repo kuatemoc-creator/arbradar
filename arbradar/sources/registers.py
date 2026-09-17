@@ -102,4 +102,5 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "respondents": [state],
                 "states": [state],
                 "claimants": [name],
+                "flag_reason": "{}: entry dated {}".format(label, when.isoformat()),
             }

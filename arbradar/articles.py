@@ -47,8 +47,15 @@ def _slug(text: str, date: str) -> str:
 
 
 def _facts(it: Dict[str, Any]) -> List[List[str]]:
+    from .email_html import who, what, date_label
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    rows = [["Signal", ev.get("label", "")]]
+    when = str(it.get("published_at") or "")[:10]
+    try:
+        when_label = date_label(when)
+    except ValueError:
+        when_label = when
+    rows = [["Who", who(it)], ["When", when_label], ["What", what(it)],
+            ["Why flagged", it.get("flag_reason") or ""]]
     if it.get("institution"):
         rows.append(["Forum", it["institution"]])
     if it.get("case_ref"):
@@ -65,7 +72,6 @@ def _facts(it: Dict[str, Any]) -> List[List[str]]:
         rows.append(["Counsel on record", "; ".join(it["counsel"][:4])])
     elif (it.get("source_tier") or 2) == 1:
         rows.append(["Counsel on record", "None listed"])
-    rows.append(["Published", str(it.get("published_at") or "")[:10]])
     return rows
 
 

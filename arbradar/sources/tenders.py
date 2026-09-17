@@ -86,6 +86,7 @@ def _ted(days: int) -> Iterator[Dict]:
                 "respondents": [buyer] if buyer else [],
                 "states": [country] if country else [],
                 "case_ref": pub,
+                "flag_reason": "TED procurement notice for arbitration or legal services",
             }
 
 
@@ -142,6 +143,8 @@ def _prozorro(days: int) -> Iterator[Dict]:
                 "states": ["Ukraine"],
                 "case_ref": tid,
                 "amount_usd": usd,
+                "flag_reason": "Prozorro tender for legal representation{}".format(
+                    ", US${:,.0f}".format(usd) if usd else ""),
                 "lang": "uk",
             }
 
