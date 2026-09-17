@@ -42,7 +42,8 @@ def title_of(it: Dict[str, Any]) -> str:
 
 
 def summary_of(it: Dict[str, Any]) -> str:
-    text = re.sub(r"\s+", " ", it.get("summary_en") or it.get("summary") or "").strip()
+    raw = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
+    text = re.sub(r"\s+", " ", raw).replace("\xa0", " ").strip()
     t = (it.get("title") or "").strip().lower()
     return "" if (t and text.lower().startswith(t[:40])) else text
 

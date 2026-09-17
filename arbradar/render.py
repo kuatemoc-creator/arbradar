@@ -105,8 +105,8 @@ def _headline(it: Dict[str, Any], settings, date: str) -> str:
 
 
 def _summary(it: Dict[str, Any]) -> str:
-    text = it.get("summary_en") or it.get("summary") or ""
-    text = re.sub(r"\s+", " ", text).strip()
+    text = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
+    text = re.sub(r"\s+", " ", text).replace("\xa0", " ").strip()
     title = (it.get("title") or "").strip().lower()
     if title and text.lower().startswith(title[:40]):
         return ""
