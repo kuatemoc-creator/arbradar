@@ -33,19 +33,22 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
         lines.append("_Nothing in this window met the threshold._")
         return "\n".join(lines)
 
-    lines.append("{} developments this week, in order of how likely each is to lead to "
-                 "new instructions.".format(len(items)))
+    lines.append("{} developments this week.".format(len(items)))
     lines.append("")
     lead, rest = items[0], items[1:]
-    lines += ["## Lead", "", _headline(lead, settings, date), "",
-              _summary(lead)[:600], "", _meta_line(lead), ""]
+    lines += ["## Lead", "", _headline(lead, settings, date), ""]
+    if _summary(lead):
+        lines += [_summary(lead)[:600], ""]
+    lines += [_meta_line(lead), ""]
     if rest:
-        lines += ["## Where the work is", ""]
+        lines += ["## Developments", ""]
         for it in rest[:8]:
-            lines += [_headline(it, settings, date), "",
-                      _summary(it)[:400], "", _meta_line(it), ""]
+            lines += [_headline(it, settings, date), ""]
+            if _summary(it):
+                lines += [_summary(it)[:400], ""]
+            lines += [_meta_line(it), ""]
     if len(rest) > 8:
-        lines += ["## Also moving", ""]
+        lines += ["## In brief", ""]
         for it in rest[8:]:
             lines.append("- [{}]({}) - {}".format(
                 _title(it)[:120], it["url"],
@@ -71,12 +74,11 @@ def _headline(it: Dict[str, Any], settings, date: str) -> str:
 
 
 def _summary(it: Dict[str, Any]) -> str:
-    text = it.get("summary_en") or it.get("why_it_matters") or it.get("summary") or ""
+    text = it.get("summary_en") or it.get("summary") or ""
     text = re.sub(r"\s+", " ", text).strip()
     title = (it.get("title") or "").strip().lower()
     if title and text.lower().startswith(title[:40]):
-        ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-        return it.get("why_it_matters") or ev.get("why", "")
+        return ""
     return text
 
 
@@ -185,8 +187,7 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
     </tr></table>
   </td></tr>
   <tr><td style="padding:16px 0 0;font-family:{sans};font-size:12px;line-height:1.6;color:{mute};">
-    Compiled from {sources}.<br>
-    Ranked by likelihood of an open mandate, not by news value. Verify against the underlying record before acting.
+    Compiled from {sources}. Verify against the underlying record before relying on any item.
   </td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->

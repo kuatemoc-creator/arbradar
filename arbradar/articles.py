@@ -30,13 +30,13 @@ class Article(BaseModel):
                                  "cares. Not a summary of the headline.")
     paragraphs: List[str] = Field(description="Two or three paragraphs, 130-180 words in total. "
                                               "Only facts present in the source. No hedging.")
-    angle: str = Field(description="One sentence naming where the mandate is and who may still need counsel.")
+    angle: str = Field("", description="Leave empty.")
 
 
-ARTICLE_SYSTEM = """You write short standalone pieces for arbitration practitioners who are looking \
-for cases to take. The reader is a partner. They know the law; they want the commercial fact, the \
-procedural posture, and where the work is. Never invent a party, amount, treaty or firm that is not \
-in the source. If counsel is on record, say so plainly - it tells the reader the seat is taken.
+ARTICLE_SYSTEM = """You write short standalone news pieces for international arbitration practitioners. \
+The reader is a partner. Report the development: the commercial fact, the parties, the forum, the \
+procedural posture, and who is on record. Do not explain why it matters to their practice or what \
+they should do; they will see it. Never invent a party, amount, treaty or firm that is not in the source.
 
 """ + llm.HOUSE_STYLE
 
@@ -81,18 +81,11 @@ def _template_article(it: Dict[str, Any]) -> Article:
     # A dek is one whole sentence or nothing. Never chop a sentence and stamp a
     # full stop on the stump - use the ranking reason instead.
     dek = sentences[0] if sentences else ""
-    if not dek or len(dek.split()) > 34 or dek.lower().startswith(it.get("title", "").lower()[:30]):
-        dek = ev.get("why", "")
+    if len(dek.split()) > 34 or dek.lower().startswith(it.get("title", "").lower()[:30]):
+        dek = ""
 
-    counsel = it.get("counsel") or []
-    parts = [it.get("why_it_matters") or ev.get("why", "")]
-    if counsel:
-        parts.append("{} already on the record for at least one side.".format(
-            " and ".join(counsel[:2]) + (" are" if len(counsel) > 1 else " is")))
-    elif (it.get("source_tier") or 2) == 1:
-        parts.append("The record shows no counsel yet.")
     return Article(headline=(it.get("title_en") or it.get("title", ""))[:120], dek=dek,
-                   paragraphs=body, angle=" ".join(parts).strip())
+                   paragraphs=body, angle="")
 
 
 def write_article(it: Dict[str, Any], model: str) -> Optional[Article]:
@@ -197,28 +190,28 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
 <span class="date">{date}</span></header>
 <div class="eyebrow">{ev}</div>
 <h1>{h}</h1>
-<p class="dek">{dek}</p>
+{dek}
 <dl class="facts">{facts}</dl>
 <div class="body">{paras}</div>
-<div class="angle"><b>The angle</b>{angle}</div>
 <div class="src">Sources: {src}</div>
 <footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(
         name=html.escape(settings.newsletter_name), date=html.escape(date),
-        ev=html.escape(ev.get("label", "")), h=html.escape(a.headline), dek=html.escape(a.dek),
-        facts=facts, paras=paras, angle=html.escape(a.angle), src=src_html)
+        ev=html.escape(ev.get("label", "")), h=html.escape(a.headline),
+        dek='<p class="dek">{}</p>'.format(html.escape(a.dek)) if a.dek else "",
+        facts=facts, paras=paras, src=src_html)
     return _page(a.headline, body, a.dek, settings.newsletter_name)
 
 
 def render_index(entries: List[Dict[str, Any]], settings) -> str:
     items = "".join("""<div class="item"><div class="d">{d}</div><div>
-<a class="h" href="{f}">{h}</a><p>{dek}</p><span class="pill">{ev}</span></div></div>""".format(
+<a class="h" href="{f}">{h}</a>{dek}<span class="pill">{ev}</span></div></div>""".format(
         d=html.escape(e["date"]), f=html.escape(e["file"]), h=html.escape(e["headline"]),
-        dek=html.escape(e["dek"]), ev=html.escape(e["event"]))
+        dek="<p>{}</p>".format(html.escape(e["dek"])) if e.get("dek") else "", ev=html.escape(e["event"]))
         for e in entries)
     body = """<header class="mast"><a class="brand" href="index.html">{name}</a>
 <span class="date">{n} pieces</span></header>
 <h1>{tag}</h1>
-<p class="dek">Short, sourced pieces on where arbitration work is opening up. Each stands alone and can be shared.</p>
+<p class="dek">News and developments in international arbitration, one page per story.</p>
 <div class="list">{items}</div>
 <footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(name=html.escape(settings.newsletter_name), n=len(entries),
                                            tag=html.escape(settings.tagline), items=items)

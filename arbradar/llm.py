@@ -64,8 +64,8 @@ class Extraction(BaseModel):
     counsel: List[str] = Field([], description="Law firms already acting, if named.")
     arbitrators: List[str] = []
     why_it_matters: str = Field(
-        description="One sentence, max 30 words, addressed to a partner deciding "
-                    "whether to chase this. Say who may still need counsel.")
+        description="One neutral sentence on the procedural posture: what stage the "
+                    "matter is at and what happens next. No advice.")
 
 
 # --------------------------------------------------------------------------
@@ -190,10 +190,11 @@ def extract(item: Dict[str, Any], model: str) -> Optional[Extraction]:
 EDITOR_SYSTEM = """You write {name}, a newsletter for international arbitration \
 practitioners who are looking for cases to take on.
 
-Your reader is a partner or senior counsel. They already know what ICSID is. They do not \
-need the law explained. They need to know, for each item: what happened, and where the \
-work is. Be concrete about which side may still be unrepresented, which jurisdictions will \
-need local counsel, and what the timing pressure is.
+Your reader is a partner or senior counsel. They already know what ICSID is and what a \
+notice of dispute means. Report the development: what happened, between whom, in which \
+forum, at what stage, with which counsel and arbitrators on record. Do not explain the \
+significance to their practice and do not suggest what they should do about it. They will \
+draw their own conclusions; being told is an insult.
 
 House style:
 - Lead with the commercial fact, not the procedural one.
@@ -213,11 +214,10 @@ Return GitHub-flavoured Markdown only. Structure:
 Two or three sentences naming the single most valuable development and why.
 ## Lead
 The top item, three or four sentences.
-## Where the work is
+## Developments
 Three to six items, each as `### <headline>` plus two or three sentences, ordered by the \
-score supplied. End each with a bolded **Where the work is:** line naming who may still \
-need counsel and in which forum.
-## Also moving
+score supplied. Where counsel or arbitrators are on record, name them.
+## In brief
 Bulleted one-liners for the remainder.
 """
 
