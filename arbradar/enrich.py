@@ -63,20 +63,29 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
     except Exception:                                 # noqa: BLE001 - boundary
         return None
     ours = {_stem(w) for w in words}
+    best, best_score = None, None
     for e in feedparser.parse(raw).entries[:8]:
         title = e.get("title") or ""
         theirs = {_stem(w) for w in _sig(title)}
         shared = len(ours & theirs)
         if shared < max(2, min(3, len(ours) // 2)):
-            continue
+            continue                                  # a different story
         text = html.unescape(re.sub(r"<[^>]+>", " ", e.get("summary") or e.get("description") or ""))
-        text = re.sub(r"\\s+", " ", text).strip()
+        text = re.sub(r"\s+", " ", text).strip()
         if len(text) < 60:
             continue
-        outlet = ((e.get("source") or {}).get("title")) or ""
-        return {"summary": text.rstrip(" .\\u2026") + ("." if not text.endswith(".") else ""),
-                "url": _publisher_url(e.get("link") or ""), "outlet": outlet, "title": title}
-    return None
+        # Title overlap only gates the match. The snippet's own content decides:
+        # a sentence that states the development beats a company's boilerplate
+        # opening ("X, the leading developer of...").
+        newsy = sum(1 for k in _NEWSY if k in text.lower())
+        boilerplate = bool(re.match(r"^[A-Z][\w .&'-]{0,40}, (the|a) ", text))
+        score = newsy * 2 - (5 if boilerplate else 0) + min(shared, 3) * 0.5
+        if best_score is None or score > best_score:
+            outlet = ((e.get("source") or {}).get("title")) or ""
+            best, best_score = {"summary": text.rstrip(" .\u2026") + ".",
+                                "url": _publisher_url(e.get("link") or ""),
+                                "outlet": outlet, "title": title}, score
+    return best
 
 
 def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
