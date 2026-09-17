@@ -183,9 +183,9 @@ def _page(title: str, body: str, desc: str, name: str) -> str:
 
 
 def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
-    ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    facts = "".join("<div><dt>{}</dt><dd>{}</dd></div>".format(html.escape(k), html.escape(v))
-                    for k, v in _facts(it) if v)
+    from .email_html import SHORT
+    ev = {"label": SHORT.get(it.get("event_type") or "commentary", "Note")
+                    + (" \u00b7 " + it["institution"] if it.get("institution") else "")}
     paras = "".join("<p>{}</p>".format(html.escape(p)) for p in a.paragraphs)
     srcs = [(it.get("source") or "source", it.get("url"))] + [
         ((x.get("source") or "source").replace("Google News / ", ""), x.get("url"))
@@ -197,14 +197,13 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
 <div class="eyebrow">{ev}</div>
 <h1>{h}</h1>
 {dek}
-<dl class="facts">{facts}</dl>
 <div class="body">{paras}</div>
-<div class="src">Sources: {src}</div>
+<div class="src">{src}</div>
 <footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(
         name=html.escape(settings.newsletter_name), date=html.escape(date),
         ev=html.escape(ev.get("label", "")), h=html.escape(a.headline),
-        dek='<p class="dek">{}</p>'.format(html.escape(a.dek)) if a.dek else "",
-        facts=facts, paras=paras, src=src_html)
+        dek='<p class="dek">{}</p>'.format(html.escape(a.dek)) if (a.dek and a.dek not in " ".join(a.paragraphs)) else "",
+        paras=paras, src=src_html)
     return _page(a.headline, body, a.dek, settings.newsletter_name)
 
 
@@ -256,8 +255,9 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
         fname = story_slug(it, date)
         with open(os.path.join(SITE, fname), "w", encoding="utf-8") as fh:
             fh.write(render_article(art, it, settings, date))
+        from .email_html import SHORT
         entry = {"file": fname, "date": date, "headline": art.headline, "dek": art.dek,
-                 "event": EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")}
+                 "event": SHORT.get(it.get("event_type") or "commentary", "Note")}
         if fname in known:
             # Regenerated page: refresh its entry rather than keep the old copy.
             manifest = [entry if e["file"] == fname else e for e in manifest]

@@ -28,6 +28,13 @@ MONO = "'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
 P = ('font-family:{sans};font-size:{size}px;line-height:{lh};color:{color};margin:0 0 {mb}px;'
      'mso-line-height-rule:exactly;')
 
+# One or two words above the headline. That is the whole "why it is here".
+SHORT = {"notice_of_intent": "Notice of dispute", "s1782_application": "§1782 application",
+         "new_case_filed": "New case", "enforcement_action": "Enforcement", "annulment_setaside": "Annulment",
+         "state_measure": "State measure", "distress_event": "State measure", "award_issued": "Award",
+         "treaty_action": "Treaty", "funding": "Funding", "tribunal_constituted": "Tribunal",
+         "lateral_move": "Move", "counsel_tender": "Tender for counsel", "commentary": "Note"}
+
 
 def esc(s: Any) -> str:
     return html.escape(str(s or ""))
@@ -169,25 +176,51 @@ def facts(it: Dict[str, Any]) -> str:
             '</td></tr></table>').format(bg=SUNKEN, rows="".join(rows))
 
 
+def eyebrow(it: Dict[str, Any]) -> str:
+    bits = [SHORT.get(it.get("event_type") or "commentary", "Note")]
+    if it.get("institution") and it["institution"] not in bits[0]:
+        bits.append(it["institution"])
+    return ('<div style="font-family:{sans};font-size:11px;letter-spacing:1.6px;text-transform:uppercase;'
+            'font-weight:700;color:{mute};margin:0 0 6px;">{t}</div>').format(
+        sans=SANS, mute=MUTE, t=esc(" \u00b7 ".join(bits)))
+
+
+def source_line(it: Dict[str, Any]) -> str:
+    src = (it.get("source") or "source").replace("Google News / ", "")
+    when = str(it.get("published_at") or "")[:10]
+    try:
+        d = dt.date.fromisoformat(when)
+        when_label = "{} {}".format(d.day, d.strftime("%B"))
+    except ValueError:
+        when_label = ""
+    bits = [a(it.get("url") or "#", src, color=MUTE)]
+    if when_label:
+        bits.append(esc(when_label))
+    also = [x for x in (it.get("also") or []) if x.get("url")][:4]
+    if also:
+        bits.append("also " + ", ".join(
+            a(x["url"], (x.get("source") or "source").replace("Google News / ", ""), color=MUTE) for x in also))
+    return p(" \u00b7 ".join(bits), size=13, lh=1.5, color=MUTE, mb=0)
+
+
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
     href = it.get("site_link") or it.get("url") or "#"
-    size, lh, mb = (24, 1.2, 8) if lead else (19, 1.3, 6)
+    size, lh = (24, 1.2) if lead else (19, 1.3)
     head = ('<h3 id="s{n}" style="font-family:{serif};font-size:{size}px;line-height:{lh};font-weight:bold;'
-            'color:{ink};margin:0 0 {mb}px;"><a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>'
-            ).format(n=n, serif=SERIF, size=size, lh=lh, ink=INK, mb=mb, href=esc(href), t=esc(title_of(it)))
+            'color:{ink};margin:0 0 8px;"><a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>'
+            ).format(n=n, serif=SERIF, size=size, lh=lh, ink=INK, href=esc(href), t=esc(title_of(it)))
     body = summary_of(it)
-    body_html = p(esc(body[:700 if lead else 420]), size=16 if lead else 15, lh=1.55, mb=8) if body else ""
-    body_html = facts(it) + body_html
+    body_html = p(esc(_clip(body, 700 if lead else 460)), size=16 if lead else 15, lh=1.55, mb=8) if body else ""
     sep = "" if lead else 'border-bottom:1px solid {};'.format(HAIR)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-            '<tr><td style="padding:{pt}px 0 18px;{sep}">{head}{body}{meta}</td></tr></table>').format(
-        pt=4 if lead else 18, sep=sep, head=head, body=body_html, meta=meta_line(it))
+            '<tr><td style="padding:{pt}px 0 18px;{sep}">{eye}{head}{body}{src}</td></tr></table>').format(
+        pt=4 if lead else 18, sep=sep, eye=eyebrow(it), head=head, body=body_html, src=source_line(it))
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
     rows = []
     for it in items:
-        ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")
+        ev = SHORT.get(it.get("event_type") or "commentary", "Note")
         rows.append('<li style="{}">{} <span style="color:{};">&middot; {}</span></li>'.format(
             P.format(sans=SANS, size=15, lh=1.5, color=INK, mb=8), a(it.get("url") or "#", title_of(it)[:120], color=INK),
             MUTE, esc(ev)))
