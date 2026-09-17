@@ -85,10 +85,12 @@ def _firm(raw: str) -> str:
     firms contain commas too, so strip trailing geography rather than cutting at
     the first comma: 'Kellogg, Hansen, Todd, Figel & Frederick, Washington, D.C., U.S.A.'
     must come back whole."""
-    raw = re.split(r"\s+and\s+(?=[A-Z][a-z]+,)", raw)[0]       # drop second offices
-    parts = [x.strip() for x in raw.split(",")]
+    raw = re.split(r",?\s+and\s+(?=[A-Z][a-z]+,)", raw)[0]     # drop second offices
+    parts = [x.strip() for x in raw.split(",") if x.strip()]
+    geo = re.compile(r"^(Republic|Kingdom|State|Commonwealth|Federal|Federation|United|People|Principality|"
+                     r"Grand Duchy|Sultanate|Emirate|Union) ", re.I)
     while len(parts) > 1 and (parts[-1] in _GEO or re.fullmatch(r"[A-Z]{2}", parts[-1])
-                              or parts[-1].endswith((" S.A.R.", ".U.S.A."))):
+                              or geo.match(parts[-1]) or parts[-1].endswith(("U.S.A.", "U.K."))):
         parts.pop()
     return ", ".join(parts).strip()
 
@@ -124,9 +126,9 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
     cf = [_firm(x) for x in _split_names(proc.get("claimant") or case.get("claimant"))]
     rf = [_firm(x) for x in _split_names(proc.get("respondent") or case.get("respondent"))]
     if cf:
-        parts.append("For the claimant: {}.".format(", ".join(dict.fromkeys(cf))))
+        parts.append("For the claimant: {}.".format(", ".join(list(dict.fromkeys(cf))[:6])))
     if rf:
-        parts.append("For the State: {}.".format(", ".join(dict.fromkeys(rf))))
+        parts.append("For the State: {}.".format(", ".join(list(dict.fromkeys(rf))[:6])))
     seats = [_seat(x) for x in _split_names(proc.get("president"))] + \
             [_seat(x) for x in _split_names(proc.get("arbitrators"))]
     if seats:
