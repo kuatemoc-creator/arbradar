@@ -14,7 +14,7 @@ from typing import Any, Dict, List
 
 from flask import Flask, jsonify, redirect, request, url_for
 
-from . import config, db, llm, pipeline, render, send as sender
+from . import config, db, email_html, llm, pipeline, render, send as sender
 from .taxonomy import EVENT_TYPES
 
 app = Flask(__name__)
@@ -219,10 +219,13 @@ def do_build():
             text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS,
                                         extras=pipeline.record_extras(conn, SETTINGS, items))
     else:
-        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS,
-                                        extras=pipeline.record_extras(conn, SETTINGS, items))
-    paths = render.write_issue(text, items, SETTINGS, date=date)
-    subject = "{} - {}".format(SETTINGS.newsletter_name, date)
+        extras = pipeline.record_extras(conn, SETTINGS, items)
+        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS, extras=extras)
+        built = email_html.build(items, extras, SETTINGS, date)
+    paths = render.write_issue(text, items, SETTINGS, date=date,
+                               html_doc=built["html"] if 'built' in dir() else None)
+    subject = built["subject"] if 'built' in dir() else "{} · {}".format(
+        SETTINGS.newsletter_name, email_html.date_label(date))
     cur = conn.execute(
         "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
         "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",

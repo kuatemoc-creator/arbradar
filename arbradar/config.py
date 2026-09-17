@@ -27,6 +27,7 @@ class Settings:
     tagline: str = "Mandate intelligence for arbitration counsel"
     editor: str = ""
     site_url: str = ""          # public base URL of the article site; empty = link sources only
+    unsubscribe_url: str = ""   # newsletter platform unsubscribe link; empty = mailto
     timezone: str = "Asia/Yerevan"
     lookback_days: int = 7
     max_items_per_issue: int = 25

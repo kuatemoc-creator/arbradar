@@ -232,7 +232,7 @@ def to_html(markdown_text: str, name: str, tagline: str, date: str,
 
 
 def write_issue(markdown_text: str, items: List[Dict[str, Any]], settings,
-                date: str = None) -> Dict[str, str]:
+                date: str = None, html_doc: str = None) -> Dict[str, str]:
     os.makedirs(OUT_DIR, exist_ok=True)
     date = date or dt.date.today().isoformat()
     slug = "issue-{}".format(date)
@@ -242,6 +242,6 @@ def write_issue(markdown_text: str, items: List[Dict[str, Any]], settings,
     with open(md_path, "w", encoding="utf-8") as fh:
         fh.write(markdown_text)
     with open(html_path, "w", encoding="utf-8") as fh:
-        fh.write(to_html(markdown_text, settings.newsletter_name,
-                         settings.tagline, date, items, getattr(settings, "site_url", "")))
+        fh.write(html_doc or to_html(markdown_text, settings.newsletter_name,
+                                     settings.tagline, date, items, getattr(settings, "site_url", "")))
     return {"md": md_path, "html": html_path}

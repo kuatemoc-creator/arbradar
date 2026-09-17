@@ -19,7 +19,7 @@ apis:
   tenders:
     enabled: true
     what: States and state enterprises procuring arbitration counsel - TED (EU) and Prozorro (Ukraine)
-    endpoints: [https://api.ted.europa.eu/v3/notices/search, https://prozorro.gov.ua/api/search/tenders]
+    endpoints: ["https://api.ted.europa.eu/v3/notices/search", "https://prozorro.gov.ua/api/search/tenders"]
   gdelt:
     enabled: true
     what: global news with country tagging, non-English press; throttled to one request per 5 s
@@ -27,7 +27,7 @@ apis:
   registers:
     enabled: true
     what: government ISDS registers - notices of intent and cases published by Canada (GAC) and the United States (State Dept L/CID)
-    endpoints: [https://www.international.gc.ca/trade-agreements-accords-commerciaux/topics-domaines/disp-diff/gov.aspx?lang=eng, https://www.state.gov/office-of-international-claims-and-investment-disputes/usmca-investor-state-arbitrations, https://www.state.gov/nafta-investor-state-arbitrations]
+    endpoints: ["https://www.international.gc.ca/trade-agreements-accords-commerciaux/topics-domaines/disp-diff/gov.aspx?lang=eng", "https://www.state.gov/office-of-international-claims-and-investment-disputes/usmca-investor-state-arbitrations", "https://www.state.gov/nafta-investor-state-arbitrations"]
     note: Mexico's Secretaría de Economía register (gob.mx) sits behind a bot challenge; its press is covered by the Google News sweep
   pca:
     enabled: true

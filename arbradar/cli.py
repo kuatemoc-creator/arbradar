@@ -5,7 +5,7 @@ import json
 import logging
 import sys
 
-from . import config, db, llm, pipeline, render, send as sender
+from . import config, db, email_html, llm, pipeline, render, send as sender
 
 
 def _log(verbose: bool) -> None:
@@ -56,11 +56,14 @@ def cmd_build(args, settings, conn):
             print("editorial pass failed ({}); falling back to template".format(exc))
             text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
     else:
-        text = render.fallback_markdown(items, settings.newsletter_name, date, settings,
-                                        extras=pipeline.record_extras(conn, settings, items))
+        extras = pipeline.record_extras(conn, settings, items)
+        text = render.fallback_markdown(items, settings.newsletter_name, date, settings, extras=extras)
+        built = email_html.build(items, extras, settings, date)
 
-    paths = render.write_issue(text, items, settings, date=date)
-    subject = "{} - {}".format(settings.newsletter_name, date)
+    paths = render.write_issue(text, items, settings, date=date,
+                               html_doc=built["html"] if 'built' in dir() else None)
+    subject = built["subject"] if 'built' in dir() else "{} · {}".format(
+        settings.newsletter_name, email_html.date_label(date))
     cur = conn.execute(
         "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
         "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",
