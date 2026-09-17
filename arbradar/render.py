@@ -5,6 +5,7 @@ grid. Outlook still renders with Word's engine and will mangle anything modern.
 """
 import datetime as dt
 import html
+import re
 import os
 from typing import Any, Dict, List
 
@@ -13,9 +14,13 @@ import markdown as md
 from .config import OUT_DIR
 from .taxonomy import EVENT_TYPES
 
-CSS_BODY = "margin:0;padding:0;background:#f4f4f2;"
-WRAP = ("max-width:640px;margin:0 auto;background:#ffffff;"
-        "font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;")
+# CaseLens light palette as plain hex. Mail clients do not understand CSS
+# variables, oklch, web fonts, flexbox or dark-mode media queries, so the
+# email is one light theme, tables and inline styles only.
+INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
+LINE, HAIR, SUNKEN, LINK, ACCENT = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df", "#4D68F9"
+SERIF = "Georgia,'Times New Roman',Times,serif"
+SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 
 def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str) -> str:
@@ -75,34 +80,65 @@ def _meta_line(it: Dict[str, Any]) -> str:
 def to_html(markdown_text: str, name: str, tagline: str, date: str,
             items: List[Dict[str, Any]]) -> str:
     body = md.markdown(markdown_text, extensions=["extra", "sane_lists"])
-    # Style the generated tags inline so mail clients behave.
+    # The issue title is already in the masthead; drop the generated h1.
+    body = re.sub(r"<h1>.*?</h1>\s*", "", body, count=1, flags=re.S)
     body = (body
-            .replace("<h1>", '<h1 style="font-size:26px;line-height:1.2;margin:0 0 6px;">')
-            .replace("<h2>", '<h2 style="font-size:13px;letter-spacing:.14em;'
-                             'text-transform:uppercase;color:#8a7a5c;border-top:1px solid #e3ded3;'
-                             'padding-top:18px;margin:32px 0 12px;">')
-            .replace("<h3>", '<h3 style="font-size:18px;line-height:1.3;margin:22px 0 6px;">')
-            .replace("<p>", '<p style="font-size:16px;line-height:1.6;margin:0 0 12px;">')
-            .replace("<li>", '<li style="font-size:15px;line-height:1.55;margin:0 0 8px;">')
-            .replace("<a ", '<a style="color:#7a1f2b;text-decoration:underline;" '))
+            .replace("<h2>", '<h2 style="font-family:{sans};font-size:11px;letter-spacing:2px;'
+                             'text-transform:uppercase;font-weight:700;color:{mute};'
+                             'border-top:1px solid {line};padding-top:22px;margin:34px 0 14px;">')
+            .replace("<h3>", '<h3 style="font-family:{serif};font-size:19px;line-height:1.3;'
+                             'font-weight:bold;color:{ink};margin:24px 0 6px;">')
+            .replace("<p>", '<p style="font-family:{sans};font-size:15px;line-height:1.6;'
+                            'color:{ink};margin:0 0 12px;">')
+            .replace("<ul>", '<ul style="padding-left:18px;margin:0 0 12px;">')
+            .replace("<li>", '<li style="font-family:{sans};font-size:15px;line-height:1.55;'
+                             'color:{ink};margin:0 0 8px;">')
+            .replace("<em>", '<em style="color:{ink2};">')
+            .replace("<a ", '<a style="color:{link};text-decoration:underline;" ')
+            ).format(sans=SANS, serif=SERIF, ink=INK, ink2=INK2, mute=MUTE, line=LINE, link=LINK)
 
-    sources = sorted({it.get("source") or "" for it in items} - {""})
-    return """<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="{css}">
-<tr><td align="center" style="padding:24px 12px;">
-<table role="presentation" width="640" cellpadding="0" cellspacing="0" style="{wrap}">
-  <tr><td style="padding:28px 32px 0;border-top:3px solid #7a1f2b;">
-    <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a5c;">{name}</div>
-    <div style="font-size:12px;color:#6b6b6b;margin-top:4px;">{tagline} &middot; {date}</div>
+    sources = sorted({(it.get("source") or "").replace("Google News / ", "") for it in items} - {""})
+    preheader = html.escape("{} - {}".format(tagline, date))
+    return """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>{title}</title>
+<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+<style>:root{{color-scheme:light;supported-color-schemes:light}} body{{margin:0;padding:0}} table{{border-collapse:collapse}} a{{color:{link}}}</style>
+</head>
+<body bgcolor="#ffffff" style="margin:0;padding:0;background-color:#ffffff;">
+<div style="display:none;max-height:0;overflow:hidden;font-size:1px;line-height:1px;color:#ffffff;">{preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff;">
+<tr><td align="center" style="padding:32px 16px;">
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
+  <tr><td style="padding:0 0 14px;border-bottom:2px solid {ink};">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:{ink};">{name}
+        <span style="color:{mute};font-weight:500;">&nbsp;&middot;&nbsp;by CaseLens</span></td>
+      <td align="right" style="font-family:{sans};font-size:12px;color:{mute};white-space:nowrap;">{date}</td>
+    </tr></table>
   </td></tr>
-  <tr><td style="padding:12px 32px 28px;">{body}</td></tr>
-  <tr><td style="padding:18px 32px 28px;border-top:1px solid #e3ded3;font-family:-apple-system,Segoe UI,sans-serif;font-size:11px;line-height:1.6;color:#8a8a8a;">
-    Compiled from primary sources: {sources}.<br>
-    Ranked by likelihood of an open mandate, not by news value. Always verify against the underlying record before acting.
+  <tr><td style="padding:26px 0 4px;">
+    <div style="font-family:{serif};font-size:26px;line-height:1.2;font-weight:bold;color:{ink};">{tagline}</div>
   </td></tr>
-</table></td></tr></table>""".format(
-        css=CSS_BODY, wrap=WRAP, name=html.escape(name), tagline=html.escape(tagline),
-        date=html.escape(date), body=body,
-        sources=html.escape(", ".join(sources) or "n/a"))
+  <tr><td style="padding:0 0 8px;">{body}</td></tr>
+  <tr><td style="padding:22px 0 0;border-top:1px solid {line};font-family:{sans};font-size:12px;line-height:1.6;color:{mute};">
+    Compiled from {sources}.<br>
+    Ranked by likelihood of an open mandate, not by news value. Verify against the underlying record before acting.
+  </td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr></table>
+</body></html>""".format(
+        title=html.escape("{} - {}".format(name, date)), preheader=preheader,
+        name=html.escape(name), tagline=html.escape(tagline), date=html.escape(date),
+        body=body, sources=html.escape(", ".join(sources) or "primary sources"),
+        sans=SANS, serif=SERIF, ink=INK, mute=MUTE, line=LINE, link=LINK)
 
 
 def write_issue(markdown_text: str, items: List[Dict[str, Any]], settings,

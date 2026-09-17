@@ -106,7 +106,7 @@ def write_article(it: Dict[str, Any], model: str) -> Optional[Article]:
 # rendering - CaseLens tokens, light and dark
 # ----------------------------------------------------------------------------
 CSS = """
-:root{--blue-50:oklch(97% .015 270);--blue-500:#4D68F9;--blue-600:oklch(52% .21 270);
+:root{color-scheme:light;--blue-50:oklch(97% .015 270);--blue-500:#4D68F9;--blue-600:oklch(52% .21 270);
 --n0:#fff;--n50:oklch(97.5% .005 270);--n100:oklch(95% .007 270);--n200:oklch(90.5% .011 270);
 --n500:oklch(55% .02 270);--n600:oklch(46% .022 270);--n900:oklch(21% .03 272);
 --page:oklch(98.4% .004 270);--card:var(--n0);--sunken:var(--n50);--soft:var(--blue-50);
@@ -115,15 +115,6 @@ CSS = """
 --display:"Source Serif 4",Georgia,"Times New Roman",serif;
 --sans:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;
 --mono:"IBM Plex Mono","SF Mono",Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
---page:oklch(15.5% .028 272);--card:oklch(19.5% .03 272);--sunken:oklch(23% .03 272);
---soft:oklch(26% .06 270);--ink:oklch(96% .008 270);--ink2:oklch(78% .02 270);
---mute:oklch(64% .022 270);--link:oklch(78% .115 270);--hair:oklch(26% .028 272);
---line:oklch(31% .03 272);--accent:#7d90ff}}
-:root[data-theme="dark"]{--page:oklch(15.5% .028 272);--card:oklch(19.5% .03 272);
---sunken:oklch(23% .03 272);--soft:oklch(26% .06 270);--ink:oklch(96% .008 270);
---ink2:oklch(78% .02 270);--mute:oklch(64% .022 270);--link:oklch(78% .115 270);
---hair:oklch(26% .028 272);--line:oklch(31% .03 272);--accent:#7d90ff}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
 font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -167,6 +158,7 @@ FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=
 def _page(title: str, body: str, desc: str, name: str) -> str:
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+            "<meta name=\"color-scheme\" content=\"light\">"
             "<title>{t}</title><meta name=\"description\" content=\"{d}\">"
             "<meta property=\"og:title\" content=\"{t}\"><meta property=\"og:description\" content=\"{d}\">"
             "{f}<style>{c}</style></head><body><div class=\"wrap\">{b}</div></body></html>").format(
