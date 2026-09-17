@@ -1,0 +1,62 @@
+# ArbRadar sources. Edit freely; the engine reads this file on every run.
+# enabled: false switches a source off without deleting it.
+
+# --- Primary records (structured APIs, tier 1) ---------------------------------
+apis:
+  icsid:
+    enabled: true
+    what: ICSID docket - every pending and concluded case with counsel, tribunal, treaty and last procedural step
+    endpoint: https://icsid.worldbank.org/api/cases/{pending|concluded}
+  edgar:
+    enabled: true
+    what: SEC full-text search of 8-K/6-K/10-Q/10-K/20-F for dispute language (exhibit clauses excluded)
+    endpoint: https://efts.sec.gov/LATEST/search-index
+  courtlistener:
+    enabled: true
+    what: US federal dockets - s.1782 applications, petitions to confirm/enforce/vacate, FSIA actions against States
+    endpoint: https://www.courtlistener.com/api/rest/v4/search/
+    note: set COURTLISTENER_TOKEN in the environment for a higher rate limit
+  tenders:
+    enabled: true
+    what: States and state enterprises procuring arbitration counsel - TED (EU) and Prozorro (Ukraine)
+    endpoints: [https://api.ted.europa.eu/v3/notices/search, https://prozorro.gov.ua/api/search/tenders]
+  gdelt:
+    enabled: true
+    what: global news with country tagging, non-English press; throttled to one request per 5 s
+    endpoint: https://api.gdeltproject.org/api/v2/doc/doc
+  pca:
+    enabled: true
+    what: PCA news page (the case list itself is client-rendered and not available)
+    endpoint: https://pca-cpa.org/en/news/
+
+# --- Google News sweep (tier 2) -----------------------------------------------
+# Query banks live in arbradar/sources/editions.py (TERMS, MEASURES, MAJORS).
+# The global English edition always runs. Local editions run in their own language;
+# leave the list empty to run all 36, or name the ones you want.
+google_news:
+  enabled: true
+  editions: []          # e.g. [Armenia, "Armenia (ru)", Georgia, Kazakhstan, Mexico, Colombia, Peru]
+
+# --- RSS feeds (tier 2: reported news) ------------------------------------------
+rss:
+  - {name: GAR,                     url: https://globalarbitrationreview.com/rss,                                 enabled: true}
+  - {name: IAReporter,              url: https://www.iareporter.com/feed/,                                        enabled: true}
+  - {name: Kluwer Arbitration Blog, url: http://arbitrationblog.kluwerarbitration.com/feed/,                     enabled: true}
+  - {name: Jus Mundi,               url: https://blog.jusmundi.com/rss/,                                          enabled: true}
+  - {name: PCA,                     url: https://pca-cpa.org/feed/,                                               enabled: true}
+  - {name: SCC,                     url: https://sccarbitrationinstitute.se/en/feed,                              enabled: true}
+  - {name: HKIAC,                   url: https://www.hkiac.org/rss.xml,                                           enabled: true}
+  - {name: SIAC,                    url: https://siac.org.sg/feed,                                                enabled: true}
+  - {name: IISD ITN,                url: https://www.iisd.org/itn/feed/,                                          enabled: true}
+  - {name: Burford,                 url: https://www.burfordcapital.com/insights/rss/,                            enabled: true}
+  - {name: Reuters Legal,           url: https://www.reuters.com/arc/outboundfeeds/rss/category/legal/?outputType=xml, enabled: true}
+  # add law-firm newsrooms, funders, institutions here - one line each
+
+# --- Tried and not usable (for the record) ------------------------------------
+not_available:
+  - italaw.com - Cloudflare 403
+  - UNCTAD ISDS Navigator - Cloudflare 403
+  - PCA case list - client-rendered, no REST route for cases
+  - BAILII recent-decisions feed - no arbitration signal (3 hits in 1,869 entries)
+  - Swiss Federal Supreme Court 4A_ search - blocked to non-browser clients
+  - LSE RNS / Investegate / ASX - no keyword feed; announcements reach us via wires and Google News

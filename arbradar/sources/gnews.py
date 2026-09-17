@@ -78,9 +78,14 @@ def _sweep(days: int):
             yield q, hl, gl, ceid, lang, label, "measure"
 
 
+_MAJOR_RE = [(m, re.compile(r"(?<![\w-])" + re.escape(m) + r"(?![\w-])",
+                              0 if len(m) <= 5 else re.I)) for m in MAJORS]
+
+
 def _majors(text: str) -> List[str]:
-    low = text.lower()
-    return [m for m in MAJORS if m.lower() in low]
+    """Whole-word matches only. A five-letter-or-shorter name must also match case,
+    or "Eni" is found inside "opening" and "Citi" inside "citing"."""
+    return [m for m, rx in _MAJOR_RE if rx.search(text)]
 
 
 def run(days: int = 7) -> Iterator[Dict]:

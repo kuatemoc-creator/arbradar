@@ -58,6 +58,20 @@ def load(path: str = CONFIG_PATH) -> Settings:
         for k, v in raw.items():
             if hasattr(s, k) and v is not None:
                 setattr(s, k, v)
+    # sources.yaml toggles override the sources: block here, so one file governs coverage
+    sp = os.path.join(ROOT, "sources.yaml")
+    if os.path.exists(sp):
+        with open(sp, "r", encoding="utf-8") as fh:
+            src = yaml.safe_load(fh) or {}
+        for name, entry in (src.get("apis") or {}).items():
+            if isinstance(entry, dict) and "enabled" in entry:
+                s.sources[name] = bool(entry["enabled"])
+        gn = src.get("google_news") or {}
+        if "enabled" in gn:
+            s.sources["gnews"] = bool(gn["enabled"])
+        if gn.get("editions"):
+            s.editions = list(gn["editions"])
+        s.sources.setdefault("rss", True)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         s.use_llm = False
     return s

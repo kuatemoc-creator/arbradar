@@ -41,9 +41,23 @@ def _published(entry) -> str:
     return ""
 
 
+def _configured() -> List[Dict[str, str]]:
+    """sources.yaml wins over the built-in list, so the feeds are editable."""
+    import os
+    import yaml
+    from ..config import ROOT
+    path = os.path.join(ROOT, "sources.yaml")
+    if not os.path.exists(path):
+        return FEEDS
+    with open(path, encoding="utf-8") as fh:
+        cfg = yaml.safe_load(fh) or {}
+    feeds = [f for f in (cfg.get("rss") or []) if f.get("url") and f.get("enabled", True)]
+    return feeds or FEEDS
+
+
 def run(days: int = 7, feeds: List[Dict[str, str]] = None) -> Iterator[Dict]:
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
-    for feed in (feeds or FEEDS):
+    for feed in (feeds or _configured()):
         try:
             raw = get(feed["url"], ttl=1800).content
         except (Blocked, Exception):                  # noqa: BLE001 - boundary
