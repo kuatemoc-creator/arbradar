@@ -9,6 +9,11 @@ from typing import Dict, List
 
 # weight = raw BD value of the event, before recency / watchlist multipliers
 EVENT_TYPES: Dict[str, Dict] = {
+    "counsel_tender": {
+        "weight": 90,
+        "label": "State tendering for counsel",
+        "why": "A State or state enterprise is procuring arbitration counsel: the dispute exists and the instruction is open.",
+    },
     "notice_of_intent": {
         "weight": 100,
         "label": "Notice of intent / dispute",

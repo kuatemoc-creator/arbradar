@@ -19,6 +19,9 @@ ENDPOINT = "https://www.courtlistener.com/api/rest/v4/search/"
 BASE = "https://www.courtlistener.com"
 
 QUERIES = {
+    # Petitions to confirm or enforce an award against a State under the FSIA -
+    # every one of these is an enforcement mandate with a sovereign counterparty.
+    "enforcement_action:sovereign": '"Foreign Sovereign Immunities Act" AND ("arbitral award" OR "arbitration award") AND (confirm OR enforce OR recognition)',
     "s1782_application": '"28 U.S.C. 1782" OR "section 1782" OR "discovery in aid of a foreign"',
     "enforcement_action": '"petition to confirm arbitration award" OR "recognition and enforcement of a foreign arbitral award"',
     "annulment_setaside": '"vacate the arbitration award" OR "motion to vacate arbitral"',
@@ -55,7 +58,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 desc = (docs[0].get("description") or "")[:300]
             yield {
                 "url": BASE + (res.get("docket_absolute_url") or ""),
-                "source": "CourtListener / RECAP",
+                "source": "US federal docket" + (" (sovereign)" if event_type.endswith(":sovereign") else ""),
                 "title": "{} ({} {})".format(
                     res.get("caseName") or "Docket",
                     res.get("court_citation_string") or res.get("court") or "",
@@ -65,7 +68,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                     " Counsel on record: " + "; ".join(firms[:4]) + "." if firms else
                     " No counsel listed yet."),
                 "published_at": res.get("dateFiled"),
-                "event_type": event_type,
+                "event_type": event_type.split(":")[0],
                 "case_ref": res.get("docketNumber"),
                 "claimants": parties[:1],
                 "respondents": parties[1:3],

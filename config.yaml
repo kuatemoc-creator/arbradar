@@ -66,6 +66,7 @@ sources:
   pca: true
   gnews: true
   gdelt: true
+  tenders: true
 
 recipients: []
 smtp:
