@@ -69,7 +69,13 @@ def _headline(it: Dict[str, Any], settings, date: str) -> str:
 
 
 def _summary(it: Dict[str, Any]) -> str:
-    return it.get("summary_en") or it.get("why_it_matters") or it.get("summary") or ""
+    text = it.get("summary_en") or it.get("why_it_matters") or it.get("summary") or ""
+    text = re.sub(r"\s+", " ", text).strip()
+    title = (it.get("title") or "").strip().lower()
+    if title and text.lower().startswith(title[:40]):
+        ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
+        return it.get("why_it_matters") or ev.get("why", "")
+    return text
 
 
 def _meta_line(it: Dict[str, Any]) -> str:
