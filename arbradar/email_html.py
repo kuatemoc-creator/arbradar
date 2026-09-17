@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 
 from .config import ROOT
 from .taxonomy import EVENT_TYPES
+from .pipeline import is_paywall
 from .sources.editions import LANG_NAMES
 
 INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
@@ -45,7 +46,7 @@ def summary_of(it: Dict[str, Any]) -> str:
     raw = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
     text = re.sub(r"\s+", " ", raw).replace("\xa0", " ").strip()
     t = (it.get("title") or "").strip().lower()
-    return "" if (t and text.lower().startswith(t[:40])) else text
+    return "" if (is_paywall(text) or (t and text.lower().startswith(t[:40]))) else text
 
 
 def firms(it: Dict[str, Any]) -> List[str]:

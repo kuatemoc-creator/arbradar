@@ -85,7 +85,7 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
                     "source": raw.get("source") or name,
                     "source_tier": TIERS.get(name, 2),
                     "title": raw["title"][:500],
-                    "summary": (raw.get("summary") or "")[:4000],
+                    "summary": "" if is_paywall(raw.get("summary") or "") else (raw.get("summary") or "")[:4000],
                     "body": (raw.get("body") or "")[:20000] or None,
                     "published_at": raw.get("published_at"),
                     "fetched_at": now,
@@ -183,6 +183,15 @@ def rescore(conn, settings) -> int:
     return n
 
 
+PAYWALL = ("you are not logged in", "subscribe to read", "please log in", "log in to read",
+           "this content is for subscribers", "subscribers only", "sign in to continue")
+
+
+def is_paywall(text: str) -> bool:
+    t = (text or "").strip().lower()
+    return not t or any(t.startswith(p) or t == p.rstrip(".") for p in PAY)
+
+
 STOP = set("the a an of to in on for and or with by from at as is are was were be has have "
            "had its their this that over under against into after before amid says said new "
            "will could may how why who what when "
@@ -253,7 +262,9 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         # the write-up still has the better text. Keep the fullest summary.
         def _real(txt, title):
             txt = (txt or "").strip()
-            return txt if txt and not txt.lower().startswith((title or "").lower()[:40]) else ""
+            if is_paywall(txt) or txt.lower().startswith((title or "").lower()[:40]):
+                return ""
+            return txt
         if len(_real(it.get("summary"), it.get("title"))) > len(_real(home.get("summary"), home.get("title"))):
             home["summary"] = it["summary"]
         # A duplicate from a primary record can carry evidence the lead lacks.

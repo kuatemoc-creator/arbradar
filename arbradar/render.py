@@ -15,6 +15,7 @@ import base64
 
 from .config import OUT_DIR, ROOT
 from .taxonomy import EVENT_TYPES
+from .pipeline import is_paywall
 from .sources.editions import LANG_NAMES
 
 # CaseLens light palette as plain hex. Mail clients do not understand CSS
@@ -108,7 +109,7 @@ def _summary(it: Dict[str, Any]) -> str:
     text = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
     text = re.sub(r"\s+", " ", text).replace("\xa0", " ").strip()
     title = (it.get("title") or "").strip().lower()
-    if title and text.lower().startswith(title[:40]):
+    if is_paywall(text) or (title and text.lower().startswith(title[:40])):
         return ""
     return text
 
