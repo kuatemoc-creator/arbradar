@@ -44,17 +44,22 @@ def _publisher_url(link: str) -> str:
 
 
 def lookup(headline: str) -> Optional[Dict[str, str]]:
+    """Best snippet across a few query phrasings; a weak (boilerplate) hit from
+    the first query does not stop the search for a better one."""
     words = _sig(headline)
     if len(words) < 2:
         return None
     proper = [w for w in words if w[0].isupper()]
+    best = None
     for query in dict.fromkeys([" ".join(words[:6]), " ".join(proper[:4]), " ".join(words[:3])]):
         if len(query.split()) < 2:
             continue
         found = _search(query, words)
-        if found:
-            return found
-    return None
+        if found and (best is None or found["score"] > best["score"]):
+            best = found
+        if best and best["score"] >= 2:
+            break
+    return best
 
 
 def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
@@ -84,7 +89,7 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
             outlet = ((e.get("source") or {}).get("title")) or ""
             best, best_score = {"summary": text.rstrip(" .\u2026") + ".",
                                 "url": _publisher_url(e.get("link") or ""),
-                                "outlet": outlet, "title": title}, score
+                                "outlet": outlet, "title": title, "score": score}, score
     return best
 
 
