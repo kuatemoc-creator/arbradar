@@ -78,10 +78,10 @@ def _template_article(it: Dict[str, Any]) -> Article:
     if len(sentences) > 2:
         body.append(" ".join(sentences[2:5]))
 
-    dek = sentences[0] if sentences else ev.get("why", "")
-    if len(dek.split()) > 30:
-        dek = " ".join(dek.split()[:30]).rstrip(",;:") + "."
-    if dek.lower().startswith(it.get("title", "").lower()[:30]):
+    # A dek is one whole sentence or nothing. Never chop a sentence and stamp a
+    # full stop on the stump - use the ranking reason instead.
+    dek = sentences[0] if sentences else ""
+    if not dek or len(dek.split()) > 34 or dek.lower().startswith(it.get("title", "").lower()[:30]):
         dek = ev.get("why", "")
 
     counsel = it.get("counsel") or []
