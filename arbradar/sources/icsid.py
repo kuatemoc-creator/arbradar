@@ -75,7 +75,13 @@ Dublin Milan Rome Toronto Vancouver Montreal Ottawa Sydney Melbourne Perth Tokyo
 Delhi Mumbai Dubai Doha Riyadh Cairo Lagos Nairobi Johannesburg Istanbul Ankara Kyiv Moscow Yerevan Tbilisi
 Almaty Astana Tashkent Lima Bogotá Bogota Santiago Quito Caracas Montevideo Panamá Valletta Nicosia Athens
 Warsaw Bucharest Budapest Prague Zagreb Belgrade Beirut Amman Rabat Casablanca Algiers Tunis Dakar Yaoundé
-Accra Luxembourg TX NY CA FL IL MA DC PA CO GA WA""".split())
+Accra Luxembourg TX NY CA FL IL MA DC PA CO GA WA Douala Abidjan Kinshasa Luanda Maputo Harare Lusaka
+Khartoum Tripoli Baku Bishkek Dushanbe Ashgabat Ulaanbaatar Hanoi Jakarta Manila Bangkok Colombo Dhaka
+Karachi Islamabad Lahore Jeddah Muscat Manama Tehran Baghdad Erbil Damascus Tegucigalpa Managua Kingston
+Asunción Georgetown Paramaribo Libreville Conakry Bamako Niamey Ouagadougou Lomé Cotonou Kigali Kampala
+Antananarivo Nouakchott Brazzaville Bujumbura Lilongwe Gaborone Windhoek Mbabane Maseru Praia""".split())
+_GEO |= {"Dar es Salaam", "Addis Ababa", "Ho Chi Minh City", "Kuala Lumpur", "Kuwait City", "Panama City",
+         "San José", "Guatemala City", "San Salvador", "Santo Domingo", "Port of Spain", "La Paz", "Port Louis"}
 _GEO |= {"New York", "Los Angeles", "San Francisco", "Hong Kong", "The Hague", "Mexico City", "Buenos Aires",
          "Washington, D.C.", "United Kingdom", "United States", "Hong Kong SAR", "Abu Dhabi", "Tel Aviv"}
 
@@ -178,7 +184,7 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
     parts = [_nat(c) for c in claimants[:3]]
     names = _join([n for n, _ in parts])
     nats = list(dict.fromkeys(n for _, n in parts if n))
-    investor = names + (", {} investor{}".format(" and ".join(nats[:2]), "s" if len(parts) > 1 else "")
+    investor = names + (", {} investor{},".format(" and ".join(nats[:2]), "s" if len(parts) > 1 else "")
                         if nats and len(nats) <= 2 else "")
     state = short_party(re.sub(r"\s*\([^)]*\)\s*$", "", _clean(proc.get("resp_nationality"))))
     treaty = " and the ".join(x for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
@@ -191,9 +197,9 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
 
     out: List[str] = []
     if step:
-        out.append("{}: {}.".format(_clean(case.get("casetitle")).split(" (ICSID")[0], step.rstrip(".")))
-        out.append("The case was registered on {}{}{}.".format(
-            reg, " under the " + treaty if treaty else "", ", in the {} sector".format(sector) if sector else ""))
+        out.append("{} brought the claim against {}{}{}; it was registered on {}.".format(
+            investor.rstrip(","), state or "the State", " under the " + treaty if treaty else "",
+            ", in the {} sector".format(sector) if sector else "", reg))
     else:
         out.append("{} {} registered a claim at ICSID against {}{}{}.".format(
             investor, "have" if len(parts) > 1 else "has", state or "the State",
@@ -207,6 +213,9 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
                                                  ("; " + "; ".join(seats[1:])) if len(seats) > 1 else ""))
     else:
         out.append("The tribunal has not yet been constituted.")
+    if step:
+        out.append("On {}, {}.".format(when_label if not re.match(r"^[A-Z][a-z]+ \d", when_label) else _date(when_label),
+                                       step[:1].lower() + step[1:].rstrip(".")))
     return " ".join(out)
 
 
