@@ -105,6 +105,9 @@ def _seat(raw: str) -> str:
     """'Jane DOE (British) - Appointed by the Claimant(s)' -> 'Jane Doe (claimant appointee)'."""
     m = re.match(r"^(?P<name>.+?)\s*\((?P<nat>[^)]*)\)\s*-\s*Appointed by (?P<by>.+)$", raw)
     if not m:
+        m2 = re.match(r"^(?P<name>.+?)\s*\((?P<nat>[^)]*)\)\s*$", raw)
+        if m2:
+            return " ".join(w.capitalize() if w.isupper() else w for w in m2.group("name").split())
         return raw
     name = " ".join(w.capitalize() if w.isupper() else w for w in m.group("name").split())
     by = m.group("by").lower()
@@ -184,10 +187,18 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
     parts = [_nat(c) for c in claimants[:3]]
     names = _join([n for n, _ in parts])
     nats = list(dict.fromkeys(n for _, n in parts if n))
-    investor = names + (", {} investor{},".format(" and ".join(nats[:2]), "s" if len(parts) > 1 else "")
-                        if nats and len(nats) <= 2 else "")
+    if nats and len(nats) <= 2:
+        nat = " and ".join(nats[:2])
+        if len(parts) > 1:
+            investor = "{}, {} investors,".format(names, nat)
+        else:
+            investor = "{}, {} {} investor,".format(names, "an" if nat[:1].lower() in "aeiou" else "a", nat)
+    else:
+        investor = names
     state = short_party(re.sub(r"\s*\([^)]*\)\s*$", "", _clean(proc.get("resp_nationality"))))
-    treaty = " and the ".join(x for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
+    if not state:
+        state = short_party(_clean(case.get("casetitle")).split(" v. ")[-1].split(" (ICSID")[0])
+    treaty = " and the ".join(" ".join(x.split()) for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
     sector = (case.get("econsector") or "").lower().replace("&", "and")
     reg = _date(proc.get("dateregistered"))
     cf = _join([_firm(x) for x in _split_names(proc.get("claimant") or case.get("claimant"))][:5])

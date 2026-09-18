@@ -78,7 +78,8 @@ def _facts(it: Dict[str, Any]) -> List[List[str]]:
 def _template_article(it: Dict[str, Any]) -> Article:
     """No model available: assemble from the record, in plain professional English."""
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    summary = re.sub(r"\s+", " ", it.get("summary_en") or it.get("summary") or "").strip()
+    summary = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
+    summary = re.sub(r"\s+", " ", summary).replace("\xa0", " ").strip()
     sentences = [p for p in re.split(r"(?<=[.!?])\s+(?=[A-Z\u00c0-\u024f])", summary) if p]
     body = [" ".join(sentences[:2])] if sentences else [it.get("title", "")]
     if len(sentences) > 2:
