@@ -209,7 +209,7 @@ def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
     out: List[str] = []
     if step:
         out.append("{} brought the claim against {}{}{}; it was registered on {}.".format(
-            investor.rstrip(","), state or "the State", " under the " + treaty if treaty else "",
+            investor, state or "the State", " under the " + treaty if treaty else "",
             ", in the {} sector".format(sector) if sector else "", reg))
     else:
         out.append("{} {} registered a claim at ICSID against {}{}{}.".format(
