@@ -293,11 +293,6 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     subject = "{} · {} — {}".format(name, dl, title_of(lead)[:70].rstrip(" :,-"))
     preheader = " · ".join([title_of(lead)] + [title_of(it) for it in devs[:2]])[:180]
 
-    # In this issue: scan list linking to anchors
-    toc = "".join('<li style="{}"><a href="#s{}" style="color:{};text-decoration:none;">{}</a></li>'.format(
-        P.format(sans=SANS, size=15, lh=1.45, color=INK, mb=6), i, INK, esc(title_of(it)[:110]))
-        for i, it in enumerate([lead] + devs, start=1))
-
     mark_src = "{}/caselens-mark.png".format(site_url) if site_url else None
     if not mark_src:
         with open(os.path.join(ROOT, "assets", "caselens-mark-64.png"), "rb") as fh:
@@ -308,8 +303,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 
     sections = []
-    sections.append(label("In this issue", top=False) + '<ol style="padding-left:20px;margin:0 0 26px;">{}</ol>'.format(toc))
-    sections.append(label("Lead") + story(lead, 1, True, site_url, date))
+    sections.append(label("Lead", top=False) + story(lead, 1, True, site_url, date))
     if devs:
         sections.append(label("Developments", mb=0) + "".join(story(it, i, False, site_url, date) for i, it in enumerate(devs, start=2)))
     if briefs:
