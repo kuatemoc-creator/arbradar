@@ -187,17 +187,20 @@ def _when(it: Dict[str, Any]) -> str:
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
     """Headline, one paragraph, source. The shape of every good legal newsletter."""
     href = it.get("site_link") or it.get("url") or "#"
-    head = ('<h3 id="s{n}" style="font-family:{sans};font-size:21px;line-height:1.25;font-weight:700;'
-            'margin:0 0 8px;"><a href="{href}" style="color:{link};text-decoration:none;">{t}</a></h3>'
-            ).format(n=n, sans=SANS, href=esc(href), link=LINK, t=esc(title_of(it)))
+    size, lh = (27, 1.18) if lead else (21, 1.28)
+    head = ('<h3 id="s{n}" style="font-family:{serif};font-size:{size}px;line-height:{lh};font-weight:bold;'
+            'letter-spacing:-0.2px;margin:0 0 9px;"><a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>'
+            ).format(n=n, serif=SERIF, size=size, lh=lh, href=esc(href), ink=INK, t=esc(title_of(it)))
     body = summary_of(it)
     src = (it.get("source") or "").replace("Google News / ", "")
-    tail = ' <span style="color:{};">&mdash; {}</span>'.format(MUTE, esc(src)) if src else ""
-    para = p(esc(_clip(body, 600)) + tail, size=16, lh=1.5, mb=0) if body else \
-        p('<span style="color:{};">{}{}</span>'.format(MUTE, esc(src), (", " + _when(it)) if _when(it) else ""), size=14, lh=1.5, mb=0)
+    when = _when(it)
+    tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
+        mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
+    para = p(esc(_clip(body, 620 if lead else 520)) + tail, size=17 if lead else 16, lh=1.5, mb=0) if body else \
+        p(tail.strip(), size=14, lh=1.5, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-            '<tr><td style="padding:20px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'
-            ).format(line=LINE, head=head, para=para)
+            '<tr><td style="padding:{pt}px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'
+            ).format(pt=8 if lead else 20, line=LINE, head=head, para=para)
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
@@ -286,7 +289,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 
     sections = []
-    stories = [lead] + devs + briefs
+    stories = [lead] + devs                  # the brief tier is noise without an editor; it stays out
     sections.append("".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories, start=1)))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
                          ("courts", "In the US courts")):
@@ -323,8 +326,8 @@ a{{color:{link}}}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
   <tr><td style="padding:0 0 14px;border-bottom:1px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{sans};font-size:24px;line-height:1;font-weight:700;letter-spacing:-0.3px;color:{ink};">{name}</td>
-      <td align="right" style="font-family:{sans};font-size:15px;color:{mute};white-space:nowrap;">{dl}</td>
+      <td style="font-family:{serif};font-size:26px;line-height:1;font-weight:bold;letter-spacing:-0.3px;color:{ink};">{name}</td>
+      <td align="right" style="font-family:{sans};font-size:14px;color:{mute};white-space:nowrap;">{dl}</td>
     </tr></table>
   </td></tr>
   {body}

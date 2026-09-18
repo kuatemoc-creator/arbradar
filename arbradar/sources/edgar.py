@@ -19,6 +19,14 @@ _CLAUSE = re.compile(r"(shall be (finally )?(settled|resolved)|agree(s)? to (sub
                      r"governed by|in accordance with the (rules|arbitration rules)|any dispute)", re.I)
 
 
+def _nice_date(iso: str) -> str:
+    try:
+        d = dt.date.fromisoformat((iso or "")[:10])
+        return "{} {} {}".format(d.day, d.strftime("%B"), d.year)
+    except ValueError:
+        return iso or ""
+
+
 def passage(url: str, phrase: str) -> str:
     """The sentences around the first substantive occurrence of the phrase in the
     filing. A dispute-resolution clause ('any dispute shall be settled by...') is
@@ -97,8 +105,8 @@ def run(days: int = 7, forms: str = "8-K,6-K,20-F,10-Q,10-K") -> Iterator[Dict]:
                 "source": "SEC EDGAR",
                 "title": "{} discloses {} in {} filing".format(
                     filer, q.strip('"').replace('" "', " and "), src.get("form", "SEC")),
-                "summary": "From the {} filed {}: \u201c{}\u201d".format(
-                    src.get("form"), src.get("file_date"), quoted),
+                "summary": "In a {} filed on {}, {} disclosed: \u201c{}\u201d".format(
+                    src.get("form"), _nice_date(src.get("file_date")), filer, quoted),
                 "published_at": src.get("file_date"),
                 "case_ref": acc,
                 "flag_reason": "SEC {} filing text contains \u2018{}\u2019".format(src.get("form"), q.strip('"').split('" "')[0]),

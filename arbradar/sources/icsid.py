@@ -105,7 +105,7 @@ def _seat(raw: str) -> str:
     who = ("claimant appointee" if "claimant" in by else "respondent appointee" if "respondent" in by
            else "appointed by the parties" if "parties" in by else "appointed by the Chairman" if "chairman" in by
            else "appointed")
-    return "{} ({})".format(name, who)
+    return "{} ({})".format(name, who.replace("appointee", "appointee"))
 
 
 _SUFFIX = re.compile(r",?\s+(S\.?A\.?U?\.?|S\.?p\.?A\.?|S\.?A\.?R\.?L\.?|S\.?à\s?r\.?l\.?|B\.?V\.?|N\.?V\.?|GmbH|AG|"
@@ -143,37 +143,71 @@ def headline(case: Dict, step: str) -> str:
     return "{} v. {} \u2014 {}".format(short_party(left), short_party(right), step)
 
 
+_NAT = {"Spanish": "Spanish", "Italian": "Italian", "French": "French", "German": "German", "Dutch": "Dutch",
+        "British": "British", "U.S.": "US", "American": "US", "Canadian": "Canadian", "Swiss": "Swiss",
+        "Chinese": "Chinese", "Turkish": "Turkish", "Cypriot": "Cypriot", "Luxembourg": "Luxembourg"}
+
+
+def _nat(raw: str) -> str:
+    """'Petersen Energía S.A.U. (Spanish)' -> ('Petersen Energía', 'Spanish')."""
+    m = re.match(r"^(.*?)\s*\(([^)]*)\)\s*$", raw or "")
+    return (short_party(m.group(1)), m.group(2).split(",")[0].strip()) if m else (short_party(raw), "")
+
+
+def _join(names: List[str]) -> str:
+    names = list(dict.fromkeys(n for n in names if n))
+    if not names:
+        return ""
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def _date(raw: str) -> str:
+    try:
+        d = dt.datetime.strptime((raw or "").strip(), "%B %d, %Y").date()
+        return "{} {} {}".format(d.day, d.strftime("%B"), d.year)
+    except ValueError:
+        return raw or ""
+
+
 def describe(case: Dict, proc: Dict, when_label: str, step: str = "") -> str:
-    """The facts a practitioner reads first, in one paragraph, from the record."""
-    parts: List[str] = []
-    claimant = _clean(proc.get("clmnt_nationality"))
-    if not claimant or re.fullmatch(r"(Claimant|Respondent)\(s\)", claimant):
-        claimant = _clean(case.get("casetitle")).split(" v. ")[0].strip()   # the record's own placeholder
-    state = _clean(proc.get("resp_nationality"))
-    treaty = " and ".join(x for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
-    reg = proc.get("dateregistered")
-    if claimant or state:
-        parts.append("{} against {}.".format(claimant or "The claimant", state or "the State"))
-    if reg or treaty:
-        parts.append("Registered {}{}.".format(reg or "", (" under the " + treaty) if treaty else ""))
-    if case.get("econsector"):
-        parts.append("Sector: {}.".format(case["econsector"].lower()))
-    cf = [_firm(x) for x in _split_names(proc.get("claimant") or case.get("claimant"))]
-    rf = [_firm(x) for x in _split_names(proc.get("respondent") or case.get("respondent"))]
-    if cf:
-        parts.append("For the claimant: {}.".format(", ".join(list(dict.fromkeys(cf))[:6])))
-    if rf:
-        parts.append("For the State: {}.".format(", ".join(list(dict.fromkeys(rf))[:6])))
+    """One paragraph a colleague could have written from the docket."""
+    claimants = [c.strip() for c in re.split(r",\s*(?=[A-Z])", _clean(proc.get("clmnt_nationality"))) if c.strip()]
+    claimants = [c for c in claimants if not re.fullmatch(r"(Claimant|Respondent)\(s\)", c)]
+    if not claimants:
+        claimants = [_clean(case.get("casetitle")).split(" v. ")[0].strip()]
+    parts = [_nat(c) for c in claimants[:3]]
+    names = _join([n for n, _ in parts])
+    nats = list(dict.fromkeys(n for _, n in parts if n))
+    investor = names + (", {} investor{}".format(" and ".join(nats[:2]), "s" if len(parts) > 1 else "")
+                        if nats and len(nats) <= 2 else "")
+    state = short_party(re.sub(r"\s*\([^)]*\)\s*$", "", _clean(proc.get("resp_nationality"))))
+    treaty = " and the ".join(x for x in (case.get("instrumentinvk1"), case.get("instrumentinvk2")) if x)
+    sector = (case.get("econsector") or "").lower().replace("&", "and")
+    reg = _date(proc.get("dateregistered"))
+    cf = _join([_firm(x) for x in _split_names(proc.get("claimant") or case.get("claimant"))][:5])
+    rf = _join([_firm(x) for x in _split_names(proc.get("respondent") or case.get("respondent"))][:4])
     seats = [_seat(x) for x in _split_names(proc.get("president"))] + \
             [_seat(x) for x in _split_names(proc.get("arbitrators"))]
-    if seats:
-        parts.append("Tribunal: {}{}.".format(seats[0] + " presiding" if len(seats) > 1 else seats[0],
-                                              ("; " + "; ".join(seats[1:])) if len(seats) > 1 else ""))
-    elif proc.get("dateconstituted") is None or not proc.get("dateconstituted"):
-        parts.append("Tribunal not yet constituted.")
+
+    out: List[str] = []
     if step:
-        parts.append("Latest step, {}: {}.".format(when_label, step.rstrip(".")))
-    return " ".join(parts)
+        out.append("{}: {}.".format(_clean(case.get("casetitle")).split(" (ICSID")[0], step.rstrip(".")))
+        out.append("The case was registered on {}{}{}.".format(
+            reg, " under the " + treaty if treaty else "", ", in the {} sector".format(sector) if sector else ""))
+    else:
+        out.append("{} {} registered a claim at ICSID against {}{}{}.".format(
+            investor, "have" if len(parts) > 1 else "has", state or "the State",
+            " under the " + treaty if treaty else "", ", in the {} sector".format(sector) if sector else ""))
+    if cf:
+        out.append("{} act{} for the claimant{}.".format(cf, "" if " and " in cf else "s", "s" if len(parts) > 1 else ""))
+    if rf:
+        out.append("{} for {}.".format(rf, state or "the State"))
+    if seats:
+        out.append("The tribunal is {}{}.".format(seats[0] + (", presiding" if len(seats) > 1 else ""),
+                                                 ("; " + "; ".join(seats[1:])) if len(seats) > 1 else ""))
+    else:
+        out.append("The tribunal has not yet been constituted.")
+    return " ".join(out)
 
 
 def _emit(case: Dict, proc: Dict, event_type: str, when: dt.date,

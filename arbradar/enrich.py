@@ -34,6 +34,21 @@ def _stem(w: str) -> str:
     return re.sub(r"(ies|es|s|ed|ing)$", "", w.lower())
 
 
+def _tidy(text: str) -> str:
+    """A wire snippet is cut at a fixed length; end it on a sentence, or failing
+    that on a clause, never on 'the' or a possessive."""
+    text = text.strip().rstrip("\u2026. ")
+    if re.search(r"[.!?]$", text):
+        return text
+    cut = max(text.rfind(". "), text.rfind("? "), text.rfind("! "))
+    if cut >= 60:
+        return text[:cut + 1]
+    cut = max(text.rfind(", "), text.rfind("; "))
+    if cut >= 60:
+        return text[:cut] + "\u2026"
+    return text.rsplit(" ", 1)[0] + "\u2026"
+
+
 def _publisher_url(link: str) -> str:
     """Bing wraps links: .../apiclick.aspx?...&url=<encoded publisher url>."""
     try:
@@ -87,7 +102,7 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
         score = newsy * 2 - (5 if boilerplate else 0) + min(shared, 3) * 0.5
         if best_score is None or score > best_score:
             outlet = ((e.get("source") or {}).get("title")) or ""
-            best, best_score = {"summary": text.rstrip(" .\u2026") + ".",
+            best, best_score = {"summary": _tidy(text),
                                 "url": _publisher_url(e.get("link") or ""),
                                 "outlet": outlet, "title": title, "score": score}, score
     return best
