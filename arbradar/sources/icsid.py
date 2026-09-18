@@ -133,7 +133,7 @@ _STATE_MAP = {"Argentine Republic": "Argentina", "Italian Republic": "Italy", "U
 
 
 def short_party(name: str) -> str:
-    name = _clean(name)
+    name = _clean(name).replace("\u2019", "'")          # ICSID mixes curly and straight apostrophes
     for k, v in _STATE_MAP.items():
         if name.startswith(k):
             return v
