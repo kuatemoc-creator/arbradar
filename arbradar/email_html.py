@@ -76,9 +76,9 @@ def a(href: str, text: str, color=LINK, weight="normal") -> str:
 
 def label(text: str, mb=10, top=True) -> str:
     border = 'border-top:1px solid {};padding-top:22px;'.format(LINE) if top else ''
-    return ('<h2 style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;'
-            'font-weight:700;color:{mute};{border}margin:0 0 {mb}px;">{t}</h2>').format(
-        sans=SANS, mute=MUTE, border=border, mb=mb, t=esc(text))
+    return ('<h2 style="font-family:{sans};font-size:13px;letter-spacing:1.5px;text-transform:uppercase;'
+            'font-weight:700;color:{ink};{border}margin:0 0 {mb}px;">{t}</h2>').format(
+        sans=SANS, ink=INK, border=border, mb=mb, t=esc(text))
 
 
 def meta_line(it: Dict[str, Any]) -> str:
@@ -176,45 +176,28 @@ def facts(it: Dict[str, Any]) -> str:
             '</td></tr></table>').format(bg=SUNKEN, rows="".join(rows))
 
 
-def eyebrow(it: Dict[str, Any]) -> str:
-    bits = [SHORT.get(it.get("event_type") or "commentary", "Note")]
-    if it.get("institution") and it["institution"] not in bits[0]:
-        bits.append(it["institution"])
-    return ('<div style="font-family:{sans};font-size:11px;letter-spacing:1.6px;text-transform:uppercase;'
-            'font-weight:700;color:{mute};margin:0 0 6px;">{t}</div>').format(
-        sans=SANS, mute=MUTE, t=esc(" \u00b7 ".join(bits)))
-
-
-def source_line(it: Dict[str, Any]) -> str:
-    src = (it.get("source") or "source").replace("Google News / ", "")
-    when = str(it.get("published_at") or "")[:10]
+def _when(it: Dict[str, Any]) -> str:
     try:
-        d = dt.date.fromisoformat(when)
-        when_label = "{} {}".format(d.day, d.strftime("%B"))
+        d = dt.date.fromisoformat(str(it.get("published_at") or "")[:10])
+        return "{} {}".format(d.day, d.strftime("%B"))
     except ValueError:
-        when_label = ""
-    bits = [a(it.get("url") or "#", src, color=MUTE)]
-    if when_label:
-        bits.append(esc(when_label))
-    also = [x for x in (it.get("also") or []) if x.get("url")][:4]
-    if also:
-        bits.append("also " + ", ".join(
-            a(x["url"], (x.get("source") or "source").replace("Google News / ", ""), color=MUTE) for x in also))
-    return p(" \u00b7 ".join(bits), size=13, lh=1.5, color=MUTE, mb=0)
+        return ""
 
 
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
+    """Headline, one paragraph, source. The shape of every good legal newsletter."""
     href = it.get("site_link") or it.get("url") or "#"
-    size, lh = (24, 1.2) if lead else (19, 1.3)
-    head = ('<h3 id="s{n}" style="font-family:{serif};font-size:{size}px;line-height:{lh};font-weight:bold;'
-            'color:{ink};margin:0 0 8px;"><a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>'
-            ).format(n=n, serif=SERIF, size=size, lh=lh, ink=INK, href=esc(href), t=esc(title_of(it)))
+    head = ('<h3 id="s{n}" style="font-family:{sans};font-size:21px;line-height:1.25;font-weight:700;'
+            'margin:0 0 8px;"><a href="{href}" style="color:{link};text-decoration:none;">{t}</a></h3>'
+            ).format(n=n, sans=SANS, href=esc(href), link=LINK, t=esc(title_of(it)))
     body = summary_of(it)
-    body_html = p(esc(_clip(body, 700 if lead else 460)), size=16 if lead else 15, lh=1.55, mb=8) if body else ""
-    sep = "" if lead else 'border-bottom:1px solid {};'.format(HAIR)
+    src = (it.get("source") or "").replace("Google News / ", "")
+    tail = ' <span style="color:{};">&mdash; {}</span>'.format(MUTE, esc(src)) if src else ""
+    para = p(esc(_clip(body, 600)) + tail, size=16, lh=1.5, mb=0) if body else \
+        p('<span style="color:{};">{}{}</span>'.format(MUTE, esc(src), (", " + _when(it)) if _when(it) else ""), size=14, lh=1.5, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-            '<tr><td style="padding:{pt}px 0 18px;{sep}">{eye}{head}{body}{src}</td></tr></table>').format(
-        pt=4 if lead else 18, sep=sep, eye=eyebrow(it), head=head, body=body_html, src=source_line(it))
+            '<tr><td style="padding:20px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'
+            ).format(line=LINE, head=head, para=para)
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
@@ -303,18 +286,15 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 
     sections = []
-    sections.append(label("Lead", top=False) + story(lead, 1, True, site_url, date))
-    if devs:
-        sections.append(label("Developments", mb=0) + "".join(story(it, i, False, site_url, date) for i, it in enumerate(devs, start=2)))
-    if briefs:
-        sections.append(label("In brief") + brief(briefs))
+    stories = [lead] + devs + briefs
+    sections.append("".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories, start=1)))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
                          ("courts", "In the US courts")):
         rows = (extras or {}).get(key) or []
         if rows:
             sections.append(label(heading, mb=4) + record_rows(key, rows))
 
-    body = "".join('<tr><td style="padding:0 0 30px;">{}</td></tr>'.format(sec) for sec in sections)
+    body = "".join('<tr><td style="padding:0 0 26px;">{}</td></tr>'.format(sec) for sec in sections)
 
     html_doc = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -341,14 +321,11 @@ a{{color:{link}}}
 <tr><td align="center" class="wrap" style="padding:32px 20px;">
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
-  <tr><td style="padding:0 0 12px;border-bottom:2px solid {ink};">
+  <tr><td style="padding:0 0 14px;border-bottom:1px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{serif};font-size:22px;line-height:1;font-weight:bold;letter-spacing:-0.2px;color:{ink};">{name}</td>
-      <td align="right" style="font-family:{sans};font-size:13px;color:{mute};white-space:nowrap;">{dl}</td>
+      <td style="font-family:{sans};font-size:24px;line-height:1;font-weight:700;letter-spacing:-0.3px;color:{ink};">{name}</td>
+      <td align="right" style="font-family:{sans};font-size:15px;color:{mute};white-space:nowrap;">{dl}</td>
     </tr></table>
-  </td></tr>
-  <tr><td style="padding:22px 0 26px;">
-    <div style="font-family:{sans};font-size:15px;line-height:1.5;color:{ink2};">{tagline}</div>
   </td></tr>
   {body}
   <tr><td style="padding:22px 0 0;border-top:1px solid {line};">
