@@ -120,7 +120,7 @@ def _seat(raw: str) -> str:
 _SUFFIX = re.compile(r",?\s+(S\.?A\.?U?\.?|S\.?p\.?A\.?|S\.?A\.?R\.?L\.?|S\.?à\s?r\.?l\.?|B\.?V\.?|N\.?V\.?|GmbH|AG|"
                      r"Ltd\.?|Limited|LLC|L\.?P\.?|Inc\.?|Corp\.?|Corporation|plc|PLC|Co\.?|Company|Holdings?|"
                      r"International|Pte\.?|S\.?A\.?S\.?|S\.?L\.?|A\.?S\.?|Public Company Limited|and others|et al\.?)\b\.?", re.I)
-_STATE = re.compile(r"^(The )?(Republic|Kingdom|State|Commonwealth|Federal Republic|Federative Republic|People's Republic|"
+_STATE = re.compile(r"^(The )?(Republic|Kingdom|State|Commonwealth|Federal Republic|Federative Republic|People's Democratic Republic|People's Republic|"
                     r"Oriental Republic|Bolivarian Republic|Plurinational State|Argentine Republic|Italian Republic|"
                     r"Hellenic Republic|United Mexican States|Union|Sultanate|Principality|Grand Duchy) (of )?", re.I)
 _STATE_MAP = {"Argentine Republic": "Argentina", "Italian Republic": "Italy", "United Mexican States": "Mexico",
@@ -141,6 +141,15 @@ def short_party(name: str) -> str:
     first = re.split(r",| and ", name)[0].strip()
     first = _SUFFIX.sub("", first).strip(" ,.")
     return first or name
+
+
+def first_sentence(text: str, limit: int = 140) -> str:
+    """The step for a headline: its first sentence, cut at a word if still too long."""
+    text = " ".join((text or "").split())
+    first = re.split(r"(?<=[.!?])\s", text, maxsplit=1)[0].rstrip(".:;, ")
+    if len(first) <= limit:
+        return first
+    return first[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "\u2026"
 
 
 def headline(case: Dict, step: str) -> str:
@@ -295,7 +304,8 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                 detail = _clean(m.group(2))
                 if registered and when == registered:
                     continue                          # already emitted above
+                brief = first_sentence(detail)
                 yield _emit(
                     case, proc, _classify(detail), when,
-                    headline(case, detail[:110].rstrip(".")[0].lower() + detail[:110].rstrip(".")[1:]),
+                    headline(case, brief[:1].lower() + brief[1:]),
                     describe(case, proc, m.group(1), detail))
