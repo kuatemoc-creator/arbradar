@@ -70,7 +70,10 @@ _ACTION = re.compile(r"revok|cancel|terminat|annul|withdr|suspend|аннулир
 _STATE = re.compile(r"government|ministry|ministr|regulator|state|gobierno|ministerio|estado|regulador|governo|"
                     r"minist[ée]r|gouvernement|État|правительств|министерств|государств|регулятор|уряд|міністерств|"
                     r"держав|h[üu]k[üu]met|bakanl|devlet|investor|inversionista|inversor|investidor|investisseur|"
-                    r"инвестор|інвестор|yat\u0131r\u0131mc|foreign|extranjer|estrangeir|étrang|иностранн|іноземн|yabanc", re.I)
+                    r"инвестор|інвестор|yat\u0131r\u0131mc|foreign|extranjer|estrangeir|étrang|иностранн|іноземн|yabanc|"
+                    # a company noun is the investor side of the sentence
+                    r"\bbanco?\b|\bbank\b|empresa|company|compa[ñn][ií]a|companhia|soci[ée]t[ée]|\bfirma\b|grupo|group|"
+                    r"minera|petrolera|mineradora|corporaci[óo]n|corporation|концерн|компани|компані|şirket|holding", re.I)
 _SPORT = re.compile(r"f[úu]tbol|futebol|football|soccer|\bliga\b|\bgol\b|penal(ti)?\b|campeonato|clube|equipo|jugador|"
                     r"t[ée]cnico|entrenador|partido|jogo|torneo|\bma[çc]\b|hakem|футбол|матч|чемпионат|referee", re.I)
 
