@@ -9,6 +9,10 @@ cd "$(dirname "$0")/.."
 REMOTE=${1:-origin}
 git remote get-url "$REMOTE" >/dev/null 2>&1 || { echo "no git remote '$REMOTE'; add one first: git remote add origin git@github.com:<user>/arb-radar.git"; exit 1; }
 .venv/bin/python -m arbradar.cli articles
+# The cloud run publishes too: start from the remote tip so histories never diverge.
+if git fetch -q "$REMOTE" gh-pages 2>/dev/null; then
+  git branch -f gh-pages "$REMOTE/gh-pages" 2>/dev/null || true
+fi
 WT=$(mktemp -d)
 if ! git show-ref --quiet refs/heads/gh-pages && git show-ref --quiet "refs/remotes/$REMOTE/gh-pages"; then
   git branch gh-pages "$REMOTE/gh-pages"        # a fresh clone: continue the published history
