@@ -1,15 +1,47 @@
 {
  "date": "2026-09-20",
- "subject": "ArbRadar · 20 September 2026 — Türkiye revokes Bank Mellat’s operating license",
+ "subject": "ArbRadar · 20 September 2026 — Estonia's defense agency takes Datasel dispute to Swiss arbitration",
  "stories": [
   {
-   "id": 2714,
+   "id": 39,
+   "title": "Estonia's defense agency takes Datasel dispute to Swiss arbitration",
+   "title_en": null,
+   "summary": "Estonia's Center for Defense Investments (RKIK) is fighting Datasel in arbitration in Switzerland over a terminated Ukraine ammunition deal, with legal costs hitting hundreds of thousands.",
+   "summary_en": null,
+   "url": "https://news.err.ee/1610143246/estonia-s-defense-agency-takes-datasel-dispute-to-swiss-arbitration",
+   "source": "ERR (Estonia)",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-20",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Ukraine"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘terminat’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Estonia",
+   "tier": "lead",
+   "slug": "2026-09-20-estonia-s-defense-agency-takes-datasel-dispute-to-swiss-arbitration.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "id": 152,
    "title": "Türkiye revokes Bank Mellat’s operating license",
    "title_en": null,
-   "summary": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat, according to a notice published in the country’s Official Gazette on Saturday…",
+   "summary": "Turkey’s BDDK banking watchdog revokes the operating license of Iranian lender Bank Mellat’s branch in Istanbul, according to a notice published in the Official Gazette…",
    "summary_en": null,
-   "url": "https://www.dailysabah.com/business/economy/turkiye-revokes-license-of-iranian-bank-mellat",
-   "source": "Google News / dailysabah.com",
+   "url": "https://www.timesofisrael.com/liveblog_entry/turkey-revokes-license-of-iranian-banks-istanbul-brach-citing-law-on-protecting-financial-stability/",
+   "source": "Google News / timesofisrael.com",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-19",
@@ -31,73 +63,34 @@
    "why_it_matters": null,
    "also": [
     {
-     "source": "Google News / see.news",
-     "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
-     "title": "Turkey revokes Iran’s Bank Mellat license after 44 years"
-    },
-    {
      "source": "Google News / The Jerusalem Post",
      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11bG5vdG5OaFZUbUpMbHMtWi1JVjBmdDJ5M1JqRnU1OTdrZ2l3dGpmTUU2SVp6ay0tM3ptX25QdVcxbDFzekNyLWpPdVZEemRuUlE5VURJMkc4cEpq?oc=5",
      "title": "Turkey revokes operating license of Iran's Mellat Bank amid US economic pressure campaign"
     },
     {
-     "source": "Google News / devdiscourse.com",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRGhyS2NxX0o0MHpCWXBKQjZ4SktMRHFZUHJhVXJaeEVxVVNTQ2M3UGxuMjhBaTJHMVkwT1BvT0RsVXZGN3daTGkyWU56eVZseGZGOTlUTG5SbDMyZkxZcURsZEhKbUZwckJSbzRSWWFnbkpiM2R3cEwxLXY3SzNsdDNtb1B5Q3Q1OTNPaUxuOE9LeW9STlhmVkRpNk1LeVl2OXNnbXdMTmNqdUJJRzFDWjc0YU1kTHhHZTZESXZuS0VtdWw0dTNFeFFpbjJtd9IBzgFBVV95cUxPRGhyS2NxX0o0MHpCWXBKQjZ4SktMRHFZUHJhVXJaeEVxVVNTQ2M3UGxuMjhBaTJHMVkwT1BvT0RsVXZGN3daTGkyWU56eVZseGZGOTlUTG5SbDMyZkxZcURsZEhKbUZwckJSbzRSWWFnbkpiM2R3cEwxLXY3SzNsdDNtb1B5Q3Q1OTNPaUxuOE9LeW9STlhmVkRpNk1LeVl2OXNnbXdMTmNqdUJJRzFDWjc0YU1kTHhHZTZESXZuS0VtdWw0dTNFeFFpbjJtdw?oc=5",
-     "title": "Turkey revokes operating license of Iran's Mellat Bank amid US measures"
-    },
-    {
      "source": "Google News / وكالة صدى نيوز",
      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxM19ON245cDJxOUNTSzJrcndCT3BVTkVrWWpPcXQzS0lZOGR3NVBwbHlMV2Y1R2FoU3JjUVZPeVlBVzN1bFA0ZVpLZEcwTl9jNFNYN1ZB?oc=5",
      "title": "Turkey Cancels License of Iranian \"Mellat Bank\" and Stops Flights of \"Mahan Air\""
-    }
-   ],
-   "lang": "en",
-   "country": null,
-   "tier": "lead",
-   "slug": "2026-09-20-t-rkiye-revokes-bank-mellat-s-operating-license.html",
-   "event": "State measure"
-  },
-  {
-   "id": 2747,
-   "title": "EU finance ministers eye new windfall tax",
-   "title_en": null,
-   "summary": "Eurozone finance ministers gathered in the Irish capital Dublin on Friday to review the bloc's latest economic outlook and discuss the possibility of imposing an oil and gas windfall tax following…",
-   "summary_en": null,
-   "url": "https://www.upstreamonline.com/energy-security/eu-finance-ministers-eye-new-windfall-tax/2-1-2045890",
-   "source": "Google News / Upstream Online",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-19",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Oil & gas",
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
-   "why_it_matters": null,
-   "also": [
+    },
     {
-     "source": "Google News / bastillepost.com",
-     "url": "https://www.bastillepost.com/global/article/6171355-eu-ministers-meet-in-dublin-to-review-blocs-economy-weigh-windfall-tax-amid-surging-oil-gas-prices",
-     "title": "EU ministers meet in Dublin to review bloc's economy, weigh windfall tax amid surging oil, gas prices"
+     "source": "Google News / NDTV Profit",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdm1LVUxod2laX2h5b2FMZUNWcjJONi1hUjlPSFY5Q2xGaFpSd3RBSlFnWVBZdjZwTWxYMXdnUnVfcGlYaDcxNWFYMUE1OEZEdWtFWnRZRjRPOFZFNzBVamF3UEs3RHBoSm44NVpSeVZmazVUV2hhaEdvUkRKQm5PdHhGWXhzZGUwbzl2ZzdUM3NVZjMwTTBIR0J2NGF0NUlzQ2lRR0FQX0FOMzR2NUZ3cVF0Z195MG5DREHSAcIBQVVfeXFMT0d2LWZVM2U0QU1xNFFDanRUOUhsVFo2NnNNRXZlTTh4dmxFRHd6cDNTOXNqVmVsYmpYcExuYThQbHJiZkc1b2c0YXNBTnkzc3BWUjdzWlFNVkw5UnlremI4ZVBCTXNjOHA2NEFKQjA5TXhhNDZMMlB2SDhON0Z1eHVJeTVIRDg3ZHMxZHNPMDJBVlpRRTZqTFkta085MHNXVFplY1RpSGZtMjFLNVd4WG9wWk1MbGk2UEoxeU45Qm1ESFE?oc=5",
+     "title": "Turkey Revokes Iran's Mellat Bank Istanbul License Amid US Pressure On Tehran"
+    },
+    {
+     "source": "Google News / وردنا",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPS0o5UHJvVTNZRDN0SG00a0RxUjVReG01Z2JDM2pKUk9NS29yMnVqSkpCTnpaTE5NN3pJUmpmUV90elZOcjBHRTZxdEx4X0Q2V1BZVl95NkpoWjlRUDltZmpZaWQ3OXRoWHZqMkt5U19yQU9oWHJWaXg3MloxeU1nZ09zVkRUQmZOSUVTdFZUcTE?oc=5",
+     "title": "Turkey Revokes License of Iran's Bank Mellat"
     }
    ],
    "lang": "en",
    "country": null,
    "tier": "development",
-   "slug": "2026-09-20-eu-finance-ministers-eye-new-windfall-tax.html",
+   "slug": "2026-09-20-t-rkiye-revokes-bank-mellat-s-operating-license.html",
    "event": "State measure"
   },
   {
-   "id": 2528,
+   "id": 2,
    "title": "Spanish-Korean consortium wins award over biomass plant",
    "title_en": null,
    "summary": "A Spanish-Korean consortium has won a net sum of €120 million in a London arbitration with the owner of a UK biomass power plant over a construction contract that was terminated during the covid-19 pandemic.&nbsp;",
@@ -132,13 +125,13 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 2909,
+   "id": 316,
    "title": "'Deposit Not Payment': SC Asks Law Commission To Examine Uniform Framework For Award Deposits In Appeals",
    "title_en": null,
-   "summary": "The apex court said National Seeds Corporation Ltd. remained liable to pay 12% interest on an arbitral award amount despite having deposited money in…",
+   "summary": " 'Deposit Not Payment': SC Asks Law Commission To Examine Uniform Framework For Award Deposits In Appeals &nbsp;&nbsp; ETV Bharat ",
    "summary_en": null,
-   "url": "https://www.etvbharat.com/en/bharat/deposit-not-payment-sc-asks-law-commission-to-examine-uniform-framework-for-award-deposits-in-appeals-enn26091903673",
-   "source": "Google News / etvbharat.com",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUS0yUVhLT2drTmFmc0VrU05OUVZEOHA0VEg0akdTby0tYlBfUUpvd1l6dTVRWTRqV21YdWlocjhXeGpqX1J3ZzItblNOYkVVcGgzc1o0cmV5d2dQX3lzUFdmdXV0SGVhY0RQc1pjUTZDaklJZEVHc3NfMVFVTkkzR2Z5Zkx1dTJHNi13UE9sNVBGbDJvcjJTTnI3blhVdVY4aklZWEtISkQtTXl6Q2pVRHR6Y1VpOVJOWTQtZS1QNnZ3S2lnTnNZejFOTlpkcG1LZTNvNVUzcG9kcmhZV09DRllqcmFXczTSAewBQVVfeXFMTUpGckFzZUpWLU51c085R0hPSXpOZmRDNllxYUpFbU9LM2x5SV9TVlpUWnZBM041U3BpRUtkcVo5VHlQdXVFdklEVFpSUWpqdDdEWHVyZHYwRU5DRl9xMkRmYk9iNXk4d0dFMzd5RmNsd21wdEZhSTl4YjdqeTRxNHpXc3V6eWxhdDZ4QXhoVHRFeGVMLVlFR2N1b0dIZ3hVdno4aGdiZXRoZ3d0TTVmY195dHpKZ2x5VWRER3haN3JLdFExSTlmMHl6X2lnaGUtTXNoX2dleVphWmhQZk0zeFl2a2JaNWFGdFFaSm0?oc=5",
+   "source": "Google News / ETV Bharat",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-19",
@@ -164,13 +157,13 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 2745,
-   "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz",
+   "id": 188,
+   "title": "EU finance ministers eye new windfall tax",
    "title_en": null,
-   "summary": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "summary": "EU finance ministers gather in Dublin to weigh a windfall tax as oil and gas prices soar amid war.",
    "summary_en": null,
-   "url": "https://www.msn.com/en-xl/news/other/six-eu-countries-push-for-windfall-tax-on-oil-companies-amid-surging-war-profits/ar-AA2b9ERT",
-   "source": "Google News / msn.com",
+   "url": "https://www.upstreamonline.com/energy-security/eu-finance-ministers-eye-new-windfall-tax/2-1-2045890",
+   "source": "Google News / upstreamonline.com",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-18",
@@ -191,15 +184,21 @@
    "amount_usd": null,
    "flag_reason": "State-measure sweep (global edition); no listed investor named",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / energynews.pro",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOUIxQlAyV18xQlo5ZnFLbGVCVWNFQWVhZ2taZkVQcklmVThCQ3M5S0ZWT0ZKajRmWGNCa01oQ2RwQWZ4MFNqR3BhTEVQVnB6T1FwQnczUElWemx3YW1vMTNHb29mTC1aa09kdTI2LTJGbW5NbHBBaFpleXdQSG5QekVTcDlETk9DSkNmdFJ3WQ?oc=5",
+     "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz"
+    }
+   ],
    "lang": "en",
    "country": null,
    "tier": "development",
-   "slug": "2026-09-20-germany-pushes-eu-to-tax-oil-windfall-profits-tied-to-hormuz.html",
+   "slug": "2026-09-20-eu-finance-ministers-eye-new-windfall-tax.html",
    "event": "State measure"
   },
   {
-   "id": 2605,
+   "id": 42,
    "title": "XCHG Ltd discloses notice of arbitration in 6-K filing",
    "title_en": null,
    "summary": "In a 6-K filed on 18 September 2026, XCHG Ltd disclosed: “Subsequently, the qualified IPO was consummated, making the total outstanding amount of RMB 16.13 million (approximately US$ 2.26 million), comprising principal and accrued interest, due on March 10, 2025. The Company failed to repay by this date, and pursuant to the agreement, overdue principal accrues default interest at a simple rate of 12 % per annum from the date of default until full repayment. On October 28, 2025, X-Charge Technology received a formal notice of arbitration from the China International Economic and Trade Arbitration Commission (“CIETAC”). The notice states that a claim was filed by Investor C seeking repayment of the outstanding principal and interest totaling RMB 16.7”",
@@ -231,13 +230,13 @@
    "event": "New case"
   },
   {
-   "id": 2827,
+   "id": 276,
    "title": "Solarworld Energy Receives Rs 40.27 Crore DAB Award in Two Gujarat Solar Project Disputes",
    "title_en": null,
-   "summary": "Solarworld Energy Solutions Ltd secured a DAB award for 100 MW and 260 MW GUVNL solar projects.",
+   "summary": " Solarworld Energy Receives Rs 40.27 Crore DAB Award in Two Gujarat Solar Project Disputes &nbsp;&nbsp; StudyCafe ",
    "summary_en": null,
-   "url": "https://scanx.trade/stock-market-news/companies/solarworld-secures-40-2-crore-dab-award-guvnl-solar-projects/51291192",
-   "source": "Google News / scanx.trade",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOc0p3VkVwTzhCUkt1bTUxd252c01LQ3JVaWR1QU1UUElERDNybDRrcTVnMWhjdmpGSTFLYUx3Zktjci1pXzhnQl9haVVUMDVpbFd1dDNuSEdnc3UyVGpuMkQ5bk91eFJCV0RRWTVrbUVOa2NJUXV6ZzI0SUtMWjVjeE9OOXMyR0gtWWotem9RQTM3ZktXNHROcndGSXp4UWVpek40VEx3Rm1FRldLd3ZNWk5PMzlrR0ROSWx3QVRwaw?oc=5",
+   "source": "Google News / StudyCafe",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-19",
@@ -263,39 +262,7 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 2853,
-   "title": "Paris institution launches mining group",
-   "title_en": null,
-   "summary": "The Paris International Arbitration Chamber (CAIP) has launched a working group on arbitration in the mining sector co-chaired by Aboubacar Fall of AF Legal in Senegal and Baptiste Rigaudeau of…",
-   "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/paris-institution-launches-mining-group",
-   "source": "Google News / Global Arbitration Review",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Mining & metals"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "brief",
-   "slug": "2026-09-20-paris-institution-launches-mining-group.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "id": 2817,
+   "id": 268,
    "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
    "title_en": null,
    "summary": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…",
@@ -327,13 +294,13 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 2852,
+   "id": 281,
    "title": "Nigeria beats Burford-backed hydropower claim",
    "title_en": null,
-   "summary": " Nigeria beats Burford-backed hydropower claim &nbsp;&nbsp; Global Arbitration Review ",
+   "summary": "Nigeria says it has defeated an ICC claim worth more than US$680 million brought by a power company funded by Burford Capital…",
    "summary_en": null,
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOel90TE5VWEtBM1BkOS1qTm1EREZSdDhGOHNlc1ZITy1CUE1HNXlsUWFsNUtKbU1HVngzZU5WMDA4X1hnTTRodzZJMDZPUmtxYkxDWnN2dmVDQUFOR1FpUEVxek9MUjUzdnVqcHlkNlpWQ3JjYWstOTZQM1RObEp5N0xJbFVWRHRMSEtJSkY1cWo1WDQ?oc=5",
-   "source": "Google News / Global Arbitration Review",
+   "url": "https://globalarbitrationreview.com/article/nigeria-beats-burford-backed-hydropower-claim",
+   "source": "Google News / globalarbitrationreview.com",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-18",
@@ -361,13 +328,13 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 2876,
+   "id": 299,
    "title": "Nigerian Newspapers September 18: Wike, APC Governors, Rift, Mambilla Hydroelectric ICC Ein, Others",
    "title_en": null,
    "summary": "Nigerian Newspapers reported on a variety ofvissues ranging from the continuing Political rift between the Minister of the Federal…",
    "summary_en": null,
    "url": "https://www.tvcnews.tv/nigerian-newspapers-september-18-wike-apc-governors-rift-mambilla-hydroelectric-icc-ein-others/",
-   "source": "Google News / TVC News",
+   "source": "Google News / tvcnews.tv",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-18",
@@ -393,19 +360,76 @@
    "tier": "brief",
    "slug": "2026-09-20-nigerian-newspapers-september-18-wike-apc-governors-rift-mambilla-hydr.html",
    "event": "Commercial arbitration"
+  },
+  {
+   "id": 123,
+   "title": "Russia is preparing to nationalize a major port terminal in Azov",
+   "title_en": null,
+   "summary": " Russia is preparing to nationalize a major port terminal in Azov &nbsp;&nbsp; ua.news ",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX0FzYlgxZkE5TlFVLXktXzZqWkRGMlVac25VR3liYjk2VXhhTmhwLXREVTJuYzNTeUM3dDRJT0xzMUNRR2luclB1R2JnZmNUQkFHa0xTcTdPaDcwUjhwWEl6ajkwMURpTng2Zm5KZVFpRW51SEVncmRhblM0dVdRTFltdmZWSU0wSGJxYURqamJXeTZTQlJmRmRqbnA?oc=5",
+   "source": "Google News / ua.news",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Russia"
+   ],
+   "sectors": [
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘nationaliz’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "brief",
+   "slug": "2026-09-20-russia-is-preparing-to-nationalize-a-major-port-terminal-in-azov.html",
+   "event": "State measure"
+  },
+  {
+   "id": 182,
+   "title": "In Poltava, contracts with carriers may be terminated due to Russian music and a minute of silence",
+   "title_en": null,
+   "summary": " In Poltava, contracts with carriers may be terminated due to Russian music and a minute of silence &nbsp;&nbsp; inkorr.com ",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNU2NwUkVIak1sUWpLZWZkVjM3S1NpLVllcFZIUHdDVmRoaXRBamFOX3FiQlJkV1M0amRGUm9xNEFVTzdvU0tmVUk2XzJUOWVMLUFjRDFMM3dDRWtlWEI0RjVHQnRMbE81Wkc2a1lSQkp2dENNWGt1NzZVM3pHRzd2V0lqRTR2VFhHclhmZ05wT2hPNHlkdzlGUXNILUpfTmQzNVRxNld5TThuVFFJYXRXVkZkSUVfRXQ3Zk5oRkh4VHNCa0HSAcMBQVVfeXFMTVNjcFJFSGpNbFFqS2VmZFYzN0tTaS1ZZXBWSFB3Q1ZkaGl0QWphTl9xYkJSZFdTNGpkRlJvcTRBVU83b1NLZlVJNl8yVDllTC1BY0QxTDN3Q0VrZVhCNEY1R0J0TGxPNVpHNmtZUkJKdnRDTVhrdTc2VTN6R0c3dldJakU0dlRYR3JYZmdOcE9oTzR5ZHc5RlFzSC1KX05kMzVUcTZXeU04blRRSWF0V1ZGZElFX0V0N2ZOaEZIeFRzQmtB?oc=5",
+   "source": "Google News / inkorr.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Russia"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "brief",
+   "slug": "2026-09-20-in-poltava-contracts-with-carriers-may-be-terminated-due-to-russian-mu.html",
+   "event": "State measure"
   }
  ],
  "records": {
-  "docket": [
-   {
-    "date": "2026-09-09",
-    "title": "The Williams Companies v. Venezuela — the Tribunal renders its award",
-    "main": "The Williams Companies v. Venezuela",
-    "step": "The Tribunal renders its award",
-    "tail": "ARB(AF)/19/3",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB(AF)/19/3"
-   }
-  ],
+  "docket": [],
   "disclosures": [],
   "courts": [
    {
@@ -423,54 +447,6 @@
     "step": "arbitration agreement, stay or anti-suit relief",
     "tail": "Singapore International Commercial Court · [2026] SGHC(I) 19",
     "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC(I)%2019.pdf"
-   },
-   {
-    "date": "2026-09-15",
-    "title": "BGH I ZB 6/26",
-    "main": "BGH I ZB 6/26",
-    "step": "challenge to an award",
-    "tail": "Bundesgerichtshof · I ZB 6/26",
-    "url": "https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/I_ZS/2026/I_ZB___6-26.html"
-   },
-   {
-    "date": "2026-09-15",
-    "title": "DWJ v DWK",
-    "main": "DWJ v DWK",
-    "step": "recourse against an award",
-    "tail": "Singapore International Commercial Court · [2026] SGHC(I) 18",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC(I)%2018.pdf"
-   },
-   {
-    "date": "2026-09-14",
-    "title": "East Africa Metals Inc vs PMM Mining Company Limited",
-    "main": "East Africa Metals Inc vs PMM Mining Company Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/314/eng@2026-09-14"
-   },
-   {
-    "date": "2026-09-10",
-    "title": "Middlesex Centre (Municipality of) v. South Winds Development Co. Inc.",
-    "main": "Middlesex Centre (Municipality of) v. South Winds Development Co. Inc.",
-    "step": "challenge to an award",
-    "tail": "Ontario Superior Court of Justice · 2026 ONSC 5113",
-    "url": "https://www.canlii.org/en/on/onsc/doc/2026/2026onsc5113/2026onsc5113.html"
-   },
-   {
-    "date": "2026-09-10",
-    "title": "Conex Oil & Gas Holdings Ltd v PSTV Energy FZCO",
-    "main": "Conex Oil & Gas Holdings Ltd v PSTV Energy FZCO",
-    "step": "anti-suit injunction",
-    "tail": "High Court (Commercial Court) · [2026] EWHC 2325 (Comm)",
-    "url": "https://caselaw.nationalarchives.gov.uk/ewhc/comm/2026/2325"
-   },
-   {
-    "date": "2026-09-08",
-    "title": "Philippina v Paola",
-    "main": "Philippina v Paola",
-    "step": "enforcement of an award",
-    "tail": "DIFC Court of First Instance · ARB 035/2026",
-    "url": "https://www.difccourts.ae/rules-decisions/judgments-orders/arbitration/arb-0352026-philippina-v-paola"
    }
   ],
   "people": [
@@ -479,11 +455,19 @@
     "title": "A company from the circle of ex-MP traitor Derkach demands $128 million from Ukraine: Ministry of Justice hires Polish lawyers",
     "main": "A company from the circle of ex-MP traitor Derkach demands $128 million from Ukraine: Ministry of Justice hires Polish lawyers",
     "step": "",
-    "tail": "АНТИКОР",
+    "tail": "antikor.info",
     "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQX2w3X0lkb0E2UWZkZ0FMZFpsbEItOUZsTnJLaDhQRExsb201SUhJTDc3RlhVWDEzbmpZb3V4OG94SHQ1SkRYZmVFT0NaTndIczRCSkhvQTZiU18wSllpSEhENHFBN3NHYkRySUJRcjQ0VWpvdnRjVVJ0T29SbTNMeUNIaHVraVFYQ0o3T1R3RXA1SWNKeWZBN0ZvYjVwbXEtN2x3RHR3R0M4bU1kbFQzdkFNS2s1Nk85aGZBanZhWWVWUTNwSU16NTdUOUNSYjl6aEthcm1ubEtXcW9wWFBwdEpmdzY5aDFRcm5JMXQ4LVRXLUNQV2gzbDhxNkZDd2hCSFE?oc=5"
    },
    {
-    "date": "2026-09-18",
+    "date": "2026-09-17",
+    "title": "Paris institution launches mining group",
+    "main": "Paris institution launches mining group",
+    "step": "",
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/paris-institution-launches-mining-group"
+   },
+   {
+    "date": "2026-09-17",
     "title": "Australian firm hires from Kennedys in Singapore",
     "main": "Australian firm hires from Kennedys in Singapore",
     "step": "",
@@ -492,83 +476,11 @@
    },
    {
     "date": "2026-09-17",
-    "title": "Baker McKenzie Names Longtime Partner As Arbitration Head",
-    "main": "Baker McKenzie Names Longtime Partner As Arbitration Head",
-    "step": "",
-    "tail": "Law360 International Arbitration",
-    "url": "https://www.law360.com/internationalarbitration/articles/2525584?utm_source=rss&utm_medium=rss&utm_campaign=section"
-   },
-   {
-    "date": "2026-09-16",
-    "title": "Russian lawyers launch London boutique",
-    "main": "Russian lawyers launch London boutique",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/russian-lawyers-launch-london-boutique"
-   },
-   {
-    "date": "2026-09-16",
-    "title": "Snellman disputes head joins Swedish firm",
-    "main": "Snellman disputes head joins Swedish firm",
-    "step": "",
-    "tail": "Global Arbitration Review",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUjVlZ3U1SHRfdTdabzFtNVo0SUI5VDVlY0NFblQzbVI0ZVlsVklkcXZoMHhQRzd6VmVWNkNhZmRhNnJ4NG9wNi1sRmZidU5VS0tEUE9iaWRpZFNrOVdjNV85V3pMQndyQzZzQ040VTlUQWZOLUtMaGZyckFzX0pZYmZZWGctOGJJVlRCVFZ3?oc=5"
-   },
-   {
-    "date": "2026-09-16",
-    "title": "Wotton Kearney bolsters Asia marine practice",
-    "main": "Wotton Kearney bolsters Asia marine practice",
-    "step": "",
-    "tail": "Seatrade Maritime",
-    "url": "https://www.seatrade-maritime.com/maritime-transportation/wotton-kearney-bolsters-asia-marine-practice"
-   },
-   {
-    "date": "2026-09-17",
     "title": "Jupiter Lithium v. Nigeria — the Tribunal is constituted in accordance with Article 37(2)(a) of the ICSID Convention",
     "main": "Jupiter Lithium v. Nigeria",
     "step": "The Tribunal is constituted in accordance with Article 37(2)(a) of the ICSID Convention",
     "tail": "ARB/26/27",
     "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/27"
-   },
-   {
-    "date": "2026-09-16",
-    "title": "Roberto Cuadrado v. Ecuador — following appointment by the Respondent, Marcelo Kohen (Argentine, Swiss) accepts his appointment as arbitrator",
-    "main": "Roberto Cuadrado v. Ecuador",
-    "step": "Following appointment by the Respondent, Marcelo Kohen (Argentine, Swiss) accepts his appointment as arbitrator",
-    "tail": "ARB/26/26",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/26"
-   },
-   {
-    "date": "2026-09-15",
-    "title": "Galp Energia v. Mozambique — following appointment by the Claimants, D. Brian King (U.S.) accepts his appointment as arbitrator",
-    "main": "Galp Energia v. Mozambique",
-    "step": "Following appointment by the Claimants, D. Brian King (U.S.) accepts his appointment as arbitrator",
-    "tail": "ARB/26/31",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/31"
-   },
-   {
-    "date": "2026-09-15",
-    "title": "Glenfarne Asset v. Colombia — following appointment by the Respondent, Jean E. Kalicki (U.S.) accepts her appointment as arbitrator",
-    "main": "Glenfarne Asset v. Colombia",
-    "step": "Following appointment by the Respondent, Jean E. Kalicki (U.S.) accepts her appointment as arbitrator",
-    "tail": "ARB/26/34",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/34"
-   },
-   {
-    "date": "2026-09-11",
-    "title": "Karam Salah Al Din Awni Al Sadeq v. UAE — following appointment by the Respondent, Klaus Sachs (German) accepts his appointment as arbitrator",
-    "main": "Karam Salah Al Din Awni Al Sadeq v. UAE",
-    "step": "Following appointment by the Respondent, Klaus Sachs (German) accepts his appointment as arbitrator",
-    "tail": "ARB/26/23",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/23"
-   },
-   {
-    "date": "2026-09-08",
-    "title": "Jihad Abdul Qader Saleh Quzmar v. UAE — following appointment by the Claimant, Laurence Boisson de Chazournes (French, Swiss) accepts her appointment as arbitrator",
-    "main": "Jihad Abdul Qader Saleh Quzmar v. UAE",
-    "step": "Following appointment by the Claimant, Laurence Boisson de Chazournes (French, Swiss) accepts her appointment as arbitrator",
-    "tail": "ARB/26/24",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/24"
    }
   ]
  }
