@@ -1,0 +1,82 @@
+name: Daily issue
+
+on:
+  schedule:
+    - cron: "0 3 * * *"        # 07:00 in Yerevan, every day
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/daily.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -q -r requirements.txt
+          .venv/bin/playwright install --with-deps chromium
+
+      - name: Restore state
+        # The database lives on the `state` branch; the day archive lives in the
+        # published site. Both come back before the build so that days accumulate
+        # and nothing is repeated.
+        run: |
+          mkdir -p data out/site
+          if git fetch origin state 2>/dev/null; then
+            git show origin/state:arbradar.sqlite3 > data/arbradar.sqlite3 && echo "database restored"
+          else
+            echo "no state branch yet - first run"
+          fi
+          if git fetch origin gh-pages 2>/dev/null; then
+            git archive origin/gh-pages data | tar -x -C out/site && echo "day archive restored: $(ls out/site/data | wc -l) days"
+          fi
+
+      - name: Build and publish
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: |
+          git config user.name "arbradar-bot"
+          git config user.email "arbradar@caselens.tech"
+          tools/daily.sh --publish
+
+      - name: Save state
+        run: |
+          tmp=$(mktemp -d)
+          cp data/arbradar.sqlite3 "$tmp/"
+          git worktree add --detach "$tmp/wt" >/dev/null
+          cd "$tmp/wt"
+          git checkout -q --orphan state
+          git rm -rfq . >/dev/null 2>&1 || true
+          cp "$tmp/arbradar.sqlite3" .
+          git add arbradar.sqlite3
+          git commit -qm "State $(date -u +%F)"
+          git push -f origin state
+
+      - name: Keep the issue
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-${{ github.run_id }}
+          path: |
+            out/issue-*.html
+            out/issue-*.md
+          retention-days: 30

@@ -10,6 +10,9 @@ REMOTE=${1:-origin}
 git remote get-url "$REMOTE" >/dev/null 2>&1 || { echo "no git remote '$REMOTE'; add one first: git remote add origin git@github.com:<user>/arb-radar.git"; exit 1; }
 .venv/bin/python -m arbradar.cli articles
 WT=$(mktemp -d)
+if ! git show-ref --quiet refs/heads/gh-pages && git show-ref --quiet "refs/remotes/$REMOTE/gh-pages"; then
+  git branch gh-pages "$REMOTE/gh-pages"        # a fresh clone: continue the published history
+fi
 if git show-ref --quiet refs/heads/gh-pages; then
   git worktree add "$WT" gh-pages >/dev/null
 else

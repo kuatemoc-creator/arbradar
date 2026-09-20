@@ -33,6 +33,17 @@ Recency half-life is 6 days. `unrepresented_bonus` applies **only** to primary
 records (dockets, registries, filings), where absence of counsel is evidence —
 a press summary that omits counsel is silence, not evidence.
 
+## The daily run
+
+`.github/workflows/daily.yml` runs every day at 07:00 Yerevan time on GitHub
+Actions: it restores the database from the `state` branch and the day archive
+from the published site, fetches every source, applies the rules, builds the
+issue, publishes the site to `gh-pages`, and saves the database back. The
+built issue is kept as a workflow artifact for 30 days. Add
+`ANTHROPIC_API_KEY` (and optionally `COURTLISTENER_TOKEN`) under Settings →
+Secrets and variables → Actions to switch on the model tiers. `tools/daily.sh`
+is the same run for a laptop.
+
 ## Hosting the site and collecting sign-ups
 
 The site in `out/site` is static, so any static host serves it. The included
