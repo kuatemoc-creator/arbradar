@@ -7,8 +7,9 @@ origin never fails a whole run.
 import hashlib
 import logging
 import os
+import re
 import time
-from typing import Optional
+from typing import Dict, Optional
 
 import httpx
 
@@ -86,3 +87,32 @@ def get(url: str, params: Optional[dict] = None, ttl: int = 3600,
             fh.write(r.content)
         return r
     raise last or httpx.HTTPError("failed: " + url)
+
+
+# ---------------------------------------------------------------------------
+# Failure accounting, so a run's fetch_log says which hosts refused us. A cloud
+# runner is refused by hosts that accept a laptop; without this the symptom is
+# just "found=0".
+FAILURES: Dict[str, int] = {}
+
+
+def _note_failure(url: str, exc: BaseException) -> None:
+    from urllib.parse import urlsplit
+    try:
+        host = urlsplit(url).netloc
+    except ValueError:
+        host = url[:40]
+    m = re.search(r"\b(4\d\d|5\d\d)\b", str(exc))
+    key = "{} {}".format(host, m.group(1) if m else type(exc).__name__)
+    FAILURES[key] = FAILURES.get(key, 0) + 1
+
+
+_get_unwatched = get
+
+
+def get(url: str, *args, **kwargs):            # noqa: F811 - wraps the fetcher above
+    try:
+        return _get_unwatched(url, *args, **kwargs)
+    except Exception as exc:
+        _note_failure(url, exc)
+        raise

@@ -11,6 +11,7 @@ from . import db, llm, score as scoring
 from .sources import REGISTRY, TIERS
 from .taxonomy import EVENT_PATTERNS, INSTITUTIONS, SECTORS
 from .sources.editions import states_in
+from . import fetch as fetch_mod
 
 log = logging.getLogger(__name__)
 TRACKING = re.compile(r"^(utm_|fbclid|gclid|mc_|ref$)")
@@ -95,6 +96,7 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
             continue
         found = new = 0
         error = None
+        snap = dict(fetch_mod.FAILURES)
         try:
             for raw in fn(days=days):
                 found += 1
@@ -132,6 +134,10 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
             error = str(exc)[:300]
             log.warning("source %s failed: %s", name, exc)
 
+        fails = {k: v - snap.get(k, 0) for k, v in fetch_mod.FAILURES.items() if v - snap.get(k, 0) > 0}
+        if fails:
+            top = ", ".join("{} x{}".format(k, v) for k, v in sorted(fails.items(), key=lambda kv: -kv[1])[:4])
+            error = ((error + " | ") if error else "") + "fetch failures: " + top
         conn.execute("INSERT INTO fetch_log (source, ran_at, found, new_items, error) "
                      "VALUES (?,?,?,?,?)", (name, now, found, new, error))
         conn.commit()
