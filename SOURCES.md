@@ -4,7 +4,7 @@ Verified 2026-09-20. Edit `tools/sourcemap.py`, then run `python -m tools.source
 
 Status: **wired** = read on every run · **rss** = feed answers, ready to wire · **html** = page answers, needs a parser · **blocked** = refuses scripts · **dead** = not found · **error** = no answer
 
-Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
+Totals: 95 dead, 29 error, 232 html, 245 rss, 27 wired
 
 ## Armenia
 
@@ -28,8 +28,8 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | regulator | [Competition Protection Commission](https://www.competition.am/en/news/) | html | 113 KB insecure-tls |  |
 | regulator | [State Revenue Committee](https://www.petekamutner.am/en/) | error | ConnectTimeout | tax |
 | gazette | [Ministry of Justice](https://www.moj.am/en) | dead | HTTP 403 | represents Armenia in ISDS |
-| press | [Armenpress](https://armenpress.am) | html | 132 KB | discover feed |
-| press | [Panorama.am](https://www.panorama.am) | html | 263 KB | discover feed |
+| press | [Armenpress](https://armenpress.am) | html | 133 KB | discover feed |
+| press | [Panorama.am](https://www.panorama.am) | html | 262 KB | discover feed |
 | press | [Aravot](https://www.aravot-en.am) | error | ConnectError | discover feed |
 | press | [Azatutyun (RFE/RL)](https://www.azatutyun.am/api/) | rss | discovered  | discover feed |
 | press | [Armenia Today](https://armeniatoday.am/feed/) | rss | discovered  | carried the Vinitski story |
@@ -41,7 +41,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | gazette | [Legislative Herald (matsne)](https://matsne.gov.ge) | html | 1211 KB | all legal acts |
 | tenders | [State Procurement Agency](https://tenders.procurement.gov.ge) | html | 8 KB |  |
 | register | [Ministry of Justice](https://www.justice.gov.ge) | dead | HTTP 404 | MoJ represents Georgia in ISDS; check for a cases page |
-| courts | [Supreme Court](https://www.supremecourt.ge) | html | 39 KB |  |
+| courts | [Supreme Court](https://www.supremecourt.ge) | html | 44 KB |  |
 | regulator | [GNERC energy regulator](https://gnerc.org) | html | 296 KB insecure-tls |  |
 | regulator | [National Agency of Mines](https://nam.gov.ge) | error | ConnectTimeout | mining licences |
 | press | [Civil.ge](https://civil.ge/feed) | rss | feed |  |
@@ -55,8 +55,8 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | gazette | [Ministry of Justice (justice.gov.ge)](https://www.justice.gov.ge/en) | dead | HTTP 404 | discover cases page |
 | press | [Agenda.ge](https://agenda.ge) | error | ConnectError | discover feed |
 | press | [BM.ge](https://bm.ge) | dead | HTTP 403 | discover feed |
-| press | [Formula News](https://formulanews.ge) | html | 101 KB | discover feed |
-| press | [Commersant.ge](https://commersant.ge) | html | 782 KB | discover feed |
+| press | [Formula News](https://formulanews.ge) | html | 102 KB | discover feed |
+| press | [Commersant.ge](https://commersant.ge) | html | 784 KB | discover feed |
 
 ## Azerbaijan
 
@@ -82,12 +82,12 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | gazette | [Adilet legal acts](https://adilet.zan.kz) | html | 2 KB |  |
 | tenders | [Goszakup public procurement](https://goszakup.gov.kz) | html | 6 KB | has an open API (ows.goszakup.gov.kz) |
 | courts | [Judicial cabinet / court database](https://sud.gov.kz) | html | 77 KB |  |
-| courts | [AIFC Court](https://court.aifc.kz) | html | 73 KB | judgments published |
+| courts | [AIFC Court judgments](https://court.aifc.kz/judgments/) | wired |  | - judgments list with summaries |
 | regulator | [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) | html | 0 KB | licence revocations |
 | regulator | [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) | html | 0 KB |  |
 | exchange | [KASE](https://kase.kz/en/news/) | html | 321 KB |  |
 | press | [Kursiv](https://kz.kursiv.media/feed/) | rss | feed |  |
-| press | [Tengrinews](https://tengrinews.kz/rss/) | dead | HTTP 404 |  |
+| press | [Tengrinews](https://tengrinews.kz/rss/) | error | ReadTimeout |  |
 | press | [Zakon.kz](https://www.zakon.kz/rss) | dead | HTTP 404 | legal news |
 | press | [Vlast.kz](https://vlast.kz/feed/) | rss | discovered  |  |
 | press | [The Astana Times](https://astanatimes.com/feed/) | rss | feed |  |
@@ -96,11 +96,11 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | gazette | [Government (primeminister.kz)](https://primeminister.kz/en/news) | html | 64 KB |  |
 | regulator | [National Bank](https://www.nationalbank.kz/en/news) | dead | HTTP 404 |  |
 | regulator | [Samruk-Kazyna](https://sk.kz/en/press-center/news/) | dead | HTTP 404 | sovereign holding |
-| press | [Tengrinews](https://tengrinews.kz) | html | 413 KB | discover feed |
-| press | [Zakon.kz](https://www.zakon.kz) | html | 290 KB | discover feed |
+| press | [Tengrinews](https://tengrinews.kz) | html | 450 KB | discover feed |
+| press | [Zakon.kz](https://www.zakon.kz) | html | 289 KB | discover feed |
 | press | [Vlast.kz](https://vlast.kz/feed/) | rss | discovered  | discover feed |
 | press | [Inbusiness.kz](https://inbusiness.kz/ru/rss) | rss | discovered  | discover feed |
-| press | [KazTAG](https://kaztag.kz) | html | 104 KB | discover feed |
+| press | [KazTAG](https://kaztag.kz) | html | 106 KB | discover feed |
 
 ## Uzbekistan
 
@@ -114,7 +114,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [Kun.uz](https://kun.uz/news/rss?lang=uz) | rss | discovered  |  |
 | press | [Spot.uz](https://www.spot.uz/rss) | rss | feed | business |
 | press | [UzDaily](https://uzdaily.uz/en/rss) | rss | feed |  |
-| press | [Daryo](https://daryo.uz/en/feed) | html | 794 KB |  |
+| press | [Daryo](https://daryo.uz/en/feed) | html | 793 KB |  |
 | gazette | [President](https://president.uz/en) | html | 185 KB | discover feed |
 | regulator | [Central Bank](https://cbu.uz/en/press_center/news/) | html | 209 KB |  |
 | press | [Kun.uz](https://kun.uz/news/rss?lang=uz) | rss | discovered  | discover feed |
@@ -128,7 +128,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | tenders | [zakupki.gov.kg](https://zakupki.gov.kg) | html | 1 KB |  |
 | press | [24.kg](https://24.kg/rss/) | rss | feed |  |
 | press | [AKIpress](https://akipress.com/rss/) | rss | feed |  |
-| press | [Kaktus.media](https://kaktus.media) | html | 350 KB | discover feed |
+| press | [Kaktus.media](https://kaktus.media) | html | 352 KB | discover feed |
 | press | [Economist.kg](https://economist.kg/rss/) | rss | discovered  | discover feed |
 
 ## Turkmenistan
@@ -231,7 +231,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [El Cronista](https://www.cronista.com/arc/outboundfeeds/rss/) | rss | discovered  |  |
 | press | [Infobae](https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/) | rss | discovered  |  |
 | press | [Infobae](https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/) | rss | discovered  | discover feed |
-| press | [iProfesional](https://www.iprofesional.com/rss/home) | rss | discovered  | discover feed |
+| press | [iProfesional](https://www.iprofesional.com) | html | 600 KB | discover feed |
 | press | [Página/12](https://www.pagina12.com.ar/arc/outboundfeeds/rss/) | rss | discovered  | discover feed |
 | regulator | [ENARGAS](https://www.enargas.gob.ar) | html | 35 KB |  |
 | exchange | [CNV](https://www.argentina.gob.ar/cnv) | html | 49 KB |  |
@@ -250,9 +250,9 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [Semana](https://www.semana.com/arc/outboundfeeds/rss/) | rss | discovered  |  |
 | press | [Valora Analitik](https://www.valoraanalitik.com/feed/) | dead | HTTP 403 |  |
 | press | [Semana](https://www.semana.com/arc/outboundfeeds/rss/) | rss | discovered  | discover feed |
-| press | [El Tiempo](https://www.eltiempo.com) | html | 852 KB | discover feed |
+| press | [El Tiempo](https://www.eltiempo.com) | html | 851 KB | discover feed |
 | press | [El Espectador](https://www.elespectador.com/feed/) | rss | discovered  | discover feed |
-| gazette | [Presidencia](https://www.presidencia.gov.co) | html | 7 KB |  |
+| gazette | [Presidencia](https://www.presidencia.gov.co) | html | 5 KB |  |
 | regulator | [Superintendencia Financiera](https://www.superfinanciera.gov.co) | html | 239 KB |  |
 
 ## Peru
@@ -278,7 +278,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | tenders | [Mercado Público](https://www.mercadopublico.cl) | html | 0 KB |  |
 | press | [Diario Financiero](https://www.df.cl/rss) | dead | HTTP 404 |  |
 | press | [El Mercurio (Emol)](https://www.emol.com/rss/) | error | ReadError |  |
-| press | [Diario Financiero](https://www.df.cl) | html | 542 KB | discover feed |
+| press | [Diario Financiero](https://www.df.cl) | html | 543 KB | discover feed |
 | press | [La Tercera](https://www.latercera.com/rss) | rss | discovered  | discover feed |
 | press | [El Mostrador](https://www.elmostrador.cl) | html | 216 KB | discover feed |
 | regulator | [SERNAGEOMIN](https://www.sernageomin.cl) | html | 150 KB insecure-tls | mining |
@@ -298,7 +298,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Efecto Cocuyo](https://efectococuyo.com/feed/) | dead | HTTP 403 |  |
+| press | [Efecto Cocuyo](https://efectococuyo.com/feed/) | rss | feed |  |
 | press | [Banca y Negocios](https://www.bancaynegocios.com/feed/) | error | RemoteProtocol |  |
 | press | [El Nacional](https://www.elnacional.com/feed/) | rss | feed |  |
 | press | [Petroguía](https://www.petroguia.com) | error | ConnectTimeout | discover feed |
@@ -336,7 +336,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [Cinco Días](https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada) | rss | discovered  |  |
 | press | [El Economista](https://www.eleconomista.es/rss/rss-empresas.php) | rss | feed chrome-tls |  |
 | press | [Cinco Días](https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada) | rss | discovered  | discover feed |
-| press | [Vozpópuli](https://www.vozpopuli.com) | html | 322 KB | discover feed |
+| press | [Vozpópuli](https://www.vozpopuli.com) | html | 334 KB | discover feed |
 | register | [Abogacía General del Estado](https://www.mjusticia.gob.es/es/ministerio/organismos-entidades/abogacia-general) | dead | HTTP 404 | defends Spain in ISDS |
 
 ## Italy
@@ -345,7 +345,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 |---|---|---|---|---|
 | gazette | [Gazzetta Ufficiale](https://www.gazzettaufficiale.it) | html | 41 KB |  |
 | press | [Il Sole 24 Ore](https://www.ilsole24ore.com/rss/italia.xml) | rss | feed |  |
-| press | [Milano Finanza](https://www.milanofinanza.it) | html | 87 KB | discover feed |
+| press | [Milano Finanza](https://www.milanofinanza.it) | html | 77 KB | discover feed |
 | register | [Avvocatura dello Stato](https://www.avvocaturastato.it) | dead | HTTP 403 |  |
 
 ## Romania
@@ -451,7 +451,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [APS](https://www.aps.dz/en/?format=feed) | html | 229 KB |  |
+| press | [APS](https://www.aps.dz/en/?format=feed) | html | 202 KB |  |
 | press | [TSA](https://www.tsa-algerie.com/feed/) | rss | discovered  | discover feed |
 
 ## Morocco
@@ -459,7 +459,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
 | press | [Médias24](https://medias24.com/feed/) | dead | HTTP 403 |  |
-| press | [Le360](https://fr.le360.ma) | html | 1594 KB | discover feed |
+| press | [Le360](https://fr.le360.ma) | html | 1503 KB | discover feed |
 | press | [L'Economiste](https://www.leconomiste.com) | dead | HTTP 403 | discover feed |
 
 ## UAE
@@ -467,7 +467,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
 | press | [The National](https://www.thenationalnews.com/rss) | dead | HTTP 404 |  |
-| press | [The National](https://www.thenationalnews.com) | html | 1780 KB | discover feed |
+| press | [The National](https://www.thenationalnews.com) | html | 1778 KB | discover feed |
 | press | [Gulf News](https://gulfnews.com/feed) | rss | discovered  | discover feed |
 
 ## Saudi Arabia
@@ -482,14 +482,14 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
 | press | [The Peninsula](https://thepeninsulaqatar.com/rss) | html | 90 KB |  |
-| press | [Gulf Times](https://www.gulf-times.com) | html | 181 KB | discover feed |
+| press | [Gulf Times](https://www.gulf-times.com) | html | 178 KB | discover feed |
 
 ## Iraq
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
 | press | [Iraq Business News](https://www.iraq-businessnews.com/feed/) | rss | feed |  |
-| press | [Rudaw](https://www.rudaw.net/english) | html | 592 KB | discover feed |
+| press | [Rudaw](https://www.rudaw.net/english) | html | 593 KB | discover feed |
 
 ## India
 
@@ -516,9 +516,9 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 |---|---|---|---|---|
 | gazette | [JDIH Setneg](https://jdih.setneg.go.id) | html | 2466 KB |  |
 | regulator | [ESDM ministry](https://www.esdm.go.id) | html | 136 KB | IUP revocations |
-| exchange | [IDX](https://www.idx.co.id) | dead | HTTP 403 |  |
+| exchange | [IDX](https://www.idx.co.id) | html | 194 KB chrome-tls |  |
 | press | [Kontan](https://www.kontan.co.id/rss) | html | 39 KB |  |
-| press | [Bisnis.com](https://www.bisnis.com/rss) | dead | HTTP 403 |  |
+| press | [Bisnis.com](https://www.bisnis.com/rss) | dead | HTTP 404 |  |
 | press | [Hukumonline](https://www.hukumonline.com/rss) | dead | HTTP 404 | legal |
 | press | [Jakarta Post](https://www.thejakartapost.com/rss) | dead | HTTP 404 |  |
 | press | [Bisnis.com](https://www.bisnis.com) | html | 382 KB | discover feed |
@@ -538,14 +538,14 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
 | press | [The Edge](https://theedgemalaysia.com/rss) | dead | HTTP 404 |  |
-| press | [The Edge Malaysia](https://theedgemalaysia.com) | html | 249 KB | discover feed |
+| press | [The Edge Malaysia](https://theedgemalaysia.com) | html | 248 KB | discover feed |
 | press | [The Star](https://www.thestar.com.my) | html | 302 KB | discover feed |
 
 ## Philippines
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [BusinessWorld](https://www.bworldonline.com/feed/) | rss | feed |  |
+| press | [BusinessWorld](https://www.bworldonline.com/feed/) | error | ReadTimeout |  |
 | press | [Inquirer Business](https://business.inquirer.net/rss) | rss | discovered chrome-tls | discover feed |
 
 ## Korea
@@ -607,21 +607,40 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [JD Supra - arbitration](https://www.jdsupra.com/rss/arbitration/) | dead | HTTP 404 |  |
 | press | [Mondaq - arbitration](https://www.mondaq.com/rss/arbitration-dispute-resolution) | dead | HTTP 404 |  |
 | press | [Pinsent Masons Out-Law](https://www.pinsentmasons.com/out-law/news/rss) | dead | HTTP 404 |  |
-| courts | [England - Find Case Law (Commercial Court Atom)](https://caselaw.nationalarchives.gov.uk/atom.xml?court=ewhc%2Fcomm&order=-date) | rss | feed | s.67/68/69 challenges, enforcement |
+| courts | [England and Wales - Find Case Law search feed](https://caselaw.nationalarchives.gov.uk/atom.xml?query=%22Arbitration+Act+1996%22&order=-date) | wired |  | - s.67/68/69, anti-suit, s.9 stays, enforcement; search feed only, judgments not downloaded |
 | courts | [England - judiciary.uk judgments](https://www.judiciary.uk/feed/) | rss | feed |  |
-| courts | [Netherlands - rechtspraak open data](https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20) | rss | feed | open API; Hague set-aside cases |
+| courts | [Netherlands - rechtspraak open data](https://data.rechtspraak.nl/uitspraken/zoeken?return=DOC&max=50&sort=DESC) | wired |  | - civil decisions filtered on the court summary |
 | courts | [Switzerland - Federal Supreme Court](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_) | html | 0 KB insecure-tls | every award challenge in Switzerland |
 | courts | [France - Cour de cassation news](https://www.courdecassation.fr/en/actualites) | html | 0 KB |  |
-| courts | [Singapore - SICC judgments](https://www.sicc.gov.sg/hearings-judgments/judgments) | html | 234 KB |  |
+| courts | [Singapore - Law Watch judgments feed](https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml) | wired |  | - SGHC, SICC, SGCA with catchwords |
 | courts | [Singapore - eLitigation judgments](https://www.elitigation.sg/gd/Home/Index) | html | 50 KB |  |
 | courts | [Hong Kong - judiciary legal reference](https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp) | html | 57 KB |  |
 | courts | [India - Supreme Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/supremecourt/) | dead | HTTP 403 |  |
 | courts | [India - Delhi High Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/delhi/) | dead | HTTP 403 | s.34/s.48 arbitration matters |
 | courts | [Australia - Federal Court (AustLII feed)](https://www.austlii.edu.au/rss/au/cases/cth/FCA.xml) | dead | HTTP 403 |  |
-| courts | [Canada - Ontario Court of Appeal (CanLII feed)](https://www.canlii.org/en/on/onca/rss_new.xml) | rss | feed |  |
-| courts | [Germany - BGH press](https://www.bundesgerichtshof.de/SiteGlobals/Functions/RSSFeed/DE/RSSNewsfeed/RSSNewsfeed.xml) | dead | HTTP 404 |  |
+| courts | [Canada - CanLII court feeds](https://www.canlii.org/en/on/onca/rss_new.xml) | wired |  | - SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS with catchwords |
+| courts | [Germany - Bundesgerichtshof decisions feed](https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml) | wired |  | - I ZB dockets confirmed against the decision text |
 | courts | [Ireland - judgments](https://www.courts.ie/judgments) | html | 137 KB |  |
-| courts | [Kenya Law - judgments](https://new.kenyalaw.org/judgments/) | html | 45 KB |  |
+| courts | [Kenya Law - search API](https://new.kenyalaw.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  | - arbitration causes and miscellaneous applications |
+| courts | [Austria - RIS Judikatur API](https://data.bka.gv.at/ris/api/v2.6/Judikatur?Applikation=Justiz&Suchworte=Schiedsspruch&DokumenteProSeite=Ten) | wired |  | - OGH and lower-court decision texts |
+| courts | [DIFC Courts - arbitration list](https://www.difccourts.ae/rules-decisions/judgments-orders/arbitration) | wired |  | - ARB and ENF claims |
+| courts | [NigeriaLII - search API](https://nigerialii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [ULII (Uganda) - search API](https://ulii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [TanzLII - search API](https://tanzlii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  | - documents themselves refuse scripts |
+| courts | [ZambiaLII - search API](https://zambialii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [MalawiLII - search API](https://malawilii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [LawLibrary.org.za (South Africa) - search API](https://lawlibrary.org.za/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [NamibLII - search API](https://namiblii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [ZimLII - search API](https://zimlii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [SierraLII - search API](https://sierralii.gov.sl/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [EswatiniLII - search API](https://eswatinilii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) | wired |  |  |
+| courts | [Qatar - QICDRC judgments](https://www.qicdrc.gov.qa/judgments) | html | 150 KB | client-rendered list |
+| courts | [UAE - ADGM Courts judgments](https://www.adgm.com/adgm-courts/judgments) | html | 105 KB | no arbitration marker in the list |
+| courts | [Cayman Islands - judgments](https://www.judicial.ky/judgments) | html | 333 KB | subscription only |
+| courts | [New Zealand - judgments search](https://www.courtsofnz.govt.nz/judgments/) | html | 82 KB | client-rendered |
+| courts | [Australia - NSW Caselaw](https://www.caselaw.nsw.gov.au/search/advanced) | html | 21 KB | no feed; search is a form |
+| courts | [Brazil - STJ jurisprudence search](https://scon.stj.jus.br/SCON/) | dead | HTTP 403 | refuses scripts |
+| courts | [Pakistan - Supreme Court judgments](https://www.supremecourt.gov.pk/judgement-search/) | html | 131 KB chrome-tls | refuses scripts |
 | press | [Omni Bridgeway - ASX announcements](https://omnibridgeway.com/investors/asx-announcements) | html | 23 KB | funder; funded claims disclosed |
 | press | [LCM - RNS](https://www.lcmfinance.com/rss) | rss | discovered  | funder |
 | press | [Therium news](https://therium.com/?feed=rss2) | rss | discovered  | funder |
@@ -636,7 +655,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [Foley Hoag news](https://foleyhoag.com/rss) | rss | discovered  | firm |
 | press | [Volterra Fietta news](https://www.volterrafietta.com/rss) | rss | discovered  | firm |
 | press | [Withers insight](https://www.withersworldwide.com/en-gb/insight) | html | 148 KB | firm |
-| press | [Hogan Lovells news](https://www.hoganlovells.com/en/news) | html | 131 KB | firm |
+| press | [Hogan Lovells news](https://www.hoganlovells.com/en/news) | html | 130 KB | firm |
 | press | [Latham news](https://www.lw.com/en/news) | html | 88 KB | firm |
 | press | [Sidley news](https://www.sidley.com/en/newslanding) | html | 201 KB | firm |
 | press | [Arnold & Porter news](https://www.arnoldporter.com/rss/news) | rss | discovered  | firm |
@@ -805,7 +824,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Handelsblatt](https://www.handelsblatt.com) | html | 1968 KB | discover feed |
+| press | [Handelsblatt](https://www.handelsblatt.com) | html | 2197 KB | discover feed |
 | press | [JUVE](https://www.juve.de/rss) | rss | discovered  | legal press; discover feed |
 
 ## France
@@ -825,7 +844,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [NZZ](https://www.nzz.ch) | html | 968 KB | discover feed |
+| press | [NZZ](https://www.nzz.ch) | html | 971 KB | discover feed |
 
 ## United Kingdom
 
@@ -892,7 +911,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Daily Monitor](https://www.monitor.co.ug/rss.xml) | rss | discovered chrome-tls | discover feed |
+| press | [Daily Monitor](https://www.monitor.co.ug/rss.xml) | rss | discovered  | discover feed |
 
 ## Rwanda
 
@@ -935,7 +954,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Maliweb](https://www.maliweb.net) | html | 240 KB | discover feed |
+| press | [Maliweb](https://www.maliweb.net) | html | 239 KB | discover feed |
 
 ## Burkina Faso
 
@@ -972,7 +991,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Angop](https://www.angop.ao/en) | html | 249 KB | discover feed |
+| press | [Angop](https://www.angop.ao/en) | html | 230 KB | discover feed |
 
 ## Senegal
 
@@ -1046,7 +1065,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [The Globe and Mail](https://www.theglobeandmail.com) | html | 2776 KB | discover feed |
+| press | [The Globe and Mail](https://www.theglobeandmail.com) | html | 2836 KB | discover feed |
 | press | [Northern Miner](https://www.northernminer.com/feed/) | rss | discovered  | discover feed |
 | press | [Mining.com](https://www.mining.com/rss) | rss | discovered  | discover feed |
 
@@ -1115,7 +1134,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [ABC Color](https://www.abc.com.py) | html | 1024 KB | discover feed |
+| press | [ABC Color](https://www.abc.com.py) | html | 911 KB | discover feed |
 | press | [Última Hora](https://www.ultimahora.com) | html | 398 KB | discover feed |
 
 ## Uruguay
@@ -1145,7 +1164,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 
 | Type | Source | Status | Detail | Note |
 |---|---|---|---|---|
-| press | [Upstream](https://www.upstreamonline.com/rss) | html | 148 KB |  |
+| press | [Upstream](https://www.upstreamonline.com/rss) | html | 117 KB |  |
 | press | [Energy Voice](https://www.energyvoice.com/feed/) | dead | HTTP 403 |  |
 | press | [Rigzone](https://www.rigzone.com/news/rss/rigzone_latest.aspx) | rss | feed |  |
 | press | [OilPrice](https://oilprice.com/rss/main) | rss | feed |  |
@@ -1153,7 +1172,7 @@ Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired
 | press | [Natural Gas World](https://www.naturalgasworld.com/rss) | rss | feed |  |
 | press | [LNG Industry](https://www.lngindustry.com/rss/lngindustry.xml) | rss | discovered  |  |
 | press | [World Oil](https://www.worldoil.com/rss) | html | 64 KB |  |
-| press | [Hart Energy](https://www.hartenergy.com/arc/outboundfeeds/rss/) | rss | discovered chrome-tls |  |
+| press | [Hart Energy](https://www.hartenergy.com/rss) | dead | HTTP 404 |  |
 | press | [Power Technology](https://www.power-technology.com/feed/) | dead | HTTP 403 |  |
 | press | [PV Magazine](https://www.pv-magazine.com/feed/) | rss | feed |  |
 | press | [Windpower Monthly](https://www.windpowermonthly.com/rss) | rss | feed |  |

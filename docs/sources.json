@@ -141,7 +141,7 @@
   "https://www.supremecourt.ge",
   "",
   "html",
-  "39 KB"
+  "44 KB"
  ],
  [
   "Georgia",
@@ -299,11 +299,11 @@
  [
   "Kazakhstan",
   "courts",
-  "AIFC Court",
-  "https://court.aifc.kz",
-  "judgments published",
-  "html",
-  "73 KB"
+  "AIFC Court judgments",
+  "https://court.aifc.kz/judgments/",
+  "WIRED - judgments list with summaries",
+  "wired",
+  ""
  ],
  [
   "Kazakhstan",
@@ -347,8 +347,8 @@
   "Tengrinews",
   "https://tengrinews.kz/rss/",
   "",
-  "dead",
-  "HTTP 404"
+  "error",
+  "ReadTimeout"
  ],
  [
   "Kazakhstan",
@@ -465,7 +465,7 @@
   "https://daryo.uz/en/feed",
   "",
   "html",
-  "794 KB"
+  "793 KB"
  ],
  [
   "Kyrgyzstan",
@@ -1121,8 +1121,8 @@
   "Efecto Cocuyo",
   "https://efectococuyo.com/feed/",
   "",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "feed"
  ],
  [
   "Venezuela",
@@ -1554,7 +1554,7 @@
   "https://www.aps.dz/en/?format=feed",
   "",
   "html",
-  "229 KB"
+  "202 KB"
  ],
  [
   "Morocco",
@@ -1706,8 +1706,8 @@
   "IDX",
   "https://www.idx.co.id",
   "",
-  "dead",
-  "HTTP 403"
+  "html",
+  "194 KB chrome-tls"
  ],
  [
   "Indonesia",
@@ -1725,7 +1725,7 @@
   "https://www.bisnis.com/rss",
   "",
   "dead",
-  "HTTP 403"
+  "HTTP 404"
  ],
  [
   "Indonesia",
@@ -1769,8 +1769,8 @@
   "BusinessWorld",
   "https://www.bworldonline.com/feed/",
   "",
-  "rss",
-  "feed"
+  "error",
+  "ReadTimeout"
  ],
  [
   "Korea",
@@ -2198,11 +2198,11 @@
  [
   "Global",
   "courts",
-  "England - Find Case Law (Commercial Court Atom)",
-  "https://caselaw.nationalarchives.gov.uk/atom.xml?court=ewhc%2Fcomm&order=-date",
-  "s.67/68/69 challenges, enforcement",
-  "rss",
-  "feed"
+  "England and Wales - Find Case Law search feed",
+  "https://caselaw.nationalarchives.gov.uk/atom.xml?query=%22Arbitration+Act+1996%22&order=-date",
+  "WIRED - s.67/68/69, anti-suit, s.9 stays, enforcement; search feed only, judgments not downloaded",
+  "wired",
+  ""
  ],
  [
   "Global",
@@ -2217,10 +2217,10 @@
   "Global",
   "courts",
   "Netherlands - rechtspraak open data",
-  "https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20",
-  "open API; Hague set-aside cases",
-  "rss",
-  "feed"
+  "https://data.rechtspraak.nl/uitspraken/zoeken?return=DOC&max=50&sort=DESC",
+  "WIRED - civil decisions filtered on the court summary",
+  "wired",
+  ""
  ],
  [
   "Global",
@@ -2243,11 +2243,11 @@
  [
   "Global",
   "courts",
-  "Singapore - SICC judgments",
-  "https://www.sicc.gov.sg/hearings-judgments/judgments",
-  "",
-  "html",
-  "234 KB"
+  "Singapore - Law Watch judgments feed",
+  "https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml",
+  "WIRED - SGHC, SICC, SGCA with catchwords",
+  "wired",
+  ""
  ],
  [
   "Global",
@@ -2297,20 +2297,20 @@
  [
   "Global",
   "courts",
-  "Canada - Ontario Court of Appeal (CanLII feed)",
+  "Canada - CanLII court feeds",
   "https://www.canlii.org/en/on/onca/rss_new.xml",
-  "",
-  "rss",
-  "feed"
+  "WIRED - SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS with catchwords",
+  "wired",
+  ""
  ],
  [
   "Global",
   "courts",
-  "Germany - BGH press",
-  "https://www.bundesgerichtshof.de/SiteGlobals/Functions/RSSFeed/DE/RSSNewsfeed/RSSNewsfeed.xml",
-  "",
-  "dead",
-  "HTTP 404"
+  "Germany - Bundesgerichtshof decisions feed",
+  "https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml",
+  "WIRED - I ZB dockets confirmed against the decision text",
+  "wired",
+  ""
  ],
  [
   "Global",
@@ -2324,11 +2324,182 @@
  [
   "Global",
   "courts",
-  "Kenya Law - judgments",
-  "https://new.kenyalaw.org/judgments/",
-  "",
+  "Kenya Law - search API",
+  "https://new.kenyalaw.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED - arbitration causes and miscellaneous applications",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "Austria - RIS Judikatur API",
+  "https://data.bka.gv.at/ris/api/v2.6/Judikatur?Applikation=Justiz&Suchworte=Schiedsspruch&DokumenteProSeite=Ten",
+  "WIRED - OGH and lower-court decision texts",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "DIFC Courts - arbitration list",
+  "https://www.difccourts.ae/rules-decisions/judgments-orders/arbitration",
+  "WIRED - ARB and ENF claims",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "NigeriaLII - search API",
+  "https://nigerialii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "ULII (Uganda) - search API",
+  "https://ulii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "TanzLII - search API",
+  "https://tanzlii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED - documents themselves refuse scripts",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "ZambiaLII - search API",
+  "https://zambialii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "MalawiLII - search API",
+  "https://malawilii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "LawLibrary.org.za (South Africa) - search API",
+  "https://lawlibrary.org.za/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "NamibLII - search API",
+  "https://namiblii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "ZimLII - search API",
+  "https://zimlii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "SierraLII - search API",
+  "https://sierralii.gov.sl/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "EswatiniLII - search API",
+  "https://eswatinilii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Global",
+  "courts",
+  "Qatar - QICDRC judgments",
+  "https://www.qicdrc.gov.qa/judgments",
+  "client-rendered list",
   "html",
-  "45 KB"
+  "150 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "UAE - ADGM Courts judgments",
+  "https://www.adgm.com/adgm-courts/judgments",
+  "no arbitration marker in the list",
+  "html",
+  "105 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Cayman Islands - judgments",
+  "https://www.judicial.ky/judgments",
+  "subscription only",
+  "html",
+  "333 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "New Zealand - judgments search",
+  "https://www.courtsofnz.govt.nz/judgments/",
+  "client-rendered",
+  "html",
+  "82 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Australia - NSW Caselaw",
+  "https://www.caselaw.nsw.gov.au/search/advanced",
+  "no feed; search is a form",
+  "html",
+  "21 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Brazil - STJ jurisprudence search",
+  "https://scon.stj.jus.br/SCON/",
+  "refuses scripts",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "courts",
+  "Pakistan - Supreme Court judgments",
+  "https://www.supremecourt.gov.pk/judgement-search/",
+  "refuses scripts",
+  "html",
+  "131 KB chrome-tls"
  ],
  [
   "Global",
@@ -2463,7 +2634,7 @@
   "https://www.hoganlovells.com/en/news",
   "firm",
   "html",
-  "131 KB"
+  "130 KB"
  ],
  [
   "Global",
@@ -2895,7 +3066,7 @@
   "https://armenpress.am",
   "discover feed",
   "html",
-  "132 KB"
+  "133 KB"
  ],
  [
   "Armenia",
@@ -2904,7 +3075,7 @@
   "https://www.panorama.am",
   "discover feed",
   "html",
-  "263 KB"
+  "262 KB"
  ],
  [
   "Armenia",
@@ -2994,7 +3165,7 @@
   "https://formulanews.ge",
   "discover feed",
   "html",
-  "101 KB"
+  "102 KB"
  ],
  [
   "Georgia",
@@ -3003,7 +3174,7 @@
   "https://commersant.ge",
   "discover feed",
   "html",
-  "782 KB"
+  "784 KB"
  ],
  [
   "Azerbaijan",
@@ -3093,7 +3264,7 @@
   "https://tengrinews.kz",
   "discover feed",
   "html",
-  "413 KB"
+  "450 KB"
  ],
  [
   "Kazakhstan",
@@ -3102,7 +3273,7 @@
   "https://www.zakon.kz",
   "discover feed",
   "html",
-  "290 KB"
+  "289 KB"
  ],
  [
   "Kazakhstan",
@@ -3129,7 +3300,7 @@
   "https://kaztag.kz",
   "discover feed",
   "html",
-  "104 KB"
+  "106 KB"
  ],
  [
   "Uzbekistan",
@@ -3174,7 +3345,7 @@
   "https://kaktus.media",
   "discover feed",
   "html",
-  "350 KB"
+  "352 KB"
  ],
  [
   "Kyrgyzstan",
@@ -3468,10 +3639,10 @@
   "Argentina",
   "press",
   "iProfesional",
-  "https://www.iprofesional.com/rss/home",
+  "https://www.iprofesional.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "html",
+  "600 KB"
  ],
  [
   "Argentina",
@@ -3516,7 +3687,7 @@
   "https://www.eltiempo.com",
   "discover feed",
   "html",
-  "852 KB"
+  "851 KB"
  ],
  [
   "Colombia",
@@ -3534,7 +3705,7 @@
   "https://www.presidencia.gov.co",
   "",
   "html",
-  "7 KB"
+  "5 KB"
  ],
  [
   "Colombia",
@@ -3588,7 +3759,7 @@
   "https://www.df.cl",
   "discover feed",
   "html",
-  "542 KB"
+  "543 KB"
  ],
  [
   "Chile",
@@ -3714,7 +3885,7 @@
   "https://www.vozpopuli.com",
   "discover feed",
   "html",
-  "322 KB"
+  "334 KB"
  ],
  [
   "Spain",
@@ -3732,7 +3903,7 @@
   "https://www.milanofinanza.it",
   "discover feed",
   "html",
-  "87 KB"
+  "77 KB"
  ],
  [
   "Italy",
@@ -3930,7 +4101,7 @@
   "https://www.handelsblatt.com",
   "discover feed",
   "html",
-  "1968 KB"
+  "2197 KB"
  ],
  [
   "Germany",
@@ -3975,7 +4146,7 @@
   "https://www.nzz.ch",
   "discover feed",
   "html",
-  "968 KB"
+  "971 KB"
  ],
  [
   "United Kingdom",
@@ -4056,7 +4227,7 @@
   "https://www.thenationalnews.com",
   "discover feed",
   "html",
-  "1780 KB"
+  "1778 KB"
  ],
  [
   "UAE",
@@ -4083,7 +4254,7 @@
   "https://www.gulf-times.com",
   "discover feed",
   "html",
-  "181 KB"
+  "178 KB"
  ],
  [
   "Iraq",
@@ -4092,7 +4263,7 @@
   "https://www.rudaw.net/english",
   "discover feed",
   "html",
-  "592 KB"
+  "593 KB"
  ],
  [
   "Libya",
@@ -4146,7 +4317,7 @@
   "https://fr.le360.ma",
   "discover feed",
   "html",
-  "1594 KB"
+  "1503 KB"
  ],
  [
   "Morocco",
@@ -4182,7 +4353,7 @@
   "https://www.monitor.co.ug/rss.xml",
   "discover feed",
   "rss",
-  "discovered chrome-tls"
+  "discovered "
  ],
  [
   "Rwanda",
@@ -4290,7 +4461,7 @@
   "https://www.maliweb.net",
   "discover feed",
   "html",
-  "240 KB"
+  "239 KB"
  ],
  [
   "Burkina Faso",
@@ -4353,7 +4524,7 @@
   "https://www.angop.ao/en",
   "discover feed",
   "html",
-  "249 KB"
+  "230 KB"
  ],
  [
   "Senegal",
@@ -4443,7 +4614,7 @@
   "https://theedgemalaysia.com",
   "discover feed",
   "html",
-  "249 KB"
+  "248 KB"
  ],
  [
   "Malaysia",
@@ -4605,7 +4776,7 @@
   "https://www.theglobeandmail.com",
   "discover feed",
   "html",
-  "2776 KB"
+  "2836 KB"
  ],
  [
   "Canada",
@@ -4731,7 +4902,7 @@
   "https://www.abc.com.py",
   "discover feed",
   "html",
-  "1024 KB"
+  "911 KB"
  ],
  [
   "Paraguay",
@@ -4866,7 +5037,7 @@
   "https://www.upstreamonline.com/rss",
   "",
   "html",
-  "148 KB"
+  "117 KB"
  ],
  [
   "Sector: Energy",
@@ -4935,10 +5106,10 @@
   "Sector: Energy",
   "press",
   "Hart Energy",
-  "https://www.hartenergy.com/arc/outboundfeeds/rss/",
+  "https://www.hartenergy.com/rss",
   "",
-  "rss",
-  "discovered chrome-tls"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Sector: Energy",

@@ -798,6 +798,34 @@ def run_probe():
         return list(ex.map(probe, CANDIDATES))
 
 
+_CSS = """:root{color-scheme:light;--ink:#131726;--ink2:#535865;--mute:#6d717e;--line:#dddfe7;--hair:#eceef3;--sunken:#f5f7fa;--link:#3e55df;--accent:#4D68F9;--ok:#1f7a4d;--warn:#8a5a00}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Hanken Grotesk",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 28px 80px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:32px;margin:0 0 6px;letter-spacing:-.2px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:22px;margin:38px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+p{max-width:78ch;color:var(--ink2)} a{color:var(--link)} code{font-family:"IBM Plex Mono","SF Mono",Consolas,monospace;font-size:.92em}
+table{border-collapse:collapse;width:100%;font-size:13.5px} th{text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:7px 10px;border-bottom:1px solid var(--hair);vertical-align:top} tr:hover td{background:var(--sunken)}
+td:nth-child(3){font-weight:700;white-space:nowrap}
+.s-wired{color:var(--ok)} .s-rss{color:var(--link)} .s-html{color:var(--ink2)} .s-blocked{color:var(--warn)} .s-dead,.s-error{color:var(--mute);font-weight:500}
+.wrap > div{overflow-x:auto}
+"""
+
+
+def write_html(md: str) -> str:
+    """docs/sources.html: the same Markdown, rendered with the CaseLens light styles
+    and each status coloured, so the map can be read without a Markdown viewer."""
+    import markdown
+    body = markdown.markdown(md, extensions=["tables"])
+    body = re.sub(r"<td>(wired|rss|html|blocked|dead|error)</td>",
+                  lambda m: '<td class="s-{0}">{0}</td>'.format(m.group(1)), body)
+    body = re.sub(r"(<table>.*?</table>)", r"<div>\1</div>", body, flags=re.S)
+    page = "<title>ArbRadar Source Map</title>\n<style>\n{}</style>\n<div class=\"wrap\">{}</div>\n".format(_CSS, body)
+    with open(os.path.join(ROOT, "docs", "sources.html"), "w", encoding="utf-8") as fh:
+        fh.write(page)
+    return page
+
+
 def write_docs(results):
     today = dt.date.today().isoformat()
     countries = []
@@ -832,6 +860,7 @@ if __name__ == "__main__":
     if a.probe:
         res = run_probe()
         md = write_docs(res)
+        write_html(md)
         print(md.split("\n")[6])
         for r in res:
             print("  {:<14} {:<10} {:<8} {:<8} {}".format(r[0][:14], r[1], r[5], r[6][:8], r[2][:48]))
