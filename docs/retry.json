@@ -1,0 +1,492 @@
+[
+ [
+  "Armenia",
+  "gnumner.am announcements",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Armenia",
+  "DataLex court database",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Armenia",
+  "Public Services Regulatory Commission",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Armenia",
+  "Armenpress (EN RSS)",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Armenia",
+  "Panorama.am",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Georgia",
+  "Ministry of Justice",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Georgia",
+  "GNERC energy regulator",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Georgia",
+  "National Agency of Mines",
+  "error",
+  "error",
+  "Timeout"
+ ],
+ [
+  "Georgia",
+  "Agenda.ge",
+  "error",
+  "error",
+  "DNSError"
+ ],
+ [
+  "Georgia",
+  "BM.ge (Business Media)",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Azerbaijan",
+  "e-qanun legal acts",
+  "error",
+  "error",
+  "Timeout"
+ ],
+ [
+  "Azerbaijan",
+  "etender.gov.az",
+  "error",
+  "error",
+  "Timeout"
+ ],
+ [
+  "Azerbaijan",
+  "Caliber",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Kazakhstan",
+  "Tengrinews",
+  "dead",
+  "dead",
+  "HTTP 500"
+ ],
+ [
+  "Kazakhstan",
+  "Zakon.kz",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Kazakhstan",
+  "Vlast.kz",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Uzbekistan",
+  "Ministry of Mining and Geology",
+  "error",
+  "error",
+  "DNSError"
+ ],
+ [
+  "Uzbekistan",
+  "Kun.uz",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Uzbekistan",
+  "Daryo",
+  "error",
+  "html",
+  "795 KB via chrome-tls"
+ ],
+ [
+  "Turkmenistan",
+  "Turkmenportal",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Turkmenistan",
+  "Chronicles of Turkmenistan",
+  "error",
+  "error",
+  "SSLError"
+ ],
+ [
+  "Ukraine",
+  "Verkhovna Rada legal acts",
+  "error",
+  "error",
+  "Timeout"
+ ],
+ [
+  "Ukraine",
+  "Ministry of Justice - international disputes",
+  "blocked",
+  "html",
+  "60 KB via chrome-tls"
+ ],
+ [
+  "Ukraine",
+  "Ukrinform (EN)",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Ukraine",
+  "Ekonomichna Pravda",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Ukraine",
+  "LIGA.net",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Turkey",
+  "Resmî Gazete",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Turkey",
+  "MAPEG mining",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Mexico",
+  "Secretaría de Economía ISDS register",
+  "blocked",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Mexico",
+  "Diario Oficial de la Federación",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Mexico",
+  "CompraNet",
+  "error",
+  "error",
+  "DNSError"
+ ],
+ [
+  "Mexico",
+  "CNH hydrocarbons",
+  "blocked",
+  "html",
+  "47 KB via chrome-tls"
+ ],
+ [
+  "Mexico",
+  "BMV",
+  "error",
+  "error",
+  "Timeout"
+ ],
+ [
+  "Mexico",
+  "El Economista",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Mexico",
+  "El Universal",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Argentina",
+  "Ámbito",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Argentina",
+  "Infobae",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Colombia",
+  "ANDJE - defensa internacional",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Colombia",
+  "Semana",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Colombia",
+  "Valora Analitik",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Peru",
+  "SEACE",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Chile",
+  "Diario Financiero",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Chile",
+  "El Mercurio (Emol)",
+  "error",
+  "error",
+  "ConnectionEr"
+ ],
+ [
+  "Venezuela",
+  "Banca y Negocios",
+  "error",
+  "error",
+  "HTTPError"
+ ],
+ [
+  "Brazil",
+  "Diário Oficial da União",
+  "error",
+  "error",
+  "HTTPError"
+ ],
+ [
+  "Brazil",
+  "Valor Econômico",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Spain",
+  "Cinco Días",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Spain",
+  "El Economista",
+  "blocked",
+  "rss",
+  "feed via chrome-tls"
+ ],
+ [
+  "Kenya",
+  "Business Daily",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Kenya",
+  "The Star",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Tanzania",
+  "Mining Commission",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "Tanzania",
+  "The Citizen",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "South Africa",
+  "JSE SENS",
+  "blocked",
+  "html",
+  "227 KB via chrome-tls"
+ ],
+ [
+  "South Africa",
+  "Business Day",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Egypt",
+  "Ahram Online",
+  "blocked",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Morocco",
+  "Médias24",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "UAE",
+  "The National",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Saudi Arabia",
+  "Arab News",
+  "blocked",
+  "rss",
+  "feed via chrome-tls"
+ ],
+ [
+  "India",
+  "eGazette",
+  "error",
+  "error",
+  "CertificateV"
+ ],
+ [
+  "India",
+  "LiveLaw",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Indonesia",
+  "IDX",
+  "blocked",
+  "html",
+  "194 KB via chrome-tls"
+ ],
+ [
+  "Indonesia",
+  "Bisnis.com",
+  "blocked",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Indonesia",
+  "Hukumonline",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Indonesia",
+  "Jakarta Post",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Malaysia",
+  "The Edge",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Korea",
+  "Korea JoongAng Daily",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "italaw",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "UNCTAD ISDS Navigator",
+  "blocked",
+  "blocked",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "SEDAR+",
+  "blocked",
+  "html",
+  "15 KB via chrome-tls"
+ ],
+ [
+  "Global",
+  "Lexology arbitration",
+  "dead",
+  "dead",
+  "HTTP 404"
+ ]
+]

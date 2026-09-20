@@ -15,7 +15,7 @@
   "https://www.arlis.am",
   "all legal acts; search only",
   "html",
-  "1406 KB"
+  "1400 KB"
  ],
  [
   "Armenia",
@@ -24,7 +24,7 @@
   "https://www.armeps.am",
   "state procurement portal",
   "html",
-  "33 KB"
+  "30 KB"
  ],
  [
   "Armenia",
@@ -32,8 +32,8 @@
   "gnumner.am announcements",
   "https://gnumner.am",
   "procurement announcements",
-  "error",
-  "ConnectError"
+  "html",
+  "120 KB insecure-tls"
  ],
  [
   "Armenia",
@@ -41,8 +41,8 @@
   "DataLex court database",
   "https://www.datalex.am",
   "first-instance and appeal cases",
-  "error",
-  "ConnectError"
+  "html",
+  "17 KB insecure-tls"
  ],
  [
   "Armenia",
@@ -87,7 +87,7 @@
   "https://www.civilnet.am/feed",
   "",
   "html",
-  "80 KB"
+  "66 KB"
  ],
  [
   "Armenia",
@@ -114,7 +114,7 @@
   "https://matsne.gov.ge",
   "all legal acts",
   "html",
-  "1266 KB"
+  "1211 KB"
  ],
  [
   "Georgia",
@@ -123,7 +123,7 @@
   "https://tenders.procurement.gov.ge",
   "",
   "html",
-  "11 KB"
+  "8 KB"
  ],
  [
   "Georgia",
@@ -141,7 +141,7 @@
   "https://www.supremecourt.ge",
   "",
   "html",
-  "45 KB"
+  "44 KB"
  ],
  [
   "Georgia",
@@ -149,8 +149,8 @@
   "GNERC energy regulator",
   "https://gnerc.org",
   "",
-  "error",
-  "ConnectError"
+  "html",
+  "296 KB insecure-tls"
  ],
  [
   "Georgia",
@@ -203,7 +203,7 @@
   "BM.ge (Business Media)",
   "https://bm.ge/rss",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -246,10 +246,10 @@
   "Azerbaijan",
   "press",
   "APA",
-  "https://apa.az/en/rss",
+  "https://apa.az/rss",
   "",
-  "html",
-  "292 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Azerbaijan",
@@ -264,10 +264,10 @@
   "Azerbaijan",
   "press",
   "Caliber",
-  "https://caliber.az/en/rss",
+  "https://caliber.az/rss.xml",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Kazakhstan",
@@ -294,7 +294,7 @@
   "https://sud.gov.kz",
   "",
   "html",
-  "83 KB"
+  "77 KB"
  ],
  [
   "Kazakhstan",
@@ -330,7 +330,7 @@
   "https://kase.kz/en/news/",
   "",
   "html",
-  "322 KB"
+  "321 KB"
  ],
  [
   "Kazakhstan",
@@ -348,7 +348,7 @@
   "https://tengrinews.kz/rss/",
   "",
   "dead",
-  "HTTP 500"
+  "HTTP 404"
  ],
  [
   "Kazakhstan",
@@ -363,10 +363,10 @@
   "Kazakhstan",
   "press",
   "Vlast.kz",
-  "https://vlast.kz/rss",
+  "https://vlast.kz/feed/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Kazakhstan",
@@ -393,7 +393,7 @@
   "https://lex.uz",
   "",
   "html",
-  "224 KB"
+  "223 KB"
  ],
  [
   "Uzbekistan",
@@ -420,7 +420,7 @@
   "https://uzse.uz",
   "",
   "html",
-  "307 KB"
+  "293 KB"
  ],
  [
   "Uzbekistan",
@@ -435,10 +435,10 @@
   "Uzbekistan",
   "press",
   "Kun.uz",
-  "https://kun.uz/en/rss",
+  "https://kun.uz/news/rss?lang=uz",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Uzbekistan",
@@ -474,7 +474,7 @@
   "https://cbd.minjust.gov.kg",
   "",
   "html",
-  "2 KB"
+  "1 KB"
  ],
  [
   "Kyrgyzstan",
@@ -545,8 +545,8 @@
   "Ministry of Justice - international disputes",
   "https://minjust.gov.ua",
   "MoJ defends Ukraine in ISDS; find the cases page",
-  "blocked",
-  "HTTP 403"
+  "html",
+  "55 KB chrome-tls"
  ],
  [
   "Ukraine",
@@ -555,7 +555,7 @@
   "https://reyestr.court.gov.ua",
   "every decision, searchable",
   "html",
-  "47 KB"
+  "44 KB"
  ],
  [
   "Ukraine",
@@ -564,7 +564,7 @@
   "https://www.nerc.gov.ua",
   "",
   "html",
-  "886 KB"
+  "808 KB"
  ],
  [
   "Ukraine",
@@ -581,7 +581,7 @@
   "Ekonomichna Pravda",
   "https://www.epravda.com.ua/rss/",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -591,25 +591,25 @@
   "https://lb.ua/rss",
   "",
   "html",
-  "24 KB"
+  "21 KB"
  ],
  [
   "Ukraine",
   "press",
   "NV",
-  "https://nv.ua/rss",
+  "https://nv.ua/ukr/rss/all.xml",
   "",
-  "html",
-  "74 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Ukraine",
   "press",
   "LIGA.net",
-  "https://www.liga.net/rss",
+  "https://news.liga.net/ua/all/rss.xml",
   "legal and business",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Ukraine",
@@ -627,7 +627,7 @@
   "http://publication.pravo.gov.ru",
   "",
   "html",
-  "27 KB"
+  "26 KB"
  ],
  [
   "Russia",
@@ -636,7 +636,7 @@
   "https://kad.arbitr.ru",
   "anti-suit injunctions, asset seizures; search needs session",
   "html",
-  "90 KB"
+  "83 KB"
  ],
  [
   "Russia",
@@ -689,8 +689,8 @@
   "Resmî Gazete",
   "https://www.resmigazete.gov.tr",
   "daily official gazette",
-  "error",
-  "ConnectError"
+  "html",
+  "195 KB insecure-tls"
  ],
  [
   "Turkey",
@@ -708,7 +708,7 @@
   "https://www.epdk.gov.tr",
   "",
   "html",
-  "187 KB"
+  "186 KB"
  ],
  [
   "Turkey",
@@ -716,8 +716,8 @@
   "MAPEG mining",
   "https://www.mapeg.gov.tr",
   "",
-  "error",
-  "ConnectError"
+  "html",
+  "714 KB insecure-tls"
  ],
  [
   "Turkey",
@@ -761,8 +761,8 @@
   "Secretaría de Economía ISDS register",
   "https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado",
   "publishes notices of intent; bot challenge",
-  "blocked",
-  "HTTP 200"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Mexico",
@@ -770,8 +770,8 @@
   "Diario Oficial de la Federación",
   "https://www.dof.gob.mx/rss",
   "",
-  "error",
-  "ConnectError"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Mexico",
@@ -788,8 +788,8 @@
   "CNH hydrocarbons",
   "https://www.gob.mx/cnh",
   "",
-  "blocked",
-  "HTTP 200"
+  "html",
+  "46 KB chrome-tls"
  ],
  [
   "Mexico",
@@ -806,7 +806,7 @@
   "El Economista",
   "https://www.eleconomista.com.mx/rss/",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -831,10 +831,10 @@
   "Mexico",
   "press",
   "El Universal",
-  "https://www.eluniversal.com.mx/rss",
+  "https://www.eluniversal.com.mx/arc/outboundfeeds/rss/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Argentina",
@@ -887,26 +887,26 @@
   "Ámbito",
   "https://www.ambito.com/rss",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
   "Argentina",
   "press",
   "El Cronista",
-  "https://www.cronista.com/rss",
+  "https://www.cronista.com/arc/outboundfeeds/rss/",
   "",
-  "html",
-  "1632 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Argentina",
   "press",
   "Infobae",
-  "https://www.infobae.com/feeds/rss/",
+  "https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Colombia",
@@ -914,7 +914,7 @@
   "ANDJE - defensa internacional",
   "https://www.defensajuridica.gov.co",
   "publishes ISDS cases; WAF 403 to scripts",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -924,7 +924,7 @@
   "https://www.colombiacompra.gov.co",
   "",
   "html",
-  "588 KB"
+  "589 KB"
  ],
  [
   "Colombia",
@@ -960,7 +960,7 @@
   "https://www.portafolio.co/rss",
   "",
   "html",
-  "92 KB"
+  "91 KB"
  ],
  [
   "Colombia",
@@ -975,10 +975,10 @@
   "Colombia",
   "press",
   "Semana",
-  "https://www.semana.com/rss",
+  "https://www.semana.com/arc/outboundfeeds/rss/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Colombia",
@@ -986,7 +986,7 @@
   "Valora Analitik",
   "https://www.valoraanalitik.com/feed/",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -1029,19 +1029,19 @@
   "Peru",
   "press",
   "Gestión",
-  "https://gestion.pe/rss",
+  "https://gestion.pe/arcio/rss/",
   "",
-  "html",
-  "765 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Peru",
   "press",
   "El Comercio",
-  "https://elcomercio.pe/rss",
+  "https://elcomercio.pe/arcio/rss/",
   "",
-  "html",
-  "884 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Peru",
@@ -1101,19 +1101,19 @@
   "Ecuador",
   "press",
   "El Universo",
-  "https://www.eluniverso.com/rss",
+  "https://www.eluniverso.com/arc/outboundfeeds/rss/?outputType=xml",
   "",
-  "html",
-  "145 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Ecuador",
   "press",
   "Primicias",
-  "https://www.primicias.ec/feed/",
+  "https://www.primicias.ec/rss/latest",
   "",
-  "html",
-  "263 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Venezuela",
@@ -1131,7 +1131,7 @@
   "https://www.bancaynegocios.com/feed/",
   "",
   "error",
-  "RemoteProtocolError"
+  "RemoteProtocol"
  ],
  [
   "Venezuela",
@@ -1146,10 +1146,10 @@
   "Bolivia",
   "press",
   "El Deber",
-  "https://eldeber.com.bo/rss",
+  "https://eldeber.com.bo/feed",
   "",
-  "html",
-  "158 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Brazil",
@@ -1158,16 +1158,16 @@
   "https://www.in.gov.br",
   "",
   "error",
-  "RemoteProtocolError"
+  "RemoteProtocol"
  ],
  [
   "Brazil",
   "press",
   "Valor Econômico",
-  "https://valor.globo.com/rss",
+  "https://valor.globo.com/rss/valor",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Brazil",
@@ -1236,10 +1236,10 @@
   "Spain",
   "press",
   "Cinco Días",
-  "https://cincodias.elpais.com/rss/",
+  "https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Spain",
@@ -1247,8 +1247,8 @@
   "El Economista",
   "https://www.eleconomista.es/rss/rss-empresas.php",
   "",
-  "blocked",
-  "HTTP 403"
+  "rss",
+  "feed chrome-tls"
  ],
  [
   "Italy",
@@ -1338,7 +1338,7 @@
   "https://ngxgroup.com",
   "",
   "html",
-  "66 KB"
+  "63 KB"
  ],
  [
   "Nigeria",
@@ -1407,10 +1407,10 @@
   "Kenya",
   "press",
   "Business Daily",
-  "https://www.businessdailyafrica.com/rss",
+  "https://www.businessdailyafrica.com/bd/rss.xml",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Kenya",
@@ -1427,17 +1427,17 @@
   "Mining Commission",
   "https://www.tumemadini.go.tz",
   "",
-  "error",
-  "ConnectError"
+  "html",
+  "81 KB insecure-tls"
  ],
  [
   "Tanzania",
   "press",
   "The Citizen",
-  "https://www.thecitizen.co.tz/rss",
+  "https://www.thecitizen.co.tz/rss.xml",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "Zambia",
@@ -1481,17 +1481,17 @@
   "JSE SENS",
   "https://www.jse.co.za",
   "",
-  "blocked",
-  "HTTP 403"
+  "html",
+  "227 KB chrome-tls"
  ],
  [
   "South Africa",
   "press",
   "Business Day",
-  "https://www.businesslive.co.za/bd/rss",
+  "https://www.businesslive.co.za/arc/outboundfeeds/rss/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "South Africa",
@@ -1524,10 +1524,10 @@
   "Egypt",
   "press",
   "Enterprise",
-  "https://enterprise.press/feed/",
+  "https://enterpriseam.com/egypt/feed/",
   "the best daily on Egyptian business",
-  "html",
-  "453 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Egypt",
@@ -1535,8 +1535,8 @@
   "Ahram Online",
   "https://english.ahram.org.eg/rss",
   "",
-  "blocked",
-  "HTTP 403"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Egypt",
@@ -1554,7 +1554,7 @@
   "https://www.aps.dz/en/?format=feed",
   "",
   "html",
-  "230 KB"
+  "229 KB"
  ],
  [
   "Morocco",
@@ -1562,7 +1562,7 @@
   "Médias24",
   "https://medias24.com/feed/",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -1578,10 +1578,10 @@
   "Saudi Arabia",
   "press",
   "Arab News",
-  "https://www.arabnews.com/rss.xml",
+  "https://www.arabnews.com/rss",
   "",
-  "blocked",
-  "HTTP 403"
+  "rss",
+  "discovered chrome-tls"
  ],
  [
   "Qatar",
@@ -1590,7 +1590,7 @@
   "https://thepeninsulaqatar.com/rss",
   "",
   "html",
-  "91 KB"
+  "90 KB"
  ],
  [
   "Iraq",
@@ -1607,8 +1607,8 @@
   "eGazette",
   "https://egazette.gov.in",
   "",
-  "error",
-  "ConnectError"
+  "html",
+  "66 KB insecure-tls"
  ],
  [
   "India",
@@ -1650,10 +1650,10 @@
   "India",
   "press",
   "LiveLaw",
-  "https://www.livelaw.in/rss",
+  "https://www.livelaw.in/google_feeds.xml",
   "legal",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered "
  ],
  [
   "India",
@@ -1706,7 +1706,7 @@
   "IDX",
   "https://www.idx.co.id",
   "",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -1724,8 +1724,8 @@
   "Bisnis.com",
   "https://www.bisnis.com/rss",
   "",
-  "blocked",
-  "HTTP 403"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Indonesia",
@@ -1823,7 +1823,7 @@
   "italaw",
   "https://www.italaw.com",
   "awards and decisions; Cloudflare",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -1832,7 +1832,7 @@
   "UNCTAD ISDS Navigator",
   "https://investmentpolicy.unctad.org/investment-dispute-settlement",
   "Cloudflare",
-  "blocked",
+  "dead",
   "HTTP 403"
  ],
  [
@@ -1886,8 +1886,8 @@
   "SEDAR+",
   "https://www.sedarplus.ca",
   "Canadian filings; client-rendered",
-  "blocked",
-  "HTTP 403"
+  "html",
+  "15 KB chrome-tls"
  ],
  [
   "Global",
@@ -1938,9 +1938,2817 @@
   "Global",
   "press",
   "Litigation Capital Management",
-  "https://www.lcmfinance.com/news/",
+  "https://www.lcmfinance.com/rss",
+  "funder",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "ICC news",
+  "https://iccwbo.org/feed/",
+  "institution",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "LCIA news",
+  "https://www.lcia.org/News/news.aspx",
+  "institution",
+  "html",
+  "76 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "VIAC news",
+  "https://www.viac.eu/feed/",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "DIS news",
+  "https://www.disarb.org/en/news",
+  "institution",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "press",
+  "CRCICA news",
+  "https://crcica.org/feed/",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "CIETAC news",
+  "http://www.cietac.org/index.php?m=Article&a=index&id=1&l=en",
+  "institution",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "KCAB International",
+  "http://www.kcabinternational.or.kr/rss.xml",
+  "institution",
+  "rss",
+  "discovered chrome-tls"
+ ],
+ [
+  "Global",
+  "press",
+  "JCAA news",
+  "https://www.jcaa.or.jp/en/news/",
+  "institution",
+  "dead",
+  "HTTP 423"
+ ],
+ [
+  "Global",
+  "press",
+  "DIAC news",
+  "https://www.diac.com/en/feed",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "ISTAC news",
+  "https://istac.org.tr/rss",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Russian Arbitration Center",
+  "https://centerarbitr.ru/rss",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "CAM Santiago",
+  "https://www.camsantiago.cl/noticias/",
+  "institution",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "press",
+  "CAM-CCBC",
+  "https://www.ccbc.org.br/feed/",
+  "institution",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "AAA-ICDR news",
+  "https://www.adr.org/news",
+  "institution",
+  "html",
+  "431 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Energy Charter Secretariat",
+  "https://www.energycharter.org/media/news/",
+  "treaty body; case statistics",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "UNCITRAL news",
+  "https://uncitral.un.org/en/news",
+  "",
+  "html",
+  "109 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "EFILA blog",
+  "https://efilablog.org/feed/",
+  "investment law",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "Global Legal Chronicle",
+  "https://www.globallegalchronicle.com/feed/",
+  "deals and cases with counsel named",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "CDR News",
+  "https://www.cdr-news.com/rss",
+  "disputes press",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "Global Legal Post",
+  "https://www.globallegalpost.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "Legal Business",
+  "https://www.legalbusiness.co.uk/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "The Lawyer",
+  "https://www.thelawyer.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "Asian Legal Business",
+  "http://www.legalbusinessonline.com/rss.xml",
+  "",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Latin Lawyer",
+  "https://latinlawyer.com/rss",
+  "GAR's sister title",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "press",
+  "Africa Legal",
+  "https://www.africa-legal.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "JD Supra - arbitration",
+  "https://www.jdsupra.com/rss/arbitration/",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "Mondaq - arbitration",
+  "https://www.mondaq.com/rss/arbitration-dispute-resolution",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "Pinsent Masons Out-Law",
+  "https://www.pinsentmasons.com/out-law/news/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "courts",
+  "England - Find Case Law (Commercial Court Atom)",
+  "https://caselaw.nationalarchives.gov.uk/atom.xml?court=ewhc%2Fcomm&order=-date",
+  "s.67/68/69 challenges, enforcement",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "courts",
+  "England - judiciary.uk judgments",
+  "https://www.judiciary.uk/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "courts",
+  "Netherlands - rechtspraak open data",
+  "https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20",
+  "open API; Hague set-aside cases",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "courts",
+  "Switzerland - Federal Supreme Court",
+  "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_",
+  "every award challenge in Switzerland",
+  "html",
+  "0 KB insecure-tls"
+ ],
+ [
+  "Global",
+  "courts",
+  "France - Cour de cassation news",
+  "https://www.courdecassation.fr/en/actualites",
+  "",
+  "html",
+  "0 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Singapore - SICC judgments",
+  "https://www.sicc.gov.sg/hearings-judgments/judgments",
+  "",
+  "html",
+  "234 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Singapore - eLitigation judgments",
+  "https://www.elitigation.sg/gd/Home/Index",
+  "",
+  "html",
+  "50 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Hong Kong - judiciary legal reference",
+  "https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp",
+  "",
+  "html",
+  "57 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "India - Supreme Court (Indian Kanoon feed)",
+  "https://indiankanoon.org/feeds/latest/supremecourt/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "courts",
+  "India - Delhi High Court (Indian Kanoon feed)",
+  "https://indiankanoon.org/feeds/latest/delhi/",
+  "s.34/s.48 arbitration matters",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "courts",
+  "Australia - Federal Court (AustLII feed)",
+  "https://www.austlii.edu.au/rss/au/cases/cth/FCA.xml",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "courts",
+  "Canada - Ontario Court of Appeal (CanLII feed)",
+  "https://www.canlii.org/en/on/onca/rss_new.xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "courts",
+  "Germany - BGH press",
+  "https://www.bundesgerichtshof.de/SiteGlobals/Functions/RSSFeed/DE/RSSNewsfeed/RSSNewsfeed.xml",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "courts",
+  "Ireland - judgments",
+  "https://www.courts.ie/judgments",
+  "",
+  "html",
+  "137 KB"
+ ],
+ [
+  "Global",
+  "courts",
+  "Kenya Law - judgments",
+  "https://new.kenyalaw.org/judgments/",
+  "",
+  "html",
+  "45 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Omni Bridgeway - ASX announcements",
+  "https://omnibridgeway.com/investors/asx-announcements",
+  "funder; funded claims disclosed",
+  "html",
+  "23 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "LCM - RNS",
+  "https://www.lcmfinance.com/rss",
+  "funder",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Therium news",
+  "https://therium.com/?feed=rss2",
+  "funder",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Harbour news",
+  "https://www.harbourlitigationfunding.com/harbour-is-the-largest-privately-owned-litigation-funder/feed/",
+  "funder",
+  "rss",
+  "discovered chrome-tls"
+ ],
+ [
+  "Global",
+  "press",
+  "Nivalion news",
+  "https://nivalion.com/en/feed/",
+  "funder",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Deminor news",
+  "https://www.deminor.com/en/news/",
   "funder",
   "html",
-  "74 KB"
+  "168 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "White & Case news",
+  "https://www.whitecase.com/news",
+  "firm",
+  "html",
+  "282 KB chrome-tls"
+ ],
+ [
+  "Global",
+  "press",
+  "Freshfields",
+  "https://www.freshfields.com/en/our-thinking/",
+  "firm",
+  "html",
+  "540 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Debevoise insights",
+  "https://www.debevoise.com/insights",
+  "firm",
+  "html",
+  "38 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "King & Spalding news",
+  "https://www.kslaw.com/news-and-insights",
+  "firm",
+  "html",
+  "255 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Curtis news",
+  "https://www.curtis.com/news",
+  "firm",
+  "html",
+  "157 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Foley Hoag news",
+  "https://foleyhoag.com/rss",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Volterra Fietta news",
+  "https://www.volterrafietta.com/rss",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Withers insight",
+  "https://www.withersworldwide.com/en-gb/insight",
+  "firm",
+  "html",
+  "148 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Hogan Lovells news",
+  "https://www.hoganlovells.com/en/news",
+  "firm",
+  "html",
+  "130 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Latham news",
+  "https://www.lw.com/en/news",
+  "firm",
+  "html",
+  "88 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Sidley news",
+  "https://www.sidley.com/en/newslanding",
+  "firm",
+  "html",
+  "201 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Arnold & Porter news",
+  "https://www.arnoldporter.com/rss/news",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Quinn Emanuel news",
+  "https://www.quinnemanuel.com/the-firm/news-events/",
+  "firm",
+  "html",
+  "61 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Boies Schiller news",
+  "https://www.bsfllp.com/news",
+  "firm",
+  "html",
+  "63 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "HSF Kramer",
+  "https://www.hsfkramer.com/notes",
+  "firm",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Global",
+  "press",
+  "Clifford Chance news",
+  "https://www.cliffordchance.com/rss.xml",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "A&O Shearman news",
+  "https://www.aoshearman.com/en/news",
+  "firm",
+  "html",
+  "333 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Dechert",
+  "https://www.dechert.com/knowledge.html",
+  "firm",
+  "html",
+  "73 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Jones Day news",
+  "https://www.jonesday.com/en/news",
+  "firm",
+  "html",
+  "89 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Baker McKenzie newsroom",
+  "https://www.bakermckenzie.com/en/newsroom",
+  "firm",
+  "html",
+  "170 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "DLA Piper news",
+  "https://www.dlapiper.com/en/news",
+  "firm",
+  "html",
+  "134 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Norton Rose Fulbright news",
+  "https://www.nortonrosefulbright.com/en/news",
+  "firm",
+  "html",
+  "116 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Mayer Brown news",
+  "https://www.mayerbrown.com/en/news",
+  "firm",
+  "html",
+  "131 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Steptoe news",
+  "https://www.steptoe.com/en/news-publications",
+  "firm",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "press",
+  "Gibson Dunn news",
+  "https://www.gibsondunn.com/feed/",
+  "firm",
+  "rss",
+  "discovered chrome-tls"
+ ],
+ [
+  "Global",
+  "press",
+  "Cleary news",
+  "https://www.clearygottlieb.com/news-and-insights",
+  "firm",
+  "html",
+  "115 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "WilmerHale insights",
+  "https://www.wilmerhale.com/en/insights",
+  "firm",
+  "html",
+  "46 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "Lalive news",
+  "https://www.lalive.law/rss",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Derains & Gharavi",
+  "https://www.derainsgharavi.com/feed/",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Chaffetz Lindsey",
+  "https://www.chaffetzlindsey.com/rss",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Uría Menéndez news",
+  "https://www.uria.com/rss/all",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Garrigues news",
+  "https://www.garrigues.com/rss.xml",
+  "firm",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Sayenko Kharenko news",
+  "https://sk.ua/rss",
+  "firm, Ukraine",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Global",
+  "press",
+  "Asters news",
+  "https://asters.com/news/",
+  "firm, Ukraine",
+  "html",
+  "12 KB insecure-tls"
+ ],
+ [
+  "Global",
+  "press",
+  "GRATA International news",
+  "https://gratanet.com/news",
+  "firm, Central Asia",
+  "html",
+  "362 KB"
+ ],
+ [
+  "Global",
+  "press",
+  "AEQUO news",
+  "https://aequo.ua/news",
+  "firm, Ukraine",
+  "html",
+  "260 KB"
+ ],
+ [
+  "Global",
+  "exchange",
+  "GlobeNewswire - ICSID",
+  "https://www.globenewswire.com/RssFeed/keyword/ICSID",
+  "keyword feed",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Global",
+  "exchange",
+  "GlobeNewswire - investment treaty",
+  "https://www.globenewswire.com/RssFeed/keyword/investment%20treaty",
+  "keyword feed",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Global",
+  "exchange",
+  "GlobeNewswire - notice of arbitration",
+  "https://www.globenewswire.com/RssFeed/keyword/notice%20of%20arbitration",
+  "keyword feed",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Global",
+  "exchange",
+  "GlobeNewswire - arbitration award",
+  "https://www.globenewswire.com/RssFeed/keyword/arbitration%20award",
+  "keyword feed",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Global",
+  "exchange",
+  "GlobeNewswire - expropriation",
+  "https://www.globenewswire.com/RssFeed/keyword/expropriation",
+  "keyword feed",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Global",
+  "exchange",
+  "Newsfile (Canadian juniors)",
+  "https://www.newsfilecorp.com/newsroom/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "exchange",
+  "ACCESSWIRE",
+  "https://www.accesswire.com/rss/newsroom",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "exchange",
+  "Business Wire - legal",
+  "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Global",
+  "exchange",
+  "Investegate (LSE RNS)",
+  "https://www.investegate.co.uk/rss.aspx",
+  "",
+  "html",
+  "106 KB"
+ ],
+ [
+  "Global",
+  "exchange",
+  "TSX - Market Activity",
+  "https://www.tsx.com/news",
+  "",
+  "html",
+  "100 KB"
+ ],
+ [
+  "Global",
+  "register",
+  "EBRD news",
+  "https://www.ebrd.com/news.html",
+  "project disputes",
+  "html",
+  "148 KB"
+ ],
+ [
+  "Global",
+  "register",
+  "IFC disclosures",
+  "https://disclosures.ifc.org",
+  "",
+  "html",
+  "76 KB"
+ ],
+ [
+  "Global",
+  "register",
+  "MIGA news",
+  "https://www.miga.org/news",
+  "political risk claims",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Global",
+  "register",
+  "OECD investment news",
+  "https://www.oecd.org/en/topics/investment.html",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Armenia",
+  "gazette",
+  "Prime Minister press releases",
+  "https://www.primeminister.am/en/press-release/",
+  "",
+  "html",
+  "30 KB"
+ ],
+ [
+  "Armenia",
+  "gazette",
+  "President",
+  "https://www.president.am/en/press-release/",
+  "",
+  "html",
+  "26 KB"
+ ],
+ [
+  "Armenia",
+  "regulator",
+  "Central Bank of Armenia",
+  "https://www.cba.am/en/SitePages/newsevents.aspx",
+  "FX and bank licences",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Armenia",
+  "regulator",
+  "Competition Protection Commission",
+  "https://www.competition.am/en/news/",
+  "",
+  "html",
+  "113 KB insecure-tls"
+ ],
+ [
+  "Armenia",
+  "regulator",
+  "State Revenue Committee",
+  "https://www.petekamutner.am/en/",
+  "tax",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Armenia",
+  "gazette",
+  "Ministry of Justice",
+  "https://www.moj.am/en",
+  "represents Armenia in ISDS",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Armenia",
+  "press",
+  "Armenpress",
+  "https://armenpress.am",
+  "discover feed",
+  "html",
+  "132 KB"
+ ],
+ [
+  "Armenia",
+  "press",
+  "Panorama.am",
+  "https://www.panorama.am",
+  "discover feed",
+  "html",
+  "263 KB"
+ ],
+ [
+  "Armenia",
+  "press",
+  "Aravot",
+  "https://www.aravot-en.am",
+  "discover feed",
+  "error",
+  "ConnectError"
+ ],
+ [
+  "Armenia",
+  "press",
+  "Azatutyun (RFE/RL)",
+  "https://www.azatutyun.am/api/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Armenia",
+  "press",
+  "Armenia Today",
+  "https://armeniatoday.am/feed/",
+  "carried the Vinitski story",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Georgia",
+  "gazette",
+  "Government of Georgia",
+  "https://www.gov.ge/en/news",
+  "",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Georgia",
+  "regulator",
+  "National Bank of Georgia",
+  "https://nbg.gov.ge/en/media/news",
+  "",
+  "html",
+  "337 KB"
+ ],
+ [
+  "Georgia",
+  "regulator",
+  "Competition Agency",
+  "https://gca.gov.ge/en/news",
+  "",
+  "error",
+  "ConnectError"
+ ],
+ [
+  "Georgia",
+  "gazette",
+  "Ministry of Justice (justice.gov.ge)",
+  "https://www.justice.gov.ge/en",
+  "discover cases page",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Georgia",
+  "press",
+  "Agenda.ge",
+  "https://agenda.ge",
+  "discover feed",
+  "error",
+  "ConnectError"
+ ],
+ [
+  "Georgia",
+  "press",
+  "BM.ge",
+  "https://bm.ge",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Georgia",
+  "press",
+  "Formula News",
+  "https://formulanews.ge",
+  "discover feed",
+  "html",
+  "102 KB"
+ ],
+ [
+  "Georgia",
+  "press",
+  "Commersant.ge",
+  "https://commersant.ge",
+  "discover feed",
+  "html",
+  "779 KB"
+ ],
+ [
+  "Azerbaijan",
+  "gazette",
+  "Cabinet of Ministers",
+  "https://cabmin.gov.az/en/news",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Azerbaijan",
+  "regulator",
+  "Central Bank",
+  "https://www.cbar.az/news",
+  "",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Azerbaijan",
+  "press",
+  "Caliber",
+  "https://caliber.az/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Azerbaijan",
+  "press",
+  "Turan",
+  "https://turan.az",
+  "discover feed",
+  "html",
+  "185 KB"
+ ],
+ [
+  "Azerbaijan",
+  "press",
+  "ABC.az",
+  "https://abc.az",
+  "discover feed",
+  "html",
+  "144 KB"
+ ],
+ [
+  "Kazakhstan",
+  "gazette",
+  "Akorda (President)",
+  "https://www.akorda.kz/en/events",
+  "",
+  "html",
+  "45 KB insecure-tls"
+ ],
+ [
+  "Kazakhstan",
+  "gazette",
+  "Government (primeminister.kz)",
+  "https://primeminister.kz/en/news",
+  "",
+  "html",
+  "64 KB"
+ ],
+ [
+  "Kazakhstan",
+  "regulator",
+  "National Bank",
+  "https://www.nationalbank.kz/en/news",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Kazakhstan",
+  "regulator",
+  "Samruk-Kazyna",
+  "https://sk.kz/en/press-center/news/",
+  "sovereign holding",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Kazakhstan",
+  "press",
+  "Tengrinews",
+  "https://tengrinews.kz",
+  "discover feed",
+  "html",
+  "413 KB"
+ ],
+ [
+  "Kazakhstan",
+  "press",
+  "Zakon.kz",
+  "https://www.zakon.kz",
+  "discover feed",
+  "html",
+  "290 KB"
+ ],
+ [
+  "Kazakhstan",
+  "press",
+  "Vlast.kz",
+  "https://vlast.kz/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Kazakhstan",
+  "press",
+  "Inbusiness.kz",
+  "https://inbusiness.kz/ru/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Kazakhstan",
+  "press",
+  "KazTAG",
+  "https://kaztag.kz",
+  "discover feed",
+  "html",
+  "104 KB"
+ ],
+ [
+  "Uzbekistan",
+  "gazette",
+  "President",
+  "https://president.uz/en",
+  "discover feed",
+  "html",
+  "185 KB"
+ ],
+ [
+  "Uzbekistan",
+  "regulator",
+  "Central Bank",
+  "https://cbu.uz/en/press_center/news/",
+  "",
+  "html",
+  "209 KB"
+ ],
+ [
+  "Uzbekistan",
+  "press",
+  "Kun.uz",
+  "https://kun.uz/news/rss?lang=uz",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Uzbekistan",
+  "press",
+  "Podrobno.uz",
+  "https://podrobno.uz/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Kyrgyzstan",
+  "press",
+  "Kaktus.media",
+  "https://kaktus.media",
+  "discover feed",
+  "html",
+  "350 KB"
+ ],
+ [
+  "Kyrgyzstan",
+  "press",
+  "Economist.kg",
+  "https://economist.kg/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Tajikistan",
+  "press",
+  "Asia-Plus",
+  "https://asiaplus.news/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Mongolia",
+  "press",
+  "Montsame",
+  "https://montsame.mn/en",
+  "discover feed",
+  "html",
+  "242 KB"
+ ],
+ [
+  "Mongolia",
+  "regulator",
+  "Mineral Resources and Petroleum Authority",
+  "https://mrpam.gov.mn",
+  "",
+  "html",
+  "213 KB"
+ ],
+ [
+  "Moldova",
+  "press",
+  "IPN",
+  "https://ipn.md/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Belarus",
+  "press",
+  "BelTA",
+  "https://eng.belta.by",
+  "discover feed",
+  "html",
+  "129 KB"
+ ],
+ [
+  "Ukraine",
+  "gazette",
+  "President",
+  "https://www.president.gov.ua/en/news/all",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Ukraine",
+  "gazette",
+  "Cabinet of Ministers",
+  "https://www.kmu.gov.ua/en/news",
+  "",
+  "html",
+  "14 KB"
+ ],
+ [
+  "Ukraine",
+  "regulator",
+  "National Bank",
+  "https://bank.gov.ua/en/news",
+  "",
+  "html",
+  "192 KB"
+ ],
+ [
+  "Ukraine",
+  "regulator",
+  "State Property Fund",
+  "https://www.spfu.gov.ua/en/news",
+  "privatisation and seizures",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Ukraine",
+  "regulator",
+  "ARMA (asset recovery)",
+  "https://arma.gov.ua/news",
+  "seized assets",
+  "html",
+  "48 KB"
+ ],
+ [
+  "Ukraine",
+  "press",
+  "Ukrinform",
+  "https://www.ukrinform.net",
+  "discover feed",
+  "html",
+  "87 KB"
+ ],
+ [
+  "Ukraine",
+  "press",
+  "LIGA.net",
+  "https://news.liga.net/ua/all/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Ukraine",
+  "press",
+  "Interfax-Ukraine",
+  "https://en.interfax.com.ua",
+  "discover feed",
+  "html",
+  "163 KB"
+ ],
+ [
+  "Ukraine",
+  "press",
+  "Ekonomichna Pravda",
+  "https://www.epravda.com.ua",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Ukraine",
+  "press",
+  "Yurydychna Gazeta",
+  "https://yur-gazeta.com",
+  "discover feed",
+  "html",
+  "48 KB insecure-tls"
+ ],
+ [
+  "Russia",
+  "gazette",
+  "Government",
+  "http://government.ru/en/news/",
+  "",
+  "html",
+  "64 KB"
+ ],
+ [
+  "Russia",
+  "regulator",
+  "Central Bank",
+  "https://www.cbr.ru/eng/press/",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Russia",
+  "press",
+  "Zakon.ru",
+  "https://zakon.ru",
+  "discover feed",
+  "html",
+  "0 KB"
+ ],
+ [
+  "Turkey",
+  "gazette",
+  "Presidency",
+  "https://www.tccb.gov.tr/en/",
+  "",
+  "html",
+  "54 KB"
+ ],
+ [
+  "Turkey",
+  "regulator",
+  "Central Bank",
+  "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements",
+  "",
+  "html",
+  "31 KB"
+ ],
+ [
+  "Turkey",
+  "regulator",
+  "Competition Authority",
+  "https://www.rekabet.gov.tr/en",
+  "",
+  "html",
+  "66 KB"
+ ],
+ [
+  "Turkey",
+  "press",
+  "Ekonomim",
+  "https://www.ekonomim.com/export/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Turkey",
+  "press",
+  "Hürriyet",
+  "https://www.hurriyet.com.tr",
+  "discover feed",
+  "html",
+  "244 KB"
+ ],
+ [
+  "Mexico",
+  "gazette",
+  "DOF (main)",
+  "https://www.dof.gob.mx",
+  "discover feed",
+  "html",
+  "66 KB insecure-tls"
+ ],
+ [
+  "Mexico",
+  "regulator",
+  "CRE energy regulator",
+  "https://www.gob.mx/cre",
+  "",
+  "html",
+  "49 KB chrome-tls"
+ ],
+ [
+  "Mexico",
+  "regulator",
+  "Secretaría de Economía (main)",
+  "https://www.gob.mx/se",
+  "JS challenge",
+  "html",
+  "48 KB chrome-tls"
+ ],
+ [
+  "Mexico",
+  "press",
+  "El Universal",
+  "https://www.eluniversal.com.mx/arc/outboundfeeds/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Mexico",
+  "press",
+  "Reforma",
+  "https://www.reforma.com/rss/portada.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Mexico",
+  "press",
+  "Milenio",
+  "https://www.milenio.com",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Mexico",
+  "press",
+  "Forbes México",
+  "https://www.forbes.com.mx",
+  "discover feed",
+  "html",
+  "248 KB"
+ ],
+ [
+  "Argentina",
+  "press",
+  "Infobae",
+  "https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Argentina",
+  "press",
+  "iProfesional",
+  "https://www.iprofesional.com/rss/home",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Argentina",
+  "press",
+  "Página/12",
+  "https://www.pagina12.com.ar/arc/outboundfeeds/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Argentina",
+  "regulator",
+  "ENARGAS",
+  "https://www.enargas.gob.ar",
+  "",
+  "html",
+  "35 KB"
+ ],
+ [
+  "Argentina",
+  "exchange",
+  "CNV",
+  "https://www.argentina.gob.ar/cnv",
+  "",
+  "html",
+  "49 KB"
+ ],
+ [
+  "Colombia",
+  "press",
+  "Semana",
+  "https://www.semana.com/arc/outboundfeeds/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Colombia",
+  "press",
+  "El Tiempo",
+  "https://www.eltiempo.com",
+  "discover feed",
+  "html",
+  "853 KB"
+ ],
+ [
+  "Colombia",
+  "press",
+  "El Espectador",
+  "https://www.elespectador.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Colombia",
+  "gazette",
+  "Presidencia",
+  "https://www.presidencia.gov.co",
+  "",
+  "html",
+  "5 KB"
+ ],
+ [
+  "Colombia",
+  "regulator",
+  "Superintendencia Financiera",
+  "https://www.superfinanciera.gov.co",
+  "",
+  "html",
+  "239 KB"
+ ],
+ [
+  "Peru",
+  "press",
+  "Semana Económica",
+  "https://semanaeconomica.com/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Peru",
+  "press",
+  "La República",
+  "https://larepublica.pe/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Peru",
+  "regulator",
+  "INGEMMET",
+  "https://www.gob.pe/ingemmet",
+  "mining concessions",
+  "html",
+  "248 KB"
+ ],
+ [
+  "Peru",
+  "regulator",
+  "Perupetro",
+  "https://www.perupetro.com.pe",
+  "",
+  "html",
+  "0 KB insecure-tls"
+ ],
+ [
+  "Chile",
+  "press",
+  "Diario Financiero",
+  "https://www.df.cl",
+  "discover feed",
+  "html",
+  "542 KB"
+ ],
+ [
+  "Chile",
+  "press",
+  "La Tercera",
+  "https://www.latercera.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Chile",
+  "press",
+  "El Mostrador",
+  "https://www.elmostrador.cl",
+  "discover feed",
+  "html",
+  "216 KB"
+ ],
+ [
+  "Chile",
+  "regulator",
+  "SERNAGEOMIN",
+  "https://www.sernageomin.cl",
+  "mining",
+  "html",
+  "150 KB insecure-tls"
+ ],
+ [
+  "Ecuador",
+  "press",
+  "Expreso",
+  "https://www.expreso.ec/rss/home.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Ecuador",
+  "regulator",
+  "ARCERNNR",
+  "https://www.controlrecursosyenergia.gob.ec",
+  "mining and energy licences",
+  "html",
+  "4 KB insecure-tls"
+ ],
+ [
+  "Venezuela",
+  "press",
+  "Petroguía",
+  "https://www.petroguia.com",
+  "discover feed",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Bolivia",
+  "press",
+  "Los Tiempos",
+  "https://www.lostiempos.com",
+  "discover feed",
+  "html",
+  "226 KB"
+ ],
+ [
+  "Brazil",
+  "press",
+  "Valor Econômico",
+  "https://valor.globo.com/rss/valor",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Brazil",
+  "press",
+  "Estadão",
+  "https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Brazil",
+  "exchange",
+  "CVM",
+  "https://www.gov.br/cvm",
+  "",
+  "html",
+  "224 KB"
+ ],
+ [
+  "Brazil",
+  "regulator",
+  "ANP",
+  "https://www.gov.br/anp",
+  "oil and gas",
+  "html",
+  "328 KB"
+ ],
+ [
+  "Brazil",
+  "regulator",
+  "ANM",
+  "https://www.gov.br/anm",
+  "mining",
+  "html",
+  "321 KB"
+ ],
+ [
+  "Spain",
+  "press",
+  "Cinco Días",
+  "https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Spain",
+  "press",
+  "Vozpópuli",
+  "https://www.vozpopuli.com",
+  "discover feed",
+  "html",
+  "321 KB"
+ ],
+ [
+  "Spain",
+  "register",
+  "Abogacía General del Estado",
+  "https://www.mjusticia.gob.es/es/ministerio/organismos-entidades/abogacia-general",
+  "defends Spain in ISDS",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Italy",
+  "press",
+  "Milano Finanza",
+  "https://www.milanofinanza.it",
+  "discover feed",
+  "html",
+  "243 KB"
+ ],
+ [
+  "Italy",
+  "register",
+  "Avvocatura dello Stato",
+  "https://www.avvocaturastato.it",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Romania",
+  "press",
+  "Economica.net",
+  "https://www.economica.net/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Romania",
+  "register",
+  "Ministry of Finance",
+  "https://mfinante.gov.ro",
+  "defends Romania in ISDS",
+  "html",
+  "328 KB"
+ ],
+ [
+  "Poland",
+  "register",
+  "Prokuratoria Generalna",
+  "https://www.gov.pl/web/prokuratoria",
+  "defends Poland in ISDS",
+  "html",
+  "28 KB"
+ ],
+ [
+  "Hungary",
+  "press",
+  "Portfolio.hu",
+  "https://www.portfolio.hu/rss/all.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Czechia",
+  "press",
+  "Hospodářské noviny",
+  "https://hn.cz/?m=rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Czechia",
+  "register",
+  "Ministry of Finance - arbitration",
+  "https://www.mfcr.cz/en/",
+  "publishes ISDS cases",
+  "html",
+  "103 KB"
+ ],
+ [
+  "Slovakia",
+  "press",
+  "Denník N",
+  "https://dennikn.sk/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Croatia",
+  "press",
+  "Jutarnji list",
+  "https://www.jutarnji.hr/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Slovenia",
+  "press",
+  "STA",
+  "https://english.sta.si",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Serbia",
+  "press",
+  "N1",
+  "https://n1info.rs/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Bosnia and Herzegovina",
+  "press",
+  "Klix",
+  "https://www.klix.ba",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Montenegro",
+  "press",
+  "Vijesti",
+  "https://www.vijesti.me/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "North Macedonia",
+  "press",
+  "MIA",
+  "https://mia.mk/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Albania",
+  "press",
+  "Albanian Daily News",
+  "https://albaniandailynews.com",
+  "discover feed",
+  "html",
+  "68 KB"
+ ],
+ [
+  "Bulgaria",
+  "press",
+  "Novinite",
+  "https://www.novinite.com/services/news_rdf.php",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Greece",
+  "press",
+  "Kathimerini",
+  "https://www.ekathimerini.com",
+  "discover feed",
+  "html",
+  "577 KB"
+ ],
+ [
+  "Cyprus",
+  "press",
+  "Cyprus Mail",
+  "https://cyprus-mail.com/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Latvia",
+  "press",
+  "LSM",
+  "https://eng.lsm.lv/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Lithuania",
+  "press",
+  "LRT",
+  "https://www.lrt.lt/?rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Estonia",
+  "press",
+  "ERR",
+  "https://news.err.ee/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Germany",
+  "press",
+  "Handelsblatt",
+  "https://www.handelsblatt.com",
+  "discover feed",
+  "html",
+  "1968 KB"
+ ],
+ [
+  "Germany",
+  "press",
+  "JUVE",
+  "https://www.juve.de/rss",
+  "legal press; discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "France",
+  "press",
+  "Les Echos",
+  "https://www.lesechos.fr",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "France",
+  "press",
+  "Décideurs Juridiques",
+  "https://www.decideurs-juridiques.com/juridiques.feed?type=rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Netherlands",
+  "press",
+  "Het Financieele Dagblad",
+  "https://fd.nl/?rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Switzerland",
+  "press",
+  "NZZ",
+  "https://www.nzz.ch",
+  "discover feed",
+  "html",
+  "967 KB"
+ ],
+ [
+  "United Kingdom",
+  "press",
+  "Financial Times - law",
+  "https://www.ft.com/rss/home/international",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "United Kingdom",
+  "press",
+  "Law Gazette",
+  "https://www.lawgazette.co.uk/13505.rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Israel",
+  "press",
+  "Globes",
+  "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Jordan",
+  "press",
+  "Jordan Times",
+  "https://jordantimes.com",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Lebanon",
+  "press",
+  "L'Orient Today",
+  "https://today.lorientlejour.com",
+  "discover feed",
+  "html",
+  "114 KB"
+ ],
+ [
+  "Kuwait",
+  "press",
+  "Kuwait Times",
+  "https://www.kuwaittimes.com",
+  "discover feed",
+  "html",
+  "284 KB"
+ ],
+ [
+  "Oman",
+  "press",
+  "Times of Oman",
+  "https://timesofoman.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Bahrain",
+  "press",
+  "Gulf Daily News",
+  "https://www.gdnonline.com",
+  "discover feed",
+  "html",
+  "689 KB"
+ ],
+ [
+  "UAE",
+  "press",
+  "The National",
+  "https://www.thenationalnews.com",
+  "discover feed",
+  "html",
+  "1780 KB"
+ ],
+ [
+  "UAE",
+  "press",
+  "Gulf News",
+  "https://gulfnews.com/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Saudi Arabia",
+  "press",
+  "Argaam",
+  "https://www.argaam.com/en",
+  "discover feed",
+  "html",
+  "1275 KB"
+ ],
+ [
+  "Qatar",
+  "press",
+  "Gulf Times",
+  "https://www.gulf-times.com",
+  "discover feed",
+  "html",
+  "181 KB"
+ ],
+ [
+  "Iraq",
+  "press",
+  "Rudaw",
+  "https://www.rudaw.net/english",
+  "discover feed",
+  "html",
+  "594 KB"
+ ],
+ [
+  "Libya",
+  "press",
+  "Libya Observer",
+  "https://libyaobserver.ly",
+  "discover feed",
+  "html",
+  "150 KB"
+ ],
+ [
+  "Tunisia",
+  "press",
+  "TAP",
+  "https://www.tap.info.tn/en",
+  "discover feed",
+  "html",
+  "95 KB insecure-tls"
+ ],
+ [
+  "Egypt",
+  "press",
+  "Ahram Online",
+  "https://english.ahram.org.eg",
+  "discover feed",
+  "html",
+  "158 KB chrome-tls"
+ ],
+ [
+  "Egypt",
+  "press",
+  "Mada Masr",
+  "https://www.madamasr.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Egypt",
+  "regulator",
+  "GAFI",
+  "https://www.gafi.gov.eg",
+  "investment authority",
+  "html",
+  "1011 KB"
+ ],
+ [
+  "Morocco",
+  "press",
+  "Le360",
+  "https://fr.le360.ma",
+  "discover feed",
+  "html",
+  "1594 KB"
+ ],
+ [
+  "Morocco",
+  "press",
+  "L'Economiste",
+  "https://www.leconomiste.com",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Algeria",
+  "press",
+  "TSA",
+  "https://www.tsa-algerie.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Ethiopia",
+  "press",
+  "Addis Standard",
+  "https://addisstandard.com",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Uganda",
+  "press",
+  "Daily Monitor",
+  "https://www.monitor.co.ug/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Rwanda",
+  "press",
+  "The New Times",
+  "https://www.newtimes.co.rw",
+  "discover feed",
+  "html",
+  "201 KB"
+ ],
+ [
+  "Kenya",
+  "press",
+  "Business Daily",
+  "https://www.businessdailyafrica.com/bd/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Kenya",
+  "press",
+  "The Star",
+  "https://www.the-star.co.ke",
+  "discover feed",
+  "html",
+  "350 KB"
+ ],
+ [
+  "Kenya",
+  "press",
+  "Nation",
+  "https://nation.africa/kenya/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Tanzania",
+  "press",
+  "The Citizen",
+  "https://www.thecitizen.co.tz/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Zimbabwe",
+  "press",
+  "NewsDay",
+  "https://newsday.co.zw/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Zimbabwe",
+  "press",
+  "The Herald",
+  "https://www.heraldonline.co.zw/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Namibia",
+  "press",
+  "The Namibian",
+  "https://www.namibian.com.na/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Botswana",
+  "press",
+  "Mmegi",
+  "https://www.mmegi.bw",
+  "discover feed",
+  "html",
+  "358 KB"
+ ],
+ [
+  "Madagascar",
+  "press",
+  "L'Express de Madagascar",
+  "https://www.lexpress.mg/feeds/posts/default",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Guinea",
+  "press",
+  "Guinéenews",
+  "https://guineenews.org/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Mali",
+  "press",
+  "Maliweb",
+  "https://www.maliweb.net",
+  "discover feed",
+  "html",
+  "240 KB"
+ ],
+ [
+  "Burkina Faso",
+  "press",
+  "Lefaso.net",
+  "https://lefaso.net/spip.php?page=backend",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Niger",
+  "press",
+  "ActuNiger",
+  "https://www.actuniger.com",
+  "discover feed",
+  "html",
+  "259 KB"
+ ],
+ [
+  "Côte d'Ivoire",
+  "press",
+  "Abidjan.net",
+  "https://news.abidjan.net",
+  "discover feed",
+  "html",
+  "396 KB"
+ ],
+ [
+  "Cameroon",
+  "press",
+  "Journal du Cameroun",
+  "https://www.journalducameroun.com",
+  "discover feed",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Cameroon",
+  "press",
+  "Investir au Cameroun",
+  "https://www.investiraucameroun.com/index.php/component/obrss/fullrss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Gabon",
+  "press",
+  "Gabonreview",
+  "https://www.gabonreview.com/feed",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Angola",
+  "press",
+  "Angop",
+  "https://www.angop.ao/en",
+  "discover feed",
+  "html",
+  "249 KB"
+ ],
+ [
+  "Senegal",
+  "press",
+  "APS",
+  "https://aps.sn/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "South Africa",
+  "press",
+  "Business Day",
+  "https://www.businesslive.co.za/arc/outboundfeeds/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "South Africa",
+  "press",
+  "Daily Maverick",
+  "https://www.dailymaverick.co.za/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "South Africa",
+  "regulator",
+  "DMRE",
+  "https://www.dmre.gov.za",
+  "mining rights",
+  "error",
+  "ConnectTimeout"
+ ],
+ [
+  "Bangladesh",
+  "press",
+  "The Daily Star",
+  "https://www.thedailystar.net/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sri Lanka",
+  "press",
+  "Daily FT",
+  "https://www.ft.lk",
+  "discover feed",
+  "html",
+  "265 KB chrome-tls"
+ ],
+ [
+  "Nepal",
+  "press",
+  "Kathmandu Post",
+  "https://kathmandupost.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Thailand",
+  "press",
+  "Bangkok Post",
+  "https://www.bangkokpost.com",
+  "discover feed",
+  "html",
+  "197 KB"
+ ],
+ [
+  "Cambodia",
+  "press",
+  "Khmer Times",
+  "https://www.khmertimeskh.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Malaysia",
+  "press",
+  "The Edge Malaysia",
+  "https://theedgemalaysia.com",
+  "discover feed",
+  "html",
+  "248 KB"
+ ],
+ [
+  "Malaysia",
+  "press",
+  "The Star",
+  "https://www.thestar.com.my",
+  "discover feed",
+  "html",
+  "301 KB"
+ ],
+ [
+  "Indonesia",
+  "press",
+  "Bisnis.com",
+  "https://www.bisnis.com",
+  "discover feed",
+  "html",
+  "382 KB"
+ ],
+ [
+  "Indonesia",
+  "press",
+  "Hukumonline",
+  "https://www.hukumonline.com",
+  "discover feed",
+  "html",
+  "589 KB"
+ ],
+ [
+  "Indonesia",
+  "press",
+  "The Jakarta Post",
+  "https://www.thejakartapost.com",
+  "discover feed",
+  "html",
+  "153 KB"
+ ],
+ [
+  "Indonesia",
+  "press",
+  "Katadata",
+  "https://katadata.co.id/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Vietnam",
+  "press",
+  "VietnamNet",
+  "https://vietnamnet.vn/en",
+  "discover feed",
+  "html",
+  "98 KB"
+ ],
+ [
+  "Philippines",
+  "press",
+  "Inquirer Business",
+  "https://business.inquirer.net/rss",
+  "discover feed",
+  "rss",
+  "discovered chrome-tls"
+ ],
+ [
+  "Korea",
+  "press",
+  "Korea JoongAng Daily",
+  "https://koreajoongangdaily.joins.com",
+  "discover feed",
+  "html",
+  "354 KB"
+ ],
+ [
+  "Korea",
+  "press",
+  "The Korea Herald",
+  "https://www.koreaherald.com/rss/newsAll",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Korea",
+  "register",
+  "Ministry of Justice ISDS",
+  "https://www.moj.go.kr/moj_eng/1746/subview.do",
+  "Korea publishes its ISDS cases",
+  "html",
+  "6 KB"
+ ],
+ [
+  "Japan",
+  "press",
+  "Nikkei Asia",
+  "https://asia.nikkei.com",
+  "discover feed",
+  "html",
+  "595 KB"
+ ],
+ [
+  "China",
+  "press",
+  "Caixin Global",
+  "https://www.caixinglobal.com",
+  "discover feed",
+  "html",
+  "93 KB"
+ ],
+ [
+  "Taiwan",
+  "press",
+  "Focus Taiwan",
+  "https://focustaiwan.tw",
+  "discover feed",
+  "html",
+  "99 KB"
+ ],
+ [
+  "Papua New Guinea",
+  "press",
+  "Post-Courier",
+  "https://www.postcourier.com.pg/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Australia",
+  "register",
+  "DFAT - ISDS",
+  "https://www.dfat.gov.au/trade/investment/investor-state-dispute-settlement",
+  "cases against Australia",
+  "error",
+  "ReadTimeout"
+ ],
+ [
+  "Australia",
+  "press",
+  "AFR",
+  "https://www.afr.com",
+  "discover feed",
+  "html",
+  "1171 KB"
+ ],
+ [
+  "Australia",
+  "press",
+  "Lawyerly",
+  "https://www.lawyerly.com.au",
+  "discover feed",
+  "dead",
+  "HTTP 503"
+ ],
+ [
+  "Canada",
+  "press",
+  "The Globe and Mail",
+  "https://www.theglobeandmail.com",
+  "discover feed",
+  "html",
+  "2784 KB"
+ ],
+ [
+  "Canada",
+  "press",
+  "Northern Miner",
+  "https://www.northernminer.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Canada",
+  "press",
+  "Mining.com",
+  "https://www.mining.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "United States",
+  "press",
+  "Reuters Legal",
+  "https://www.reuters.com/legal/",
+  "discover feed",
+  "dead",
+  "HTTP 401"
+ ],
+ [
+  "United States",
+  "press",
+  "Law360 - International Arbitration",
+  "https://www.law360.com/internationalarbitration/rss",
+  "WIRED",
+  "wired",
+  ""
+ ],
+ [
+  "Guatemala",
+  "press",
+  "Prensa Libre",
+  "https://www.prensalibre.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Honduras",
+  "press",
+  "El Heraldo",
+  "https://www.elheraldo.hn",
+  "discover feed",
+  "html",
+  "478 KB"
+ ],
+ [
+  "El Salvador",
+  "press",
+  "El Diario de Hoy",
+  "https://www.elsalvador.com/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Nicaragua",
+  "press",
+  "Confidencial",
+  "https://confidencial.digital",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Costa Rica",
+  "press",
+  "La Nación",
+  "https://www.nacion.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Panama",
+  "press",
+  "La Prensa",
+  "https://www.prensa.com/arc/outboundfeeds/rss/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Dominican Republic",
+  "press",
+  "Diario Libre",
+  "https://www.diariolibre.com/rss/portada.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Jamaica",
+  "press",
+  "The Gleaner",
+  "https://jamaica-gleaner.com/rss.xml",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Guyana",
+  "press",
+  "Stabroek News",
+  "https://www.stabroeknews.com",
+  "discover feed",
+  "html",
+  "226 KB"
+ ],
+ [
+  "Paraguay",
+  "press",
+  "ABC Color",
+  "https://www.abc.com.py",
+  "discover feed",
+  "html",
+  "898 KB"
+ ],
+ [
+  "Paraguay",
+  "press",
+  "Última Hora",
+  "https://www.ultimahora.com",
+  "discover feed",
+  "html",
+  "397 KB"
+ ],
+ [
+  "Uruguay",
+  "press",
+  "El Observador",
+  "https://www.elobservador.com.uy",
+  "discover feed",
+  "dead",
+  "HTTP 403"
  ]
 ]

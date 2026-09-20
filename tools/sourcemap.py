@@ -266,8 +266,389 @@ CANDIDATES = [
     ("Global", "press", "Omni Bridgeway news", "https://omnibridgeway.com/news", "funder"),
     ("Global", "press", "Litigation Capital Management", "https://www.lcmfinance.com/news/", "funder"),
 ]
+CANDIDATES += [
+    # ===== arbitral institutions and treaty bodies =====
+    ("Global", "press", "ICC news", "https://iccwbo.org/feed/", "institution"),
+    ("Global", "press", "LCIA news", "https://www.lcia.org/News/news.aspx", "institution"),
+    ("Global", "press", "VIAC news", "https://www.viac.eu/en/news", "institution"),
+    ("Global", "press", "DIS news", "https://www.disarb.org/en/news", "institution"),
+    ("Global", "press", "CRCICA news", "https://crcica.org/news/", "institution"),
+    ("Global", "press", "CIETAC news", "http://www.cietac.org/index.php?m=Article&a=index&id=1&l=en", "institution"),
+    ("Global", "press", "KCAB International", "http://www.kcabinternational.or.kr", "institution"),
+    ("Global", "press", "JCAA news", "https://www.jcaa.or.jp/en/news/", "institution"),
+    ("Global", "press", "DIAC news", "https://www.diac.com/news", "institution"),
+    ("Global", "press", "ISTAC news", "https://istac.org.tr/en/news/", "institution"),
+    ("Global", "press", "Russian Arbitration Center", "https://centerarbitr.ru/en/news/", "institution"),
+    ("Global", "press", "CAM Santiago", "https://www.camsantiago.cl/noticias/", "institution"),
+    ("Global", "press", "CAM-CCBC", "https://ccbc.org.br/cam-ccbc/noticias/", "institution"),
+    ("Global", "press", "AAA-ICDR news", "https://www.adr.org/news", "institution"),
+    ("Global", "press", "Energy Charter Secretariat", "https://www.energycharter.org/media/news/", "treaty body; case statistics"),
+    ("Global", "press", "UNCITRAL news", "https://uncitral.un.org/en/news", ""),
+    ("Global", "press", "EFILA blog", "https://efilablog.org/feed/", "investment law"),
+    ("Global", "press", "Global Legal Chronicle", "https://www.globallegalchronicle.com/feed/", "deals and cases with counsel named"),
+    ("Global", "press", "CDR News", "https://www.cdr-news.com/rss", "disputes press"),
+    ("Global", "press", "Global Legal Post", "https://www.globallegalpost.com/rss", ""),
+    ("Global", "press", "Legal Business", "https://www.legalbusiness.co.uk/feed/", ""),
+    ("Global", "press", "The Lawyer", "https://www.thelawyer.com/feed/", ""),
+    ("Global", "press", "Asian Legal Business", "https://www.legalbusinessonline.com/rss", ""),
+    ("Global", "press", "Latin Lawyer", "https://latinlawyer.com/rss", "GAR's sister title"),
+    ("Global", "press", "Africa Legal", "https://www.africa-legal.com/rss", ""),
+    ("Global", "press", "JD Supra - arbitration", "https://www.jdsupra.com/rss/arbitration/", ""),
+    ("Global", "press", "Mondaq - arbitration", "https://www.mondaq.com/rss/arbitration-dispute-resolution", ""),
+    ("Global", "press", "Pinsent Masons Out-Law", "https://www.pinsentmasons.com/out-law/news/rss", ""),
+    # ===== courts with open data or feeds =====
+    ("Global", "courts", "England - Find Case Law (Commercial Court Atom)", "https://caselaw.nationalarchives.gov.uk/atom.xml?court=ewhc%2Fcomm&order=-date", "s.67/68/69 challenges, enforcement"),
+    ("Global", "courts", "England - judiciary.uk judgments", "https://www.judiciary.uk/feed/", ""),
+    ("Global", "courts", "Netherlands - rechtspraak open data", "https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20", "open API; Hague set-aside cases"),
+    ("Global", "courts", "Switzerland - Federal Supreme Court", "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_", "every award challenge in Switzerland"),
+    ("Global", "courts", "France - Cour de cassation news", "https://www.courdecassation.fr/en/actualites", ""),
+    ("Global", "courts", "Singapore - SICC judgments", "https://www.sicc.gov.sg/hearings-judgments/judgments", ""),
+    ("Global", "courts", "Singapore - eLitigation judgments", "https://www.elitigation.sg/gd/Home/Index", ""),
+    ("Global", "courts", "Hong Kong - judiciary legal reference", "https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp", ""),
+    ("Global", "courts", "India - Supreme Court (Indian Kanoon feed)", "https://indiankanoon.org/feeds/latest/supremecourt/", ""),
+    ("Global", "courts", "India - Delhi High Court (Indian Kanoon feed)", "https://indiankanoon.org/feeds/latest/delhi/", "s.34/s.48 arbitration matters"),
+    ("Global", "courts", "Australia - Federal Court (AustLII feed)", "https://www.austlii.edu.au/rss/au/cases/cth/FCA.xml", ""),
+    ("Global", "courts", "Canada - Ontario Court of Appeal (CanLII feed)", "https://www.canlii.org/en/on/onca/rss_new.xml", ""),
+    ("Global", "courts", "Germany - BGH press", "https://www.bundesgerichtshof.de/SiteGlobals/Functions/RSSFeed/DE/RSSNewsfeed/RSSNewsfeed.xml", ""),
+    ("Global", "courts", "Ireland - judgments", "https://www.courts.ie/judgments", ""),
+    ("Global", "courts", "Kenya Law - judgments", "https://new.kenyalaw.org/judgments/", ""),
+    # ===== funders =====
+    ("Global", "press", "Omni Bridgeway - ASX announcements", "https://omnibridgeway.com/investors/asx-announcements", "funder; funded claims disclosed"),
+    ("Global", "press", "LCM - RNS", "https://www.lcmfinance.com/investors/rns/", "funder"),
+    ("Global", "press", "Therium news", "https://therium.com/news/", "funder"),
+    ("Global", "press", "Harbour news", "https://www.harbourlitigationfunding.com/news/", "funder"),
+    ("Global", "press", "Nivalion news", "https://nivalion.com/news/", "funder"),
+    ("Global", "press", "Deminor news", "https://www.deminor.com/en/news/", "funder"),
+    # ===== law firm newsrooms (instructions announced here first) =====
+    ("Global", "press", "White & Case news", "https://www.whitecase.com/news", "firm"),
+    ("Global", "press", "Freshfields", "https://www.freshfields.com/en/our-thinking/", "firm"),
+    ("Global", "press", "Debevoise insights", "https://www.debevoise.com/insights", "firm"),
+    ("Global", "press", "King & Spalding news", "https://www.kslaw.com/news-and-insights", "firm"),
+    ("Global", "press", "Curtis news", "https://www.curtis.com/news", "firm"),
+    ("Global", "press", "Foley Hoag news", "https://foleyhoag.com/news-and-insights/", "firm"),
+    ("Global", "press", "Volterra Fietta news", "https://www.volterrafietta.com/news/", "firm"),
+    ("Global", "press", "Withers insight", "https://www.withersworldwide.com/en-gb/insight", "firm"),
+    ("Global", "press", "Hogan Lovells news", "https://www.hoganlovells.com/en/news", "firm"),
+    ("Global", "press", "Latham news", "https://www.lw.com/en/news", "firm"),
+    ("Global", "press", "Sidley news", "https://www.sidley.com/en/newslanding", "firm"),
+    ("Global", "press", "Arnold & Porter news", "https://www.arnoldporter.com/en/news", "firm"),
+    ("Global", "press", "Quinn Emanuel news", "https://www.quinnemanuel.com/the-firm/news-events/", "firm"),
+    ("Global", "press", "Boies Schiller news", "https://www.bsfllp.com/news", "firm"),
+    ("Global", "press", "HSF Kramer", "https://www.hsfkramer.com/notes", "firm"),
+    ("Global", "press", "Clifford Chance news", "https://www.cliffordchance.com/news.html", "firm"),
+    ("Global", "press", "A&O Shearman news", "https://www.aoshearman.com/en/news", "firm"),
+    ("Global", "press", "Dechert", "https://www.dechert.com/knowledge.html", "firm"),
+    ("Global", "press", "Jones Day news", "https://www.jonesday.com/en/news", "firm"),
+    ("Global", "press", "Baker McKenzie newsroom", "https://www.bakermckenzie.com/en/newsroom", "firm"),
+    ("Global", "press", "DLA Piper news", "https://www.dlapiper.com/en/news", "firm"),
+    ("Global", "press", "Norton Rose Fulbright news", "https://www.nortonrosefulbright.com/en/news", "firm"),
+    ("Global", "press", "Mayer Brown news", "https://www.mayerbrown.com/en/news", "firm"),
+    ("Global", "press", "Steptoe news", "https://www.steptoe.com/en/news-publications", "firm"),
+    ("Global", "press", "Gibson Dunn news", "https://www.gibsondunn.com/news/", "firm"),
+    ("Global", "press", "Cleary news", "https://www.clearygottlieb.com/news-and-insights", "firm"),
+    ("Global", "press", "WilmerHale insights", "https://www.wilmerhale.com/en/insights", "firm"),
+    ("Global", "press", "Lalive news", "https://www.lalive.law/news/", "firm"),
+    ("Global", "press", "Derains & Gharavi", "https://www.derainsgharavi.com/news/", "firm"),
+    ("Global", "press", "Chaffetz Lindsey", "https://www.chaffetzlindsey.com/news/", "firm"),
+    ("Global", "press", "Uría Menéndez news", "https://www.uria.com/en/actualidad", "firm"),
+    ("Global", "press", "Garrigues news", "https://www.garrigues.com/en_GB/news", "firm"),
+    ("Global", "press", "Sayenko Kharenko news", "https://sk.ua/news/", "firm, Ukraine"),
+    ("Global", "press", "Asters news", "https://asters.com/news/", "firm, Ukraine"),
+    ("Global", "press", "GRATA International news", "https://gratanet.com/news", "firm, Central Asia"),
+    ("Global", "press", "AEQUO news", "https://aequo.ua/news", "firm, Ukraine"),
+    # ===== wires and exchange feeds =====
+    ("Global", "exchange", "GlobeNewswire - ICSID", "https://www.globenewswire.com/RssFeed/keyword/ICSID", "keyword feed"),
+    ("Global", "exchange", "GlobeNewswire - investment treaty", "https://www.globenewswire.com/RssFeed/keyword/investment%20treaty", "keyword feed"),
+    ("Global", "exchange", "GlobeNewswire - notice of arbitration", "https://www.globenewswire.com/RssFeed/keyword/notice%20of%20arbitration", "keyword feed"),
+    ("Global", "exchange", "GlobeNewswire - arbitration award", "https://www.globenewswire.com/RssFeed/keyword/arbitration%20award", "keyword feed"),
+    ("Global", "exchange", "GlobeNewswire - expropriation", "https://www.globenewswire.com/RssFeed/keyword/expropriation", "keyword feed"),
+    ("Global", "exchange", "Newsfile (Canadian juniors)", "https://www.newsfilecorp.com/newsroom/rss", ""),
+    ("Global", "exchange", "ACCESSWIRE", "https://www.accesswire.com/rss/newsroom", ""),
+    ("Global", "exchange", "Business Wire - legal", "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==", ""),
+    ("Global", "exchange", "Investegate (LSE RNS)", "https://www.investegate.co.uk/rss.aspx", ""),
+    ("Global", "exchange", "TSX - Market Activity", "https://www.tsx.com/news", ""),
+    # ===== international institutions =====
+    ("Global", "register", "EBRD news", "https://www.ebrd.com/news.html", "project disputes"),
+    ("Global", "register", "IFC disclosures", "https://disclosures.ifc.org", ""),
+    ("Global", "register", "MIGA news", "https://www.miga.org/news", "political risk claims"),
+    ("Global", "register", "OECD investment news", "https://www.oecd.org/en/topics/investment.html", ""),
+    # ===== priority countries: more source types =====
+    ("Armenia", "gazette", "Prime Minister press releases", "https://www.primeminister.am/en/press-release/", ""),
+    ("Armenia", "gazette", "President", "https://www.president.am/en/press-release/", ""),
+    ("Armenia", "regulator", "Central Bank of Armenia", "https://www.cba.am/en/SitePages/newsevents.aspx", "FX and bank licences"),
+    ("Armenia", "regulator", "Competition Protection Commission", "https://www.competition.am/en/news/", ""),
+    ("Armenia", "regulator", "State Revenue Committee", "https://www.petekamutner.am/en/", "tax"),
+    ("Armenia", "gazette", "Ministry of Justice", "https://www.moj.am/en", "represents Armenia in ISDS"),
+    ("Armenia", "press", "Armenpress", "https://armenpress.am", "discover feed"),
+    ("Armenia", "press", "Panorama.am", "https://www.panorama.am", "discover feed"),
+    ("Armenia", "press", "Aravot", "https://www.aravot-en.am", "discover feed"),
+    ("Armenia", "press", "Azatutyun (RFE/RL)", "https://www.azatutyun.am", "discover feed"),
+    ("Armenia", "press", "Armenia Today", "https://armeniatoday.am", "carried the Vinitski story"),
+    ("Georgia", "gazette", "Government of Georgia", "https://www.gov.ge/en/news", ""),
+    ("Georgia", "regulator", "National Bank of Georgia", "https://nbg.gov.ge/en/media/news", ""),
+    ("Georgia", "regulator", "Competition Agency", "https://gca.gov.ge/en/news", ""),
+    ("Georgia", "gazette", "Ministry of Justice (justice.gov.ge)", "https://www.justice.gov.ge/en", "discover cases page"),
+    ("Georgia", "press", "Agenda.ge", "https://agenda.ge", "discover feed"),
+    ("Georgia", "press", "BM.ge", "https://bm.ge", "discover feed"),
+    ("Georgia", "press", "Formula News", "https://formulanews.ge", "discover feed"),
+    ("Georgia", "press", "Commersant.ge", "https://commersant.ge", "discover feed"),
+    ("Azerbaijan", "gazette", "Cabinet of Ministers", "https://cabmin.gov.az/en/news", ""),
+    ("Azerbaijan", "regulator", "Central Bank", "https://www.cbar.az/news", ""),
+    ("Azerbaijan", "press", "Caliber", "https://caliber.az", "discover feed"),
+    ("Azerbaijan", "press", "Turan", "https://turan.az", "discover feed"),
+    ("Azerbaijan", "press", "ABC.az", "https://abc.az", "discover feed"),
+    ("Kazakhstan", "gazette", "Akorda (President)", "https://www.akorda.kz/en/events", ""),
+    ("Kazakhstan", "gazette", "Government (primeminister.kz)", "https://primeminister.kz/en/news", ""),
+    ("Kazakhstan", "regulator", "National Bank", "https://www.nationalbank.kz/en/news", ""),
+    ("Kazakhstan", "regulator", "Samruk-Kazyna", "https://sk.kz/en/press-center/news/", "sovereign holding"),
+    ("Kazakhstan", "press", "Tengrinews", "https://tengrinews.kz", "discover feed"),
+    ("Kazakhstan", "press", "Zakon.kz", "https://www.zakon.kz", "discover feed"),
+    ("Kazakhstan", "press", "Vlast.kz", "https://vlast.kz", "discover feed"),
+    ("Kazakhstan", "press", "Inbusiness.kz", "https://inbusiness.kz", "discover feed"),
+    ("Kazakhstan", "press", "KazTAG", "https://kaztag.kz", "discover feed"),
+    ("Uzbekistan", "gazette", "President", "https://president.uz/en", "discover feed"),
+    ("Uzbekistan", "regulator", "Central Bank", "https://cbu.uz/en/press_center/news/", ""),
+    ("Uzbekistan", "press", "Kun.uz", "https://kun.uz", "discover feed"),
+    ("Uzbekistan", "press", "Podrobno.uz", "https://podrobno.uz", "discover feed"),
+    ("Kyrgyzstan", "press", "Kaktus.media", "https://kaktus.media", "discover feed"),
+    ("Kyrgyzstan", "press", "Economist.kg", "https://economist.kg", "discover feed"),
+    ("Tajikistan", "press", "Asia-Plus", "https://asiaplustj.info", "discover feed"),
+    ("Mongolia", "press", "Montsame", "https://montsame.mn/en", "discover feed"),
+    ("Mongolia", "regulator", "Mineral Resources and Petroleum Authority", "https://mrpam.gov.mn", ""),
+    ("Moldova", "press", "IPN", "https://www.ipn.md/en", "discover feed"),
+    ("Belarus", "press", "BelTA", "https://eng.belta.by", "discover feed"),
+    ("Ukraine", "gazette", "President", "https://www.president.gov.ua/en/news/all", ""),
+    ("Ukraine", "gazette", "Cabinet of Ministers", "https://www.kmu.gov.ua/en/news", ""),
+    ("Ukraine", "regulator", "National Bank", "https://bank.gov.ua/en/news", ""),
+    ("Ukraine", "regulator", "State Property Fund", "https://www.spfu.gov.ua/en/news", "privatisation and seizures"),
+    ("Ukraine", "regulator", "ARMA (asset recovery)", "https://arma.gov.ua/news", "seized assets"),
+    ("Ukraine", "press", "Ukrinform", "https://www.ukrinform.net", "discover feed"),
+    ("Ukraine", "press", "LIGA.net", "https://www.liga.net", "discover feed"),
+    ("Ukraine", "press", "Interfax-Ukraine", "https://en.interfax.com.ua", "discover feed"),
+    ("Ukraine", "press", "Ekonomichna Pravda", "https://www.epravda.com.ua", "discover feed"),
+    ("Ukraine", "press", "Yurydychna Gazeta", "https://yur-gazeta.com", "discover feed"),
+    ("Russia", "gazette", "Government", "http://government.ru/en/news/", ""),
+    ("Russia", "regulator", "Central Bank", "https://www.cbr.ru/eng/press/", ""),
+    ("Russia", "press", "Zakon.ru", "https://zakon.ru", "discover feed"),
+    ("Turkey", "gazette", "Presidency", "https://www.tccb.gov.tr/en/", ""),
+    ("Turkey", "regulator", "Central Bank", "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements", ""),
+    ("Turkey", "regulator", "Competition Authority", "https://www.rekabet.gov.tr/en", ""),
+    ("Turkey", "press", "Ekonomim", "https://www.ekonomim.com", "discover feed"),
+    ("Turkey", "press", "Hürriyet", "https://www.hurriyet.com.tr", "discover feed"),
+    ("Mexico", "gazette", "DOF (main)", "https://www.dof.gob.mx", "discover feed"),
+    ("Mexico", "regulator", "CRE energy regulator", "https://www.gob.mx/cre", ""),
+    ("Mexico", "regulator", "Secretaría de Economía (main)", "https://www.gob.mx/se", "JS challenge"),
+    ("Mexico", "press", "El Universal", "https://www.eluniversal.com.mx", "discover feed"),
+    ("Mexico", "press", "Reforma", "https://www.reforma.com", "discover feed"),
+    ("Mexico", "press", "Milenio", "https://www.milenio.com", "discover feed"),
+    ("Mexico", "press", "Forbes México", "https://www.forbes.com.mx", "discover feed"),
+    ("Argentina", "press", "Infobae", "https://www.infobae.com", "discover feed"),
+    ("Argentina", "press", "iProfesional", "https://www.iprofesional.com", "discover feed"),
+    ("Argentina", "press", "Página/12", "https://www.pagina12.com.ar", "discover feed"),
+    ("Argentina", "regulator", "ENARGAS", "https://www.enargas.gob.ar", ""),
+    ("Argentina", "exchange", "CNV", "https://www.argentina.gob.ar/cnv", ""),
+    ("Colombia", "press", "Semana", "https://www.semana.com", "discover feed"),
+    ("Colombia", "press", "El Tiempo", "https://www.eltiempo.com", "discover feed"),
+    ("Colombia", "press", "El Espectador", "https://www.elespectador.com", "discover feed"),
+    ("Colombia", "gazette", "Presidencia", "https://www.presidencia.gov.co", ""),
+    ("Colombia", "regulator", "Superintendencia Financiera", "https://www.superfinanciera.gov.co", ""),
+    ("Peru", "press", "Semana Económica", "https://semanaeconomica.com", "discover feed"),
+    ("Peru", "press", "La República", "https://larepublica.pe", "discover feed"),
+    ("Peru", "regulator", "INGEMMET", "https://www.gob.pe/ingemmet", "mining concessions"),
+    ("Peru", "regulator", "Perupetro", "https://www.perupetro.com.pe", ""),
+    ("Chile", "press", "Diario Financiero", "https://www.df.cl", "discover feed"),
+    ("Chile", "press", "La Tercera", "https://www.latercera.com", "discover feed"),
+    ("Chile", "press", "El Mostrador", "https://www.elmostrador.cl", "discover feed"),
+    ("Chile", "regulator", "SERNAGEOMIN", "https://www.sernageomin.cl", "mining"),
+    ("Ecuador", "press", "Expreso", "https://www.expreso.ec", "discover feed"),
+    ("Ecuador", "regulator", "ARCERNNR", "https://www.controlrecursosyenergia.gob.ec", "mining and energy licences"),
+    ("Venezuela", "press", "Petroguía", "https://www.petroguia.com", "discover feed"),
+    ("Bolivia", "press", "Los Tiempos", "https://www.lostiempos.com", "discover feed"),
+    ("Brazil", "press", "Valor Econômico", "https://valor.globo.com", "discover feed"),
+    ("Brazil", "press", "Estadão", "https://www.estadao.com.br", "discover feed"),
+    ("Brazil", "exchange", "CVM", "https://www.gov.br/cvm", ""),
+    ("Brazil", "regulator", "ANP", "https://www.gov.br/anp", "oil and gas"),
+    ("Brazil", "regulator", "ANM", "https://www.gov.br/anm", "mining"),
+    ("Spain", "press", "Cinco Días", "https://cincodias.elpais.com", "discover feed"),
+    ("Spain", "press", "Vozpópuli", "https://www.vozpopuli.com", "discover feed"),
+    ("Spain", "register", "Abogacía General del Estado", "https://www.mjusticia.gob.es/es/ministerio/organismos-entidades/abogacia-general", "defends Spain in ISDS"),
+    ("Italy", "press", "Milano Finanza", "https://www.milanofinanza.it", "discover feed"),
+    ("Italy", "register", "Avvocatura dello Stato", "https://www.avvocaturastato.it", ""),
+    ("Romania", "press", "Economica.net", "https://www.economica.net", "discover feed"),
+    ("Romania", "register", "Ministry of Finance", "https://mfinante.gov.ro", "defends Romania in ISDS"),
+    ("Poland", "register", "Prokuratoria Generalna", "https://www.gov.pl/web/prokuratoria", "defends Poland in ISDS"),
+    ("Hungary", "press", "Portfolio.hu", "https://www.portfolio.hu", "discover feed"),
+    ("Czechia", "press", "Hospodářské noviny", "https://hn.cz", "discover feed"),
+    ("Czechia", "register", "Ministry of Finance - arbitration", "https://www.mfcr.cz/en/", "publishes ISDS cases"),
+    ("Slovakia", "press", "Denník N", "https://dennikn.sk", "discover feed"),
+    ("Croatia", "press", "Jutarnji list", "https://www.jutarnji.hr", "discover feed"),
+    ("Slovenia", "press", "STA", "https://english.sta.si", "discover feed"),
+    ("Serbia", "press", "N1", "https://n1info.rs", "discover feed"),
+    ("Bosnia and Herzegovina", "press", "Klix", "https://www.klix.ba", "discover feed"),
+    ("Montenegro", "press", "Vijesti", "https://www.vijesti.me", "discover feed"),
+    ("North Macedonia", "press", "MIA", "https://mia.mk/en", "discover feed"),
+    ("Albania", "press", "Albanian Daily News", "https://albaniandailynews.com", "discover feed"),
+    ("Bulgaria", "press", "Novinite", "https://www.novinite.com", "discover feed"),
+    ("Greece", "press", "Kathimerini", "https://www.ekathimerini.com", "discover feed"),
+    ("Cyprus", "press", "Cyprus Mail", "https://cyprus-mail.com", "discover feed"),
+    ("Latvia", "press", "LSM", "https://eng.lsm.lv", "discover feed"),
+    ("Lithuania", "press", "LRT", "https://www.lrt.lt/en", "discover feed"),
+    ("Estonia", "press", "ERR", "https://news.err.ee", "discover feed"),
+    ("Germany", "press", "Handelsblatt", "https://www.handelsblatt.com", "discover feed"),
+    ("Germany", "press", "JUVE", "https://www.juve.de", "legal press; discover feed"),
+    ("France", "press", "Les Echos", "https://www.lesechos.fr", "discover feed"),
+    ("France", "press", "Décideurs Juridiques", "https://www.decideurs-juridiques.com", "discover feed"),
+    ("Netherlands", "press", "Het Financieele Dagblad", "https://fd.nl", "discover feed"),
+    ("Switzerland", "press", "NZZ", "https://www.nzz.ch", "discover feed"),
+    ("United Kingdom", "press", "Financial Times - law", "https://www.ft.com/law", "discover feed"),
+    ("United Kingdom", "press", "Law Gazette", "https://www.lawgazette.co.uk", "discover feed"),
+    ("Israel", "press", "Globes", "https://en.globes.co.il", "discover feed"),
+    ("Jordan", "press", "Jordan Times", "https://jordantimes.com", "discover feed"),
+    ("Lebanon", "press", "L'Orient Today", "https://today.lorientlejour.com", "discover feed"),
+    ("Kuwait", "press", "Kuwait Times", "https://www.kuwaittimes.com", "discover feed"),
+    ("Oman", "press", "Times of Oman", "https://timesofoman.com", "discover feed"),
+    ("Bahrain", "press", "Gulf Daily News", "https://www.gdnonline.com", "discover feed"),
+    ("UAE", "press", "The National", "https://www.thenationalnews.com", "discover feed"),
+    ("UAE", "press", "Gulf News", "https://gulfnews.com", "discover feed"),
+    ("Saudi Arabia", "press", "Argaam", "https://www.argaam.com/en", "discover feed"),
+    ("Qatar", "press", "Gulf Times", "https://www.gulf-times.com", "discover feed"),
+    ("Iraq", "press", "Rudaw", "https://www.rudaw.net/english", "discover feed"),
+    ("Libya", "press", "Libya Observer", "https://libyaobserver.ly", "discover feed"),
+    ("Tunisia", "press", "TAP", "https://www.tap.info.tn/en", "discover feed"),
+    ("Egypt", "press", "Ahram Online", "https://english.ahram.org.eg", "discover feed"),
+    ("Egypt", "press", "Mada Masr", "https://www.madamasr.com/en", "discover feed"),
+    ("Egypt", "regulator", "GAFI", "https://www.gafi.gov.eg", "investment authority"),
+    ("Morocco", "press", "Le360", "https://fr.le360.ma", "discover feed"),
+    ("Morocco", "press", "L'Economiste", "https://www.leconomiste.com", "discover feed"),
+    ("Algeria", "press", "TSA", "https://www.tsa-algerie.com", "discover feed"),
+    ("Ethiopia", "press", "Addis Standard", "https://addisstandard.com", "discover feed"),
+    ("Uganda", "press", "Daily Monitor", "https://www.monitor.co.ug", "discover feed"),
+    ("Rwanda", "press", "The New Times", "https://www.newtimes.co.rw", "discover feed"),
+    ("Kenya", "press", "Business Daily", "https://www.businessdailyafrica.com", "discover feed"),
+    ("Kenya", "press", "The Star", "https://www.the-star.co.ke", "discover feed"),
+    ("Kenya", "press", "Nation", "https://nation.africa/kenya", "discover feed"),
+    ("Tanzania", "press", "The Citizen", "https://www.thecitizen.co.tz", "discover feed"),
+    ("Zimbabwe", "press", "NewsDay", "https://www.newsday.co.zw", "discover feed"),
+    ("Zimbabwe", "press", "The Herald", "https://www.herald.co.zw", "discover feed"),
+    ("Namibia", "press", "The Namibian", "https://www.namibian.com.na", "discover feed"),
+    ("Botswana", "press", "Mmegi", "https://www.mmegi.bw", "discover feed"),
+    ("Madagascar", "press", "L'Express de Madagascar", "https://lexpress.mg", "discover feed"),
+    ("Guinea", "press", "Guinéenews", "https://guineenews.org", "discover feed"),
+    ("Mali", "press", "Maliweb", "https://www.maliweb.net", "discover feed"),
+    ("Burkina Faso", "press", "Lefaso.net", "https://lefaso.net", "discover feed"),
+    ("Niger", "press", "ActuNiger", "https://www.actuniger.com", "discover feed"),
+    ("Côte d'Ivoire", "press", "Abidjan.net", "https://news.abidjan.net", "discover feed"),
+    ("Cameroon", "press", "Journal du Cameroun", "https://www.journalducameroun.com", "discover feed"),
+    ("Cameroon", "press", "Investir au Cameroun", "https://www.investiraucameroun.com", "discover feed"),
+    ("Gabon", "press", "Gabonreview", "https://www.gabonreview.com", "discover feed"),
+    ("Angola", "press", "Angop", "https://www.angop.ao/en", "discover feed"),
+    ("Senegal", "press", "APS", "https://aps.sn", "discover feed"),
+    ("South Africa", "press", "Business Day", "https://www.businesslive.co.za", "discover feed"),
+    ("South Africa", "press", "Daily Maverick", "https://www.dailymaverick.co.za", "discover feed"),
+    ("South Africa", "regulator", "DMRE", "https://www.dmre.gov.za", "mining rights"),
+    ("Bangladesh", "press", "The Daily Star", "https://www.thedailystar.net", "discover feed"),
+    ("Sri Lanka", "press", "Daily FT", "https://www.ft.lk", "discover feed"),
+    ("Nepal", "press", "Kathmandu Post", "https://kathmandupost.com", "discover feed"),
+    ("Thailand", "press", "Bangkok Post", "https://www.bangkokpost.com", "discover feed"),
+    ("Cambodia", "press", "Khmer Times", "https://www.khmertimeskh.com", "discover feed"),
+    ("Malaysia", "press", "The Edge Malaysia", "https://theedgemalaysia.com", "discover feed"),
+    ("Malaysia", "press", "The Star", "https://www.thestar.com.my", "discover feed"),
+    ("Indonesia", "press", "Bisnis.com", "https://www.bisnis.com", "discover feed"),
+    ("Indonesia", "press", "Hukumonline", "https://www.hukumonline.com", "discover feed"),
+    ("Indonesia", "press", "The Jakarta Post", "https://www.thejakartapost.com", "discover feed"),
+    ("Indonesia", "press", "Katadata", "https://katadata.co.id", "discover feed"),
+    ("Vietnam", "press", "VietnamNet", "https://vietnamnet.vn/en", "discover feed"),
+    ("Philippines", "press", "Inquirer Business", "https://business.inquirer.net", "discover feed"),
+    ("Korea", "press", "Korea JoongAng Daily", "https://koreajoongangdaily.joins.com", "discover feed"),
+    ("Korea", "press", "The Korea Herald", "https://www.koreaherald.com", "discover feed"),
+    ("Korea", "register", "Ministry of Justice ISDS", "https://www.moj.go.kr/moj_eng/1746/subview.do", "Korea publishes its ISDS cases"),
+    ("Japan", "press", "Nikkei Asia", "https://asia.nikkei.com", "discover feed"),
+    ("China", "press", "Caixin Global", "https://www.caixinglobal.com", "discover feed"),
+    ("Taiwan", "press", "Focus Taiwan", "https://focustaiwan.tw", "discover feed"),
+    ("Papua New Guinea", "press", "Post-Courier", "https://www.postcourier.com.pg", "discover feed"),
+    ("Australia", "register", "DFAT - ISDS", "https://www.dfat.gov.au/trade/investment/investor-state-dispute-settlement", "cases against Australia"),
+    ("Australia", "press", "AFR", "https://www.afr.com", "discover feed"),
+    ("Australia", "press", "Lawyerly", "https://www.lawyerly.com.au", "discover feed"),
+    ("Canada", "press", "The Globe and Mail", "https://www.theglobeandmail.com", "discover feed"),
+    ("Canada", "press", "Northern Miner", "https://www.northernminer.com", "discover feed"),
+    ("Canada", "press", "Mining.com", "https://www.mining.com", "discover feed"),
+    ("United States", "press", "Reuters Legal", "https://www.reuters.com/legal/", "discover feed"),
+    ("United States", "press", "Law360 - International Arbitration", "https://www.law360.com/internationalarbitration/rss", "WIRED"),
+    ("Guatemala", "press", "Prensa Libre", "https://www.prensalibre.com", "discover feed"),
+    ("Honduras", "press", "El Heraldo", "https://www.elheraldo.hn", "discover feed"),
+    ("El Salvador", "press", "El Diario de Hoy", "https://www.elsalvador.com", "discover feed"),
+    ("Nicaragua", "press", "Confidencial", "https://confidencial.digital", "discover feed"),
+    ("Costa Rica", "press", "La Nación", "https://www.nacion.com", "discover feed"),
+    ("Panama", "press", "La Prensa", "https://www.prensa.com", "discover feed"),
+    ("Dominican Republic", "press", "Diario Libre", "https://www.diariolibre.com", "discover feed"),
+    ("Jamaica", "press", "The Gleaner", "https://jamaica-gleaner.com", "discover feed"),
+    ("Guyana", "press", "Stabroek News", "https://www.stabroeknews.com", "discover feed"),
+    ("Paraguay", "press", "ABC Color", "https://www.abc.com.py", "discover feed"),
+    ("Paraguay", "press", "Última Hora", "https://www.ultimahora.com", "discover feed"),
+    ("Uruguay", "press", "El Observador", "https://www.elobservador.com.uy", "discover feed"),
+]
+
 
 WIRED = {"WIRED"}
+
+
+FEED_PATHS = ["/rss", "/feed", "/rss.xml", "/feed.xml", "/feeds", "/rss/all", "/rss/news", "/en/rss", "/en/feed",
+              "/arc/outboundfeeds/rss/", "/?feed=rss2", "/index.xml", "/atom.xml", "/rss/latest"]
+_ALT = re.compile(r'<link[^>]+type="application/(?:rss|atom)\+xml"[^>]*>', re.I)
+_HREF = re.compile(r'href="([^"]+)"', re.I)
+
+
+def _get(url, timeout=15, insecure=False):
+    """httpx first; a Chrome-identical TLS handshake when refused; verification off
+    only for government hosts with broken chains, and flagged."""
+    try:
+        r = httpx.get(url, headers=UA, timeout=timeout, follow_redirects=True, verify=not insecure)
+        if r.status_code in (403, 429, 503) or (r.status_code == 200 and "challenge" in r.text[:1500].lower()):
+            raise PermissionError(r.status_code)
+        return r.status_code, r.headers.get("content-type", ""), r.text, str(r.url), ""
+    except PermissionError:
+        pass
+    except httpx.ConnectError as exc:
+        if "CERTIFICATE_VERIFY_FAILED" in str(exc) and not insecure:
+            code, ct, text, final, flag = _get(url, timeout, insecure=True)
+            return code, ct, text, final, "insecure-tls"
+        raise
+    from curl_cffi import requests as cr
+    r = cr.get(url, impersonate="chrome124", timeout=timeout, allow_redirects=True, verify=not insecure)
+    head = r.text[:3000].lower()
+    if r.status_code == 200 and ("challenge validation" in head or ("just a moment" in head and len(r.content) < 20000)):
+        raise PermissionError("js-challenge")
+    return r.status_code, r.headers.get("content-type", ""), r.text, str(r.url), "chrome-tls"
+
+
+def _is_feed(ct, text):
+    head = text[:4000].lower()
+    return "xml" in ct or "<rss" in head or "<feed" in head
+
+
+def _discover(url):
+    """Find the site's own feed: <link rel=alternate> on the home page, then common paths."""
+    from urllib.parse import urlsplit, urljoin
+    parts = urlsplit(url)
+    home = "{}://{}/".format(parts.scheme, parts.netloc)
+    tried = []
+    try:
+        code, ct, text, final, flag = _get(home, 15)
+        for tag in _ALT.findall(text)[:4]:
+            m = _HREF.search(tag)
+            if m:
+                tried.append(urljoin(final, html.unescape(m.group(1))))
+    except Exception:                                 # noqa: BLE001 - boundary
+        pass
+    tried += [home.rstrip("/") + p for p in FEED_PATHS]
+    for cand in dict.fromkeys(tried):
+        try:
+            code, ct, text, final, flag = _get(cand, 12)
+            if code == 200 and _is_feed(ct, text):
+                return cand, flag
+        except Exception:                             # noqa: BLE001 - boundary
+            continue
+    return None, ""
 
 
 def probe(entry):
@@ -275,22 +656,41 @@ def probe(entry):
     if note.startswith("WIRED"):
         return entry + ("wired", "")
     try:
-        r = httpx.get(url, headers=UA, timeout=20, follow_redirects=True)
-        ct = r.headers.get("content-type", "")
-        head = r.text[:4000].lower()
-        if r.status_code in (403, 429, 503) or "challenge" in head[:1500] and r.status_code == 200 and len(r.content) < 5000:
-            return entry + ("blocked", "HTTP {}".format(r.status_code))
-        if r.status_code >= 400:
-            return entry + ("dead", "HTTP {}".format(r.status_code))
-        if "xml" in ct or "<rss" in head or "<feed" in head:
-            return entry + ("rss", "feed")
-        return entry + ("html", "{} KB".format(len(r.content) // 1024))
+        code, ct, text, final, flag = _get(url, 15)
+        if code >= 400:
+            raise FileNotFoundError(code)
+        if _is_feed(ct, text):
+            return entry + ("rss", ("feed " + flag).strip())
+        if kind == "press":
+            found, fflag = _discover(url)
+            if found:
+                return (country, kind, name, found, note) + ("rss", "discovered " + (fflag or "").strip())
+        return entry + ("html", "{} KB {}".format(len(text) // 1024, flag).strip())
+    except PermissionError as exc:
+        if kind == "press":
+            found, fflag = _discover(url)
+            if found:
+                return (country, kind, name, found, note) + ("rss", "discovered " + (fflag or "").strip())
+        return entry + ("blocked", str(exc))
+    except FileNotFoundError as exc:
+        if kind == "press":
+            found, fflag = _discover(url)
+            if found:
+                return (country, kind, name, found, note) + ("rss", "discovered " + (fflag or "").strip())
+        return entry + ("dead", "HTTP {}".format(exc))
     except Exception as exc:                          # noqa: BLE001 - boundary
-        return entry + ("error", type(exc).__name__)
+        if kind == "press":
+            try:
+                found, fflag = _discover(url)
+                if found:
+                    return (country, kind, name, found, note) + ("rss", "discovered " + (fflag or "").strip())
+            except Exception:                         # noqa: BLE001 - boundary
+                pass
+        return entry + ("error", type(exc).__name__[:14])
 
 
 def run_probe():
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+    with cf.ThreadPoolExecutor(max_workers=12) as ex:
         return list(ex.map(probe, CANDIDATES))
 
 

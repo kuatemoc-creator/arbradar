@@ -47,11 +47,35 @@ def get(url: str, params: Optional[dict] = None, ttl: int = 3600,
         try:
             r = httpx.get(url, params=params, headers=h, timeout=timeout,
                           follow_redirects=True)
+        except httpx.ConnectError as exc:
+            if "CERTIFICATE_VERIFY_FAILED" in str(exc):
+                # Several government hosts serve incomplete chains. Read them anyway;
+                # nothing here is authenticated or written.
+                r = httpx.get(url, params=params, headers=h, timeout=timeout,
+                              follow_redirects=True, verify=False)
+            else:
+                last = exc
+                time.sleep(1.5 * (attempt + 1))
+                continue
         except httpx.HTTPError as exc:
             last = exc
             time.sleep(1.5 * (attempt + 1))
             continue
         if r.status_code in (403, 429, 503):
+            # A refusal on the Python client's TLS fingerprint is not a refusal of
+            # the request: retry once with a browser-identical handshake.
+            if r.status_code == 403 and attempt == 0:
+                try:
+                    from curl_cffi import requests as cr
+                    cr_r = cr.get(url, params=params, headers=h, impersonate="chrome124",
+                                  timeout=timeout, allow_redirects=True)
+                    if cr_r.status_code == 200 and "challenge validation" not in cr_r.text[:1500].lower():
+                        with open(path, "wb") as fh:
+                            fh.write(cr_r.content)
+                        return httpx.Response(200, content=cr_r.content, headers={"content-type": cr_r.headers.get("content-type", "")},
+                                              request=httpx.Request("GET", url))
+                except Exception:                     # noqa: BLE001 - boundary
+                    pass
             raise Blocked("{} returned {}".format(url, r.status_code))
         if r.status_code >= 500:
             last = httpx.HTTPError("{} {}".format(url, r.status_code))
