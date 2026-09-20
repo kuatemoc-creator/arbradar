@@ -97,6 +97,16 @@ _MAJOR_RE = [(m, re.compile(r"(?<![\w-])" + re.escape(m) + r"(?![\w-])",
                               0 if len(m) <= 5 else re.I)) for m in MAJORS]
 
 
+_ADVERSE = re.compile(
+    r"revok|cancel|terminat|seiz|nationali[sz]|expropriat|confiscat|suspend|halt|freez|\bban(s|ned)?\b|block|"
+    r"windfall|back tax|tax (assessment|demand|claim|bill)|reassess|takes? (control|over)|temporary administration|"
+    r"forced|arrest|raid|strip|annul|withdr|scrap|overturn|reject|refus|impos|fine[sd]?\b|penalt|"
+    r"revoc|cancel|rescind|caduc|expropi|nacionaliz|incaut|embarg|suspend|prohíb|bloque|congel|"
+    r"аннулир|отозв|отзыв|расторг|национализ|экспроприац|арест|изъят|заморо|приостанов|запрет|"
+    r"анулю|скасув|розірв|націоналізац|експропріац|iptal|fesh|kamulaştır|millileştir|el koy|askıya|"
+    r"retir|annul|résili|nationalis|exproprie|saisi|gel[ée]|interdi|suspend", re.I)
+
+
 def _majors(text: str) -> List[str]:
     """Whole-word matches only. A five-letter-or-shorter name must also match case,
     or "Eni" is found inside "opening" and "Citi" inside "citing"."""
@@ -144,9 +154,13 @@ def run(days: int = 7) -> Iterator[Dict]:
                 item["event_type"] = "commercial_dispute"
                 item["flag_reason"] = "commercial-arbitration sweep"
             if family == "measure":
-                # A measure story only earns the lead weight when it names an
-                # investor who can pay; otherwise it is policy news.
-                item["event_type"] = "state_measure" if majors else "distress_event"
+                # A measure story needs an adverse act in the headline - a contract award,
+                # an import policy, a deal is not a measure - and only earns the lead
+                # weight when it names an investor who can pay.
+                if not _ADVERSE.search(clean_title):
+                    item["event_type"] = "commentary"
+                else:
+                    item["event_type"] = "state_measure" if majors else "distress_event"
                 item["flag_reason"] = ("State-measure sweep ({} edition); investor of means named: {}".format(
                     country or "global", ", ".join(majors[:2])) if majors else
                     "State-measure sweep ({} edition); no listed investor named".format(country or "global"))

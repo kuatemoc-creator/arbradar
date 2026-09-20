@@ -222,15 +222,26 @@ def _stem(w: str) -> str:
     return st if len(st) >= 3 else w
 
 
+import unicodedata
+
+_ALIAS = {"kremlin": "russia", "moscow": "russia", "putin": "russia", "beijing": "china", "ankara": "turkey",
+          "erdogan": "turkey", "washington": "united", "kyiv": "ukraine", "tehran": "iran", "riyadh": "saudi"}
+
+
+def _fold(text: str) -> str:
+    """Nestlé and Nestle are the same word."""
+    return unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode()
+
+
 def _tokens(title: str) -> set:
-    return {_stem(w) for w in re.findall(r"[a-z0-9]+", (title or "").lower())
+    return {_stem(_ALIAS.get(w, w)) for w in re.findall(r"[a-z0-9]+", _fold(title).lower())
             if len(w) >= 3 and w not in STOP}
 
 
 def _propers(title: str) -> set:
     """Capitalised words after the first, minus stop words - the names in a headline."""
     words = re.findall(r"[A-Za-z][A-Za-z'\u00c0-\u024f]+", title or "")
-    return {_stem(w.lower()) for w in words[1:]
+    return {_stem(_ALIAS.get(_fold(w).lower(), _fold(w).lower())) for w in words[1:]
             if w[0].isupper() and len(w) >= 4 and w.lower() not in STOP}
 
 
@@ -252,12 +263,16 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             # Two different case numbers are two different matters, full stop.
             if it.get("case_ref") and rep.get("case_ref") and it["case_ref"] != rep["case_ref"]:
                 continue
+            # The same investor against the same State, in the same window, is one story
+            # whatever the headline says.
+            same_parties = (set(map(str.lower, it.get("claimants") or [])) & set(map(str.lower, rep.get("claimants") or []))
+                            and set(map(str.lower, it.get("states") or [])) & set(map(str.lower, rep.get("states") or [])))
             inter = len(toks & rep["_toks"])
-            if not inter:
+            if not inter and not same_parties:
                 continue
-            jac = inter / len(toks | rep["_toks"])
+            jac = inter / max(1, len(toks | rep["_toks"]))
             shared_names = len(names & rep["_names"])
-            if jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2:
+            if same_parties or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2:
                 home = rep
                 break
         if home is None:

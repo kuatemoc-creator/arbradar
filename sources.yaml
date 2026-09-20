@@ -1023,16 +1023,6 @@ national_press:
   url: https://jamaica-gleaner.com/rss.xml
   lang: en
   enabled: true
-- country: Saudi Arabia
-  name: Arab News
-  url: https://www.arabnews.com/rss.xml
-  lang: en
-  enabled: true
-- country: Global
-  name: DIAC news
-  url: https://www.diac.com/en/rss
-  lang: en
-  enabled: true
 - country: 'Sector: Construction'
   name: Global Construction Review
   url: https://www.globalconstructionreview.com/feed/
