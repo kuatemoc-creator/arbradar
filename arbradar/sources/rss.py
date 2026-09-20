@@ -76,11 +76,14 @@ _SPORT = re.compile(r"f[úu]tbol|futebol|football|soccer|\bliga\b|\bgol\b|penal(
 
 
 def relevant(text: str) -> bool:
+    from .editions import states_in
     if _SPORT.search(text) and not re.search(r"ICSID|CIADI|CIRDI|treaty|tratado|trait\u00e9|expropri|nacionaliz|nationalis", text, re.I):
         return False
     if _STRONG.search(text):
         return True
-    return bool(_ASSET.search(text) and _ACTION.search(text) and _STATE.search(text))
+    # a licence/contract action needs a State or an investor in the sentence - a
+    # named country counts as the State
+    return bool(_ASSET.search(text) and _ACTION.search(text) and (_STATE.search(text) or states_in(text)))
 
 
 def _configured() -> List[Dict[str, str]]:

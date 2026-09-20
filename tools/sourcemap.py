@@ -124,7 +124,7 @@ CANDIDATES = [
     ("Turkey", "press", "Hürriyet Daily News", "https://www.hurriyetdailynews.com/rss", ""),
     ("Turkey", "press", "Daily Sabah", "https://www.dailysabah.com/rssFeed/10", ""),
     # ----------------------------------------------------------------- Mexico
-    ("Mexico", "register", "Secretaría de Economía ISDS register", "https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado", "publishes notices of intent; bot challenge"),
+    ("Mexico", "register", "Secretaría de Economía ISDS register", "https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado", "publishes notices of intent; managed bot challenge - read by a person, not a script"),
     ("Mexico", "gazette", "Diario Oficial de la Federación", "https://www.dof.gob.mx/rss", ""),
     ("Mexico", "tenders", "CompraNet", "https://compranet.hacienda.gob.mx", ""),
     ("Mexico", "regulator", "CNH hydrocarbons", "https://www.gob.mx/cnh", ""),
@@ -143,7 +143,7 @@ CANDIDATES = [
     ("Argentina", "press", "El Cronista", "https://www.cronista.com/rss", ""),
     ("Argentina", "press", "Infobae", "https://www.infobae.com/feeds/rss/", ""),
     # ----------------------------------------------------------------- Colombia
-    ("Colombia", "register", "ANDJE - defensa internacional", "https://www.defensajuridica.gov.co", "publishes ISDS cases; WAF 403 to scripts"),
+    ("Colombia", "register", "ANDJE - defensa internacional", "https://www.defensajuridica.gov.co", "publishes ISDS cases; managed bot challenge - read by a person, not a script"),
     ("Colombia", "tenders", "SECOP / Colombia Compra", "https://www.colombiacompra.gov.co", ""),
     ("Colombia", "regulator", "ANM mining", "https://www.anm.gov.co", ""),
     ("Colombia", "regulator", "ANH hydrocarbons", "https://www.anh.gov.co", ""),
@@ -249,10 +249,10 @@ CANDIDATES = [
     ("Korea", "press", "Korea JoongAng Daily", "https://koreajoongangdaily.joins.com/rss", ""),
     # ----------------------------------------------------------------- Global primary records and specialist press
     ("Global", "register", "ICSID docket API", "https://icsid.worldbank.org/api/cases/pending", "WIRED"),
-    ("Global", "register", "UNCITRAL Transparency Registry", "https://www.uncitral.org/transparency-registry/registry/index.jspx", "notices under the Mauritius Convention"),
+    ("Global", "register", "UNCITRAL Transparency Registry", "https://www.uncitral.org/transparency-registry/registry/index.jspx", "notices under the Mauritius Convention; index answers, case list to parse"),
     ("Global", "register", "PCA cases", "https://pca-cpa.org/en/cases/", "client-rendered"),
-    ("Global", "register", "italaw", "https://www.italaw.com", "awards and decisions; Cloudflare"),
-    ("Global", "register", "UNCTAD ISDS Navigator", "https://investmentpolicy.unctad.org/investment-dispute-settlement", "Cloudflare"),
+    ("Global", "register", "italaw", "https://www.italaw.com", "awards and decisions; managed bot challenge - read by a person, not a script"),
+    ("Global", "register", "UNCTAD ISDS Navigator", "https://investmentpolicy.unctad.org/investment-dispute-settlement", "managed bot challenge - read by a person, not a script"),
     ("Global", "courts", "CourtListener / RECAP", "https://www.courtlistener.com/api/rest/v4/search/", "WIRED"),
     ("Global", "exchange", "SEC EDGAR full-text", "https://efts.sec.gov/LATEST/search-index", "WIRED"),
     ("Global", "tenders", "TED", "https://api.ted.europa.eu/v3/notices/search", "WIRED"),
