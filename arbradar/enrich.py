@@ -123,9 +123,11 @@ def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
             continue
         updates = {"summary": found["summary"]}
         if "news.google.com" in (it.get("url") or "") and found["url"].startswith("http"):
+            # The link must follow the text we found, and the label must follow the link.
+            from .outlets import label
             updates["url"] = found["url"]
-            if found["outlet"]:
-                updates["source"] = "Google News / " + found["outlet"] if (it.get("source") or "").startswith("Google News") else it.get("source")
+            if (it.get("source") or "").startswith("Google News"):
+                updates["source"] = "Google News / " + (found["outlet"] or label(found["url"], "source"))
         db.update_item(conn, it["id"], **updates)
         it.update(updates)
         done += 1

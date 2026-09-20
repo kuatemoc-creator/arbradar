@@ -390,7 +390,25 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         r.pop("_toks", None)
         r.pop("_names", None)
         r.pop("_bg", None)
+        _cite_best(r)
     return reps
+
+
+def _cite_best(rep: Dict[str, Any]) -> None:
+    """Cite the most authoritative copy of the story: a wire or a major paper over
+    the syndicated copy that happened to arrive first. The headline and link
+    follow the cited copy; the summary and the evidence stay with the story."""
+    from .outlets import rank
+    also = rep.get("also") or []
+    if not also:
+        return
+    best = min(also, key=lambda a: rank(a.get("source"), a.get("url")))
+    if rank(best.get("source"), best.get("url")) < rank(rep.get("source"), rep.get("url")) and best.get("url"):
+        old = {"source": rep.get("source"), "url": rep.get("url"), "title": rep.get("title")}
+        rep["source"], rep["url"] = best.get("source"), best.get("url")
+        if best.get("title") and (rep.get("lang") or "en") == "en":
+            rep["title"] = best["title"]
+        rep["also"] = [old] + [a for a in also if a is not best]
 
 
 def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14) -> Dict[str, List[Dict[str, Any]]]:
