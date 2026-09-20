@@ -34,6 +34,10 @@ apis:
     enabled: true
     what: PCA news page (the case list itself is client-rendered and not available)
     endpoint: https://pca-cpa.org/en/news/
+  pca_cases:
+    enabled: true
+    what: PCA case list via headless browser - UNCITRAL investor-State and inter-State cases, by case number
+    endpoint: https://pca-cpa.org/en/cases/
 google_news:
   enabled: true
   editions: []
