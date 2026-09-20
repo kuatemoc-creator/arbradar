@@ -29,7 +29,7 @@ P = ('font-family:{sans};font-size:{size}px;line-height:{lh};color:{color};margi
      'mso-line-height-rule:exactly;')
 
 # One or two words above the headline. That is the whole "why it is here".
-SHORT = {"notice_of_intent": "Notice of dispute", "s1782_application": "§1782 application",
+SHORT = {"commercial_dispute": "Commercial arbitration", "notice_of_intent": "Notice of dispute", "s1782_application": "§1782 application",
          "new_case_filed": "New case", "enforcement_action": "Enforcement", "annulment_setaside": "Annulment",
          "state_measure": "State measure", "distress_event": "State measure", "award_issued": "Award",
          "treaty_action": "Treaty", "funding": "Funding", "tribunal_constituted": "Tribunal",

@@ -141,7 +141,7 @@
   "https://www.supremecourt.ge",
   "",
   "html",
-  "44 KB"
+  "39 KB"
  ],
  [
   "Georgia",
@@ -464,8 +464,8 @@
   "Daryo",
   "https://daryo.uz/en/feed",
   "",
-  "error",
-  "ConnectError"
+  "html",
+  "794 KB"
  ],
  [
   "Kyrgyzstan",
@@ -760,7 +760,7 @@
   "register",
   "Secretaría de Economía ISDS register",
   "https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado",
-  "publishes notices of intent; bot challenge",
+  "publishes notices of intent; managed bot challenge - read by a person, not a script",
   "dead",
   "HTTP 404"
  ],
@@ -913,7 +913,7 @@
   "register",
   "ANDJE - defensa internacional",
   "https://www.defensajuridica.gov.co",
-  "publishes ISDS cases; WAF 403 to scripts",
+  "publishes ISDS cases; managed bot challenge - read by a person, not a script",
   "dead",
   "HTTP 403"
  ],
@@ -924,7 +924,7 @@
   "https://www.colombiacompra.gov.co",
   "",
   "html",
-  "589 KB"
+  "588 KB"
  ],
  [
   "Colombia",
@@ -1121,8 +1121,8 @@
   "Efecto Cocuyo",
   "https://efectococuyo.com/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Venezuela",
@@ -1578,10 +1578,10 @@
   "Saudi Arabia",
   "press",
   "Arab News",
-  "https://www.arabnews.com/rss",
+  "https://www.arabnews.com/rss.xml",
   "",
   "rss",
-  "discovered chrome-tls"
+  "feed chrome-tls"
  ],
  [
   "Qatar",
@@ -1725,7 +1725,7 @@
   "https://www.bisnis.com/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Indonesia",
@@ -1804,7 +1804,7 @@
   "register",
   "UNCITRAL Transparency Registry",
   "https://www.uncitral.org/transparency-registry/registry/index.jspx",
-  "notices under the Mauritius Convention",
+  "notices under the Mauritius Convention; index answers, case list to parse",
   "html",
   "73 KB"
  ],
@@ -1813,16 +1813,16 @@
   "register",
   "PCA cases",
   "https://pca-cpa.org/en/cases/",
-  "WIRED via headless browser",
-  "wired",
-  "headless browser"
+  "client-rendered",
+  "html",
+  "129 KB"
  ],
  [
   "Global",
   "register",
   "italaw",
   "https://www.italaw.com",
-  "awards and decisions; Cloudflare",
+  "awards and decisions; managed bot challenge - read by a person, not a script",
   "dead",
   "HTTP 403"
  ],
@@ -1831,7 +1831,7 @@
   "register",
   "UNCTAD ISDS Navigator",
   "https://investmentpolicy.unctad.org/investment-dispute-settlement",
-  "Cloudflare",
+  "managed bot challenge - read by a person, not a script",
   "dead",
   "HTTP 403"
  ],
@@ -2019,7 +2019,7 @@
   "Global",
   "press",
   "DIAC news",
-  "https://www.diac.com/en/feed",
+  "https://www.diac.com/en/rss",
   "institution",
   "rss",
   "discovered "
@@ -2463,7 +2463,7 @@
   "https://www.hoganlovells.com/en/news",
   "firm",
   "html",
-  "130 KB"
+  "131 KB"
  ],
  [
   "Global",
@@ -2831,8 +2831,8 @@
   "OECD investment news",
   "https://www.oecd.org/en/topics/investment.html",
   "",
-  "dead",
-  "HTTP 403"
+  "html",
+  "1516 KB chrome-tls"
  ],
  [
   "Armenia",
@@ -2994,7 +2994,7 @@
   "https://formulanews.ge",
   "discover feed",
   "html",
-  "102 KB"
+  "101 KB"
  ],
  [
   "Georgia",
@@ -3003,7 +3003,7 @@
   "https://commersant.ge",
   "discover feed",
   "html",
-  "779 KB"
+  "782 KB"
  ],
  [
   "Azerbaijan",
@@ -3282,7 +3282,7 @@
   "https://www.ukrinform.net",
   "discover feed",
   "html",
-  "87 KB"
+  "86 KB"
  ],
  [
   "Ukraine",
@@ -3516,7 +3516,7 @@
   "https://www.eltiempo.com",
   "discover feed",
   "html",
-  "853 KB"
+  "852 KB"
  ],
  [
   "Colombia",
@@ -3534,7 +3534,7 @@
   "https://www.presidencia.gov.co",
   "",
   "html",
-  "5 KB"
+  "7 KB"
  ],
  [
   "Colombia",
@@ -3714,7 +3714,7 @@
   "https://www.vozpopuli.com",
   "discover feed",
   "html",
-  "321 KB"
+  "322 KB"
  ],
  [
   "Spain",
@@ -3732,7 +3732,7 @@
   "https://www.milanofinanza.it",
   "discover feed",
   "html",
-  "243 KB"
+  "87 KB"
  ],
  [
   "Italy",
@@ -3885,7 +3885,7 @@
   "https://www.ekathimerini.com",
   "discover feed",
   "html",
-  "577 KB"
+  "576 KB"
  ],
  [
   "Cyprus",
@@ -3975,7 +3975,7 @@
   "https://www.nzz.ch",
   "discover feed",
   "html",
-  "967 KB"
+  "968 KB"
  ],
  [
   "United Kingdom",
@@ -4074,7 +4074,7 @@
   "https://www.argaam.com/en",
   "discover feed",
   "html",
-  "1275 KB"
+  "1276 KB"
  ],
  [
   "Qatar",
@@ -4092,7 +4092,7 @@
   "https://www.rudaw.net/english",
   "discover feed",
   "html",
-  "594 KB"
+  "592 KB"
  ],
  [
   "Libya",
@@ -4118,8 +4118,8 @@
   "Ahram Online",
   "https://english.ahram.org.eg",
   "discover feed",
-  "html",
-  "158 KB chrome-tls"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Egypt",
@@ -4182,7 +4182,7 @@
   "https://www.monitor.co.ug/rss.xml",
   "discover feed",
   "rss",
-  "discovered "
+  "discovered chrome-tls"
  ],
  [
   "Rwanda",
@@ -4407,7 +4407,7 @@
   "https://www.ft.lk",
   "discover feed",
   "html",
-  "265 KB chrome-tls"
+  "263 KB"
  ],
  [
   "Nepal",
@@ -4425,7 +4425,7 @@
   "https://www.bangkokpost.com",
   "discover feed",
   "html",
-  "197 KB"
+  "202 KB"
  ],
  [
   "Cambodia",
@@ -4443,7 +4443,7 @@
   "https://theedgemalaysia.com",
   "discover feed",
   "html",
-  "248 KB"
+  "249 KB"
  ],
  [
   "Malaysia",
@@ -4452,7 +4452,7 @@
   "https://www.thestar.com.my",
   "discover feed",
   "html",
-  "301 KB"
+  "302 KB"
  ],
  [
   "Indonesia",
@@ -4587,7 +4587,7 @@
   "https://www.afr.com",
   "discover feed",
   "html",
-  "1171 KB"
+  "1174 KB"
  ],
  [
   "Australia",
@@ -4605,7 +4605,7 @@
   "https://www.theglobeandmail.com",
   "discover feed",
   "html",
-  "2784 KB"
+  "2776 KB"
  ],
  [
   "Canada",
@@ -4731,7 +4731,7 @@
   "https://www.abc.com.py",
   "discover feed",
   "html",
-  "898 KB"
+  "1024 KB"
  ],
  [
   "Paraguay",
@@ -4740,7 +4740,7 @@
   "https://www.ultimahora.com",
   "discover feed",
   "html",
-  "397 KB"
+  "398 KB"
  ],
  [
   "Uruguay",
@@ -4750,5 +4750,734 @@
   "discover feed",
   "dead",
   "HTTP 403"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "ENR",
+  "https://www.enr.com/rss/all",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Global Construction Review",
+  "https://www.globalconstructionreview.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Construction Week (Middle East)",
+  "https://www.constructionweekonline.com/feed",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Building",
+  "https://www.building.co.uk/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "New Civil Engineer",
+  "https://www.newcivilengineer.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Construction Dive",
+  "https://www.constructiondive.com/feeds/news/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "MEED",
+  "https://www.meed.com",
+  "discover feed",
+  "html",
+  "176 KB"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Zawya",
+  "https://www.zawya.com/en/rss",
+  "Gulf projects",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Infrastructure Investor",
+  "https://www.infrastructureinvestor.com/feed/",
+  "",
+  "html",
+  "200 KB"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "IJGlobal",
+  "https://eu.greenstreet.com/feed/",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Construction Europe",
+  "https://www.constructioneurope.com",
+  "discover feed",
+  "html",
+  "0 KB"
+ ],
+ [
+  "Sector: Construction",
+  "press",
+  "Railway Gazette",
+  "https://www.railwaygazette.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Upstream",
+  "https://www.upstreamonline.com/rss",
+  "",
+  "html",
+  "148 KB"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Energy Voice",
+  "https://www.energyvoice.com/feed/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Rigzone",
+  "https://www.rigzone.com/news/rss/rigzone_latest.aspx",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "OilPrice",
+  "https://oilprice.com/rss/main",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Offshore Energy",
+  "https://www.offshore-energy.biz/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Natural Gas World",
+  "https://www.naturalgasworld.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "LNG Industry",
+  "https://www.lngindustry.com/rss/lngindustry.xml",
+  "",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "World Oil",
+  "https://www.worldoil.com/rss",
+  "",
+  "html",
+  "64 KB"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Hart Energy",
+  "https://www.hartenergy.com/arc/outboundfeeds/rss/",
+  "",
+  "rss",
+  "discovered chrome-tls"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Power Technology",
+  "https://www.power-technology.com/feed/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "PV Magazine",
+  "https://www.pv-magazine.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Windpower Monthly",
+  "https://www.windpowermonthly.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "reNews",
+  "https://renews.biz/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Recharge",
+  "https://www.rechargenews.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Utility Dive",
+  "https://www.utilitydive.com/feeds/news/",
+  "",
+  "rss",
+  "feed chrome-tls"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Petroleum Economist",
+  "https://www.petroleum-economist.com",
+  "discover feed",
+  "html",
+  "98 KB"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Energy Intelligence",
+  "https://www.energyintel.com/index.rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Africa Oil+Gas Report",
+  "https://africaoilgasreport.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Interfax Global Energy",
+  "https://interfaxenergy.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "S&P Global Commodity Insights",
+  "https://www.spglobal.com/commodityinsights/en/rss-feed",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Energy",
+  "press",
+  "Argus Media",
+  "https://www.argusmedia.com/en/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining.com",
+  "https://www.mining.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "The Northern Miner",
+  "https://www.northernminer.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining Weekly",
+  "https://www.miningweekly.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining Journal",
+  "https://www.mining-journal.com/rss",
+  "",
+  "html",
+  "88 KB"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "MiningNews.net",
+  "https://www.miningnews.net/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Australian Mining",
+  "https://www.australianmining.com.au/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining Technology",
+  "https://www.mining-technology.com/feed/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Kitco News",
+  "https://www.kitco.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining Review Africa",
+  "https://www.miningreview.com/feed/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Junior Mining Network",
+  "https://www.juniorminingnetwork.com/rss",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining Magazine",
+  "https://www.miningmagazine.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Mining",
+  "press",
+  "Mining MX",
+  "https://www.miningmx.com/feed/",
+  "southern Africa",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "FiercePharma",
+  "https://www.fiercepharma.com/rss/xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "FierceBiotech",
+  "https://www.fiercebiotech.com/rss/xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "Endpoints News",
+  "https://endpts.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "BioPharma Dive",
+  "https://www.biopharmadive.com/feeds/news/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "Pharmaphorum",
+  "https://pharmaphorum.com/rss.xml",
+  "",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "STAT",
+  "https://www.statnews.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "Pharmaceutical Technology",
+  "https://www.pharmaceutical-technology.com/feed/",
+  "",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "European Pharmaceutical Review",
+  "https://www.europeanpharmaceuticalreview.com/feed/",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Pharma",
+  "press",
+  "Scrip",
+  "https://scrip.citeline.com",
+  "discover feed",
+  "html",
+  "305 KB"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "TradeWinds",
+  "https://www.tradewindsnews.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "Splash247",
+  "https://splash247.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "Hellenic Shipping News",
+  "https://www.hellenicshippingnews.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "gCaptain",
+  "https://gcaptain.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "Seatrade Maritime",
+  "https://www.seatrade-maritime.com/rss.xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Shipping",
+  "press",
+  "Lloyd's List",
+  "https://www.lloydslist.com",
+  "discover feed",
+  "dead",
+  "HTTP 403"
+ ],
+ [
+  "Sector: Aviation",
+  "press",
+  "FlightGlobal",
+  "https://www.flightglobal.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Aviation",
+  "press",
+  "Aviation Week",
+  "https://aviationweek.com/rss.xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Aviation",
+  "press",
+  "Simple Flying",
+  "https://simpleflying.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Telecoms",
+  "press",
+  "Light Reading",
+  "https://www.lightreading.com/rss.xml",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Telecoms",
+  "press",
+  "Telecompaper",
+  "https://www.telecompaper.com/rss",
+  "",
+  "html",
+  "301 KB"
+ ],
+ [
+  "Sector: Telecoms",
+  "press",
+  "CommsUpdate (TeleGeography)",
+  "https://www.commsupdate.com/rss",
+  "",
+  "dead",
+  "HTTP 404"
+ ],
+ [
+  "Sector: Telecoms",
+  "press",
+  "Developing Telecoms",
+  "https://developingtelecoms.com/?format=feed&type=rss",
+  "",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Telecoms",
+  "press",
+  "Capacity Media",
+  "https://www.capacitymedia.com/rss",
+  "discover feed",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Insurance",
+  "press",
+  "Reinsurance News",
+  "https://www.reinsurancene.ws/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Insurance",
+  "press",
+  "Artemis",
+  "https://www.artemis.bm/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Insurance",
+  "press",
+  "Insurance Journal",
+  "https://www.insurancejournal.com/rss/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Insurance",
+  "press",
+  "Insurance Day",
+  "https://insuranceday.maritimeintelligence.informa.com",
+  "discover feed",
+  "html",
+  "178 KB"
+ ],
+ [
+  "Sector: Finance",
+  "press",
+  "Euromoney",
+  "https://www.euromoney.com/rss",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Finance",
+  "press",
+  "Private Equity International",
+  "https://www.privateequityinternational.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Finance",
+  "press",
+  "PE Hub",
+  "https://www.pehub.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Agribusiness",
+  "press",
+  "FoodNavigator",
+  "https://www.foodnavigator.com/arc/outboundfeeds/rss/",
+  "",
+  "rss",
+  "discovered "
+ ],
+ [
+  "Sector: Agribusiness",
+  "press",
+  "AgriCensus",
+  "https://www.agricensus.com",
+  "discover feed",
+  "dead",
+  "HTTP 405"
+ ],
+ [
+  "Sector: Defence",
+  "press",
+  "Defense News",
+  "https://www.defensenews.com/arc/outboundfeeds/rss/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Defence",
+  "press",
+  "Breaking Defense",
+  "https://breakingdefense.com/feed/",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Tech",
+  "press",
+  "The Register",
+  "https://www.theregister.com/headlines.atom",
+  "",
+  "rss",
+  "feed"
+ ],
+ [
+  "Sector: Tech",
+  "press",
+  "Data Center Dynamics",
+  "https://www.datacenterdynamics.com/en/rss/",
+  "",
+  "rss",
+  "feed"
  ]
 ]

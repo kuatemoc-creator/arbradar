@@ -42,8 +42,12 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
     text = " {} {} ".format(item.get("title") or "", item.get("summary") or "").lower()
     out: Dict[str, Any] = {}
 
+    treaty_context = re.search(r"icsid|investment treaty|bilateral investment|\bbit\b|investor-state|"
+                               r"energy charter|expropriat|nationalis|nationaliz|uncitral", text) is not None
     if not item.get("event_type"):
         for event_type, phrases in EVENT_PATTERNS:
+            if event_type == "commercial_dispute" and treaty_context:
+                continue                              # treaty patterns decide those
             hit = next((p for p in phrases if p in text), None)
             if hit:
                 out["event_type"] = event_type

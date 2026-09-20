@@ -41,6 +41,19 @@ GENERIC: List[str] = [
     '("windfall tax" OR "export ban" OR "asset freeze") investors arbitration',
 ]
 
+COMMERCIAL: List[str] = [
+    '"request for arbitration" (ICC OR LCIA OR SIAC OR HKIAC OR SCC OR contractor OR "joint venture" OR supplier)',
+    '(EPC OR contractor OR consortium OR FIDIC) (arbitration OR "dispute board" OR "adjudication board") (terminated OR delay OR claim)',
+    '("power purchase agreement" OR PPA OR "gas supply" OR LNG OR "take-or-pay" OR "price review") arbitration',
+    '(mining OR "joint venture" OR offtake OR royalty OR streaming) arbitration (ICC OR LCIA OR claim OR award)',
+    '(pharma OR pharmaceutical OR biotech OR "licensing agreement" OR royalty OR milestone) arbitration (claim OR award OR tribunal)',
+    '(shipping OR charterparty OR shipyard OR "shipbuilding contract") arbitration (award OR claim OR LMAA)',
+    '(telecom OR spectrum OR "tower" OR "network sharing") arbitration (award OR claim OR tribunal)',
+    '("arbitral award" OR "arbitration award") (million OR billion) (contractor OR supplier OR "joint venture" OR licensee OR operator)',
+    '("force majeure" OR "notice of default" OR "termination notice") (arbitration OR "dispute resolution") (contract OR project)',
+    '(insurer OR reinsurer OR "political risk") arbitration (claim OR award)',
+]
+
 COUNTRY = '"{state}" (arbitration OR ICSID OR "investment treaty" OR expropriation OR "notice of dispute" OR nationalisation OR "licence revoked")'
 
 _TRAIL = re.compile(r"\s+-\s+[^-]{2,60}$")     # "Headline - Outlet Name"
@@ -68,6 +81,8 @@ def _sweep(days: int):
         yield q, "en-GB", "GB", "GB:en", "en", "", "dispute"
     for q in MEASURES["en"]:
         yield q, "en-GB", "GB", "GB:en", "en", "", "measure"
+    for q in COMMERCIAL:
+        yield q, "en-GB", "GB", "GB:en", "en", "", "commercial"
     wanted = set(getattr(settings, "editions", None) or [])
     for label, hl, gl, ceid, lang in EDITIONS:
         if wanted and label not in wanted:
@@ -125,6 +140,9 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "country": country,            # the edition it came through, not the subject
                 "claimants": majors[:3],       # the investor of means, if one is named
             }
+            if family == "commercial":
+                item["event_type"] = "commercial_dispute"
+                item["flag_reason"] = "commercial-arbitration sweep"
             if family == "measure":
                 # A measure story only earns the lead weight when it names an
                 # investor who can pay; otherwise it is policy news.

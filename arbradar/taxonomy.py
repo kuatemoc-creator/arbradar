@@ -14,6 +14,11 @@ EVENT_TYPES: Dict[str, Dict] = {
         "label": "State tendering for counsel",
         "why": "A State or state enterprise is procuring arbitration counsel: the dispute exists and the instruction is open.",
     },
+    "commercial_dispute": {
+        "weight": 68,
+        "label": "Commercial arbitration",
+        "why": "A contract dispute has gone, or is going, to arbitration: EPC, JV, supply, licence, charter, offtake.",
+    },
     "notice_of_intent": {
         "weight": 100,
         "label": "Notice of intent / dispute",
@@ -90,6 +95,16 @@ EVENT_PATTERNS: List = [
     ]),
     ("s1782_application", [
         "1782", "section 1782", "28 u.s.c. 1782", "discovery in aid of",
+    ]),
+    ("commercial_dispute", [
+        "request for arbitration", "commenced arbitration", "initiated arbitration", "arbitration proceedings",
+        "referred to arbitration", "refer the dispute to arbitration", "icc arbitration", "lcia arbitration",
+        "siac arbitration", "hkiac arbitration", "scc arbitration", "dis arbitration", "arbitral tribunal",
+        "dispute adjudication board", "dispute board", "fidic", "take-or-pay", "take or pay", "price review",
+        "price reopener", "notice of default", "terminat", "epc contract", "epc contractor", "liquidated damages",
+        "delay claim", "variation claim", "final account", "force majeure", "offtake agreement", "charterparty",
+        "licence agreement", "license agreement", "royalty dispute", "milestone payment", "joint venture dispute",
+        "shareholder dispute", "call on the bond", "performance bond", "demand guarantee",
     ]),
     ("new_case_filed", [
         "request for arbitration", "notice of arbitration", "registered the request",

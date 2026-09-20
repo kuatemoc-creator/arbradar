@@ -1023,5 +1023,260 @@ national_press:
   url: https://jamaica-gleaner.com/rss.xml
   lang: en
   enabled: true
+- country: Saudi Arabia
+  name: Arab News
+  url: https://www.arabnews.com/rss.xml
+  lang: en
+  enabled: true
+- country: Global
+  name: DIAC news
+  url: https://www.diac.com/en/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: Global Construction Review
+  url: https://www.globalconstructionreview.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: Construction Week (Middle East)
+  url: https://www.constructionweekonline.com/feed
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: New Civil Engineer
+  url: https://www.newcivilengineer.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: Construction Dive
+  url: https://www.constructiondive.com/feeds/news/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: IJGlobal
+  url: https://eu.greenstreet.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: Railway Gazette
+  url: https://www.railwaygazette.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Rigzone
+  url: https://www.rigzone.com/news/rss/rigzone_latest.aspx
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: OilPrice
+  url: https://oilprice.com/rss/main
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Offshore Energy
+  url: https://www.offshore-energy.biz/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Natural Gas World
+  url: https://www.naturalgasworld.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: LNG Industry
+  url: https://www.lngindustry.com/rss/lngindustry.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Hart Energy
+  url: https://www.hartenergy.com/arc/outboundfeeds/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: PV Magazine
+  url: https://www.pv-magazine.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Windpower Monthly
+  url: https://www.windpowermonthly.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: reNews
+  url: https://renews.biz/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Utility Dive
+  url: https://www.utilitydive.com/feeds/news/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Energy Intelligence
+  url: https://www.energyintel.com/index.rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Africa Oil+Gas Report
+  url: https://africaoilgasreport.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Interfax Global Energy
+  url: https://interfaxenergy.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Mining'
+  name: Mining.com
+  url: https://www.mining.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Mining'
+  name: Australian Mining
+  url: https://www.australianmining.com.au/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Mining'
+  name: Mining MX
+  url: https://www.miningmx.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: FiercePharma
+  url: https://www.fiercepharma.com/rss/xml
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: FierceBiotech
+  url: https://www.fiercebiotech.com/rss/xml
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: Endpoints News
+  url: https://endpts.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: BioPharma Dive
+  url: https://www.biopharmadive.com/feeds/news/
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: Pharmaphorum
+  url: https://pharmaphorum.com/rss.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: STAT
+  url: https://www.statnews.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Shipping'
+  name: Splash247
+  url: https://splash247.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Shipping'
+  name: Hellenic Shipping News
+  url: https://www.hellenicshippingnews.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Shipping'
+  name: gCaptain
+  url: https://gcaptain.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Shipping'
+  name: Seatrade Maritime
+  url: https://www.seatrade-maritime.com/rss.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Aviation'
+  name: FlightGlobal
+  url: https://www.flightglobal.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Aviation'
+  name: Aviation Week
+  url: https://aviationweek.com/rss.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Aviation'
+  name: Simple Flying
+  url: https://simpleflying.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Telecoms'
+  name: Light Reading
+  url: https://www.lightreading.com/rss.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Telecoms'
+  name: Developing Telecoms
+  url: https://developingtelecoms.com/?format=feed&type=rss
+  lang: en
+  enabled: true
+- country: 'Sector: Telecoms'
+  name: Capacity Media
+  url: https://www.capacitymedia.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Insurance'
+  name: Reinsurance News
+  url: https://www.reinsurancene.ws/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Insurance'
+  name: Artemis
+  url: https://www.artemis.bm/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Insurance'
+  name: Insurance Journal
+  url: https://www.insurancejournal.com/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Finance'
+  name: Euromoney
+  url: https://www.euromoney.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Finance'
+  name: Private Equity International
+  url: https://www.privateequityinternational.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Finance'
+  name: PE Hub
+  url: https://www.pehub.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Agribusiness'
+  name: FoodNavigator
+  url: https://www.foodnavigator.com/arc/outboundfeeds/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Defence'
+  name: Defense News
+  url: https://www.defensenews.com/arc/outboundfeeds/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Defence'
+  name: Breaking Defense
+  url: https://breakingdefense.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Tech'
+  name: The Register
+  url: https://www.theregister.com/headlines.atom
+  lang: en
+  enabled: true
+- country: 'Sector: Tech'
+  name: Data Center Dynamics
+  url: https://www.datacenterdynamics.com/en/rss/
+  lang: en
+  enabled: true
 national_press_note: 'Verified feeds from tools/sourcemap.py. Read on every run but FILTERED: an item is kept only if it mentions arbitration, a treaty, an expropriation or nationalisation, or a licence,
   concession or contract being revoked, cancelled or terminated - in any of the sweep languages.'

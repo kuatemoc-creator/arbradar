@@ -14,7 +14,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <div class="wrap"><h1>ArbRadar source map</h1>
 <p>Verified 2026-09-20. Edit <code>tools/sourcemap.py</code>, then run <code>python -m tools.sourcemap --probe</code> to re-verify and regenerate this file.</p>
 <p>Status: <strong>wired</strong> = read on every run · <strong>rss</strong> = feed answers, ready to wire · <strong>html</strong> = page answers, needs a parser · <strong>blocked</strong> = refuses scripts · <strong>dead</strong> = not found · <strong>error</strong> = no answer</p>
-<p>Totals: 75 dead, 28 error, 215 html, 201 rss, 9 wired</p>
+<p>Totals: 97 dead, 27 error, 227 html, 250 rss, 8 wired</p>
 <h2>Armenia</h2>
 <table>
 <thead>
@@ -227,7 +227,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>courts</td>
 <td><a href="https://www.supremecourt.ge">Supreme Court</a></td>
 <td>html</td>
-<td>44 KB</td>
+<td>39 KB</td>
 <td></td>
 </tr>
 <tr>
@@ -325,14 +325,14 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://formulanews.ge">Formula News</a></td>
 <td>html</td>
-<td>102 KB</td>
+<td>101 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
 <td>press</td>
 <td><a href="https://commersant.ge">Commersant.ge</a></td>
 <td>html</td>
-<td>779 KB</td>
+<td>782 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -674,8 +674,8 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <tr>
 <td>press</td>
 <td><a href="https://daryo.uz/en/feed">Daryo</a></td>
-<td>error</td>
-<td>ConnectError</td>
+<td>html</td>
+<td>794 KB</td>
 <td></td>
 </tr>
 <tr>
@@ -920,7 +920,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.ukrinform.net">Ukrinform</a></td>
 <td>html</td>
-<td>87 KB</td>
+<td>86 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -1159,7 +1159,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td><a href="https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado">Secretaría de Economía ISDS register</a></td>
 <td>dead</td>
 <td>HTTP 404</td>
-<td>publishes notices of intent; bot challenge</td>
+<td>publishes notices of intent; managed bot challenge - read by a person, not a script</td>
 </tr>
 <tr>
 <td>gazette</td>
@@ -1390,13 +1390,13 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td><a href="https://www.defensajuridica.gov.co">ANDJE - defensa internacional</a></td>
 <td>dead</td>
 <td>HTTP 403</td>
-<td>publishes ISDS cases; WAF 403 to scripts</td>
+<td>publishes ISDS cases; managed bot challenge - read by a person, not a script</td>
 </tr>
 <tr>
 <td>tenders</td>
 <td><a href="https://www.colombiacompra.gov.co">SECOP / Colombia Compra</a></td>
 <td>html</td>
-<td>589 KB</td>
+<td>588 KB</td>
 <td></td>
 </tr>
 <tr>
@@ -1459,7 +1459,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.eltiempo.com">El Tiempo</a></td>
 <td>html</td>
-<td>853 KB</td>
+<td>852 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -1473,7 +1473,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>gazette</td>
 <td><a href="https://www.presidencia.gov.co">Presidencia</a></td>
 <td>html</td>
-<td>5 KB</td>
+<td>7 KB</td>
 <td></td>
 </tr>
 <tr>
@@ -1710,8 +1710,8 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <tr>
 <td>press</td>
 <td><a href="https://efectococuyo.com/feed/">Efecto Cocuyo</a></td>
-<td>rss</td>
-<td>feed</td>
+<td>dead</td>
+<td>HTTP 403</td>
 <td></td>
 </tr>
 <tr>
@@ -1914,7 +1914,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.vozpopuli.com">Vozpópuli</a></td>
 <td>html</td>
-<td>321 KB</td>
+<td>322 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -1956,7 +1956,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.milanofinanza.it">Milano Finanza</a></td>
 <td>html</td>
-<td>243 KB</td>
+<td>87 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -2410,8 +2410,8 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <tr>
 <td>press</td>
 <td><a href="https://english.ahram.org.eg">Ahram Online</a></td>
-<td>html</td>
-<td>158 KB chrome-tls</td>
+<td>dead</td>
+<td>HTTP 403</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -2542,16 +2542,16 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <tbody>
 <tr>
 <td>press</td>
-<td><a href="https://www.arabnews.com/rss">Arab News</a></td>
+<td><a href="https://www.arabnews.com/rss.xml">Arab News</a></td>
 <td>rss</td>
-<td>discovered chrome-tls</td>
+<td>feed chrome-tls</td>
 <td></td>
 </tr>
 <tr>
 <td>press</td>
 <td><a href="https://www.argaam.com/en">Argaam</a></td>
 <td>html</td>
-<td>1275 KB</td>
+<td>1276 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -2607,7 +2607,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.rudaw.net/english">Rudaw</a></td>
 <td>html</td>
-<td>594 KB</td>
+<td>592 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -2747,7 +2747,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.bisnis.com/rss">Bisnis.com</a></td>
 <td>dead</td>
-<td>HTTP 404</td>
+<td>HTTP 403</td>
 <td></td>
 </tr>
 <tr>
@@ -2845,14 +2845,14 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://theedgemalaysia.com">The Edge Malaysia</a></td>
 <td>html</td>
-<td>248 KB</td>
+<td>249 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
 <td>press</td>
 <td><a href="https://www.thestar.com.my">The Star</a></td>
 <td>html</td>
-<td>301 KB</td>
+<td>302 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -2958,28 +2958,28 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td><a href="https://www.uncitral.org/transparency-registry/registry/index.jspx">UNCITRAL Transparency Registry</a></td>
 <td>html</td>
 <td>73 KB</td>
-<td>notices under the Mauritius Convention</td>
+<td>notices under the Mauritius Convention; index answers, case list to parse</td>
 </tr>
 <tr>
 <td>register</td>
 <td><a href="https://pca-cpa.org/en/cases/">PCA cases</a></td>
-<td>wired</td>
-<td>headless browser</td>
-<td>via headless browser</td>
+<td>html</td>
+<td>129 KB</td>
+<td>client-rendered</td>
 </tr>
 <tr>
 <td>register</td>
 <td><a href="https://www.italaw.com">italaw</a></td>
 <td>dead</td>
 <td>HTTP 403</td>
-<td>awards and decisions; Cloudflare</td>
+<td>awards and decisions; managed bot challenge - read by a person, not a script</td>
 </tr>
 <tr>
 <td>register</td>
 <td><a href="https://investmentpolicy.unctad.org/investment-dispute-settlement">UNCTAD ISDS Navigator</a></td>
 <td>dead</td>
 <td>HTTP 403</td>
-<td>Cloudflare</td>
+<td>managed bot challenge - read by a person, not a script</td>
 </tr>
 <tr>
 <td>courts</td>
@@ -3123,7 +3123,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 </tr>
 <tr>
 <td>press</td>
-<td><a href="https://www.diac.com/en/feed">DIAC news</a></td>
+<td><a href="https://www.diac.com/en/rss">DIAC news</a></td>
 <td>rss</td>
 <td>discovered</td>
 <td>institution</td>
@@ -3468,7 +3468,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.hoganlovells.com/en/news">Hogan Lovells news</a></td>
 <td>html</td>
-<td>130 KB</td>
+<td>131 KB</td>
 <td>firm</td>
 </tr>
 <tr>
@@ -3754,8 +3754,8 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <tr>
 <td>register</td>
 <td><a href="https://www.oecd.org/en/topics/investment.html">OECD investment news</a></td>
-<td>dead</td>
-<td>HTTP 403</td>
+<td>html</td>
+<td>1516 KB chrome-tls</td>
 <td></td>
 </tr>
 </tbody>
@@ -4105,7 +4105,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.ekathimerini.com">Kathimerini</a></td>
 <td>html</td>
-<td>577 KB</td>
+<td>576 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -4287,7 +4287,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.nzz.ch">NZZ</a></td>
 <td>html</td>
-<td>967 KB</td>
+<td>968 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -4525,7 +4525,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.monitor.co.ug/rss.xml">Daily Monitor</a></td>
 <td>rss</td>
-<td>discovered</td>
+<td>discovered chrome-tls</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -4875,7 +4875,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.ft.lk">Daily FT</a></td>
 <td>html</td>
-<td>265 KB chrome-tls</td>
+<td>263 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -4917,7 +4917,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.bangkokpost.com">Bangkok Post</a></td>
 <td>html</td>
-<td>197 KB</td>
+<td>202 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -5050,7 +5050,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.afr.com">AFR</a></td>
 <td>html</td>
-<td>1171 KB</td>
+<td>1174 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -5078,7 +5078,7 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.theglobeandmail.com">The Globe and Mail</a></td>
 <td>html</td>
-<td>2784 KB</td>
+<td>2776 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
@@ -5330,14 +5330,14 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>press</td>
 <td><a href="https://www.abc.com.py">ABC Color</a></td>
 <td>html</td>
-<td>898 KB</td>
+<td>1024 KB</td>
 <td>discover feed</td>
 </tr>
 <tr>
 <td>press</td>
 <td><a href="https://www.ultimahora.com">Última Hora</a></td>
 <td>html</td>
-<td>397 KB</td>
+<td>398 KB</td>
 <td>discover feed</td>
 </tr>
 </tbody>
@@ -5360,6 +5360,741 @@ td:nth-child(3){font-weight:700;white-space:nowrap}
 <td>dead</td>
 <td>HTTP 403</td>
 <td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Construction</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.enr.com/rss/all">ENR</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.globalconstructionreview.com/feed/">Global Construction Review</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.constructionweekonline.com/feed">Construction Week (Middle East)</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.building.co.uk/rss">Building</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.newcivilengineer.com/feed/">New Civil Engineer</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.constructiondive.com/feeds/news/">Construction Dive</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.meed.com">MEED</a></td>
+<td>html</td>
+<td>176 KB</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.zawya.com/en/rss">Zawya</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>Gulf projects</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.infrastructureinvestor.com/feed/">Infrastructure Investor</a></td>
+<td>html</td>
+<td>200 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://eu.greenstreet.com/feed/">IJGlobal</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.constructioneurope.com">Construction Europe</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.railwaygazette.com/rss">Railway Gazette</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Energy</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.upstreamonline.com/rss">Upstream</a></td>
+<td>html</td>
+<td>148 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.energyvoice.com/feed/">Energy Voice</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.rigzone.com/news/rss/rigzone_latest.aspx">Rigzone</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://oilprice.com/rss/main">OilPrice</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.offshore-energy.biz/feed/">Offshore Energy</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.naturalgasworld.com/rss">Natural Gas World</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.lngindustry.com/rss/lngindustry.xml">LNG Industry</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.worldoil.com/rss">World Oil</a></td>
+<td>html</td>
+<td>64 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.hartenergy.com/arc/outboundfeeds/rss/">Hart Energy</a></td>
+<td>rss</td>
+<td>discovered chrome-tls</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.power-technology.com/feed/">Power Technology</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.pv-magazine.com/feed/">PV Magazine</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.windpowermonthly.com/rss">Windpower Monthly</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://renews.biz/feed/">reNews</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.rechargenews.com/rss">Recharge</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.utilitydive.com/feeds/news/">Utility Dive</a></td>
+<td>rss</td>
+<td>feed chrome-tls</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.petroleum-economist.com">Petroleum Economist</a></td>
+<td>html</td>
+<td>98 KB</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.energyintel.com/index.rss">Energy Intelligence</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://africaoilgasreport.com/feed/">Africa Oil+Gas Report</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://interfaxenergy.com/rss">Interfax Global Energy</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td>discover feed</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.spglobal.com/commodityinsights/en/rss-feed">S&amp;P Global Commodity Insights</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.argusmedia.com/en/rss">Argus Media</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Mining</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.mining.com/feed/">Mining.com</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.northernminer.com/feed/">The Northern Miner</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.miningweekly.com/rss">Mining Weekly</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.mining-journal.com/rss">Mining Journal</a></td>
+<td>html</td>
+<td>88 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.miningnews.net/rss">MiningNews.net</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.australianmining.com.au/feed/">Australian Mining</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.mining-technology.com/feed/">Mining Technology</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.kitco.com/rss">Kitco News</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.miningreview.com/feed/">Mining Review Africa</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.juniorminingnetwork.com/rss">Junior Mining Network</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.miningmagazine.com/rss">Mining Magazine</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.miningmx.com/feed/">Mining MX</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>southern Africa</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Pharma</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.fiercepharma.com/rss/xml">FiercePharma</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.fiercebiotech.com/rss/xml">FierceBiotech</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://endpts.com/feed/">Endpoints News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.biopharmadive.com/feeds/news/">BioPharma Dive</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://pharmaphorum.com/rss.xml">Pharmaphorum</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.statnews.com/feed/">STAT</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.pharmaceutical-technology.com/feed/">Pharmaceutical Technology</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.europeanpharmaceuticalreview.com/feed/">European Pharmaceutical Review</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://scrip.citeline.com">Scrip</a></td>
+<td>html</td>
+<td>305 KB</td>
+<td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Shipping</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.tradewindsnews.com/rss">TradeWinds</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://splash247.com/feed/">Splash247</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.hellenicshippingnews.com/feed/">Hellenic Shipping News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://gcaptain.com/feed/">gCaptain</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.seatrade-maritime.com/rss.xml">Seatrade Maritime</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.lloydslist.com">Lloyd's List</a></td>
+<td>dead</td>
+<td>HTTP 403</td>
+<td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Aviation</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.flightglobal.com/rss">FlightGlobal</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://aviationweek.com/rss.xml">Aviation Week</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://simpleflying.com/feed/">Simple Flying</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Telecoms</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.lightreading.com/rss.xml">Light Reading</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.telecompaper.com/rss">Telecompaper</a></td>
+<td>html</td>
+<td>301 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.commsupdate.com/rss">CommsUpdate (TeleGeography)</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://developingtelecoms.com/?format=feed&amp;type=rss">Developing Telecoms</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.capacitymedia.com/rss">Capacity Media</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Insurance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.reinsurancene.ws/feed/">Reinsurance News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.artemis.bm/feed/">Artemis</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.insurancejournal.com/rss/">Insurance Journal</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://insuranceday.maritimeintelligence.informa.com">Insurance Day</a></td>
+<td>html</td>
+<td>178 KB</td>
+<td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Finance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.euromoney.com/rss">Euromoney</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.privateequityinternational.com/feed/">Private Equity International</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.pehub.com/feed/">PE Hub</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Agribusiness</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.foodnavigator.com/arc/outboundfeeds/rss/">FoodNavigator</a></td>
+<td>rss</td>
+<td>discovered</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.agricensus.com">AgriCensus</a></td>
+<td>dead</td>
+<td>HTTP 405</td>
+<td>discover feed</td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Defence</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.defensenews.com/arc/outboundfeeds/rss/">Defense News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://breakingdefense.com/feed/">Breaking Defense</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sector: Tech</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.theregister.com/headlines.atom">The Register</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.datacenterdynamics.com/en/rss/">Data Center Dynamics</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
 </tr>
 </tbody>
 </table></div>
