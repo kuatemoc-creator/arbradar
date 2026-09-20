@@ -2,7 +2,9 @@ newsletter_name: ArbRadar
 tagline: News and developments in international arbitration
 timezone: Asia/Yerevan
 # Public base URL of the article site (GitHub Pages or caselens.tech). Leave empty until hosted.
-site_url: ""
+site_url: ""            # e.g. https://arbradar.caselens.tech once DNS points at the site; enables deep links from the email
+signup_url: ""          # form action of your list provider, e.g. https://buttondown.com/api/emails/embed-subscribe/arbradar
+signup_field: email     # the field name that provider expects (Buttondown: email; Kit: email_address)
 
 lookback_days: 7
 max_items_per_issue: 12
@@ -57,6 +59,19 @@ mute:
   - visas
   - trade union
   - печь
+  - wrongful death
+  - killed
+  - "| partner |"
+  - passenger
+  - asylum
+  - stock slips
+  - stock rises
+  - stock falls
+  - stock jumps
+  - stock gains
+  - stock drops
+  - shares slip
+  - weigh on sentiment
 
 sources:
   icsid: true

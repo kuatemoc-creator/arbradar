@@ -146,7 +146,9 @@ def short_party(name: str) -> str:
 def first_sentence(text: str, limit: int = 140) -> str:
     """The step for a headline: its first sentence, cut at a word if still too long."""
     text = " ".join((text or "").split())
-    first = re.split(r"(?<=[.!?])\s", text, maxsplit=1)[0].rstrip(".:;, ")
+    # Not at an initial or a title: "D. Brian King", "Prof. Dr. Sachs", "Mr. Kohen", "v. Ecuador".
+    first = re.split(r"(?<!\b[A-Z]\.)(?<!\bMr\.)(?<!\bMs\.)(?<!\bDr\.)(?<!\bProf\.)(?<!\bNo\.)(?<!\bv\.)(?<!\bSt\.)"
+                     r"(?<=[.!?])\s+", text, maxsplit=1)[0].rstrip(".:;, ")
     if len(first) <= limit:
         return first
     return first[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "\u2026"

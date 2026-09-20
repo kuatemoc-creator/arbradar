@@ -54,6 +54,13 @@ COMMERCIAL: List[str] = [
     '(insurer OR reinsurer OR "political risk") arbitration (claim OR award)',
 ]
 
+# Who moved, who was appointed: the industry's own news, English editions only.
+PEOPLE: List[str] = [
+    '("international arbitration" OR "arbitration partner" OR "arbitration practice" OR "disputes partner") (joins OR hires OR hired OR "new partner" OR promoted OR appointed OR launches OR "opens office")',
+    '("head of arbitration" OR "head of international arbitration" OR "arbitration head" OR "arbitration chair" OR "disputes head") (joins OR hires OR leaves OR moves OR appointed OR named)',
+    '(arbitrator OR "ICC Court" OR "LCIA Court" OR ICSID OR "SIAC Court" OR HKIAC OR "PCA") (appointed OR elected OR named) (president OR "secretary general" OR "secretary-general" OR "vice president" OR member OR chair OR registrar)',
+]
+
 COUNTRY = '"{state}" (arbitration OR ICSID OR "investment treaty" OR expropriation OR "notice of dispute" OR nationalisation OR "licence revoked")'
 
 _TRAIL = re.compile(r"\s+-\s+[^-]{2,60}$")     # "Headline - Outlet Name"
@@ -83,6 +90,8 @@ def _sweep(days: int):
         yield q, "en-GB", "GB", "GB:en", "en", "", "measure"
     for q in COMMERCIAL:
         yield q, "en-GB", "GB", "GB:en", "en", "", "commercial"
+    for q in PEOPLE:
+        yield q, "en-GB", "GB", "GB:en", "en", "", "people"
     wanted = set(getattr(settings, "editions", None) or [])
     for label, hl, gl, ceid, lang in EDITIONS:
         if wanted and label not in wanted:
@@ -92,6 +101,11 @@ def _sweep(days: int):
         for q in MEASURES.get(lang, []):
             yield q, hl, gl, ceid, lang, label, "measure"
 
+
+# A commercial-sweep hit with no arbitration word in the headline or the snippet is
+# an article that mentions arbitration somewhere down the page, not a dispute story.
+_COMMERCIAL_SIGNAL = re.compile(r"arbitra|\bICC\b|\bLCIA\b|\bSIAC\b|\bHKIAC\b|\bSCC\b|\bLMAA\b|\bICSID\b|award|"
+                                r"tribunal|dispute board|adjudicat|\bDAB\b|FIDIC|\bclaim\b", re.I)
 
 _MAJOR_RE = [(m, re.compile(r"(?<![\w-])" + re.escape(m) + r"(?![\w-])",
                               0 if len(m) <= 5 else re.I)) for m in MAJORS]
@@ -151,8 +165,14 @@ def run(days: int = 7) -> Iterator[Dict]:
                 "claimants": majors[:3],       # the investor of means, if one is named
             }
             if family == "commercial":
-                item["event_type"] = "commercial_dispute"
-                item["flag_reason"] = "commercial-arbitration sweep"
+                if _COMMERCIAL_SIGNAL.search(clean_title + " " + summary):
+                    item["event_type"] = "commercial_dispute"
+                    item["flag_reason"] = "commercial-arbitration sweep"
+                else:
+                    item["event_type"] = "commentary"
+                    item["flag_reason"] = "commercial sweep; no arbitration term in the headline or snippet"
+            if family == "people":
+                item["flag_reason"] = "people-and-appointments sweep"   # the rules label it a move or an appointment
             if family == "measure":
                 # A measure story needs an adverse act in the headline - a contract award,
                 # an import policy, a deal is not a measure - and only earns the lead

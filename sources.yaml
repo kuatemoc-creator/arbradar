@@ -38,6 +38,19 @@ apis:
     enabled: true
     what: PCA case list via headless browser - UNCITRAL investor-State and inter-State cases, by case number
     endpoint: https://pca-cpa.org/en/cases/
+  courts:
+    enabled: true
+    what: judgments on arbitration from courts outside the US - set-aside, enforcement, stays, anti-suit relief, arbitrator challenges
+    endpoints:
+    - "https://caselaw.nationalarchives.gov.uk/atom.xml - England and Wales, Find Case Law search feed only (judgments are not downloaded, per the Open Justice Licence)"
+    - "https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml - Singapore, with catchwords"
+    - "https://www.canlii.org/{court}/rss_new.xml - Canada: SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS"
+    - "https://data.rechtspraak.nl/uitspraken/zoeken - Netherlands, civil decisions in the window, filtered on the court's own summary"
+    - "https://data.bka.gv.at/ris/api/v2.6/Judikatur - Austria, decision texts mentioning Schieds*"
+    - "https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml - Germany, I ZB dockets confirmed against the decision text"
+    - "https://www.difccourts.ae/rules-decisions/judgments-orders/{arbitration,enforcement} - DIFC Courts"
+    - "https://court.aifc.kz/judgments/ - AIFC Court, Astana"
+    - "{host}/search/api/documents/ - Kenya Law, NigeriaLII, ULII, TanzLII, ZambiaLII, MalawiLII, LawLibrary.org.za, NamibLII, ZimLII, SierraLII, EswatiniLII"
 google_news:
   enabled: true
   editions: []
@@ -82,6 +95,14 @@ not_available:
 - BAILII recent-decisions feed - no arbitration signal (3 hits in 1,869 entries)
 - Swiss Federal Supreme Court 4A_ search - blocked to non-browser clients
 - LSE RNS / Investegate / ASX - no keyword feed; announcements reach us via wires and Google News
+- Ukraine register of court decisions (reyestr.court.gov.ua) - bot challenge
+- Hong Kong Legal Reference System - frameset with POST search and no feed; HKLII is client-rendered
+- Australia - Federal Court judgments site, AustLII and Queensland caselaw refuse scripts; NSW Caselaw has no feed
+- India - Indian Kanoon refuses scripts; Supreme Court and Delhi High Court sites are client-rendered
+- France - Judilibre needs a PISTE account (can be added with a key)
+- Cayman Islands judgments - subscription only
+- Brazil STJ, Pakistan Supreme Court, Ghana (GhaLII) - refuse scripts
+- Ireland courts.ie search, Qatar QICDRC judgments, New Zealand judgments - client-rendered
 national_press:
 - country: Armenia
   name: Hetq

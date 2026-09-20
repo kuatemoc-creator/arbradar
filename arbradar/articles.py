@@ -218,10 +218,32 @@ def render_index(entries: List[Dict[str, Any]], settings) -> str:
 <span class="date">{n} pieces</span></header>
 <h1>{tag}</h1>
 <p class="dek">One page per story, with sources.</p>
-<div class="list">{items}</div>
+{signup}<div class="list">{items}</div>
 <footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(name=html.escape(settings.newsletter_name), n=len(entries),
-                                           tag=html.escape(settings.tagline), items=items)
+                                           tag=html.escape(settings.tagline), items=items,
+                                           signup=_signup(settings))
     return _page(settings.newsletter_name, body, settings.tagline, settings.newsletter_name)
+
+
+def _signup(settings) -> str:
+    """A plain subscribe form when a list provider is configured; nothing otherwise."""
+    action = (getattr(settings, "signup_url", "") or "").strip()
+    if not action:
+        return ""
+    field = (getattr(settings, "signup_field", "") or "email").strip()
+    return """<style>
+.signup{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:18px 20px;margin:0 0 28px;
+background:var(--sunken);border:1px solid var(--hair);border-radius:12px}}
+.signup label{{flex:1 1 100%;font-weight:600}}
+.signup input{{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}}
+.signup input:focus{{outline:2px solid var(--accent);outline-offset:1px}}
+.signup button{{font:inherit;font-weight:600;padding:10px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}}
+.signup small{{flex:1 1 100%;color:var(--mute)}}
+</style>
+<form class="signup" action="{action}" method="post"><label for="signup-email">Get {name} by email</label>
+<input id="signup-email" type="email" name="{field}" placeholder="you@firm.com" autocomplete="email" required>
+<button type="submit">Subscribe</button><small>Free. One email per issue. Unsubscribe in one click.</small></form>""".format(
+        action=html.escape(action), field=html.escape(field), name=html.escape(settings.newsletter_name))
 
 
 def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any]:
@@ -240,12 +262,26 @@ def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any
     stories = stories[:limit]
 
     os.makedirs(SITE, exist_ok=True)
+    # GitHub Pages reads the custom domain from a CNAME file at the site root.
+    host = re.sub(r"^https?://", "", (settings.site_url or "").strip()).split("/")[0]
+    if host and not host.endswith("github.io"):
+        with open(os.path.join(SITE, "CNAME"), "w", encoding="utf-8") as fh:
+            fh.write(host + "\n")
+    with open(os.path.join(SITE, ".nojekyll"), "w", encoding="utf-8") as fh:
+        fh.write("")
     manifest_path = os.path.join(SITE, "manifest.json")
     manifest: List[Dict[str, Any]] = []
     if os.path.exists(manifest_path):
         manifest = json.load(open(manifest_path, encoding="utf-8"))
         # an entry whose page was removed is a dead link on the index
         manifest = [e for e in manifest if os.path.exists(os.path.join(SITE, e["file"]))]
+        # a rebuild replaces the day's pieces rather than adding to them
+        for e in [e for e in manifest if e.get("date") == date]:
+            try:
+                os.remove(os.path.join(SITE, e["file"]))
+            except OSError:
+                pass
+        manifest = [e for e in manifest if e.get("date") != date]
     known = {e["file"] for e in manifest}
 
     written = []

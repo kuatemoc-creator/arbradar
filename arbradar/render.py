@@ -29,16 +29,25 @@ SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 def _docket_line(it: Dict[str, Any]) -> str:
     t = _title(it)
-    return "- [{}]({})".format(t[:160], it["url"])
+    line = "- [{}]({})".format(t[:160], it["url"])
+    if (it.get("source") or "").startswith("Court:"):
+        court, _, what = (it.get("flag_reason") or "").partition(": ")
+        bits = [b for b in (what, court, it.get("case_ref") or "") if b]
+        if bits:
+            line += " \u2014 " + ", ".join(bits)
+    elif it.get("event_type") in ("lateral_move", "appointment"):
+        src = (it.get("source") or "").replace("Google News / ", "")
+        line += " \u2014 " + re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", src)
+    return line
 
 
 def record_sections(extras: Dict[str, List[Dict[str, Any]]]) -> List[str]:
     """Compact lists straight from the primary records: the ICSID docket, company
-    disclosures, and US court filings. These are the items the trade press reports
+    disclosures, and court filings. These are the items the trade press reports
     a fraction of, days later. Nothing here is written by a model."""
     lines: List[str] = []
     order = [("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
-             ("courts", "In the US courts")]
+             ("courts", "In the courts"), ("people", "People and appointments")]
     for key, heading in order:
         rows = extras.get(key) or []
         if not rows:

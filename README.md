@@ -33,12 +33,37 @@ Recency half-life is 6 days. `unrepresented_bonus` applies **only** to primary
 records (dockets, registries, filings), where absence of counsel is evidence —
 a press summary that omits counsel is silence, not evidence.
 
+## Hosting the site and collecting sign-ups
+
+The site in `out/site` is static, so any static host serves it. The included
+route is GitHub Pages on a CaseLens subdomain:
+
+1. Create a GitHub repository and add it as `origin`.
+2. Set `site_url: https://arbradar.caselens.tech` in `config.yaml`. The article
+   builder then writes a `CNAME` file and the email deep-links to the site.
+3. Run `tools/publish_site.sh`. It rebuilds the article pages and pushes them to
+   a `gh-pages` branch.
+4. On GitHub: Settings → Pages → deploy from `gh-pages`, custom domain
+   `arbradar.caselens.tech`, enforce HTTPS.
+5. In the caselens.tech DNS, add a CNAME record `arbradar` → `<user>.github.io`.
+
+Cloudflare Pages or Netlify work the same way: point them at the `gh-pages`
+branch, or upload `out/site` directly.
+
+Sign-ups: pick a list provider that also sends and handles unsubscribes
+(Buttondown, MailerLite, Kit and Beehiiv all give a plain form endpoint), then
+set `signup_url` and `signup_field` in `config.yaml`. The site index shows a
+subscribe box, the provider stores the addresses with double opt-in, and
+`unsubscribe_url` in `config.yaml` should point at the provider's link so every
+email carries it.
+
 ## Sources
 
 | Source | Type | What it gives you |
 |---|---|---|
 | **ICSID docket** (`/api/cases/`) | Primary | 300+ pending cases: counsel on record, tribunal, treaty invoked, sector, and `lastproc` — the latest procedural step with its date. A live docket, not a news feed. |
 | **CourtListener / RECAP** | Primary | US federal dockets: s.1782 applications, petitions to confirm/vacate. Returns party, attorney **and firm** names. |
+| **Courts outside the US** | Primary | Judgment feeds and open APIs: England and Wales (Find Case Law), Singapore (catchwords), Canada (CanLII), Netherlands (rechtspraak), Austria (RIS), Germany (BGH), DIFC, AIFC and eleven African law reports. Set-aside, enforcement, stays, anti-suit relief, arbitrator challenges. |
 | **SEC EDGAR full-text** | Primary | Disputes disclosed in 8-K/6-K/20-F filings, often weeks ahead of the trade press. |
 | RSS | Reported | GAR, IAReporter, Kluwer, Jus Mundi, IISD, institutions. |
 | PCA | Reported | News page only — the case list is client-rendered and not exposed via its REST API. |

@@ -33,7 +33,7 @@ SHORT = {"commercial_dispute": "Commercial arbitration", "notice_of_intent": "No
          "new_case_filed": "New case", "enforcement_action": "Enforcement", "annulment_setaside": "Annulment",
          "state_measure": "State measure", "distress_event": "State measure", "award_issued": "Award",
          "treaty_action": "Treaty", "funding": "Funding", "tribunal_constituted": "Tribunal",
-         "lateral_move": "Move", "counsel_tender": "Tender for counsel", "commentary": "Note"}
+         "lateral_move": "Move", "appointment": "Appointment", "counsel_tender": "Tender for counsel", "commentary": "Note"}
 
 
 def esc(s: Any) -> str:
@@ -231,6 +231,12 @@ def _docket_parts(it: Dict[str, Any]):
     return m.group("case"), m.group("ref"), step
 
 
+def _outlet(source: Any) -> str:
+    """'Google News / Law360 International Arbitration (Global)' -> 'Law360 International Arbitration'."""
+    s = (source or "").replace("Google News / ", "")
+    return re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", s).strip()
+
+
 def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
     rows = []
     for it in items:
@@ -250,6 +256,20 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
             filer, _, rest = t.partition(" discloses ")
             main = '<b style="font-weight:700;">{}</b> {}'.format(esc(filer), esc(("discloses " + rest) if rest else ""))
             tail = ""
+        elif kind == "people":
+            if (it.get("source") or "") == "ICSID docket":
+                case, ref, step = _docket_parts(it)
+                main = '<b style="font-weight:700;">{}</b>'.format(esc(case)) + ((" &mdash; " + esc(step)) if step else "")
+                tail = esc(ref)
+            else:
+                main = '<b style="font-weight:700;">{}</b>'.format(esc(title_of(it)))
+                tail = esc(_outlet(it.get("source")))
+        elif (it.get("source") or "").startswith("Court:"):
+            court, _, what = (it.get("flag_reason") or "").partition(": ")
+            main = '<b style="font-weight:700;">{}</b>'.format(esc(title_of(it)))
+            if what:
+                main += " &mdash; " + esc(what)
+            tail = esc(" \u00b7 ".join(b for b in (court, it.get("case_ref") or "") if b))
         else:
             t = title_of(it)
             case, _, court = t.partition(" (")
@@ -292,7 +312,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     stories = [lead] + devs                  # the brief tier is noise without an editor; it stays out
     sections.append("".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories, start=1)))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
-                         ("courts", "In the US courts")):
+                         ("courts", "In the courts"), ("people", "People and appointments")):
         rows = (extras or {}).get(key) or []
         if rows:
             sections.append(label(heading, mb=4) + record_rows(key, rows))

@@ -24,6 +24,12 @@ def cmd_fetch(args, settings, conn):
     return 0
 
 
+def cmd_reclassify(args, settings, conn):
+    n = pipeline.reclassify(conn, settings, days=args.days or 21)
+    print("reclassified {} items".format(n))
+    return 0
+
+
 def cmd_enrich(args, settings, conn):
     if not settings.use_llm:
         print("ANTHROPIC_API_KEY not set - using rule-based classification only.")
@@ -34,6 +40,15 @@ def cmd_enrich(args, settings, conn):
 
 
 def cmd_build(args, settings, conn):
+    # A rebuild on the same day replaces that day's issue; otherwise the second
+    # build sees only what the first one left over.
+    today = dt.date.today().isoformat()
+    prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
+    if prior:
+        marks = ",".join("?" * len(prior))
+        conn.execute("UPDATE items SET issue_id=NULL WHERE issue_id IN ({})".format(marks), prior)
+        conn.execute("DELETE FROM issues WHERE id IN ({})".format(marks), prior)
+        conn.commit()
     pipeline.rescore(conn, settings)
     items = pipeline.select(conn, settings)
     if not items:
@@ -191,6 +206,7 @@ def main(argv=None):
     f = sub.add_parser("fetch", parents=[common], help="pull from sources")
     f.add_argument("--source")
     sub.add_parser("enrich", parents=[common], help="LLM triage + extraction")
+    sub.add_parser("reclassify", parents=[common], help="re-run the rule classifier after a taxonomy change")
     sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
     r = sub.add_parser("run", parents=[common, llm_opts], help="fetch + enrich + build")
     r.add_argument("--source")
@@ -221,7 +237,7 @@ def main(argv=None):
         args.source = None
 
     conn = db.connect()
-    handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build,
+    handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify,
                "run": cmd_run, "top": cmd_top, "send": cmd_send,
                "serve": cmd_serve, "intel": cmd_intel, "articles": cmd_articles}[args.cmd]
     return handler(args, settings, conn)

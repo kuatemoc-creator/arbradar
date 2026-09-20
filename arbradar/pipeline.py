@@ -37,6 +37,11 @@ def fingerprint(item: Dict[str, Any]) -> str:
     return hashlib.sha256(norm.encode()).hexdigest()
 
 
+_PEOPLE_CONTEXT = re.compile(r"partner|counsel\b|arbitrat|disputes|law firm|chambers|barrister|boutique|associate|"
+                             r"\bkc\b|\bqc\b|practice|lawyer|attorney|solicitor|advocate|tribunal|\bicc\b|lcia|icsid|"
+                             r"siac|hkiac|\bscc\b|institution|secretary|litigat")
+
+
 def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
     """Cheap first pass so the system is useful with no API key at all."""
     text = " {} {} ".format(item.get("title") or "", item.get("summary") or "").lower()
@@ -49,6 +54,11 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
             if event_type == "commercial_dispute" and treaty_context:
                 continue                              # treaty patterns decide those
             hit = next((p for p in phrases if p in text), None)
+            if hit and event_type in ("lateral_move", "appointment") and not _PEOPLE_CONTEXT.search(text):
+                continue
+            if hit and event_type == "notice_of_intent" and not re.search(
+                    r"arbitra|treaty|icsid|dispute|claim|investor|\bbit\b|uncitral|cooling", text):
+                continue                              # a NEPA or planning notice, not a treaty notice
             if hit:
                 out["event_type"] = event_type
                 out["flag_reason"] = "matched \u2018{}\u2019 in the text".format(hit.strip())
@@ -233,9 +243,30 @@ def _fold(text: str) -> str:
     return unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode()
 
 
+_SHORT_OK = {"eu", "us", "uk", "un"}
+
+
 def _tokens(title: str) -> set:
     return {_stem(_ALIAS.get(w, w)) for w in re.findall(r"[a-z0-9]+", _fold(title).lower())
-            if len(w) >= 3 and w not in STOP}
+            if (len(w) >= 3 or w in _SHORT_OK) and w not in STOP}
+
+
+def _bigrams(title: str) -> set:
+    """Consecutive content words, stemmed: 'windfall tax', 'notice intent'."""
+    words = [w for w in re.findall(r"[a-z0-9]+", _fold(title).lower()) if (len(w) >= 3 or w in _SHORT_OK) and w not in STOP]
+    stems = [_stem(_ALIAS.get(w, w)) for w in words]
+    return set(zip(stems, stems[1:]))
+
+
+def _state_stems() -> set:
+    from .sources.editions import COUNTRIES
+    out = set(_stem(v) for v in _ALIAS.values())
+    names = list(COUNTRIES.keys()) if isinstance(COUNTRIES, dict) else list(COUNTRIES)
+    for n in names:
+        for w in re.findall(r"[a-z0-9]+", _fold(str(n)).lower()):
+            if len(w) >= 3:
+                out.add(_stem(w))
+    return out
 
 
 def _propers(title: str) -> set:
@@ -255,9 +286,28 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     headline and a long wire headline still find each other.
     """
     reps: List[Dict[str, Any]] = []
+    # A phrase two headlines share, and few others in the pool do, is one story:
+    # "windfall tax" in a week with one windfall-tax row. State names are excluded
+    # so "Russia seizes" does not glue every seizure together.
+    df: Dict[tuple, int] = {}
+    for it in items:
+        it["_bg"] = _bigrams(it.get("title_en") or it["title"])
+        for b in it["_bg"]:
+            df[b] = df.get(b, 0) + 1
+    dfn: Dict[str, int] = {}
+    for it in items:
+        for n in _propers(it.get("title_en") or it["title"]):
+            dfn[n] = dfn.get(n, 0) + 1
+    rare_max = max(3, len(items) // 8)
+    states = _state_stems()
+
+    def _fold_set(values) -> set:
+        return {_fold(v).lower() for v in (values or []) if v}
+
     for it in items:
         toks = _tokens(it.get("title_en") or it["title"])
         names = _propers(it.get("title_en") or it["title"])
+        bg = it.pop("_bg")
         home = None
         for rep in reps:
             # Two different case numbers are two different matters, full stop.
@@ -265,24 +315,48 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 continue
             # The same investor against the same State, in the same window, is one story
             # whatever the headline says.
-            same_parties = (set(map(str.lower, it.get("claimants") or [])) & set(map(str.lower, rep.get("claimants") or []))
-                            and set(map(str.lower, it.get("states") or [])) & set(map(str.lower, rep.get("states") or [])))
+            same_parties = ((_fold_set(it.get("claimants")) | _fold_set(it.get("respondents")))
+                            & (_fold_set(rep.get("claimants")) | _fold_set(rep.get("respondents")))
+                            and _fold_set(it.get("states")) & _fold_set(rep.get("states")))
+            shared_phrase = {b for b in bg & rep["_bg"]
+                             if df.get(b, 0) <= rare_max and b[0] not in states and b[1] not in states}
+            # A rare name in common - a project, a company, a person - plus the same
+            # State is the same matter under two headlines ("Mambilla").
+            rare_name = {n for n in names & rep["_names"] if dfn.get(n, 0) <= rare_max and n not in states}
+            same_state = bool(_fold_set(it.get("states")) & _fold_set(rep.get("states")))
             inter = len(toks & rep["_toks"])
             if not inter and not same_parties:
                 continue
             jac = inter / max(1, len(toks | rep["_toks"]))
             shared_names = len(names & rep["_names"])
-            if same_parties or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2:
+            if (same_parties or shared_phrase or (rare_name and (same_state or inter >= 2))
+                    or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2):
                 home = rep
                 break
         if home is None:
             it["_toks"] = set(toks)
             it["_names"] = set(names)
+            it["_bg"] = set(bg)
             it["also"] = []
             reps.append(it)
             continue
+        if (home.get("lang") or "en") != "en" and (it.get("lang") or "en") == "en":
+            # The English version tells the story; the foreign-language one hangs off it.
+            it["_toks"] = home["_toks"] | toks
+            it["_names"] = home["_names"] | names
+            it["_bg"] = home["_bg"] | bg
+            it["also"] = home["also"] + [{"source": home.get("source"), "url": home.get("url"), "title": home.get("title")}]
+            for f in ("counsel", "claimants", "respondents", "states", "sectors",
+                      "arbitrators", "treaty", "amount_usd", "case_ref"):
+                if not it.get(f) and home.get(f):
+                    it[f] = home[f]
+            for k in ("_toks", "_names", "_bg", "also"):
+                home.pop(k, None)
+            reps[reps.index(home)] = it
+            continue
         home["_toks"] |= toks
         home["_names"] |= names
+        home["_bg"] |= bg
         home["also"].append({"source": it.get("source"), "url": it.get("url"),
                              "title": it.get("title")})
         # A wire headline outscores a trade-press write-up on recency and reach;
@@ -302,6 +376,7 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     for r in reps:
         r.pop("_toks", None)
         r.pop("_names", None)
+        r.pop("_bg", None)
     return reps
 
 
@@ -310,12 +385,13 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     Excludes anything already featured. Rule-based; the records are the story."""
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     skip = {it["id"] for it in featured} | {a.get("url") for it in featured for a in (it.get("also") or [])}
+    skip_titles = {fingerprint(it) for it in featured} | {fingerprint(a) for it in featured for a in (it.get("also") or [])}
 
     def take(sql, params, limit, key=None):
         out, seen = [], set()
         for r in conn.execute(sql, params):
             it = db.row_to_dict(r)
-            if it["id"] in skip or it["url"] in skip:
+            if it["id"] in skip or it["url"] in skip or fingerprint(it) in skip_titles:
                 continue
             k = key(it) if key else it["url"]
             if k in seen:
@@ -339,13 +415,66 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         "AND url NOT LIKE '%ex10%' AND url NOT LIKE '%ex2-%' AND url NOT LIKE '%ex4%' AND url NOT LIKE '%ex3%' "
         "ORDER BY published_at DESC", (cutoff,), 6,
         key=lambda it: (it.get("title") or "").split(" discloses")[0])
-    courts = take(
-        "SELECT * FROM items WHERE source LIKE 'US federal docket%' AND relevant=1 AND published_at>=? "
-        "AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
-        "     OR title LIKE 'IN RE%' OR summary LIKE '%foreign%') "
-        "ORDER BY published_at DESC",
-        ((dt.date.today() - dt.timedelta(days=30)).isoformat(),), 5)    # sovereign petitions are rarer
-    return {"docket": docket, "disclosures": disclosures, "courts": courts}
+    court_rows = take(
+        "SELECT * FROM items WHERE relevant=1 AND published_at>=? "
+        "AND (source LIKE 'Court:%' OR (source LIKE 'US federal docket%' "
+        "     AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
+        "          OR title LIKE 'IN RE%' OR summary LIKE '%foreign%'))) "
+        "ORDER BY published_at DESC", (cutoff,), 30)
+    # One list, many jurisdictions: at most two rows per country, so that a busy
+    # registry cannot crowd out the rest.
+    per: Dict[str, int] = {}
+    courts: List[Dict[str, Any]] = []
+    for allowance in (1, 2):                      # every jurisdiction once, then seconds
+        for it in court_rows:
+            c = it.get("country") or "United States"
+            if it in courts or per.get(c, 0) >= allowance:
+                continue
+            per[c] = per.get(c, 0) + 1
+            courts.append(it)
+            if len(courts) >= 8:
+                break
+        if len(courts) >= 8:
+            break
+    courts.sort(key=lambda it: it.get("published_at") or "", reverse=True)
+    # People: firm moves and institutional appointments from the press, and the
+    # tribunal appointments the ICSID docket records - who appointed whom.
+    people_rows = take(
+        "SELECT * FROM items WHERE relevant=1 AND published_at>=? AND ("
+        "  event_type IN ('lateral_move','appointment') "
+        "  OR (source='ICSID docket' AND event_type='tribunal_constituted' "
+        "      AND (title LIKE '%appoint%' OR title LIKE '%constituted%' OR title LIKE '%President%'))) "
+        "ORDER BY score DESC, published_at DESC", (cutoff,), 40)
+    people = cluster(people_rows)
+    moves = sorted((it for it in people if it.get("source") != "ICSID docket"),
+                   key=lambda it: it.get("published_at") or "", reverse=True)
+    seats = sorted((it for it in people if it.get("source") == "ICSID docket"),
+                   key=lambda it: it.get("published_at") or "", reverse=True)
+    return {"docket": docket, "disclosures": disclosures, "courts": courts, "people": moves[:6] + seats[:6]}
+
+
+def reclassify(conn, settings, days: int = 21) -> int:
+    """Re-run the rule classifier over rule-classified items in the window. Used
+    after a taxonomy change; items a model has judged are left alone."""
+    cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    n = 0
+    for r in conn.execute("SELECT * FROM items WHERE COALESCE(llm_stage,'none')='none' AND published_at>=? "
+                          "AND source NOT LIKE 'Court:%' AND source<>'ICSID docket'", (cutoff,)).fetchall():
+        it = db.row_to_dict(r)
+        before = it.get("event_type")
+        probe = dict(it, event_type=None)
+        out = rule_classify(probe)
+        # Source adapters that set their own type (sweeps, dockets) keep it unless the
+        # rules now see a people story, which the adapters never label.
+        new = out.get("event_type") or "commentary"
+        if new == before or (new not in ("lateral_move", "appointment") and (it.get("flag_reason") or "").startswith(
+                ("commercial-arbitration sweep", "State-measure sweep", "US federal docket", "SEC", "ICSID"))):
+            continue
+        db.update_item(conn, it["id"], event_type=new, flag_reason=out.get("flag_reason") or it.get("flag_reason"))
+        n += 1
+    conn.commit()
+    rescore(conn, settings)
+    return n
 
 
 def select(conn, settings) -> List[Dict[str, Any]]:
@@ -355,6 +484,8 @@ def select(conn, settings) -> List[Dict[str, Any]]:
     rows = conn.execute(
         "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL "
         "AND COALESCE(excluded,0)=0 "
+        "AND source NOT LIKE 'Court:%' "          # judgments belong to the court list, not the stories
+        "AND COALESCE(event_type,'') NOT IN ('lateral_move','appointment') "
         "AND (COALESCE(pinned,0)=1 OR (score >= ? "
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",

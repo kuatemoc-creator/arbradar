@@ -71,6 +71,7 @@ def score_item(item: Dict[str, Any], settings) -> Tuple[float, Dict[str, Any]]:
     unrepresented = 12.0 if (
         not (item.get("counsel") or [])
         and (item.get("source_tier") or 2) == 1
+        and not (item.get("source") or "").startswith("Court:")   # a judgment lists no counsel; that is not vacancy
         and event in ("notice_of_intent", "new_case_filed", "s1782_application",
                       "enforcement_action", "distress_event")) else 0.0
 
