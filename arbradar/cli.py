@@ -175,8 +175,6 @@ def cmd_articles(args, settings, conn):
     out = articles.build(conn, settings, limit=args.limit, use_llm=not args.no_llm)
     print("{} pieces written, {} on the site\n  {}/index.html".format(
         out["written"], len(out.get("days") or []), out["site"]))
-    for f in out["written"]:
-        print("  " + f)
     return 0
 
 
