@@ -9,7 +9,7 @@
    "summary": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat, according to a notice published in the country’s Official Gazette on Saturday…",
    "summary_en": null,
    "url": "https://www.dailysabah.com/business/economy/turkiye-revokes-license-of-iranian-bank-mellat",
-   "source": "Google News / Hürriyet Daily News",
+   "source": "Google News / dailysabah.com",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-19",
@@ -31,7 +31,7 @@
    "why_it_matters": null,
    "also": [
     {
-     "source": "Google News / iranintl.com",
+     "source": "Google News / see.news",
      "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
      "title": "Turkey revokes Iran’s Bank Mellat license after 44 years"
     },
@@ -59,12 +59,12 @@
   },
   {
    "id": 2747,
-   "title": "EU ministers meet in Dublin to review bloc's economy, weigh windfall tax amid surging oil, gas prices",
+   "title": "EU finance ministers eye new windfall tax",
    "title_en": null,
    "summary": "Eurozone finance ministers gathered in the Irish capital Dublin on Friday to review the bloc's latest economic outlook and discuss the possibility of imposing an oil and gas windfall tax following…",
    "summary_en": null,
-   "url": "https://www.bastillepost.com/global/article/6171355-eu-ministers-meet-in-dublin-to-review-blocs-economy-weigh-windfall-tax-amid-surging-oil-gas-prices",
-   "source": "Google News / bastillepost.com",
+   "url": "https://www.upstreamonline.com/energy-security/eu-finance-ministers-eye-new-windfall-tax/2-1-2045890",
+   "source": "Google News / Upstream Online",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-19",
@@ -85,15 +85,15 @@
    "why_it_matters": null,
    "also": [
     {
-     "source": "Google News / Upstream Online",
-     "url": "https://www.upstreamonline.com/energy-security/eu-finance-ministers-eye-new-windfall-tax/2-1-2045890",
-     "title": "EU finance ministers eye new windfall tax"
+     "source": "Google News / bastillepost.com",
+     "url": "https://www.bastillepost.com/global/article/6171355-eu-ministers-meet-in-dublin-to-review-blocs-economy-weigh-windfall-tax-amid-surging-oil-gas-prices",
+     "title": "EU ministers meet in Dublin to review bloc's economy, weigh windfall tax amid surging oil, gas prices"
     }
    ],
    "lang": "en",
    "country": null,
    "tier": "development",
-   "slug": "2026-09-20-eu-ministers-meet-in-dublin-to-review-bloc-s-economy-weigh-windfall-ta.html",
+   "slug": "2026-09-20-eu-finance-ministers-eye-new-windfall-tax.html",
    "event": "State measure"
   },
   {
@@ -170,7 +170,7 @@
    "summary": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
    "summary_en": null,
    "url": "https://www.msn.com/en-xl/news/other/six-eu-countries-push-for-windfall-tax-on-oil-companies-amid-surging-war-profits/ar-AA2b9ERT",
-   "source": "Google News / energynews.pro",
+   "source": "Google News / msn.com",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-18",
@@ -237,7 +237,7 @@
    "summary": "Solarworld Energy Solutions Ltd secured a DAB award for 100 MW and 260 MW GUVNL solar projects.",
    "summary_en": null,
    "url": "https://scanx.trade/stock-market-news/companies/solarworld-secures-40-2-crore-dab-award-guvnl-solar-projects/51291192",
-   "source": "Google News / StudyCafe",
+   "source": "Google News / scanx.trade",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-19",
@@ -301,7 +301,7 @@
    "summary": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…",
    "summary_en": null,
    "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
-   "source": "Google News / Tribune Online",
+   "source": "Google News / leadership.ng",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-19",
