@@ -236,6 +236,23 @@ def _outlet(source: Any) -> str:
     return re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", s).strip()
 
 
+def record_parts(kind: str, it: Dict[str, Any]):
+    """(name, step, tail) as plain text for a record row - shared with the web site."""
+    if kind == "docket" or (kind == "people" and (it.get("source") or "") == "ICSID docket"):
+        case, ref, step = _docket_parts(it)
+        return case, step, ref
+    if kind == "disclosures":
+        filer, _, rest = title_of(it).partition(" discloses ")
+        return filer, ("discloses " + rest) if rest else "", ""
+    if kind == "people":
+        return title_of(it), "", _outlet(it.get("source"))
+    if (it.get("source") or "").startswith("Court:"):
+        court, _, what = (it.get("flag_reason") or "").partition(": ")
+        return title_of(it), what, " \u00b7 ".join(b for b in (court, it.get("case_ref") or "") if b)
+    case, _, court = title_of(it).partition(" (")
+    return case, "", court.rstrip(")")
+
+
 def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
     rows = []
     for it in items:
@@ -244,36 +261,11 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
             dlabel = dt.date.fromisoformat(when).strftime("%-d %b")
         except ValueError:
             dlabel = ""
-        if kind == "docket":
-            case, ref, step = _docket_parts(it)
-            main = '<b style="font-weight:700;">{}</b>'.format(esc(case))
-            if step:
-                main += " &mdash; " + esc(step)
-            tail = esc(ref)
-        elif kind == "disclosures":
-            t = title_of(it)
-            filer, _, rest = t.partition(" discloses ")
-            main = '<b style="font-weight:700;">{}</b> {}'.format(esc(filer), esc(("discloses " + rest) if rest else ""))
-            tail = ""
-        elif kind == "people":
-            if (it.get("source") or "") == "ICSID docket":
-                case, ref, step = _docket_parts(it)
-                main = '<b style="font-weight:700;">{}</b>'.format(esc(case)) + ((" &mdash; " + esc(step)) if step else "")
-                tail = esc(ref)
-            else:
-                main = '<b style="font-weight:700;">{}</b>'.format(esc(title_of(it)))
-                tail = esc(_outlet(it.get("source")))
-        elif (it.get("source") or "").startswith("Court:"):
-            court, _, what = (it.get("flag_reason") or "").partition(": ")
-            main = '<b style="font-weight:700;">{}</b>'.format(esc(title_of(it)))
-            if what:
-                main += " &mdash; " + esc(what)
-            tail = esc(" \u00b7 ".join(b for b in (court, it.get("case_ref") or "") if b))
-        else:
-            t = title_of(it)
-            case, _, court = t.partition(" (")
-            main = '<b style="font-weight:700;">{}</b>'.format(esc(case))
-            tail = esc(court.rstrip(")"))
+        name, step, tail = record_parts(kind, it)
+        main = '<b style="font-weight:700;">{}</b>'.format(esc(name))
+        if step:
+            main += " &mdash; " + esc(step)
+        tail = esc(tail)
         # One typeface, one link per row: the date, the name, the step and the
         # source or reference all sit inside the same anchor.
         href = esc(it.get("url") or "#")
@@ -305,6 +297,8 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         with open(os.path.join(ROOT, "assets", "caselens-mark-64.png"), "rb") as fh:
             mark_src = "data:image/png;base64," + base64.b64encode(fh.read()).decode()
 
+    web_link = ('<br><a href="{}/{}.html" style="font-size:12px;color:{};">View in browser</a>'.format(
+        site_url, date[:10], MUTE) if site_url else "")
     sources = sorted({(it.get("source") or "").replace("Google News / ", "") for it in items} - {""})
     unsubscribe = getattr(settings, "unsubscribe_url", "") or "mailto:{}?subject=unsubscribe".format(
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
@@ -369,6 +363,6 @@ a{{color:{link}}}
 </td></tr></table>
 </body></html>""".format(
         title=esc(subject), preheader=esc(preheader), link=LINK, ink=INK, ink2=INK2, mute=MUTE, line=LINE,
-        serif=SERIF, sans=SANS, name=esc(name), dl=esc(dl), tagline=esc(settings.tagline), body=body,
+        serif=SERIF, sans=SANS, name=esc(name), dl=esc(dl) + web_link, tagline=esc(settings.tagline), body=body,
         mark=mark_src, sources=esc(", ".join(sources) or "primary sources"), unsub=esc(unsubscribe))
     return {"html": html_doc, "subject": subject, "preheader": preheader}

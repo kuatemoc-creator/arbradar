@@ -304,6 +304,16 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     def _fold_set(values) -> set:
         return {_fold(v).lower() for v in (values or []) if v}
 
+    _JUR_EXTRA = {"eu", "uk", "us", "un"}
+
+    def _jurisdictions(it) -> set:
+        """State names in the headline, plus EU/UK/US: a UK windfall tax and an EU
+        windfall tax are two stories however alike the phrasing."""
+        title = it.get("title_en") or it["title"]
+        found = {_fold(s).lower() for s in states_in(title)}
+        found |= {w for w in re.findall(r"[A-Za-z]+", title) if w.lower() in _JUR_EXTRA and w.isupper()}
+        return {w.lower() for w in found}
+
     for it in items:
         toks = _tokens(it.get("title_en") or it["title"])
         names = _propers(it.get("title_en") or it["title"])
@@ -324,6 +334,9 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             # State is the same matter under two headlines ("Mambilla").
             rare_name = {n for n in names & rep["_names"] if dfn.get(n, 0) <= rare_max and n not in states}
             same_state = bool(_fold_set(it.get("states")) & _fold_set(rep.get("states")))
+            ja, jb = _jurisdictions(it), _jurisdictions(rep)
+            if ja and jb and not (ja & jb):
+                shared_phrase, rare_name = set(), set()   # different jurisdictions named: not one story
             inter = len(toks & rep["_toks"])
             if not inter and not same_parties:
                 continue
@@ -386,6 +399,11 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     skip = {it["id"] for it in featured} | {a.get("url") for it in featured for a in (it.get("also") or [])}
     skip_titles = {fingerprint(it) for it in featured} | {fingerprint(a) for it in featured for a in (it.get("also") or [])}
+    # ...and nothing an earlier day already carried, in any list.
+    from . import site
+    shown_urls, shown_fps = site.shown_before(dt.date.today().isoformat())
+    skip |= shown_urls
+    skip_titles |= shown_fps
 
     def take(sql, params, limit, key=None):
         out, seen = [], set()
@@ -490,5 +508,26 @@ def select(conn, settings) -> List[Dict[str, Any]]:
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
         (settings.min_score, cutoff, settings.max_items_per_issue * 4)).fetchall()
-    stories = cluster([db.row_to_dict(r) for r in rows])
+    # A story carried on an earlier day is not news on a later one. Earlier
+    # days' stories go into the clustering first, so a new copy of an old story
+    # merges into them and drops out.
+    from . import site
+    today = dt.date.today().isoformat()
+    since = (dt.date.today() - dt.timedelta(days=21)).isoformat()
+    anchors: List[Dict[str, Any]] = []
+    for r in conn.execute("SELECT i.* FROM items i JOIN issues s ON s.id=i.issue_id "
+                          "WHERE substr(s.created_at,1,10) < ? AND COALESCE(i.published_at,'') >= ?", (today, since)):
+        anchors.append(db.row_to_dict(r))
+    anchors += site.anchors_before(today)
+    for a in anchors:
+        a["_anchor"] = True
+    anchor_urls = {a.get("url") for a in anchors} - {None, ""}
+    reps = cluster(anchors + [db.row_to_dict(r) for r in rows])
+    stories = []
+    for rep in reps:
+        if rep.get("_anchor") or rep.get("url") in anchor_urls:
+            continue
+        if any((a.get("url") in anchor_urls) for a in rep.get("also") or []):
+            continue
+        stories.append(rep)
     return stories[:settings.max_items_per_issue]

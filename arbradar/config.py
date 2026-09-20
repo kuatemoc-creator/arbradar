@@ -30,6 +30,7 @@ class Settings:
     unsubscribe_url: str = ""   # newsletter platform unsubscribe link; empty = mailto
     signup_url: str = ""        # where the site's subscribe form posts (Buttondown, MailerLite, Kit...); empty = no form
     signup_field: str = "email" # the form field name that service expects
+    signup_email: str = ""      # until a provider is set, the subscribe box sends sign-ups here by email
     timezone: str = "Asia/Yerevan"
     lookback_days: int = 7
     max_items_per_issue: int = 25

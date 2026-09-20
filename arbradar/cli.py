@@ -63,25 +63,24 @@ def cmd_build(args, settings, conn):
     base = (settings.site_url or "").rstrip("/")
     for it in items:
         it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
+    extras = pipeline.record_extras(conn, settings, items)
+    built = email_html.build(items, extras, settings, date)
     if settings.use_llm and not args.no_llm:
         print("Writing issue with {} ...".format(settings.editor_model))
         try:
             text = llm.write_issue(items, settings.editor_model,
                                    settings.newsletter_name, date, effort=args.effort)
-            text += "\n\n" + "\n".join(render.record_sections(
-                pipeline.record_extras(conn, settings, items)))
+            text += "\n\n" + "\n".join(render.record_sections(extras))
         except Exception as exc:                      # noqa: BLE001 - boundary
             print("editorial pass failed ({}); falling back to template".format(exc))
-            text = render.fallback_markdown(items, settings.newsletter_name, date, settings)
+            text = render.fallback_markdown(items, settings.newsletter_name, date, settings, extras=extras)
     else:
-        extras = pipeline.record_extras(conn, settings, items)
         text = render.fallback_markdown(items, settings.newsletter_name, date, settings, extras=extras)
-        built = email_html.build(items, extras, settings, date)
 
-    paths = render.write_issue(text, items, settings, date=date,
-                               html_doc=built["html"] if 'built' in dir() else None)
-    subject = built["subject"] if 'built' in dir() else "{} · {}".format(
-        settings.newsletter_name, email_html.date_label(date))
+    paths = render.write_issue(text, items, settings, date=date, html_doc=built["html"])
+    subject = built["subject"]
+    from . import site
+    site.write_day(date, items, extras, settings, subject)     # the day the web site shows
     cur = conn.execute(
         "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
         "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",
@@ -175,7 +174,7 @@ def cmd_articles(args, settings, conn):
     from . import articles
     out = articles.build(conn, settings, limit=args.limit, use_llm=not args.no_llm)
     print("{} pieces written, {} on the site\n  {}/index.html".format(
-        len(out["written"]), out["total"], out["site"]))
+        out["written"], len(out.get("days") or []), out["site"]))
     for f in out["written"]:
         print("  " + f)
     return 0

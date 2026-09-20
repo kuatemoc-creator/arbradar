@@ -41,6 +41,14 @@ they should do; they will see it. Never invent a party, amount, treaty or firm t
 """ + llm.HOUSE_STYLE
 
 
+def _nice(date: str) -> str:
+    try:
+        d = dt.date.fromisoformat(date[:10])
+        return "{} {} {}".format(d.day, d.strftime("%B"), d.year)
+    except ValueError:
+        return date
+
+
 def _slug(text: str, date: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:70]
     return "{}-{}".format(date, s)
@@ -142,9 +150,10 @@ padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:28px}
 .pub span{display:flex;flex-direction:column;font-weight:700;font-size:1rem;line-height:1.2}
 .pub small{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:2px}
 .pub:hover{color:var(--link)}
-.mast .date{font-family:var(--mono);font-size:.75rem;color:var(--mute);margin-left:auto}
+.mast .date{font-size:.8125rem;color:var(--mute);margin-left:auto;text-decoration:none}
+.mast a.date:hover{color:var(--link)}
 .eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
-h1{font-family:var(--display);font-size:2.125rem;line-height:1.15;letter-spacing:-.015em;
+h1{font-family:var(--display);font-size:1.75rem;line-height:1.15;letter-spacing:-.015em;
 font-weight:600;margin:8px 0 12px;text-wrap:balance}
 .dek{font-size:1.125rem;color:var(--ink2);margin:0 0 26px;max-width:60ch;line-height:1.5}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 24px;
@@ -160,13 +169,22 @@ border-radius:0 10px 10px 0;margin:28px 0}
 .src a{margin-right:12px}
 .list{display:flex;flex-direction:column;gap:0}
 .item{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--hair)}
-.item .d{font-family:var(--mono);font-size:.75rem;color:var(--mute);padding-top:5px}
+.item .d{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:8px}
+.item .meta{margin-top:6px;font-size:.8125rem}.item .meta a{color:var(--mute);text-decoration:none}.item .meta a:hover{color:var(--link)}
+.days{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+.days a{font-size:.8125rem;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);text-decoration:none}
+.days a:hover{border-color:var(--ink);color:var(--ink)}.days a[aria-current]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sec{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:38px 0 4px;font-weight:600}
+.rec .r{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:.9375rem;line-height:1.45}
+.rec .d{color:var(--mute);font-size:.8125rem;padding-top:2px;white-space:nowrap}.rec a{color:var(--ink);text-decoration:none}.rec a:hover{color:var(--link)}
+.rec small{color:var(--mute);font-size:.8125rem}
+.brief{padding-left:18px;margin:8px 0 0}.brief li{margin:0 0 8px}.brief a{color:var(--ink);text-decoration:none}.brief a:hover{color:var(--link)}.brief small{color:var(--mute)}
 .item a.h{font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.3}
 .item a.h:hover{color:var(--link)}
 .item p{margin:6px 0 0;color:var(--ink2);font-size:.9375rem;max-width:62ch}
 .pill{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.04em;padding:1px 8px;
 border-radius:999px;background:var(--soft);color:var(--link);margin-top:8px}
-@media (max-width:560px){.item{grid-template-columns:1fr;gap:4px}h1{font-size:1.625rem}}
+@media (max-width:560px){.item{grid-template-columns:1fr;gap:4px}h1{font-size:1.625rem}.rec .r{grid-template-columns:1fr;gap:2px}}
 """
 FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:'
          'opsz,wght@8..60,400;8..60,600&family=Hanken+Grotesk:wght@400;500;600;700&family='
@@ -183,7 +201,10 @@ def _page(title: str, body: str, desc: str, name: str) -> str:
         t=html.escape(title), d=html.escape(desc[:200]), f=FONTS, c=CSS, b=body)
 
 
-def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
+FOOTER = """<footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>"""
+
+
+def render_article(a: Article, it: Dict[str, Any], settings, date: str, day_href: str = None) -> str:
     from .email_html import SHORT
     ev = {"label": SHORT.get(it.get("event_type") or "commentary", "Note")
                     + (" \u00b7 " + it["institution"] if it.get("institution") else "")}
@@ -194,119 +215,57 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str) -> str:
     src_html = "".join('<a href="{}" rel="noopener">{}</a>'.format(html.escape(u or "#"), html.escape(s))
                        for s, u in srcs if u)
     body = """<header class="mast"><a class="brand" href="index.html">{name}</a>
-<span class="date">{date}</span></header>
+{date}</header>
 <div class="eyebrow">{ev}</div>
 <h1>{h}</h1>
 {dek}
 <div class="body">{paras}</div>
 <div class="src">{src}</div>
-<footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(
-        name=html.escape(settings.newsletter_name), date=html.escape(date),
+{foot}""".format(
+        name=html.escape(settings.newsletter_name), foot=FOOTER,
+        date=('<a class="date" href="{}">{}</a>'.format(html.escape(day_href), html.escape(_nice(date))) if day_href
+              else '<span class="date">{}</span>'.format(html.escape(_nice(date)))),
         ev=html.escape(ev.get("label", "")), h=html.escape(a.headline),
         dek='<p class="dek">{}</p>'.format(html.escape(a.dek)) if (a.dek and a.dek not in " ".join(a.paragraphs)) else "",
         paras=paras, src=src_html)
     return _page(a.headline, body, a.dek, settings.newsletter_name)
 
 
-def render_index(entries: List[Dict[str, Any]], settings) -> str:
-    items = "".join("""<div class="item"><div class="d">{d}</div><div>
-<a class="h" href="{f}">{h}</a>{dek}<span class="pill">{ev}</span></div></div>""".format(
-        d=html.escape(e["date"]), f=html.escape(e["file"]), h=html.escape(e["headline"]),
-        dek="<p>{}</p>".format(html.escape(e["dek"])) if e.get("dek") else "", ev=html.escape(e["event"]))
-        for e in entries)
-    body = """<header class="mast"><a class="brand" href="index.html">{name}</a>
-<span class="date">{n} pieces</span></header>
-<h1>{tag}</h1>
-<p class="dek">One page per story, with sources.</p>
-{signup}<div class="list">{items}</div>
-<footer class="foot"><a href="https://caselens.tech" class="pub"><svg width="32" height="32" style="display:block;border-radius:7px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g transform="translate(0.4 0.209)"><path d="M 24.514 0 L 6.686 0 C 2.993 0 0 2.993 0 6.686 L 0 24.514 C 0 28.207 2.993 31.2 6.686 31.2 L 24.514 31.2 C 28.207 31.2 31.2 28.207 31.2 24.514 L 31.2 6.686 C 31.2 2.993 28.207 0 24.514 0 Z" fill="rgb(77,104,249)"></path><path d="M 24.149 9.951 C 22.329 7.625 19.624 6.31 16.667 6.31 C 11.56 6.31 7.363 10.481 7.363 15.563 C 7.363 17.242 7.815 18.81 8.605 20.16 L 8.581 20.137 L 7.26 24.892 L 11.952 23.495 C 13.361 24.318 15.009 24.79 16.768 24.79 C 19.776 24.79 22.506 23.323 24.2 21.099 L 20.231 18.04 C 19.422 19.203 18.107 19.835 16.692 19.835 C 14.315 19.835 12.369 17.913 12.369 15.563 C 12.369 13.161 14.341 11.265 16.742 11.265 C 18.183 11.265 19.447 11.973 20.231 13.06 Z" fill="rgb(255,255,255)"></path></g></svg><span><small>Published by</small>CaseLens</span></a></footer>""".format(name=html.escape(settings.newsletter_name), n=len(entries),
-                                           tag=html.escape(settings.tagline), items=items,
-                                           signup=_signup(settings))
-    return _page(settings.newsletter_name, body, settings.tagline, settings.newsletter_name)
-
-
 def _signup(settings) -> str:
-    """A plain subscribe form when a list provider is configured; nothing otherwise."""
+    """The subscribe box. Posts to the list provider when one is configured; until
+    then it opens a prepared email to the address in signup_email, so sign-ups
+    are collected from day one."""
     action = (getattr(settings, "signup_url", "") or "").strip()
-    if not action:
-        return ""
     field = (getattr(settings, "signup_field", "") or "email").strip()
-    return """<style>
-.signup{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:18px 20px;margin:0 0 28px;
-background:var(--sunken);border:1px solid var(--hair);border-radius:12px}}
-.signup label{{flex:1 1 100%;font-weight:600}}
-.signup input{{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}}
-.signup input:focus{{outline:2px solid var(--accent);outline-offset:1px}}
-.signup button{{font:inherit;font-weight:600;padding:10px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}}
-.signup small{{flex:1 1 100%;color:var(--mute)}}
+    mailto = (getattr(settings, "signup_email", "") or "").strip()
+    if not action and not mailto:
+        return ""
+    name = html.escape(settings.newsletter_name)
+    css = """<style>
+.signup{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 18px;margin:0 0 30px;
+background:var(--sunken);border:1px solid var(--hair);border-radius:12px}
+.signup label{flex:1 1 100%;font-weight:600;font-size:.9375rem}
+.signup input{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.signup input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.signup button{font:inherit;font-weight:600;padding:10px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+.signup button:hover{filter:brightness(.94)}
+.signup small{flex:1 1 100%;color:var(--mute);font-size:.8125rem}
 </style>
-<form class="signup" action="{action}" method="post"><label for="signup-email">Get {name} by email</label>
+"""
+    if action:
+        return css + """<form class="signup" id="subscribe" action="{action}" method="post"><label for="signup-email">Get {name} by email</label>
 <input id="signup-email" type="email" name="{field}" placeholder="you@firm.com" autocomplete="email" required>
 <button type="submit">Subscribe</button><small>Free. One email per issue. Unsubscribe in one click.</small></form>""".format(
-        action=html.escape(action), field=html.escape(field), name=html.escape(settings.newsletter_name))
+            action=html.escape(action), field=html.escape(field), name=name)
+    subject = "Subscribe to " + settings.newsletter_name
+    return css + """<form class="signup" id="subscribe" onsubmit="var e=this.elements['email'].value;location.href='mailto:{to}?subject={subj}&body='+encodeURIComponent('Please add '+e+' to {name}.');return false;">
+<label for="signup-email">Get {name} by email</label>
+<input id="signup-email" type="email" name="email" placeholder="you@firm.com" autocomplete="email" required>
+<button type="submit">Subscribe</button><small>Free. One email per issue. Or write to <a href="mailto:{to}?subject={subj}">{to}</a>.</small></form>""".format(
+        to=html.escape(mailto), subj=html.escape(subject.replace(" ", "%20")), name=name)
 
 
 def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any]:
-    from . import pipeline
-    row = conn.execute("SELECT * FROM issues ORDER BY id DESC LIMIT 1").fetchone()
-    if not row:
-        raise RuntimeError("no issue built yet")
-    date = str(row["created_at"])[:10]
-    rows = conn.execute("SELECT * FROM items WHERE issue_id=? AND relevant=1 ORDER BY score DESC",
-                        (row["id"],)).fetchall()
-    stories = pipeline.cluster([db.row_to_dict(r) for r in rows])
-    starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application", "state_measure")
-    lead = next((it for it in stories[:5] if it.get("event_type") in starters), stories[0] if stories else None)
-    if lead is not None:
-        stories = [lead] + [it for it in stories if it is not lead]
-    stories = stories[:limit]
-
-    os.makedirs(SITE, exist_ok=True)
-    # GitHub Pages reads the custom domain from a CNAME file at the site root.
-    host = re.sub(r"^https?://", "", (settings.site_url or "").strip()).split("/")[0]
-    if host and not host.endswith("github.io"):
-        with open(os.path.join(SITE, "CNAME"), "w", encoding="utf-8") as fh:
-            fh.write(host + "\n")
-    with open(os.path.join(SITE, ".nojekyll"), "w", encoding="utf-8") as fh:
-        fh.write("")
-    manifest_path = os.path.join(SITE, "manifest.json")
-    manifest: List[Dict[str, Any]] = []
-    if os.path.exists(manifest_path):
-        manifest = json.load(open(manifest_path, encoding="utf-8"))
-        # an entry whose page was removed is a dead link on the index
-        manifest = [e for e in manifest if os.path.exists(os.path.join(SITE, e["file"]))]
-        # a rebuild replaces the day's pieces rather than adding to them
-        for e in [e for e in manifest if e.get("date") == date]:
-            try:
-                os.remove(os.path.join(SITE, e["file"]))
-            except OSError:
-                pass
-        manifest = [e for e in manifest if e.get("date") != date]
-    known = {e["file"] for e in manifest}
-
-    written = []
-    fresh: List[Dict[str, Any]] = []
-    for it in stories:
-        art = write_article(it, settings.editor_model) if (use_llm and settings.use_llm) else None
-        art = art or _template_article(it)
-        fname = story_slug(it, date)
-        with open(os.path.join(SITE, fname), "w", encoding="utf-8") as fh:
-            fh.write(render_article(art, it, settings, date))
-        from .email_html import SHORT
-        entry = {"file": fname, "date": date, "headline": art.headline, "dek": art.dek,
-                 "event": SHORT.get(it.get("event_type") or "commentary", "Note")}
-        if fname in known:
-            # Regenerated page: refresh its entry rather than keep the old copy.
-            manifest = [entry if e["file"] == fname else e for e in manifest]
-        else:
-            fresh.append(entry)
-            known.add(fname)
-        written.append(fname)
-    # Newest issue on top, and within it the strongest story first.
-    manifest = fresh + manifest
-
-    with open(manifest_path, "w", encoding="utf-8") as fh:
-        json.dump(manifest, fh, ensure_ascii=False, indent=1)
-    with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as fh:
-        fh.write(render_index(manifest, settings))
-    return {"site": SITE, "written": written, "total": len(manifest)}
+    """Render the whole site from the saved days (see site.py)."""
+    from . import site
+    return site.build(settings, use_llm=use_llm)
