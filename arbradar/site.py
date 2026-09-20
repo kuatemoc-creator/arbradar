@@ -224,6 +224,11 @@ def build(settings, use_llm: bool = True) -> Dict[str, Any]:
             fh.write(host + "\n")
     with open(os.path.join(SITE, ".nojekyll"), "w", encoding="utf-8") as fh:
         fh.write("")
+    # The full list of sources, verified weekly, is part of the product.
+    src_map = os.path.join(os.path.dirname(OUT_DIR), "docs", "sources.html")
+    if os.path.exists(src_map):
+        with open(src_map, encoding="utf-8") as fh, open(os.path.join(SITE, "sources.html"), "w", encoding="utf-8") as out:
+            out.write(fh.read())
 
     keep: Set[str] = set()
     written = 0

@@ -820,7 +820,8 @@ def write_html(md: str) -> str:
     body = re.sub(r"<td>(wired|rss|html|blocked|dead|error)</td>",
                   lambda m: '<td class="s-{0}">{0}</td>'.format(m.group(1)), body)
     body = re.sub(r"(<table>.*?</table>)", r"<div>\1</div>", body, flags=re.S)
-    page = "<title>ArbRadar Source Map</title>\n<style>\n{}</style>\n<div class=\"wrap\">{}</div>\n".format(_CSS, body)
+    page = ("<title>ArbRadar Source Map</title>\n<style>\n{}</style>\n<div class=\"wrap\">"
+            "<p style=\"margin:0 0 18px\"><a href=\"index.html\" style=\"text-decoration:none\">&larr; ArbRadar</a></p>{}</div>\n").format(_CSS, body)
     with open(os.path.join(ROOT, "docs", "sources.html"), "w", encoding="utf-8") as fh:
         fh.write(page)
     return page

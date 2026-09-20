@@ -1,0 +1,42 @@
+name: Weekly source check
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"        # Mondays, 06:00 in Yerevan
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/weekly.yml"
+      - "tools/sourcemap.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -q -r requirements.txt
+      - name: Verify every source
+        # Probes all candidates and regenerates SOURCES.md, docs/sources.json and
+        # docs/sources.html. The daily build copies the page into the site.
+        run: .venv/bin/python -m tools.sourcemap --probe | head -3
+      - name: Commit the map
+        run: |
+          git config user.name "arbradar-bot"
+          git config user.email "arbradar@caselens.tech"
+          git add SOURCES.md docs/sources.json docs/sources.html
+          git diff --cached --quiet && echo "no change" || (git commit -qm "Source map re-verified $(date -u +%F)" && git push)

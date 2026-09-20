@@ -50,14 +50,20 @@ jobs:
             git archive origin/gh-pages data | tar -x -C out/site && echo "day archive restored: $(ls out/site/data | wc -l) days"
           fi
 
-      - name: Build and publish
+      - name: Build
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
         run: |
           git config user.name "arbradar-bot"
           git config user.email "arbradar@caselens.tech"
-          tools/daily.sh --publish
+          tools/daily.sh
+
+      - name: Publish the site
+        # Set a repository variable PUBLISH=false (Settings -> Secrets and variables ->
+        # Actions -> Variables) to hold issues for review instead of publishing.
+        if: vars.PUBLISH != 'false'
+        run: tools/publish_site.sh origin
 
       - name: Save state
         run: |
