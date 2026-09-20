@@ -23,7 +23,6 @@ INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
 LINE, HAIR, SUNKEN, LINK = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df"
 SERIF = "Georgia,'Times New Roman',Times,serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-MONO = "'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
 
 P = ('font-family:{sans};font-size:{size}px;line-height:{lh};color:{color};margin:0 0 {mb}px;'
      'mso-line-height-rule:exactly;')
@@ -275,14 +274,16 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
             case, _, court = t.partition(" (")
             main = '<b style="font-weight:700;">{}</b>'.format(esc(case))
             tail = esc(court.rstrip(")"))
+        # One typeface, one link per row: the date, the name, the step and the
+        # source or reference all sit inside the same anchor.
+        href = esc(it.get("url") or "#")
         rows.append(
-            '<tr><td valign="top" style="font-family:{mono};font-size:11px;line-height:1.5;color:{mute};'
-            'padding:7px 10px 7px 0;white-space:nowrap;width:52px;">{d}</td>'
+            '<tr><td valign="top" style="font-family:{sans};font-size:12px;line-height:1.6;color:{mute};'
+            'padding:7px 10px 7px 0;white-space:nowrap;width:52px;"><a href="{href}" style="color:{mute};text-decoration:none;">{d}</a></td>'
             '<td valign="top" style="font-family:{sans};font-size:14px;line-height:1.5;color:{ink};'
-            'padding:7px 0;border-bottom:1px solid {hair};">{main}{tail}</td></tr>'.format(
-                mono=MONO, mute=MUTE, sans=SANS, ink=INK, hair=HAIR, d=esc(dlabel),
-                main='<a href="{}" style="color:{};text-decoration:none;">{}</a>'.format(esc(it.get("url") or "#"), INK, main),
-                tail=(' <span style="font-family:{};font-size:11px;color:{};">{}</span>'.format(MONO, MUTE, tail) if tail else "")))
+            'padding:7px 0;border-bottom:1px solid {hair};"><a href="{href}" style="color:{ink};text-decoration:none;">{main}{tail}</a></td></tr>'.format(
+                sans=SANS, mute=MUTE, ink=INK, hair=HAIR, d=esc(dlabel), href=href, main=main,
+                tail=(' <span style="font-size:12px;color:{};">{}</span>'.format(MUTE, tail) if tail else "")))
     return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{}</table>'.format("".join(rows))
 
 
