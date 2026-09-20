@@ -6,6 +6,7 @@ been instructed tells you the mandate is gone, which is just as useful as knowin
 one is open - it stops you chasing dead leads.
 """
 import calendar
+import re
 import datetime as dt
 from typing import Dict, Iterator, List
 
@@ -41,6 +42,28 @@ def _published(entry) -> str:
     return ""
 
 
+# A national business feed is mostly not about disputes. Keep an item only if it
+# says so, in any of the sweep's languages: a forum or treaty word, or an
+# expropriation/nationalisation word, or a licence/concession/contract word next to
+# a revoke/cancel/terminate word.
+_STRONG = re.compile(
+    r"arbitra|арбитраж|арбітраж|tahkim|arbitraj|արբիտրաժ|არბიტრაჟ|تحكيم|arbitrase|tr\u1ecdng t\u00e0i|"
+    r"\bICSID\b|CIADI|CIRDI|МЦУИС|UNCITRAL|ЮНСИТРАЛ|"
+    r"expropri|экспроприац|експропріац|kamula\u015ft\u0131r|nacionaliz|nationalis|nationaliz|национализ|націоналізац|"
+    r"milliləşdir|ազգայնաց|ნაციონალიზ|تأميم|مصادرة|nasionalisasi|"
+    r"investment treaty|bilateral investment|tratado bilateral|trait\u00e9 bilat|инвестиционн[а-я]+ (спор|соглашен)|"
+    r"інвестиційн[а-я]+ (спір|угод)|yat\u0131r\u0131m anla\u015fmas|notice of (dispute|intent|arbitration)|"
+    r"notificaci\u00f3n de (controversia|disputa)|уведомлени[ея] о споре", re.I)
+_ASSET = re.compile(r"licen[cs]e|licence|лиценз|ліценз|lisans|licencia|licença|concession|concesi|конц|"
+                    r"imtiyaz|contrat|контракт|contract|permit|разрешени|permiso|ruhsat", re.I)
+_ACTION = re.compile(r"revok|cancel|terminat|annul|withdr|suspend|аннулир|отозв|отзыв|расторг|приостанов|"
+                     r"скасув|анулю|розірв|iptal|fesh|askıya|revoc|cancel|rescind|caduc|résili|retir|suspend", re.I)
+
+
+def relevant(text: str) -> bool:
+    return bool(_STRONG.search(text) or (_ASSET.search(text) and _ACTION.search(text)))
+
+
 def _configured() -> List[Dict[str, str]]:
     """sources.yaml wins over the built-in list, so the feeds are editable."""
     import os
@@ -52,6 +75,10 @@ def _configured() -> List[Dict[str, str]]:
     with open(path, encoding="utf-8") as fh:
         cfg = yaml.safe_load(fh) or {}
     feeds = [f for f in (cfg.get("rss") or []) if f.get("url") and f.get("enabled", True)]
+    for f in (cfg.get("national_press") or []):
+        if f.get("url") and f.get("enabled", True):
+            feeds.append({"name": "{} ({})".format(f["name"], f["country"]), "url": f["url"],
+                          "lang": f.get("lang", "en"), "country": f["country"], "filter": True})
     return feeds or FEEDS
 
 
@@ -67,11 +94,16 @@ def run(days: int = 7, feeds: List[Dict[str, str]] = None) -> Iterator[Dict]:
             published = _published(entry)
             if published and published < cutoff:
                 continue
-            summary = entry.get("summary", "") or ""
+            summary = re.sub(r"<[^>]+>", " ", entry.get("summary", "") or "")
+            title = (entry.get("title") or "").strip()
+            if feed.get("filter") and not relevant(title + " " + summary):
+                continue
             yield {
                 "url": entry.get("link") or "",
                 "source": feed["name"],
-                "title": (entry.get("title") or "").strip(),
+                "title": title,
                 "summary": summary[:2000],
                 "published_at": published or None,
+                "lang": feed.get("lang", "en"),
+                "country": feed.get("country"),
             }

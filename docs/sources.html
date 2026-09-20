@@ -1,0 +1,2178 @@
+<title>ArbRadar Source Map</title>
+<style>
+:root{color-scheme:light;--ink:#131726;--ink2:#535865;--mute:#6d717e;--line:#dddfe7;--hair:#eceef3;--sunken:#f5f7fa;--link:#3e55df;--accent:#4D68F9}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Hanken Grotesk",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 28px 80px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:32px;margin:0 0 6px;letter-spacing:-.2px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:22px;margin:38px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+p{max-width:78ch;color:var(--ink2)} a{color:var(--link)}
+table{border-collapse:collapse;width:100%;font-size:13.5px} th{text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:7px 10px;border-bottom:1px solid var(--hair);vertical-align:top} tr:hover td{background:var(--sunken)}
+td:nth-child(3){font-weight:700;white-space:nowrap}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--mute);margin:10px 0 0}
+</style>
+<div class="wrap"><h1>ArbRadar source map</h1>
+<p>Verified 2026-09-20. Edit <code>tools/sourcemap.py</code>, then run <code>python -m tools.sourcemap --probe</code> to re-verify and regenerate this file.</p>
+<p>Status: <strong>wired</strong> = read on every run · <strong>rss</strong> = feed answers, ready to wire · <strong>html</strong> = page answers, needs a parser · <strong>blocked</strong> = refuses scripts · <strong>dead</strong> = not found · <strong>error</strong> = no answer</p>
+<p>Totals: 19 blocked, 30 dead, 21 error, 77 html, 62 rss, 7 wired</p>
+<h2>Armenia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.gov.am/en/decrees/">Government decisions</a></td>
+<td>html</td>
+<td>73 KB</td>
+<td>cabinet decisions incl. concessions and licences</td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.arlis.am">ARLIS legal information system</a></td>
+<td>html</td>
+<td>1406 KB</td>
+<td>all legal acts; search only</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://www.armeps.am">ARMEPS procurement</a></td>
+<td>html</td>
+<td>33 KB</td>
+<td>state procurement portal</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://gnumner.am">gnumner.am announcements</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td>procurement announcements</td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://www.datalex.am">DataLex court database</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td>first-instance and appeal cases</td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://psrc.am/en">Public Services Regulatory Commission</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>energy, water, telecoms tariffs and licences</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://amx.am/en">Armenia Securities Exchange</a></td>
+<td>html</td>
+<td>3 KB</td>
+<td>listed-company disclosures</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://armenpress.am/rss/eng">Armenpress (EN RSS)</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://hetq.am/en/rss">Hetq</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>investigative</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.civilnet.am/feed">CivilNet</a></td>
+<td>html</td>
+<td>80 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://news.am/eng/rss/">News.am</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.panorama.am/en/rss">Panorama.am</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Georgia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://matsne.gov.ge">Legislative Herald (matsne)</a></td>
+<td>html</td>
+<td>1266 KB</td>
+<td>all legal acts</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://tenders.procurement.gov.ge">State Procurement Agency</a></td>
+<td>html</td>
+<td>11 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://www.justice.gov.ge">Ministry of Justice</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>MoJ represents Georgia in ISDS; check for a cases page</td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://www.supremecourt.ge">Supreme Court</a></td>
+<td>html</td>
+<td>45 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://gnerc.org">GNERC energy regulator</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://nam.gov.ge">National Agency of Mines</a></td>
+<td>error</td>
+<td>ConnectTimeout</td>
+<td>mining licences</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://civil.ge/feed">Civil.ge</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://agenda.ge/en/rss">Agenda.ge</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://georgiatoday.ge/feed">Georgia Today</a></td>
+<td>html</td>
+<td>323 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.interpressnews.ge/en/rss">InterPressNews</a></td>
+<td>html</td>
+<td>6 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://bm.ge/rss">BM.ge (Business Media)</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Azerbaijan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://e-qanun.az">e-qanun legal acts</a></td>
+<td>error</td>
+<td>ConnectTimeout</td>
+<td></td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://president.az/en/rss">President's decrees</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://etender.gov.az">etender.gov.az</a></td>
+<td>error</td>
+<td>ConnectTimeout</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://report.az/en/rss/">Report.az</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://apa.az/en/rss">APA</a></td>
+<td>html</td>
+<td>292 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://en.trend.az/rss">Trend</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://caliber.az/en/rss">Caliber</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Kazakhstan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://adilet.zan.kz">Adilet legal acts</a></td>
+<td>html</td>
+<td>2 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://goszakup.gov.kz">Goszakup public procurement</a></td>
+<td>html</td>
+<td>6 KB</td>
+<td>has an open API (ows.goszakup.gov.kz)</td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://sud.gov.kz">Judicial cabinet / court database</a></td>
+<td>html</td>
+<td>83 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://court.aifc.kz">AIFC Court</a></td>
+<td>html</td>
+<td>73 KB</td>
+<td>judgments published</td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.gov.kz/memleket/entities/mic">Ministry of Industry and Construction (subsoil)</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td>licence revocations</td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.gov.kz/memleket/entities/energo">Ministry of Energy</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://kase.kz/en/news/">KASE</a></td>
+<td>html</td>
+<td>322 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://kz.kursiv.media/feed/">Kursiv</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://tengrinews.kz/rss/">Tengrinews</a></td>
+<td>dead</td>
+<td>HTTP 500</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.zakon.kz/rss">Zakon.kz</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>legal news</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://vlast.kz/rss">Vlast.kz</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://astanatimes.com/feed/">The Astana Times</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://forbes.kz/rss">Forbes Kazakhstan</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Uzbekistan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://lex.uz">Lex.uz</a></td>
+<td>html</td>
+<td>224 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://xarid.uzex.uz">UZEX e-procurement</a></td>
+<td>html</td>
+<td>1 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://mmg.gov.uz">Ministry of Mining and Geology</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://uzse.uz">Tashkent Stock Exchange</a></td>
+<td>html</td>
+<td>307 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.gazeta.uz/ru/rss/">Gazeta.uz</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://kun.uz/en/rss">Kun.uz</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.spot.uz/rss">Spot.uz</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>business</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://uzdaily.uz/en/rss">UzDaily</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://daryo.uz/en/feed">Daryo</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Kyrgyzstan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://cbd.minjust.gov.kg">Ministry of Justice legal database</a></td>
+<td>html</td>
+<td>2 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://zakupki.gov.kg">zakupki.gov.kg</a></td>
+<td>html</td>
+<td>1 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://24.kg/rss/">24.kg</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://akipress.com/rss/">AKIpress</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Turkmenistan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://turkmenportal.com/en/rss">Turkmenportal</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://en.hronikatm.com/feed/">Chronicles of Turkmenistan</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td>independent</td>
+</tr>
+</tbody>
+</table>
+<h2>Ukraine</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenders</td>
+<td><a href="https://prozorro.gov.ua/api/search/tenders">Prozorro</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://zakon.rada.gov.ua">Verkhovna Rada legal acts</a></td>
+<td>error</td>
+<td>ConnectTimeout</td>
+<td></td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://minjust.gov.ua">Ministry of Justice - international disputes</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td>MoJ defends Ukraine in ISDS; find the cases page</td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://reyestr.court.gov.ua">Unified State Register of Court Decisions</a></td>
+<td>html</td>
+<td>47 KB</td>
+<td>every decision, searchable</td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.nerc.gov.ua">NEURC energy regulator</a></td>
+<td>html</td>
+<td>886 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.ukrinform.net/rss">Ukrinform (EN)</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.epravda.com.ua/rss/">Ekonomichna Pravda</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://lb.ua/rss">LB.ua</a></td>
+<td>html</td>
+<td>24 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://nv.ua/rss">NV</a></td>
+<td>html</td>
+<td>74 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.liga.net/rss">LIGA.net</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>legal and business</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://sud.ua/rss">Sudovo-yurydychna gazeta</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>court news</td>
+</tr>
+</tbody>
+</table>
+<h2>Russia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="http://publication.pravo.gov.ru">Official publication of legal acts</a></td>
+<td>html</td>
+<td>27 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://kad.arbitr.ru">Commercial courts case database (kad.arbitr)</a></td>
+<td>html</td>
+<td>90 KB</td>
+<td>anti-suit injunctions, asset seizures; search needs session</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://pravo.ru/rss/">Pravo.ru</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>legal news</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.kommersant.ru/RSS/news.xml">Kommersant</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.vedomosti.ru/rss/news">Vedomosti</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.interfax.ru/rss.asp">Interfax</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://rssexport.rbc.ru/rbcnews/news/30/full.rss">RBC</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Turkey</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.resmigazete.gov.tr">Resmî Gazete</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td>daily official gazette</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.kap.org.tr/en">KAP public disclosure platform</a></td>
+<td>html</td>
+<td>149 KB</td>
+<td>listed companies disclose arbitrations</td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.epdk.gov.tr">EPDK energy regulator</a></td>
+<td>html</td>
+<td>187 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.mapeg.gov.tr">MAPEG mining</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.dunya.com/rss">Dünya</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.bloomberght.com/rss">Bloomberg HT</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.hurriyetdailynews.com/rss">Hürriyet Daily News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.dailysabah.com/rssFeed/10">Daily Sabah</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Mexico</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado">Secretaría de Economía ISDS register</a></td>
+<td>blocked</td>
+<td>HTTP 200</td>
+<td>publishes notices of intent; bot challenge</td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.dof.gob.mx/rss">Diario Oficial de la Federación</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://compranet.hacienda.gob.mx">CompraNet</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.gob.mx/cnh">CNH hydrocarbons</a></td>
+<td>blocked</td>
+<td>HTTP 200</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.bmv.com.mx">BMV</a></td>
+<td>error</td>
+<td>ConnectTimeout</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.eleconomista.com.mx/rss/">El Economista</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://expansion.mx/rss">Expansión</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.elfinanciero.com.mx/rss">El Financiero</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.eluniversal.com.mx/rss">El Universal</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Argentina</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://www.argentina.gob.ar/procuraciondeltesoro">Procuración del Tesoro de la Nación</a></td>
+<td>html</td>
+<td>42 KB</td>
+<td>defends Argentina; check for a cases page</td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.boletinoficial.gob.ar">Boletín Oficial</a></td>
+<td>html</td>
+<td>239 KB</td>
+<td>RSS available</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://comprar.gob.ar">COMPR.AR</a></td>
+<td>html</td>
+<td>78 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.lanacion.com.ar/arc/outboundfeeds/rss/">La Nación</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.clarin.com/rss/">Clarín</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.ambito.com/rss">Ámbito</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.cronista.com/rss">El Cronista</a></td>
+<td>html</td>
+<td>1632 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.infobae.com/feeds/rss/">Infobae</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Colombia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://www.defensajuridica.gov.co">ANDJE - defensa internacional</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td>publishes ISDS cases; WAF 403 to scripts</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://www.colombiacompra.gov.co">SECOP / Colombia Compra</a></td>
+<td>html</td>
+<td>588 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.anm.gov.co">ANM mining</a></td>
+<td>html</td>
+<td>319 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.anh.gov.co">ANH hydrocarbons</a></td>
+<td>html</td>
+<td>71 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://www.consejodeestado.gov.co">Consejo de Estado</a></td>
+<td>html</td>
+<td>270 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.portafolio.co/rss">Portafolio</a></td>
+<td>html</td>
+<td>92 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.larepublica.co/rss">La República</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.semana.com/rss">Semana</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.valoraanalitik.com/feed/">Valora Analitik</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Peru</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://www.mef.gob.pe">MEF - SICRECI (State coordination for investment disputes)</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td>find the cases page</td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://elperuano.pe">El Peruano</a></td>
+<td>html</td>
+<td>82 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://www.gob.pe/seace">SEACE</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.osinergmin.gob.pe">Osinergmin</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://gestion.pe/rss">Gestión</a></td>
+<td>html</td>
+<td>765 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://elcomercio.pe/rss">El Comercio</a></td>
+<td>html</td>
+<td>884 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://rpp.pe/rss">RPP</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Chile</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenders</td>
+<td><a href="https://www.mercadopublico.cl">Mercado Público</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.df.cl/rss">Diario Financiero</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.emol.com/rss/">El Mercurio (Emol)</a></td>
+<td>error</td>
+<td>ReadError</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Ecuador</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://www.pge.gob.ec">Procuraduría General del Estado</a></td>
+<td>html</td>
+<td>80 KB</td>
+<td>publishes arbitration cases against Ecuador</td>
+</tr>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.registroficial.gob.ec">Registro Oficial</a></td>
+<td>html</td>
+<td>182 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.eluniverso.com/rss">El Universo</a></td>
+<td>html</td>
+<td>145 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.primicias.ec/feed/">Primicias</a></td>
+<td>html</td>
+<td>263 KB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Venezuela</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://efectococuyo.com/feed/">Efecto Cocuyo</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.bancaynegocios.com/feed/">Banca y Negocios</a></td>
+<td>error</td>
+<td>RemoteProtocolError</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.elnacional.com/feed/">El Nacional</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Bolivia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://eldeber.com.bo/rss">El Deber</a></td>
+<td>html</td>
+<td>158 KB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Brazil</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.in.gov.br">Diário Oficial da União</a></td>
+<td>error</td>
+<td>RemoteProtocolError</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://valor.globo.com/rss">Valor Econômico</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.jota.info/feed">JOTA</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>legal</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://feeds.folha.uol.com.br/mercado/rss091.xml">Folha - Mercado</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Spain</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.boe.es/rss/canal.php?c=ultimos">BOE</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td>official gazette</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.cnmv.es">CNMV</a></td>
+<td>html</td>
+<td>289 KB</td>
+<td>hechos relevantes</td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://contrataciondelestado.es">PLACSP</a></td>
+<td>html</td>
+<td>0 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://e00-expansion.uecdn.es/rss/portada.xml">Expansión</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://rss.elconfidencial.com/espana/">El Confidencial</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://cincodias.elpais.com/rss/">Cinco Días</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.eleconomista.es/rss/rss-empresas.php">El Economista</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Italy</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://www.gazzettaufficiale.it">Gazzetta Ufficiale</a></td>
+<td>html</td>
+<td>41 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.ilsole24ore.com/rss/italia.xml">Il Sole 24 Ore</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Romania</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.zf.ro/rss">Ziarul Financiar</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.profit.ro/rss">Profit.ro</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Poland</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.pb.pl/rss">Puls Biznesu</a></td>
+<td>html</td>
+<td>70 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.rp.pl/rss_main">Rzeczpospolita</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Nigeria</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenders</td>
+<td><a href="https://www.bpp.gov.ng">Bureau of Public Procurement</a></td>
+<td>html</td>
+<td>179 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.nuprc.gov.ng">NUPRC upstream regulator</a></td>
+<td>html</td>
+<td>73 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://miningcadastre.gov.ng">Mining Cadastre Office</a></td>
+<td>html</td>
+<td>135 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://ngxgroup.com">NGX</a></td>
+<td>html</td>
+<td>66 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://businessday.ng/feed/">BusinessDay</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.premiumtimesng.com/feed">Premium Times</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://punchng.com/feed/">Punch</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://nairametrics.com/feed/">Nairametrics</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Ghana</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.mincom.gov.gh">Minerals Commission</a></td>
+<td>html</td>
+<td>285 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.ghanabusinessnews.com/feed/">Ghana Business News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.myjoyonline.com/business/feed/">MyJoyOnline Business</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Kenya</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.businessdailyafrica.com/rss">Business Daily</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.the-star.co.ke/rss">The Star</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Tanzania</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.tumemadini.go.tz">Mining Commission</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.thecitizen.co.tz/rss">The Citizen</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Zambia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.daily-mail.co.zm/feed/">Zambia Daily Mail</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://diggers.news/feed/">News Diggers</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>DRC</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.cami.cd">CAMI mining cadastre</a></td>
+<td>html</td>
+<td>145 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://actualite.cd/feed">Actualite.cd</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>South Africa</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.jse.co.za">JSE SENS</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.businesslive.co.za/bd/rss">Business Day</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.moneyweb.co.za/feed/">Moneyweb</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Mozambique</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://clubofmozambique.com/feed/">Club of Mozambique</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Egypt</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.egx.com.eg">Egyptian Exchange</a></td>
+<td>html</td>
+<td>6 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://enterprise.press/feed/">Enterprise</a></td>
+<td>html</td>
+<td>453 KB</td>
+<td>the best daily on Egyptian business</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://english.ahram.org.eg/rss">Ahram Online</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.dailynewsegypt.com/feed/">Daily News Egypt</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Algeria</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.aps.dz/en/?format=feed">APS</a></td>
+<td>html</td>
+<td>230 KB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Morocco</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://medias24.com/feed/">Médias24</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>UAE</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.thenationalnews.com/rss">The National</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Saudi Arabia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.arabnews.com/rss.xml">Arab News</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Qatar</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://thepeninsulaqatar.com/rss">The Peninsula</a></td>
+<td>html</td>
+<td>91 KB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Iraq</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.iraq-businessnews.com/feed/">Iraq Business News</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>India</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://egazette.gov.in">eGazette</a></td>
+<td>error</td>
+<td>ConnectError</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.bseindia.com/corporates/ann.html">BSE corporate announcements</a></td>
+<td>html</td>
+<td>13 KB</td>
+<td>arbitration disclosures; has an API</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://economictimes.indiatimes.com/rssfeedsdefault.cms">Economic Times</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.livemint.com/rss/companies">Mint</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.barandbench.com/feed">Bar &amp; Bench</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>legal</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.livelaw.in/rss">LiveLaw</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>legal</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.business-standard.com/rss/companies-101.rss">Business Standard</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Pakistan</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.dawn.com/feeds/business">Dawn Business</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.brecorder.com/feeds/latest-news">Business Recorder</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Indonesia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gazette</td>
+<td><a href="https://jdih.setneg.go.id">JDIH Setneg</a></td>
+<td>html</td>
+<td>2466 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>regulator</td>
+<td><a href="https://www.esdm.go.id">ESDM ministry</a></td>
+<td>html</td>
+<td>136 KB</td>
+<td>IUP revocations</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.idx.co.id">IDX</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.kontan.co.id/rss">Kontan</a></td>
+<td>html</td>
+<td>39 KB</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.bisnis.com/rss">Bisnis.com</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.hukumonline.com/rss">Hukumonline</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td>legal</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.thejakartapost.com/rss">Jakarta Post</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Vietnam</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://e.vnexpress.net/rss/business.rss">VnExpress International</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Malaysia</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://theedgemalaysia.com/rss">The Edge</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Philippines</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.bworldonline.com/feed/">BusinessWorld</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Korea</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td><a href="https://www.kedglobal.com/rss">Korea Economic Daily</a></td>
+<td>rss</td>
+<td>feed</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://koreajoongangdaily.joins.com/rss">Korea JoongAng Daily</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Global</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Status</th>
+<th>Detail</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>register</td>
+<td><a href="https://icsid.worldbank.org/api/cases/pending">ICSID docket API</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://www.uncitral.org/transparency-registry/registry/index.jspx">UNCITRAL Transparency Registry</a></td>
+<td>html</td>
+<td>73 KB</td>
+<td>notices under the Mauritius Convention</td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://pca-cpa.org/en/cases/">PCA cases</a></td>
+<td>html</td>
+<td>129 KB</td>
+<td>client-rendered</td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://www.italaw.com">italaw</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td>awards and decisions; Cloudflare</td>
+</tr>
+<tr>
+<td>register</td>
+<td><a href="https://investmentpolicy.unctad.org/investment-dispute-settlement">UNCTAD ISDS Navigator</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td>Cloudflare</td>
+</tr>
+<tr>
+<td>courts</td>
+<td><a href="https://www.courtlistener.com/api/rest/v4/search/">CourtListener / RECAP</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://efts.sec.gov/LATEST/search-index">SEC EDGAR full-text</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tenders</td>
+<td><a href="https://api.ted.europa.eu/v3/notices/search">TED</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.londonstockexchange.com/news">LSE RNS</a></td>
+<td>html</td>
+<td>53 KB</td>
+<td>no keyword feed</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.asx.com.au/markets/trade-our-cash-market/announcements">ASX announcements</a></td>
+<td>html</td>
+<td>133 KB</td>
+<td>per-company only</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="https://www.sedarplus.ca">SEDAR+</a></td>
+<td>blocked</td>
+<td>HTTP 403</td>
+<td>Canadian filings; client-rendered</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://globalarbitrationreview.com/rss">GAR</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.iareporter.com/feed/">IAReporter</a></td>
+<td>wired</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.law360.com/internationalarbitration/rss">Law360 International Arbitration</a></td>
+<td>rss</td>
+<td>feed</td>
+<td>paywalled headlines</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.lexology.com/rss">Lexology arbitration</a></td>
+<td>dead</td>
+<td>HTTP 404</td>
+<td></td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://omnibridgeway.com/news">Omni Bridgeway news</a></td>
+<td>html</td>
+<td>23 KB</td>
+<td>funder</td>
+</tr>
+<tr>
+<td>press</td>
+<td><a href="https://www.lcmfinance.com/news/">Litigation Capital Management</a></td>
+<td>html</td>
+<td>74 KB</td>
+<td>funder</td>
+</tr>
+</tbody>
+</table></div>
+<script>
+// colour the status column so the map reads at a glance
+document.querySelectorAll("td:nth-child(3)").forEach(td=>{const s=td.textContent.trim();
+ td.style.color={wired:"#1f7a4d",rss:"#1f7a4d",html:"#8a6d1f",blocked:"#b45d57",dead:"#b45d57",error:"#6d717e"}[s]||"";});
+</script>

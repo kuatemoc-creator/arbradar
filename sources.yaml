@@ -1,7 +1,3 @@
-# ArbRadar sources. Edit freely; the engine reads this file on every run.
-# enabled: false switches a source off without deleting it.
-
-# --- Primary records (structured APIs, tier 1) ---------------------------------
 apis:
   icsid:
     enabled: true
@@ -19,7 +15,9 @@ apis:
   tenders:
     enabled: true
     what: States and state enterprises procuring arbitration counsel - TED (EU) and Prozorro (Ukraine)
-    endpoints: ["https://api.ted.europa.eu/v3/notices/search", "https://prozorro.gov.ua/api/search/tenders"]
+    endpoints:
+    - https://api.ted.europa.eu/v3/notices/search
+    - https://prozorro.gov.ua/api/search/tenders
   gdelt:
     enabled: true
     what: global news with country tagging, non-English press; throttled to one request per 5 s
@@ -27,41 +25,364 @@ apis:
   registers:
     enabled: true
     what: government ISDS registers - notices of intent and cases published by Canada (GAC) and the United States (State Dept L/CID)
-    endpoints: ["https://www.international.gc.ca/trade-agreements-accords-commerciaux/topics-domaines/disp-diff/gov.aspx?lang=eng", "https://www.state.gov/office-of-international-claims-and-investment-disputes/usmca-investor-state-arbitrations", "https://www.state.gov/nafta-investor-state-arbitrations"]
+    endpoints:
+    - https://www.international.gc.ca/trade-agreements-accords-commerciaux/topics-domaines/disp-diff/gov.aspx?lang=eng
+    - https://www.state.gov/office-of-international-claims-and-investment-disputes/usmca-investor-state-arbitrations
+    - https://www.state.gov/nafta-investor-state-arbitrations
     note: Mexico's Secretaría de Economía register (gob.mx) sits behind a bot challenge; its press is covered by the Google News sweep
   pca:
     enabled: true
     what: PCA news page (the case list itself is client-rendered and not available)
     endpoint: https://pca-cpa.org/en/news/
-
-# --- Google News sweep (tier 2) -----------------------------------------------
-# Query banks live in arbradar/sources/editions.py (TERMS, MEASURES, MAJORS).
-# The global English edition always runs. Local editions run in their own language;
-# leave the list empty to run all 36, or name the ones you want.
 google_news:
   enabled: true
-  editions: []          # e.g. [Armenia, "Armenia (ru)", Georgia, Kazakhstan, Mexico, Colombia, Peru]
-
-# --- RSS feeds (tier 2: reported news) ------------------------------------------
+  editions: []
 rss:
-  - {name: GAR,                     url: "https://globalarbitrationreview.com/rss",                                 enabled: true}
-  - {name: IAReporter,              url: "https://www.iareporter.com/feed/",                                        enabled: true}
-  - {name: Kluwer Arbitration Blog, url: "http://arbitrationblog.kluwerarbitration.com/feed/",                     enabled: true}
-  - {name: Jus Mundi,               url: "https://blog.jusmundi.com/rss/",                                          enabled: true}
-  - {name: PCA,                     url: "https://pca-cpa.org/feed/",                                               enabled: true}
-  - {name: SCC,                     url: "https://sccarbitrationinstitute.se/en/feed",                              enabled: true}
-  - {name: HKIAC,                   url: "https://www.hkiac.org/rss.xml",                                           enabled: true}
-  - {name: SIAC,                    url: "https://siac.org.sg/feed",                                                enabled: true}
-  - {name: IISD ITN,                url: "https://www.iisd.org/itn/feed/",                                          enabled: true}
-  - {name: Burford,                 url: "https://www.burfordcapital.com/insights/rss/",                            enabled: true}
-  - {name: Reuters Legal,           url: "https://www.reuters.com/arc/outboundfeeds/rss/category/legal/?outputType=xml", enabled: true}
-  # add law-firm newsrooms, funders, institutions here - one line each
-
-# --- Tried and not usable (for the record) ------------------------------------
+- name: GAR
+  url: https://globalarbitrationreview.com/rss
+  enabled: true
+- name: IAReporter
+  url: https://www.iareporter.com/feed/
+  enabled: true
+- name: Kluwer Arbitration Blog
+  url: http://arbitrationblog.kluwerarbitration.com/feed/
+  enabled: true
+- name: Jus Mundi
+  url: https://blog.jusmundi.com/rss/
+  enabled: true
+- name: PCA
+  url: https://pca-cpa.org/feed/
+  enabled: true
+- name: SCC
+  url: https://sccarbitrationinstitute.se/en/feed
+  enabled: true
+- name: HKIAC
+  url: https://www.hkiac.org/rss.xml
+  enabled: true
+- name: SIAC
+  url: https://siac.org.sg/feed
+  enabled: true
+- name: IISD ITN
+  url: https://www.iisd.org/itn/feed/
+  enabled: true
+- name: Burford
+  url: https://www.burfordcapital.com/insights/rss/
+  enabled: true
+- name: Reuters Legal
+  url: https://www.reuters.com/arc/outboundfeeds/rss/category/legal/?outputType=xml
+  enabled: true
 not_available:
-  - italaw.com - Cloudflare 403
-  - UNCTAD ISDS Navigator - Cloudflare 403
-  - PCA case list - client-rendered, no REST route for cases
-  - BAILII recent-decisions feed - no arbitration signal (3 hits in 1,869 entries)
-  - Swiss Federal Supreme Court 4A_ search - blocked to non-browser clients
-  - LSE RNS / Investegate / ASX - no keyword feed; announcements reach us via wires and Google News
+- italaw.com - Cloudflare 403
+- UNCTAD ISDS Navigator - Cloudflare 403
+- PCA case list - client-rendered, no REST route for cases
+- BAILII recent-decisions feed - no arbitration signal (3 hits in 1,869 entries)
+- Swiss Federal Supreme Court 4A_ search - blocked to non-browser clients
+- LSE RNS / Investegate / ASX - no keyword feed; announcements reach us via wires and Google News
+national_press:
+- country: Armenia
+  name: Hetq
+  url: https://hetq.am/en/rss
+  lang: en
+  enabled: true
+- country: Armenia
+  name: News.am
+  url: https://news.am/eng/rss/
+  lang: en
+  enabled: true
+- country: Georgia
+  name: Civil.ge
+  url: https://civil.ge/feed
+  lang: en
+  enabled: true
+- country: Azerbaijan
+  name: Report.az
+  url: https://report.az/en/rss/
+  lang: en
+  enabled: true
+- country: Azerbaijan
+  name: Trend
+  url: https://en.trend.az/rss
+  lang: en
+  enabled: true
+- country: Kazakhstan
+  name: Kursiv
+  url: https://kz.kursiv.media/feed/
+  lang: ru
+  enabled: true
+- country: Kazakhstan
+  name: The Astana Times
+  url: https://astanatimes.com/feed/
+  lang: ru
+  enabled: true
+- country: Uzbekistan
+  name: Gazeta.uz
+  url: https://www.gazeta.uz/ru/rss/
+  lang: uz
+  enabled: true
+- country: Uzbekistan
+  name: Spot.uz
+  url: https://www.spot.uz/rss
+  lang: uz
+  enabled: true
+- country: Uzbekistan
+  name: UzDaily
+  url: https://uzdaily.uz/en/rss
+  lang: uz
+  enabled: true
+- country: Kyrgyzstan
+  name: 24.kg
+  url: https://24.kg/rss/
+  lang: ru
+  enabled: true
+- country: Kyrgyzstan
+  name: AKIpress
+  url: https://akipress.com/rss/
+  lang: ru
+  enabled: true
+- country: Ukraine
+  name: Sudovo-yurydychna gazeta
+  url: https://sud.ua/rss
+  lang: uk
+  enabled: true
+- country: Russia
+  name: Pravo.ru
+  url: https://pravo.ru/rss/
+  lang: ru
+  enabled: true
+- country: Russia
+  name: Kommersant
+  url: https://www.kommersant.ru/RSS/news.xml
+  lang: ru
+  enabled: true
+- country: Russia
+  name: Vedomosti
+  url: https://www.vedomosti.ru/rss/news
+  lang: ru
+  enabled: true
+- country: Russia
+  name: Interfax
+  url: https://www.interfax.ru/rss.asp
+  lang: ru
+  enabled: true
+- country: Russia
+  name: RBC
+  url: https://rssexport.rbc.ru/rbcnews/news/30/full.rss
+  lang: ru
+  enabled: true
+- country: Turkey
+  name: Dünya
+  url: https://www.dunya.com/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Bloomberg HT
+  url: https://www.bloomberght.com/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Hürriyet Daily News
+  url: https://www.hurriyetdailynews.com/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Daily Sabah
+  url: https://www.dailysabah.com/rssFeed/10
+  lang: tr
+  enabled: true
+- country: Mexico
+  name: Expansión
+  url: https://expansion.mx/rss
+  lang: es
+  enabled: true
+- country: Mexico
+  name: El Financiero
+  url: https://www.elfinanciero.com.mx/rss
+  lang: es
+  enabled: true
+- country: Argentina
+  name: La Nación
+  url: https://www.lanacion.com.ar/arc/outboundfeeds/rss/
+  lang: es
+  enabled: true
+- country: Argentina
+  name: Clarín
+  url: https://www.clarin.com/rss/
+  lang: es
+  enabled: true
+- country: Colombia
+  name: La República
+  url: https://www.larepublica.co/rss
+  lang: es
+  enabled: true
+- country: Peru
+  name: RPP
+  url: https://rpp.pe/rss
+  lang: es
+  enabled: true
+- country: Venezuela
+  name: Efecto Cocuyo
+  url: https://efectococuyo.com/feed/
+  lang: es
+  enabled: true
+- country: Venezuela
+  name: El Nacional
+  url: https://www.elnacional.com/feed/
+  lang: es
+  enabled: true
+- country: Brazil
+  name: JOTA
+  url: https://www.jota.info/feed
+  lang: pt
+  enabled: true
+- country: Brazil
+  name: Folha - Mercado
+  url: https://feeds.folha.uol.com.br/mercado/rss091.xml
+  lang: pt
+  enabled: true
+- country: Spain
+  name: Expansión
+  url: https://e00-expansion.uecdn.es/rss/portada.xml
+  lang: es
+  enabled: true
+- country: Spain
+  name: El Confidencial
+  url: https://rss.elconfidencial.com/espana/
+  lang: es
+  enabled: true
+- country: Italy
+  name: Il Sole 24 Ore
+  url: https://www.ilsole24ore.com/rss/italia.xml
+  lang: it
+  enabled: true
+- country: Romania
+  name: Ziarul Financiar
+  url: https://www.zf.ro/rss
+  lang: ro
+  enabled: true
+- country: Romania
+  name: Profit.ro
+  url: https://www.profit.ro/rss
+  lang: ro
+  enabled: true
+- country: Poland
+  name: Rzeczpospolita
+  url: https://www.rp.pl/rss_main
+  lang: pl
+  enabled: true
+- country: Nigeria
+  name: BusinessDay
+  url: https://businessday.ng/feed/
+  lang: en
+  enabled: true
+- country: Nigeria
+  name: Premium Times
+  url: https://www.premiumtimesng.com/feed
+  lang: en
+  enabled: true
+- country: Nigeria
+  name: Punch
+  url: https://punchng.com/feed/
+  lang: en
+  enabled: true
+- country: Nigeria
+  name: Nairametrics
+  url: https://nairametrics.com/feed/
+  lang: en
+  enabled: true
+- country: Ghana
+  name: Ghana Business News
+  url: https://www.ghanabusinessnews.com/feed/
+  lang: en
+  enabled: true
+- country: Ghana
+  name: MyJoyOnline Business
+  url: https://www.myjoyonline.com/business/feed/
+  lang: en
+  enabled: true
+- country: Zambia
+  name: Zambia Daily Mail
+  url: https://www.daily-mail.co.zm/feed/
+  lang: en
+  enabled: true
+- country: Zambia
+  name: News Diggers
+  url: https://diggers.news/feed/
+  lang: en
+  enabled: true
+- country: DRC
+  name: Actualite.cd
+  url: https://actualite.cd/feed
+  lang: fr
+  enabled: true
+- country: South Africa
+  name: Moneyweb
+  url: https://www.moneyweb.co.za/feed/
+  lang: en
+  enabled: true
+- country: Mozambique
+  name: Club of Mozambique
+  url: https://clubofmozambique.com/feed/
+  lang: en
+  enabled: true
+- country: Egypt
+  name: Daily News Egypt
+  url: https://www.dailynewsegypt.com/feed/
+  lang: ar
+  enabled: true
+- country: Iraq
+  name: Iraq Business News
+  url: https://www.iraq-businessnews.com/feed/
+  lang: en
+  enabled: true
+- country: India
+  name: Economic Times
+  url: https://economictimes.indiatimes.com/rssfeedsdefault.cms
+  lang: en
+  enabled: true
+- country: India
+  name: Mint
+  url: https://www.livemint.com/rss/companies
+  lang: en
+  enabled: true
+- country: India
+  name: Bar & Bench
+  url: https://www.barandbench.com/feed
+  lang: en
+  enabled: true
+- country: India
+  name: Business Standard
+  url: https://www.business-standard.com/rss/companies-101.rss
+  lang: en
+  enabled: true
+- country: Pakistan
+  name: Dawn Business
+  url: https://www.dawn.com/feeds/business
+  lang: en
+  enabled: true
+- country: Pakistan
+  name: Business Recorder
+  url: https://www.brecorder.com/feeds/latest-news
+  lang: en
+  enabled: true
+- country: Vietnam
+  name: VnExpress International
+  url: https://e.vnexpress.net/rss/business.rss
+  lang: vi
+  enabled: true
+- country: Philippines
+  name: BusinessWorld
+  url: https://www.bworldonline.com/feed/
+  lang: en
+  enabled: true
+- country: Korea
+  name: Korea Economic Daily
+  url: https://www.kedglobal.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Law360 International Arbitration
+  url: https://www.law360.com/internationalarbitration/rss
+  lang: en
+  enabled: true
+national_press_note: 'Verified feeds from tools/sourcemap.py. Read on every run but FILTERED: an item is kept only if it mentions arbitration, a treaty, an expropriation or nationalisation, or a licence,
+  concession or contract being revoked, cancelled or terminated - in any of the sweep languages.'
