@@ -4,7 +4,7 @@ Verified 2026-09-20. Edit `tools/sourcemap.py`, then run `python -m tools.source
 
 Status: **wired** = read on every run · **rss** = feed answers, ready to wire · **html** = page answers, needs a parser · **blocked** = refuses scripts · **dead** = not found · **error** = no answer
 
-Totals: 75 dead, 28 error, 216 html, 201 rss, 8 wired
+Totals: 75 dead, 28 error, 215 html, 201 rss, 9 wired
 
 ## Armenia
 
@@ -564,7 +564,7 @@ Totals: 75 dead, 28 error, 216 html, 201 rss, 8 wired
 |---|---|---|---|---|
 | register | [ICSID docket API](https://icsid.worldbank.org/api/cases/pending) | wired |  |  |
 | register | [UNCITRAL Transparency Registry](https://www.uncitral.org/transparency-registry/registry/index.jspx) | html | 73 KB | notices under the Mauritius Convention |
-| register | [PCA cases](https://pca-cpa.org/en/cases/) | html | 129 KB | client-rendered |
+| register | [PCA cases](https://pca-cpa.org/en/cases/) | wired | headless browser | via headless browser |
 | register | [italaw](https://www.italaw.com) | dead | HTTP 403 | awards and decisions; Cloudflare |
 | register | [UNCTAD ISDS Navigator](https://investmentpolicy.unctad.org/investment-dispute-settlement) | dead | HTTP 403 | Cloudflare |
 | courts | [CourtListener / RECAP](https://www.courtlistener.com/api/rest/v4/search/) | wired |  |  |

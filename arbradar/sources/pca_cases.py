@@ -42,27 +42,62 @@ def _list_cases() -> List[Tuple[int, int, str, str]]:
     return out
 
 
+_LABELS = ["Name(s) of Claimant(s)", "Name(s) of Respondent(s)", "Names of Parties", "Case number",
+           "Administering institution", "Case status", "Type of case", "Subject matter", "Rules of procedure",
+           "Rules of Procedure", "Treaty or contract under which proceedings were commenced", "Language of Proceeding",
+           "Seat of Arbitration (by Country)", "Arbitrator(s), Conciliator(s), Other Neutral(s)",
+           "Representatives of the Claimant(s)", "Representatives of the Respondent(s)", "Representatives of the Parties"]
+
+
 def _case_detail(url: str) -> Dict[str, str]:
-    """Parties and dates from the case page (server-rendered, plain fetch)."""
+    """The 'Case information' block: parties, status, type, instrument, seat, tribunal, counsel.
+    PCA does not publish commencement dates; the case number carries the year."""
     try:
         html = get(url, ttl=7 * 24 * 3600, timeout=40).text
     except Exception:                                 # noqa: BLE001 - boundary
         return {}
-    text = re.sub(r"<[^>]+>", " ", html)
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html))
+    i = text.find("Case information")
+    if i < 0:
+        return {}
+    block = text[i:i + 6000]
+    positions = sorted((block.find(lab), lab) for lab in _LABELS if block.find(lab) >= 0)
     out: Dict[str, str] = {}
-    for label in _DATE_FIELDS:
-        m = re.search(re.escape(label) + r"[^0-9]{0,40}" + _DATE.pattern, text)
-        if m:
-            out["commenced"] = m.group(1)
-            break
-    m = re.search(r"Case Type[:\s]+([A-Za-z\- /]+?)(?:\s{2,}|Subject|Applicable|Arbitrator)", text)
-    if m:
-        out["type"] = m.group(1).strip()
-    m = re.search(r"Rules[:\s]+([^.]{5,80}?)(?:\s{2,}|Language|Seat|Administer)", text)
-    if m:
-        out["rules"] = m.group(1).strip()
+    for k, (pos, lab) in enumerate(positions):
+        nxt = positions[k + 1][0] if k + 1 < len(positions) else len(block)
+        val = block[pos + len(lab):nxt].strip(" -:")
+        out[lab] = " ".join(val.split())
     return out
+
+
+def _clean_party(v: str) -> str:
+    return re.sub(r"\s*\((State|[A-Za-z ,]+)\)$", "", v or "").strip()
+
+
+def describe(d: Dict[str, str], year: int, num: int, title: str) -> str:
+    cl = _clean_party(d.get("Name(s) of Claimant(s)", ""))
+    rs = _clean_party(d.get("Name(s) of Respondent(s)", ""))
+    kind = d.get("Type of case", "").lower()
+    instrument = d.get("Treaty or contract under which proceedings were commenced", "")
+    instrument = re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "", instrument).strip()
+    status = d.get("Case status", "")
+    seat = d.get("Seat of Arbitration (by Country)", "").strip(" -")
+    arbs = d.get("Arbitrator(s), Conciliator(s), Other Neutral(s)", "")
+    rep_c = d.get("Representatives of the Claimant(s)", "")
+    rep_r = d.get("Representatives of the Respondent(s)", "")
+    parts = []
+    if cl and rs:
+        parts.append("{} against {}{}{}.".format(cl, rs, ", an " + kind if kind else "", " under the " + instrument if instrument else ""))
+    else:
+        parts.append("{}{}.".format(title, " under the " + instrument if instrument else ""))
+    parts.append("PCA case {}-{}{}{}.".format(year, num, ", " + status.lower() if status else "", ", seated in " + seat if seat else ""))
+    if arbs:
+        parts.append("Tribunal: {}.".format(re.sub(r"\s*\((Presiding Arbitrator|President)\)", " (presiding)", arbs)[:260].rstrip(".")))
+    if rep_c:
+        parts.append("For the claimant: {}.".format(rep_c[:200].rstrip(".")))
+    if rep_r:
+        parts.append("For the respondent: {}.".format(rep_r[:200].rstrip(".")))
+    return " ".join(parts)
 
 
 def run(days: int = 7) -> Iterator[Dict]:
@@ -75,34 +110,28 @@ def run(days: int = 7) -> Iterator[Dict]:
     recent = [c for c in cases if c[0] >= today.year - 1]
     recent.sort(key=lambda c: (c[0], c[1]), reverse=True)
     for year, num, title, url in recent[:40]:
-        detail = _case_detail(url)
-        when = None
-        if detail.get("commenced"):
-            try:
-                when = dt.datetime.strptime(detail["commenced"], "%d %B %Y").date()
-            except ValueError:
-                when = None
-        # a case whose page carries no date is reported once, dated by its number's year
-        if when and when < cutoff:
-            continue
-        parties = re.search(r"\(([^()]+ v\.? [^()]+)\)\s*$", title)
-        claimant = respondent = ""
-        if parties:
-            claimant, _, respondent = parties.group(1).partition(" v. ")
+        d = _case_detail(url)
+        cl = _clean_party(d.get("Name(s) of Claimant(s)", ""))
+        rs = _clean_party(d.get("Name(s) of Respondent(s)", ""))
+        arbs = [a.strip() for a in re.split(r"(?<=[a-z\)])\s(?=(?:Mr|Ms|Mrs|Dr|Professor|Sir|Judge|H\.E\.)\b)",
+                                             d.get("Arbitrator(s), Conciliator(s), Other Neutral(s)", "")) if a.strip()]
+        counsel = [c.strip() for c in re.split(r"\s{2,}|;", d.get("Representatives of the Claimant(s)", "") + " ; " +
+                                              d.get("Representatives of the Respondent(s)", "")) if c.strip()]
         yield {
             "url": url,
             "source": "PCA case list",
-            "title": "PCA {}-{}: {}".format(year, num, title),
-            "summary": "Case {}-{} on the PCA list{}{}{}.".format(
-                year, num,
-                ", commenced " + detail["commenced"] if detail.get("commenced") else "",
-                "; type: " + detail["type"] if detail.get("type") else "",
-                "; rules: " + detail["rules"] if detail.get("rules") else ""),
-            "published_at": when.isoformat() if when else "{}-01-01".format(year),
+            "title": "{} v. {} \u2014 PCA case {}-{}".format(cl or title, rs or "", year, num) if cl and rs
+                     else "{} \u2014 PCA case {}-{}".format(title, year, num),
+            "summary": describe(d, year, num, title),
+            "published_at": "{}-01-01".format(year),          # PCA publishes no dates; the number carries the year
             "event_type": "new_case_filed",
             "institution": "PCA",
+            "treaty": re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "",
+                             d.get("Treaty or contract under which proceedings were commenced", "")).strip() or None,
             "case_ref": "PCA {}-{}".format(year, num),
-            "claimants": [claimant.strip()] if claimant else [],
-            "respondents": [respondent.strip()] if respondent else [],
-            "flag_reason": "PCA case list: case number {}-{}".format(year, num),
+            "claimants": [cl] if cl else [],
+            "respondents": [rs] if rs else [],
+            "arbitrators": arbs[:5],
+            "counsel": counsel[:6],
+            "flag_reason": "PCA case list: case number {}-{}{}".format(year, num, "; " + d["Type of case"].lower() if d.get("Type of case") else ""),
         }
