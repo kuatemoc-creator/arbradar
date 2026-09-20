@@ -2,7 +2,7 @@ newsletter_name: ArbRadar
 tagline: News and developments in international arbitration
 timezone: Asia/Yerevan
 # Public base URL of the article site (GitHub Pages or caselens.tech). Leave empty until hosted.
-site_url: ""            # e.g. https://arbradar.caselens.tech once DNS points at the site; enables deep links from the email
+site_url: "https://arbradar.caselens.tech"            # e.g. https://arbradar.caselens.tech once DNS points at the site; enables deep links from the email
 signup_url: ""          # form action of your list provider, e.g. https://buttondown.com/api/emails/embed-subscribe/arbradar
 signup_field: email     # the field name that provider expects (Buttondown: email; Kit: email_address)
 
