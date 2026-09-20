@@ -56,7 +56,8 @@ def _case_detail(url: str) -> Dict[str, str]:
         html = get(url, ttl=7 * 24 * 3600, timeout=40).text
     except Exception:                                 # noqa: BLE001 - boundary
         return {}
-    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html))
+    import html as _h
+    text = _h.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)))
     i = text.find("Case information")
     if i < 0:
         return {}
@@ -79,15 +80,20 @@ def describe(d: Dict[str, str], year: int, num: int, title: str) -> str:
     rs = _clean_party(d.get("Name(s) of Respondent(s)", ""))
     kind = d.get("Type of case", "").lower()
     instrument = d.get("Treaty or contract under which proceedings were commenced", "")
-    instrument = re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "", instrument).strip()
+    instrument = re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "", instrument)
+    instrument = re.sub(r"\s*Country A:.*$", "", instrument).strip()
     status = d.get("Case status", "")
     seat = d.get("Seat of Arbitration (by Country)", "").strip(" -")
+    if seat.upper() in ("N/A", "NA", ""):
+        seat = ""
     arbs = d.get("Arbitrator(s), Conciliator(s), Other Neutral(s)", "")
     rep_c = d.get("Representatives of the Claimant(s)", "")
     rep_r = d.get("Representatives of the Respondent(s)", "")
     parts = []
     if cl and rs:
-        parts.append("{} against {}{}{}.".format(cl, rs, ", an " + kind if kind else "", " under the " + instrument if instrument else ""))
+        article = "an" if kind[:1] in "aeiou" else "a"
+        parts.append("{} against {}{}{}.".format(cl, rs, ", {} {}".format(article, kind) if kind else "",
+                                                 " under the " + instrument if instrument else ""))
     else:
         parts.append("{}{}.".format(title, " under the " + instrument if instrument else ""))
     parts.append("PCA case {}-{}{}{}.".format(year, num, ", " + status.lower() if status else "", ", seated in " + seat if seat else ""))
@@ -126,8 +132,8 @@ def run(days: int = 7) -> Iterator[Dict]:
             "published_at": "{}-01-01".format(year),          # PCA publishes no dates; the number carries the year
             "event_type": "new_case_filed",
             "institution": "PCA",
-            "treaty": re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "",
-                             d.get("Treaty or contract under which proceedings were commenced", "")).strip() or None,
+            "treaty": re.sub(r"\s*Country A:.*$", "", re.sub(r"^(Multilateral treaty|Bilateral treaty|Contract|Treaty)\s*", "",
+                             d.get("Treaty or contract under which proceedings were commenced", ""))).strip() or None,
             "case_ref": "PCA {}-{}".format(year, num),
             "claimants": [cl] if cl else [],
             "respondents": [rs] if rs else [],
