@@ -14,6 +14,7 @@ if git fetch -q "$REMOTE" gh-pages 2>/dev/null; then
   git branch -f gh-pages "$REMOTE/gh-pages" 2>/dev/null || true
 fi
 WT=$(mktemp -d)
+trap 'git worktree remove --force "$WT" 2>/dev/null; git worktree prune' EXIT   # never leave a stale checkout behind
 if ! git show-ref --quiet refs/heads/gh-pages && git show-ref --quiet "refs/remotes/$REMOTE/gh-pages"; then
   git branch gh-pages "$REMOTE/gh-pages"        # a fresh clone: continue the published history
 fi
@@ -27,5 +28,4 @@ rsync -a --delete --exclude .git out/site/ "$WT"/
 touch "$WT/.nojekyll"
 (cd "$WT" && git add -A && (git commit -qm "Publish site $(date +%F)" || true))
 git push -u "$REMOTE" gh-pages
-git worktree remove --force "$WT"
 echo "published; the site is at the custom domain once DNS and the Pages setting are in place"
