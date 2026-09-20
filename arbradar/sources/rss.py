@@ -47,10 +47,19 @@ def _published(entry) -> str:
 # expropriation/nationalisation word, or a licence/concession/contract word next to
 # a revoke/cancel/terminate word.
 _STRONG = re.compile(
-    r"arbitra|арбитраж|арбітраж|tahkim|arbitraj|արբիտրաժ|არბიტრაჟ|تحكيم|arbitrase|tr\u1ecdng t\u00e0i|"
-    r"\bICSID\b|CIADI|CIRDI|МЦУИС|UNCITRAL|ЮНСИТРАЛ|"
+    # English is safe: referees are not "arbitration". Romance languages and Russian are
+    # not: "arbitraje", "arbitragem", "arbitrage" and "арбитражный суд" all mean something
+    # else, so those need a qualifier.
+    r"\barbitrat(?:ion|or|ors|ional)\b|\bICSID\b|CIADI|CIRDI|МЦУИС|UNCITRAL|ЮНСИТРАЛ|"
+    r"arbitraje (?:internacional|de inversi[oó]n|comercial)|tribunal arbitral|laudo arbitral|"
+    r"arbitragem (?:internacional|de investimento)|senten[çc]a arbitral|c[âa]mara de arbitragem|"
+    r"arbitrage international|sentence arbitrale|arbitrato internazionale|lodo arbitrale|"
+    r"международн\w+ арбитраж|инвестиционн\w+ арбитраж|арбитражн\w+ трибунал|третейск|МКАС|арбитражн\w+ решени|"
+    r"міжнародн\w+ арбітраж|інвестиційн\w+ арбітраж|арбітражн\w+ трибунал|"
+    r"uluslararas\u0131 tahkim|tahkim mahkemesi|hakem heyeti|yat\u0131r\u0131m tahkimi|"
+    r"\barbitraj\b|արբիտրաժ|არბიტრაჟ|التحكيم الدولي|arbitrase internasional|tr\u1ecdng t\u00e0i qu\u1ed1c t\u1ebf|"
     r"expropri|экспроприац|експропріац|kamula\u015ft\u0131r|nacionaliz|nationalis|nationaliz|национализ|націоналізац|"
-    r"milliləşdir|ազգայնաց|ნაციონალიზ|تأميم|مصادرة|nasionalisasi|"
+    r"milliləşdir|ազգայնաց|ნაციონალიზ|تأميم|nasionalisasi|"
     r"investment treaty|bilateral investment|tratado bilateral|trait\u00e9 bilat|инвестиционн[а-я]+ (спор|соглашен)|"
     r"інвестиційн[а-я]+ (спір|угод)|yat\u0131r\u0131m anla\u015fmas|notice of (dispute|intent|arbitration)|"
     r"notificaci\u00f3n de (controversia|disputa)|уведомлени[ея] о споре", re.I)
@@ -58,10 +67,20 @@ _ASSET = re.compile(r"licen[cs]e|licence|лиценз|ліценз|lisans|licenc
                     r"imtiyaz|contrat|контракт|contract|permit|разрешени|permiso|ruhsat", re.I)
 _ACTION = re.compile(r"revok|cancel|terminat|annul|withdr|suspend|аннулир|отозв|отзыв|расторг|приостанов|"
                      r"скасув|анулю|розірв|iptal|fesh|askıya|revoc|cancel|rescind|caduc|résili|retir|suspend", re.I)
+_STATE = re.compile(r"government|ministry|ministr|regulator|state|gobierno|ministerio|estado|regulador|governo|"
+                    r"minist[ée]r|gouvernement|État|правительств|министерств|государств|регулятор|уряд|міністерств|"
+                    r"держав|h[üu]k[üu]met|bakanl|devlet|investor|inversionista|inversor|investidor|investisseur|"
+                    r"инвестор|інвестор|yat\u0131r\u0131mc|foreign|extranjer|estrangeir|étrang|иностранн|іноземн|yabanc", re.I)
+_SPORT = re.compile(r"f[úu]tbol|futebol|football|soccer|\bliga\b|\bgol\b|penal(ti)?\b|campeonato|clube|equipo|jugador|"
+                    r"t[ée]cnico|entrenador|partido|jogo|torneo|\bma[çc]\b|hakem|футбол|матч|чемпионат|referee", re.I)
 
 
 def relevant(text: str) -> bool:
-    return bool(_STRONG.search(text) or (_ASSET.search(text) and _ACTION.search(text)))
+    if _SPORT.search(text) and not re.search(r"ICSID|CIADI|CIRDI|treaty|tratado|trait\u00e9|expropri|nacionaliz|nationalis", text, re.I):
+        return False
+    if _STRONG.search(text):
+        return True
+    return bool(_ASSET.search(text) and _ACTION.search(text) and _STATE.search(text))
 
 
 def _configured() -> List[Dict[str, str]]:
