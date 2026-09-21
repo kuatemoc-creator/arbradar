@@ -62,10 +62,25 @@ def cmd_build(args, settings, conn):
         print("filled in text for {} headline-only stories".format(filled))
     # Every printed headline carries an explanation. A story that is still only a
     # headline after enrichment is left out; the records (tier 1) always have prose.
-    textless = [it for it in items if not email_html.summary_of(it) and (it.get("source_tier") or 2) != 1]
-    if textless:
-        print("left out {} headline-only stories: {}".format(len(textless), "; ".join(it["title"][:50] for it in textless)))
-        items = [it for it in items if it not in textless]
+    def _with_text(rows):
+        gone = [it for it in rows if not email_html.summary_of(it) and (it.get("source_tier") or 2) != 1]
+        if gone:
+            print("left out {} headline-only stories: {}".format(len(gone), "; ".join(it["title"][:50] for it in gone)))
+        return [it for it in rows if it not in gone]
+
+    items = _with_text(items)
+    if len(items) < 3:
+        # A thin day: as an exception, reach one day further back for stories that
+        # were never printed, and give them the same enrichment.
+        have = {it["id"] for it in items}
+        more = [it for it in pipeline.select(conn, settings, extra_days=1) if it["id"] not in have]
+        if more:
+            enrich.enrich(conn, more)
+            more = _with_text(more)
+            for it in more:
+                it["flag_reason"] = ((it.get("flag_reason") or "") + " | held over from the previous day").strip(" |")
+            print("thin day: held over {} stories from the previous day".format(len(more)))
+            items = (items + more)[:settings.max_items_per_issue]
     if not items:
         print("Nothing with an explanation to print today.")
         return 1

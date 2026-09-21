@@ -602,14 +602,4 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
                 stories.append(rep)
             if len(stories) >= 6:
                 break
-    if len(stories) < 3 and extra_days == 0:
-        # Still thin: as an exception, reach one day further back for stories that
-        # were never printed. Earlier days' stories are still anchors, so nothing
-        # already carried comes back.
-        wider = select(conn, settings, extra_days=1)
-        if len(wider) > len(stories):
-            for it in wider:
-                if it.get("published_at") and it["published_at"] < (dt.date.today() - dt.timedelta(days=settings.lookback_days)).isoformat():
-                    it["flag_reason"] = ((it.get("flag_reason") or "") + " | held over from the previous day").strip(" |")
-            return wider
     return stories[:settings.max_items_per_issue]
