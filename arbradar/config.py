@@ -35,6 +35,7 @@ class Settings:
     lookback_days: int = 7
     max_items_per_issue: int = 25
     min_score: float = 20.0
+    min_story_score: float = 65.0   # stories below this are left out; a thin day is short, not padded
 
     triage_model: str = TRIAGE_MODEL
     extract_model: str = EXTRACT_MODEL

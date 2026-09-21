@@ -28,6 +28,12 @@ def canonical(url: str) -> str:
                        parts.path.rstrip("/"), query, ""))
 
 
+def title_key(item: Dict[str, Any]) -> str:
+    """Normalised-title identity, independent of which copy's link we hold."""
+    norm = re.sub(r"[^a-z0-9]+", " ", (item.get("title") or "").lower()).strip()
+    return hashlib.sha256(norm.encode()).hexdigest()
+
+
 def fingerprint(item: Dict[str, Any]) -> str:
     """URL identity first; fall back to normalised title so the same story from
     two outlets collapses to one line."""
@@ -422,7 +428,8 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     Excludes anything already featured. Rule-based; the records are the story."""
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     skip = {it["id"] for it in featured} | {a.get("url") for it in featured for a in (it.get("also") or [])}
-    skip_titles = {fingerprint(it) for it in featured} | {fingerprint(a) for it in featured for a in (it.get("also") or [])}
+    skip_titles = ({fingerprint(it) for it in featured} | {fingerprint(a) for it in featured for a in (it.get("also") or [])}
+                   | {title_key(it) for it in featured} | {title_key(a) for it in featured for a in (it.get("also") or [])})
     # ...and nothing an earlier day already carried, in any list.
     from . import site
     shown_urls, shown_fps = site.shown_before(dt.date.today().isoformat())
@@ -433,7 +440,7 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         out, seen = [], set()
         for r in conn.execute(sql, params):
             it = db.row_to_dict(r)
-            if it["id"] in skip or it["url"] in skip or fingerprint(it) in skip_titles:
+            if it["id"] in skip or it["url"] in skip or fingerprint(it) in skip_titles or title_key(it) in skip_titles:
                 continue
             k = key(it) if key else it["url"]
             if k in seen:
@@ -487,12 +494,29 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         "  OR (source='ICSID docket' AND event_type='tribunal_constituted' "
         "      AND (title LIKE '%appoint%' OR title LIKE '%constituted%' OR title LIKE '%President%'))) "
         "ORDER BY score DESC, published_at DESC", (cutoff,), 40)
-    people = cluster(people_rows)
+    people = drop_repeats(people_rows, site.people_before(dt.date.today().isoformat()))
     moves = sorted((it for it in people if it.get("source") != "ICSID docket"),
                    key=lambda it: it.get("published_at") or "", reverse=True)
     seats = sorted((it for it in people if it.get("source") == "ICSID docket"),
                    key=lambda it: it.get("published_at") or "", reverse=True)
     return {"docket": docket, "disclosures": disclosures, "courts": courts, "people": moves[:6] + seats[:6]}
+
+
+def drop_repeats(candidates: List[Dict[str, Any]], anchors: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Cluster candidates against earlier days' items; keep only what is new."""
+    if not anchors:
+        return cluster(candidates)
+    for a in anchors:
+        a["_anchor"] = True
+    anchor_urls = {a.get("url") for a in anchors} - {None, ""}
+    out = []
+    for rep in cluster(anchors + candidates):
+        if rep.get("_anchor") or rep.get("url") in anchor_urls:
+            continue
+        if any((a.get("url") in anchor_urls) for a in rep.get("also") or []):
+            continue
+        out.append(rep)
+    return out
 
 
 def reclassify(conn, settings, days: int = 21) -> int:
@@ -548,10 +572,13 @@ def select(conn, settings) -> List[Dict[str, Any]]:
     anchor_urls = {a.get("url") for a in anchors} - {None, ""}
     reps = cluster(anchors + [db.row_to_dict(r) for r in rows])
     stories = []
+    floor = float(getattr(settings, "min_story_score", 0) or 0)
     for rep in reps:
         if rep.get("_anchor") or rep.get("url") in anchor_urls:
             continue
         if any((a.get("url") in anchor_urls) for a in rep.get("also") or []):
             continue
+        if (rep.get("score") or 0) < floor and not rep.get("pinned"):
+            continue                              # below the floor: leave it out rather than pad the day
         stories.append(rep)
     return stories[:settings.max_items_per_issue]

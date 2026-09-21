@@ -90,7 +90,7 @@ def load_days() -> List[Dict[str, Any]]:
 
 def shown_before(date: str, days: int = 30) -> Tuple[Set[str], Set[str]]:
     """URLs and title fingerprints of everything carried by earlier days."""
-    from .pipeline import fingerprint
+    from .pipeline import fingerprint, title_key
     cutoff = (dt.date.fromisoformat(date) - dt.timedelta(days=days)).isoformat()
     urls: Set[str] = set()
     fps: Set[str] = set()
@@ -99,14 +99,14 @@ def shown_before(date: str, days: int = 30) -> Tuple[Set[str], Set[str]]:
             continue
         for s in d.get("stories") or []:
             urls.add(s.get("url") or "")
-            fps.add(fingerprint(s))
+            fps.add(fingerprint(s)); fps.add(title_key(s))
             for a in s.get("also") or []:
                 urls.add(a.get("url") or "")
-                fps.add(fingerprint(a))
+                fps.add(fingerprint(a)); fps.add(title_key(a))
         for rows in (d.get("records") or {}).values():
             for r in rows:
                 urls.add(r.get("url") or "")
-                fps.add(fingerprint(r))
+                fps.add(fingerprint(r)); fps.add(title_key(r))
     urls.discard("")
     return urls, fps
 
@@ -123,6 +123,18 @@ def anchors_before(date: str, days: int = 21) -> List[Dict[str, Any]]:
                         "claimants": s.get("claimants") or [], "respondents": s.get("respondents") or [],
                         "states": s.get("states") or [], "case_ref": s.get("case_ref"),
                         "lang": s.get("lang") or "en", "also": []})
+    return out
+
+
+def people_before(date: str, days: int = 21) -> List[Dict[str, Any]]:
+    """Earlier days' people rows, as items the clustering can merge new copies into."""
+    cutoff = (dt.date.fromisoformat(date) - dt.timedelta(days=days)).isoformat()
+    out = []
+    for d in load_days():
+        if not (cutoff <= d["date"] < date):
+            continue
+        for r in (d.get("records") or {}).get("people") or []:
+            out.append({"title": r.get("title") or "", "url": r.get("url") or "", "also": [], "lang": "en"})
     return out
 
 

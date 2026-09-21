@@ -10,6 +10,7 @@ signup_email: aram@caselens.tech   # until signup_url is set, the subscribe box 
 lookback_days: 7
 max_items_per_issue: 12
 min_score: 20
+min_story_score: 65     # a story needs this much to be printed; a quiet day is short rather than padded
 
 # Watchlists. The number is added to a multiplier, so 0.5 means "half again as
 # interesting". Tune these - they are the difference between a generic digest
@@ -73,6 +74,28 @@ mute:
   - stock drops
   - shares slip
   - weigh on sentiment
+  - beer
+  - liquor
+  - cannabis
+  - marijuana
+  - vape
+  - crime-linked
+  - house race
+  - election
+  - campaign
+  - senate
+  - g.o.p.
+  - parlor
+  - restaurant
+  - ferrari
+  - world athletics
+  - doping
+  - olympic
+  - fifa
+  - uefa
+  - "attorneys-at-law |"
+  - "| boutique law firm"
+  - "| law firm |"
 
 sources:
   icsid: true

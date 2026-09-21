@@ -6,6 +6,7 @@ been instructed tells you the mandate is gone, which is just as useful as knowin
 one is open - it stops you chasing dead leads.
 """
 import calendar
+import html
 import re
 import datetime as dt
 from typing import Dict, Iterator, List
@@ -120,7 +121,7 @@ def run(days: int = 7, feeds: List[Dict[str, str]] = None) -> Iterator[Dict]:
             if published and published < cutoff:
                 continue
             summary = re.sub(r"<[^>]+>", " ", entry.get("summary", "") or "")
-            title = (entry.get("title") or "").strip()
+            title = html.unescape((entry.get("title") or "").strip())
             if feed.get("filter") and not relevant(title + " " + summary):
                 continue
             yield {

@@ -13,6 +13,7 @@ Two query families:
 """
 import calendar
 import datetime as dt
+import html as _html
 import re
 import urllib.parse as up
 from typing import Dict, Iterator, List
@@ -151,7 +152,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 continue
             seen.add(key)
             outlet = (e.get("source") or {}).get("title") or ""
-            clean_title = _TRAIL.sub("", title)[:300]
+            clean_title = _html.unescape(_TRAIL.sub("", title)[:300])
             summary = re.sub(r"<[^>]+>", " ", e.get("summary") or "")[:1500]
             majors = _majors(clean_title + " " + summary)
             item = {
@@ -177,7 +178,7 @@ def run(days: int = 7) -> Iterator[Dict]:
                 # A measure story needs an adverse act in the headline - a contract award,
                 # an import policy, a deal is not a measure - and only earns the lead
                 # weight when it names an investor who can pay.
-                if not _ADVERSE.search(clean_title):
+                if not _ADVERSE.search(clean_title) or re.search(r"\bseiz(?:e|es|ed|ing) (?:on|upon)\b", clean_title, re.I):
                     item["event_type"] = "commentary"
                 else:
                     item["event_type"] = "state_measure" if majors else "distress_event"
