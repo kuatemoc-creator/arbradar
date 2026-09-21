@@ -2,7 +2,7 @@ name: Daily issue
 
 on:
   schedule:
-    - cron: "0 3 * * *"        # 07:00 in Yerevan, every day
+    - cron: "0 16 * * *"       # 20:00 in Yerevan, every day: the day's events are in
   workflow_dispatch:
   push:
     paths:

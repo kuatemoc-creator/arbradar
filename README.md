@@ -35,7 +35,7 @@ a press summary that omits counsel is silence, not evidence.
 
 ## The daily run
 
-`.github/workflows/daily.yml` runs every day at 07:00 Yerevan time on GitHub
+`.github/workflows/daily.yml` runs every day at 20:00 Yerevan time on GitHub
 Actions: it restores the database from the `state` branch and the day archive
 from the published site, fetches every source, applies the rules, builds the
 issue, publishes the site to `gh-pages`, and saves the database back. The
