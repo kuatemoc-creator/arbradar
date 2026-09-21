@@ -148,7 +148,7 @@
    "id": 2535,
    "title": "ICSID renewable energy arbitration against Romania concludes with an award",
    "title_en": null,
-   "summary": "The Topic Tool shows you case law discussion for 3000+ topics and how concepts have been interpreted by a particular arbitrator, under a specific treaty…",
+   "summary": "EP Wind Project (Rom) Six, a Cypriot investor, brought the claim against Romania under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 May 2020. King & Spalding acts for the claimant. Derains & Gharavi, Paris, France and Trofin & Associates and Ministry of Economy, Energy, and Business Environment for Romania. The tribunal is Maxi Scherer (appointed), presiding; Charles Poncet (claimant appointee); Joe Smouha (respondent appointee). On 14 September 2026, the Tribunal renders its award.",
    "summary_en": null,
    "url": "https://www.iareporter.com/articles/icsid-renewable-energy-arbitration-against-romania-concludes-with-an-award/",
    "source": "IAReporter",
@@ -157,7 +157,7 @@
    "published_at": "2026-09-18",
    "institution": "ICSID",
    "treaty": null,
-   "case_ref": null,
+   "case_ref": "ARB/20/15",
    "claimants": [],
    "respondents": [],
    "states": [
@@ -171,7 +171,13 @@
    "amount_usd": null,
    "flag_reason": "matched ‘award’ in the text | held over from the previous day",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "ICSID docket",
+     "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/20/15",
+     "title": "EP Wind Project (Rom) Six v. Romania — the Tribunal renders its award"
+    }
+   ],
    "lang": "en",
    "country": null,
    "tier": "development",
