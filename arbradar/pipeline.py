@@ -531,7 +531,8 @@ def reclassify(conn, settings, days: int = 21) -> int:
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     n = 0
     from .sources.gnews import measure_label
-    for r in conn.execute("SELECT * FROM items WHERE COALESCE(llm_stage,'none')='none' AND published_at>=? "
+    for r in conn.execute("SELECT * FROM items WHERE COALESCE(llm_stage,'none')='none' "
+                          "AND COALESCE(published_at, substr(fetched_at,1,10))>=? "
                           "AND source NOT LIKE 'Court:%' AND source<>'ICSID docket'", (cutoff,)).fetchall():
         it = db.row_to_dict(r)
         before = it.get("event_type")

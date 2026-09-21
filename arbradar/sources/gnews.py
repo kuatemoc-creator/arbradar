@@ -121,7 +121,7 @@ _ADVERSE = re.compile(
     r"revoc|cancel|rescind|caduc|expropi|nacionaliz|incaut|embarg|suspend|prohíb|bloque|congel|"
     r"аннулир|отозв|отзыв|расторг|национализ|экспроприац|арест|изъят|заморо|приостанов|запрет|"
     r"анулю|скасув|розірв|націоналізац|експропріац|iptal|fesh|kamulaştır|millileştir|el koy|askıya|"
-    r"retir|annul|résili|nationalis|exproprie|saisi|gel[ée]|interdi|suspend", re.I)
+    r"retir|annul|résili|nationalis(?:ation|é|e\b)|exproprie|saisi|gel[ée]|interdi|suspend", re.I)
 
 
 _IDIOM = re.compile(r"\bseiz(?:e|es|ed|ing)\b.{0,60}?(?:\bon\b|\bupon\b|opportunit|chance|moment|initiative|window period|"
