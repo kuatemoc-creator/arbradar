@@ -67,6 +67,116 @@
    "tier": "development",
    "slug": "2026-09-21-gujarat-government-is-not-serious-about-expeditious-disposal-of-arbitr.html",
    "event": "Commercial arbitration"
+  },
+  {
+   "id": 2553,
+   "title": "Ex-YPF Investors Take Argentina To ICSID Over 2012 Seizure",
+   "title_en": null,
+   "summary": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2526129?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": "ICSID",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Argentina"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘nationaliz’ in the text | held over from the previous day",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "tier": "development",
+   "slug": "2026-09-21-ex-ypf-investors-take-argentina-to-icsid-over-2012-seizure.html",
+   "event": "State measure"
+  },
+  {
+   "id": 2530,
+   "title": "Italy seeks to annul Veolia award",
+   "title_en": null,
+   "summary": "Italy has applied to annul an Energy Charter Treaty award that required it to pay €86 million to French environmental services group Veolia for breaching two waste treatment concessions.",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/italy-seeks-annul-veolia-award",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Veolia"
+   ],
+   "respondents": [],
+   "states": [
+    "Italy"
+   ],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘award’ in the text | held over from the previous day",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5LR3AwUHRFeVB4b3JrY002MnZUUTFUUUVzY3pfM0J2SkRGQkYtamwxeVJMdlFVcUFONHVLX05tOExEQ1BydHY1UVRtYVlHYnJrWFZ2MDFUQjhweXExVWplY2Y5dWtGMnJXQXc2OWpKTEVjNVhjSW4yMXdEZFBWSWc?oc=5",
+     "title": "Italy seeks to annul Veolia award"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-italy-seeks-to-annul-veolia-award.html",
+   "event": "Award"
+  },
+  {
+   "id": 2535,
+   "title": "ICSID renewable energy arbitration against Romania concludes with an award",
+   "title_en": null,
+   "summary": "The Topic Tool shows you case law discussion for 3000+ topics and how concepts have been interpreted by a particular arbitrator, under a specific treaty…",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/icsid-renewable-energy-arbitration-against-romania-concludes-with-an-award/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-18",
+   "institution": "ICSID",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Romania"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘award’ in the text | held over from the previous day",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-icsid-renewable-energy-arbitration-against-romania-concludes-with-an-a.html",
+   "event": "Award"
   }
  ],
  "records": {
