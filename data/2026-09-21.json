@@ -1,7 +1,264 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Medvedev called for a move toward the mass seizure of Western companie",
+ "subject": "ArbRadar · 21 September 2026 — Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfi",
  "stories": [
+  {
+   "id": 4264,
+   "title": "NTPC terminates Rs 413 crore Mouda BESS contract after contractor default",
+   "title_en": null,
+   "summary": "NTPC Ltd has terminated a Rs 413.37 crore contract awarded to GR Infraprojects Ltd (GRIL) for a 400 MWh Battery Energy Storage System (BESS) project at its Mouda Super Thermal Power Station…",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNbEFYM3pZTHlHYjhKNXUwamE0R1RQSnh0T2hVYnVIREZ5cE1Na0JxTlFoakNGX1kwTEVmdXN2Si1KS01SUlJpcTlFdm83SUFZT0xhVnVQY294OFphMW00YmJjV0lCV2NTc09xTUV3Q2c5d3BoVGs2VThWMFhzVjJOR0EzbXgxRVdWS2RzNlJwemhXb1IwcGROdmhVUGlDS3BWNlJxV0l1MXA1aVA2ZzJEOEN2STlyczRjWExxdTU5X1JkdFM2TmhVY1ZDUEVGNnRaNmtXNGt0ZHZnWC1MY3JUNzcyc9IB6AFBVV95cUxPcnpnbWJxMFNEbDNkcVB0OUdGdXVJUEh0QUZiLW9TSkN1dkktLVdHcm5ENWpSd3VReU43Um9FcWc0dWV0MkNmcGFmcUM2RFRQMW9tYkNRXzduMkVFalhIaHp0RXA1M2s5cWpPYllyRDZNYUg0Q1RDcXhKMEZKZWx2QlpmUDFtakdmZ2hOQmVqeE11VU1HMUJ2SEpHVHZGekU3M1Q0LWhuWm16UTNwdkxLdDNCR1NMNHkzbmJiZ3lPa2JPdjMwMVNFS3l3T3dwVUNvcVR0ZmF0dEFHLTZneGhKdzhUdnhVak9f?oc=5",
+   "source": "Google News / The Economic Times",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "India"
+   ],
+   "sectors": [
+    "Power & renewables",
+    "Construction"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / pv magazine India",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPR185SkkyTHNCeUJNb2U5d3hfVUlRU21LYVNhWUtSTHREQklpb1E2SlN5LXEwcGZBa2trdzg5V3hDVXlndnNIUXZLSExMZWVjVy0tSVFGTWFIMm1SWGZ3NlBaWS1yOUFyMzh5RFEwQ0dDYXZQb2kxQ0lhUFJMVVpHSWtERkxIa1lxbFlaQ1o0QUZlM1dtd05KZ1ptck9wVFhyYWJrbG1fVTBpREhUQ3pZZ3c4YjM2UmtlUS1sR0RaTHJRZi1iYWhmTFl4bVhJTWw5dmc?oc=5",
+     "title": "NTPC terminates 400 MWh BESS contract at Mouda thermal power plant over contractor default"
+    },
+    {
+     "source": "Google News / solarquarter.com",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaFR3bUgteUpIblR5d0VobEo3bGI4TjI3LTJ6R3V4M1hYMnhXdnVwMHBjZzlhQTVubTllUlNzX2prdzRJejFYNGpwUl9SeEVsMndOUndPdFlXbTRkRHpIS1VMWmZWU2JGTUJYcnhsbzRjNnkyek55M05wUXBDbTY3TzJxZzMwcTduMVY5NGliYTQ4cjhtMTZXTzFfY3VuZFBaQ1pWbVlVakZQblRpbEFJSGZmZ3NmYnFHMUEyR2N5Uk9pTktTTkMybmhJWVZTVWs?oc=5",
+     "title": "G R Infraprojects Terminates NTPC Mouda BESS Contract, Faces INR 90.86 Crore Guarantee Invocations"
+    },
+    {
+     "source": "Google News / ET EnergyWorld",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOLUUzY3RaTXo3ejYySmFzd0FmenU1NWM2OUd5OUo0N1M1WjFtZ1NSWDN5dlh3bWxnNWsyTXlIMllsTjZXRFBhN2V4X1dLSFpHVFNuTkItSVh1N3JzVlFYRG1mLV9CZ2xUcDZZbWpQYVVTSkJmQjZBTDFYRUpVLV9sWnQ1WGQ4dkpSUld3bkw4ZkthYnI0YTB5Tlc5Wm5Ocm9pNUFST0ZLNE5yRmwtczdIeVY3TTJhYkVWSUkxSGxYdmQ3UnJrbnQ1dHpZbHoxaEVY0gHWAUFVX3lxTE4zd180QjJRaW0tS084QTRkdi1WQ2ZJN0pOQ2hmU3dCd00tUjVvRUVmVmt6YmhfR29vNDF2WEVlMUdRY1A4Tm9UTXhjTURJeFV1c3RaalRJVTRFVEdqd2g0YmJZVkRnRnBORVdMeGJtMG9QekVYWHRBeHFib1cwdU8tNTBRcHc4MENRVUN5MjFZbHpRUnA0ZTd1cVBpTzY0SFo0WDlaQzhQem90dXBkUjlQdTdLWGkxN3ZPbU1zQ2RFV3hxZHJ3LTNvTnBhWndNME1ycHV4Z1E?oc=5",
+     "title": "NTPC terminates ₹413 crore Mouda BESS contract after contractor default"
+    },
+    {
+     "source": "Google News / msn.com",
+     "url": "https://www.msn.com/en-in/politics/government/ntpc-terminates-rs-413-crore-mouda-bess-contract-after-contractor-default/ar-AA2cz4Nu",
+     "title": "NTPC terminates ₹413 crore BESS contract as contractor fails to meet obligations, achieve progress"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "lead",
+   "slug": "2026-09-21-ntpc-terminates-rs-413-crore-mouda-bess-contract-after-contractor-defa.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4280,
+   "title": "State Grid Changzhou Power Supply Company Seizes High-Speed Railway 'Window Period' to Complete Power Line Construction Crossing High-Speed Railway",
+   "title_en": null,
+   "summary": "In the early hours of September 17, taking advantage of the nighttime suspension window of the Nanjing-Hangzhou High-Speed Railway…",
+   "summary_en": null,
+   "url": "https://finance.yahoo.com/energy/articles/state-grid-changzhou-power-supply-045100427.html",
+   "source": "Google News / finance.yahoo.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Power & renewables",
+    "Construction",
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-state-grid-changzhou-power-supply-company-seizes-high-speed-railway-wi.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4267,
+   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+   "title_en": null,
+   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
+   "summary_en": null,
+   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
+   "source": "Google News / thehindu.com",
+   "source_tier": 2,
+   "event_type": "state_measure",
+   "published_at": "2026-09-20",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Pfizer"
+   ],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); investor of means named: Pfizer",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4277,
+   "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill",
+   "title_en": null,
+   "summary": "President Donald Trump has signed a major sanctions package targeting Russian officials and key sectors of its…",
+   "summary_en": null,
+   "url": "https://www.washingtonpost.com/politics/2026/09/18/donald-trump-russia-sanctions-ukraine-lindsey-graham/4ff0e606-b3ae-11f1-92c2-5c918f4a6127_story.html",
+   "source": "Google News / washingtonpost.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Russia"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-russia-takes-control-of-us-factory-on-putin-s-order-days-after-trump-s.html",
+   "event": "State measure"
+  },
+  {
+   "id": 3947,
+   "title": "YPF investors launch claim against Argentina",
+   "title_en": null,
+   "summary": "Former shareholders in oil and gas operator YPF have made good on their threat to file an investment treaty claim against Argentina over its nationalisation after a US$16 billion US court judgment in their favour was overturned.",
+   "summary_en": null,
+   "url": "https://latinlawyer.com/article/ypf-investors-launch-claim-against-argentina",
+   "source": "Latin Lawyer (Global)",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Argentina"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘nationalis’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "tier": "development",
+   "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4272,
+   "title": "Czech government reinstates fuel margin caps, plans windfall tax on refineries",
+   "title_en": null,
+   "summary": "PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax for the month of October…",
+   "summary_en": null,
+   "url": "https://www.msn.com/en-gb/politics/government/czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-refineries/ar-AA2cGxK7",
+   "source": "Google News / msn.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Czechia",
+    "United Kingdom"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4534,
+   "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
+   "title_en": null,
+   "summary": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October…",
+   "summary_en": null,
+   "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
+   "source": "Google News / stockholmcf.org",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Turkey"
+   ],
+   "sectors": [
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (Zimbabwe edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Zimbabwe",
+   "tier": "development",
+   "slug": "2026-09-21-turkey-seized-1-326-companies-32-billion-in-assets-in-g-len-crackdown-.html",
+   "event": "State measure"
+  },
   {
    "id": 2703,
    "title": "Medvedev called for a move toward the mass seizure of Western companies' assets",
@@ -25,164 +282,12 @@
    "amount_usd": null,
    "flag_reason": "matched ‘seizure of’ in the text",
    "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Around Prague",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN0RKVVVfSHVxTXlUR3d6cUpYbTBRTmNHQ050V1k1a0VXV3paYXlUNElDRkFkUGg1aEZRbEkwVjFKWVhoREFjZm5zTldNdHFsUzEzQnk5ZkZnUGlEMHlHYjdYZ3paRVJfd18yaUJXWWdaS3RJXzlLa1RPVXJSYnV3a3pEaVk1TnQwYTJSc1FSWUxMR0x0SmdDSk82YTl2c2phSmJYdlg1ZHk3RXhfbHNnOWdR?oc=5",
-     "title": "Medvedev Calls New US Sanctions \"Russophobic Filth,\" Threatens Europe with Nationalization"
-    }
-   ],
+   "also": [],
    "lang": "en",
    "country": null,
-   "tier": "lead",
+   "tier": "brief",
    "slug": "2026-09-21-medvedev-called-for-a-move-toward-the-mass-seizure-of-western-companie.html",
    "event": "State measure"
-  },
-  {
-   "id": 3590,
-   "title": "Gujarat government is not serious about expeditious disposal of arbitration cases: Former Justice Harsha Devani",
-   "title_en": null,
-   "summary": "Born in Amreli district of Gujarat, Justice Harsha Devani’s path to the judiciary was anything but conventional.",
-   "summary_en": null,
-   "url": "https://www.barandbench.com/interviews/gujarat-government-is-not-serious-about-expeditious-disposal-of-arbitration-cases-former-justice-harsha-devani",
-   "source": "Google News / barandbench.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-19",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-gujarat-government-is-not-serious-about-expeditious-disposal-of-arbitr.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "id": 2553,
-   "title": "Ex-YPF Investors Take Argentina To ICSID Over 2012 Seizure",
-   "title_en": null,
-   "summary": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF.",
-   "summary_en": null,
-   "url": "https://www.law360.com/internationalarbitration/articles/2526129?utm_source=rss&utm_medium=rss&utm_campaign=section",
-   "source": "Law360 International Arbitration (Global)",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-18",
-   "institution": "ICSID",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Argentina"
-   ],
-   "sectors": [
-    "Oil & gas"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "matched ‘nationaliz’ in the text | held over from the previous day",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Global",
-   "tier": "development",
-   "slug": "2026-09-21-ex-ypf-investors-take-argentina-to-icsid-over-2012-seizure.html",
-   "event": "State measure"
-  },
-  {
-   "id": 2530,
-   "title": "Italy seeks to annul Veolia award",
-   "title_en": null,
-   "summary": "Italy has applied to annul an Energy Charter Treaty award that required it to pay €86 million to French environmental services group Veolia for breaching two waste treatment concessions.",
-   "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/italy-seeks-annul-veolia-award",
-   "source": "GAR",
-   "source_tier": 2,
-   "event_type": "award_issued",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [
-    "Veolia"
-   ],
-   "respondents": [],
-   "states": [
-    "Italy"
-   ],
-   "sectors": [
-    "Mining & metals"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "matched ‘award’ in the text | held over from the previous day",
-   "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Global Arbitration Review",
-     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5LR3AwUHRFeVB4b3JrY002MnZUUTFUUUVzY3pfM0J2SkRGQkYtamwxeVJMdlFVcUFONHVLX05tOExEQ1BydHY1UVRtYVlHYnJrWFZ2MDFUQjhweXExVWplY2Y5dWtGMnJXQXc2OWpKTEVjNVhjSW4yMXdEZFBWSWc?oc=5",
-     "title": "Italy seeks to annul Veolia award"
-    }
-   ],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-italy-seeks-to-annul-veolia-award.html",
-   "event": "Award"
-  },
-  {
-   "id": 2535,
-   "title": "ICSID renewable energy arbitration against Romania concludes with an award",
-   "title_en": null,
-   "summary": "EP Wind Project (Rom) Six, a Cypriot investor, brought the claim against Romania under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 May 2020. King & Spalding acts for the claimant. Derains & Gharavi, Paris, France and Trofin & Associates and Ministry of Economy, Energy, and Business Environment for Romania. The tribunal is Maxi Scherer (appointed), presiding; Charles Poncet (claimant appointee); Joe Smouha (respondent appointee). On 14 September 2026, the Tribunal renders its award.",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/icsid-renewable-energy-arbitration-against-romania-concludes-with-an-award/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "award_issued",
-   "published_at": "2026-09-18",
-   "institution": "ICSID",
-   "treaty": null,
-   "case_ref": "ARB/20/15",
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Romania"
-   ],
-   "sectors": [
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "matched ‘award’ in the text | held over from the previous day",
-   "why_it_matters": null,
-   "also": [
-    {
-     "source": "ICSID docket",
-     "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/20/15",
-     "title": "EP Wind Project (Rom) Six v. Romania — the Tribunal renders its award"
-    }
-   ],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-icsid-renewable-energy-arbitration-against-romania-concludes-with-an-a.html",
-   "event": "Award"
   }
  ],
  "records": {
