@@ -159,24 +159,25 @@ def _switcher(days: List[Dict[str, Any]], current: str) -> str:
     return '<nav class="days" aria-label="Issues by day">{}</nav>'.format("".join(links))
 
 
-def _story_row(s: Dict[str, Any]) -> str:
+def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
+    """Headline, explanation, source and date - the same shape as the email."""
+    from .email_html import _clip as clip_chars, summary_of
     when = str(s.get("published_at") or "")[:10]
     try:
-        when_label = short_label(when)
+        d = dt.date.fromisoformat(when)
+        when_label = "{} {}".format(d.day, d.strftime("%B"))
     except ValueError:
         when_label = ""
     outlet = (s.get("source") or "").replace("Google News / ", "")
     outlet = re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", outlet)
-    summary = _clip(s.get("summary_en") or s.get("summary") or "")
-    if summary.lower().startswith((s.get("title") or "").lower()[:40]):
-        summary = ""
-    meta = " · ".join(x for x in (outlet, when_label) if x)
-    return ('<div class="item"><div class="d">{ev}</div><div>'
-            '<a class="h" href="{slug}">{h}</a>{p}<div class="meta"><a href="{url}" rel="noopener">{meta}</a></div></div></div>').format(
-        ev=html.escape(s.get("event") or ""), slug=html.escape(s.get("slug") or "#"),
+    body = clip_chars(summary_of(s), 620 if lead else 520)
+    tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
+        html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
+    return ('<article class="story{lead}"><h2><a href="{slug}">{h}</a></h2>'
+            '<p>{p}{sp}{tail}</p></article>').format(
+        lead=" lead" if lead else "", slug=html.escape(s.get("slug") or "#"),
         h=html.escape(s.get("title_en") or s.get("title") or ""),
-        p="<p>{}</p>".format(html.escape(summary)) if summary else "",
-        url=html.escape(s.get("url") or "#"), meta=html.escape(meta))
+        p=html.escape(body), sp=" " if body else "", tail=tail)
 
 
 def _record_rows(rows: List[Dict[str, Any]]) -> str:
@@ -208,7 +209,7 @@ def render_day(day: Dict[str, Any], days: List[Dict[str, Any]], settings) -> str
         _switcher(days, date),
         "<h1>{}</h1>".format(html.escape(settings.tagline)),
         _signup(settings),
-        '<div class="list">{}</div>'.format("".join(_story_row(s) for s in main)),
+        '<div class="stories">{}</div>'.format("".join(_story_row(s, lead=(i == 0)) for i, s in enumerate(main))),
     ]
     if briefs:
         parts.append('<h2 class="sec">In brief</h2><ul class="brief">{}</ul>'.format("".join(

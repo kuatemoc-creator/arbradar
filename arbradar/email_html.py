@@ -308,8 +308,10 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 
     sections = []
-    stories = [lead] + devs                  # the brief tier is noise without an editor; it stays out
+    stories = [lead] + devs
     sections.append("".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories, start=1)))
+    if briefs:                               # the same short list the day page shows
+        sections.append(label("In brief", mb=4) + brief(briefs))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
                          ("courts", "In the courts"), ("people", "People and appointments")):
         rows = (extras or {}).get(key) or []

@@ -172,6 +172,14 @@ border-radius:0 10px 10px 0;margin:28px 0}
 .item{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--hair)}
 .item .d{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:8px}
 .item .meta{margin-top:6px;font-size:.8125rem}.item .meta a{color:var(--mute);text-decoration:none}.item .meta a:hover{color:var(--link)}
+.stories{display:flex;flex-direction:column}
+.story{padding:20px 0 22px;border-bottom:1px solid var(--line)}
+.story.lead{padding-top:6px}
+.story h2{font-family:var(--display);font-size:1.3125rem;line-height:1.28;font-weight:700;letter-spacing:-.01em;margin:0 0 9px;text-wrap:balance}
+.story.lead h2{font-size:1.6875rem;line-height:1.18}
+.story h2 a{color:var(--ink);text-decoration:none}.story h2 a:hover{color:var(--link)}
+.story p{margin:0;font-size:1.0625rem;line-height:1.5;color:var(--ink);max-width:64ch}
+.story .tail{color:var(--mute);white-space:nowrap}.story .tail a{color:var(--mute)}
 .days{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
 .days a{font-size:.8125rem;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);text-decoration:none}
 .days a:hover{border-color:var(--ink);color:var(--ink)}.days a[aria-current]{background:var(--ink);color:#fff;border-color:var(--ink)}
