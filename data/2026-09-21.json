@@ -1,15 +1,80 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfi",
+ "subject": "ArbRadar · 21 September 2026 — Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
  "stories": [
   {
-   "id": 4264,
-   "title": "NTPC terminates Rs 413 crore Mouda BESS contract after contractor default",
+   "id": 4310,
+   "title": "Government Ends Turkish Firm’s Indian Navy Ship Contract on National Security Grounds; Delhi High Court Prima Facie Holds Sovereign Decision Cannot Be Arbitrated",
    "title_en": null,
-   "summary": "NTPC Ltd has terminated a Rs 413.37 crore contract awarded to GR Infraprojects Ltd (GRIL) for a 400 MWh Battery Energy Storage System (BESS) project at its Mouda Super Thermal Power Station…",
+   "summary": "Government Removes Turkish Company From Indian Navy Fleet Support Ship Project…",
    "summary_en": null,
-   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNbEFYM3pZTHlHYjhKNXUwamE0R1RQSnh0T2hVYnVIREZ5cE1Na0JxTlFoakNGX1kwTEVmdXN2Si1KS01SUlJpcTlFdm83SUFZT0xhVnVQY294OFphMW00YmJjV0lCV2NTc09xTUV3Q2c5d3BoVGs2VThWMFhzVjJOR0EzbXgxRVdWS2RzNlJwemhXb1IwcGROdmhVUGlDS3BWNlJxV0l1MXA1aVA2ZzJEOEN2STlyczRjWExxdTU5X1JkdFM2TmhVY1ZDUEVGNnRaNmtXNGt0ZHZnWC1MY3JUNzcyc9IB6AFBVV95cUxPcnpnbWJxMFNEbDNkcVB0OUdGdXVJUEh0QUZiLW9TSkN1dkktLVdHcm5ENWpSd3VReU43Um9FcWc0dWV0MkNmcGFmcUM2RFRQMW9tYkNRXzduMkVFalhIaHp0RXA1M2s5cWpPYllyRDZNYUg0Q1RDcXhKMEZKZWx2QlpmUDFtakdmZ2hOQmVqeE11VU1HMUJ2SEpHVHZGekU3M1Q0LWhuWm16UTNwdkxLdDNCR1NMNHkzbmJiZ3lPa2JPdjMwMVNFS3l3T3dwVUNvcVR0ZmF0dEFHLTZneGhKdzhUdnhVak9f?oc=5",
-   "source": "Google News / The Economic Times",
+   "url": "https://rawlaw.in/government-ends-turkish-firms-indian-navy-ship-contract-on-national-security-grounds-delhi-high-court-prima-facie-holds-sovereign-decision-cannot-be-arbitrated/",
+   "source": "Google News / rawlaw.in",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Turkey",
+    "India"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "lead",
+   "slug": "2026-09-21-government-ends-turkish-firm-s-indian-navy-ship-contract-on-national-s.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "id": 4267,
+   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+   "title_en": null,
+   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
+   "summary_en": null,
+   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
+   "source": "Google News / thehindu.com",
+   "source_tier": 2,
+   "event_type": "state_measure",
+   "published_at": "2026-09-20",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Pfizer"
+   ],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); investor of means named: Pfizer",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4264,
+   "title": "NTPC terminates 400 MWh BESS contract at Mouda thermal power plant over contractor default",
+   "title_en": null,
+   "summary": "NTPC Ltd has terminated the contract awarded to GR Infraprojects Ltd (GRIL) for the 400 MWh battery energy storage system (BESS) project at Mouda Super Thermal Power Station, Maharashtra…",
+   "summary_en": null,
+   "url": "https://www.pv-magazine-india.com/2026/09/21/ntpc-terminates-400-mwh-bess-contract-at-mouda-thermal-power-plant-over-contractor-default/",
+   "source": "Google News / pv-magazine-india.com",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-21",
@@ -32,11 +97,6 @@
    "why_it_matters": null,
    "also": [
     {
-     "source": "Google News / pv magazine India",
-     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPR185SkkyTHNCeUJNb2U5d3hfVUlRU21LYVNhWUtSTHREQklpb1E2SlN5LXEwcGZBa2trdzg5V3hDVXlndnNIUXZLSExMZWVjVy0tSVFGTWFIMm1SWGZ3NlBaWS1yOUFyMzh5RFEwQ0dDYXZQb2kxQ0lhUFJMVVpHSWtERkxIa1lxbFlaQ1o0QUZlM1dtd05KZ1ptck9wVFhyYWJrbG1fVTBpREhUQ3pZZ3c4YjM2UmtlUS1sR0RaTHJRZi1iYWhmTFl4bVhJTWw5dmc?oc=5",
-     "title": "NTPC terminates 400 MWh BESS contract at Mouda thermal power plant over contractor default"
-    },
-    {
      "source": "Google News / solarquarter.com",
      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaFR3bUgteUpIblR5d0VobEo3bGI4TjI3LTJ6R3V4M1hYMnhXdnVwMHBjZzlhQTVubTllUlNzX2prdzRJejFYNGpwUl9SeEVsMndOUndPdFlXbTRkRHpIS1VMWmZWU2JGTUJYcnhsbzRjNnkyek55M05wUXBDbTY3TzJxZzMwcTduMVY5NGliYTQ4cjhtMTZXTzFfY3VuZFBaQ1pWbVlVakZQblRpbEFJSGZmZ3NmYnFHMUEyR2N5Uk9pTktTTkMybmhJWVZTVWs?oc=5",
      "title": "G R Infraprojects Terminates NTPC Mouda BESS Contract, Faces INR 90.86 Crore Guarantee Invocations"
@@ -45,17 +105,12 @@
      "source": "Google News / ET EnergyWorld",
      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOLUUzY3RaTXo3ejYySmFzd0FmenU1NWM2OUd5OUo0N1M1WjFtZ1NSWDN5dlh3bWxnNWsyTXlIMllsTjZXRFBhN2V4X1dLSFpHVFNuTkItSVh1N3JzVlFYRG1mLV9CZ2xUcDZZbWpQYVVTSkJmQjZBTDFYRUpVLV9sWnQ1WGQ4dkpSUld3bkw4ZkthYnI0YTB5Tlc5Wm5Ocm9pNUFST0ZLNE5yRmwtczdIeVY3TTJhYkVWSUkxSGxYdmQ3UnJrbnQ1dHpZbHoxaEVY0gHWAUFVX3lxTE4zd180QjJRaW0tS084QTRkdi1WQ2ZJN0pOQ2hmU3dCd00tUjVvRUVmVmt6YmhfR29vNDF2WEVlMUdRY1A4Tm9UTXhjTURJeFV1c3RaalRJVTRFVEdqd2g0YmJZVkRnRnBORVdMeGJtMG9QekVYWHRBeHFib1cwdU8tNTBRcHc4MENRVUN5MjFZbHpRUnA0ZTd1cVBpTzY0SFo0WDlaQzhQem90dXBkUjlQdTdLWGkxN3ZPbU1zQ2RFV3hxZHJ3LTNvTnBhWndNME1ycHV4Z1E?oc=5",
      "title": "NTPC terminates ₹413 crore Mouda BESS contract after contractor default"
-    },
-    {
-     "source": "Google News / msn.com",
-     "url": "https://www.msn.com/en-in/politics/government/ntpc-terminates-rs-413-crore-mouda-bess-contract-after-contractor-default/ar-AA2cz4Nu",
-     "title": "NTPC terminates ₹413 crore BESS contract as contractor fails to meet obligations, achieve progress"
     }
    ],
    "lang": "en",
    "country": null,
-   "tier": "lead",
-   "slug": "2026-09-21-ntpc-terminates-rs-413-crore-mouda-bess-contract-after-contractor-defa.html",
+   "tier": "development",
+   "slug": "2026-09-21-ntpc-terminates-400-mwh-bess-contract-at-mouda-thermal-power-plant-ove.html",
    "event": "State measure"
   },
   {
@@ -93,35 +148,73 @@
    "event": "State measure"
   },
   {
-   "id": 4267,
-   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+   "id": 4307,
+   "title": "Afcons Infrastructure wins arbitration award of ₹148.67 crores",
    "title_en": null,
-   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
+   "summary": "Shares of Afcons Infrastructure gained as much as 4.40% during Tuesday’s trading session, touching an intraday high of Rs 290.90…",
    "summary_en": null,
-   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
-   "source": "Google News / thehindu.com",
+   "url": "https://www.msn.com/en-in/news/other/afcons-infrastructure-shares-rally-4-after-receiving-rs-3355-crore-arbitration-award/ar-AA2aRB7J",
+   "source": "Google News / msn.com",
    "source_tier": 2,
-   "event_type": "state_measure",
+   "event_type": "commercial_dispute",
    "published_at": "2026-09-20",
    "institution": null,
    "treaty": null,
    "case_ref": null,
-   "claimants": [
-    "Pfizer"
-   ],
+   "claimants": [],
    "respondents": [],
    "states": [],
-   "sectors": [],
+   "sectors": [
+    "Construction"
+   ],
    "counsel": [],
    "arbitrators": [],
    "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); investor of means named: Pfizer",
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Demócrata",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRWNuaU1aczJkaDBJYjE2ZlBkV0pZRUZ4QmZYSVhGdUZVUlZUd2ZVeGVNbVp2djlHd2Y1bFNCb0ZWcDZ0U2Q2a2ZEMjMtcnVDSXJrU0N5eWV6bnhGYjhuOGRnV2NBNGhvdWRHMVM1X3cyM1pkb3dib0NKaGYzZmxCajIxZjRRMDNwRW80LVdmc3BrcU9veGFUOWpEQTJ3ZjJVbDBNeDZUYjJXTlRuSlpGNzVob3kwVE9xUTZsSEpqenBfS2FBZnpj0gHMAUFVX3lxTE1qbW1HME4wRGVYMVc0V0dWcWpqU01VaG1jSFF4cHUtdTJIOWlicm5VdkRkaXdVaDVYYkg1cXFzNWctc0poQXdzbEVqdTVtbnRqQjZWR1ktb2dxby1YT1ozb21vN21uZkRETzh6YXdlMlFoQTJBREFQdXZFLURreGV3YkxjTV9xRXJfcm9rZG02N3doUFI2YXN6aTliR0hGSFFISVVTekNlWUxaT0tVcHE5ZGVIN2otY09mRTVfMk94VDNLSXQ1dXhjUk1ZQw?oc=5",
+     "title": "Cox obtains an arbitration award of 235 million dollars for the desalination plant in Accra"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-21-afcons-infrastructure-wins-arbitration-award-of-148-67-crores.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "id": 4137,
+   "title": "NSCDC Tragedy: MSA Calls For Arrest Of ‘Bigwigs’ Profiting From Illegal Mining, Calls For Nationalisation Of Mines",
+   "title_en": null,
+   "summary": "Niger State governor, Mohammed Umaru Bago, says the state government was not aware of the arrest and detention of the suspected illegal miners who later…",
+   "summary_en": null,
+   "url": "https://leadership.ng/niger-tragedy-we-had-no-knowledge-of-37-illegal-miners-arrest-governor-bago/",
+   "source": "Google News / leadership.ng",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘nationalis’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
    "tier": "development",
-   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
+   "slug": "2026-09-21-nscdc-tragedy-msa-calls-for-arrest-of-bigwigs-profiting-from-illegal-m.html",
    "event": "State measure"
   },
   {
@@ -186,7 +279,7 @@
    "also": [],
    "lang": "en",
    "country": "Global",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
    "event": "State measure"
   },
@@ -221,7 +314,7 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-21-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
    "event": "State measure"
   },
@@ -255,7 +348,7 @@
    "also": [],
    "lang": "en",
    "country": "Zimbabwe",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-21-turkey-seized-1-326-companies-32-billion-in-assets-in-g-len-crackdown-.html",
    "event": "State measure"
   },
