@@ -136,33 +136,104 @@ def page_summary(url: str) -> str:
     return ""
 
 
-def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
-    """Fill in text for featured items that have none. Writes back to the DB."""
-    from . import db
+_PROMO = re.compile(r"subscribe|sign up|newsletter|cookie|click here|read more|topic tool|3000\+ topics|"
+                    r"log in|register to|free trial|all rights reserved|terms of use|privacy policy", re.I)
+_STOP = {"about", "after", "against", "amid", "before", "between", "court", "from", "over", "says", "said",
+         "that", "their", "there", "these", "this", "under", "what", "when", "which", "while", "with", "would",
+         "your", "into", "than", "them", "then", "they", "were", "will", "have", "been", "being", "more", "most"}
+
+
+def _stems(text: str) -> set:
+    return {w[:5] for w in re.findall(r"[a-z0-9]{4,}", (text or "").lower()) if w not in _STOP}
+
+
+def relevant_summary(title: str, text: str) -> bool:
+    """An explanation must be prose about the headline's subject: not a paywall
+    notice, not the site's promotion, not the headline repeated, and it must
+    share content words with the headline - two of them, or one that is a name."""
     from .pipeline import is_paywall
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).replace("\xa0", " ").strip()
+    if not text or len(text.split()) < 8:
+        return False
+    if is_paywall(text) or _PROMO.search(text):
+        return False
+    if text.lower().startswith((title or "").lower()[:40]):
+        return False
+    tt, st = _stems(title), _stems(text)
+    if not tt:
+        return True
+    shared = tt & st
+    names = {w.lower()[:5] for w in re.findall(r"\b[A-Z][a-zA-Z]{3,}", title or "")}
+    return len(shared) >= 2 or bool(shared & names)
+
+
+def match_docket(conn, it: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """The one ICSID docket entry a press story is about: same State, same kind of
+    step, within a fortnight. None unless the match is unambiguous."""
+    import datetime as dt
+    from . import db
+    text = ((it.get("title") or "") + " " + (it.get("summary") or "")).lower()
+    if "icsid" not in text and "investment treaty" not in text:
+        return None
+    kinds = []
+    if re.search(r"award|concludes|rules|damages|dismiss", text):
+        kinds.append("award_issued")
+    if re.search(r"annul|set aside|committee", text):
+        kinds.append("annulment_setaside")
+    if re.search(r"registered|files|filed|lodge|brings|takes .* to icsid|new case", text):
+        kinds.append("new_case_filed")
+    if not kinds:
+        return None
+    states = [s.lower() for s in (it.get("states") or [])]
+    if not states:
+        return None
+    when = str(it.get("published_at") or dt.date.today().isoformat())[:10]
+    try:
+        base = dt.date.fromisoformat(when)
+    except ValueError:
+        base = dt.date.today()
+    lo, hi = (base - dt.timedelta(days=14)).isoformat(), (base + dt.timedelta(days=3)).isoformat()
+    rows = [db.row_to_dict(r) for r in conn.execute(
+        "SELECT * FROM items WHERE source='ICSID docket' AND published_at BETWEEN ? AND ? AND event_type IN ({})".format(
+            ",".join("?" * len(kinds))), [lo, hi] + kinds)]
+    hits = [r for r in rows if any(s.lower() in states for s in (r.get("states") or []))]
+    return hits[0] if len(hits) == 1 else None
+
+
+def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
+    """Give every featured story an explanation that is about the story. Writes
+    back to the DB. Candidates in order: the ICSID docket's own prose, a search
+    snippet, the article page. Each is checked against the headline."""
+    from . import db
+    from .outlets import label
     done = 0
     for it in items[:limit]:
-        text = (it.get("summary_en") or it.get("summary") or "").strip()
-        title = (it.get("title") or "").strip()
-        if text and not is_paywall(text) and not text.lower().startswith(title.lower()[:40]):
+        title = (it.get("title_en") or it.get("title") or "").strip()
+        if relevant_summary(title, it.get("summary_en") or it.get("summary") or ""):
             continue
-        found = lookup(it.get("title_en") or title)
-        if not found:
-            page = page_summary(it.get("url") or "")
-            if page and not page.lower().startswith(title.lower()[:40]):
-                db.update_item(conn, it["id"], summary=page)
-                it["summary"] = page
-                done += 1
+        docket = match_docket(conn, it)
+        if docket and relevant_summary(title, docket.get("summary") or ""):
+            updates = {"summary": docket["summary"], "case_ref": it.get("case_ref") or docket.get("case_ref")}
+            db.update_item(conn, it["id"], **updates)
+            it.update(updates)
+            it["also"] = list(it.get("also") or []) + [{"source": "ICSID docket", "url": docket["url"], "title": docket["title"]}]
+            done += 1
             continue
-        updates = {"summary": found["summary"]}
-        if "news.google.com" in (it.get("url") or "") and found["url"].startswith("http"):
-            # The link must follow the text we found, and the label must follow the link.
-            from .outlets import label
-            updates["url"] = found["url"]
-            if (it.get("source") or "").startswith("Google News"):
-                updates["source"] = "Google News / " + (found["outlet"] or label(found["url"], "source"))
-        db.update_item(conn, it["id"], **updates)
-        it.update(updates)
-        done += 1
+        found = lookup(title)
+        if found and relevant_summary(title, found["summary"]):
+            updates = {"summary": found["summary"]}
+            if "news.google.com" in (it.get("url") or "") and found["url"].startswith("http"):
+                updates["url"] = found["url"]           # the link follows the text, the label follows the link
+                if (it.get("source") or "").startswith("Google News"):
+                    updates["source"] = "Google News / " + (found["outlet"] or label(found["url"], "source"))
+            db.update_item(conn, it["id"], **updates)
+            it.update(updates)
+            done += 1
+            continue
+        page = page_summary(it.get("url") or "")
+        if page and relevant_summary(title, page):
+            db.update_item(conn, it["id"], summary=page)
+            it["summary"] = page
+            done += 1
     conn.commit()
     return done

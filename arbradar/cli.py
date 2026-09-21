@@ -63,7 +63,8 @@ def cmd_build(args, settings, conn):
     # Every printed headline carries an explanation. A story that is still only a
     # headline after enrichment is left out; the records (tier 1) always have prose.
     def _with_text(rows):
-        gone = [it for it in rows if not email_html.summary_of(it) and (it.get("source_tier") or 2) != 1]
+        gone = [it for it in rows if (it.get("source_tier") or 2) != 1 and not enrich.relevant_summary(
+            it.get("title_en") or it.get("title") or "", email_html.summary_of(it))]
         if gone:
             print("left out {} headline-only stories: {}".format(len(gone), "; ".join(it["title"][:50] for it in gone)))
         return [it for it in rows if it not in gone]

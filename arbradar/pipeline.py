@@ -218,7 +218,8 @@ def rescore(conn, settings) -> int:
 
 
 PAYWALL = ("you are not logged in", "subscribe to read", "please log in", "log in to read",
-           "this content is for subscribers", "subscribers only", "sign in to continue")
+           "this content is for subscribers", "subscribers only", "sign in to continue",
+           "the topic tool shows you", "case law discussion for 3000+ topics", "become a subscriber")
 
 
 def is_paywall(text: str) -> bool:

@@ -84,7 +84,9 @@ def _sweep(days: int):
     every configured local edition in its own language. Two families: dispute
     terms, and State measures against investors (no dispute word needed)."""
     settings = config.load()
+    from .editions import COUNTRIES
     states = list((settings.states or {}).keys())
+    states += sorted(set(COUNTRIES.values()) - set(states))     # every State the gazetteer knows
     for q in _queries(states):
         yield q, "en-GB", "GB", "GB:en", "en", "", "dispute"
     for q in MEASURES["en"]:
