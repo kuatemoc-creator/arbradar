@@ -50,7 +50,7 @@ EVENT_TYPES: Dict[str, Dict] = {
         "why": "A licence, contract, tax or regulatory action against a foreign investor of means: the fact pattern of a treaty claim, before any notice.",
     },
     "distress_event": {
-        "weight": 60,
+        "weight": 52,
         "label": "Expropriation / licence / sanctions event",
         "why": "Events of this kind tend to produce a treaty claim within a year or two.",
     },
