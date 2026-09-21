@@ -160,7 +160,8 @@ EVENT_PATTERNS: List = [
         "expands arbitration", "grows arbitration",
     ]),
     ("distress_event", [
-        "expropriat", "nationalis", "nationaliz", "licence revoked", "license revoked",
+        "expropriat", "nationalisation", "nationalization", "nationalised", "nationalized",
+        "nationalise ", "nationalize ", "nationalises", "nationalizes", "licence revoked", "license revoked",
         "permit cancelled", "permit canceled", "concession terminated", "seizure of",
         "asset freeze", "windfall tax", "sanctions-related claim",
         "forced divestment", "mining permit", "resource rent",
