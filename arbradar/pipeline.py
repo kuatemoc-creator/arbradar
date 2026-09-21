@@ -465,7 +465,7 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         "ORDER BY published_at DESC", (cutoff,), 6,
         key=lambda it: (it.get("title") or "").split(" discloses")[0])
     court_rows = take(
-        "SELECT * FROM items WHERE relevant=1 AND published_at>=? "
+        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? "
         "AND (source LIKE 'Court:%' OR (source LIKE 'US federal docket%' "
         "     AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
         "          OR title LIKE 'IN RE%' OR summary LIKE '%foreign%'))) "
@@ -489,7 +489,7 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     # People: firm moves and institutional appointments from the press, and the
     # tribunal appointments the ICSID docket records - who appointed whom.
     people_rows = take(
-        "SELECT * FROM items WHERE relevant=1 AND published_at>=? AND ("
+        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? AND ("
         "  event_type IN ('lateral_move','appointment') "
         "  OR (source='ICSID docket' AND event_type='tribunal_constituted' "
         "      AND (title LIKE '%appoint%' OR title LIKE '%constituted%' OR title LIKE '%President%'))) "
