@@ -15,7 +15,7 @@
   "https://www.arlis.am",
   "all legal acts; search only",
   "html",
-  "1400 KB"
+  "1401 KB"
  ],
  [
   "Armenia",
@@ -69,7 +69,7 @@
   "https://armenpress.am/rss/eng",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Armenia",
@@ -86,8 +86,8 @@
   "CivilNet",
   "https://www.civilnet.am/feed",
   "",
-  "html",
-  "66 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Armenia",
@@ -105,7 +105,7 @@
   "https://www.panorama.am/en/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Georgia",
@@ -141,7 +141,7 @@
   "https://www.supremecourt.ge",
   "",
   "html",
-  "44 KB"
+  "39 KB"
  ],
  [
   "Georgia",
@@ -177,7 +177,7 @@
   "https://agenda.ge/en/rss",
   "",
   "error",
-  "ConnectError"
+  "ConnectTimeout"
  ],
  [
   "Georgia",
@@ -185,8 +185,8 @@
   "Georgia Today",
   "https://georgiatoday.ge/feed",
   "",
-  "html",
-  "323 KB"
+  "dead",
+  "HTTP 500"
  ],
  [
   "Georgia",
@@ -212,8 +212,8 @@
   "e-qanun legal acts",
   "https://e-qanun.az",
   "",
-  "error",
-  "ConnectTimeout"
+  "html",
+  "2 KB"
  ],
  [
   "Azerbaijan",
@@ -239,8 +239,8 @@
   "Report.az",
   "https://report.az/en/rss/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Azerbaijan",
@@ -264,10 +264,10 @@
   "Azerbaijan",
   "press",
   "Caliber",
-  "https://caliber.az/rss.xml",
+  "https://caliber.az/en/rss",
   "",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Kazakhstan",
@@ -347,8 +347,8 @@
   "Tengrinews",
   "https://tengrinews.kz/rss/",
   "",
-  "error",
-  "ReadTimeout"
+  "dead",
+  "HTTP 500"
  ],
  [
   "Kazakhstan",
@@ -420,7 +420,7 @@
   "https://uzse.uz",
   "",
   "html",
-  "293 KB"
+  "290 KB"
  ],
  [
   "Uzbekistan",
@@ -464,8 +464,8 @@
   "Daryo",
   "https://daryo.uz/en/feed",
   "",
-  "html",
-  "793 KB"
+  "error",
+  "ConnectError"
  ],
  [
   "Kyrgyzstan",
@@ -536,8 +536,8 @@
   "Verkhovna Rada legal acts",
   "https://zakon.rada.gov.ua",
   "",
-  "error",
-  "ConnectTimeout"
+  "html",
+  "0 KB"
  ],
  [
   "Ukraine",
@@ -591,25 +591,25 @@
   "https://lb.ua/rss",
   "",
   "html",
-  "21 KB"
+  "22 KB"
  ],
  [
   "Ukraine",
   "press",
   "NV",
-  "https://nv.ua/ukr/rss/all.xml",
+  "https://nv.ua/rss",
   "",
-  "rss",
-  "discovered "
+  "html",
+  "72 KB"
  ],
  [
   "Ukraine",
   "press",
   "LIGA.net",
-  "https://news.liga.net/ua/all/rss.xml",
+  "https://www.liga.net/rss",
   "legal and business",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Ukraine",
@@ -636,7 +636,7 @@
   "https://kad.arbitr.ru",
   "anti-suit injunctions, asset seizures; search needs session",
   "html",
-  "83 KB"
+  "81 KB"
  ],
  [
   "Russia",
@@ -690,7 +690,7 @@
   "https://www.resmigazete.gov.tr",
   "daily official gazette",
   "html",
-  "195 KB insecure-tls"
+  "197 KB insecure-tls"
  ],
  [
   "Turkey",
@@ -708,7 +708,7 @@
   "https://www.epdk.gov.tr",
   "",
   "html",
-  "186 KB"
+  "184 KB"
  ],
  [
   "Turkey",
@@ -761,8 +761,8 @@
   "Secretaría de Economía ISDS register",
   "https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado",
   "publishes notices of intent; managed bot challenge - read by a person, not a script",
-  "dead",
-  "HTTP 404"
+  "blocked",
+  "js-challenge"
  ],
  [
   "Mexico",
@@ -788,8 +788,8 @@
   "CNH hydrocarbons",
   "https://www.gob.mx/cnh",
   "",
-  "html",
-  "46 KB chrome-tls"
+  "blocked",
+  "js-challenge"
  ],
  [
   "Mexico",
@@ -797,8 +797,8 @@
   "BMV",
   "https://www.bmv.com.mx",
   "",
-  "error",
-  "ConnectTimeout"
+  "html",
+  "88 KB"
  ],
  [
   "Mexico",
@@ -860,8 +860,8 @@
   "COMPR.AR",
   "https://comprar.gob.ar",
   "",
-  "html",
-  "78 KB"
+  "error",
+  "ConnectTimeout"
  ],
  [
   "Argentina",
@@ -888,7 +888,7 @@
   "https://www.ambito.com/rss",
   "",
   "dead",
-  "HTTP 403"
+  "HTTP 404"
  ],
  [
   "Argentina",
@@ -903,7 +903,7 @@
   "Argentina",
   "press",
   "Infobae",
-  "https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/",
+  "https://www.infobae.com/arc/outboundfeeds/rss/category/estados-unidos/",
   "",
   "rss",
   "discovered "
@@ -914,8 +914,8 @@
   "ANDJE - defensa internacional",
   "https://www.defensajuridica.gov.co",
   "publishes ISDS cases; managed bot challenge - read by a person, not a script",
-  "dead",
-  "HTTP 403"
+  "html",
+  "388 KB"
  ],
  [
   "Colombia",
@@ -986,8 +986,8 @@
   "Valora Analitik",
   "https://www.valoraanalitik.com/feed/",
   "",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "feed"
  ],
  [
   "Peru",
@@ -996,7 +996,7 @@
   "https://www.mef.gob.pe",
   "find the cases page",
   "html",
-  "0 KB"
+  "258 KB"
  ],
  [
   "Peru",
@@ -1146,10 +1146,10 @@
   "Bolivia",
   "press",
   "El Deber",
-  "https://eldeber.com.bo/feed",
+  "https://eldeber.com.bo/rss",
   "",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Brazil",
@@ -1157,8 +1157,8 @@
   "Diário Oficial da União",
   "https://www.in.gov.br",
   "",
-  "error",
-  "RemoteProtocol"
+  "html",
+  "311 KB"
  ],
  [
   "Brazil",
@@ -1202,8 +1202,8 @@
   "CNMV",
   "https://www.cnmv.es",
   "hechos relevantes",
-  "html",
-  "289 KB"
+  "error",
+  "ReadTimeout"
  ],
  [
   "Spain",
@@ -1391,8 +1391,8 @@
   "Ghana Business News",
   "https://www.ghanabusinessnews.com/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Ghana",
@@ -1481,8 +1481,8 @@
   "JSE SENS",
   "https://www.jse.co.za",
   "",
-  "html",
-  "227 KB chrome-tls"
+  "dead",
+  "HTTP 403"
  ],
  [
   "South Africa",
@@ -1508,8 +1508,8 @@
   "Club of Mozambique",
   "https://clubofmozambique.com/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Egypt",
@@ -1518,7 +1518,7 @@
   "https://www.egx.com.eg",
   "",
   "html",
-  "6 KB"
+  "5 KB"
  ],
  [
   "Egypt",
@@ -1536,7 +1536,7 @@
   "https://english.ahram.org.eg/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Egypt",
@@ -1554,7 +1554,7 @@
   "https://www.aps.dz/en/?format=feed",
   "",
   "html",
-  "202 KB"
+  "229 KB"
  ],
  [
   "Morocco",
@@ -1581,7 +1581,7 @@
   "https://www.arabnews.com/rss.xml",
   "",
   "rss",
-  "feed chrome-tls"
+  "feed"
  ],
  [
   "Qatar",
@@ -1706,8 +1706,8 @@
   "IDX",
   "https://www.idx.co.id",
   "",
-  "html",
-  "194 KB chrome-tls"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Indonesia",
@@ -1725,7 +1725,7 @@
   "https://www.bisnis.com/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Indonesia",
@@ -1769,8 +1769,8 @@
   "BusinessWorld",
   "https://www.bworldonline.com/feed/",
   "",
-  "error",
-  "ReadTimeout"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Korea",
@@ -1814,8 +1814,8 @@
   "PCA cases",
   "https://pca-cpa.org/en/cases/",
   "client-rendered",
-  "html",
-  "129 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2049,16 +2049,16 @@
   "https://www.camsantiago.cl/noticias/",
   "institution",
   "dead",
-  "HTTP 403"
+  "HTTP 404"
  ],
  [
   "Global",
   "press",
   "CAM-CCBC",
-  "https://www.ccbc.org.br/feed/",
+  "https://ccbc.org.br/cam-ccbc/noticias/",
   "institution",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2102,8 +2102,8 @@
   "Global Legal Chronicle",
   "https://www.globallegalchronicle.com/feed/",
   "deals and cases with counsel named",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2138,8 +2138,8 @@
   "The Lawyer",
   "https://www.thelawyer.com/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2174,8 +2174,8 @@
   "JD Supra - arbitration",
   "https://www.jdsupra.com/rss/arbitration/",
   "",
-  "dead",
-  "HTTP 404"
+  "html",
+  "0 KB"
  ],
  [
   "Global",
@@ -2183,8 +2183,8 @@
   "Mondaq - arbitration",
   "https://www.mondaq.com/rss/arbitration-dispute-resolution",
   "",
-  "dead",
-  "HTTP 404"
+  "error",
+  "ReadTimeout"
  ],
  [
   "Global",
@@ -2228,8 +2228,8 @@
   "Switzerland - Federal Supreme Court",
   "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_",
   "every award challenge in Switzerland",
-  "html",
-  "0 KB insecure-tls"
+  "dead",
+  "HTTP 503"
  ],
  [
   "Global",
@@ -2273,8 +2273,8 @@
   "India - Supreme Court (Indian Kanoon feed)",
   "https://indiankanoon.org/feeds/latest/supremecourt/",
   "",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "feed"
  ],
  [
   "Global",
@@ -2282,8 +2282,8 @@
   "India - Delhi High Court (Indian Kanoon feed)",
   "https://indiankanoon.org/feeds/latest/delhi/",
   "s.34/s.48 arbitration matters",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "feed"
  ],
  [
   "Global",
@@ -2319,7 +2319,7 @@
   "https://www.courts.ie/judgments",
   "",
   "html",
-  "137 KB"
+  "69 KB"
  ],
  [
   "Global",
@@ -2598,7 +2598,7 @@
   "https://www.curtis.com/news",
   "firm",
   "html",
-  "157 KB"
+  "154 KB"
  ],
  [
   "Global",
@@ -2616,7 +2616,7 @@
   "https://www.volterrafietta.com/rss",
   "firm",
   "rss",
-  "discovered "
+  "discovered chrome-tls"
  ],
  [
   "Global",
@@ -2741,8 +2741,8 @@
   "DLA Piper news",
   "https://www.dlapiper.com/en/news",
   "firm",
-  "html",
-  "134 KB"
+  "dead",
+  "HTTP 429"
  ],
  [
   "Global",
@@ -2769,7 +2769,7 @@
   "https://www.steptoe.com/en/news-publications",
   "firm",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2796,7 +2796,7 @@
   "https://www.wilmerhale.com/en/insights",
   "firm",
   "html",
-  "46 KB"
+  "46 KB chrome-tls"
  ],
  [
   "Global",
@@ -2876,8 +2876,8 @@
   "AEQUO news",
   "https://aequo.ua/news",
   "firm, Ukraine",
-  "html",
-  "260 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2940,7 +2940,7 @@
   "https://www.accesswire.com/rss/newsroom",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Global",
@@ -2958,7 +2958,7 @@
   "https://www.investegate.co.uk/rss.aspx",
   "",
   "html",
-  "106 KB"
+  "105 KB"
  ],
  [
   "Global",
@@ -3002,8 +3002,8 @@
   "OECD investment news",
   "https://www.oecd.org/en/topics/investment.html",
   "",
-  "html",
-  "1516 KB chrome-tls"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Armenia",
@@ -3065,8 +3065,8 @@
   "Armenpress",
   "https://armenpress.am",
   "discover feed",
-  "html",
-  "133 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Armenia",
@@ -3074,8 +3074,8 @@
   "Panorama.am",
   "https://www.panorama.am",
   "discover feed",
-  "html",
-  "262 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Armenia",
@@ -3147,7 +3147,7 @@
   "https://agenda.ge",
   "discover feed",
   "error",
-  "ConnectError"
+  "ConnectTimeout"
  ],
  [
   "Georgia",
@@ -3165,7 +3165,7 @@
   "https://formulanews.ge",
   "discover feed",
   "html",
-  "102 KB"
+  "104 KB"
  ],
  [
   "Georgia",
@@ -3174,7 +3174,7 @@
   "https://commersant.ge",
   "discover feed",
   "html",
-  "784 KB"
+  "783 KB"
  ],
  [
   "Azerbaijan",
@@ -3191,17 +3191,17 @@
   "Central Bank",
   "https://www.cbar.az/news",
   "",
-  "error",
-  "ConnectTimeout"
+  "html",
+  "135 KB"
  ],
  [
   "Azerbaijan",
   "press",
   "Caliber",
-  "https://caliber.az/rss.xml",
+  "https://caliber.az",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Azerbaijan",
@@ -3209,8 +3209,8 @@
   "Turan",
   "https://turan.az",
   "discover feed",
-  "html",
-  "185 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Azerbaijan",
@@ -3264,7 +3264,7 @@
   "https://tengrinews.kz",
   "discover feed",
   "html",
-  "450 KB"
+  "414 KB"
  ],
  [
   "Kazakhstan",
@@ -3299,8 +3299,8 @@
   "KazTAG",
   "https://kaztag.kz",
   "discover feed",
-  "html",
-  "106 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Uzbekistan",
@@ -3345,7 +3345,7 @@
   "https://kaktus.media",
   "discover feed",
   "html",
-  "352 KB"
+  "271 KB"
  ],
  [
   "Kyrgyzstan",
@@ -3371,8 +3371,8 @@
   "Montsame",
   "https://montsame.mn/en",
   "discover feed",
-  "html",
-  "242 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Mongolia",
@@ -3387,7 +3387,7 @@
   "Moldova",
   "press",
   "IPN",
-  "https://ipn.md/feed/",
+  "https://www.ipn.md/feed",
   "discover feed",
   "rss",
   "discovered "
@@ -3398,8 +3398,8 @@
   "BelTA",
   "https://eng.belta.by",
   "discover feed",
-  "html",
-  "129 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Ukraine",
@@ -3453,16 +3453,16 @@
   "https://www.ukrinform.net",
   "discover feed",
   "html",
-  "86 KB"
+  "85 KB"
  ],
  [
   "Ukraine",
   "press",
   "LIGA.net",
-  "https://news.liga.net/ua/all/rss.xml",
+  "https://www.liga.net",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Ukraine",
@@ -3525,7 +3525,7 @@
   "https://www.tccb.gov.tr/en/",
   "",
   "html",
-  "54 KB"
+  "53 KB"
  ],
  [
   "Turkey",
@@ -3561,7 +3561,7 @@
   "https://www.hurriyet.com.tr",
   "discover feed",
   "html",
-  "244 KB"
+  "243 KB"
  ],
  [
   "Mexico",
@@ -3570,7 +3570,7 @@
   "https://www.dof.gob.mx",
   "discover feed",
   "html",
-  "66 KB insecure-tls"
+  "67 KB insecure-tls"
  ],
  [
   "Mexico",
@@ -3578,8 +3578,8 @@
   "CRE energy regulator",
   "https://www.gob.mx/cre",
   "",
-  "html",
-  "49 KB chrome-tls"
+  "blocked",
+  "js-challenge"
  ],
  [
   "Mexico",
@@ -3587,8 +3587,8 @@
   "Secretaría de Economía (main)",
   "https://www.gob.mx/se",
   "JS challenge",
-  "html",
-  "48 KB chrome-tls"
+  "blocked",
+  "js-challenge"
  ],
  [
   "Mexico",
@@ -3624,13 +3624,13 @@
   "https://www.forbes.com.mx",
   "discover feed",
   "html",
-  "248 KB"
+  "240 KB"
  ],
  [
   "Argentina",
   "press",
   "Infobae",
-  "https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/",
+  "https://www.infobae.com/arc/outboundfeeds/rss/category/estados-unidos/",
   "discover feed",
   "rss",
   "discovered "
@@ -3642,7 +3642,7 @@
   "https://www.iprofesional.com",
   "discover feed",
   "html",
-  "600 KB"
+  "502 KB"
  ],
  [
   "Argentina",
@@ -3705,7 +3705,7 @@
   "https://www.presidencia.gov.co",
   "",
   "html",
-  "5 KB"
+  "7 KB"
  ],
  [
   "Colombia",
@@ -3720,10 +3720,10 @@
   "Peru",
   "press",
   "Semana Económica",
-  "https://semanaeconomica.com/feed",
+  "https://semanaeconomica.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Peru",
@@ -3749,8 +3749,8 @@
   "Perupetro",
   "https://www.perupetro.com.pe",
   "",
-  "html",
-  "0 KB insecure-tls"
+  "error",
+  "ConnectTimeout"
  ],
  [
   "Chile",
@@ -3759,7 +3759,7 @@
   "https://www.df.cl",
   "discover feed",
   "html",
-  "543 KB"
+  "527 KB"
  ],
  [
   "Chile",
@@ -3777,7 +3777,7 @@
   "https://www.elmostrador.cl",
   "discover feed",
   "html",
-  "216 KB"
+  "217 KB"
  ],
  [
   "Chile",
@@ -3813,7 +3813,7 @@
   "https://www.petroguia.com",
   "discover feed",
   "error",
-  "ConnectTimeout"
+  "ConnectError"
  ],
  [
   "Bolivia",
@@ -3822,7 +3822,7 @@
   "https://www.lostiempos.com",
   "discover feed",
   "html",
-  "226 KB"
+  "227 KB"
  ],
  [
   "Brazil",
@@ -3885,7 +3885,7 @@
   "https://www.vozpopuli.com",
   "discover feed",
   "html",
-  "334 KB"
+  "332 KB"
  ],
  [
   "Spain",
@@ -3902,8 +3902,8 @@
   "Milano Finanza",
   "https://www.milanofinanza.it",
   "discover feed",
-  "html",
-  "77 KB"
+  "error",
+  "ConnectError"
  ],
  [
   "Italy",
@@ -3911,8 +3911,8 @@
   "Avvocatura dello Stato",
   "https://www.avvocaturastato.it",
   "",
-  "dead",
-  "HTTP 403"
+  "html",
+  "143 KB"
  ],
  [
   "Romania",
@@ -4008,10 +4008,10 @@
   "Bosnia and Herzegovina",
   "press",
   "Klix",
-  "https://www.klix.ba",
+  "https://www.klix.ba/rss",
   "discover feed",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "discovered "
  ],
  [
   "Montenegro",
@@ -4044,10 +4044,10 @@
   "Bulgaria",
   "press",
   "Novinite",
-  "https://www.novinite.com/services/news_rdf.php",
+  "https://www.novinite.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Greece",
@@ -4055,8 +4055,8 @@
   "Kathimerini",
   "https://www.ekathimerini.com",
   "discover feed",
-  "html",
-  "576 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Cyprus",
@@ -4089,10 +4089,10 @@
   "Estonia",
   "press",
   "ERR",
-  "https://news.err.ee/rss",
+  "https://news.err.ee",
   "discover feed",
-  "rss",
-  "discovered "
+  "html",
+  "261 KB"
  ],
  [
   "Germany",
@@ -4101,7 +4101,7 @@
   "https://www.handelsblatt.com",
   "discover feed",
   "html",
-  "2197 KB"
+  "2224 KB"
  ],
  [
   "Germany",
@@ -4125,10 +4125,10 @@
   "France",
   "press",
   "Décideurs Juridiques",
-  "https://www.decideurs-juridiques.com/juridiques.feed?type=rss",
+  "https://www.decideurs-juridiques.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Netherlands",
@@ -4146,13 +4146,13 @@
   "https://www.nzz.ch",
   "discover feed",
   "html",
-  "971 KB"
+  "988 KB"
  ],
  [
   "United Kingdom",
   "press",
   "Financial Times - law",
-  "https://www.ft.com/rss/home/international",
+  "https://www.ft.com/rss/news",
   "discover feed",
   "rss",
   "discovered "
@@ -4181,8 +4181,8 @@
   "Jordan Times",
   "https://jordantimes.com",
   "discover feed",
-  "dead",
-  "HTTP 403"
+  "html",
+  "425 KB"
  ],
  [
   "Lebanon",
@@ -4200,7 +4200,7 @@
   "https://www.kuwaittimes.com",
   "discover feed",
   "html",
-  "284 KB"
+  "286 KB"
  ],
  [
   "Oman",
@@ -4218,7 +4218,7 @@
   "https://www.gdnonline.com",
   "discover feed",
   "html",
-  "689 KB"
+  "688 KB"
  ],
  [
   "UAE",
@@ -4227,7 +4227,7 @@
   "https://www.thenationalnews.com",
   "discover feed",
   "html",
-  "1778 KB"
+  "1777 KB"
  ],
  [
   "UAE",
@@ -4245,7 +4245,7 @@
   "https://www.argaam.com/en",
   "discover feed",
   "html",
-  "1276 KB"
+  "1274 KB"
  ],
  [
   "Qatar",
@@ -4254,7 +4254,7 @@
   "https://www.gulf-times.com",
   "discover feed",
   "html",
-  "178 KB"
+  "181 KB"
  ],
  [
   "Iraq",
@@ -4263,7 +4263,7 @@
   "https://www.rudaw.net/english",
   "discover feed",
   "html",
-  "593 KB"
+  "596 KB"
  ],
  [
   "Libya",
@@ -4272,7 +4272,7 @@
   "https://libyaobserver.ly",
   "discover feed",
   "html",
-  "150 KB"
+  "151 KB"
  ],
  [
   "Tunisia",
@@ -4296,10 +4296,10 @@
   "Egypt",
   "press",
   "Mada Masr",
-  "https://www.madamasr.com/rss",
+  "https://www.madamasr.com/en",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Egypt",
@@ -4308,7 +4308,7 @@
   "https://www.gafi.gov.eg",
   "investment authority",
   "html",
-  "1011 KB"
+  "1041 KB"
  ],
  [
   "Morocco",
@@ -4317,7 +4317,7 @@
   "https://fr.le360.ma",
   "discover feed",
   "html",
-  "1503 KB"
+  "1321 KB"
  ],
  [
   "Morocco",
@@ -4380,16 +4380,16 @@
   "https://www.the-star.co.ke",
   "discover feed",
   "html",
-  "350 KB"
+  "360 KB"
  ],
  [
   "Kenya",
   "press",
   "Nation",
-  "https://nation.africa/kenya/rss.xml",
+  "https://nation.africa/kenya",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Tanzania",
@@ -4413,10 +4413,10 @@
   "Zimbabwe",
   "press",
   "The Herald",
-  "https://www.heraldonline.co.zw/feed/",
+  "https://www.herald.co.zw",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Namibia",
@@ -4460,8 +4460,8 @@
   "Maliweb",
   "https://www.maliweb.net",
   "discover feed",
-  "html",
-  "239 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Burkina Faso",
@@ -4497,7 +4497,7 @@
   "https://www.journalducameroun.com",
   "discover feed",
   "error",
-  "ConnectTimeout"
+  "ConnectError"
  ],
  [
   "Cameroon",
@@ -4524,7 +4524,7 @@
   "https://www.angop.ao/en",
   "discover feed",
   "html",
-  "230 KB"
+  "248 KB"
  ],
  [
   "Senegal",
@@ -4577,8 +4577,8 @@
   "Daily FT",
   "https://www.ft.lk",
   "discover feed",
-  "html",
-  "263 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Nepal",
@@ -4596,16 +4596,16 @@
   "https://www.bangkokpost.com",
   "discover feed",
   "html",
-  "202 KB"
+  "200 KB"
  ],
  [
   "Cambodia",
   "press",
   "Khmer Times",
-  "https://www.khmertimeskh.com/feed/",
+  "https://www.khmertimeskh.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 403"
  ],
  [
   "Malaysia",
@@ -4614,7 +4614,7 @@
   "https://theedgemalaysia.com",
   "discover feed",
   "html",
-  "248 KB"
+  "244 KB"
  ],
  [
   "Malaysia",
@@ -4623,7 +4623,7 @@
   "https://www.thestar.com.my",
   "discover feed",
   "html",
-  "302 KB"
+  "282 KB"
  ],
  [
   "Indonesia",
@@ -4632,7 +4632,7 @@
   "https://www.bisnis.com",
   "discover feed",
   "html",
-  "382 KB"
+  "380 KB"
  ],
  [
   "Indonesia",
@@ -4650,7 +4650,7 @@
   "https://www.thejakartapost.com",
   "discover feed",
   "html",
-  "153 KB"
+  "152 KB"
  ],
  [
   "Indonesia",
@@ -4668,16 +4668,16 @@
   "https://vietnamnet.vn/en",
   "discover feed",
   "html",
-  "98 KB"
+  "97 KB"
  ],
  [
   "Philippines",
   "press",
   "Inquirer Business",
-  "https://business.inquirer.net/rss",
+  "https://business.inquirer.net/feed",
   "discover feed",
   "rss",
-  "discovered chrome-tls"
+  "discovered "
  ],
  [
   "Korea",
@@ -4695,7 +4695,7 @@
   "https://www.koreaherald.com/rss/newsAll",
   "discover feed",
   "rss",
-  "discovered "
+  "discovered chrome-tls"
  ],
  [
   "Korea",
@@ -4703,8 +4703,8 @@
   "Ministry of Justice ISDS",
   "https://www.moj.go.kr/moj_eng/1746/subview.do",
   "Korea publishes its ISDS cases",
-  "html",
-  "6 KB"
+  "error",
+  "ConnectTimeout"
  ],
  [
   "Japan",
@@ -4713,7 +4713,7 @@
   "https://asia.nikkei.com",
   "discover feed",
   "html",
-  "595 KB"
+  "598 KB"
  ],
  [
   "China",
@@ -4731,7 +4731,7 @@
   "https://focustaiwan.tw",
   "discover feed",
   "html",
-  "99 KB"
+  "98 KB"
  ],
  [
   "Papua New Guinea",
@@ -4758,16 +4758,16 @@
   "https://www.afr.com",
   "discover feed",
   "html",
-  "1174 KB"
+  "1070 KB"
  ],
  [
   "Australia",
   "press",
   "Lawyerly",
-  "https://www.lawyerly.com.au",
+  "https://www.lawyerly.com.au/feed/",
   "discover feed",
-  "dead",
-  "HTTP 503"
+  "rss",
+  "discovered "
  ],
  [
   "Canada",
@@ -4776,7 +4776,7 @@
   "https://www.theglobeandmail.com",
   "discover feed",
   "html",
-  "2836 KB"
+  "2919 KB"
  ],
  [
   "Canada",
@@ -4845,10 +4845,10 @@
   "Nicaragua",
   "press",
   "Confidencial",
-  "https://confidencial.digital",
+  "https://confidencial.digital/rss",
   "discover feed",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "discovered "
  ],
  [
   "Costa Rica",
@@ -4902,7 +4902,7 @@
   "https://www.abc.com.py",
   "discover feed",
   "html",
-  "911 KB"
+  "954 KB"
  ],
  [
   "Paraguay",
@@ -4911,7 +4911,7 @@
   "https://www.ultimahora.com",
   "discover feed",
   "html",
-  "398 KB"
+  "400 KB"
  ],
  [
   "Uruguay",
@@ -4919,17 +4919,17 @@
   "El Observador",
   "https://www.elobservador.com.uy",
   "discover feed",
-  "dead",
-  "HTTP 403"
+  "html",
+  "368 KB"
  ],
  [
   "Sector: Construction",
   "press",
   "ENR",
-  "https://www.enr.com/rss/all",
+  "https://www.enr.com/rss.xml",
   "",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "discovered "
  ],
  [
   "Sector: Construction",
@@ -4946,8 +4946,8 @@
   "Construction Week (Middle East)",
   "https://www.constructionweekonline.com/feed",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 405"
  ],
  [
   "Sector: Construction",
@@ -5027,8 +5027,8 @@
   "Railway Gazette",
   "https://www.railwaygazette.com/rss",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Energy",
@@ -5037,7 +5037,7 @@
   "https://www.upstreamonline.com/rss",
   "",
   "html",
-  "117 KB"
+  "334 KB"
  ],
  [
   "Sector: Energy",
@@ -5072,8 +5072,8 @@
   "Offshore Energy",
   "https://www.offshore-energy.biz/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Energy",
@@ -5106,10 +5106,10 @@
   "Sector: Energy",
   "press",
   "Hart Energy",
-  "https://www.hartenergy.com/rss",
+  "https://www.hartenergy.com/arc/outboundfeeds/rss/",
   "",
-  "dead",
-  "HTTP 404"
+  "rss",
+  "discovered chrome-tls"
  ],
  [
   "Sector: Energy",
@@ -5133,10 +5133,10 @@
   "Sector: Energy",
   "press",
   "Windpower Monthly",
-  "https://www.windpowermonthly.com/rss",
+  "https://www.windpowermonthly.com/rss/news",
   "",
   "rss",
-  "feed"
+  "discovered "
  ],
  [
   "Sector: Energy",
@@ -5144,8 +5144,8 @@
   "reNews",
   "https://renews.biz/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Energy",
@@ -5216,8 +5216,8 @@
   "Argus Media",
   "https://www.argusmedia.com/en/rss",
   "",
-  "dead",
-  "HTTP 404"
+  "html",
+  "0 KB"
  ],
  [
   "Sector: Mining",
@@ -5244,7 +5244,7 @@
   "https://www.miningweekly.com/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Sector: Mining",
@@ -5252,8 +5252,8 @@
   "Mining Journal",
   "https://www.mining-journal.com/rss",
   "",
-  "html",
-  "88 KB"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Mining",
@@ -5262,7 +5262,7 @@
   "https://www.miningnews.net/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Sector: Mining",
@@ -5316,7 +5316,7 @@
   "https://www.miningmagazine.com/rss",
   "",
   "dead",
-  "HTTP 404"
+  "HTTP 403"
  ],
  [
   "Sector: Mining",
@@ -5459,8 +5459,8 @@
   "Lloyd's List",
   "https://www.lloydslist.com",
   "discover feed",
-  "dead",
-  "HTTP 403"
+  "html",
+  "189 KB"
  ],
  [
   "Sector: Aviation",
@@ -5468,8 +5468,8 @@
   "FlightGlobal",
   "https://www.flightglobal.com/rss",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Aviation",
@@ -5505,7 +5505,7 @@
   "https://www.telecompaper.com/rss",
   "",
   "html",
-  "301 KB"
+  "293 KB"
  ],
  [
   "Sector: Telecoms",
@@ -5532,7 +5532,7 @@
   "https://www.capacitymedia.com/rss",
   "discover feed",
   "rss",
-  "discovered "
+  "discovered chrome-tls"
  ],
  [
   "Sector: Insurance",
@@ -5540,8 +5540,8 @@
   "Reinsurance News",
   "https://www.reinsurancene.ws/feed/",
   "",
-  "rss",
-  "feed"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Sector: Insurance",
