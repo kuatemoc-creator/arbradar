@@ -124,6 +124,27 @@ _ADVERSE = re.compile(
     r"retir|annul|résili|nationalis|exproprie|saisi|gel[ée]|interdi|suspend", re.I)
 
 
+_IDIOM = re.compile(r"\bseiz(?:e|es|ed|ing)\b.{0,60}?(?:\bon\b|\bupon\b|opportunit|chance|moment|initiative|window period|"
+                    r"the day|the lead|high ground|spotlight|headline|title|crown|victory|win\b)", re.I)
+
+
+def measure_label(title: str, majors: List[str]):
+    """(event_type, flag_reason) for a State-measure sweep headline. A measure needs
+    an adverse act, not an idiom; and it counts as a measure against an investor
+    only when the investor is the subject of the act, not a name at the end."""
+    if not _ADVERSE.search(title) or _IDIOM.search(title):
+        return "commentary", "State-measure sweep; no adverse act in the headline"
+    subject_majors = []
+    for m in majors:
+        pos = title.find(m)
+        verb = _ADVERSE.search(title)
+        if pos >= 0 and (pos < len(" ".join(title.split()[:8])) or (verb and pos < verb.start())):
+            subject_majors.append(m)
+    if subject_majors:
+        return "state_measure", "State-measure sweep; investor of means named: " + ", ".join(subject_majors[:2])
+    return "distress_event", "State-measure sweep; no listed investor named"
+
+
 def _majors(text: str) -> List[str]:
     """Whole-word matches only. A five-letter-or-shorter name must also match case,
     or "Eni" is found inside "opening" and "Citi" inside "citing"."""
@@ -177,16 +198,5 @@ def run(days: int = 7) -> Iterator[Dict]:
             if family == "people":
                 item["flag_reason"] = "people-and-appointments sweep"   # the rules label it a move or an appointment
             if family == "measure":
-                # A measure story needs an adverse act in the headline - a contract award,
-                # an import policy, a deal is not a measure - and only earns the lead
-                # weight when it names an investor who can pay.
-                if not _ADVERSE.search(clean_title) or re.search(
-                        r"\bseiz(?:e|es|ed|ing) (?:on|upon|the (?:opportunit|chance|moment|initiative|day|lead|high ground)|"
-                        r"opportunit|chance|moment|initiative)", clean_title, re.I):
-                    item["event_type"] = "commentary"
-                else:
-                    item["event_type"] = "state_measure" if majors else "distress_event"
-                item["flag_reason"] = ("State-measure sweep ({} edition); investor of means named: {}".format(
-                    country or "global", ", ".join(majors[:2])) if majors else
-                    "State-measure sweep ({} edition); no listed investor named".format(country or "global"))
+                item["event_type"], item["flag_reason"] = measure_label(clean_title, majors)
             yield item

@@ -530,10 +530,17 @@ def reclassify(conn, settings, days: int = 21) -> int:
     after a taxonomy change; items a model has judged are left alone."""
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     n = 0
+    from .sources.gnews import measure_label
     for r in conn.execute("SELECT * FROM items WHERE COALESCE(llm_stage,'none')='none' AND published_at>=? "
                           "AND source NOT LIKE 'Court:%' AND source<>'ICSID docket'", (cutoff,)).fetchall():
         it = db.row_to_dict(r)
         before = it.get("event_type")
+        if (it.get("flag_reason") or "").startswith("State-measure sweep"):
+            ev, why = measure_label(it.get("title") or "", it.get("claimants") or [])
+            if ev != before:
+                db.update_item(conn, it["id"], event_type=ev, flag_reason=why)
+                n += 1
+            continue
         probe = dict(it, event_type=None)
         out = rule_classify(probe)
         # Source adapters that set their own type (sweeps, dockets) keep it unless the
