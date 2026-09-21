@@ -108,6 +108,34 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
     return best
 
 
+def page_summary(url: str) -> str:
+    """The article's own description, for a story whose feed carried only a headline:
+    og:description, then the meta description, then the first real paragraph."""
+    if not url or "news.google.com" in url:
+        return ""
+    try:
+        from .fetch import get
+        html_text = get(url, ttl=86400, timeout=20).text
+    except Exception:                                 # noqa: BLE001 - boundary
+        return ""
+    try:
+        from selectolax.parser import HTMLParser
+        tree = HTMLParser(html_text)
+        for sel in ('meta[property="og:description"]', 'meta[name="description"]', 'meta[name="twitter:description"]'):
+            node = tree.css_first(sel)
+            if node and (node.attributes.get("content") or "").strip():
+                text = node.attributes.get("content").strip()
+                if len(text.split()) >= 12:
+                    return _tidy(re.sub(r"\s+", " ", text))
+        for p in tree.css("article p, main p, .article-body p, .story p, p"):
+            text = re.sub(r"\s+", " ", p.text(separator=" ")).strip()
+            if len(text) >= 80 and not re.search(r"cookie|subscribe|sign in|log in|advertis|©", text, re.I):
+                return _tidy(" ".join(text.split()[:90]))
+    except Exception:                                 # noqa: BLE001 - parser edge cases
+        return ""
+    return ""
+
+
 def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
     """Fill in text for featured items that have none. Writes back to the DB."""
     from . import db
@@ -120,6 +148,11 @@ def enrich(conn, items: List[Dict[str, Any]], limit: int = 10) -> int:
             continue
         found = lookup(it.get("title_en") or title)
         if not found:
+            page = page_summary(it.get("url") or "")
+            if page and not page.lower().startswith(title.lower()[:40]):
+                db.update_item(conn, it["id"], summary=page)
+                it["summary"] = page
+                done += 1
             continue
         updates = {"summary": found["summary"]}
         if "news.google.com" in (it.get("url") or "") and found["url"].startswith("http"):

@@ -60,6 +60,15 @@ def cmd_build(args, settings, conn):
     filled = enrich.enrich(conn, items)
     if filled:
         print("filled in text for {} headline-only stories".format(filled))
+    # Every printed headline carries an explanation. A story that is still only a
+    # headline after enrichment is left out; the records (tier 1) always have prose.
+    textless = [it for it in items if not email_html.summary_of(it) and (it.get("source_tier") or 2) != 1]
+    if textless:
+        print("left out {} headline-only stories: {}".format(len(textless), "; ".join(it["title"][:50] for it in textless)))
+        items = [it for it in items if it not in textless]
+    if not items:
+        print("Nothing with an explanation to print today.")
+        return 1
     from .config import live_site_url
     base = live_site_url(settings)
     if settings.site_url and not base:
