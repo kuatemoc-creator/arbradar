@@ -1,6 +1,6 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+ "subject": "ArbRadar · 21 September 2026 — Government Ends Turkish Firm’s Indian Navy Ship Contract on National Security Grounds…",
  "stories": [
   {
    "id": 4310,
@@ -34,38 +34,6 @@
    "tier": "lead",
    "slug": "2026-09-21-government-ends-turkish-firm-s-indian-navy-ship-contract-on-national-s.html",
    "event": "Commercial arbitration"
-  },
-  {
-   "id": 4267,
-   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
-   "title_en": null,
-   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
-   "summary_en": null,
-   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
-   "source": "Google News / thehindu.com",
-   "source_tier": 2,
-   "event_type": "state_measure",
-   "published_at": "2026-09-20",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [
-    "Pfizer"
-   ],
-   "respondents": [],
-   "states": [],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); investor of means named: Pfizer",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
-   "event": "State measure"
   },
   {
    "id": 4264,
@@ -111,40 +79,6 @@
    "country": null,
    "tier": "development",
    "slug": "2026-09-21-ntpc-terminates-400-mwh-bess-contract-at-mouda-thermal-power-plant-ove.html",
-   "event": "State measure"
-  },
-  {
-   "id": 4280,
-   "title": "State Grid Changzhou Power Supply Company Seizes High-Speed Railway 'Window Period' to Complete Power Line Construction Crossing High-Speed Railway",
-   "title_en": null,
-   "summary": "In the early hours of September 17, taking advantage of the nighttime suspension window of the Nanjing-Hangzhou High-Speed Railway…",
-   "summary_en": null,
-   "url": "https://finance.yahoo.com/energy/articles/state-grid-changzhou-power-supply-045100427.html",
-   "source": "Google News / finance.yahoo.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Power & renewables",
-    "Construction",
-    "Transport & logistics"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-state-grid-changzhou-power-supply-company-seizes-high-speed-railway-wi.html",
    "event": "State measure"
   },
   {
@@ -279,7 +213,7 @@
    "also": [],
    "lang": "en",
    "country": "Global",
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
    "event": "State measure"
   },
@@ -314,7 +248,7 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-21-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
    "event": "State measure"
   },
@@ -380,6 +314,38 @@
    "country": null,
    "tier": "brief",
    "slug": "2026-09-21-medvedev-called-for-a-move-toward-the-mass-seizure-of-western-companie.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4267,
+   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+   "title_en": null,
+   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
+   "summary_en": null,
+   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
+   "source": "Google News / thehindu.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-20",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Pfizer"
+   ],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "brief",
+   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
    "event": "State measure"
   }
  ],
