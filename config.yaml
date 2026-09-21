@@ -6,6 +6,7 @@ site_url: "https://arbradar.caselens.tech"            # e.g. https://arbradar.ca
 signup_url: ""          # form action of your list provider, e.g. https://buttondown.com/api/emails/embed-subscribe/arbradar
 signup_field: email     # the field name that provider expects (Buttondown: email; Kit: email_address)
 signup_email: aram@caselens.tech   # until signup_url is set, the subscribe box sends requests to this address
+mark_url: https://raw.githubusercontent.com/kuatemoc-creator/arbradar/gh-pages/caselens-mark.png   # the mark in the email until the site is live
 
 lookback_days: 7
 max_items_per_issue: 12

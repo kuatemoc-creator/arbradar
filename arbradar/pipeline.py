@@ -586,4 +586,16 @@ def select(conn, settings) -> List[Dict[str, Any]]:
         if (rep.get("score") or 0) < floor and not rep.get("pinned"):
             continue                              # below the floor: leave it out rather than pad the day
         stories.append(rep)
+    if len(stories) < 3:
+        # A quiet day: items just under the floor still go in 'In brief' when the
+        # headline itself is about an arbitration, never on the sweep's say-so alone.
+        on_topic = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIAC|\bPCA\b|UNCITRAL|annul|set aside|enforce", re.I)
+        seen = {id(s) for s in stories}
+        for rep in reps:
+            if id(rep) in seen or rep.get("_anchor") or rep.get("url") in anchor_urls:
+                continue
+            if (rep.get("score") or 0) >= floor - 12 and on_topic.search(rep.get("title_en") or rep["title"]):
+                stories.append(rep)
+            if len(stories) >= 6:
+                break
     return stories[:settings.max_items_per_issue]

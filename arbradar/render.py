@@ -108,7 +108,8 @@ def story_slug(it: Dict[str, Any], date: str) -> str:
 
 
 def _headline(it: Dict[str, Any], settings, date: str) -> str:
-    base = (getattr(settings, "site_url", "") or "").rstrip("/")
+    from .config import live_site_url
+    base = live_site_url(settings)
     if base:
         return "### [{}]({}/{})".format(_title(it), base, story_slug(it, date))
     return "### {}".format(_title(it))

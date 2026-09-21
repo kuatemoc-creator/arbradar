@@ -60,7 +60,10 @@ def cmd_build(args, settings, conn):
     filled = enrich.enrich(conn, items)
     if filled:
         print("filled in text for {} headline-only stories".format(filled))
-    base = (settings.site_url or "").rstrip("/")
+    from .config import live_site_url
+    base = live_site_url(settings)
+    if settings.site_url and not base:
+        print("site host does not resolve yet; email links go to the sources")
     for it in items:
         it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
     extras = pipeline.record_extras(conn, settings, items)

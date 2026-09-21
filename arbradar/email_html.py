@@ -282,7 +282,8 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
 def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], settings, date: str) -> Dict[str, str]:
     """Returns {"html": ..., "subject": ..., "preheader": ...}."""
     name = settings.newsletter_name
-    site_url = (getattr(settings, "site_url", "") or "").rstrip("/")
+    from .config import live_site_url
+    site_url = live_site_url(settings)
     dl = date_label(date)
     starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application", "state_measure")
     lead = next((it for it in items[:5] if it.get("event_type") in starters), items[0])
@@ -292,7 +293,8 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     subject = "{} · {} — {}".format(name, dl, title_of(lead)[:70].rstrip(" :,-"))
     preheader = " · ".join([title_of(lead)] + [title_of(it) for it in devs[:2]])[:180]
 
-    mark_src = "{}/caselens-mark.png".format(site_url) if site_url else None
+    mark_src = ("{}/caselens-mark.png".format(site_url) if site_url
+                else (getattr(settings, "mark_url", "") or "").strip() or None)
     if not mark_src:
         with open(os.path.join(ROOT, "assets", "caselens-mark-64.png"), "rb") as fh:
             mark_src = "data:image/png;base64," + base64.b64encode(fh.read()).decode()

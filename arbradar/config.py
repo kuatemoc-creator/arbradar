@@ -31,6 +31,7 @@ class Settings:
     signup_url: str = ""        # where the site's subscribe form posts (Buttondown, MailerLite, Kit...); empty = no form
     signup_field: str = "email" # the form field name that service expects
     signup_email: str = ""      # until a provider is set, the subscribe box sends sign-ups here by email
+    mark_url: str = ""          # a reachable copy of the CaseLens mark for the email while the site is not live
     timezone: str = "Asia/Yerevan"
     lookback_days: int = 7
     max_items_per_issue: int = 25
@@ -80,3 +81,25 @@ def load(path: str = CONFIG_PATH) -> Settings:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         s.use_llm = False
     return s
+
+
+_LIVE: Dict[str, bool] = {}
+
+
+def live_site_url(settings) -> str:
+    """The site address, but only once its host resolves. Until the DNS record
+    exists, links in the email go to the sources and the mark comes from
+    mark_url, so nothing in a sent issue is dead."""
+    import socket
+    from urllib.parse import urlsplit
+    url = (getattr(settings, "site_url", "") or "").rstrip("/")
+    if not url:
+        return ""
+    host = urlsplit(url).netloc
+    if host not in _LIVE:
+        try:
+            socket.getaddrinfo(host, 443)
+            _LIVE[host] = True
+        except OSError:
+            _LIVE[host] = False
+    return url if _LIVE[host] else ""
