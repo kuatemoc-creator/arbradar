@@ -1,6 +1,7 @@
 """Command line entry point."""
 import argparse
 import datetime as dt
+import os
 import json
 import logging
 import sys
@@ -21,6 +22,42 @@ def cmd_fetch(args, settings, conn):
     for name, n in sorted(stats.items(), key=lambda kv: -kv[1]):
         print("  {:16} {:>4} new".format(name, n))
     print("{} new items".format(total))
+    return 0
+
+
+def cmd_email(args, settings, conn):
+    """Render out/issue-<date>.html from the saved day (out/site/data/<date>.json),
+    pulling the day from the published site first when it is newer there."""
+    import json
+    import subprocess
+    from . import site
+    from .config import live_site_url, OUT_DIR, ROOT
+    date = args.date or dt.date.today().isoformat()
+    path = site.day_file(date)
+    try:
+        raw = subprocess.run(["git", "show", "origin/gh-pages:data/{}.json".format(date)],
+                             capture_output=True, text=True, cwd=ROOT)
+        if raw.returncode == 0 and raw.stdout.strip():
+            os.makedirs(site.DATA, exist_ok=True)
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(raw.stdout)
+            print("day {} taken from the published site".format(date))
+    except Exception:                                 # noqa: BLE001 - offline is fine
+        pass
+    if not os.path.exists(path):
+        print("no saved day for {}".format(date))
+        return 1
+    with open(path, encoding="utf-8") as fh:
+        day = json.load(fh)
+    base = live_site_url(settings)
+    items = day.get("stories") or []
+    for it in items:
+        it["site_link"] = "{}/{}".format(base, it["slug"]) if (base and it.get("slug")) else None
+    built = email_html.build(items, day.get("records") or {}, settings, date)
+    out = os.path.join(OUT_DIR, "issue-{}.html".format(date))
+    with open(out, "w", encoding="utf-8") as fh:
+        fh.write(built["html"])
+    print("{}\n  subject: {}".format(out, built["subject"]))
     return 0
 
 
@@ -232,6 +269,8 @@ def main(argv=None):
     f.add_argument("--source")
     sub.add_parser("enrich", parents=[common], help="LLM triage + extraction")
     sub.add_parser("reclassify", parents=[common], help="re-run the rule classifier after a taxonomy change")
+    e = sub.add_parser("email", parents=[common], help="render the email for a saved day, from the published site")
+    e.add_argument("--date", default=None)
     sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
     r = sub.add_parser("run", parents=[common, llm_opts], help="fetch + enrich + build")
     r.add_argument("--source")
@@ -262,7 +301,7 @@ def main(argv=None):
         args.source = None
 
     conn = db.connect()
-    handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify,
+    handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify, "email": cmd_email,
                "run": cmd_run, "top": cmd_top, "send": cmd_send,
                "serve": cmd_serve, "intel": cmd_intel, "articles": cmd_articles}[args.cmd]
     return handler(args, settings, conn)

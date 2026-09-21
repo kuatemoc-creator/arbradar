@@ -238,6 +238,8 @@ def _outlet(source: Any) -> str:
 
 def record_parts(kind: str, it: Dict[str, Any]):
     """(name, step, tail) as plain text for a record row - shared with the web site."""
+    if "main" in it:                                  # a row read back from a saved day
+        return it.get("main") or it.get("title") or "", it.get("step") or "", it.get("tail") or ""
     if kind == "docket" or (kind == "people" and (it.get("source") or "") == "ICSID docket"):
         case, ref, step = _docket_parts(it)
         return case, step, ref
@@ -256,7 +258,7 @@ def record_parts(kind: str, it: Dict[str, Any]):
 def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
     rows = []
     for it in items:
-        when = str(it.get("published_at") or "")[:10]
+        when = str(it.get("published_at") or it.get("date") or "")[:10]
         try:
             dlabel = dt.date.fromisoformat(when).strftime("%-d %b")
         except ValueError:
