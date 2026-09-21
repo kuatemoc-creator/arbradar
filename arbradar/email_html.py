@@ -292,7 +292,10 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     rest = [it for it in items if it is not lead]
     devs, briefs = rest[:6], rest[6:9]
 
-    subject = "{} · {} — {}".format(name, dl, title_of(lead)[:70].rstrip(" :,-"))
+    head = title_of(lead)
+    if len(head) > 90:                         # cut at a word, never inside one
+        head = head[:90].rsplit(" ", 1)[0].rstrip(" :,-;") + "\u2026"
+    subject = "{} · {} — {}".format(name, dl, head)
     preheader = " · ".join([title_of(lead)] + [title_of(it) for it in devs[:2]])[:180]
 
     mark_src = ("{}/caselens-mark.png".format(site_url) if site_url
