@@ -115,7 +115,7 @@ _MAJOR_RE = [(m, re.compile(r"(?<![\w-])" + re.escape(m) + r"(?![\w-])",
 
 
 _ADVERSE = re.compile(
-    r"revok|cancel|terminat|seiz|nationali[sz]|expropriat|confiscat|suspend|halt|freez|\bban(s|ned)?\b|block|"
+    r"revok|cancel|terminat|seiz|nationali[sz](?:e|ing|ation)|expropriat|confiscat|suspend|halt|freez|\bban(s|ned)?\b|block|"
     r"windfall|back tax|tax (assessment|demand|claim|bill)|reassess|takes? (control|over)|temporary administration|"
     r"forced|arrest|raid|strip|annul|withdr|scrap|overturn|reject|refus|impos|fine[sd]?\b|penalt|"
     r"revoc|cancel|rescind|caduc|expropi|nacionaliz|incaut|embarg|suspend|prohíb|bloque|congel|"
