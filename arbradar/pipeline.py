@@ -560,7 +560,11 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
         "AND (COALESCE(pinned,0)=1 OR (score >= ? "
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
-        (settings.min_score, cutoff, settings.max_items_per_issue * 4)).fetchall()
+        (settings.min_score, cutoff, settings.max_items_per_issue * (12 if extra_days else 4))).fetchall()
+    # What earlier days carried is not a candidate, and must not crowd the pool either.
+    from . import site as _site
+    shown_urls, shown_keys = _site.shown_before(dt.date.today().isoformat())
+    rows = [r for r in rows if r["url"] not in shown_urls and title_key(dict(r)) not in shown_keys]
     # A story carried on an earlier day is not news on a later one. Earlier
     # days' stories go into the clustering first, so a new copy of an old story
     # merges into them and drops out.
