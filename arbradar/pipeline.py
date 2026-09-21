@@ -436,12 +436,17 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     skip |= shown_urls
     skip_titles |= shown_fps
 
+    muted = [m.lower() for m in (getattr(settings, "mute", None) or [])]
+
     def take(sql, params, limit, key=None):
         out, seen = [], set()
         for r in conn.execute(sql, params):
             it = db.row_to_dict(r)
             if it["id"] in skip or it["url"] in skip or fingerprint(it) in skip_titles or title_key(it) in skip_titles:
                 continue
+            text = ((it.get("title") or "") + " " + (it.get("summary") or "")).lower()
+            if any(m in text for m in muted):
+                continue                              # muted terms keep an item out of every list
             k = key(it) if key else it["url"]
             if k in seen:
                 continue
