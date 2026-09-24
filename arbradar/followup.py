@@ -69,9 +69,16 @@ def _stems(text: str) -> set:
 
 
 def _names(text: str) -> set:
-    """The capitalised content words after the first: the names in a headline."""
+    """The names in a headline: capitalised content words that are not common
+    words. In a Title Case headline every word is capitalised, so the common
+    ones ("Launches", "Group") are set aside by the house word list."""
+    from .style import _is_common
     words = _sig(text)
-    return {_stem(w.lower()) for w in words[1:] if w[:1].isupper()} | ({_stem(words[0].lower())} if words and words[0][:1].isupper() and len(words) > 1 and words[1][:1].isupper() else set())
+    out = set()
+    for w in words:
+        if w[:1].isupper() and not _is_common(w.lower()) and not states_in(w):
+            out.add(_stem(w.lower()))                 # a demonym ("Turkish") is a State, not a name
+    return out
 
 
 def _queries(it: Dict[str, Any]) -> List[str]:
@@ -146,7 +153,8 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
                 continue
             # Common words alone ("launches", "arbitration", "group") join two
             # different stories; a shared name or the same State must anchor it.
-            if not (my_names & _names(e["title"])) and not (my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}):
+            same_state = bool(my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])})
+            if not (my_names & _names(e["title"])) and not (same_state and shared >= 4):
                 continue
             their_states = {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}
             if my_states and their_states and not (my_states & their_states):

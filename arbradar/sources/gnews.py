@@ -62,6 +62,26 @@ PEOPLE: List[str] = [
     '(arbitrator OR "ICC Court" OR "LCIA Court" OR ICSID OR "SIAC Court" OR HKIAC OR "PCA") (appointed OR elected OR named) (president OR "secretary general" OR "secretary-general" OR "vice president" OR member OR chair OR registrar)',
 ]
 
+# What a partner hunting mandates would type. Grouped by the stage of the
+# mandate: the dispute forming, counsel being chosen, the case turning, and
+# the award to be enforced or undone. Global edition, English, one fetch each.
+MANDATE: List[str] = [
+    # the dispute forming
+    '("threatens arbitration" OR "threatens to arbitrate" OR "threatened arbitration" OR "reserves its rights" OR "all legal remedies" OR "cooling-off period" OR "amicable settlement") (government OR ministry OR state OR investor OR concession)',
+    '("notice of default" OR "termination notice" OR "force majeure notice" OR "call on the bond" OR "performance bond" OR "take-or-pay" OR "price review" OR "price reopener" OR "liquidated damages" OR "dispute adjudication board") (contractor OR project OR concession OR government OR utility)',
+    '("tax reassessment" OR "back taxes" OR "tax demand" OR "windfall tax" OR "export ban" OR "forced divestment" OR "capital controls" OR "temporary management" OR "royalty increase" OR "local content") (foreign OR investor OR miner OR operator OR company)',
+    '("licence suspended" OR "license suspended" OR "permit suspended" OR "concession revoked" OR "contract cancelled" OR "contract terminated" OR "blocked the takeover" OR "blocks the deal") (foreign OR investor OR company OR group)',
+    # counsel being chosen
+    '("seeking counsel" OR "tender for legal services" OR "request for proposals" OR "expressions of interest" OR instructs OR retains OR "replaces counsel" OR "new counsel") (arbitration OR treaty OR ICSID OR claim OR dispute)',
+    '("third-party funding" OR "litigation funding" OR "litigation finance" OR "funded claim" OR Burford OR "Omni Bridgeway" OR "security for costs") (arbitration OR award OR claim)',
+    # the case turning
+    '("emergency arbitrator" OR "interim measures" OR "anti-suit injunction" OR "freezing order" OR "section 1782" OR "1782 discovery" OR "provisional measures") (arbitration OR tribunal OR award)',
+    '("jurisdiction" OR "bifurcation" OR "denial of justice" OR "fair and equitable treatment" OR "umbrella clause" OR "most favoured nation") (tribunal OR ICSID OR "investment treaty" OR arbitration)',
+    # the award, and after it
+    '("final award" OR "partial award" OR "award rendered" OR "ordered to pay" OR "found liable" OR "dismissed the claim") (tribunal OR ICSID OR ICC OR LCIA OR SIAC OR UNCITRAL)',
+    '(annulment OR "set aside" OR "enforcement of the award" OR "recognition and enforcement" OR "sovereign immunity" OR attachment OR garnishment OR "assets seized") (award OR ICSID OR tribunal OR arbitration)',
+]
+
 COUNTRY = '"{state}" (arbitration OR ICSID OR "investment treaty" OR expropriation OR "notice of dispute" OR nationalisation OR "licence revoked")'
 
 _TRAIL = re.compile(r"\s+-\s+[^-]{2,60}$")     # "Headline - Outlet Name"
@@ -95,6 +115,8 @@ def _sweep(days: int):
         yield q, "en-GB", "GB", "GB:en", "en", "", "commercial"
     for q in PEOPLE:
         yield q, "en-GB", "GB", "GB:en", "en", "", "people"
+    for q in MANDATE:
+        yield q, "en-GB", "GB", "GB:en", "en", "", "mandate"
     wanted = set(getattr(settings, "editions", None) or [])
     for label, hl, gl, ceid, lang in EDITIONS:
         if wanted and label not in wanted:
