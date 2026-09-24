@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS fetch_log (
 );
 """
 
-LIST_FIELDS = ("sectors", "claimants", "respondents", "states", "counsel", "arbitrators")
+LIST_FIELDS = ("sectors", "claimants", "respondents", "states", "counsel", "arbitrators" "corroboration",)
 
 # Columns added after the first release; applied on every connect().
 MIGRATIONS = (
@@ -73,6 +73,8 @@ MIGRATIONS = (
     ("items", "title_en", "TEXT"),
     ("items", "summary_en", "TEXT"),
     ("items", "flag_reason", "TEXT"),
+    ("items", "corroboration", "TEXT"),
+    ("items", "story", "TEXT"),
 )
 
 

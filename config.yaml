@@ -41,6 +41,8 @@ firms: {}
 # Items containing these terms are heavily demoted.
 mute:
   - " // "
+  - "letters to the editor"
+  - "refugee"
   - "may face questioning"
   - "special team to probe"
   - webinar

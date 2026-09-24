@@ -85,7 +85,14 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
             if _summary(it):
                 lines += [_summary(it)[:400], ""]
             lines += [_meta_line(it), ""]
-    if len(rest) > 6:
+    for it in (extras or {}).get("leads") or []:
+        if "## Leads" not in lines:
+            lines += ["## Leads", ""]
+        lines += [_headline(it, settings, date), ""]
+        if _summary(it):
+            lines += [(it.get("story") or _summary(it))[:600], ""]
+        lines += [_meta_line(it), ""]
+    if rest[6:9]:
         lines += ["## In brief", ""]
         for it in rest[6:9]:
             lines.append("- [{}]({}) - {}".format(

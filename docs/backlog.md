@@ -54,6 +54,13 @@ the owner's accounts or DNS.
 
 ## Done recently
 
+- 24 Sept (afternoon): every story and lead is chased into other outlets
+  (`arbradar/followup.py`: Google News and Bing search feeds, publisher pages
+  for cut snippets) and the explanation built from what they add; a reserved
+  Leads section for pre-dispute hints from outside the trade press, with its
+  own floor; a state-measure classifier for the acts that produce claims;
+  one entry shape for every section in the email and on the site.
+
 - 24 Sept: five event types a rainmaker watches for that the taxonomy lacked
   (counsel replaced, emergency or interim relief, counsel instructed,
   settlement, law reform), plus capital-control, bank-resolution, insolvency

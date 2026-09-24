@@ -175,7 +175,7 @@ border-radius:0 10px 10px 0;margin:28px 0}
 .stories{display:flex;flex-direction:column}
 .story{padding:20px 0 22px;border-bottom:1px solid var(--line)}
 .story.lead{padding-top:6px}
-.story h2{font-family:var(--sans);font-size:1.1875rem;line-height:1.3;font-weight:700;letter-spacing:-.005em;margin:0 0 9px;text-wrap:balance}
+.story h2{font-family:var(--sans);font-size:1.125rem;line-height:1.3;font-weight:700;letter-spacing:-.005em;margin:0 0 6px;text-wrap:balance}
 .story h2 a{color:var(--ink);text-decoration:none}.story h2 a:hover{color:var(--link)}
 .story p{margin:0;font-size:1rem;line-height:1.5;color:var(--ink);max-width:64ch}
 .story .tail{color:var(--mute);white-space:nowrap}.story .tail a{color:var(--mute)}

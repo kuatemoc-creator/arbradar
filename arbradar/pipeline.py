@@ -75,6 +75,11 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
             if hit and event_type == "award_issued" and not re.search(
                     r"arbitra|tribunal|icsid|\bicc\b|lcia|siac|hkiac|uncitral|\bpca\b|annul|enforce", text):
                 continue                              # a road contract "award" is procurement, not an award
+            if hit and event_type == "state_measure" and not (
+                    states_in(text) and re.search(r"compan|investor|group|corp|plc|inc\b|ltd|\bag\b|\bsa\b|subsidiar|"
+                                                   r"operator|miner|developer|contractor|bank|firm|venture|plant|project|"
+                                                   r"concession|licen[cs]e|mine\b|field|refiner|pipeline|terminal", text)):
+                continue                              # a measure with no State or no business named is politics
             if hit and event_type == "notice_of_intent" and not re.search(
                     r"arbitra|treaty|icsid|dispute|claim|investor|\bbit\b|uncitral|cooling", text):
                 continue                              # a NEPA or planning notice, not a treaty notice
@@ -585,7 +590,10 @@ def reclassify(conn, settings, days: int = 21) -> int:
 _ON_TOPIC = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIAC|\bPCA\b|UNCITRAL|annul|set aside|"
                        r"enforce|treaty claim|investor-state|\bISDS\b|investment treaty|expropriat|nationali[sz]|"
                        r"notice of dispute|notice of intent|emergency arbitrator|\bseat\b|"
-                       r"seiz|confiscat|revok|licen[cs]e|concession|asset freez|frozen assets|windfall tax", re.I)
+                       r"seiz|confiscat|revok|licen[cs]e|concession|asset freez|frozen assets|windfall[- ]tax|"
+                       r"tak(?:es|en|ing) control|under (?:temporary |state |external )?(?:management|administration)|"
+                       r"tax (?:demand|reassessment|bill|claim)|back taxes|royalt|export ban|price cap|forced (?:sale|to sell)|"
+                       r"cancel|terminat|renegotiat|nationali|sanction|fine[ds]?\b|penalt|moratorium|blocked the", re.I)
 
 
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
@@ -655,3 +663,64 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
             if len(stories) >= 6:
                 break
     return stories[:settings.max_items_per_issue]
+
+# The events a rainmaker watches for before any tribunal exists. A lead is a
+# sweep or feed item of one of these kinds; it never competes with the trade
+# press for the story slots and has its own floor.
+LEAD_EVENTS = ("state_measure", "distress_event", "notice_of_intent", "counsel_tender", "commercial_dispute",
+               "interim_relief", "funding", "counsel_change", "settlement", "s1782_application")
+
+
+_BUSINESS = re.compile(r"\b(?:Inc|Ltd|Limited|Plc|LLC|LLP|GmbH|AG|SA|SpA|NV|BV|Pty|Corp|Corporation|Holdings|Group|"
+                       r"Co\b|Company|Industries|Energy|Mining|Resources|Petroleum|Oil|Gas|Power|Bank|Telecom|Airlines|"
+                       r"Airways|Cement|Steel|Motors|Pharma|Capital|Partners|Ventures)\b(?!\s+of\s+Ministers)")
+
+
+def select_leads(conn, settings, taken: List[Dict[str, Any]], limit: int = 5, floor: float = 45.0) -> List[Dict[str, Any]]:
+    """The best pre-dispute hints from outside the trade press and the records,
+    not already carried as a story today or on an earlier day."""
+    from . import site as _site
+    from .outlets import is_trade_press
+    cutoff = (as_of() - dt.timedelta(days=settings.lookback_days)).isoformat()
+    upto = as_of().isoformat() + "~"
+    marks = ",".join("?" * len(LEAD_EVENTS))
+    rows = conn.execute(
+        "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL AND COALESCE(excluded,0)=0 "
+        "AND source NOT LIKE 'Court:%' AND source NOT IN ('ICSID docket','SEC EDGAR','PCA case list') "
+        "AND event_type IN ({}) AND score >= ? "
+        "AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "
+        "AND COALESCE(published_at, substr(fetched_at,1,10)) <= ? "
+        "ORDER BY score DESC LIMIT 120".format(marks), (*LEAD_EVENTS, floor, cutoff, upto)).fetchall()
+    shown_urls, shown_keys = _site.shown_before(as_of().isoformat())
+    taken_urls = {t.get("url") for t in taken} | {a.get("url") for t in taken for a in (t.get("also") or [])}
+    taken_keys = {title_key(t) for t in taken} | {fingerprint(t) for t in taken}
+    cands = []
+    for r in rows:
+        d = db.row_to_dict(r)
+        if d["url"] in shown_urls or d["url"] in taken_urls:
+            continue
+        if title_key(d) in shown_keys or title_key(d) in taken_keys or fingerprint(d) in taken_keys:
+            continue
+        if is_trade_press(d.get("source") or "", d.get("url") or ""):
+            continue                                  # the trade press is a story, not a hint
+        text = " ".join([d.get("title_en") or d.get("title") or "", d.get("summary_en") or d.get("summary") or ""])
+        if not _ON_TOPIC.search(text):
+            continue
+        if d.get("event_type") in ("state_measure", "distress_event") and not (
+                d.get("claimants") or d.get("amount_usd") or _BUSINESS.search(text)):
+            continue                                  # a measure that lands on no named business is politics
+        cands.append(d)
+    anchors = _site.anchors_before(as_of().isoformat())
+    for a in anchors:
+        a["_anchor"] = True
+    anchor_urls = {a.get("url") for a in anchors} - {None, ""}
+    out = []
+    for rep in cluster(anchors + taken + cands):
+        if rep.get("_anchor") or rep.get("url") in anchor_urls or rep.get("url") in taken_urls:
+            continue
+        if any(a.get("url") in anchor_urls or a.get("url") in taken_urls for a in rep.get("also") or []):
+            continue
+        out.append(rep)
+        if len(out) >= limit:
+            break
+    return out

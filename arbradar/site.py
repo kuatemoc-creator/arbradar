@@ -22,7 +22,7 @@ DATA = os.path.join(SITE, "data")
 STORY_FIELDS = ("id", "title", "title_en", "summary", "summary_en", "url", "source", "source_tier",
                 "event_type", "published_at", "institution", "treaty", "case_ref", "claimants",
                 "respondents", "states", "sectors", "counsel", "arbitrators", "amount_usd",
-                "flag_reason", "why_it_matters", "also", "lang", "country")
+                "flag_reason", "why_it_matters", "also", "lang", "country", "corroboration", "story")
 RECORD_HEADINGS = (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
                    ("courts", "In the courts"), ("people", "People and appointments"))
 
@@ -60,6 +60,13 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
         stories.append(d)
+    leads = []
+    for it in (extras or {}).get("leads") or []:
+        d = {k: it.get(k) for k in STORY_FIELDS}
+        d["tier"] = "signal"
+        d["slug"] = story_slug(it, date)
+        d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
+        leads.append(d)
     records: Dict[str, List[Dict[str, Any]]] = {}
     for key, _ in RECORD_HEADINGS:
         rows = []
@@ -70,7 +77,7 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
         records[key] = rows
     os.makedirs(DATA, exist_ok=True)
     with open(day_file(date), "w", encoding="utf-8") as fh:
-        json.dump({"date": date, "subject": subject, "stories": stories, "records": records},
+        json.dump({"date": date, "subject": subject, "stories": stories, "leads": leads, "records": records},
                   fh, ensure_ascii=False, indent=1)
     return day_file(date)
 
@@ -97,7 +104,7 @@ def shown_before(date: str, days: int = 30) -> Tuple[Set[str], Set[str]]:
     for d in load_days():
         if not (cutoff <= d["date"] < date):
             continue
-        for s in d.get("stories") or []:
+        for s in (d.get("stories") or []) + (d.get("leads") or []):
             urls.add(s.get("url") or "")
             fps.add(fingerprint(s)); fps.add(title_key(s))
             for a in s.get("also") or []:
@@ -118,7 +125,7 @@ def anchors_before(date: str, days: int = 21) -> List[Dict[str, Any]]:
     for d in load_days():
         if not (cutoff <= d["date"] < date):
             continue
-        for s in d.get("stories") or []:
+        for s in (d.get("stories") or []) + (d.get("leads") or []):
             out.append({"title": s.get("title") or "", "title_en": s.get("title_en"), "url": s.get("url") or "",
                         "claimants": s.get("claimants") or [], "respondents": s.get("respondents") or [],
                         "states": s.get("states") or [], "case_ref": s.get("case_ref"),
@@ -171,9 +178,13 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
         when_label = ""
     outlet = (s.get("source") or "").replace("Google News / ", "")
     outlet = re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", outlet)
-    body = sentences(summary_of(s), 45)
+    body = sentences(s.get("story") or summary_of(s), 70 if s.get("story") else 45)
     tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
         html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
+    cites = [c for c in (s.get("corroboration") or [])[:3] if c.get("url")]
+    if cites:
+        tail += '<span class="tail"> &middot; also ' + ", ".join(
+            '<a href="{}" rel="noopener">{}</a>'.format(html.escape(c["url"]), html.escape(c.get("source") or "source")) for c in cites) + "</span>"
     return ('<article class="story{lead}"><h2><a href="{slug}">{h}</a></h2>'
             '<p>{p}{sp}{tail}</p></article>').format(
         lead=" lead" if lead else "", slug=html.escape(s.get("slug") or "#"),
@@ -183,20 +194,21 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
 
 
 def _record_rows(rows: List[Dict[str, Any]]) -> str:
+    """A record is an entry like any other: name as the headline, the step as
+    the explanation, the court or reference and the date as the source line."""
     out = []
     for r in rows:
         try:
             d = short_label(r.get("date") or "")
         except ValueError:
             d = ""
-        main = "<b>{}</b>".format(html.escape(r.get("main") or r.get("title") or ""))
-        if r.get("step"):
-            main += " — " + html.escape(r["step"])
-        if r.get("tail"):
-            main += ' <small>{}</small>'.format(html.escape(r["tail"]))
-        out.append('<div class="r"><span class="d">{}</span><a href="{}" rel="noopener">{}</a></div>'.format(
-            html.escape(d), html.escape(r.get("url") or "#"), main))
-    return '<div class="rec">{}</div>'.format("".join(out))
+        url = html.escape(r.get("url") or "#")
+        tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
+            url, html.escape(r.get("tail") or "record"), (", " + html.escape(d)) if d else "")
+        body = html.escape(r.get("step") or "")
+        out.append('<article class="story"><h2><a href="{}" rel="noopener">{}</a></h2><p>{}{}{}</p></article>'.format(
+            url, html.escape(r.get("main") or r.get("title") or ""), body, " " if body else "", tail))
+    return '<div class="stories">{}</div>'.format("".join(out))
 
 
 def render_day(day: Dict[str, Any], days: List[Dict[str, Any]], settings) -> str:
@@ -211,13 +223,15 @@ def render_day(day: Dict[str, Any], days: List[Dict[str, Any]], settings) -> str
         _switcher(days, date),
         "<h1>{}</h1>".format(html.escape(settings.tagline)),
         _signup(settings),
-        '<div class="stories">{}</div>'.format("".join(_story_row(s, lead=(i == 0)) for i, s in enumerate(main))),
+        '<h2 class="sec">Today</h2><div class="stories">{}</div>'.format("".join(_story_row(s, lead=(i == 0)) for i, s in enumerate(main))),
     ]
+    leads = day.get("leads") or []
+    if leads:
+        parts.append('<h2 class="sec">Leads</h2><p class="lede">Measures and disputes in the making, from outside the trade press.</p>'
+                     '<div class="stories">{}</div>'.format("".join(_story_row(s) for s in leads)))
     if briefs:
-        parts.append('<h2 class="sec">In brief</h2><ul class="brief">{}</ul>'.format("".join(
-            '<li><a href="{}">{}</a> <small>{}</small></li>'.format(
-                html.escape(s.get("slug") or s.get("url") or "#"), html.escape(s.get("title_en") or s.get("title") or ""),
-                html.escape(s.get("event") or "")) for s in briefs)))
+        parts.append('<h2 class="sec">In brief</h2><div class="stories">{}</div>'.format("".join(
+            _story_row(dict(s, summary="", summary_en="", story="")) for s in briefs)))
     for key, heading in RECORD_HEADINGS:
         rows = (day.get("records") or {}).get(key) or []
         if rows:
@@ -249,7 +263,7 @@ def build(settings, use_llm: bool = True) -> Dict[str, Any]:
     written = 0
     for day in days:
         date = day["date"]
-        for s in day.get("stories") or []:
+        for s in (day.get("stories") or []) + (day.get("leads") or []):
             fname = s.get("slug") or ""
             if not fname:
                 continue

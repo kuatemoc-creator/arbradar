@@ -170,7 +170,34 @@ def cmd_build(args, settings, conn):
         print("site host does not resolve yet; email links go to the sources")
     for it in items:
         it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
+    # The leads: pre-dispute hints from outside the trade press, with their own
+    # slots. Then every story and lead is chased into other outlets and the
+    # explanation built from what they add.
+    from . import followup
+    leads = pipeline.select_leads(conn, settings, items, limit=5)
+    if leads:
+        enrich.enrich(conn, leads)
+        leads = [it for it in leads if enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))
+                 or followup.load(it.get("corroboration"))]
+    chased = 0
+    for it in [x for x in items if not x.get("brief_only")] + leads:
+        stored = followup.load(it.get("corroboration"))
+        if stored or chased >= 14:
+            it["corroboration"] = stored
+            continue
+        found = followup.corroborate(it)
+        chased += 1
+        it["corroboration"] = found["sources"]
+        if found["story"] and len(found["story"]) > len(email_html.summary_of(it) or ""):
+            it["story"] = found["story"]
+        conn.execute("UPDATE items SET corroboration=?, story=? WHERE id=?",
+                     (json.dumps(found["sources"], ensure_ascii=False), it.get("story") or None, it["id"]))
+    conn.commit()
+    leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
+    if chased:
+        print("chased {} stories into other outlets; {} leads".format(chased, len(leads)))
     extras = pipeline.record_extras(conn, settings, items)
+    extras["leads"] = leads
     built = email_html.build(items, extras, settings, date)
     if settings.use_llm and not args.no_llm:
         print("Writing issue with {} ...".format(settings.editor_model))
@@ -195,7 +222,7 @@ def cmd_build(args, settings, conn):
          paths["html"], paths["md"], len(items)))
     issue_id = cur.lastrowid
     conn.executemany("UPDATE items SET issue_id=? WHERE url=? OR id=?",
-                     [(issue_id, a["url"], it["id"]) for it in items
+                     [(issue_id, a["url"], it["id"]) for it in items + leads
                       for a in ([{"url": it["url"]}] + (it.get("also") or []))])
     conn.commit()
 
