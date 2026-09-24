@@ -34,13 +34,15 @@
     "E L W I, Moscow",
     "Ministry of Justice, Department on Legal Protection of Interests of Uzbekistan, Tashkent, Uzbekistan"
    ],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
    "flag_reason": "ICSID docket: case registered",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
+   "corroboration": [],
+   "story": null,
    "tier": "lead",
    "slug": "2026-09-23-maksim-vladimirovich-poletaev-v-uzbekistan-new-case-registered-at-icsi.html",
    "event": "New case"
@@ -67,13 +69,30 @@
    ],
    "sectors": [],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
    "flag_reason": "matched ‘instructs’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
+   "corroboration": [
+    {
+     "source": "globalarbitrationreview.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdlhnOVpBbHBMSlVFX1A5cDhpVndXZWRHaWxMU2tkdU1udU8yb1hjUzVNYkZPaElmd0t1UFJBcGtKdWNKTmNWbFNETXlVUFlsbHMyb04tcHI0MnZWNzVUcnl5My1GMnF2WlI4Ml9wLTF0T1RmY2U5MjhlV0FJQ1FYZXBUYVJvQmZySVh1cEgtYzVQY1FWUi1jMVQ0RHZkaHB5RXZtYQ?oc=5",
+     "title": "Ukraine instructs boutique to defend US investor’s ICSID claim - globalarbitrationreview.com",
+     "published_at": "Tue, 22 Sep 2026",
+     "snippet": "Ukraine instructs boutique to defend US investor’s ICSID claim globalarbitrationreview.com"
+    },
+    {
+     "source": "International Institute for Sustainable Development",
+     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcWF2SVgyNzBVaGkwME55UzJtbGJjT2NLaEhQRlI4SnhXU1pWRWJqdnhxWkh6aVR1SWwzbTRMYV8zV3FRSU8wdUwyaUhQQnozaHdWUzdUNTRkdkwtbFZuREFVU05mTlN2bk5hd1E0SGZaeW5VMDhNTnk5RDIwNzVGcWwxcHhiZjE2SEVxTXNJX2ZGWkhEdW1OcHg3a0RfalpXUTlCV196NzA1Z1BEWE5rN3l6akZiUEFBVmtlZVZtS2Z2QlF0NW9ZNWp3LTY0TE1BVDRxamhCb0k0WHpvSFFCbWhEaw?oc=5",
+     "title": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors - International Institute for Sustainable Development",
+     "published_at": "Sat, 20 Jun 2020",
+     "snippet": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors International Institute for Sustainable Development"
+    }
+   ],
+   "story": null,
    "tier": "development",
    "slug": "2026-09-23-ukraine-instructs-boutique-to-defend-us-investor-s-icsid-claim.html",
    "event": "Counsel instructed"
@@ -99,16 +118,124 @@
    ],
    "sectors": [],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
    "flag_reason": "matched ‘award’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
+   "corroboration": null,
+   "story": null,
    "tier": "brief",
    "slug": "2026-09-23-ukrainian-state-owned-defense-equipment-company-seeks-enforcement-of-a.html",
    "event": "Award"
+  }
+ ],
+ "leads": [
+  {
+   "id": 5784,
+   "title": "CEMAC Regulator Revokes Axiome Capital’s License After Three Years Without Market Activity",
+   "title_en": null,
+   "summary": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese…",
+   "summary_en": null,
+   "url": "https://www.businessincameroon.com/finance/2309-16805-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-without-market-activity",
+   "source": "Google News / businessincameroon.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Cameroon"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": null,
+   "tier": "signal",
+   "slug": "2026-09-23-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-wit.html",
+   "event": "State measure"
+  },
+  {
+   "id": 5113,
+   "title": "Mambilla: TSF Hails Nigeria’s Victory At ICC Tribunal",
+   "title_en": null,
+   "summary": "President Bola Tinubu has commended the judgment of the International Chamber of Commerce (ICC) arbitration tribunal in Paris…",
+   "summary_en": null,
+   "url": "https://www.vanguardngr.com/2026/09/tinubu-hails-nigerias-victory-over-sunrises-2-35bn-mambilla-claim/",
+   "source": "Google News / vanguardngr.com",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-22",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Nigeria"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Vanguard News",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWFhLalJaNkFMdEJEb25HT0NLUmUtVVQyMWtCdVoyY0ZCc2thWW5ZWlNVcGhHeUlTUUwzODVhXzBTNWdWUnZLYjBxNHpIRTVaNW5wMDZvRE9IWTVBblhuSGZETHFObHROWEh0b0pKVVU0cmpxdFpWcXF3UVROSUlpcUhka3lkUHBrNDQ3QjRoblF0cVdTd25UMFZB0gGfAUFVX3lxTFBGM2V1M2xtRjVPTGhOR1otU3ZlSVVCc3l0bE03eDhxdS1tdFZhUXUzZktYOEY4LTF6RmZBRHdXM2FKMURWNGRWTW85Q3RGMEJYMUI0NERIVHJONVdfSnNPNUxkVG5NYXliZFpBX1VwLUU1YThFYVVMeGRJWnRFZWRTNDhscURxa0RiZTVEOVFoY3hLY0VkUlJlS2wyNGpCNA?oc=5",
+     "title": "Mambilla: Malami hails Nigeria’s victory, seeks transparency - Vanguard News",
+     "published_at": "Tue, 22 Sep 2026",
+     "snippet": "Mambilla: Malami hails Nigeria’s victory, seeks transparency Vanguard News"
+    },
+    {
+     "source": "THISDAYLIVE",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWVlxanc1Z0NNdkhkZ3FFaHFFeHJrWUFMQXQ4eDhzZ2Z4azdqQTM0TGhESEcyOFdPVV9PdUp6Mm44b3JidXNpeGF3czBfSkVMcE92d19BM2kwX1JqZzk0TVItTFJtQmVKV3E2YmwwRWFSUndRTlZVVnJzWG1VVWlmVDJhT2tRRjk5aW9lT2dDT016eWVmWjlOVFo4Y3JNLUw3aG9hVzhRdw?oc=5",
+     "title": "Mambilla: Tinubu Hails Nigeria’s Victory in $2.35bn ICC Arbitration - THISDAYLIVE",
+     "published_at": "Fri, 18 Sep 2026",
+     "snippet": "Mambilla: Tinubu Hails Nigeria’s Victory in $2.35bn ICC Arbitration THISDAYLIVE"
+    },
+    {
+     "source": "Blueprint Newspapers",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPY0RHcUxXRXROdzFkcHdKNlNpdFNpMlNsMzhUVkJsN0tTQURHbXNYRHFuTHptNVVoOWVOSi01emxBSFJ4SnF5cnJqaGdKLWtaVzU0NUQybEc4WFotMFRmUFJXRENEejJvUHZTZFpXNElocjVkclVHUFVZU2w0Nmw3b01CYy1ueWMyaHlFTDM4Q2F3Wm4xeXVPN1BnQ2JVbEx3dk8tUWVveHgyUQ?oc=5",
+     "title": "$6b Mambilla power contract: Tinubu hails EFCC for FG’s victory at arbitration tribunal - Blueprint Newspapers",
+     "published_at": "Sat, 19 Sep 2026",
+     "snippet": "$6b Mambilla power contract: Tinubu hails EFCC for FG’s victory at arbitration tribunal Blueprint Newspapers"
+    },
+    {
+     "source": "Independent Newspaper Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTUdMcmJEdURmc3BPZXRHMjlhWUc3NmpxTTd3bzFlWXh5elZrQWFtQ08yUVJ1SVJJVHdSWHB6REh5Vy1OTURDWDlOOHdsa0tESTZDeGFZb3U2bDQ3NG9sc2hydzNTcnZRV1pldFdwZHRMMmN0UTd3dkdxU3pZOF8yekJYZVlMdlZSU21yQUp5VlVhNjg4ZWt1Wg?oc=5",
+     "title": "Mambila Saga: Malami Hails Nigeria’s Victory, Urges Honesty, Transparency - Independent Newspaper Nigeria",
+     "published_at": "Tue, 22 Sep 2026",
+     "snippet": "Mambila Saga: Malami Hails Nigeria’s Victory, Urges Honesty, Transparency Independent Newspaper Nigeria"
+    },
+    {
+     "source": "The Nation Newspaper",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOMFRRVlFUeU9UMDl2bkQtY0w1ak5HMFZSbHpFaGNfV2dkUEMzaTNNSElzRTFJNHBHNWE1OUFRMjdCbU1xcjFqVWp0V2JZQnFCaElOclRfTnFkWUZRTGsxNkNjTWp4aFVIelBlLWxFaU5iOE00dWlQR25yMkRCU0xXdnRYSXo4RFBIby1hOWpLRlBMVUNRQWowaXlyNWxldV9WY1o2c3FMYkZXM0hHMG9hRHNpdFNUdjY4S0FfNG1PTzlyX2dBa3VF0gHMAUFVX3lxTE02cE9YY25IM1VmeFQ1OWY0RnI1U2Z2QVZaNzF2M3NibVlPUnV2dUoxS0I0dmtaYkF1S3FFYi10eVkxYWpjcnoxX0RCbE85cE82bTBoUGxMRkJJV2N4VkNUcFVZaWpEcG1tY2hIdTlGaGtTTVNXYUZERjk2Q1AxSV9fSlRObXhBam5sMGw1c012Z2ZDZWpqT2hsaUtFR0RDLXgyMWUtemtweDFjNDkzMGhMZTZPdUpVVDR3WjVpUEpqZFA5d3hjU3N0RGdIQw?oc=5",
+     "title": "Mambilla hydropower: Arewa Think Tank hails Tinubu as tribunal dismisses contractor’s $2.35bn claims - The Nation Newspaper",
+     "published_at": "Fri, 18 Sep 2026",
+     "snippet": "Mambilla hydropower: Arewa Think Tank hails Tinubu as tribunal dismisses contractor’s $2.35bn claims The Nation Newspaper"
+    }
+   ],
+   "story": null,
+   "tier": "signal",
+   "slug": "2026-09-23-mambilla-tsf-hails-nigeria-s-victory-at-icc-tribunal.html",
+   "event": "Commercial arbitration"
   }
  ],
  "records": {
