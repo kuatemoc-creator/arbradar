@@ -161,7 +161,8 @@ def _switcher(days: List[Dict[str, Any]], current: str) -> str:
 
 def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
     """Headline, explanation, source and date - the same shape as the email."""
-    from .email_html import _clip as clip_chars, summary_of
+    from .email_html import summary_of
+    from .style import headline, sentences
     when = str(s.get("published_at") or "")[:10]
     try:
         d = dt.date.fromisoformat(when)
@@ -170,13 +171,14 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
         when_label = ""
     outlet = (s.get("source") or "").replace("Google News / ", "")
     outlet = re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", outlet)
-    body = clip_chars(summary_of(s), 620 if lead else 520)
+    body = sentences(summary_of(s), 60 if lead else 50)
     tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
         html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
     return ('<article class="story{lead}"><h2><a href="{slug}">{h}</a></h2>'
             '<p>{p}{sp}{tail}</p></article>').format(
         lead=" lead" if lead else "", slug=html.escape(s.get("slug") or "#"),
-        h=html.escape(s.get("title_en") or s.get("title") or ""),
+        h=html.escape(headline(s.get("title_en") or s.get("title") or "",
+                               list(s.get("claimants") or []) + list(s.get("respondents") or []) + list(s.get("counsel") or []))),
         p=html.escape(body), sp=" " if body else "", tail=tail)
 
 

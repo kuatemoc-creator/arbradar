@@ -45,7 +45,10 @@ def date_label(iso: str) -> str:
 
 
 def title_of(it: Dict[str, Any]) -> str:
-    return it.get("title_en") or it.get("title") or ""
+    from .style import headline
+    keep = list(it.get("claimants") or []) + list(it.get("respondents") or []) + list(it.get("counsel") or []) \
+        + list(it.get("arbitrators") or []) + [it.get("institution") or ""]
+    return headline(it.get("title_en") or it.get("title") or "", keep)
 
 
 def summary_of(it: Dict[str, Any]) -> str:
@@ -185,8 +188,9 @@ def _when(it: Dict[str, Any]) -> str:
 
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
     """Headline, one paragraph, source. The shape of every good legal newsletter."""
+    from .style import sentences
     href = it.get("site_link") or it.get("url") or "#"
-    size, lh = (27, 1.18) if lead else (21, 1.28)
+    size, lh = 20, 1.3                                  # one headline size: the lead is first, not louder
     head = ('<h3 id="s{n}" style="font-family:{serif};font-size:{size}px;line-height:{lh};font-weight:bold;'
             'letter-spacing:-0.2px;margin:0 0 9px;"><a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>'
             ).format(n=n, serif=SERIF, size=size, lh=lh, href=esc(href), ink=INK, t=esc(title_of(it)))
@@ -195,7 +199,7 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     when = _when(it)
     tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
         mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-    para = p(esc(_clip(body, 560)) + tail, size=16, lh=1.5, mb=0) if body else \
+    para = p(esc(sentences(body, 55)) + tail, size=16, lh=1.5, mb=0) if body else \
         p(tail.strip(), size=14, lh=1.5, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
             '<tr><td style="padding:{pt}px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'

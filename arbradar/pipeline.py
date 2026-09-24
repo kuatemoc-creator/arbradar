@@ -355,8 +355,14 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 continue
             jac = inter / max(1, len(toks | rep["_toks"]))
             shared_names = len(names & rep["_names"])
+            # The same State and the same kind of event, with three words in
+            # common, is one story told twice: "Malaysian investor threatens
+            # India over enforcement delays" and "Malaysian road developer puts
+            # India on notice of treaty dispute over enforcement proceedings".
+            same_kind = bool((toks & rep["_toks"]) & states) and inter >= 3 and jac >= 0.15 \
+                and (it.get("event_type") or "") == (rep.get("event_type") or "") and it.get("event_type") not in (None, "", "commentary")
             if (same_parties or shared_phrase or (rare_name and (same_state or inter >= 2))
-                    or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2):
+                    or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2 or same_kind):
                 home = rep
                 break
         if home is None:
