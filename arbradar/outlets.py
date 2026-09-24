@@ -36,6 +36,17 @@ _TIERS = {
 }
 
 
+# The arbitration trade press. A headline from these is arbitration news whatever
+# words it uses, and gets a floor weight when the rules see only commentary.
+TRADE_PRESS = ("gar", "global arbitration review", "globalarbitrationreview", "iareporter", "law360 international arbitration",
+               "latin lawyer", "latinlawyer", "kluwer arbitration blog", "jus mundi", "jusmundi", "ciarb", "arbitration blog")
+
+
+def is_trade_press(source: str, url: str = "") -> bool:
+    text = " ".join(x for x in ((source or "").replace("Google News / ", ""), _host(url or "")) if x).lower()
+    return any(k in text for k in TRADE_PRESS)
+
+
 def _host(url: str) -> str:
     try:
         h = urlsplit(url).netloc.lower()

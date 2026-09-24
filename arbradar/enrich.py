@@ -111,7 +111,7 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
 def page_summary(url: str) -> str:
     """The article's own description, for a story whose feed carried only a headline:
     og:description, then the meta description, then the first real paragraph."""
-    if not url or "news.google.com" in url:
+    if not url or "news.google.com" in url or "iareporter.com" in url:
         return ""
     try:
         from .fetch import get

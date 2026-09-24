@@ -128,12 +128,24 @@ _IDIOM = re.compile(r"\bseiz(?:e|es|ed|ing)\b.{0,60}?(?:\bon\b|\bupon\b|opportun
                     r"the day|the lead|high ground|spotlight|headline|title|crown|victory|win\b)", re.I)
 
 
+_ACTOR = re.compile(r"government|ministry|minister|regulator|authority|agency|court|president|parliament|\bstate\b|cabinet|"
+                    r"central bank|commission|customs|\btax\b|police|prosecut|senate|congress|governor|decree|\blaw\b|\bbill\b|"
+                    r"sanction|tribunal|putin|kremlin|erdogan|junta|regime|gobierno|ministerio|gouvernement|ministère|правительств|"
+                    r"министерств|hükümet|bakanl", re.I)
+_CRIME = re.compile(r"fraud|launder|illegal|smuggl|drug|narcot|corrupt|bribe|crime|criminal|terror", re.I)
+
+
 def measure_label(title: str, majors: List[str]):
     """(event_type, flag_reason) for a State-measure sweep headline. A measure needs
     an adverse act, not an idiom; and it counts as a measure against an investor
     only when the investor is the subject of the act, not a name at the end."""
     if not _ADVERSE.search(title) or _IDIOM.search(title):
         return "commentary", "State-measure sweep; no adverse act in the headline"
+    from .editions import states_in
+    if not (_ACTOR.search(title) or states_in(title)):
+        return "commentary", "State-measure sweep; no State actor in the headline"
+    if _CRIME.search(title):
+        return "commentary", "State-measure sweep; a criminal or fraud matter, not a measure against an investor"
     subject_majors = []
     for m in majors:
         pos = title.find(m)

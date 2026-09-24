@@ -2,11 +2,8 @@ name: Daily issue
 
 on:
   schedule:
-    - cron: "0 16 * * *"       # 20:00 in Yerevan, every day: the day's events are in
+    - cron: "0 18 * * *"       # 22:00 in Yerevan, every day: the trade press has published by then
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/daily.yml"
 
 permissions:
   contents: write

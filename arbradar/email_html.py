@@ -21,7 +21,7 @@ from .sources.editions import LANG_NAMES
 
 INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
 LINE, HAIR, SUNKEN, LINK = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df"
-SERIF = "Georgia,'Times New Roman',Times,serif"
+SERIF = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 P = ('font-family:{sans};font-size:{size}px;line-height:{lh};color:{color};margin:0 0 {mb}px;'
@@ -75,7 +75,7 @@ def a(href: str, text: str, color=LINK, weight="normal") -> str:
 
 def label(text: str, mb=10, top=True) -> str:
     border = 'border-top:1px solid {};padding-top:22px;'.format(LINE) if top else ''
-    return ('<h2 style="font-family:{sans};font-size:13px;letter-spacing:1.5px;text-transform:uppercase;'
+    return ('<h2 style="font-family:{sans};font-size:12px;letter-spacing:1.5px;text-transform:uppercase;'
             'font-weight:700;color:{ink};{border}margin:0 0 {mb}px;">{t}</h2>').format(
         sans=SANS, ink=INK, border=border, mb=mb, t=esc(text))
 
@@ -195,11 +195,11 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     when = _when(it)
     tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
         mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-    para = p(esc(_clip(body, 620 if lead else 520)) + tail, size=17 if lead else 16, lh=1.5, mb=0) if body else \
+    para = p(esc(_clip(body, 560)) + tail, size=16, lh=1.5, mb=0) if body else \
         p(tail.strip(), size=14, lh=1.5, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
             '<tr><td style="padding:{pt}px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'
-            ).format(pt=8 if lead else 20, line=LINE, head=head, para=para)
+            ).format(pt=20, line=LINE, head=head, para=para)
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
@@ -207,7 +207,7 @@ def brief(items: List[Dict[str, Any]]) -> str:
     for it in items:
         ev = SHORT.get(it.get("event_type") or "commentary", "Note")
         rows.append('<li style="{}">{} <span style="color:{};">&middot; {}</span></li>'.format(
-            P.format(sans=SANS, size=15, lh=1.5, color=INK, mb=8), a(it.get("url") or "#", title_of(it)[:120], color=INK),
+            P.format(sans=SANS, size=16, lh=1.5, color=INK, mb=8), a(it.get("url") or "#", title_of(it)[:120], color=INK),
             MUTE, esc(ev)))
     return '<ul style="padding-left:18px;margin:0;">{}</ul>'.format("".join(rows))
 
@@ -272,12 +272,12 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
         # source or reference all sit inside the same anchor.
         href = esc(it.get("url") or "#")
         rows.append(
-            '<tr><td valign="top" style="font-family:{sans};font-size:12px;line-height:1.6;color:{mute};'
+            '<tr><td valign="top" style="font-family:{sans};font-size:13px;line-height:1.55;color:{mute};'
             'padding:7px 10px 7px 0;white-space:nowrap;width:52px;"><a href="{href}" style="color:{mute};text-decoration:none;">{d}</a></td>'
-            '<td valign="top" style="font-family:{sans};font-size:14px;line-height:1.5;color:{ink};'
+            '<td valign="top" style="font-family:{sans};font-size:15px;line-height:1.5;color:{ink};'
             'padding:7px 0;border-bottom:1px solid {hair};"><a href="{href}" style="color:{ink};text-decoration:none;">{main}{tail}</a></td></tr>'.format(
                 sans=SANS, mute=MUTE, ink=INK, hair=HAIR, d=esc(dlabel), href=href, main=main,
-                tail=(' <span style="font-size:12px;color:{};">{}</span>'.format(MUTE, tail) if tail else "")))
+                tail=(' <span style="font-size:13px;color:{};">{}</span>'.format(MUTE, tail) if tail else "")))
     return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{}</table>'.format("".join(rows))
 
 
@@ -338,7 +338,6 @@ table{{border-collapse:collapse}} img{{border:0;outline:none;text-decoration:non
 a{{color:{link}}}
 @media only screen and (max-width:620px){{
   .wrap{{padding:22px 18px !important}}
-  .h-lead{{font-size:22px !important}}
 }}
 </style>
 </head>
@@ -350,8 +349,8 @@ a{{color:{link}}}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
   <tr><td style="padding:0 0 14px;border-bottom:1px solid {ink};">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{serif};font-size:26px;line-height:1;font-weight:bold;letter-spacing:-0.3px;color:{ink};">{name}</td>
-      <td align="right" style="font-family:{sans};font-size:14px;color:{mute};white-space:nowrap;">{dl}</td>
+      <td style="font-family:{serif};font-size:22px;line-height:1;font-weight:700;letter-spacing:-0.2px;color:{ink};">{name}</td>
+      <td align="right" style="font-family:{sans};font-size:13px;color:{mute};white-space:nowrap;">{dl}</td>
     </tr></table>
   </td></tr>
   {body}

@@ -139,7 +139,7 @@ def short_party(name: str) -> str:
             return v
     name = _STATE.sub("", name)
     first = re.split(r",| and ", name)[0].strip()
-    first = _SUFFIX.sub("", first).strip(" ,.")
+    first = _SUFFIX.sub("", first).strip(" ,.&")
     return first or name
 
 
@@ -307,7 +307,9 @@ def run(days: int = 7, statuses=("pending", "concluded")) -> Iterator[Dict]:
                 if registered and when == registered:
                     continue                          # already emitted above
                 brief = first_sentence(detail)
+                if brief.split(" ", 1)[0] in ("The", "A", "An"):
+                    brief = brief[:1].lower() + brief[1:]   # 'the Tribunal renders', but 'Mitsui files'
                 yield _emit(
                     case, proc, _classify(detail), when,
-                    headline(case, brief[:1].lower() + brief[1:]),
+                    headline(case, brief),
                     describe(case, proc, m.group(1), detail))

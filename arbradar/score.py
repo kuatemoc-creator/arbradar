@@ -59,6 +59,11 @@ def score_item(item: Dict[str, Any], settings) -> Tuple[float, Dict[str, Any]]:
         boost += 0.5
         hits = hits + ["investor: " + item["claimants"][0]]
     tier = TIER_FACTOR.get(item.get("source_tier") or 2, 1.0)
+    from .outlets import is_trade_press
+    if is_trade_press(item.get("source") or "", item.get("url") or ""):
+        tier = max(tier, 1.15)                       # the trade press is reliable on its own subject
+        if event == "commentary":
+            base = max(base, 60.0)                   # and its 'commentary' is still arbitration news
 
     # Size of the dispute, damped - a $2bn claim is not 100x a $20m claim in
     # terms of how winnable the mandate is.

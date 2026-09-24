@@ -94,7 +94,10 @@ EVENT_TYPES: Dict[str, Dict] = {
 # Phrase -> event type. Ordered most-specific first; first match wins.
 EVENT_PATTERNS: List = [
     ("notice_of_intent", [
-        "notice of intent", "notice of dispute", "trigger letter",
+        "notice of intent", "notice of dispute", "trigger letter", "on notice of", "puts on notice",
+        "threatens to bring", "threatens arbitration", "threatens treaty", "threatens india", "threatens claim",
+        "threatens to file", "threatened to bring", "mulls arbitration", "mulls treaty", "considers arbitration",
+        "weighs arbitration", "eyes arbitration", "threatens to arbitrate",
         "notice of intention to submit", "cooling-off period", "cooling off period",
         "intention to commence arbitration", "amicable settlement period",
     ]),
@@ -134,7 +137,7 @@ EVENT_PATTERNS: List = [
         "ad hoc committee", "challenge to the award", "revision of the award",
     ]),
     ("award_issued", [
-        "award", "tribunal ruled", "tribunal found", "ordered to pay",
+        "award", "tribunal ruled", "tribunal found", "ordered to pay", "liable in", "held liable", "found liable",
         "dismissed the claim", "declined jurisdiction", "final award",
         "partial award", "damages of",
     ]),
@@ -147,6 +150,7 @@ EVENT_PATTERNS: List = [
         "co-head of", "chair of the arbitration", "arbitration chair", "vice-president of the icc",
         "appointed as chair", "appointed chair", "elected chair", "appointed director general",
         "appointed registrar", "new registrar", "appointed as counsel to the",
+        "instructs", "instructed", "retains firm", "appoints counsel", "hires firm to defend", "to defend",
     ]),
     ("lateral_move", [
         "joins as partner", "joined as partner", "lateral hire", "lateral move",
