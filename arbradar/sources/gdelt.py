@@ -19,6 +19,8 @@ QUERIES = [
     '("investment treaty" OR ICSID OR "bilateral investment treaty") (claim OR arbitration OR notice)',
     '("licence revoked" OR "license revoked" OR "concession terminated" OR "permit cancelled") (foreign OR investor OR company)',
     '("international arbitration" OR "arbitration proceedings") (government OR ministry OR republic) (threat OR file OR launch)',
+    '("temporary management" OR "state control" OR "taken over by the state" OR "under administration") (plant OR company OR assets OR subsidiary)',
+    '("tax assessment" OR "back taxes" OR "windfall tax" OR "royalty") (foreign OR investor OR miner OR operator) (dispute OR arbitration OR treaty)',
 ]
 
 
