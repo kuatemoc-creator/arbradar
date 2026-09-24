@@ -35,41 +35,6 @@
    "event": "Note"
   },
   {
-   "id": 4786,
-   "title": "Nigeria defeats hydropower arbitration",
-   "title_en": null,
-   "summary": " President hits out at ‘opportunistic claims’ after ICC tribunal sets aside settlement agreement over ‘illegal’ hydropower construction contract. \n The post  Nigeria defeats hydropower arbitration  appeared first on  CDR News . ",
-   "summary_en": null,
-   "url": "https://www.cdr-news.com/categories/arbitration-adr/nigeria-defeats-hydropower-arbitration/",
-   "source": "CDR News (Global)",
-   "source_tier": 2,
-   "event_type": "settlement",
-   "published_at": "2026-09-22",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Nigeria"
-   ],
-   "sectors": [
-    "Power & renewables",
-    "Construction"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "matched ‘settlement agreement’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Global",
-   "tier": "development",
-   "slug": "2026-09-24-nigeria-defeats-hydropower-arbitration.html",
-   "event": "Settlement"
-  },
-  {
    "id": 5531,
    "title": "Survey: institution and arbitrator costs compared across Asia",
    "title_en": null,
@@ -136,7 +101,16 @@
  "records": {
   "docket": [],
   "disclosures": [],
-  "courts": [],
+  "courts": [
+   {
+    "date": "2026-09-18",
+    "title": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "main": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/325/eng@2026-09-18"
+   }
+  ],
   "people": []
  }
 }
