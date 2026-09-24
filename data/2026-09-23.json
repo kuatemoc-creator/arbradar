@@ -134,6 +134,52 @@
    "event": "State measure"
   },
   {
+   "id": 7378,
+   "title": "Roust USA, Inc. v. CEDC International sp. z o.o. (S.D.N.Y. 1:26-cv-08283)",
+   "title_en": "Alcoholic beverages group Roust to sell Poland's CEDC for almost $1 billion",
+   "summary": "NOTICE of Petition to Vacate the Arbitration Award re: 1 Petition to Compel/Confirm/Modify/Stay/Vacate Arbitration. Document filed by Roust USA, Inc...(Rooney, Gavin) (Entered: 09/23/2026) Parties: CEDC INTERNATIONAL SP. Z O.O.; Roust USA, Inc.. Counsel on record: Lowenstein Sandler LLP (NYC).",
+   "summary_en": null,
+   "url": "https://www.courtlistener.com/docket/74838223/roust-usa-inc-v-cedc-international-sp-z-oo/",
+   "source": "US federal docket",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "1:26-cv-08283",
+   "claimants": [
+    "CEDC INTERNATIONAL SP. Z O.O."
+   ],
+   "respondents": [
+    "Roust USA, Inc."
+   ],
+   "states": [],
+   "sectors": [],
+   "counsel": [
+    "Lowenstein Sandler LLP (NYC)"
+   ],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "US federal docket: petition to confirm or vacate an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "reuters.com",
+     "url": "https://www.reuters.com/article/business/alcoholic-beverages-group-roust-to-sell-polands-cedc-for-almost-1-billion-idUSKBN2HO1CI/",
+     "title": "Alcoholic beverages group Roust to sell Poland's CEDC for almost $1 billion",
+     "published_at": "2021-11-03",
+     "snippet": "MOSCOW (Reuters) - Alcoholic beverages group Roust, which owns Russian Standard Vodka, has agreed to sell its Polish subsidiary, CEDC, to food company Maspex in a deal that values the business at 3.89 ..."
+    }
+   ],
+   "story": null,
+   "tier": "development",
+   "slug": "2026-09-23-alcoholic-beverages-group-roust-to-sell-poland-s-cedc-for-almost-1-bil.html",
+   "event": "Annulment"
+  },
+  {
    "id": 4768,
    "title": "Paris first instance court finds that Libya’s National Oil Corporation qualifies as an emanation of the state for exequatur purposes",
    "title_en": null,
@@ -232,13 +278,7 @@
    "amount_usd": null,
    "flag_reason": "matched ‘threatens arbitration’ in the text",
    "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / gasworld",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVGhlV1ZQOTdmRDZtWFY2T2VGUTBxLVNNcFZ1YUpkUGIwRzAxMTRkd2pEaTJHZ3RiMHdYaXk1ZGN3WDNfd2dITnVlMkhrNGl1T2NxNVE5T0hzWEVEMXp1R3FFR2tKRkNKUGdBSDQzajIwWXJVRVRFR3pEeFJfSzZ4eUg4LXBRcFI2OW5kWDVtZFpySVd4MXRrWVVGcm80MkdidE14ZmlzZnhkZlhxUUFiMExpTXYzcEM1cEhuV1YtYXFIYjQ?oc=5",
-     "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA"
-    }
-   ],
+   "also": [],
    "lang": null,
    "country": null,
    "corroboration": [
@@ -327,10 +367,133 @@
    "event": "State measure"
   }
  ],
+ "enforcement": [
+  {
+   "id": 5558,
+   "title": "Energía y Renovación v. Guatemala — energía y Renovación Holding S.A. files a counter-memorial on annulment",
+   "title_en": null,
+   "summary": "Energía y Renovación brought the claim against Guatemala under the FTA Central America - Panama 2002, in the electric power and other energy sector; it was registered on 29 October 2025. Hogan Lovells Cadwalader US LLP acts for the claimant. Ministry of Economy, Guatemala City, Guatemala, Procuraduría General de la Nación, Guatemala City, Guatemala and Three Crowns for Guatemala. The tribunal is Paul Arrighi Bustamante, presiding; Ximena Herrera-bernal; Attila Massimiliano Tanzi. On 21 September 2026, energía y Renovación Holding S.A. files a counter-memorial on annulment.",
+   "summary_en": null,
+   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/21/56",
+   "source": "ICSID docket",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-21",
+   "institution": "ICSID",
+   "treaty": "FTA Central America - Panama 2002",
+   "case_ref": "ARB/21/56",
+   "claimants": [
+    "Energía y Renovación Holding, S.A."
+   ],
+   "respondents": [],
+   "states": [
+    "Guatemala",
+    "Panama"
+   ],
+   "sectors": [
+    "Electric Power & Other Energy"
+   ],
+   "counsel": [
+    "Hogan Lovells Cadwalader US LLP, Miami, FL, U.S.A.",
+    "Ministry of Economy, Guatemala City, Guatemala",
+    "Procuraduría General de la Nación, Guatemala City, Guatemala",
+    "Three Crowns, London, U.K. and Madrid, Spain"
+   ],
+   "arbitrators": "[\"Ximena HERRERA-BERNAL (British, Colombian)\", \"Attila Massimiliano TANZI (Italian)\", \"Paul ARRIGHI BUSTAMANTE (French, Uruguayan)\"]",
+   "amount_usd": null,
+   "flag_reason": "ICSID docket: annulment step",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Wolters Kluwer",
+     "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPMVNHMXNUcEtLd01MTE5IX1J4U0dMWXVvdDd5N2t0YTZDU2RqQzAzaks4RlF5VGJGX0drX1RhMEJOZngzZEJaUklpV1pNVlNZWl9MZG5BaTc5NnhibjRwdWVJNThRTlNIZGRsV1VqOUpsSHkwVERDRjBCeDJCRGVld1hrMXpXTXFTSF9KZmpCZmliU0toRXJ0RF9jdDdLYU9qdFE2MWNfY1NsdmtJNElhOVR5WEdoZHVOTmFaZnVjRnctT3VYWENob1lYM2dKd0pjWERGczJLT1B3eTVCOGluMU5RWURFaXRvblVXcDMyNkp5SWlzRk8zemhlU1NFbHRQajF5N2wyd0d5ZThGaVB4c2JLVHZqUFlxRmFr?oc=5",
+     "title": "Can a Breach of Constitutional Law of the Host State Nullify Investment Protection? The Case of Energía y Renovación Holdings v. Guatemala - Wolters Kluwer",
+     "published_at": "2025-05-21",
+     "snippet": ""
+    }
+   ],
+   "story": null,
+   "tier": "enforcement",
+   "slug": "2026-09-23-energ-a-y-renovaci-n-v-guatemala-energ-a-y-renovaci-n-holding-s-a-file.html",
+   "event": "Annulment"
+  },
+  {
+   "id": 2558,
+   "title": "Zenith Annulment Bid Goes To European Human Rights Court",
+   "title_en": null,
+   "summary": "Zenith Energy Ltd. announced Tuesday it is redoubling attempts to annul an International Chamber of Commerce arbitration award that rejected a subsidiary's $130 million in claims against Tunisia over an oilfield deal, saying the unit will contest the ICC tribunal's impartiality before the European Court of Human Rights.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2525259?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-16",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Tunisia"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘annulment’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [],
+   "story": null,
+   "tier": "enforcement",
+   "slug": "2026-09-23-zenith-annulment-bid-goes-to-european-human-rights-court.html",
+   "event": "Annulment"
+  }
+ ],
  "records": {
   "docket": [],
   "disclosures": [],
-  "courts": [],
+  "courts": [
+   {
+    "date": "2026-09-22",
+    "title": "Shanmuganathan Paskaran v Blue Bricks London Limtied",
+    "main": "Shanmuganathan Paskaran v Blue Bricks London Limtied",
+    "step": "judgment under the Arbitration Act 1996",
+    "tail": "County Court · [2026] EWCC 57",
+    "url": "https://caselaw.nationalarchives.gov.uk/ewcc/2026/57"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "Alutalala t/a Alutalala Mukhwana & Co Advocates v Kariko alias Jeff Githinji Kariuki t/a Githinji & Associate Advocates",
+    "main": "Alutalala t/a Alutalala Mukhwana & Co Advocates v Kariko alias Jeff Githinji Kariuki t/a Githinji & Associate Advocates",
+    "step": "arbitration-related judgment",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13620/eng@2026-09-18"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "Logistik Unicorp Holdings Inc. c. Clearspring Capital Partners II",
+    "main": "Logistik Unicorp Holdings Inc. c. Clearspring Capital Partners II",
+    "step": "arbitration-related judgment",
+    "tail": "Cour d'appel du Québec · 2026 QCCA 1228",
+    "url": "https://www.canlii.org/en/qc/qcca/doc/2026/2026qcca1228/2026qcca1228.html"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "Louis & another v Duchess Park Development Company Ltd & another",
+    "main": "Louis & another v Duchess Park Development Company Ltd & another",
+    "step": "arbitration agreement, stay or anti-suit relief",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13672/eng@2026-09-18"
+   }
+  ],
   "people": [
    {
     "date": "2026-09-23",

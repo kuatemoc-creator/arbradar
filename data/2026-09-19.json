@@ -1,0 +1,119 @@
+{
+ "date": "2026-09-19",
+ "subject": "ArbRadar · 19 September 2026 — U.S. court grants ENKA’s bid to enforce over $350M arbitration award against Georgia",
+ "stories": [
+  {
+   "id": 2539,
+   "title": "U.S. Court Grants ENKA’s Bid to Enforce Over $350M Arbitration Award Against Georgia",
+   "title_en": null,
+   "summary": "A U.S. federal court has ruled in favor of Turkish company ENKA Renewables in its bid to enforce a 2024 international arbitration award of approximately USD 350 million plus interest against Georgia over the termination of a contract to build the Namakhvani Hydropower Plant, a planned hydropower project in western Georgia that was halted in &#8230;",
+   "summary_en": null,
+   "url": "https://civil.ge/archives/751450",
+   "source": "Civil.ge (Georgia)",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-16",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "United States",
+    "Georgia",
+    "Turkey"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘award’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Georgia",
+   "corroboration": [
+    {
+     "source": "energynews.pro",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdFNWYnVNX0lUZExzTXhjY216YW1GNFl5MUNrUlJCZF9oT1NGQktlZ0lKemZHVWpUUzhkelU1LW5KOWJhSUdkY3ZnSjF0MzE0VUppTDYyQ29FeXNweE9lUVB1UlpsTFIwSUtDLVNzY0FwaXcwMGc2dHFNZ3FiYkZaVlEyUG5HRzVKMVNsaVFFWTlXdWFtcDV4d0g3RXBoVDQ2WWoyYQ?oc=5",
+     "title": "Georgia to Challenge US Enforcement of $350 Million Arbitration Award to Enka - energynews.pro",
+     "published_at": "2026-09-16",
+     "snippet": ""
+    }
+   ],
+   "story": null,
+   "tier": "lead",
+   "slug": "2026-09-19-u-s-court-grants-enka-s-bid-to-enforce-over-350m-arbitration-award-aga.html",
+   "event": "Award"
+  },
+  {
+   "id": 103,
+   "title": "Jeremy Sharpe is tapped to chair revision tribunal in Akfel v. Türkiye",
+   "title_en": null,
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/jeremy-sharpe-tapped-to-chair-revision-tribunal-in-akfel-v-turkiye/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Turkey"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": null,
+   "story": null,
+   "tier": "brief",
+   "slug": "2026-09-19-jeremy-sharpe-is-tapped-to-chair-revision-tribunal-in-akfel-v-t-rkiye.html",
+   "event": "Note"
+  }
+ ],
+ "leads": [],
+ "enforcement": [],
+ "records": {
+  "docket": [],
+  "disclosures": [],
+  "courts": [
+   {
+    "date": "2026-09-17",
+    "title": "Concise Projects Ltd v Green View Villas Ltd",
+    "main": "Concise Projects Ltd v Green View Villas Ltd",
+    "step": "arbitration agreement, stay or anti-suit relief",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13794/eng@2026-09-17"
+   },
+   {
+    "date": "2026-09-17",
+    "title": "Mennoite Economic Development Associates of Canada v Leja Ltd & 2 others",
+    "main": "Mennoite Economic Development Associates of Canada v Leja Ltd & 2 others",
+    "step": "arbitration-related judgment",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13771/eng@2026-09-17"
+   },
+   {
+    "date": "2026-09-08",
+    "title": "Tata International West Asia DMCC vs FMJ Hardware Limited",
+    "main": "Tata International West Asia DMCC vs FMJ Hardware Limited",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/306/eng@2026-09-08"
+   }
+  ],
+  "people": []
+ }
+}
