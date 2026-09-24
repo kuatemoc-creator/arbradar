@@ -215,8 +215,8 @@ def render_day(day: Dict[str, Any], days: List[Dict[str, Any]], settings) -> str
     from .articles import _page, _signup, FOOTER
     date = day["date"]
     stories = day.get("stories") or []
-    main = [s for s in stories if s.get("tier") != "brief"]
-    briefs = [s for s in stories if s.get("tier") == "brief"]
+    main = stories
+    briefs = []
     parts = [
         '<header class="mast"><a class="brand" href="index.html">{}</a><span class="date">{}</span></header>'.format(
             html.escape(settings.newsletter_name), html.escape(date_label(date))),

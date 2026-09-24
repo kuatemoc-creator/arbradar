@@ -302,9 +302,10 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     told = [it for it in items if not it.get("brief_only")] or items
     lead = next((it for it in told[:5] if it.get("event_type") in starters), told[0])
     rest = [it for it in items if it is not lead]
-    main = [it for it in rest if not it.get("brief_only")]
-    devs = main[:6]
-    briefs = (main[6:] + [it for it in rest if it.get("brief_only")])[:5]
+    # One flow: the stories with an explanation first, then the ones that are
+    # a headline and a source. No separate list, no second shape.
+    devs = [it for it in rest if not it.get("brief_only")] + [it for it in rest if it.get("brief_only")]
+    briefs = []
 
     head = title_of(lead)
     if len(head) > 90:                         # cut at a word, never inside one

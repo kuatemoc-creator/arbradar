@@ -80,7 +80,7 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
     lines += [_meta_line(lead), ""]
     if rest:
         lines += ["## Developments", ""]
-        for it in rest[:6]:
+        for it in rest:
             lines += [_headline(it, settings, date), ""]
             if _summary(it):
                 lines += [_summary(it)[:400], ""]
@@ -92,13 +92,6 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
         if _summary(it):
             lines += [(it.get("story") or _summary(it))[:600], ""]
         lines += [_meta_line(it), ""]
-    if rest[6:9]:
-        lines += ["## In brief", ""]
-        for it in rest[6:9]:
-            lines.append("- [{}]({}) - {}".format(
-                _title(it)[:120], it["url"],
-                EVENT_TYPES.get(it.get("event_type") or "commentary", {}).get("label", "")))
-        lines.append("")
     if extras:
         lines += record_sections(extras)
     return "\n".join(lines)
