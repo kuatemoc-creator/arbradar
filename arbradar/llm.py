@@ -15,6 +15,7 @@ Model-specific API rules that are easy to get wrong:
 """
 import json
 import logging
+import os
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
@@ -97,19 +98,29 @@ begins with "This" referring vaguely to the previous sentence.
 are the only italics. Firms as they style themselves (Three Crowns, not "Three Crowns LLP").
 - Say what is known. Where a fact is absent, leave it out; never write around it."""
 
+# The measured house style (docs/house-style.md) travels with the brief, so the
+# model writes to the shape of the trade press rather than to a description of it.
+try:
+    with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "house-style.md"),
+              encoding="utf-8") as _fh:
+        HOUSE_STYLE += "\n\n" + _fh.read()
+except OSError:
+    pass
+
 # --------------------------------------------------------------------------
 # stage 1 - triage (Haiku 4.5)
 # --------------------------------------------------------------------------
-TRIAGE_SYSTEM = """You screen news for a newsletter read by international arbitration \
-practitioners who are looking for new mandates.
+TRIAGE_SYSTEM = """You screen news for a daily briefing read by international arbitration \
+practitioners: the kind of story Global Arbitration Review or IAReporter would carry.
 
 Items arrive in any language - Armenian, Georgian, Russian, Spanish, Arabic and others. \
 Judge each in its own language; do not mark an item irrelevant for being non-English.
 
-Mark an item relevant ONLY if it plausibly signals legal work that is available or \
-about to become available: a dispute starting, escalating, being enforced, annulled, \
-funded, or an event (expropriation, licence revocation, sanctions, insolvency) that \
-typically produces an arbitration.
+Mark an item relevant ONLY if it is news of an arbitration or of a dispute on its way \
+to one: a claim threatened, lodged or registered; a decision, award, enforcement or \
+annulment step; a state measure of the kind that produces treaty claims (expropriation, \
+licence revocation, sanctions, nationalisation); a counsel or arbitrator appointment; a \
+move in the profession.
 
 Mark irrelevant: general business news, conference write-ups, appointments to unrelated \
 posts, opinion pieces with no underlying dispute, law firm marketing with no case, \
