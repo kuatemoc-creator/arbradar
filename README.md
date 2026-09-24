@@ -87,6 +87,9 @@ email carries it.
 | **SEC EDGAR full-text** | Primary | Disputes disclosed in 8-K/6-K/20-F filings, often weeks ahead of the trade press. |
 | RSS | Reported | GAR, IAReporter, Kluwer, Jus Mundi, IISD, institutions. |
 | PCA | Primary | Case list and press releases, relayed from a machine Cloudflare lets in (`tools/relay.sh`); GitHub's runners are refused. |
+| **National press**, 182 States | Reported | The business press, paper of record, legal press and wire of every State that can be a respondent: `tools/outlets.py` lists them, `tools/discover.py` finds and verifies each one's feed and wires it into `sources.yaml`. Read every run, filtered to dispute language in the feed's own language. Five or more feeds per State is the floor; `SOURCES.md` shows where it is not met yet. |
+| **Google News editions**, 124 | Reported | One edition per State in its own language, swept with the dispute and State-measure terms in that language, plus an English query per State. |
+| **GDELT** | Reported | Global press with country tagging, for the States whose press has no feeds. |
 
 All free and unauthenticated. No API key is required to run the system.
 
@@ -192,9 +195,18 @@ have simple APIs; Mailchimp works too. The issue HTML is already email-safe
 
 `gnews` sweeps Google News RSS with a bank of distress queries (notice of dispute,
 notice of intent, expropriation, licence revoked, nationalisation, ECT claims) plus
-one query per watchlist State, so a country you care about is covered even when
-the story never says "arbitration". `gdelt` does the same across non-English press
+one query per State the gazetteer knows, so a country is covered even when the
+story never says "arbitration". `gdelt` does the same across non-English press
 with country tagging, throttled to GDELT's one-request-per-five-seconds limit.
+
+The same story is then looked for in the State's own press. `SOURCES.md` (and
+`sources.html` on the site) is the map: for each State, every feed that is
+read, the Google News editions swept, and, in one muted line, what was tried
+and does not answer to a script (a page with no feed, an HTTP 403, a bot
+challenge). Those are not sources; they are the gaps, kept visible so they get
+closed. To add outlets, edit `tools/outlets.py` and run
+`python -m tools.discover`; to re-check the registers and courts, run
+`python -m tools.sourcemap --probe`.
 
 Syndicated coverage is clustered into one story per development (`pipeline.cluster`):
 the best-scored version leads, the other outlets hang off it as "also reported by".

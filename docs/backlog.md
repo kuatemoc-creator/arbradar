@@ -8,6 +8,14 @@ the owner's accounts or DNS.
 
 ## Open
 
+0. **Five sources per State** [me] — 24 September: `tools/outlets.py` lists
+   1,671 outlets across 182 States; `tools/discover.py` verifies each feed and
+   wires it; the map (`SOURCES.md`, `sources.html`) now lists only what is
+   read, with the dead probes in one muted line. Countries still under five
+   press feeds after the run are listed at the top of `SOURCES.md`; for those,
+   the next step is a parser for the paper's own site (no feed) or a
+   Google News edition in the local language, both already on the map.
+
 1. **Style corpus from the inbox** [me] — done 24 September: all 440 GAR and
    IAReporter newsletters in the inbox archived under `data/newsletters/`
    (gitignored; thread ids in `docs/style-corpus/index.json`), corpus and

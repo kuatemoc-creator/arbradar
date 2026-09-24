@@ -351,6 +351,42 @@ for _canon, _forms in {
     for _f in _forms:
         COUNTRIES[_f] = _canon
 
+# Every other State the press map covers. A demonym counts as the State; a bare
+# first name ("Chad", "Jordan") does not, so those carry a qualifier.
+for _canon, _forms in {
+    "Afghanistan": ["Afghanistan", "Afghan", "Taliban"], "Albania": ["Albania", "Albanian"],
+    "Antigua and Barbuda": ["Antigua and Barbuda", "Antigua", "Antiguan"], "Austria": ["Austria", "Austrian"],
+    "Bahamas": ["Bahamas", "Bahamian"], "Bahrain": ["Bahrain", "Bahraini"], "Barbados": ["Barbados", "Barbadian"],
+    "Belarus": ["Belarus", "Belarusian"], "Belize": ["Belize", "Belizean"], "Benin": ["Benin", "Beninese"],
+    "Bhutan": ["Bhutan", "Bhutanese"], "Botswana": ["Botswana", "Batswana"], "Brunei": ["Brunei"],
+    "Burundi": ["Burundi", "Burundian"], "Cambodia": ["Cambodia", "Cambodian"], "Cape Verde": ["Cape Verde", "Cabo Verde"],
+    "Central African Republic": ["Central African Republic", "Bangui"], "Chad": ["Republic of Chad", "Chadian", "N'Djamena"],
+    "Comoros": ["Comoros", "Comorian"], "Congo (Brazzaville)": ["Republic of Congo", "Republic of the Congo", "Congo-Brazzaville", "Brazzaville"],
+    "Côte d'Ivoire": ["Côte d'Ivoire", "Cote d'Ivoire", "Ivory Coast", "Ivorian"], "Cuba": ["Cuba", "Cuban"],
+    "Denmark": ["Denmark", "Danish"], "Djibouti": ["Djibouti", "Djiboutian"], "Dominica": ["Dominica"],
+    "Equatorial Guinea": ["Equatorial Guinea", "Equatoguinean", "Malabo"], "Eritrea": ["Eritrea", "Eritrean"],
+    "Estonia": ["Estonia", "Estonian"], "Eswatini": ["Eswatini", "Swaziland"], "Fiji": ["Fiji", "Fijian"],
+    "Finland": ["Finland", "Finnish"], "France": ["France", "French"], "Gabon": ["Gabon", "Gabonese"],
+    "Gambia": ["Gambia", "Gambian"], "Grenada": ["Grenada", "Grenadian"], "Guinea-Bissau": ["Guinea-Bissau", "Bissau"],
+    "Guyana": ["Guyana", "Guyanese"], "Haiti": ["Haiti", "Haitian"], "Hong Kong": ["Hong Kong"],
+    "Iceland": ["Iceland", "Icelandic"], "Iran": ["Iran", "Iranian", "Tehran"], "Israel": ["Israel", "Israeli"],
+    "Jamaica": ["Jamaica", "Jamaican"], "Japan": ["Japan", "Japanese"], "Kosovo": ["Kosovo", "Kosovar"],
+    "Lesotho": ["Lesotho", "Basotho"], "Liberia": ["Liberia", "Liberian"], "Luxembourg": ["Luxembourg"],
+    "Malawi": ["Malawi", "Malawian"], "Maldives": ["Maldives", "Maldivian"], "Mauritania": ["Mauritania", "Mauritanian"],
+    "Mauritius": ["Mauritius", "Mauritian"], "Namibia": ["Namibia", "Namibian"], "Nepal": ["Nepal", "Nepali", "Nepalese"],
+    "New Zealand": ["New Zealand"], "North Macedonia": ["North Macedonia", "Macedonia", "Macedonian"],
+    "Rwanda": ["Rwanda", "Rwandan"], "Saint Kitts and Nevis": ["Saint Kitts and Nevis", "St Kitts", "St. Kitts", "Nevis"],
+    "Saint Lucia": ["Saint Lucia", "St Lucia", "St. Lucia"], "Saint Vincent and the Grenadines": ["Saint Vincent and the Grenadines", "St Vincent", "St. Vincent"],
+    "Seychelles": ["Seychelles"], "Singapore": ["Singapore", "Singaporean"], "Solomon Islands": ["Solomon Islands"],
+    "Somalia": ["Somalia", "Somali"], "South Sudan": ["South Sudan", "South Sudanese"], "Suriname": ["Suriname", "Surinamese"],
+    "Sweden": ["Sweden", "Swedish"], "Switzerland": ["Switzerland", "Swiss"], "Syria": ["Syria", "Syrian", "Damascus"],
+    "Taiwan": ["Taiwan", "Taiwanese"], "Thailand": ["Thailand", "Thai"], "Timor-Leste": ["Timor-Leste", "East Timor", "Timorese"],
+    "Togo": ["Togo", "Togolese"], "Trinidad and Tobago": ["Trinidad and Tobago", "Trinidad", "Trinidadian"],
+    "Vanuatu": ["Vanuatu"],
+}.items():
+    for _f in _forms:
+        COUNTRIES.setdefault(_f, _canon)
+
 _COUNTRY_RE = None
 
 

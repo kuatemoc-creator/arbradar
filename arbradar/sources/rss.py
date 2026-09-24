@@ -109,12 +109,22 @@ def _configured() -> List[Dict[str, str]]:
     return feeds or FEEDS
 
 
+def _fetch(feed):
+    try:
+        return feed, get(feed["url"], ttl=1800, timeout=20).content
+    except (Blocked, Exception):                      # noqa: BLE001 - boundary
+        return feed, None
+
+
 def run(days: int = 7, feeds: List[Dict[str, str]] = None) -> Iterator[Dict]:
+    import concurrent.futures as cf
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
-    for feed in (feeds or _configured()):
-        try:
-            raw = get(feed["url"], ttl=1800).content
-        except (Blocked, Exception):                  # noqa: BLE001 - boundary
+    # Several hundred national feeds: read them side by side, a dead host
+    # costs one worker its timeout rather than the whole run.
+    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+        fetched = list(ex.map(_fetch, list(feeds or _configured())))
+    for feed, raw in fetched:
+        if raw is None:
             continue
         parsed = feedparser.parse(raw)
         for entry in parsed.entries:

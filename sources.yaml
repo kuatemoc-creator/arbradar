@@ -42,15 +42,15 @@ apis:
     enabled: true
     what: judgments on arbitration from courts outside the US - set-aside, enforcement, stays, anti-suit relief, arbitrator challenges
     endpoints:
-    - "https://caselaw.nationalarchives.gov.uk/atom.xml - England and Wales, Find Case Law search feed only (judgments are not downloaded, per the Open Justice Licence)"
-    - "https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml - Singapore, with catchwords"
-    - "https://www.canlii.org/{court}/rss_new.xml - Canada: SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS"
-    - "https://data.rechtspraak.nl/uitspraken/zoeken - Netherlands, civil decisions in the window, filtered on the court's own summary"
-    - "https://data.bka.gv.at/ris/api/v2.6/Judikatur - Austria, decision texts mentioning Schieds*"
-    - "https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml - Germany, I ZB dockets confirmed against the decision text"
-    - "https://www.difccourts.ae/rules-decisions/judgments-orders/{arbitration,enforcement} - DIFC Courts"
-    - "https://court.aifc.kz/judgments/ - AIFC Court, Astana"
-    - "{host}/search/api/documents/ - Kenya Law, NigeriaLII, ULII, TanzLII, ZambiaLII, MalawiLII, LawLibrary.org.za, NamibLII, ZimLII, SierraLII, EswatiniLII"
+    - https://caselaw.nationalarchives.gov.uk/atom.xml - England and Wales, Find Case Law search feed only (judgments are not downloaded, per the Open Justice Licence)
+    - https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml - Singapore, with catchwords
+    - 'https://www.canlii.org/{court}/rss_new.xml - Canada: SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS'
+    - https://data.rechtspraak.nl/uitspraken/zoeken - Netherlands, civil decisions in the window, filtered on the court's own summary
+    - https://data.bka.gv.at/ris/api/v2.6/Judikatur - Austria, decision texts mentioning Schieds*
+    - https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml - Germany, I ZB dockets confirmed against the decision text
+    - https://www.difccourts.ae/rules-decisions/judgments-orders/{arbitration,enforcement} - DIFC Courts
+    - https://court.aifc.kz/judgments/ - AIFC Court, Astana
+    - '{host}/search/api/documents/ - Kenya Law, NigeriaLII, ULII, TanzLII, ZambiaLII, MalawiLII, LawLibrary.org.za, NamibLII, ZimLII, SierraLII, EswatiniLII'
 google_news:
   enabled: true
   editions: []
@@ -104,170 +104,28 @@ not_available:
 - Brazil STJ, Pakistan Supreme Court, Ghana (GhaLII) - refuse scripts
 - Ireland courts.ie search, Qatar QICDRC judgments, New Zealand judgments - client-rendered
 national_press:
-- country: Armenia
-  name: Hetq
-  url: https://hetq.am/en/rss
-  lang: en
+- country: Albania
+  name: Balkanweb
+  url: https://www.balkanweb.com/feed/
+  lang: sq
   enabled: true
-- country: Armenia
-  name: News.am
-  url: https://news.am/eng/rss/
-  lang: en
+  verified: '2026-09-24'
+- country: Albania
+  name: Euronews Albania
+  url: https://euronews.al/feed/
+  lang: sq
   enabled: true
-- country: Georgia
-  name: Civil.ge
-  url: https://civil.ge/feed
-  lang: en
+  verified: '2026-09-24'
+- country: Albania
+  name: Monitor
+  url: https://www.monitor.al/feed/
+  lang: sq
   enabled: true
-- country: Azerbaijan
-  name: President's decrees
-  url: https://president.az/en/rss
-  lang: en
-  enabled: true
-- country: Azerbaijan
-  name: Report.az
-  url: https://report.az/en/rss/
-  lang: en
-  enabled: true
-- country: Azerbaijan
-  name: APA
-  url: https://apa.az/rss
-  lang: en
-  enabled: true
-- country: Azerbaijan
-  name: Trend
-  url: https://en.trend.az/rss
-  lang: en
-  enabled: true
-- country: Azerbaijan
-  name: Caliber
-  url: https://caliber.az/rss.xml
-  lang: en
-  enabled: true
-- country: Kazakhstan
-  name: Kursiv
-  url: https://kz.kursiv.media/feed/
-  lang: ru
-  enabled: true
-- country: Kazakhstan
-  name: Vlast.kz
-  url: https://vlast.kz/feed/
-  lang: ru
-  enabled: true
-- country: Kazakhstan
-  name: The Astana Times
-  url: https://astanatimes.com/feed/
-  lang: ru
-  enabled: true
-- country: Uzbekistan
-  name: Gazeta.uz
-  url: https://www.gazeta.uz/ru/rss/
-  lang: uz
-  enabled: true
-- country: Uzbekistan
-  name: Kun.uz
-  url: https://kun.uz/news/rss?lang=uz
-  lang: uz
-  enabled: true
-- country: Uzbekistan
-  name: Spot.uz
-  url: https://www.spot.uz/rss
-  lang: uz
-  enabled: true
-- country: Uzbekistan
-  name: UzDaily
-  url: https://uzdaily.uz/en/rss
-  lang: uz
-  enabled: true
-- country: Kyrgyzstan
-  name: 24.kg
-  url: https://24.kg/rss/
-  lang: ru
-  enabled: true
-- country: Kyrgyzstan
-  name: AKIpress
-  url: https://akipress.com/rss/
-  lang: ru
-  enabled: true
-- country: Ukraine
-  name: NV
-  url: https://nv.ua/ukr/rss/all.xml
-  lang: uk
-  enabled: true
-- country: Ukraine
-  name: LIGA.net
-  url: https://news.liga.net/ua/all/rss.xml
-  lang: uk
-  enabled: true
-- country: Ukraine
-  name: Sudovo-yurydychna gazeta
-  url: https://sud.ua/rss
-  lang: uk
-  enabled: true
-- country: Russia
-  name: Pravo.ru
-  url: https://pravo.ru/rss/
-  lang: ru
-  enabled: true
-- country: Russia
-  name: Kommersant
-  url: https://www.kommersant.ru/RSS/news.xml
-  lang: ru
-  enabled: true
-- country: Russia
-  name: Vedomosti
-  url: https://www.vedomosti.ru/rss/news
-  lang: ru
-  enabled: true
-- country: Russia
-  name: Interfax
-  url: https://www.interfax.ru/rss.asp
-  lang: ru
-  enabled: true
-- country: Russia
-  name: RBC
-  url: https://rssexport.rbc.ru/rbcnews/news/30/full.rss
-  lang: ru
-  enabled: true
-- country: Turkey
-  name: Dünya
-  url: https://www.dunya.com/rss
-  lang: tr
-  enabled: true
-- country: Turkey
-  name: Bloomberg HT
-  url: https://www.bloomberght.com/rss
-  lang: tr
-  enabled: true
-- country: Turkey
-  name: Hürriyet Daily News
-  url: https://www.hurriyetdailynews.com/rss
-  lang: tr
-  enabled: true
-- country: Turkey
-  name: Daily Sabah
-  url: https://www.dailysabah.com/rssFeed/10
-  lang: tr
-  enabled: true
-- country: Mexico
-  name: Expansión
-  url: https://expansion.mx/rss
-  lang: es
-  enabled: true
-- country: Mexico
-  name: El Financiero
-  url: https://www.elfinanciero.com.mx/rss
-  lang: es
-  enabled: true
-- country: Mexico
-  name: El Universal
-  url: https://www.eluniversal.com.mx/arc/outboundfeeds/rss/
-  lang: es
-  enabled: true
-- country: Argentina
-  name: La Nación
-  url: https://www.lanacion.com.ar/arc/outboundfeeds/rss/
-  lang: es
+  verified: '2026-09-24'
+- country: Algeria
+  name: TSA
+  url: https://www.tsa-algerie.com/feed/
+  lang: fr
   enabled: true
 - country: Argentina
   name: Clarín
@@ -284,6 +142,288 @@ national_press:
   url: https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/
   lang: es
   enabled: true
+- country: Argentina
+  name: La Nación
+  url: https://www.lanacion.com.ar/arc/outboundfeeds/rss/
+  lang: es
+  enabled: true
+- country: Argentina
+  name: Página/12
+  url: https://www.pagina12.com.ar/arc/outboundfeeds/rss/
+  lang: es
+  enabled: true
+- country: Argentina
+  name: iProfesional
+  url: https://www.iprofesional.com/rss/home
+  lang: es
+  enabled: true
+- country: Armenia
+  name: ArmInfo
+  url: https://arminfo.info/feeds/english_rss.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: Armenia Today
+  url: https://armeniatoday.am/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: Azatutyun (RFE/RL)
+  url: https://www.azatutyun.am/api/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: Banks.am
+  url: https://banks.am/en/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: EVN Report
+  url: https://evnreport.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: Hetq
+  url: https://hetq.am/en/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: News.am
+  url: https://news.am/eng/rss/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Armenia
+  name: Sputnik Armenia
+  url: https://arm.sputniknews.ru/export/rss2/archive/index.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: APA
+  url: https://apa.az/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: Azernews
+  url: https://www.azernews.az/rss/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: Caliber
+  url: https://caliber.az/rss.xml
+  lang: en
+  enabled: true
+- country: Azerbaijan
+  name: Haqqin
+  url: https://haqqin.az/rss.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: Minval
+  url: https://minval.az/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: President's decrees
+  url: https://president.az/en/rss
+  lang: en
+  enabled: true
+- country: Azerbaijan
+  name: Report.az
+  url: https://report.az/en/rss/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: Sputnik Azerbaijan
+  url: https://az.sputniknews.ru/export/rss2/archive/index.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Azerbaijan
+  name: Trend
+  url: https://en.trend.az/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Bangladesh
+  name: The Daily Star
+  url: https://www.thedailystar.net/rss.xml
+  lang: en
+  enabled: true
+- country: Belarus
+  name: BelaPAN via Belsat
+  url: https://belsat.eu/rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Belarus
+  name: Ekonomicheskaya Gazeta
+  url: https://neg.by/rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Belarus
+  name: Office Life
+  url: https://officelife.by/news/rss/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Belarus
+  name: Zerkalo
+  url: https://news.zerkalo.io/rss/index.rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Bolivia
+  name: El Deber
+  url: https://eldeber.com.bo/feed
+  lang: es
+  enabled: true
+- country: Bosnia and Herzegovina
+  name: Capital.ba
+  url: https://capital.ba/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Bosnia and Herzegovina
+  name: Dnevni avaz
+  url: https://avaz.ba/rss
+  lang: bs
+  enabled: true
+  verified: '2026-09-24'
+- country: Bosnia and Herzegovina
+  name: Fena
+  url: https://fena.ba/rss
+  lang: bs
+  enabled: true
+  verified: '2026-09-24'
+- country: Bosnia and Herzegovina
+  name: N1 Bosnia
+  url: https://n1info.ba/feed/
+  lang: bs
+  enabled: true
+  verified: '2026-09-24'
+- country: Bosnia and Herzegovina
+  name: Oslobođenje
+  url: https://www.oslobodjenje.ba/rss.xml
+  lang: bs
+  enabled: true
+  verified: '2026-09-24'
+- country: Bosnia and Herzegovina
+  name: Sarajevo Times
+  url: https://sarajevotimes.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Brazil
+  name: Estadão
+  url: https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D
+  lang: pt
+  enabled: true
+- country: Brazil
+  name: Folha - Mercado
+  url: https://feeds.folha.uol.com.br/mercado/rss091.xml
+  lang: pt
+  enabled: true
+- country: Brazil
+  name: JOTA
+  url: https://www.jota.info/feed
+  lang: pt
+  enabled: true
+- country: Brazil
+  name: Valor Econômico
+  url: https://valor.globo.com/rss/valor
+  lang: pt
+  enabled: true
+- country: Bulgaria
+  name: BNR (EN)
+  url: https://bnrnews.bg/api/rss/en
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Capital
+  url: https://www.capital.bg/rss/
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Dnevnik
+  url: https://www.dnevnik.bg/rss
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Investor.bg
+  url: https://www.investor.bg/rss/news
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Mediapool
+  url: https://www.mediapool.bg/rss
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Novinite
+  url: https://www.novinite.com/services/news_rdf.php
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Bulgaria
+  name: Sega
+  url: https://www.segabg.com/rss
+  lang: bg
+  enabled: true
+  verified: '2026-09-24'
+- country: Burkina Faso
+  name: Lefaso.net
+  url: https://lefaso.net/spip.php?page=backend
+  lang: fr
+  enabled: true
+- country: Cambodia
+  name: Khmer Times
+  url: https://www.khmertimeskh.com/feed/
+  lang: en
+  enabled: true
+- country: Cameroon
+  name: Investir au Cameroun
+  url: https://www.investiraucameroun.com/index.php/component/obrss/fullrss
+  lang: fr
+  enabled: true
+- country: Canada
+  name: Mining.com
+  url: https://www.mining.com/rss
+  lang: en
+  enabled: true
+- country: Canada
+  name: Northern Miner
+  url: https://www.northernminer.com/feed/
+  lang: en
+  enabled: true
+- country: Chile
+  name: La Tercera
+  url: https://www.latercera.com/rss
+  lang: es
+  enabled: true
+- country: Colombia
+  name: El Espectador
+  url: https://www.elespectador.com/feed/
+  lang: es
+  enabled: true
 - country: Colombia
   name: La República
   url: https://www.larepublica.co/rss
@@ -294,19 +434,145 @@ national_press:
   url: https://www.semana.com/arc/outboundfeeds/rss/
   lang: es
   enabled: true
-- country: Peru
-  name: Gestión
-  url: https://gestion.pe/arcio/rss/
+- country: Costa Rica
+  name: La Nación
+  url: https://www.nacion.com/rss
   lang: es
   enabled: true
-- country: Peru
-  name: El Comercio
-  url: https://elcomercio.pe/arcio/rss/
-  lang: es
+- country: Croatia
+  name: Index.hr
+  url: https://www.index.hr/rss
+  lang: hr
   enabled: true
-- country: Peru
-  name: RPP
-  url: https://rpp.pe/rss
+  verified: '2026-09-24'
+- country: Croatia
+  name: Jutarnji list
+  url: https://www.jutarnji.hr/feed
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Lider
+  url: https://lidermedia.hr/rss.xml
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Novi list
+  url: https://www.novilist.hr/feed/
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Poslovni dnevnik
+  url: https://www.poslovni.hr/feed
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Telegram.hr
+  url: https://www.telegram.hr/feed/
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Total Croatia News
+  url: https://total-croatia-news.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Croatia
+  name: Večernji list
+  url: https://www.vecernji.hr/feeds/latest
+  lang: hr
+  enabled: true
+  verified: '2026-09-24'
+- country: Cyprus
+  name: Cyprus Mail
+  url: https://cyprus-mail.com/feed
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Cyprus
+  name: Financial Mirror
+  url: https://www.financialmirror.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Cyprus
+  name: In-Cyprus
+  url: https://en.philenews.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Cyprus
+  name: Philenews
+  url: https://www.philenews.com/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Cyprus
+  name: Politis
+  url: https://politis.com.cy/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: E15
+  url: https://www.e15.cz/rss
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Ekonom
+  url: https://ekonom.cz/?m=rss
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Expats.cz
+  url: https://www.expats.cz/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Hospodářské noviny
+  url: https://hn.cz/?m=rss
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Právní prostor
+  url: https://www.pravniprostor.cz/rss
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Seznam Zprávy
+  url: https://www.seznamzpravy.cz/rss
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: iROZHLAS
+  url: https://www.irozhlas.cz/rss.xml
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: Czechia
+  name: Česká justice
+  url: https://www.ceska-justice.cz/feed/
+  lang: cs
+  enabled: true
+  verified: '2026-09-24'
+- country: DRC
+  name: Actualite.cd
+  url: https://actualite.cd/feed
+  lang: fr
+  enabled: true
+- country: Dominican Republic
+  name: Diario Libre
+  url: https://www.diariolibre.com/rss/portada.xml
   lang: es
   enabled: true
 - country: Ecuador
@@ -315,83 +581,718 @@ national_press:
   lang: es
   enabled: true
 - country: Ecuador
+  name: Expreso
+  url: https://www.expreso.ec/rss/home.xml
+  lang: es
+  enabled: true
+- country: Ecuador
   name: Primicias
   url: https://www.primicias.ec/rss/latest
   lang: es
   enabled: true
-- country: Venezuela
-  name: Efecto Cocuyo
-  url: https://efectococuyo.com/feed/
+- country: Egypt
+  name: Daily News Egypt
+  url: https://www.dailynewsegypt.com/feed/
+  lang: en
+  enabled: true
+- country: Egypt
+  name: Enterprise
+  url: https://enterpriseam.com/egypt/feed/
+  lang: en
+  enabled: true
+- country: Egypt
+  name: Mada Masr
+  url: https://www.madamasr.com/rss
+  lang: en
+  enabled: true
+- country: El Salvador
+  name: El Diario de Hoy
+  url: https://www.elsalvador.com/rss.xml
   lang: es
   enabled: true
-- country: Venezuela
-  name: El Nacional
-  url: https://www.elnacional.com/feed/
+- country: Estonia
+  name: ERR
+  url: https://news.err.ee/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Estonia
+  name: Postimees
+  url: https://www.postimees.ee/rss
+  lang: et
+  enabled: true
+  verified: '2026-09-24'
+- country: Estonia
+  name: Postimees (EN)
+  url: https://news.postimees.ee/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Estonia
+  name: Äripäev
+  url: https://www.aripaev.ee/rss
+  lang: et
+  enabled: true
+  verified: '2026-09-24'
+- country: France
+  name: Actu-Juridique
+  url: https://www.actu-juridique.fr/feed/
+  lang: fr
+  enabled: true
+  verified: '2026-09-24'
+- country: France
+  name: Challenges
+  url: https://www.challenges.fr/rss.xml
+  lang: fr
+  enabled: true
+  verified: '2026-09-24'
+- country: France
+  name: Décideurs Juridiques
+  url: https://www.decideurs-juridiques.com/juridiques.feed?type=rss
+  lang: fr
+  enabled: true
+- country: France
+  name: L'Opinion
+  url: https://www.lopinion.fr/index.rss
+  lang: fr
+  enabled: true
+  verified: '2026-09-24'
+- country: France
+  name: La Tribune
+  url: https://www.latribune.fr/feed.xml
+  lang: fr
+  enabled: true
+  verified: '2026-09-24'
+- country: France
+  name: Le Monde Économie
+  url: https://www.lemonde.fr/rss/une.xml
+  lang: fr
+  enabled: true
+  verified: '2026-09-24'
+- country: Gabon
+  name: Gabonreview
+  url: https://www.gabonreview.com/feed
+  lang: fr
+  enabled: true
+- country: Georgia
+  name: Civil.ge
+  url: https://civil.ge/feed
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Georgia
+  name: JAMnews
+  url: https://jam-news.net/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Georgia
+  name: Netgazeti
+  url: https://netgazeti.ge/feed/
+  lang: ka
+  enabled: true
+  verified: '2026-09-24'
+- country: Georgia
+  name: OC Media
+  url: https://oc-media.org/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Georgia
+  name: Radio Tavisupleba
+  url: https://www.radiotavisupleba.ge/api/
+  lang: ka
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: Beck-aktuell
+  url: https://rsw.beck.de/aktuell/rss.xml
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: Der Spiegel Wirtschaft
+  url: https://www.spiegel.de/schlagzeilen/index.rss
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: FAZ Wirtschaft
+  url: https://www.faz.net/rss/aktuell/
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: JUVE
+  url: https://www.juve.de/rss
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: JUVE Patent
+  url: https://www.juve-patent.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: Legal Tribune Online
+  url: https://www.lto.de/feed.xml
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: Manager Magazin
+  url: https://www.manager-magazin.de/news/index.rss
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Germany
+  name: Tagesschau Wirtschaft
+  url: https://www.tagesschau.de/wirtschaft/index~atom.xml
+  lang: de
+  enabled: true
+  verified: '2026-09-24'
+- country: Ghana
+  name: Ghana Business News
+  url: https://www.ghanabusinessnews.com/feed/
+  lang: en
+  enabled: true
+- country: Ghana
+  name: MyJoyOnline Business
+  url: https://www.myjoyonline.com/business/feed/
+  lang: en
+  enabled: true
+- country: Greece
+  name: Capital.gr
+  url: https://www.capital.gr/api/tags/all/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Greece
+  name: Naftemporiki
+  url: https://www.naftemporiki.gr/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Greece
+  name: Newmoney
+  url: https://www.newmoney.gr/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Greece
+  name: OT.gr
+  url: https://www.ot.gr/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Greece
+  name: To Vima
+  url: https://www.tovima.gr/feed/
+  lang: el
+  enabled: true
+  verified: '2026-09-24'
+- country: Guatemala
+  name: Prensa Libre
+  url: https://www.prensalibre.com/feed/
   lang: es
   enabled: true
-- country: Bolivia
-  name: El Deber
-  url: https://eldeber.com.bo/feed
-  lang: es
+- country: Guinea
+  name: Guinéenews
+  url: https://guineenews.org/feed/
+  lang: fr
   enabled: true
-- country: Brazil
-  name: Valor Econômico
-  url: https://valor.globo.com/rss/valor
-  lang: pt
+- country: Hungary
+  name: '444'
+  url: https://444.hu/feed/
+  lang: hu
   enabled: true
-- country: Brazil
-  name: JOTA
-  url: https://www.jota.info/feed
-  lang: pt
+  verified: '2026-09-24'
+- country: Hungary
+  name: Daily News Hungary
+  url: https://dailynewshungary.com/feed/
+  lang: en
   enabled: true
-- country: Brazil
-  name: Folha - Mercado
-  url: https://feeds.folha.uol.com.br/mercado/rss091.xml
-  lang: pt
+  verified: '2026-09-24'
+- country: Hungary
+  name: HVG
+  url: https://hvg.hu/rss
+  lang: hu
   enabled: true
-- country: Spain
-  name: Expansión
-  url: https://e00-expansion.uecdn.es/rss/portada.xml
-  lang: es
+  verified: '2026-09-24'
+- country: Hungary
+  name: Hungary Today
+  url: https://hungarytoday.hu/feed/
+  lang: en
   enabled: true
-- country: Spain
-  name: El Confidencial
-  url: https://rss.elconfidencial.com/espana/
-  lang: es
+  verified: '2026-09-24'
+- country: Hungary
+  name: Index
+  url: https://index.hu/24ora/rss/
+  lang: hu
   enabled: true
-- country: Spain
-  name: Cinco Días
-  url: https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada
-  lang: es
+  verified: '2026-09-24'
+- country: Hungary
+  name: Portfolio.hu
+  url: https://www.portfolio.hu/rss/all.xml
+  lang: hu
   enabled: true
-- country: Spain
-  name: El Economista
-  url: https://www.eleconomista.es/rss/rss-empresas.php
-  lang: es
+  verified: '2026-09-24'
+- country: Hungary
+  name: Telex
+  url: https://telex.hu/rss
+  lang: hu
   enabled: true
+  verified: '2026-09-24'
+- country: Hungary
+  name: Világgazdaság
+  url: https://www.vg.hu/publicapi/hu/rss/vilaggazdasag/articles
+  lang: hu
+  enabled: true
+  verified: '2026-09-24'
+- country: India
+  name: Bar & Bench
+  url: https://www.barandbench.com/feed
+  lang: en
+  enabled: true
+- country: India
+  name: Business Standard
+  url: https://www.business-standard.com/rss/companies-101.rss
+  lang: en
+  enabled: true
+- country: India
+  name: Economic Times
+  url: https://economictimes.indiatimes.com/rssfeedsdefault.cms
+  lang: en
+  enabled: true
+- country: India
+  name: LiveLaw
+  url: https://www.livelaw.in/google_feeds.xml
+  lang: en
+  enabled: true
+- country: India
+  name: Mint
+  url: https://www.livemint.com/rss/companies
+  lang: en
+  enabled: true
+- country: Indonesia
+  name: Katadata
+  url: https://katadata.co.id/rss
+  lang: id
+  enabled: true
+- country: Iraq
+  name: Iraq Business News
+  url: https://www.iraq-businessnews.com/feed/
+  lang: en
+  enabled: true
+- country: Israel
+  name: Globes
+  url: https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942
+  lang: en
+  enabled: true
+- country: Italy
+  name: ANSA Economia
+  url: https://www.ansa.it/rss.xml
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
+- country: Italy
+  name: Formiche
+  url: https://formiche.net/feed/
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
+- country: Italy
+  name: Il Fatto Quotidiano
+  url: https://www.ilfattoquotidiano.it/feed/
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
+- country: Italy
+  name: Il Post
+  url: https://www.ilpost.it/feed
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
 - country: Italy
   name: Il Sole 24 Ore
   url: https://www.ilsole24ore.com/rss/italia.xml
   lang: it
   enabled: true
-- country: Romania
-  name: Ziarul Financiar
-  url: https://www.zf.ro/rss
+  verified: '2026-09-24'
+- country: Italy
+  name: La Repubblica Economia
+  url: http://www.repubblica.it/rss/economia/rss2.0.xml
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
+- country: Italy
+  name: Toplegal
+  url: https://www.toplegal.it/feed/
+  lang: it
+  enabled: true
+  verified: '2026-09-24'
+- country: Jamaica
+  name: The Gleaner
+  url: https://jamaica-gleaner.com/rss.xml
+  lang: en
+  enabled: true
+- country: Kazakhstan
+  name: Inbusiness.kz
+  url: https://inbusiness.kz/ru/rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: Kapital.kz
+  url: https://kapital.kz/feed
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: Kursiv
+  url: https://kz.kursiv.media/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: LS (lsm.kz)
+  url: https://lsm.kz/rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: Orda.kz
+  url: https://orda.kz/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: The Astana Times
+  url: https://astanatimes.com/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: Times of Central Asia
+  url: https://timesca.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Kazakhstan
+  name: Vlast.kz
+  url: https://vlast.kz/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kenya
+  name: Business Daily
+  url: https://www.businessdailyafrica.com/bd/rss.xml
+  lang: en
+  enabled: true
+- country: Kenya
+  name: Nation
+  url: https://nation.africa/kenya/rss.xml
+  lang: en
+  enabled: true
+- country: Korea
+  name: Korea Economic Daily
+  url: https://www.kedglobal.com/rss
+  lang: en
+  enabled: true
+- country: Korea
+  name: The Korea Herald
+  url: https://www.koreaherald.com/rss/newsAll
+  lang: en
+  enabled: true
+- country: Kyrgyzstan
+  name: 24.kg
+  url: https://24.kg/rss/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: AKIpress
+  url: https://akipress.com/rss/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Azattyk (RFE/RL)
+  url: https://www.azattyqasia.org/api/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Economist.kg
+  url: https://economist.kg/rss/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Kabar
+  url: https://kabar.kg/rss.xml
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Kloop
+  url: https://kloop.kg/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Tazabek
+  url: https://www.tazabek.kg/rss/news.rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Kyrgyzstan
+  name: Vesti.kg
+  url: https://vesti.kg/?format=feed
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: Apollo
+  url: https://www.apollo.lv/rss
+  lang: lv
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: BNN
+  url: https://bnn-news.com/feed
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: Baltic Times
+  url: https://www.baltictimes.com/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: Delfi
+  url: https://www.delfi.lv/rss.xml
+  lang: lv
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: Diena
+  url: https://diena.lv/rss
+  lang: lv
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: Dienas Bizness
+  url: https://db.lv/rss
+  lang: lv
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: LSM
+  url: https://eng.lsm.lv/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Latvia
+  name: TVNET
+  url: https://www.tvnet.lv/rss
+  lang: lv
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: 15min
+  url: https://www.15min.lt/rss
+  lang: lt
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: Delfi
+  url: https://www.delfi.lt/rss
+  lang: lt
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: LRT
+  url: https://www.lrt.lt/?rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: LRT English
+  url: https://www.lrt.lt/en/news-in-english?rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: Lrytas
+  url: https://www.lrytas.lt/rss
+  lang: lt
+  enabled: true
+  verified: '2026-09-24'
+- country: Lithuania
+  name: Verslo žinios
+  url: https://www.vz.lt/rss
+  lang: lt
+  enabled: true
+  verified: '2026-09-24'
+- country: Madagascar
+  name: L'Express de Madagascar
+  url: https://www.lexpress.mg/feeds/posts/default
+  lang: fr
+  enabled: true
+- country: Mexico
+  name: El Financiero
+  url: https://www.elfinanciero.com.mx/rss
+  lang: es
+  enabled: true
+- country: Mexico
+  name: El Universal
+  url: https://www.eluniversal.com.mx/arc/outboundfeeds/rss/
+  lang: es
+  enabled: true
+- country: Mexico
+  name: Expansión
+  url: https://expansion.mx/rss
+  lang: es
+  enabled: true
+- country: Mexico
+  name: Reforma
+  url: https://www.reforma.com/rss/portada.xml
+  lang: es
+  enabled: true
+- country: Moldova
+  name: Bani.md
+  url: https://bani.md/feed/
   lang: ro
   enabled: true
-- country: Romania
-  name: Profit.ro
-  url: https://www.profit.ro/rss
+  verified: '2026-09-24'
+- country: Moldova
+  name: Deschide.md
+  url: https://deschide.md/rss.xml
   lang: ro
   enabled: true
-- country: Poland
-  name: Rzeczpospolita
-  url: https://www.rp.pl/rss_main
-  lang: pl
+  verified: '2026-09-24'
+- country: Moldova
+  name: IPN
+  url: https://ipn.md/feed/
+  lang: ro
   enabled: true
+  verified: '2026-09-24'
+- country: Moldova
+  name: NewsMaker
+  url: https://newsmaker.md/ru/feed
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Moldova
+  name: Point.md
+  url: https://point.md/ru/rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Moldova
+  name: Ziarul de Gardă
+  url: https://www.zdg.md/feed/
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Mongolia
+  name: Ikon.mn
+  url: https://ikon.mn/rss
+  lang: mn
+  enabled: true
+  verified: '2026-09-24'
+- country: Mongolia
+  name: Mongolia Weekly
+  url: https://www.mongoliaweekly.org/blog-feed.xml
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Mongolia
+  name: News.mn
+  url: https://news.mn/en/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: CdM
+  url: https://www.cdm.me/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: Dan
+  url: https://www.dan.co.me/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: Investitor.me
+  url: https://investitor.me/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: Mina
+  url: https://www.mina.news/feed
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: Pobjeda
+  url: https://rss.pobjeda.me
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Montenegro
+  name: Vijesti
+  url: https://www.vijesti.me/rss
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Mozambique
+  name: Club of Mozambique
+  url: https://clubofmozambique.com/feed/
+  lang: en
+  enabled: true
+- country: Namibia
+  name: The Namibian
+  url: https://www.namibian.com.na/feed/
+  lang: en
+  enabled: true
+- country: Nepal
+  name: Kathmandu Post
+  url: https://kathmandupost.com/rss
+  lang: en
+  enabled: true
+- country: Netherlands
+  name: Het Financieele Dagblad
+  url: https://fd.nl/?rss
+  lang: nl
+  enabled: true
+  verified: '2026-09-24'
+- country: Netherlands
+  name: NL Times
+  url: https://nltimes.nl/rssfeed2
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Netherlands
+  name: NRC
+  url: https://www.nrc.nl/rss/
+  lang: nl
+  enabled: true
+  verified: '2026-09-24'
 - country: Nigeria
   name: BusinessDay
   url: https://businessday.ng/feed/
+  lang: en
+  enabled: true
+- country: Nigeria
+  name: Nairametrics
+  url: https://nairametrics.com/feed/
   lang: en
   enabled: true
 - country: Nigeria
@@ -404,109 +1305,51 @@ national_press:
   url: https://punchng.com/feed/
   lang: en
   enabled: true
-- country: Nigeria
-  name: Nairametrics
-  url: https://nairametrics.com/feed/
+- country: North Macedonia
+  name: 360 Stepeni
+  url: https://360stepeni.mk/feed/
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: Faktor
+  url: https://faktor.mk/feed/
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: MIA
+  url: https://mia.mk/feed
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: Makfax
+  url: https://makfax.com.mk/feed/
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: Nezavisen
+  url: https://nezavisen.mk/feed/
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: Pari.com.mk
+  url: https://pari.com.mk/feed/
+  lang: mk
+  enabled: true
+  verified: '2026-09-24'
+- country: North Macedonia
+  name: Republika
+  url: https://english.republika.mk/feed/
   lang: en
   enabled: true
-- country: Ghana
-  name: Ghana Business News
-  url: https://www.ghanabusinessnews.com/feed/
-  lang: en
-  enabled: true
-- country: Ghana
-  name: MyJoyOnline Business
-  url: https://www.myjoyonline.com/business/feed/
-  lang: en
-  enabled: true
-- country: Kenya
-  name: Business Daily
-  url: https://www.businessdailyafrica.com/bd/rss.xml
-  lang: en
-  enabled: true
-- country: Tanzania
-  name: The Citizen
-  url: https://www.thecitizen.co.tz/rss.xml
-  lang: en
-  enabled: true
-- country: Zambia
-  name: Zambia Daily Mail
-  url: https://www.daily-mail.co.zm/feed/
-  lang: en
-  enabled: true
-- country: Zambia
-  name: News Diggers
-  url: https://diggers.news/feed/
-  lang: en
-  enabled: true
-- country: DRC
-  name: Actualite.cd
-  url: https://actualite.cd/feed
-  lang: fr
-  enabled: true
-- country: South Africa
-  name: Business Day
-  url: https://www.businesslive.co.za/arc/outboundfeeds/rss/
-  lang: en
-  enabled: true
-- country: South Africa
-  name: Moneyweb
-  url: https://www.moneyweb.co.za/feed/
-  lang: en
-  enabled: true
-- country: Mozambique
-  name: Club of Mozambique
-  url: https://clubofmozambique.com/feed/
-  lang: en
-  enabled: true
-- country: Egypt
-  name: Enterprise
-  url: https://enterpriseam.com/egypt/feed/
-  lang: en
-  enabled: true
-- country: Egypt
-  name: Daily News Egypt
-  url: https://www.dailynewsegypt.com/feed/
-  lang: en
-  enabled: true
-- country: Saudi Arabia
-  name: Arab News
-  url: https://www.arabnews.com/rss
-  lang: en
-  enabled: true
-- country: Iraq
-  name: Iraq Business News
-  url: https://www.iraq-businessnews.com/feed/
-  lang: en
-  enabled: true
-- country: India
-  name: Economic Times
-  url: https://economictimes.indiatimes.com/rssfeedsdefault.cms
-  lang: en
-  enabled: true
-- country: India
-  name: Mint
-  url: https://www.livemint.com/rss/companies
-  lang: en
-  enabled: true
-- country: India
-  name: Bar & Bench
-  url: https://www.barandbench.com/feed
-  lang: en
-  enabled: true
-- country: India
-  name: LiveLaw
-  url: https://www.livelaw.in/google_feeds.xml
-  lang: en
-  enabled: true
-- country: India
-  name: Business Standard
-  url: https://www.business-standard.com/rss/companies-101.rss
-  lang: en
-  enabled: true
-- country: Pakistan
-  name: Dawn Business
-  url: https://www.dawn.com/feeds/business
+  verified: '2026-09-24'
+- country: Oman
+  name: Times of Oman
+  url: https://timesofoman.com/feed/
   lang: en
   enabled: true
 - country: Pakistan
@@ -514,94 +1357,599 @@ national_press:
   url: https://www.brecorder.com/feeds/latest-news
   lang: en
   enabled: true
-- country: Vietnam
-  name: VnExpress International
-  url: https://e.vnexpress.net/rss/business.rss
+- country: Pakistan
+  name: Dawn Business
+  url: https://www.dawn.com/feeds/business
   lang: en
+  enabled: true
+- country: Panama
+  name: La Prensa
+  url: https://www.prensa.com/arc/outboundfeeds/rss/
+  lang: es
+  enabled: true
+- country: Papua New Guinea
+  name: Post-Courier
+  url: https://www.postcourier.com.pg/feed/
+  lang: en
+  enabled: true
+- country: Peru
+  name: El Comercio
+  url: https://elcomercio.pe/arcio/rss/
+  lang: es
+  enabled: true
+- country: Peru
+  name: Gestión
+  url: https://gestion.pe/arcio/rss/
+  lang: es
+  enabled: true
+- country: Peru
+  name: La República
+  url: https://larepublica.pe/rss.xml
+  lang: es
+  enabled: true
+- country: Peru
+  name: RPP
+  url: https://rpp.pe/rss
+  lang: es
+  enabled: true
+- country: Peru
+  name: Semana Económica
+  url: https://semanaeconomica.com/feed
+  lang: es
   enabled: true
 - country: Philippines
   name: BusinessWorld
   url: https://www.bworldonline.com/feed/
   lang: en
   enabled: true
-- country: Korea
-  name: Korea Economic Daily
-  url: https://www.kedglobal.com/rss
+- country: Philippines
+  name: Inquirer Business
+  url: https://business.inquirer.net/rss
+  lang: en
+  enabled: true
+- country: Poland
+  name: Business Insider Polska
+  url: https://businessinsider.com.pl/.feed
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: Gazeta Prawna
+  url: https://www.gazetaprawna.pl/.feed
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: Money.pl
+  url: https://www.money.pl/rss/rss.xml
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: Notes from Poland
+  url: https://notesfrompoland.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: PAP Biznes
+  url: https://biznes.pap.pl/rss
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: Rzeczpospolita
+  url: https://www.rp.pl/rss_main
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Poland
+  name: WNP.pl
+  url: https://www.wnp.pl/rss/serwis_rss.xml
+  lang: pl
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Digi24
+  url: https://www.digi24.ro/rss
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Economedia
+  url: https://economedia.ro/feed
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Economica.net
+  url: https://www.economica.net/feed
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: G4Media
+  url: https://www.g4media.ro/feed
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Hotnews
+  url: https://hotnews.ro/feed/
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Juridice.ro
+  url: https://www.juridice.ro/feed
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Profit.ro
+  url: https://www.profit.ro/rss
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Romania Insider
+  url: https://www.romania-insider.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Romania
+  name: Ziarul Financiar
+  url: https://www.zf.ro/rss
+  lang: ro
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: Interfax
+  url: https://www.interfax.ru/rss.asp
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: Kommersant
+  url: https://www.kommersant.ru/RSS/news.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: Pravo.ru
+  url: https://pravo.ru/rss/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: RBC
+  url: https://rssexport.rbc.ru/rbcnews/news/30/full.rss
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: The Bell
+  url: https://thebell.io/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: The Moscow Times
+  url: https://www.themoscowtimes.com/rss/news
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Russia
+  name: Vedomosti
+  url: https://www.vedomosti.ru/rss/news
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Saudi Arabia
+  name: Arab News
+  url: https://www.arabnews.com/rss
+  lang: en
+  enabled: true
+- country: Senegal
+  name: APS
+  url: https://aps.sn/feed/
+  lang: fr
+  enabled: true
+- country: Serbia
+  name: BIRN Balkan Insight
+  url: https://balkaninsight.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Beta
+  url: https://beta.rs/rss
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Biznis.rs
+  url: https://biznis.rs/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Danas
+  url: https://www.danas.rs/feed/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: N1
+  url: https://n1info.rs/feed
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Politika
+  url: https://www.politika.rs/rss
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Radio Slobodna Evropa
+  url: https://www.slobodnaevropa.org/api/
+  lang: sr
+  enabled: true
+  verified: '2026-09-24'
+- country: Serbia
+  name: Serbian Monitor
+  url: https://www.serbianmonitor.com/en/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovakia
+  name: Aktuality.sk
+  url: https://www.aktuality.sk/rss-articles.xml
+  lang: sk
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovakia
+  name: Denník N
+  url: https://dennikn.sk/rss
+  lang: sk
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovakia
+  name: Hospodárske noviny
+  url: https://hnonline.sk/feed
+  lang: sk
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovakia
+  name: SME
+  url: https://www.sme.sk/rss
+  lang: sk
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovenia
+  name: 24ur
+  url: https://www.24ur.com/rss
+  lang: sl
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovenia
+  name: Delo
+  url: https://www.delo.si/rss
+  lang: sl
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovenia
+  name: Dnevnik
+  url: https://www.dnevnik.si/rss.xml
+  lang: sl
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovenia
+  name: Siol.net
+  url: https://siol.net/feeds/latest
+  lang: sl
+  enabled: true
+  verified: '2026-09-24'
+- country: Slovenia
+  name: Slovenia Times
+  url: https://sloveniatimes.com/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: South Africa
+  name: Business Day
+  url: https://www.businesslive.co.za/arc/outboundfeeds/rss/
+  lang: en
+  enabled: true
+- country: South Africa
+  name: Daily Maverick
+  url: https://www.dailymaverick.co.za/rss
+  lang: en
+  enabled: true
+- country: South Africa
+  name: Moneyweb
+  url: https://www.moneyweb.co.za/feed/
+  lang: en
+  enabled: true
+- country: Spain
+  name: Cinco Días
+  url: https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: Confilegal
+  url: https://confilegal.com/feed/
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: El Confidencial
+  url: https://rss.elconfidencial.com/espana/
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: El Economista
+  url: https://www.eleconomista.es/rss/rss-empresas.php
+  lang: es
+  enabled: true
+- country: Spain
+  name: El Español Invertia
+  url: https://www.elespanol.com/rss/invertia/
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: El País Economía
+  url: https://feeds.elpais.com/mrss-s/list/ep/site/elpais.com/section/economia
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: Expansión
+  url: https://e00-expansion.uecdn.es/rss/portada.xml
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: La Vanguardia Economía
+  url: https://www.lavanguardia.com/rss/home.xml
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Spain
+  name: Lawyerpress
+  url: https://www.lawyerpress.com/feed/
+  lang: es
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
+  name: Asia-Plus
+  url: https://asiaplus.news/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
+  name: Avesta
+  url: https://avesta.tj/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
+  name: Khovar
+  url: https://khovar.tj/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
+  name: Sputnik Tajikistan
+  url: https://tj.sputniknews.ru/export/rss2/archive/index.xml
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Tanzania
+  name: The Citizen
+  url: https://www.thecitizen.co.tz/rss.xml
+  lang: en
+  enabled: true
+- country: Turkey
+  name: Bloomberg HT
+  url: https://www.bloomberght.com/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Daily Sabah
+  url: https://www.dailysabah.com/rssFeed/10
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Dünya
+  url: https://www.dunya.com/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Ekonomim
+  url: https://www.ekonomim.com/export/rss
+  lang: tr
+  enabled: true
+- country: Turkey
+  name: Hürriyet Daily News
+  url: https://www.hurriyetdailynews.com/rss
+  lang: tr
+  enabled: true
+- country: Turkmenistan
+  name: Business Turkmenistan
+  url: https://business.com.tm/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Turkmenistan
+  name: Chronicles of Turkmenistan
+  url: https://www.hronikatm.com/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Turkmenistan
+  name: Turkmenistan.gov.tm
+  url: https://turkmenistan.gov.tm/rss.xml
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: UAE
+  name: Gulf News
+  url: https://gulfnews.com/feed
+  lang: en
+  enabled: true
+- country: Uganda
+  name: Daily Monitor
+  url: https://www.monitor.co.ug/rss.xml
+  lang: en
+  enabled: true
+- country: Ukraine
+  name: Delo.ua
+  url: https://delo.ua/rss/news
+  lang: uk
+  enabled: true
+  verified: '2026-09-24'
+- country: Ukraine
+  name: Kyiv Independent
+  url: https://kyivindependent.com/news-archive/rss/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Ukraine
+  name: LIGA.net
+  url: https://news.liga.net/ua/all/rss.xml
+  lang: uk
+  enabled: true
+- country: Ukraine
+  name: NV
+  url: https://nv.ua/ukr/rss/all.xml
+  lang: uk
+  enabled: true
+  verified: '2026-09-24'
+- country: Ukraine
+  name: Sudovo-yurydychna gazeta
+  url: https://sud.ua/rss
+  lang: uk
+  enabled: true
+  verified: '2026-09-24'
+- country: Ukraine
+  name: Ukrainska Pravda
+  url: https://www.pravda.com.ua/rss
+  lang: uk
+  enabled: true
+  verified: '2026-09-24'
+- country: Ukraine
+  name: Zakon i Biznes
+  url: http://zib.com.ua/ua/rss/
+  lang: uk
+  enabled: true
+  verified: '2026-09-24'
+- country: United Kingdom
+  name: Financial Times - law
+  url: https://www.ft.com/rss/home/international
+  lang: en
+  enabled: true
+- country: United Kingdom
+  name: Law Gazette
+  url: https://www.lawgazette.co.uk/13505.rss
+  lang: en
+  enabled: true
+- country: Uzbekistan
+  name: Anhor.uz
+  url: https://anhor.uz/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Gazeta.uz
+  url: https://www.gazeta.uz/ru/rss/
+  lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Kun.uz
+  url: https://kun.uz/news/rss?lang=uz
+  lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Kursiv Uzbekistan
+  url: https://uz.kursiv.media/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Podrobno.uz
+  url: https://podrobno.uz/rss
+  lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Review.uz
+  url: https://review.uz/feed
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: Spot.uz
+  url: https://www.spot.uz/rss
+  lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: UzA
+  url: https://uza.uz/en/rss
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Uzbekistan
+  name: UzDaily
+  url: https://uzdaily.uz/en/rss
+  lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Venezuela
+  name: Efecto Cocuyo
+  url: https://efectococuyo.com/feed/
+  lang: es
+  enabled: true
+- country: Venezuela
+  name: El Nacional
+  url: https://www.elnacional.com/feed/
+  lang: es
+  enabled: true
+- country: Vietnam
+  name: VnExpress International
+  url: https://e.vnexpress.net/rss/business.rss
+  lang: en
+  enabled: true
+- country: Zambia
+  name: News Diggers
+  url: https://diggers.news/feed/
+  lang: en
+  enabled: true
+- country: Zambia
+  name: Zambia Daily Mail
+  url: https://www.daily-mail.co.zm/feed/
+  lang: en
+  enabled: true
+- country: Zimbabwe
+  name: NewsDay
+  url: https://newsday.co.zw/feed/
+  lang: en
+  enabled: true
+- country: Zimbabwe
+  name: The Herald
+  url: https://www.heraldonline.co.zw/feed/
   lang: en
   enabled: true
 - country: Global
-  name: Law360 International Arbitration
-  url: https://www.law360.com/internationalarbitration/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Litigation Capital Management
-  url: https://www.lcmfinance.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: ICC news
-  url: https://iccwbo.org/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: VIAC news
-  url: https://www.viac.eu/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: CRCICA news
-  url: https://crcica.org/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: KCAB International
-  url: http://www.kcabinternational.or.kr/rss.xml
-  lang: en
-  enabled: true
-- country: Global
-  name: DIAC news
-  url: https://www.diac.com/en/feed
-  lang: en
-  enabled: true
-- country: Global
-  name: ISTAC news
-  url: https://istac.org.tr/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Russian Arbitration Center
-  url: https://centerarbitr.ru/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: CAM-CCBC
-  url: https://www.ccbc.org.br/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: Global Legal Chronicle
-  url: https://www.globallegalchronicle.com/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: CDR News
-  url: https://www.cdr-news.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Global Legal Post
-  url: https://www.globallegalpost.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Legal Business
-  url: https://www.legalbusiness.co.uk/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: The Lawyer
-  url: https://www.thelawyer.com/feed/
+  name: Arnold & Porter news
+  url: https://www.arnoldporter.com/rss/news
   lang: en
   enabled: true
 - country: Global
@@ -610,8 +1958,48 @@ national_press:
   lang: en
   enabled: true
 - country: Global
-  name: Latin Lawyer
-  url: https://latinlawyer.com/rss
+  name: Business Wire - legal
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==
+  lang: en
+  enabled: true
+- country: Global
+  name: CAM-CCBC
+  url: https://www.ccbc.org.br/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: CDR News
+  url: https://www.cdr-news.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: CRCICA news
+  url: https://crcica.org/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: Canada - Ontario Court of Appeal (CanLII feed)
+  url: https://www.canlii.org/en/on/onca/rss_new.xml
+  lang: en
+  enabled: true
+- country: Global
+  name: Chaffetz Lindsey
+  url: https://www.chaffetzlindsey.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Clifford Chance news
+  url: https://www.cliffordchance.com/rss.xml
+  lang: en
+  enabled: true
+- country: Global
+  name: DIAC news
+  url: https://www.diac.com/en/feed
+  lang: en
+  enabled: true
+- country: Global
+  name: Derains & Gharavi
+  url: https://www.derainsgharavi.com/feed/
   lang: en
   enabled: true
 - country: Global
@@ -625,73 +2013,8 @@ national_press:
   lang: en
   enabled: true
 - country: Global
-  name: Netherlands - rechtspraak open data
-  url: https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20
-  lang: en
-  enabled: true
-- country: Global
-  name: Canada - Ontario Court of Appeal (CanLII feed)
-  url: https://www.canlii.org/en/on/onca/rss_new.xml
-  lang: en
-  enabled: true
-- country: Global
-  name: Therium news
-  url: https://therium.com/?feed=rss2
-  lang: en
-  enabled: true
-- country: Global
-  name: Harbour news
-  url: https://www.harbourlitigationfunding.com/harbour-is-the-largest-privately-owned-litigation-funder/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: Nivalion news
-  url: https://nivalion.com/en/feed/
-  lang: en
-  enabled: true
-- country: Global
   name: Foley Hoag news
   url: https://foleyhoag.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Volterra Fietta news
-  url: https://www.volterrafietta.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Arnold & Porter news
-  url: https://www.arnoldporter.com/rss/news
-  lang: en
-  enabled: true
-- country: Global
-  name: Clifford Chance news
-  url: https://www.cliffordchance.com/rss.xml
-  lang: en
-  enabled: true
-- country: Global
-  name: Gibson Dunn news
-  url: https://www.gibsondunn.com/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: Lalive news
-  url: https://www.lalive.law/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Derains & Gharavi
-  url: https://www.derainsgharavi.com/feed/
-  lang: en
-  enabled: true
-- country: Global
-  name: Chaffetz Lindsey
-  url: https://www.chaffetzlindsey.com/rss
-  lang: en
-  enabled: true
-- country: Global
-  name: Uría Menéndez news
-  url: https://www.uria.com/rss/all
   lang: en
   enabled: true
 - country: Global
@@ -700,363 +2023,128 @@ national_press:
   lang: en
   enabled: true
 - country: Global
+  name: Gibson Dunn news
+  url: https://www.gibsondunn.com/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: Global Legal Chronicle
+  url: https://www.globallegalchronicle.com/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: Global Legal Post
+  url: https://www.globallegalpost.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Harbour news
+  url: https://www.harbourlitigationfunding.com/harbour-is-the-largest-privately-owned-litigation-funder/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: ICC news
+  url: https://iccwbo.org/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: ISTAC news
+  url: https://istac.org.tr/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: KCAB International
+  url: http://www.kcabinternational.or.kr/rss.xml
+  lang: en
+  enabled: true
+- country: Global
+  name: Lalive news
+  url: https://www.lalive.law/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Latin Lawyer
+  url: https://latinlawyer.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Law360 International Arbitration
+  url: https://www.law360.com/internationalarbitration/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Legal Business
+  url: https://www.legalbusiness.co.uk/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: Litigation Capital Management
+  url: https://www.lcmfinance.com/rss
+  lang: en
+  enabled: true
+- country: Global
+  name: Netherlands - rechtspraak open data
+  url: https://data.rechtspraak.nl/uitspraken/zoeken?q=arbitrage&max=20
+  lang: en
+  enabled: true
+- country: Global
+  name: Nivalion news
+  url: https://nivalion.com/en/feed/
+  lang: en
+  enabled: true
+- country: Global
+  name: Russian Arbitration Center
+  url: https://centerarbitr.ru/rss
+  lang: en
+  enabled: true
+- country: Global
   name: Sayenko Kharenko news
   url: https://sk.ua/rss
   lang: en
   enabled: true
 - country: Global
-  name: Business Wire - legal
-  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==
+  name: The Lawyer
+  url: https://www.thelawyer.com/feed/
   lang: en
   enabled: true
-- country: Armenia
-  name: Azatutyun (RFE/RL)
-  url: https://www.azatutyun.am/api/
+- country: Global
+  name: Therium news
+  url: https://therium.com/?feed=rss2
   lang: en
   enabled: true
-- country: Armenia
-  name: Armenia Today
-  url: https://armeniatoday.am/feed/
+- country: Global
+  name: Uría Menéndez news
+  url: https://www.uria.com/rss/all
   lang: en
   enabled: true
-- country: Kazakhstan
-  name: Inbusiness.kz
-  url: https://inbusiness.kz/ru/rss
-  lang: ru
-  enabled: true
-- country: Uzbekistan
-  name: Podrobno.uz
-  url: https://podrobno.uz/rss
-  lang: uz
-  enabled: true
-- country: Kyrgyzstan
-  name: Economist.kg
-  url: https://economist.kg/rss/
-  lang: ru
-  enabled: true
-- country: Tajikistan
-  name: Asia-Plus
-  url: https://asiaplus.news/feed/
-  lang: ru
-  enabled: true
-- country: Moldova
-  name: IPN
-  url: https://ipn.md/feed/
-  lang: ro
-  enabled: true
-- country: Turkey
-  name: Ekonomim
-  url: https://www.ekonomim.com/export/rss
-  lang: tr
-  enabled: true
-- country: Mexico
-  name: Reforma
-  url: https://www.reforma.com/rss/portada.xml
-  lang: es
-  enabled: true
-- country: Argentina
-  name: iProfesional
-  url: https://www.iprofesional.com/rss/home
-  lang: es
-  enabled: true
-- country: Argentina
-  name: Página/12
-  url: https://www.pagina12.com.ar/arc/outboundfeeds/rss/
-  lang: es
-  enabled: true
-- country: Colombia
-  name: El Espectador
-  url: https://www.elespectador.com/feed/
-  lang: es
-  enabled: true
-- country: Peru
-  name: Semana Económica
-  url: https://semanaeconomica.com/feed
-  lang: es
-  enabled: true
-- country: Peru
-  name: La República
-  url: https://larepublica.pe/rss.xml
-  lang: es
-  enabled: true
-- country: Chile
-  name: La Tercera
-  url: https://www.latercera.com/rss
-  lang: es
-  enabled: true
-- country: Ecuador
-  name: Expreso
-  url: https://www.expreso.ec/rss/home.xml
-  lang: es
-  enabled: true
-- country: Brazil
-  name: Estadão
-  url: https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D
-  lang: pt
-  enabled: true
-- country: Romania
-  name: Economica.net
-  url: https://www.economica.net/feed
-  lang: ro
-  enabled: true
-- country: Hungary
-  name: Portfolio.hu
-  url: https://www.portfolio.hu/rss/all.xml
-  lang: hu
-  enabled: true
-- country: Czechia
-  name: Hospodářské noviny
-  url: https://hn.cz/?m=rss
-  lang: cs
-  enabled: true
-- country: Slovakia
-  name: Denník N
-  url: https://dennikn.sk/rss
-  lang: sk
-  enabled: true
-- country: Croatia
-  name: Jutarnji list
-  url: https://www.jutarnji.hr/feed
-  lang: hr
-  enabled: true
-- country: Serbia
-  name: N1
-  url: https://n1info.rs/feed
-  lang: sr
-  enabled: true
-- country: Montenegro
-  name: Vijesti
-  url: https://www.vijesti.me/rss
-  lang: sr
-  enabled: true
-- country: North Macedonia
-  name: MIA
-  url: https://mia.mk/feed
-  lang: mk
-  enabled: true
-- country: Bulgaria
-  name: Novinite
-  url: https://www.novinite.com/services/news_rdf.php
-  lang: bg
-  enabled: true
-- country: Cyprus
-  name: Cyprus Mail
-  url: https://cyprus-mail.com/feed
+- country: Global
+  name: VIAC news
+  url: https://www.viac.eu/feed/
   lang: en
   enabled: true
-- country: Latvia
-  name: LSM
-  url: https://eng.lsm.lv/rss
+- country: Global
+  name: Volterra Fietta news
+  url: https://www.volterrafietta.com/rss
   lang: en
   enabled: true
-- country: Lithuania
-  name: LRT
-  url: https://www.lrt.lt/?rss
+- country: 'Sector: Agribusiness'
+  name: FoodNavigator
+  url: https://www.foodnavigator.com/arc/outboundfeeds/rss/
   lang: en
   enabled: true
-- country: Estonia
-  name: ERR
-  url: https://news.err.ee/rss
+- country: 'Sector: Aviation'
+  name: Aviation Week
+  url: https://aviationweek.com/rss.xml
   lang: en
   enabled: true
-- country: Germany
-  name: JUVE
-  url: https://www.juve.de/rss
-  lang: de
-  enabled: true
-- country: France
-  name: Décideurs Juridiques
-  url: https://www.decideurs-juridiques.com/juridiques.feed?type=rss
-  lang: fr
-  enabled: true
-- country: Netherlands
-  name: Het Financieele Dagblad
-  url: https://fd.nl/?rss
-  lang: nl
-  enabled: true
-- country: United Kingdom
-  name: Financial Times - law
-  url: https://www.ft.com/rss/home/international
+- country: 'Sector: Aviation'
+  name: FlightGlobal
+  url: https://www.flightglobal.com/rss
   lang: en
   enabled: true
-- country: United Kingdom
-  name: Law Gazette
-  url: https://www.lawgazette.co.uk/13505.rss
-  lang: en
-  enabled: true
-- country: Israel
-  name: Globes
-  url: https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942
-  lang: en
-  enabled: true
-- country: Oman
-  name: Times of Oman
-  url: https://timesofoman.com/feed/
-  lang: en
-  enabled: true
-- country: UAE
-  name: Gulf News
-  url: https://gulfnews.com/feed
-  lang: en
-  enabled: true
-- country: Egypt
-  name: Mada Masr
-  url: https://www.madamasr.com/rss
-  lang: en
-  enabled: true
-- country: Algeria
-  name: TSA
-  url: https://www.tsa-algerie.com/feed/
-  lang: fr
-  enabled: true
-- country: Uganda
-  name: Daily Monitor
-  url: https://www.monitor.co.ug/rss.xml
-  lang: en
-  enabled: true
-- country: Kenya
-  name: Nation
-  url: https://nation.africa/kenya/rss.xml
-  lang: en
-  enabled: true
-- country: Zimbabwe
-  name: NewsDay
-  url: https://newsday.co.zw/feed/
-  lang: en
-  enabled: true
-- country: Zimbabwe
-  name: The Herald
-  url: https://www.heraldonline.co.zw/feed/
-  lang: en
-  enabled: true
-- country: Namibia
-  name: The Namibian
-  url: https://www.namibian.com.na/feed/
-  lang: en
-  enabled: true
-- country: Madagascar
-  name: L'Express de Madagascar
-  url: https://www.lexpress.mg/feeds/posts/default
-  lang: fr
-  enabled: true
-- country: Guinea
-  name: Guinéenews
-  url: https://guineenews.org/feed/
-  lang: fr
-  enabled: true
-- country: Burkina Faso
-  name: Lefaso.net
-  url: https://lefaso.net/spip.php?page=backend
-  lang: fr
-  enabled: true
-- country: Cameroon
-  name: Investir au Cameroun
-  url: https://www.investiraucameroun.com/index.php/component/obrss/fullrss
-  lang: fr
-  enabled: true
-- country: Gabon
-  name: Gabonreview
-  url: https://www.gabonreview.com/feed
-  lang: fr
-  enabled: true
-- country: Senegal
-  name: APS
-  url: https://aps.sn/feed/
-  lang: fr
-  enabled: true
-- country: South Africa
-  name: Daily Maverick
-  url: https://www.dailymaverick.co.za/rss
-  lang: en
-  enabled: true
-- country: Bangladesh
-  name: The Daily Star
-  url: https://www.thedailystar.net/rss.xml
-  lang: en
-  enabled: true
-- country: Nepal
-  name: Kathmandu Post
-  url: https://kathmandupost.com/rss
-  lang: en
-  enabled: true
-- country: Cambodia
-  name: Khmer Times
-  url: https://www.khmertimeskh.com/feed/
-  lang: en
-  enabled: true
-- country: Indonesia
-  name: Katadata
-  url: https://katadata.co.id/rss
-  lang: id
-  enabled: true
-- country: Philippines
-  name: Inquirer Business
-  url: https://business.inquirer.net/rss
-  lang: en
-  enabled: true
-- country: Korea
-  name: The Korea Herald
-  url: https://www.koreaherald.com/rss/newsAll
-  lang: en
-  enabled: true
-- country: Papua New Guinea
-  name: Post-Courier
-  url: https://www.postcourier.com.pg/feed/
-  lang: en
-  enabled: true
-- country: Canada
-  name: Northern Miner
-  url: https://www.northernminer.com/feed/
-  lang: en
-  enabled: true
-- country: Canada
-  name: Mining.com
-  url: https://www.mining.com/rss
-  lang: en
-  enabled: true
-- country: Guatemala
-  name: Prensa Libre
-  url: https://www.prensalibre.com/feed/
-  lang: es
-  enabled: true
-- country: El Salvador
-  name: El Diario de Hoy
-  url: https://www.elsalvador.com/rss.xml
-  lang: es
-  enabled: true
-- country: Costa Rica
-  name: La Nación
-  url: https://www.nacion.com/rss
-  lang: es
-  enabled: true
-- country: Panama
-  name: La Prensa
-  url: https://www.prensa.com/arc/outboundfeeds/rss/
-  lang: es
-  enabled: true
-- country: Dominican Republic
-  name: Diario Libre
-  url: https://www.diariolibre.com/rss/portada.xml
-  lang: es
-  enabled: true
-- country: Jamaica
-  name: The Gleaner
-  url: https://jamaica-gleaner.com/rss.xml
-  lang: en
-  enabled: true
-- country: 'Sector: Construction'
-  name: Global Construction Review
-  url: https://www.globalconstructionreview.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Construction'
-  name: Construction Week (Middle East)
-  url: https://www.constructionweekonline.com/feed
-  lang: en
-  enabled: true
-- country: 'Sector: Construction'
-  name: New Civil Engineer
-  url: https://www.newcivilengineer.com/feed/
+- country: 'Sector: Aviation'
+  name: Simple Flying
+  url: https://simpleflying.com/feed/
   lang: en
   enabled: true
 - country: 'Sector: Construction'
@@ -1065,8 +2153,23 @@ national_press:
   lang: en
   enabled: true
 - country: 'Sector: Construction'
+  name: Construction Week (Middle East)
+  url: https://www.constructionweekonline.com/feed
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: Global Construction Review
+  url: https://www.globalconstructionreview.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
   name: IJGlobal
   url: https://eu.greenstreet.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Construction'
+  name: New Civil Engineer
+  url: https://www.newcivilengineer.com/feed/
   lang: en
   enabled: true
 - country: 'Sector: Construction'
@@ -1074,29 +2177,24 @@ national_press:
   url: https://www.railwaygazette.com/rss
   lang: en
   enabled: true
-- country: 'Sector: Energy'
-  name: Rigzone
-  url: https://www.rigzone.com/news/rss/rigzone_latest.aspx
+- country: 'Sector: Defence'
+  name: Breaking Defense
+  url: https://breakingdefense.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Defence'
+  name: Defense News
+  url: https://www.defensenews.com/arc/outboundfeeds/rss/
   lang: en
   enabled: true
 - country: 'Sector: Energy'
-  name: OilPrice
-  url: https://oilprice.com/rss/main
+  name: Africa Oil+Gas Report
+  url: https://africaoilgasreport.com/feed/
   lang: en
   enabled: true
 - country: 'Sector: Energy'
-  name: Offshore Energy
-  url: https://www.offshore-energy.biz/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Energy'
-  name: Natural Gas World
-  url: https://www.naturalgasworld.com/rss
-  lang: en
-  enabled: true
-- country: 'Sector: Energy'
-  name: LNG Industry
-  url: https://www.lngindustry.com/rss/lngindustry.xml
+  name: Energy Intelligence
+  url: https://www.energyintel.com/index.rss
   lang: en
   enabled: true
 - country: 'Sector: Energy'
@@ -1105,8 +2203,43 @@ national_press:
   lang: en
   enabled: true
 - country: 'Sector: Energy'
+  name: Interfax Global Energy
+  url: https://interfaxenergy.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: LNG Industry
+  url: https://www.lngindustry.com/rss/lngindustry.xml
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Natural Gas World
+  url: https://www.naturalgasworld.com/rss
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Offshore Energy
+  url: https://www.offshore-energy.biz/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: OilPrice
+  url: https://oilprice.com/rss/main
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
   name: PV Magazine
   url: https://www.pv-magazine.com/feed/
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Rigzone
+  url: https://www.rigzone.com/news/rss/rigzone_latest.aspx
+  lang: en
+  enabled: true
+- country: 'Sector: Energy'
+  name: Utility Dive
+  url: https://www.utilitydive.com/feeds/news/
   lang: en
   enabled: true
 - country: 'Sector: Energy'
@@ -1119,29 +2252,34 @@ national_press:
   url: https://renews.biz/feed/
   lang: en
   enabled: true
-- country: 'Sector: Energy'
-  name: Utility Dive
-  url: https://www.utilitydive.com/feeds/news/
+- country: 'Sector: Finance'
+  name: Euromoney
+  url: https://www.euromoney.com/rss
   lang: en
   enabled: true
-- country: 'Sector: Energy'
-  name: Energy Intelligence
-  url: https://www.energyintel.com/index.rss
+- country: 'Sector: Finance'
+  name: PE Hub
+  url: https://www.pehub.com/feed/
   lang: en
   enabled: true
-- country: 'Sector: Energy'
-  name: Africa Oil+Gas Report
-  url: https://africaoilgasreport.com/feed/
+- country: 'Sector: Finance'
+  name: Private Equity International
+  url: https://www.privateequityinternational.com/feed/
   lang: en
   enabled: true
-- country: 'Sector: Energy'
-  name: Interfax Global Energy
-  url: https://interfaxenergy.com/rss
+- country: 'Sector: Insurance'
+  name: Artemis
+  url: https://www.artemis.bm/feed/
   lang: en
   enabled: true
-- country: 'Sector: Mining'
-  name: Mining.com
-  url: https://www.mining.com/feed/
+- country: 'Sector: Insurance'
+  name: Insurance Journal
+  url: https://www.insurancejournal.com/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Insurance'
+  name: Reinsurance News
+  url: https://www.reinsurancene.ws/feed/
   lang: en
   enabled: true
 - country: 'Sector: Mining'
@@ -1154,14 +2292,14 @@ national_press:
   url: https://www.miningmx.com/feed/
   lang: en
   enabled: true
-- country: 'Sector: Pharma'
-  name: FiercePharma
-  url: https://www.fiercepharma.com/rss/xml
+- country: 'Sector: Mining'
+  name: Mining.com
+  url: https://www.mining.com/feed/
   lang: en
   enabled: true
 - country: 'Sector: Pharma'
-  name: FierceBiotech
-  url: https://www.fiercebiotech.com/rss/xml
+  name: BioPharma Dive
+  url: https://www.biopharmadive.com/feeds/news/
   lang: en
   enabled: true
 - country: 'Sector: Pharma'
@@ -1170,8 +2308,13 @@ national_press:
   lang: en
   enabled: true
 - country: 'Sector: Pharma'
-  name: BioPharma Dive
-  url: https://www.biopharmadive.com/feeds/news/
+  name: FierceBiotech
+  url: https://www.fiercebiotech.com/rss/xml
+  lang: en
+  enabled: true
+- country: 'Sector: Pharma'
+  name: FiercePharma
+  url: https://www.fiercepharma.com/rss/xml
   lang: en
   enabled: true
 - country: 'Sector: Pharma'
@@ -1185,18 +2328,8 @@ national_press:
   lang: en
   enabled: true
 - country: 'Sector: Shipping'
-  name: Splash247
-  url: https://splash247.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Shipping'
   name: Hellenic Shipping News
   url: https://www.hellenicshippingnews.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Shipping'
-  name: gCaptain
-  url: https://gcaptain.com/feed/
   lang: en
   enabled: true
 - country: 'Sector: Shipping'
@@ -1204,24 +2337,29 @@ national_press:
   url: https://www.seatrade-maritime.com/rss.xml
   lang: en
   enabled: true
-- country: 'Sector: Aviation'
-  name: FlightGlobal
-  url: https://www.flightglobal.com/rss
+- country: 'Sector: Shipping'
+  name: Splash247
+  url: https://splash247.com/feed/
   lang: en
   enabled: true
-- country: 'Sector: Aviation'
-  name: Aviation Week
-  url: https://aviationweek.com/rss.xml
+- country: 'Sector: Shipping'
+  name: gCaptain
+  url: https://gcaptain.com/feed/
   lang: en
   enabled: true
-- country: 'Sector: Aviation'
-  name: Simple Flying
-  url: https://simpleflying.com/feed/
+- country: 'Sector: Tech'
+  name: Data Center Dynamics
+  url: https://www.datacenterdynamics.com/en/rss/
+  lang: en
+  enabled: true
+- country: 'Sector: Tech'
+  name: The Register
+  url: https://www.theregister.com/headlines.atom
   lang: en
   enabled: true
 - country: 'Sector: Telecoms'
-  name: Light Reading
-  url: https://www.lightreading.com/rss.xml
+  name: Capacity Media
+  url: https://www.capacitymedia.com/rss
   lang: en
   enabled: true
 - country: 'Sector: Telecoms'
@@ -1230,63 +2368,8 @@ national_press:
   lang: en
   enabled: true
 - country: 'Sector: Telecoms'
-  name: Capacity Media
-  url: https://www.capacitymedia.com/rss
-  lang: en
-  enabled: true
-- country: 'Sector: Insurance'
-  name: Reinsurance News
-  url: https://www.reinsurancene.ws/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Insurance'
-  name: Artemis
-  url: https://www.artemis.bm/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Insurance'
-  name: Insurance Journal
-  url: https://www.insurancejournal.com/rss/
-  lang: en
-  enabled: true
-- country: 'Sector: Finance'
-  name: Euromoney
-  url: https://www.euromoney.com/rss
-  lang: en
-  enabled: true
-- country: 'Sector: Finance'
-  name: Private Equity International
-  url: https://www.privateequityinternational.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Finance'
-  name: PE Hub
-  url: https://www.pehub.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Agribusiness'
-  name: FoodNavigator
-  url: https://www.foodnavigator.com/arc/outboundfeeds/rss/
-  lang: en
-  enabled: true
-- country: 'Sector: Defence'
-  name: Defense News
-  url: https://www.defensenews.com/arc/outboundfeeds/rss/
-  lang: en
-  enabled: true
-- country: 'Sector: Defence'
-  name: Breaking Defense
-  url: https://breakingdefense.com/feed/
-  lang: en
-  enabled: true
-- country: 'Sector: Tech'
-  name: The Register
-  url: https://www.theregister.com/headlines.atom
-  lang: en
-  enabled: true
-- country: 'Sector: Tech'
-  name: Data Center Dynamics
-  url: https://www.datacenterdynamics.com/en/rss/
+  name: Light Reading
+  url: https://www.lightreading.com/rss.xml
   lang: en
   enabled: true
 national_press_note: 'Verified feeds from tools/sourcemap.py. Read on every run but FILTERED: an item is kept only if it mentions arbitration, a treaty, an expropriation or nationalisation, or a licence,

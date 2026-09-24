@@ -806,9 +806,9 @@ h2{font-family:Georgia,"Times New Roman",serif;font-size:22px;margin:38px 0 10px
 p{max-width:78ch;color:var(--ink2)} a{color:var(--link)} code{font-family:"IBM Plex Mono","SF Mono",Consolas,monospace;font-size:.92em}
 table{border-collapse:collapse;width:100%;font-size:13.5px} th{text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);padding:8px 10px;border-bottom:1px solid var(--line)}
 td{padding:7px 10px;border-bottom:1px solid var(--hair);vertical-align:top} tr:hover td{background:var(--sunken)}
-td:nth-child(3){font-weight:700;white-space:nowrap}
+td:nth-child(3){white-space:nowrap}
 .s-wired{color:var(--ok)} .s-rss{color:var(--link)} .s-html{color:var(--ink2)} .s-blocked{color:var(--warn)} .s-dead,.s-error{color:var(--mute);font-weight:500}
-.wrap > div{overflow-x:auto}
+.wrap > div{overflow-x:auto} .tried{font-size:13px;color:var(--mute);max-width:none} .tried a{color:var(--mute)}
 """
 
 
@@ -817,8 +817,7 @@ def write_html(md: str) -> str:
     and each status coloured, so the map can be read without a Markdown viewer."""
     import markdown
     body = markdown.markdown(md, extensions=["tables"])
-    body = re.sub(r"<td>(wired|rss|html|blocked|dead|error)</td>",
-                  lambda m: '<td class="s-{0}">{0}</td>'.format(m.group(1)), body)
+    body = re.sub(r"<p>On the map, not readable by script:(.*?)</p>", r'<p class="tried">Tried, not readable by script:\1</p>', body, flags=re.S)
     body = re.sub(r"(<table>.*?</table>)", r"<div>\1</div>", body, flags=re.S)
     page = ("<title>ArbRadar Source Map</title>\n<style>\n{}</style>\n<div class=\"wrap\">"
             "<p style=\"margin:0 0 18px\"><a href=\"index.html\" style=\"text-decoration:none\">&larr; ArbRadar</a></p>{}</div>\n").format(_CSS, body)
@@ -827,28 +826,110 @@ def write_html(md: str) -> str:
     return page
 
 
+def _press_map():
+    """What sources.yaml reads, by country."""
+    import yaml
+    with open(os.path.join(ROOT, "sources.yaml"), encoding="utf-8") as fh:
+        cfg = yaml.safe_load(fh) or {}
+    out = {}
+    for f in cfg.get("national_press") or []:
+        if f.get("enabled", True) and f.get("url"):
+            out.setdefault(f["country"], []).append(f)
+    return out
+
+
+def _editions_map():
+    """Google News editions per country, from the sweep's own list."""
+    sys.path.insert(0, ROOT)
+    from arbradar.sources.editions import EDITIONS, COUNTRIES
+    out = {}
+    for label, hl, gl, ceid, lang in EDITIONS:
+        country = re.sub(r"\s*\(\w+\)$", "", label)
+        out.setdefault(country, []).append(lang)
+    return out, sorted(set(COUNTRIES.values()))
+
+
+_LANG = {"en": "English", "ru": "Russian", "uk": "Ukrainian", "hy": "Armenian", "ka": "Georgian", "az": "Azerbaijani",
+         "uz": "Uzbek", "tr": "Turkish", "es": "Spanish", "pt": "Portuguese", "fr": "French", "ar": "Arabic", "de": "German",
+         "it": "Italian", "pl": "Polish", "nl": "Dutch", "ro": "Romanian", "hu": "Hungarian", "cs": "Czech", "sk": "Slovak",
+         "hr": "Croatian", "sr": "Serbian", "bs": "Bosnian", "mk": "Macedonian", "bg": "Bulgarian", "el": "Greek", "sq": "Albanian",
+         "sl": "Slovenian", "lv": "Latvian", "lt": "Lithuanian", "et": "Estonian", "he": "Hebrew", "id": "Indonesian",
+         "vi": "Vietnamese", "th": "Thai", "ms": "Malay", "ja": "Japanese", "ko": "Korean", "zh": "Chinese", "hi": "Hindi",
+         "bn": "Bengali", "sv": "Swedish", "no": "Norwegian", "da": "Danish", "fi": "Finnish", "fa": "Persian", "sw": "Swahili",
+         "am": "Amharic", "rw": "Kinyarwanda", "af": "Afrikaans", "is": "Icelandic", "mn": "Mongolian", "lo": "Lao", "tet": "Tetum"}
+
+# The aliases sources.yaml uses for gazetteer names.
+_SHORT = {"United Arab Emirates": "UAE", "Congo (DRC)": "DRC"}
+
+
 def write_docs(results):
+    """SOURCES.md and docs/sources.html: what is read, per country, and only that.
+
+    A row is a source the pipeline reads every run: a press feed, a Google News
+    edition in the country's language, the English Google News query for the
+    State, GDELT's country tag, a court or tender feed. What was tried and does
+    not answer to a script is one muted line at the end of the country, so the
+    gap is visible without being counted."""
     today = dt.date.today().isoformat()
+    press = _press_map()
+    editions, states = _editions_map()
     countries = []
     for r in results:
         if r[0] not in countries:
             countries.append(r[0])
-    lines = ["# ArbRadar source map", "", "Verified {}. Edit `tools/sourcemap.py`, then run "
-             "`python -m tools.sourcemap --probe` to re-verify and regenerate this file.".format(today), "",
-             "Status: **wired** = read on every run · **rss** = feed answers, ready to wire · **html** = page answers, "
-             "needs a parser · **blocked** = refuses scripts · **dead** = not found · **error** = no answer", ""]
-    counts = {}
-    for r in results:
-        counts[r[5]] = counts.get(r[5], 0) + 1
-    lines.append("Totals: " + ", ".join("{} {}".format(v, k) for k, v in sorted(counts.items())))
-    lines.append("")
+    for c in list(press) + [_SHORT.get(s, s) for s in states]:
+        if c not in countries:
+            countries.append(c)
+    sectors = [c for c in countries if c.startswith("Sector")]
+    glob = [c for c in countries if c == "Global"]
+    countries = sorted(c for c in countries if c not in sectors and c not in glob) + sectors + glob
+
+    lines = ["# ArbRadar source map", "", "Verified {}. Every row is read on every run. `python -m tools.discover` finds and "
+             "verifies press feeds; `python -m tools.sourcemap --probe` re-checks the registers, courts and gazettes.".format(today), ""]
+    summary = []
+    body = []
+    thin = []
     for c in countries:
-        rows = [r for r in results if r[0] == c]
-        lines += ["## {}".format(c), "", "| Type | Source | Status | Detail | Note |", "|---|---|---|---|---|"]
-        for _, kind, name, url, note, status, detail in rows:
-            lines.append("| {} | [{}]({}) | {} | {} | {} |".format(kind, name, url, status, detail, note.replace("WIRED", "").strip(" ;")))
-        lines.append("")
-    md = "\n".join(lines)
+        rows = []
+        for f in press.get(c, []):
+            rows.append(("press", f["name"], f["url"], _LANG.get(f.get("lang", "en"), f.get("lang", "en")), "feed"))
+        for r in results:
+            if r[0] == c and r[5] == "wired" and r[1] != "press":
+                rows.append((r[1], r[2], r[3], "", r[4].replace("WIRED", "").strip(" -;")))
+        is_state = c in states or c in _SHORT.values()
+        if is_state:
+            for lang in editions.get(c, []) or editions.get(_SHORT.get(c, c), []):
+                rows.append(("sweep", "Google News, {} edition".format(_LANG.get(lang, lang)), "https://news.google.com/", _LANG.get(lang, lang), "dispute and State-measure terms"))
+            rows.append(("sweep", "Google News, State query", "https://news.google.com/", "English", '"{}" with the dispute terms'.format(c)))
+            rows.append(("sweep", "GDELT, country tag", "https://www.gdeltproject.org/", "all", "dispute terms, articles tagged to the State"))
+        tried = [r for r in results if r[0] == c and r[5] != "wired" and not (r[1] == "press" and r[5] == "rss")]
+        n_press = sum(1 for r in rows if r[0] == "press")
+        n_all = len(rows)
+        if not c.startswith("Sector") and c != "Global":
+            summary.append((c, n_press, n_all))
+            if n_press < 5:
+                thin.append(c)
+        body += ["## {}".format(c), "", "{} sources read: {} press feeds{}.".format(
+            n_all, n_press, ", plus the sweeps" if is_state else ""), "",
+            "| Type | Source | Language | Note |", "|---|---|---|---|"]
+        for kind, name, url, lang, note in rows:
+            body.append("| {} | [{}]({}) | {} | {} |".format(kind, name, url, lang, note))
+        if tried:
+            parts = []
+            for _, kind, name, url, note, status, detail in tried:
+                what = {"html": "page, no feed", "dead": detail, "blocked": "refuses scripts", "error": "no answer", "rss": "feed, unverified"}.get(status, status)
+                parts.append("[{}]({}) ({})".format(name, url, what))
+            body += ["", "On the map, not readable by script: " + " · ".join(parts)]
+        body.append("")
+    n_states = len(summary)
+    ok5 = sum(1 for _, p, _ in summary if p >= 5)
+    lines += ["{} States on the map; {} with five or more press feeds; {} with fewer: {}.".format(
+        n_states, ok5, len(thin), ", ".join(thin) if thin else "none"), "",
+        "| State | Press feeds | All sources |", "|---|---|---|"]
+    for c, p, a in sorted(summary, key=lambda x: (-x[1], x[0])):
+        lines.append("| {} | {} | {} |".format(c, p, a))
+    lines.append("")
+    md = "\n".join(lines + body)
     open(os.path.join(ROOT, "SOURCES.md"), "w", encoding="utf-8").write(md)
     json.dump([list(r) for r in results], open(os.path.join(ROOT, "docs", "sources.json"), "w"), ensure_ascii=False, indent=1)
     return md
@@ -857,8 +938,14 @@ def write_docs(results):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true")
+    ap.add_argument("--map", action="store_true", help="regenerate SOURCES.md and docs/sources.html from the last probe")
     a = ap.parse_args()
-    if a.probe:
+    if a.map:
+        res = [tuple(r) for r in json.load(open(os.path.join(ROOT, "docs", "sources.json")))]
+        md = write_docs(res)
+        write_html(md)
+        print(md.split("\n")[4])
+    elif a.probe:
         res = run_probe()
         md = write_docs(res)
         write_html(md)
