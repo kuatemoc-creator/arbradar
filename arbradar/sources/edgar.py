@@ -65,6 +65,13 @@ QUERIES: List[str] = [
     '"UNCITRAL arbitration"',
     '"arbitral tribunal" "expropriation"',
     '"notice of dispute"',
+    # The phrases a legal-proceedings note actually uses. "expropriation" alone
+    # is risk-factor boilerplate, so it needs a dispute word beside it.
+    '"arbitral tribunal"',
+    '"final award" arbitration',
+    '"emergency arbitrator"',
+    '"expropriation" (arbitration OR tribunal OR "notice of")',
+    '"arbitration" ("statement of claim" OR "request for arbitration" OR "notice of arbitration" OR "commenced arbitration")',
 ]
 
 

@@ -68,6 +68,12 @@ def _stems(text: str) -> set:
     return {_stem(w.lower()) for w in _sig(text)}
 
 
+def _names(text: str) -> set:
+    """The capitalised content words after the first: the names in a headline."""
+    words = _sig(text)
+    return {_stem(w.lower()) for w in words[1:] if w[:1].isupper()} | ({_stem(words[0].lower())} if words and words[0][:1].isupper() and len(words) > 1 and words[1][:1].isupper() else set())
+
+
 def _queries(it: Dict[str, Any]) -> List[str]:
     """A few phrasings: the names in the headline, the parties on record, the
     State plus the act. Short queries find the other copies; long ones find none."""
@@ -105,8 +111,14 @@ def _entries(query: str) -> List[Dict[str, str]]:
                 link = _publisher_url(link) or link      # Bing links through itself; the publisher is in the query
             if not outlet:
                 outlet = re.sub(r"^(www|amp|m)\.", "", up.urlsplit(link).netloc.lower())
+            when = ""
+            for k in ("published_parsed", "updated_parsed"):
+                if e.get(k):
+                    import datetime as _dt
+                    when = _dt.date(*e[k][:3]).isoformat()
+                    break
             found.append({"title": title.strip(), "source": outlet.strip(),
-                          "url": link, "published_at": (e.get("published") or "")[:16],
+                          "url": link, "published_at": when,
                           "snippet": _clean(e.get("summary") or e.get("description") or "")})
     return found
 
@@ -122,6 +134,7 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
         own_host = ""                                 # an index link: the outlet name is the identity
     own_outlet = _ident((it.get("source") or "").replace("Google News / ", ""))
     my_states = {s.lower() for s in states_in(title + " " + (it.get("summary") or ""))}
+    my_names = _names(title) | {_stem(w.lower()) for n in (it.get("claimants") or []) + (it.get("respondents") or []) for w in _sig(n)}
     seen_outlets = {own_outlet, _ALIAS.get(own_outlet, own_outlet)} | ({own_host} if own_host else set())
     seen_titles = {re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()}
     picks: List[Dict[str, str]] = []
@@ -130,6 +143,10 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             theirs = _stems(e["title"])
             shared = len(ours & theirs)
             if shared < max(2, min(3, len(ours) // 2)):
+                continue
+            # Common words alone ("launches", "arbitration", "group") join two
+            # different stories; a shared name or the same State must anchor it.
+            if not (my_names & _names(e["title"])) and not (my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}):
                 continue
             their_states = {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}
             if my_states and their_states and not (my_states & their_states):

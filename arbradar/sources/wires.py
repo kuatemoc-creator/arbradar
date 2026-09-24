@@ -32,6 +32,11 @@ PHRASES = ('"notice of dispute"', '"notice of arbitration"', '"request for arbit
            '"expropriation" OR "expropriated"', '"licence revoked" OR "license revoked" OR "concession terminated"',
            '"tax assessment" (arbitration OR treaty OR dispute)', '"settlement agreement" arbitration')
 _TRAIL = re.compile(r"\s+[-|–—]\s+[^-|–—]{2,60}$")
+# Only a wire or an exchange service is a company's own disclosure. Anything
+# else the unrestricted queries bring back is press, and the sweep has it.
+_WIRE = re.compile(r"prnewswire|pr newswire|businesswire|business wire|globenewswire|newsfile|accesswire|newswire\.ca|\bcnw\b|"
+                   r"london stock exchange|londonstockexchange|\basx\b|investegate|sedar|hkexnews|euronext|oslobors|tase\.co|jse\.co|"
+                   r"\btmx\b|\brns\b|\bsens\b|marketwired|nasdaq\.com|otcmarkets|einpresswire|prweb", re.I)
 
 
 def _queries():
@@ -74,6 +79,9 @@ def run(days: int = 7) -> Iterator[Dict]:
                 continue
             seen.add(key)
             outlet = (e.get("source") or {}).get("title") or ""
+            src_url = (e.get("source") or {}).get("href") or ""
+            if not _WIRE.search(outlet + " " + src_url + " " + (e.get("link") or "")):
+                continue
             summary = re.sub(r"<[^>]+>", " ", e.get("summary") or "")[:1500]
             text = (title + " " + summary).lower()
             if not re.search(r"arbitra|treaty|icsid|expropriat|revoked|terminated|tribunal|\bbit\b|settlement", text):

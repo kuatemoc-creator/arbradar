@@ -86,7 +86,7 @@ def _facts(it: Dict[str, Any]) -> List[List[str]]:
 def _template_article(it: Dict[str, Any]) -> Article:
     """No model available: assemble from the record, in plain professional English."""
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    summary = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
+    summary = html.unescape(re.sub(r"<[^>]+>", " ", it.get("story") or it.get("summary_en") or it.get("summary") or ""))
     summary = re.sub(r"\s+", " ", summary).replace("\xa0", " ").strip()
     sentences = [p for p in re.split(r"(?<=[.!?])\s+(?=[A-Z\u00c0-\u024f])", summary) if p]
     body = [" ".join(sentences[:2])] if sentences else [it.get("title", "")]
@@ -183,6 +183,11 @@ border-radius:0 10px 10px 0;margin:28px 0}
 .days a{font-size:.8125rem;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);text-decoration:none}
 .days a:hover{border-color:var(--ink);color:var(--ink)}.days a[aria-current]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .sec{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:38px 0 4px;font-weight:600}
+.record .r{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid var(--hair);font-size:.9375rem;line-height:1.45}
+.record .k{color:var(--mute)}.record .v{color:var(--ink)}
+.voice{padding:14px 0;border-bottom:1px solid var(--hair)}.voice .who{margin:0 0 4px;font-size:.875rem;color:var(--mute)}
+.voice .who a{color:var(--ink);text-decoration:none;font-weight:600}.voice .who a:hover{color:var(--link)}
+.voice p{margin:0;font-size:1rem;line-height:1.5;max-width:64ch}
 .rec .r{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:.9375rem;line-height:1.45}
 .rec .d{color:var(--mute);font-size:.8125rem;padding-top:2px;white-space:nowrap}.rec a{color:var(--ink);text-decoration:none}.rec a:hover{color:var(--link)}
 .rec small{color:var(--mute);font-size:.8125rem}
@@ -229,14 +234,69 @@ def render_article(a: Article, it: Dict[str, Any], settings, date: str, day_href
 {dek}
 <div class="body">{paras}</div>
 <div class="src">{src}</div>
+{record}
+{voices}
 {foot}""".format(
+        record=_record_block(it), voices=_voices_block(it),
         name=html.escape(settings.newsletter_name), foot=FOOTER,
         date=('<a class="date" href="{}">{}</a>'.format(html.escape(day_href), html.escape(_nice(date))) if day_href
               else '<span class="date">{}</span>'.format(html.escape(_nice(date)))),
-        ev=html.escape(ev.get("label", "")), h=html.escape(a.headline),
+        ev=html.escape(ev.get("label", "")), h=html.escape(__import__("arbradar.style", fromlist=["headline"]).headline(a.headline)),
         dek='<p class="dek">{}</p>'.format(html.escape(a.dek)) if (a.dek and a.dek not in " ".join(a.paragraphs)) else "",
         paras=paras, src=src_html)
     return _page(a.headline, body, a.dek, settings.newsletter_name)
+
+
+def _record_block(it: Dict[str, Any]) -> str:
+    """The facts the record carries, as they stand: parties, State, forum,
+    treaty, reference, counsel, amount. Nothing inferred."""
+    rows = []
+    def add(label, value):
+        if isinstance(value, str) and value.strip() in ("[]", "{}", "null"):
+            value = ""
+        if isinstance(value, list):
+            value = [v for v in value if v]
+        if value:
+            rows.append('<div class="r"><span class="k">{}</span><span class="v">{}</span></div>'.format(
+                html.escape(label), html.escape(value if isinstance(value, str) else ", ".join(str(v) for v in value if v))))
+    add("Claimant", it.get("claimants"))
+    add("Respondent", it.get("respondents"))
+    add("State", it.get("states"))
+    add("Forum", it.get("institution"))
+    add("Instrument", it.get("treaty"))
+    add("Reference", it.get("case_ref"))
+    add("Counsel", it.get("counsel"))
+    add("Tribunal", it.get("arbitrators"))
+    add("Amount", "US${:,.0f} million".format(it["amount_usd"] / 1e6) if it.get("amount_usd") else "")
+    if not rows:
+        return ""
+    return '<h2 class="sec">On the record</h2><div class="record">{}</div>'.format("".join(rows))
+
+
+def _voices_block(it: Dict[str, Any]) -> str:
+    """What each cited outlet says, in its own words, with the link. The
+    explanation above is built from these; here they stand on their own."""
+    from .style import sentences
+    voices = []
+    own = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary") or ""))
+    own = re.sub(r"\s+", " ", own).strip()
+    own_outlet = (it.get("source") or "").replace("Google News / ", "")
+    if own and not own.lower().startswith((it.get("title") or "").lower()[:30]):
+        voices.append((own_outlet, it.get("url"), str(it.get("published_at") or "")[:10], sentences(own, 90)))
+    for c in it.get("corroboration") or []:
+        if not isinstance(c, dict) or not c.get("url"):
+            continue
+        text = sentences(c.get("snippet") or "", 90)
+        if len(text.split()) < 8:
+            text = c.get("title") or ""
+        voices.append((c.get("source") or "source", c["url"], (c.get("published_at") or "")[:10], text))
+    if not voices:
+        return ""
+    items = "".join(
+        '<article class="voice"><p class="who"><a href="{}" rel="noopener">{}</a>{}</p><p>{}</p></article>'.format(
+            html.escape(u), html.escape(o), (" \u00b7 " + html.escape(d)) if d else "", html.escape(t))
+        for o, u, d, t in voices)
+    return '<h2 class="sec">What the sources say</h2><div class="voices">{}</div>'.format(items)
 
 
 def _signup(settings) -> str:
