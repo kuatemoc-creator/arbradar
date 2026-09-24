@@ -27,12 +27,13 @@ the owner's accounts or DNS.
    were in the feed but never entered the cloud DB. The run now starts at
    18:00 UTC (GAR publishes about 16:00 UTC). Check the next run; if still
    missing, trace `fetch_log` for the GAR feed.
-5. **Send the daily issue from the cloud run** [me + Aram] — the workflow
-   builds and publishes but does not send. Aram wants it automatic with an
-   approval from the phone, Gmail only. Proposed shape: the run sends a
-   preview to Aram and saves the issue as a Gmail draft with the list in BCC;
-   Aram taps Send. Later, a "reply SEND" gate. Needs a Gmail route usable
-   from GitHub Actions (an app password or OAuth credentials as secrets).
+5. **Send the daily issue from the cloud run** [Aram] — wired 24 September:
+   `arbradar/provider.py` hands the finished issue to Buttondown as a draft
+   (`arbradar.cli send --draft`, run by `tools/daily.sh`), the editor
+   approves it from a phone in Buttondown, and the subscribe box posts to
+   Buttondown's form endpoint once `signup_url` is set. Waiting on: a
+   Buttondown account under caselens.tech, its API key as the repository
+   secret BUTTONDOWN_API_KEY, `signup_url` in config.yaml.
 6. **PCA case list blocked from GitHub Actions (403)** [me] — done 24 September:
    `tools/relay.sh` fetches PCA (and the court sites the runner cannot reach)
    on the Mac, pushes a `relay` branch, and the cloud run imports it. A

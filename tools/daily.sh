@@ -14,6 +14,9 @@ echo "== $(date '+%F %T') classify and build"
 $PY -m arbradar.cli reclassify --days 7 2>&1 | grep -v "^INFO" || true
 $PY -m arbradar.cli build --days 2 2>&1 | grep -v "^INFO"
 $PY -m arbradar.cli articles 2>&1 | grep -v "^INFO"
+# The issue goes to the list provider as a draft when a key is present; the
+# editor approves it there. Without a key this only says so.
+$PY -m arbradar.cli send --draft 2>&1 | grep -v "^INFO" || true
 if [ "$1" = "--publish" ]; then
   echo "== $(date '+%F %T') publish"
   tools/publish_site.sh origin 2>&1 | grep -v "^INFO"

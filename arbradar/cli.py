@@ -188,6 +188,15 @@ def cmd_build(args, settings, conn):
         found = followup.corroborate(it)
         chased += 1
         it["corroboration"] = found["sources"]
+        # A wire or a major paper writes the better headline; use it when ours
+        # comes from a minor outlet and theirs is plainly the same story.
+        from .outlets import rank as outlet_rank
+        if outlet_rank(it.get("source") or "", it.get("url") or "") >= 3 and not (it.get("title_en") or "").strip():
+            better = next((s for s in found["sources"] if outlet_rank(s.get("source") or "", s.get("url") or "") <= 2
+                           and 5 <= len((s.get("title") or "").split()) <= 16), None)
+            if better:
+                it["title_en"] = better["title"]
+                conn.execute("UPDATE items SET title_en=? WHERE id=?", (better["title"], it["id"]))
         if found["story"] and len(found["story"]) > len(email_html.summary_of(it) or ""):
             it["story"] = found["story"]
         conn.execute("UPDATE items SET corroboration=?, story=? WHERE id=?",
@@ -257,6 +266,16 @@ def cmd_send(args, settings, conn):
         print("no issue built yet - run `build` first")
         return 1
     to = [x.strip() for x in args.to.split(",")] if getattr(args, "to", None) else None
+    if getattr(args, "draft", False) or getattr(args, "publish", False):
+        from . import provider
+        with open(row["html_path"], encoding="utf-8") as fh:
+            html_doc = fh.read()
+        res = provider.draft(row["subject"], html_doc, publish=bool(getattr(args, "publish", False)))
+        print("provider: {}".format(", ".join("{}={}".format(k, v) for k, v in res.items() if v)))
+        if res.get("status") == "published":
+            conn.execute("UPDATE issues SET sent_at=? WHERE id=?", (dt.datetime.now().isoformat(timespec="seconds"), row["id"]))
+            conn.commit()
+        return 0 if res.get("status") != "error" else 1
     if getattr(args, "eml", False):
         print("wrote " + sender.write_eml(row["html_path"], row["md_path"], row["subject"], settings, to))
         return 0
@@ -356,6 +375,8 @@ def main(argv=None):
     s.add_argument("--confirm", action="store_true", help="actually send")
     s.add_argument("--to", help="override recipients (comma separated)")
     s.add_argument("--eml", action="store_true", help="write an .eml file instead of sending")
+    s.add_argument("--draft", action="store_true", help="hand the issue to the list provider as a draft (BUTTONDOWN_API_KEY)")
+    s.add_argument("--publish", action="store_true", help="send the issue to the list through the provider at once")
     i = sub.add_parser("intel", parents=[common], help="ICSID appointment intelligence")
     i.add_argument("--limit", type=int, default=15)
     a = sub.add_parser("articles", parents=[common, llm_opts], help="short shareable pieces -> out/site")

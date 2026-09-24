@@ -141,6 +141,13 @@ Bound to `127.0.0.1`. It is a desk tool, not a public service — do not expose 
 
 ## Sending
 
+The list lives at a provider, not in this repo: sign-up confirmation,
+unsubscribes, bounces and sender reputation are the provider's job. The daily
+run hands the finished issue to Buttondown as a draft (`arbradar.cli send
+--draft`, needs `BUTTONDOWN_API_KEY`), the editor approves it there, and the
+subscribe box on the site posts to Buttondown's form endpoint (`signup_url` in
+`config.yaml`). SMTP below is for a test send to yourself.
+
 Two rails, depending on who is receiving.
 
 ### Small internal list (up to ~30 known recipients)
