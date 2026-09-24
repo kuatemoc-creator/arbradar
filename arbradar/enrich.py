@@ -83,6 +83,8 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
     except Exception:                                 # noqa: BLE001 - boundary
         return None
     ours = {_stem(w) for w in words}
+    from .pipeline import _entities
+    my_ents = _entities(" ".join(words))
     best, best_score = None, None
     for e in feedparser.parse(raw).entries[:8]:
         title = e.get("title") or ""
@@ -90,6 +92,15 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
         shared = len(ours & theirs)
         if shared < max(2, min(3, len(ours) // 2)):
             continue                                  # a different story
+        # The same words about another company are another story: "Turkey
+        # revokes operating licence" fits Papel and Bank Mellat alike, and
+        # only the name tells them apart. A page that names a company the
+        # headline does not, or none where the headline names one, is skipped.
+        their_ents = _entities(title)
+        if my_ents and not (my_ents & their_ents):
+            continue
+        if their_ents and not my_ents:
+            continue
         text = html.unescape(re.sub(r"<[^>]+>", " ", e.get("summary") or e.get("description") or ""))
         text = re.sub(r"\s+", " ", text).strip()
         if len(text) < 60:

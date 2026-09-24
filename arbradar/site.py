@@ -260,6 +260,13 @@ def build(settings, use_llm: bool = True) -> Dict[str, Any]:
         os.remove(cname)
     with open(os.path.join(SITE, ".nojekyll"), "w", encoding="utf-8") as fh:
         fh.write("")
+    # Where the subscribe form lands after a sign-up.
+    from .articles import _page, FOOTER
+    body = ('<header class="mast"><a class="brand" href="index.html">{n}</a></header><h1>You are on the list.</h1>'
+            '<p class="lede">The next issue of {n} comes to your inbox. <a href="index.html">Back to the latest issue</a>.</p>{f}'
+            .format(n=html.escape(settings.newsletter_name), f=FOOTER))
+    with open(os.path.join(SITE, "subscribed.html"), "w", encoding="utf-8") as fh:
+        fh.write(_page("Subscribed", body, "You are on the list.", settings.newsletter_name))
     # The full list of sources, verified weekly, is part of the product.
     src_map = os.path.join(os.path.dirname(OUT_DIR), "docs", "sources.html")
     if os.path.exists(src_map):

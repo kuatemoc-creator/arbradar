@@ -2,199 +2,204 @@
 
 Verified 2026-09-24. Every row is read on every run. `python -m tools.discover` finds and verifies press feeds; `python -m tools.sourcemap --probe` re-checks the registers, courts and gazettes.
 
-182 States on the map; 32 with five or more press feeds; 150 with fewer: Afghanistan, Albania, Algeria, Angola, Antigua and Barbuda, Australia, Austria, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, Botswana, Brazil, Brunei, Burkina Faso, Burundi, Cambodia, Cameroon, Canada, Cape Verde, Central African Republic, Chad, Chile, China, Colombia, Comoros, Congo (Brazzaville), Costa Rica, Cuba, Côte d'Ivoire, DRC, Denmark, Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Eswatini, Ethiopia, Fiji, Finland, Gabon, Gambia, Ghana, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Honduras, Hong Kong, Iceland, Indonesia, Iran, Iraq, Ireland, Israel, Jamaica, Japan, Jordan, Kenya, Korea, Kosovo, Kuwait, Laos, Lebanon, Lesotho, Liberia, Libya, Luxembourg, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Mauritania, Mauritius, Mexico, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Nepal, Netherlands, New Zealand, Nicaragua, Niger, Nigeria, Norway, Oman, Pakistan, Panama, Papua New Guinea, Paraguay, Philippines, Portugal, Qatar, Rwanda, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Saudi Arabia, Senegal, Seychelles, Sierra Leone, Singapore, Slovakia, Solomon Islands, Somalia, South Africa, South Sudan, Sri Lanka, Sudan, Suriname, Sweden, Switzerland, Syria, Taiwan, Tajikistan, Tanzania, Thailand, Timor-Leste, Togo, Trinidad and Tobago, Tunisia, Turkmenistan, UAE, Uganda, United Kingdom, United States, Uruguay, Vanuatu, Venezuela, Vietnam, Yemen, Zambia, Zimbabwe.
+182 States on the map; 98 with five or more press feeds; 84 with fewer: Albania, Angola, Antigua and Barbuda, Bahamas, Bahrain, Bangladesh, Barbados, Belgium, Belize, Bhutan, Bolivia, Brunei, Burundi, Cambodia, Cape Verde, Central African Republic, Comoros, Congo (Brazzaville), Cuba, Denmark, Djibouti, Dominica, Equatorial Guinea, Eritrea, Estonia, Eswatini, Fiji, Finland, Gambia, Grenada, Guinea-Bissau, Guyana, Haiti, Honduras, Hong Kong, Iceland, Israel, Jamaica, Japan, Jordan, Kosovo, Kuwait, Laos, Lebanon, Lesotho, Liberia, Luxembourg, Malawi, Maldives, Malta, Mauritania, Mauritius, Mongolia, Myanmar, Nicaragua, Niger, Oman, Panama, Papua New Guinea, Paraguay, Qatar, Rwanda, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Saudi Arabia, Seychelles, Singapore, Slovakia, Solomon Islands, South Sudan, Sri Lanka, Sudan, Suriname, Switzerland, Taiwan, Tajikistan, Timor-Leste, Togo, Trinidad and Tobago, Turkmenistan, Uruguay, Vanuatu, Yemen.
 
 | State | Press feeds | All sources |
 |---|---|---|
+| Brazil | 11 | 14 |
+| India | 11 | 15 |
+| Netherlands | 11 | 14 |
+| Nigeria | 11 | 14 |
+| Peru | 11 | 14 |
+| Turkey | 11 | 14 |
+| Argentina | 10 | 13 |
+| Canada | 10 | 14 |
+| Spain | 10 | 13 |
 | Azerbaijan | 9 | 12 |
+| Colombia | 9 | 12 |
+| Italy | 9 | 12 |
+| Mozambique | 9 | 12 |
 | Romania | 9 | 12 |
-| Spain | 9 | 12 |
+| South Africa | 9 | 12 |
 | Uzbekistan | 9 | 13 |
+| Venezuela | 9 | 12 |
+| Zambia | 9 | 12 |
 | Armenia | 8 | 12 |
+| Cameroon | 8 | 11 |
 | Croatia | 8 | 11 |
 | Czechia | 8 | 11 |
+| DRC | 8 | 11 |
 | Germany | 8 | 11 |
 | Hungary | 8 | 11 |
 | Kazakhstan | 8 | 12 |
+| Kenya | 8 | 11 |
 | Kyrgyzstan | 8 | 11 |
 | Latvia | 8 | 11 |
+| Mexico | 8 | 11 |
+| Senegal | 8 | 11 |
 | Serbia | 8 | 11 |
+| Syria | 8 | 10 |
+| Tunisia | 8 | 11 |
+| Ukraine | 8 | 13 |
+| United Kingdom | 8 | 11 |
+| Australia | 7 | 10 |
 | Bulgaria | 7 | 10 |
-| Italy | 7 | 10 |
+| Burkina Faso | 7 | 9 |
+| Ecuador | 7 | 10 |
+| Iran | 7 | 9 |
+| Namibia | 7 | 10 |
+| New Zealand | 7 | 10 |
 | North Macedonia | 7 | 9 |
 | Poland | 7 | 10 |
+| Portugal | 7 | 10 |
 | Russia | 7 | 10 |
-| Ukraine | 7 | 12 |
-| Argentina | 6 | 9 |
+| Vietnam | 7 | 10 |
+| Zimbabwe | 7 | 10 |
 | Bosnia and Herzegovina | 6 | 8 |
+| Chad | 6 | 8 |
+| Dominican Republic | 6 | 9 |
+| Egypt | 6 | 9 |
 | France | 6 | 9 |
+| Guinea | 6 | 9 |
+| Indonesia | 6 | 9 |
+| Iraq | 6 | 9 |
+| Ireland | 6 | 9 |
+| Korea | 6 | 9 |
 | Lithuania | 6 | 9 |
+| Mali | 6 | 9 |
 | Moldova | 6 | 9 |
 | Montenegro | 6 | 8 |
+| Pakistan | 6 | 9 |
+| Philippines | 6 | 9 |
+| Somalia | 6 | 8 |
+| Sweden | 6 | 9 |
+| Tanzania | 6 | 9 |
+| Uganda | 6 | 9 |
+| Afghanistan | 5 | 7 |
+| Algeria | 5 | 9 |
+| Austria | 5 | 8 |
+| Belarus | 5 | 8 |
+| Benin | 5 | 7 |
+| Botswana | 5 | 8 |
+| Chile | 5 | 8 |
+| China | 5 | 8 |
+| Costa Rica | 5 | 8 |
 | Cyprus | 5 | 7 |
+| Côte d'Ivoire | 5 | 7 |
+| El Salvador | 5 | 7 |
+| Ethiopia | 5 | 8 |
+| Gabon | 5 | 7 |
 | Georgia | 5 | 8 |
+| Ghana | 5 | 8 |
 | Greece | 5 | 8 |
-| India | 5 | 9 |
-| Peru | 5 | 8 |
+| Guatemala | 5 | 8 |
+| Libya | 5 | 8 |
+| Madagascar | 5 | 8 |
+| Malaysia | 5 | 9 |
+| Morocco | 5 | 9 |
+| Nepal | 5 | 7 |
+| Norway | 5 | 8 |
+| Sierra Leone | 5 | 7 |
 | Slovenia | 5 | 8 |
-| Turkey | 5 | 8 |
-| Belarus | 4 | 7 |
-| Brazil | 4 | 7 |
+| Thailand | 5 | 8 |
+| UAE | 5 | 9 |
+| United States | 5 | 8 |
+| Bangladesh | 4 | 8 |
+| Belgium | 4 | 8 |
+| Cambodia | 4 | 6 |
+| Congo (Brazzaville) | 4 | 6 |
+| Denmark | 4 | 7 |
 | Estonia | 4 | 7 |
-| Mexico | 4 | 7 |
-| Nigeria | 4 | 7 |
+| Finland | 4 | 7 |
+| Honduras | 4 | 7 |
+| Jamaica | 4 | 6 |
+| Lebanon | 4 | 7 |
+| Malta | 4 | 6 |
+| Niger | 4 | 6 |
+| Panama | 4 | 7 |
+| Singapore | 4 | 7 |
 | Slovakia | 4 | 7 |
 | Tajikistan | 4 | 7 |
 | Albania | 3 | 5 |
-| Colombia | 3 | 6 |
-| Ecuador | 3 | 6 |
-| Egypt | 3 | 6 |
+| Angola | 3 | 6 |
+| Bolivia | 3 | 6 |
+| Central African Republic | 3 | 5 |
+| Guyana | 3 | 5 |
+| Jordan | 3 | 6 |
 | Mongolia | 3 | 5 |
-| Netherlands | 3 | 6 |
-| South Africa | 3 | 6 |
+| Myanmar | 3 | 5 |
+| South Sudan | 3 | 5 |
+| Sri Lanka | 3 | 6 |
+| Sudan | 3 | 6 |
+| Switzerland | 3 | 7 |
+| Taiwan | 3 | 6 |
 | Turkmenistan | 3 | 6 |
-| Canada | 2 | 6 |
-| Ghana | 2 | 5 |
-| Kenya | 2 | 5 |
-| Korea | 2 | 5 |
-| Pakistan | 2 | 5 |
-| Philippines | 2 | 5 |
-| United Kingdom | 2 | 5 |
-| Venezuela | 2 | 5 |
-| Zambia | 2 | 5 |
-| Zimbabwe | 2 | 5 |
-| Algeria | 1 | 5 |
-| Bangladesh | 1 | 5 |
-| Bolivia | 1 | 4 |
-| Burkina Faso | 1 | 3 |
-| Cambodia | 1 | 3 |
-| Cameroon | 1 | 4 |
-| Chile | 1 | 4 |
-| Costa Rica | 1 | 4 |
-| DRC | 1 | 4 |
-| Dominican Republic | 1 | 4 |
-| El Salvador | 1 | 3 |
-| Gabon | 1 | 3 |
-| Guatemala | 1 | 4 |
-| Guinea | 1 | 4 |
-| Indonesia | 1 | 4 |
-| Iraq | 1 | 4 |
-| Israel | 1 | 5 |
-| Jamaica | 1 | 3 |
-| Madagascar | 1 | 4 |
-| Mozambique | 1 | 4 |
-| Namibia | 1 | 4 |
-| Nepal | 1 | 3 |
-| Oman | 1 | 4 |
-| Panama | 1 | 4 |
-| Papua New Guinea | 1 | 3 |
-| Saudi Arabia | 1 | 4 |
-| Senegal | 1 | 4 |
-| Tanzania | 1 | 4 |
-| UAE | 1 | 5 |
-| Uganda | 1 | 4 |
-| Vietnam | 1 | 4 |
-| Afghanistan | 0 | 2 |
-| Angola | 0 | 3 |
+| Yemen | 3 | 5 |
+| Djibouti | 2 | 4 |
+| Equatorial Guinea | 2 | 4 |
+| Israel | 2 | 6 |
+| Japan | 2 | 5 |
+| Liberia | 2 | 4 |
+| Nicaragua | 2 | 4 |
+| Oman | 2 | 5 |
+| Papua New Guinea | 2 | 4 |
+| Paraguay | 2 | 5 |
+| Qatar | 2 | 5 |
+| Rwanda | 2 | 4 |
+| Saudi Arabia | 2 | 5 |
+| Togo | 2 | 4 |
+| Uruguay | 2 | 5 |
+| Bahrain | 1 | 3 |
+| Eritrea | 1 | 3 |
+| Hong Kong | 1 | 5 |
+| Kuwait | 1 | 4 |
+| Laos | 1 | 3 |
 | Antigua and Barbuda | 0 | 2 |
-| Australia | 0 | 3 |
-| Austria | 0 | 3 |
 | Bahamas | 0 | 2 |
-| Bahrain | 0 | 2 |
 | Barbados | 0 | 2 |
-| Belgium | 0 | 4 |
 | Belize | 0 | 2 |
-| Benin | 0 | 2 |
 | Bhutan | 0 | 2 |
-| Botswana | 0 | 3 |
 | Brunei | 0 | 2 |
 | Burundi | 0 | 2 |
 | Cape Verde | 0 | 2 |
-| Central African Republic | 0 | 2 |
-| Chad | 0 | 2 |
-| China | 0 | 3 |
 | Comoros | 0 | 2 |
-| Congo (Brazzaville) | 0 | 2 |
 | Cuba | 0 | 2 |
-| Côte d'Ivoire | 0 | 2 |
-| Denmark | 0 | 3 |
-| Djibouti | 0 | 2 |
 | Dominica | 0 | 2 |
-| Equatorial Guinea | 0 | 2 |
-| Eritrea | 0 | 2 |
 | Eswatini | 0 | 2 |
-| Ethiopia | 0 | 3 |
 | Fiji | 0 | 2 |
-| Finland | 0 | 3 |
 | Gambia | 0 | 2 |
 | Grenada | 0 | 2 |
 | Guinea-Bissau | 0 | 2 |
-| Guyana | 0 | 2 |
 | Haiti | 0 | 2 |
-| Honduras | 0 | 3 |
-| Hong Kong | 0 | 4 |
 | Iceland | 0 | 2 |
-| Iran | 0 | 2 |
-| Ireland | 0 | 3 |
-| Japan | 0 | 3 |
-| Jordan | 0 | 3 |
 | Kosovo | 0 | 2 |
-| Kuwait | 0 | 3 |
-| Laos | 0 | 2 |
-| Lebanon | 0 | 3 |
 | Lesotho | 0 | 2 |
-| Liberia | 0 | 2 |
-| Libya | 0 | 3 |
 | Luxembourg | 0 | 2 |
 | Malawi | 0 | 2 |
-| Malaysia | 0 | 4 |
 | Maldives | 0 | 2 |
-| Mali | 0 | 3 |
-| Malta | 0 | 2 |
 | Mauritania | 0 | 2 |
 | Mauritius | 0 | 2 |
-| Morocco | 0 | 4 |
-| Myanmar | 0 | 2 |
-| New Zealand | 0 | 3 |
-| Nicaragua | 0 | 2 |
-| Niger | 0 | 2 |
-| Norway | 0 | 3 |
-| Paraguay | 0 | 3 |
-| Portugal | 0 | 3 |
-| Qatar | 0 | 3 |
-| Rwanda | 0 | 2 |
 | Saint Kitts and Nevis | 0 | 2 |
 | Saint Lucia | 0 | 2 |
 | Saint Vincent and the Grenadines | 0 | 2 |
 | Seychelles | 0 | 2 |
-| Sierra Leone | 0 | 2 |
-| Singapore | 0 | 3 |
 | Solomon Islands | 0 | 2 |
-| Somalia | 0 | 2 |
-| South Sudan | 0 | 2 |
-| Sri Lanka | 0 | 3 |
-| Sudan | 0 | 3 |
 | Suriname | 0 | 2 |
-| Sweden | 0 | 3 |
-| Switzerland | 0 | 4 |
-| Syria | 0 | 2 |
-| Taiwan | 0 | 3 |
-| Thailand | 0 | 3 |
 | Timor-Leste | 0 | 2 |
-| Togo | 0 | 2 |
 | Trinidad and Tobago | 0 | 2 |
-| Tunisia | 0 | 3 |
-| United States | 0 | 3 |
-| Uruguay | 0 | 3 |
 | Vanuatu | 0 | 2 |
-| Yemen | 0 | 2 |
 
 ## Afghanistan
 
-2 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Afghanistan International](https://www.afintl.com/en/feed/) | English | feed |
+| press | [Amu TV](https://amu.tv/feed/) | English | feed |
+| press | [Ariana News](https://www.ariananews.af/feed/) | English | feed |
+| press | [Hasht-e Subh](https://8am.media/eng/feed/) | English | feed |
+| press | [Khaama Press](https://www.khaama.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Afghanistan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -214,10 +219,14 @@ On the map, not readable by script: [Albanian Daily News](https://albaniandailyn
 
 ## Algeria
 
-5 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Algérie 360](https://www.algerie360.com/feed/) | French | feed |
+| press | [Algérie Eco](https://algerie-eco.com/feed/) | French | feed |
+| press | [Echorouk](https://www.echoroukonline.com/feed/) | Arabic | feed |
+| press | [Maghreb Emergent](https://maghrebemergent.news/fr/feed/) | French | feed |
 | press | [TSA](https://www.tsa-algerie.com/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
@@ -228,10 +237,13 @@ On the map, not readable by script: [APS](https://www.aps.dz/en/?format=feed) (p
 
 ## Angola
 
-3 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Expansão](https://www.expansao.co.ao/rss) | Portuguese | feed |
+| press | [Maka Angola](https://www.makaangola.org/feed/) | Portuguese | feed |
+| press | [O País Angola](https://www.opais.ao/feed/) | Portuguese | feed |
 | sweep | [Google News, Portuguese edition](https://news.google.com/) | Portuguese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Angola" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -249,15 +261,19 @@ On the map, not readable by script: [Angop](https://www.angop.ao/en) (page, no f
 
 ## Argentina
 
-9 sources read: 6 press feeds, plus the sweeps.
+13 sources read: 10 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Buenos Aires Times](https://www.batimes.com.ar/feed/) | English | feed |
 | press | [Clarín](https://www.clarin.com/rss/) | Spanish | feed |
+| press | [EconoJournal](https://econojournal.com.ar/feed/) | Spanish | feed |
 | press | [El Cronista](https://www.cronista.com/arc/outboundfeeds/rss/) | Spanish | feed |
 | press | [Infobae](https://www.infobae.com/arc/outboundfeeds/rss/category/america/mundo/) | Spanish | feed |
 | press | [La Nación](https://www.lanacion.com.ar/arc/outboundfeeds/rss/) | Spanish | feed |
+| press | [Perfil](https://www.perfil.com/feed/) | Spanish | feed |
 | press | [Página/12](https://www.pagina12.com.ar/arc/outboundfeeds/rss/) | Spanish | feed |
+| press | [Télam / Agencia Noticias Argentinas](https://noticiasargentinas.com/rss/) | Spanish | feed |
 | press | [iProfesional](https://www.iprofesional.com/rss/home) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Argentina" with the dispute terms |
@@ -288,10 +304,17 @@ On the map, not readable by script: [Government decisions](https://www.gov.am/en
 
 ## Australia
 
-3 sources read: 0 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Mining.com.au](https://mining.com.au/feed/) | English | feed |
+| press | [Small Caps](https://smallcaps.com.au/feed/) | English | feed |
+| press | [Stockhead](https://stockhead.com.au/feed/) | English | feed |
+| press | [The Age Business](https://www.theage.com.au/rss/feed.xml) | English | feed |
+| press | [The Guardian Australia](https://www.theguardian.com/australia-news/rss) | English | feed |
+| press | [The Sydney Morning Herald Business](https://www.smh.com.au/rss/feed.xml) | English | feed |
+| press | [The West Australian Business](https://thewest.com.au/business/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Australia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -300,10 +323,15 @@ On the map, not readable by script: [DFAT - ISDS](https://www.dfat.gov.au/trade/
 
 ## Austria
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Der Standard](https://www.derstandard.at/rss) | German | feed |
+| press | [Die Presse](https://www.diepresse.com/rss//) | German | feed |
+| press | [Kleine Zeitung](https://www.kleinezeitung.at/rss/news) | German | feed |
+| press | [ORF](https://rss.orf.at/news.xml) | German | feed |
+| press | [Wiener Zeitung](https://www.wienerzeitung.at/rss.xml) | German | feed |
 | sweep | [Google News, German edition](https://news.google.com/) | German | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Austria" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -340,10 +368,11 @@ On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (pa
 
 ## Bahrain
 
-2 sources read: 0 press feeds, plus the sweeps.
+3 sources read: 1 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Bilad](https://www.albiladpress.com/rss) | Arabic | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Bahrain" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -351,10 +380,13 @@ On the map, not readable by script: [Gulf Daily News](https://www.gdnonline.com)
 
 ## Bangladesh
 
-5 sources read: 1 press feeds, plus the sweeps.
+8 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Bangla Tribune](https://www.banglatribune.com/feed/) | Bengali | feed |
+| press | [Dhaka Tribune](https://www.dhakatribune.com/feed/) | English | feed |
+| press | [Prothom Alo (EN)](https://en.prothomalo.com/feed/) | English | feed |
 | press | [The Daily Star](https://www.thedailystar.net/rss.xml) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, Bengali edition](https://news.google.com/) | Bengali | dispute and State-measure terms |
@@ -372,7 +404,7 @@ On the map, not readable by script: [Gulf Daily News](https://www.gdnonline.com)
 
 ## Belarus
 
-7 sources read: 4 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -380,6 +412,7 @@ On the map, not readable by script: [Gulf Daily News](https://www.gdnonline.com)
 | press | [Ekonomicheskaya Gazeta](https://neg.by/rss) | Russian | feed |
 | press | [Office Life](https://officelife.by/news/rss/) | Russian | feed |
 | press | [Zerkalo](https://news.zerkalo.io/rss/index.rss) | Russian | feed |
+| press | [Zerkalo](https://news.zerkalo.io/rss) | Russian | feed |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Belarus" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -388,10 +421,14 @@ On the map, not readable by script: [BelTA](https://eng.belta.by) (HTTP 403)
 
 ## Belgium
 
-4 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [De Standaard](https://www.standaard.be/rss) | Dutch | feed |
+| press | [Le Soir](https://www.lesoir.be/rss.xml) | French | feed |
+| press | [Politico Europe](https://www.politico.eu/feed/) | English | feed |
+| press | [Trends](https://trends.knack.be/feed/) | Dutch | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, Dutch edition](https://news.google.com/) | Dutch | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Belgium" with the dispute terms |
@@ -408,10 +445,15 @@ On the map, not readable by script: [BelTA](https://eng.belta.by) (HTTP 403)
 
 ## Benin
 
-2 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [24h au Bénin](https://www.24haubenin.info/spip.php?page=backend) | French | feed |
+| press | [Bénin Web TV](https://beninwebtv.com/feed.xml) | French | feed |
+| press | [Fraternité Bénin](https://www.fraternitebj.info/feed/) | French | feed |
+| press | [La Nouvelle Tribune](https://lanouvelletribune.info/feed/) | French | feed |
+| press | [Matin Libre](https://matinlibre.com/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Benin" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -426,11 +468,13 @@ On the map, not readable by script: [BelTA](https://eng.belta.by) (HTTP 403)
 
 ## Bolivia
 
-4 sources read: 1 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Brújula Digital](https://brujuladigital.net/rss.xml) | Spanish | feed |
 | press | [El Deber](https://eldeber.com.bo/feed) | Spanish | feed |
+| press | [Opinión](https://www.opinion.com.bo/rss/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Bolivia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -454,10 +498,15 @@ On the map, not readable by script: [El Deber](https://eldeber.com.bo/rss) (HTTP
 
 ## Botswana
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Botswana Guardian](https://bettingbotswana.com/feed/) | English | feed |
+| press | [Sunday Standard](https://www.sundaystandard.info/feed/) | English | feed |
+| press | [The Botswana Gazette](https://www.thegazette.news/feed/) | English | feed |
+| press | [The Voice](https://thevoicebw.com/feed/) | English | feed |
+| press | [Weekend Post](https://weekendpost.co.bw/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Botswana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -466,13 +515,20 @@ On the map, not readable by script: [Mmegi](https://www.mmegi.bw) (page, no feed
 
 ## Brazil
 
-7 sources read: 4 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Brazil Journal](https://braziljournal.com/feed/) | Portuguese | feed |
+| press | [Conjur](https://conjur.com.br/feed/) | Portuguese | feed |
 | press | [Estadão](https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D) | Portuguese | feed |
+| press | [Exame](https://exame.com/feed/) | Portuguese | feed |
 | press | [Folha - Mercado](https://feeds.folha.uol.com.br/mercado/rss091.xml) | Portuguese | feed |
+| press | [InfoMoney](https://www.infomoney.com.br/feed/) | Portuguese | feed |
 | press | [JOTA](https://www.jota.info/feed) | Portuguese | feed |
+| press | [O Globo Economia](https://oglobo.globo.com/rss/oglobo) | Portuguese | feed |
+| press | [Pipeline / Valor](https://pipelinevalor.globo.com/rss/pipelinevalor) | Portuguese | feed |
+| press | [Poder360](https://www.poder360.com.br/feed/) | Portuguese | feed |
 | press | [Valor Econômico](https://valor.globo.com/rss/valor) | Portuguese | feed |
 | sweep | [Google News, Portuguese edition](https://news.google.com/) | Portuguese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Brazil" with the dispute terms |
@@ -510,11 +566,17 @@ On the map, not readable by script: [Novinite](https://www.novinite.com) (HTTP 4
 
 ## Burkina Faso
 
-3 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [AIB](https://www.aib.media/?feed=rss2) | French | feed |
+| press | [Burkina24](https://burkina24.com/feed/) | French | feed |
+| press | [L'Économiste du Faso](https://leconomistedufaso.com/feed/) | French | feed |
+| press | [Le Pays](https://lepays.bf/feed/) | French | feed |
 | press | [Lefaso.net](https://lefaso.net/spip.php?page=backend) | French | feed |
+| press | [Sidwaya](https://www.sidwaya.info/feed/) | French | feed |
+| press | [Wakat Séra](https://www.wakatsera.com/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Burkina Faso" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -529,11 +591,14 @@ On the map, not readable by script: [Novinite](https://www.novinite.com) (HTTP 4
 
 ## Cambodia
 
-3 sources read: 1 press feeds, plus the sweeps.
+6 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [CamboJA News](https://cambojanews.com/feed/) | English | feed |
+| press | [Cambodia Investment Review](https://cambodiainvestmentreview.com/feed/) | English | feed |
 | press | [Khmer Times](https://www.khmertimeskh.com/feed/) | English | feed |
+| press | [The Phnom Penh Post](https://phnompenhpost.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Cambodia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -541,21 +606,36 @@ On the map, not readable by script: [Khmer Times](https://www.khmertimeskh.com) 
 
 ## Cameroon
 
-4 sources read: 1 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Actu Cameroun](https://actucameroun.com/feed/) | French | feed |
+| press | [Business in Cameroon](https://www.businessincameroon.com/index.php/component/obrss/fullrss) | English | feed |
+| press | [Cameroon News Agency](https://cameroonnewsagency.com/feed/) | English | feed |
+| press | [EcoMatin](https://ecomatin.net/feed.xml) | French | feed |
 | press | [Investir au Cameroun](https://www.investiraucameroun.com/index.php/component/obrss/fullrss) | French | feed |
+| press | [Journal du Cameroun](https://fr.journalducameroun.com/feed/) | French | feed |
+| press | [Mimi Mefo Info](https://mimimefoinfos.com/feed/) | English | feed |
+| press | [StopBlaBlaCam](https://www.stopblablacam.com/component/obrss/sbbc-francais) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Cameroon" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Canada
 
-6 sources read: 2 press feeds, plus the sweeps.
+14 sources read: 10 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [BNN Bloomberg](https://www.bnnbloomberg.ca/arc/outboundfeeds/rss/) | English | feed |
+| press | [Canadian Lawyer](https://www.canadianlawyermag.com/rss) | English | feed |
+| press | [Canadian Mining Journal](https://www.canadianminingjournal.com/feed/) | English | feed |
+| press | [Droit-inc](https://www.droit-inc.com/rss) | French | feed |
+| press | [Financial Post](https://financialpost.com/feed/) | English | feed |
+| press | [La Presse Affaires](https://www.lapresse.ca/affaires/rss) | French | feed |
+| press | [Law Times](https://www.lawtimesnews.com/rss) | English | feed |
+| press | [Les Affaires](https://www.lesaffaires.com/feed/) | French | feed |
 | press | [Mining.com](https://www.mining.com/rss) | English | feed |
 | press | [Northern Miner](https://www.northernminer.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
@@ -576,29 +656,42 @@ On the map, not readable by script: [The Globe and Mail](https://www.theglobeand
 
 ## Central African Republic
 
-2 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Corbeau News](https://corbeaunews-centrafrique.org/feed/) | French | feed |
+| press | [Oubangui Médias](https://oubanguimedias.com/feed/) | French | feed |
+| press | [Radio Ndeke Luka](https://www.radiondekeluka.org/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Central African Republic" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Chad
 
-2 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [ATPE](https://www.atpe.td/feed/) | French | feed |
+| press | [Alwihda Info](https://www.alwihdainfo.com/rss/) | French | feed |
+| press | [Journal du Tchad](https://journaldutchad.com/feed/) | French | feed |
+| press | [Le Pays Tchad](https://www.lepaystchad.com/feed/) | French | feed |
+| press | [N'Djamena Hebdo](https://ndjamenahebdo.net/feed/) | French | feed |
+| press | [Tchadinfos](https://tchadinfos.com/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Chad" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Chile
 
-4 sources read: 1 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [BioBioChile](https://feeds.feedburner.com/radiobiobio/NNeJ) | Spanish | feed |
+| press | [CIPER](https://www.ciperchile.cl/feed/) | Spanish | feed |
+| press | [Ex-Ante](https://www.ex-ante.cl/feed/) | Spanish | feed |
 | press | [La Tercera](https://www.latercera.com/rss) | Spanish | feed |
+| press | [Minería Chilena](https://www.mch.cl/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Chile" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -607,10 +700,15 @@ On the map, not readable by script: [Mercado Público](https://www.mercadopublic
 
 ## China
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [China Law Translate](https://www.chinalawtranslate.com/feed/) | English | feed |
+| press | [Hong Kong Free Press](https://hongkongfp.com/feed/) | English | feed |
+| press | [NPC Observer](https://npcobserver.com/feed/) | English | feed |
+| press | [Sixth Tone](http://www.sixthtone.com/rss/index.xml) | English | feed |
+| press | [South China Morning Post](https://www.scmp.com/rss/feed) | English | feed |
 | sweep | [Google News, Chinese edition](https://news.google.com/) | Chinese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "China" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -619,13 +717,19 @@ On the map, not readable by script: [Caixin Global](https://www.caixinglobal.com
 
 ## Colombia
 
-6 sources read: 3 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Asuntos Legales](https://www.asuntoslegales.com.co/rss) | Spanish | feed |
+| press | [Cambio](https://cambiocolombia.com/feeds/articulos/) | Spanish | feed |
 | press | [El Espectador](https://www.elespectador.com/feed/) | Spanish | feed |
+| press | [El Heraldo](https://www.elheraldo.co/arc/outboundfeeds/rss/) | Spanish | feed |
+| press | [Infobae Colombia](https://www.infobae.com/arc/outboundfeeds/rss/category/colombia/) | Spanish | feed |
 | press | [La República](https://www.larepublica.co/rss) | Spanish | feed |
+| press | [La Silla Vacía](https://www.lasillavacia.com/feed/) | Spanish | feed |
 | press | [Semana](https://www.semana.com/arc/outboundfeeds/rss/) | Spanish | feed |
+| press | [Ámbito Jurídico](https://www.ambitojuridico.com/rss.xml) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Colombia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -643,20 +747,28 @@ On the map, not readable by script: [ANDJE - defensa internacional](https://www.
 
 ## Congo (Brazzaville)
 
-2 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [ACI Congo](https://www.aci.cg/feed/) | French | feed |
+| press | [Le Journal de Brazza](https://www.journaldebrazza.com/feed/) | French | feed |
+| press | [Les Dépêches de Brazzaville](https://www.adiac-congo.com/rss.xml) | French | feed |
+| press | [Vox Congo](https://www.vox.cg/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Congo (Brazzaville)" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Costa Rica
 
-4 sources read: 1 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Delfino](https://delfino.cr/feed/) | Spanish | feed |
+| press | [El Financiero](https://www.elfinancierocr.com/rss) | Spanish | feed |
 | press | [La Nación](https://www.nacion.com/rss) | Spanish | feed |
+| press | [La República](https://www.larepublica.net/feeds/feed.rss) | Spanish | feed |
+| press | [Semanario Universidad](https://semanariouniversidad.com/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Costa Rica" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -724,10 +836,15 @@ On the map, not readable by script: [Ministry of Finance - arbitration](https://
 
 ## Côte d'Ivoire
 
-2 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [7info](https://7info.ci/rss) | French | feed |
+| press | [AIP](https://www.aip.ci/feed/) | French | feed |
+| press | [Afrik Soir](https://afriksoir.net/feed/) | French | feed |
+| press | [Linfodrome](https://www.linfodrome.com/rss) | French | feed |
+| press | [Sika Finance](https://www.sikafinance.com/rss/actualites_bourse_brvm) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Côte d'Ivoire" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -735,11 +852,18 @@ On the map, not readable by script: [Abidjan.net](https://news.abidjan.net) (pag
 
 ## DRC
 
-4 sources read: 1 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Actualite.cd](https://actualite.cd/feed) | French | feed |
+| press | [Congo Actu](https://congoactu.net/feed/) | French | feed |
+| press | [Deskeco](https://deskeco.com/rss.xml) | French | feed |
+| press | [Ecofin (DRC)](https://www.agenceecofin.com/component/obrss/agence-ecofin-full) | French | feed |
+| press | [Le Potentiel](https://lepotentiel.cd/feed/) | French | feed |
+| press | [Mining News (DRC)](https://mines.cd/feed/) | French | feed |
+| press | [Radio Okapi](https://www.radiookapi.net/feed/) | French | feed |
+| press | [Zoom Eco](https://zoom-eco.net/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "DRC" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -748,20 +872,26 @@ On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) 
 
 ## Denmark
 
-3 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Børsen](https://borsen.dk/rss) | Danish | feed |
+| press | [Finans](https://feeds.finans.dk/topnyheder) | Danish | feed |
+| press | [Jyllands-Posten](https://feeds.jp.dk/jp/topnyheder) | Danish | feed |
+| press | [The Local Denmark](https://feeds.thelocal.com/rss/builder/dk) | English | feed |
 | sweep | [Google News, Danish edition](https://news.google.com/) | Danish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Denmark" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Djibouti
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [ADI](https://www.adi.dj/rss) | French | feed |
+| press | [Radio Télévision de Djibouti](https://rtd.dj/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Djibouti" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -776,24 +906,33 @@ On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) 
 
 ## Dominican Republic
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Diario Libre](https://www.diariolibre.com/rss/portada.xml) | Spanish | feed |
+| press | [Dominican Today](https://dominicantoday.com/feed/) | English | feed |
+| press | [El Dinero](https://eldinero.com.do/feed/) | Spanish | feed |
+| press | [El Nuevo Diario](https://elnuevodiario.com.do/feed/) | Spanish | feed |
+| press | [Hoy](https://hoy.com.do/rss/home.xml) | Spanish | feed |
+| press | [N Digital](https://n.com.do/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Dominican Republic" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Ecuador
 
-6 sources read: 3 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [El Comercio](https://www.elcomercio.com/feed/) | Spanish | feed |
 | press | [El Universo](https://www.eluniverso.com/arc/outboundfeeds/rss/?outputType=xml) | Spanish | feed |
 | press | [Expreso](https://www.expreso.ec/rss/home.xml) | Spanish | feed |
+| press | [Infobae Ecuador](https://www.infobae.com/arc/outboundfeeds/rss/tags_slug/ecuador/) | Spanish | feed |
+| press | [Plan V](https://planv.com.ec/feed/) | Spanish | feed |
 | press | [Primicias](https://www.primicias.ec/rss/latest) | Spanish | feed |
+| press | [Teleamazonas](https://www.teleamazonas.com/rss/home.xml) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ecuador" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -802,11 +941,14 @@ On the map, not readable by script: [Procuraduría General del Estado](https://w
 
 ## Egypt
 
-6 sources read: 3 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Borsa](https://www.alborsaanews.com/feed) | Arabic | feed |
+| press | [Amwal Al Ghad](https://amwalalghad.com/feed/atom/) | Arabic | feed |
 | press | [Daily News Egypt](https://www.dailynewsegypt.com/feed/) | English | feed |
+| press | [Egypt Independent](https://www.egyptindependent.com/feed/) | English | feed |
 | press | [Enterprise](https://enterpriseam.com/egypt/feed/) | English | feed |
 | press | [Mada Masr](https://www.madamasr.com/rss) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
@@ -817,29 +959,36 @@ On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) 
 
 ## El Salvador
 
-3 sources read: 1 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Diario Co Latino](https://www.diariocolatino.com/feed/) | Spanish | feed |
 | press | [El Diario de Hoy](https://www.elsalvador.com/rss.xml) | Spanish | feed |
+| press | [El Salvador in English](https://elsalvadorinenglish.com/feed/) | English | feed |
+| press | [Gato Encerrado](https://gatoencerrado.news/feed/) | Spanish | feed |
+| press | [Revista Factum](https://www.revistafactum.com/feed/) | Spanish | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "El Salvador" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Equatorial Guinea
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Ahora EG](https://ahoraeg.com/feed/) | Spanish | feed |
+| press | [Diario Rombe](https://diariorombe.es/feed/) | Spanish | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Equatorial Guinea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Eritrea
 
-2 sources read: 0 press feeds, plus the sweeps.
+3 sources read: 1 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Eritrea Profile / Shabait](https://shabait.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Eritrea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -868,10 +1017,15 @@ On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) 
 
 ## Ethiopia
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Addis Fortune](https://addisfortune.news/feed) | English | feed |
+| press | [Capital Ethiopia](https://capitalethiopia.com/feed/) | English | feed |
+| press | [Ethiopia Insider](https://ethiopiainsider.com/feed/) | Amharic | feed |
+| press | [Ethiopian Monitor](https://ethiopianmonitor.com/feed/) | English | feed |
+| press | [Fana Broadcasting](https://www.fanamc.com/english/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ethiopia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -889,10 +1043,14 @@ On the map, not readable by script: [Addis Standard](https://addisstandard.com) 
 
 ## Finland
 
-3 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Helsinki Times](https://www.helsinkitimes.fi/?format=feed&type=rss) | English | feed |
+| press | [Iltalehti](https://www.iltalehti.fi/rss.xml) | Finnish | feed |
+| press | [Talouselämä](https://www.talouselama.fi/rss.xml) | Finnish | feed |
+| press | [Yle](https://yle.fi/rss/news) | Finnish | feed |
 | sweep | [Google News, Finnish edition](https://news.google.com/) | Finnish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Finland" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -917,11 +1075,15 @@ On the map, not readable by script: [Les Echos](https://www.lesechos.fr) (HTTP 4
 
 ## Gabon
 
-3 sources read: 1 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [AGP Gabon](https://agpgabon.ga/feed/) | French | feed |
+| press | [Gabon Eco](https://gaboneco.com/feed/) | French | feed |
+| press | [Gabonactu](https://gabonactu.com/feed/) | French | feed |
 | press | [Gabonreview](https://www.gabonreview.com/feed) | French | feed |
+| press | [L'Union](https://www.union.sonapresse.com/rss.xml) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Gabon" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -973,12 +1135,15 @@ On the map, not readable by script: [Handelsblatt](https://www.handelsblatt.com)
 
 ## Ghana
 
-5 sources read: 2 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [3News](https://3news.com/feed.xml) | English | feed |
+| press | [Asaase Radio](https://asaaseradio.com/feed/) | English | feed |
 | press | [Ghana Business News](https://www.ghanabusinessnews.com/feed/) | English | feed |
 | press | [MyJoyOnline Business](https://www.myjoyonline.com/business/feed/) | English | feed |
+| press | [Norvan Reports](https://norvanreports.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ghana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1013,22 +1178,31 @@ On the map, not readable by script: [Kathimerini](https://www.ekathimerini.com) 
 
 ## Guatemala
 
-4 sources read: 1 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [El Diario de Centro América](https://dca.gob.gt/feed/) | Spanish | feed |
+| press | [La Hora](https://lahora.gt/feed/) | Spanish | feed |
+| press | [Plaza Pública](https://plazapublica.com.gt/feed/) | Spanish | feed |
 | press | [Prensa Libre](https://www.prensalibre.com/feed/) | Spanish | feed |
+| press | [República](https://republica.gt/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Guatemala" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Guinea
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Africaguinee](https://www.africaguinee.com/feed/) | French | feed |
+| press | [Guinée360](https://www.guinee360.com/feed/) | French | feed |
+| press | [Guinée7](https://www.guinee7.com/feed/) | French | feed |
 | press | [Guinéenews](https://guineenews.org/feed/) | French | feed |
+| press | [Kalenews](https://kalenews.org/feed/) | French | feed |
+| press | [Mosaiqueguinee](https://mosaiqueguinee.com/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Guinea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1044,10 +1218,13 @@ On the map, not readable by script: [Kathimerini](https://www.ekathimerini.com) 
 
 ## Guyana
 
-2 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Demerara Waves](https://demerarawaves.com/feed/) | English | feed |
+| press | [Guyana Times](https://guyanatimesgy.com/feed/) | English | feed |
+| press | [iNews Guyana](https://inewsguyana.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Guyana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -1064,10 +1241,14 @@ On the map, not readable by script: [Stabroek News](https://www.stabroeknews.com
 
 ## Honduras
 
-3 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Contracorriente](https://contracorriente.red/feed/) | Spanish | feed |
+| press | [Criterio.hn](https://criterio.hn/feed/) | Spanish | feed |
+| press | [Hondudiario](https://www.hondudiario.com/feed/) | Spanish | feed |
+| press | [Proceso Digital](https://proceso.hn/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Honduras" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1076,10 +1257,11 @@ On the map, not readable by script: [El Heraldo](https://www.elheraldo.hn) (page
 
 ## Hong Kong
 
-4 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 1 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Hong Kong Lawyer](https://www.hk-lawyer.org/rss.xml) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, Chinese edition](https://news.google.com/) | Chinese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Hong Kong" with the dispute terms |
@@ -1114,15 +1296,21 @@ On the map, not readable by script: [El Heraldo](https://www.elheraldo.hn) (page
 
 ## India
 
-9 sources read: 5 press feeds, plus the sweeps.
+15 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Bar & Bench](https://www.barandbench.com/feed) | English | feed |
+| press | [Bloomberg Quint / NDTV Profit](https://www.ndtvprofit.com/rss) | English | feed |
 | press | [Business Standard](https://www.business-standard.com/rss/companies-101.rss) | English | feed |
 | press | [Economic Times](https://economictimes.indiatimes.com/rssfeedsdefault.cms) | English | feed |
 | press | [LiveLaw](https://www.livelaw.in/google_feeds.xml) | English | feed |
 | press | [Mint](https://www.livemint.com/rss/companies) | English | feed |
+| press | [The Hindu](https://www.thehindu.com/feeder/default.rss) | English | feed |
+| press | [The Hindu BusinessLine](https://www.thehindubusinessline.com/feeder/default.rss) | English | feed |
+| press | [The Indian Express](https://indianexpress.com/feed/) | English | feed |
+| press | [The Leaflet](https://theleaflet.in/feed/) | English | feed |
+| press | [Verdictum](https://www.verdictum.in/google_feeds.xml) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, Hindi edition](https://news.google.com/) | Hindi | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "India" with the dispute terms |
@@ -1132,11 +1320,16 @@ On the map, not readable by script: [eGazette](https://egazette.gov.in) (page, n
 
 ## Indonesia
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Antara (EN)](https://en.antaranews.com/feed/) | English | feed |
+| press | [CNBC Indonesia](https://www.cnbcindonesia.com/rss) | Indonesian | feed |
+| press | [Detik Finance](https://finance.detik.com/rss) | Indonesian | feed |
+| press | [Investor Daily](https://investor.id/feed/) | Indonesian | feed |
 | press | [Katadata](https://katadata.co.id/rss) | Indonesian | feed |
+| press | [Tempo (EN)](https://rss.tempo.co/en) | English | feed |
 | sweep | [Google News, Indonesian edition](https://news.google.com/) | Indonesian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Indonesia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1145,20 +1338,32 @@ On the map, not readable by script: [JDIH Setneg](https://jdih.setneg.go.id) (pa
 
 ## Iran
 
-2 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Donya-e-Eqtesad](https://donya-e-eqtesad.com/feed/) | Persian | feed |
+| press | [Eghtesad Online](https://www.eghtesadonline.com/fa/updates/allnews) | Persian | feed |
+| press | [IRNA (EN)](https://en.irna.ir/rss) | English | feed |
+| press | [Iran International](https://www.iranintl.com/en/feed/) | English | feed |
+| press | [Mehr News (EN)](https://en.mehrnews.com/rss) | English | feed |
+| press | [Press TV](https://www.presstv.ir/rss.xml) | English | feed |
+| press | [Tehran Times](https://www.tehrantimes.com/rss) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Iran" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Iraq
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Mada](https://almadapaper.net/feed/) | Arabic | feed |
 | press | [Iraq Business News](https://www.iraq-businessnews.com/feed/) | English | feed |
+| press | [Iraq Oil Report](https://www.iraqoilreport.com/feed/) | English | feed |
+| press | [Iraqi News](https://www.iraqinews.com/feed/) | English | feed |
+| press | [Iraqi News Agency](https://ina.iq/rssturbo.xml) | English | feed |
+| press | [Kurdistan24](https://www.kurdistan24.net/en/rss.xml) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Iraq" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1167,21 +1372,28 @@ On the map, not readable by script: [Rudaw](https://www.rudaw.net/english) (page
 
 ## Ireland
 
-3 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Fora / Silicon Republic](https://www.siliconrepublic.com/feed) | English | feed |
+| press | [Irish Examiner](https://www.irishexaminer.com/feed/35-top_news.xml) | English | feed |
+| press | [Irish Independent](https://www.independent.ie/rss) | English | feed |
+| press | [Irish Times](https://www.irishtimes.com/arc/outboundfeeds/rss/) | English | feed |
+| press | [RTÉ](https://www.rte.ie/feeds/rss/?index=/news/) | English | feed |
+| press | [TheJournal.ie](https://www.thejournal.ie/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ireland" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Israel
 
-5 sources read: 1 press feeds, plus the sweeps.
+6 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Globes](https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942) | English | feed |
+| press | [Israel Hayom](https://www.israelhayom.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, Hebrew edition](https://news.google.com/) | Hebrew | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Israel" with the dispute terms |
@@ -1189,16 +1401,18 @@ On the map, not readable by script: [Rudaw](https://www.rudaw.net/english) (page
 
 ## Italy
 
-10 sources read: 7 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [ANSA Economia](https://www.ansa.it/rss.xml) | Italian | feed |
+| press | [Altalex](https://www.altalex.com/rss) | Italian | feed |
 | press | [Formiche](https://formiche.net/feed/) | Italian | feed |
 | press | [Il Fatto Quotidiano](https://www.ilfattoquotidiano.it/feed/) | Italian | feed |
 | press | [Il Post](https://www.ilpost.it/feed) | Italian | feed |
 | press | [Il Sole 24 Ore](https://www.ilsole24ore.com/rss/italia.xml) | Italian | feed |
 | press | [La Repubblica Economia](http://www.repubblica.it/rss/economia/rss2.0.xml) | Italian | feed |
+| press | [Legalcommunity](https://legalcommunity.it/feed/) | Italian | feed |
 | press | [Toplegal](https://www.toplegal.it/feed/) | Italian | feed |
 | sweep | [Google News, Italian edition](https://news.google.com/) | Italian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Italy" with the dispute terms |
@@ -1208,20 +1422,25 @@ On the map, not readable by script: [Gazzetta Ufficiale](https://www.gazzettauff
 
 ## Jamaica
 
-3 sources read: 1 press feeds, plus the sweeps.
+6 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [JIS](https://jis.gov.jm/feed/) | English | feed |
+| press | [Jamaica Observer](https://www.jamaicaobserver.com/feed/) | English | feed |
+| press | [Nationwide Radio](https://nationwideradiojm.com/feed/) | English | feed |
 | press | [The Gleaner](https://jamaica-gleaner.com/rss.xml) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Jamaica" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Japan
 
-3 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Japan Today](https://japantoday.com/feed) | English | feed |
+| press | [The Japan Times](https://www.japantimes.co.jp/feed/) | English | feed |
 | sweep | [Google News, Japanese edition](https://news.google.com/) | Japanese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Japan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1230,10 +1449,13 @@ On the map, not readable by script: [Nikkei Asia](https://asia.nikkei.com) (page
 
 ## Jordan
 
-3 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Mamlaka](https://www.almamlakatv.com/rss.xml) | Arabic | feed |
+| press | [Jordan News](https://www.jordannews.jo/rss) | English | feed |
+| press | [Roya News](https://en.royanews.tv/rss) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Jordan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1263,12 +1485,18 @@ On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (
 
 ## Kenya
 
-5 sources read: 2 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Business Daily](https://www.businessdailyafrica.com/bd/rss.xml) | English | feed |
+| press | [Capital FM Business](https://capitalfm.africa/business/feed/) | English | feed |
+| press | [Citizen Digital](https://www.citizen.digital/feed.xml) | English | feed |
+| press | [KBC](https://www.kbc.co.ke/feed/) | English | feed |
+| press | [Kenya Law blog](https://kenyalaw.org/feeds/all.xml) | English | feed |
+| press | [Kenyans.co.ke](https://www.kenyans.co.ke/feeds/news) | English | feed |
 | press | [Nation](https://nation.africa/kenya/rss.xml) | English | feed |
+| press | [The East African](https://www.theeastafrican.co.ke/rss.xml) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kenya" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1277,12 +1505,16 @@ On the map, not readable by script: [The Star](https://www.the-star.co.ke/rss) (
 
 ## Korea
 
-5 sources read: 2 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Business Korea](https://www.businesskorea.co.kr/rss/gns_allArticle.xml) | English | feed |
+| press | [Hankyoreh (EN)](https://english.hani.co.kr/rss) | English | feed |
 | press | [Korea Economic Daily](https://www.kedglobal.com/rss) | English | feed |
+| press | [Law Times](https://cdn.lawtimes.co.kr/rss/gn_rss_allArticle.xml) | Korean | feed |
 | press | [The Korea Herald](https://www.koreaherald.com/rss/newsAll) | English | feed |
+| press | [The Korea Times](https://feed.koreatimes.co.kr/k/allnews.xml) | English | feed |
 | sweep | [Google News, Korean edition](https://news.google.com/) | Korean | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Korea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1300,10 +1532,11 @@ On the map, not readable by script: [Korea JoongAng Daily](https://koreajoongang
 
 ## Kuwait
 
-3 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 1 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Times Kuwait](https://timeskuwait.com/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kuwait" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1332,10 +1565,11 @@ On the map, not readable by script: [Ministry of Justice legal database](https:/
 
 ## Laos
 
-2 sources read: 0 press feeds, plus the sweeps.
+3 sources read: 1 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Laotian Times](https://laotiantimes.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Laos" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -1359,10 +1593,14 @@ On the map, not readable by script: [Ministry of Justice legal database](https:/
 
 ## Lebanon
 
-3 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Modon](https://www.almodon.com/rss) | Arabic | feed |
+| press | [An-Nahar](https://www.annahar.com/rss) | Arabic | feed |
+| press | [Executive Magazine](https://www.executive-magazine.com/feed) | English | feed |
+| press | [NNA](https://www.nna-leb.gov.lb/en/rss) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Lebanon" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1380,19 +1618,26 @@ On the map, not readable by script: [L'Orient Today](https://today.lorientlejour
 
 ## Liberia
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [FrontPage Africa](https://frontpageafricaonline.com/feed/) | English | feed |
+| press | [The Analyst](https://analystliberiaonline.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Liberia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Libya
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Libya Al-Ahrar](https://libyaalahrar.tv/feed/) | Arabic | feed |
+| press | [Libya Herald](https://libyaherald.com/rss.xml) | English | feed |
+| press | [Libya Review](https://libyareview.com/feed/) | English | feed |
+| press | [Libya Tribune](https://en.minbarlibya.org/feed/) | English | feed |
+| press | [The Libya Update](https://libyaupdate.com/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Libya" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1426,11 +1671,15 @@ On the map, not readable by script: [Libya Observer](https://libyaobserver.ly) (
 
 ## Madagascar
 
-4 sources read: 1 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [2424.mg](https://www.2424.mg/feed/) | French | feed |
 | press | [L'Express de Madagascar](https://www.lexpress.mg/feeds/posts/default) | French | feed |
+| press | [Madagascar Tribune](https://www.madagascar-tribune.com/spip.php?page=backend) | French | feed |
+| press | [Midi Madagasikara](https://www.midi-madagasikara.mg/feed/) | French | feed |
+| press | [NewsMada](https://newsmada.com/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Madagascar" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1446,10 +1695,15 @@ On the map, not readable by script: [Libya Observer](https://libyaobserver.ly) (
 
 ## Malaysia
 
-4 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Free Malaysia Today](https://www.freemalaysiatoday.com/feeds/rss/headlines) | English | feed |
+| press | [Malaysiakini](https://www.malaysiakini.com/rss/en/news.rss) | English | feed |
+| press | [New Straits Times](https://www.nst.com.my/feed/) | English | feed |
+| press | [The Sun](https://thesun.my/feed/) | English | feed |
+| press | [The Vibes](https://www.thevibes.com/rss) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, Malay edition](https://news.google.com/) | Malay | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Malaysia" with the dispute terms |
@@ -1468,10 +1722,16 @@ On the map, not readable by script: [The Edge](https://theedgemalaysia.com/rss) 
 
 ## Mali
 
-3 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Bamada.net](https://bamada.net/feed) | French | feed |
+| press | [Journal du Mali](https://www.journaldumali.com/feed/) | French | feed |
+| press | [Mali Actu](https://maliactu.net/feed/) | French | feed |
+| press | [Malijet](https://malijet.com/rss) | French | feed |
+| press | [Sahel Tribune](https://saheltribune.com/feed/) | French | feed |
+| press | [Studio Tamani](https://www.studiotamani.org/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Mali" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1480,10 +1740,14 @@ On the map, not readable by script: [Maliweb](https://www.maliweb.net) (HTTP 403
 
 ## Malta
 
-2 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Lovin Malta](https://lovinmalta.com/feed/) | English | feed |
+| press | [Newsbook](https://newsbook.com.mt/en/feed/) | English | feed |
+| press | [The Shift](https://theshiftnews.com/feed/) | English | feed |
+| press | [Times of Malta](https://timesofmalta.com/?feed=rss2) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Malta" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -1507,13 +1771,17 @@ On the map, not readable by script: [Maliweb](https://www.maliweb.net) (HTTP 403
 
 ## Mexico
 
-7 sources read: 4 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Bloomberg Línea](https://www.bloomberglinea.com/arc/outboundfeeds/rss.xml) | Spanish | feed |
+| press | [El CEO](https://elceo.com/feed/) | Spanish | feed |
 | press | [El Financiero](https://www.elfinanciero.com.mx/rss) | Spanish | feed |
+| press | [El Sol de México](https://www.elsoldemexico.com.mx/rss) | Spanish | feed |
 | press | [El Universal](https://www.eluniversal.com.mx/arc/outboundfeeds/rss/) | Spanish | feed |
 | press | [Expansión](https://expansion.mx/rss) | Spanish | feed |
+| press | [Mexico News Daily](https://mexiconewsdaily.com/feed/) | English | feed |
 | press | [Reforma](https://www.reforma.com/rss/portada.xml) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Mexico" with the dispute terms |
@@ -1568,10 +1836,15 @@ On the map, not readable by script: [Montsame](https://montsame.mn/en) (HTTP 403
 
 ## Morocco
 
-4 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Challenge](https://www.challenge.ma/feed/) | French | feed |
+| press | [Hespress (EN)](https://en.hespress.com/feed/) | English | feed |
+| press | [Hespress (FR)](https://fr.hespress.com/feed/) | French | feed |
+| press | [La Vie Éco](https://www.lavieeco.com/feed/) | French | feed |
+| press | [TelQuel](https://telquel.ma/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Morocco" with the dispute terms |
@@ -1581,11 +1854,19 @@ On the map, not readable by script: [Médias24](https://medias24.com/feed/) (HTT
 
 ## Mozambique
 
-4 sources read: 1 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [AIM](https://aimnews.org/feed/) | Portuguese | feed |
+| press | [Carta de Moçambique](https://cartamz.com/feed/) | Portuguese | feed |
 | press | [Club of Mozambique](https://clubofmozambique.com/feed/) | English | feed |
+| press | [Diário Económico](https://www.diarioeconomico.co.mz/feed/) | Portuguese | feed |
+| press | [Further Africa](https://furtherafrica.com/feed/) | English | feed |
+| press | [Notícias](https://jornalnoticias.co.mz/feed/) | Portuguese | feed |
+| press | [O País](https://opais.co.mz/feed/) | Portuguese | feed |
+| press | [Savana](https://savana.co.mz/?feed=rss2) | Portuguese | feed |
+| press | [Zitamar News](https://www.zitamar.com/rss/) | English | feed |
 | sweep | [Google News, Portuguese edition](https://news.google.com/) | Portuguese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Mozambique" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1594,72 +1875,106 @@ On the map, not readable by script: [Club of Mozambique](https://clubofmozambiqu
 
 ## Myanmar
 
-2 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [DVB](https://english.dvb.no/feed/) | English | feed |
+| press | [Myanmar Now](https://myanmar-now.org/en/feed/) | English | feed |
+| press | [The Irrawaddy](https://www.irrawaddy.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Myanmar" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Namibia
 
-4 sources read: 1 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Eagle FM](https://www.eaglefm.com.na/feed/) | English | feed |
+| press | [Informanté](https://informante.web.na/?feed=rss2) | English | feed |
+| press | [NBC](https://www.nbcnews.na/rss.xml) | English | feed |
+| press | [New Era](https://neweralive.na/feed/) | English | feed |
+| press | [The Brief](https://thebrief.com.na/feed/) | English | feed |
 | press | [The Namibian](https://www.namibian.com.na/feed/) | English | feed |
+| press | [Windhoek Observer](https://observer24.com.na/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Namibia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Nepal
 
-3 sources read: 1 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Kathmandu Post](https://kathmandupost.com/rss) | English | feed |
+| press | [Khabarhub](https://english.khabarhub.com/feed/) | English | feed |
+| press | [Nepali Times](https://nepalitimes.com/feed) | English | feed |
+| press | [Online Khabar (EN)](https://english.onlinekhabar.com/feed) | English | feed |
+| press | [Republica](https://myrepublica.nagariknetwork.com/feeds) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Nepal" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Netherlands
 
-6 sources read: 3 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Advocatie](https://www.advocatie.nl/feed/) | Dutch | feed |
+| press | [De Telegraaf](https://www.telegraaf.nl/rss) | Dutch | feed |
+| press | [DutchNews](https://www.dutchnews.nl/feed/) | English | feed |
+| press | [Follow the Money](https://www.ftm.nl/feed/) | Dutch | feed |
 | press | [Het Financieele Dagblad](https://fd.nl/?rss) | Dutch | feed |
+| press | [Mr. Online](https://www.mr-online.nl/feed/) | Dutch | feed |
 | press | [NL Times](https://nltimes.nl/rssfeed2) | English | feed |
+| press | [NOS](https://nos.nl/rss.xml) | Dutch | feed |
 | press | [NRC](https://www.nrc.nl/rss/) | Dutch | feed |
+| press | [Quote](https://www.quotenet.nl/rss/default.xml) | Dutch | feed |
+| press | [RTL Nieuws](https://www.rtl.nl/nieuws/rss.xml) | Dutch | feed |
 | sweep | [Google News, Dutch edition](https://news.google.com/) | Dutch | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Netherlands" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## New Zealand
 
-3 sources read: 0 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [BusinessDesk](https://businessdesk.co.nz/feed/) | English | feed |
+| press | [Interest.co.nz](https://www.interest.co.nz/rss) | English | feed |
+| press | [NZ Lawyer](https://www.thelawyermag.com/nz/rss) | English | feed |
+| press | [Newsroom](https://newsroom.co.nz/feed/) | English | feed |
+| press | [RNZ Business](https://www.rnz.co.nz/rss/news) | English | feed |
+| press | [Stuff Business](https://www.stuff.co.nz/feed/) | English | feed |
+| press | [The Post](https://www.thepost.co.nz/rss) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "New Zealand" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Nicaragua
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Despacho 505](https://despacho505.com/feed/) | Spanish | feed |
+| press | [Nicaragua Investiga](https://nicaraguainvestiga.com/feed/) | Spanish | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Nicaragua" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Niger
 
-2 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [ANP](https://anp.ne/feed/) | French | feed |
+| press | [Aïr Info](https://airinfoagadez.com/feed/) | French | feed |
+| press | [Niger Inter](https://nigerinter.com/feed/) | French | feed |
+| press | [Tamtam Info](https://tamtaminfo.com/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Niger" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -1667,14 +1982,21 @@ On the map, not readable by script: [ActuNiger](https://www.actuniger.com) (page
 
 ## Nigeria
 
-7 sources read: 4 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Arise News](https://www.arise.tv/feed/) | English | feed |
 | press | [BusinessDay](https://businessday.ng/feed/) | English | feed |
+| press | [Channels TV](https://www.channelstv.com/feed/) | English | feed |
+| press | [Daily Trust](https://dailytrust.com/feed/) | English | feed |
+| press | [Legit.ng Business](https://www.legit.ng/rss/business-economy.rss) | English | feed |
 | press | [Nairametrics](https://nairametrics.com/feed/) | English | feed |
 | press | [Premium Times](https://www.premiumtimesng.com/feed) | English | feed |
 | press | [Punch](https://punchng.com/feed/) | English | feed |
+| press | [TheNigeriaLawyer](https://thenigerialawyer.com/feed/) | English | feed |
+| press | [ThisDay](https://www.thisdaylive.com/feed/) | English | feed |
+| press | [Vanguard](https://www.vanguardngr.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Nigeria" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1699,20 +2021,26 @@ On the map, not readable by script: [Bureau of Public Procurement](https://www.b
 
 ## Norway
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Aftenposten](https://www.aftenposten.no/rss) | Norwegian | feed |
+| press | [E24](https://e24.no/rss) | Norwegian | feed |
+| press | [NRK](https://www.nrk.no/toppsaker.rss) | Norwegian | feed |
+| press | [Rett24](https://rett24.no/rss) | Norwegian | feed |
+| press | [The Local Norway](https://feeds.thelocal.com/rss/builder/no) | English | feed |
 | sweep | [Google News, Norwegian edition](https://news.google.com/) | Norwegian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Norway" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Oman
 
-4 sources read: 1 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Athr](https://www.atheer.om/arc/outboundfeeds/rss/) | Arabic | feed |
 | press | [Times of Oman](https://timesofoman.com/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Oman" with the dispute terms |
@@ -1720,43 +2048,53 @@ On the map, not readable by script: [Bureau of Public Procurement](https://www.b
 
 ## Pakistan
 
-5 sources read: 2 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Business Recorder](https://www.brecorder.com/feeds/latest-news) | English | feed |
+| press | [Courting The Law](https://courtingthelaw.com/feed/) | English | feed |
 | press | [Dawn Business](https://www.dawn.com/feeds/business) | English | feed |
+| press | [Pakistan Observer](https://pakobserver.net/feed/) | English | feed |
+| press | [Samaa](https://www.samaa.tv/feed.xml) | English | feed |
+| press | [The Friday Times](https://thefridaytimes.com/rss/news) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Pakistan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Panama
 
-4 sources read: 1 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [La Prensa](https://www.prensa.com/arc/outboundfeeds/rss/) | Spanish | feed |
+| press | [Newsroom Panama](https://newsroompanama.com/feed/) | English | feed |
+| press | [Panamá América](https://www.panamaamerica.com.pa/rss/recent/index.xml) | Spanish | feed |
+| press | [TVN Noticias](https://www.tvn-2.com/rss/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Panama" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Papua New Guinea
 
-3 sources read: 1 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Inside PNG](https://insidepng.com/feed/) | English | feed |
 | press | [Post-Courier](https://www.postcourier.com.pg/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Papua New Guinea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Paraguay
 
-3 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [El Nacional](https://elnacional.com.py/feed/) | Spanish | feed |
+| press | [MarketData](https://marketdata.com.py/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Paraguay" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1765,14 +2103,20 @@ On the map, not readable by script: [ABC Color](https://www.abc.com.py) (page, n
 
 ## Peru
 
-8 sources read: 5 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Andina](https://andina.pe/agencia/rss) | Spanish | feed |
 | press | [El Comercio](https://elcomercio.pe/arcio/rss/) | Spanish | feed |
+| press | [Energiminas](https://energiminas.com/feed/) | Spanish | feed |
 | press | [Gestión](https://gestion.pe/arcio/rss/) | Spanish | feed |
+| press | [IDL-Reporteros](https://www.idl-reporteros.pe/feed/) | Spanish | feed |
+| press | [Infobae Perú](https://www.infobae.com/arc/outboundfeeds/rss/category/peru/) | Spanish | feed |
+| press | [La Ley](https://laley.pe/feed/) | Spanish | feed |
 | press | [La República](https://larepublica.pe/rss.xml) | Spanish | feed |
 | press | [RPP](https://rpp.pe/rss) | Spanish | feed |
+| press | [Rumbo Minero](https://www.rumbominero.com/feed/) | Spanish | feed |
 | press | [Semana Económica](https://semanaeconomica.com/feed) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Peru" with the dispute terms |
@@ -1782,12 +2126,16 @@ On the map, not readable by script: [MEF - SICRECI (State coordination for inves
 
 ## Philippines
 
-5 sources read: 2 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [ABS-CBN News](https://news.abs-cbn.com/feed/) | English | feed |
 | press | [BusinessWorld](https://www.bworldonline.com/feed/) | English | feed |
+| press | [GMA News](https://www.gmanetwork.com/rss) | English | feed |
 | press | [Inquirer Business](https://business.inquirer.net/rss) | English | feed |
+| press | [Rappler](https://www.rappler.com/feed/) | English | feed |
+| press | [The Manila Times](https://www.manilatimes.net/en/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Philippines" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1815,20 +2163,29 @@ On the map, not readable by script: [Puls Biznesu](https://www.pb.pl/rss) (page,
 
 ## Portugal
 
-3 sources read: 0 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Advocatus](https://eco.sapo.pt/advocatus/feed/) | Portuguese | feed |
+| press | [Diário de Notícias](https://www.dn.pt/feed/) | Portuguese | feed |
+| press | [ECO](https://eco.sapo.pt/feed/) | Portuguese | feed |
+| press | [Jornal Económico](https://jornaleconomico.sapo.pt/feed/) | Portuguese | feed |
+| press | [Jornal de Negócios](https://www.jornaldenegocios.pt/rss) | Portuguese | feed |
+| press | [Observador](https://observador.pt/feed/) | Portuguese | feed |
+| press | [Portugal Resident](https://www.portugalresident.com/feed/) | English | feed |
 | sweep | [Google News, Portuguese edition](https://news.google.com/) | Portuguese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Portugal" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Qatar
 
-3 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Jazeera Business](https://www.aljazeera.com/xml/rss/all.xml) | English | feed |
+| press | [Doha News](https://dohanews.co/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Qatar" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1877,10 +2234,12 @@ On the map, not readable by script: [Official publication of legal acts](http://
 
 ## Rwanda
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [KT Press](https://www.ktpress.rw/feed/) | English | feed |
+| press | [Taarifa](https://taarifa.rw/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Rwanda" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -1915,11 +2274,12 @@ On the map, not readable by script: [The New Times](https://www.newtimes.co.rw) 
 
 ## Saudi Arabia
 
-4 sources read: 1 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Arab News](https://www.arabnews.com/rss) | English | feed |
+| press | [Asharq Al-Awsat (EN)](https://english.aawsat.com/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Saudi Arabia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1928,11 +2288,18 @@ On the map, not readable by script: [Argaam](https://www.argaam.com/en) (page, n
 
 ## Senegal
 
-4 sources read: 1 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [APS](https://aps.sn/feed/) | French | feed |
+| press | [Dakaractu](https://www.dakaractu.com/xml/syndication.rss) | French | feed |
+| press | [Financial Afrik](https://www.financialafrik.com/feed/) | French | feed |
+| press | [Le Soleil](https://lesoleil.sn/feed/) | French | feed |
+| press | [Lejecos](https://www.lejecos.com/xml/syndication.rss) | French | feed |
+| press | [Senego](https://senego.com/feed) | French | feed |
+| press | [Senenews](https://www.senenews.com/feed) | French | feed |
+| press | [Seneweb](https://www.seneweb.com/feed) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Senegal" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -1966,19 +2333,28 @@ On the map, not readable by script: [Argaam](https://www.argaam.com/en) (page, n
 
 ## Sierra Leone
 
-2 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Cocorioko](https://cocorioko.net/feed/) | English | feed |
+| press | [Politico SL](https://www.politicosl.com/rss.xml) | English | feed |
+| press | [Sierra Leone Telegraph](https://www.thesierraleonetelegraph.com/feed/) | English | feed |
+| press | [Sierraloaded](https://sierraloaded.sl/feed/) | English | feed |
+| press | [The Calabash](https://thecalabashnewspaper.com/feed) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Sierra Leone" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Singapore
 
-3 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 4 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Mothership](https://mothership.sg/feed/) | English | feed |
+| press | [Singapore Business Review](https://sbr.com.sg/rss.xml) | English | feed |
+| press | [The Business Times](https://www.businesstimes.com.sg/rss.xml) | English | feed |
+| press | [The Edge Singapore](https://www.theedgesingapore.com/latest-news-echobox.rss) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Singapore" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2025,22 +2401,34 @@ On the map, not readable by script: [STA](https://english.sta.si) (HTTP 403)
 
 ## Somalia
 
-2 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Goobjoog](https://goobjoog.com/feed/) | English | feed |
+| press | [Hiiraan Online](https://hiiraan.com/news.xml) | English | feed |
+| press | [Radio Dalsan](https://radiodalsan.com/feed/) | English | feed |
+| press | [SONNA](https://sonna.so/en/rss.xml) | English | feed |
+| press | [Somali Guardian](https://www.somaliguardian.com/feed/) | English | feed |
+| press | [The Somali Digest](https://thesomalidigest.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Somalia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## South Africa
 
-6 sources read: 3 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Business Day](https://www.businesslive.co.za/arc/outboundfeeds/rss/) | English | feed |
 | press | [Daily Maverick](https://www.dailymaverick.co.za/rss) | English | feed |
+| press | [De Rebus](https://www.derebus.org.za/feed/) | English | feed |
+| press | [GroundUp](https://www.groundup.org.za/sitenews/rss/) | English | feed |
+| press | [IOL Business](https://iol.co.za/rss/iol/business-report/) | English | feed |
+| press | [Mail & Guardian](https://mg.co.za/atom/) | English | feed |
 | press | [Moneyweb](https://www.moneyweb.co.za/feed/) | English | feed |
+| press | [SowetanLIVE](https://www.sowetanlive.co.za/arc/outboundfeeds/rss/) | English | feed |
+| press | [amaBhungane](https://amabhungane.org/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "South Africa" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2049,22 +2437,26 @@ On the map, not readable by script: [JSE SENS](https://www.jse.co.za) (HTTP 403)
 
 ## South Sudan
 
-2 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Eye Radio](https://eyeradio.org/feed/) | English | feed |
+| press | [No.1 Citizen Daily](https://www.onecitizendaily.com/index.php/feed/) | English | feed |
+| press | [Radio Tamazuj](https://www.radiotamazuj.org/en/feed) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "South Sudan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Spain
 
-12 sources read: 9 press feeds, plus the sweeps.
+13 sources read: 10 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
 | press | [Cinco Días](https://feeds.elpais.com/mrss-s/pages/ep/site/cincodias.elpais.com/portada) | Spanish | feed |
 | press | [Confilegal](https://confilegal.com/feed/) | Spanish | feed |
 | press | [El Confidencial](https://rss.elconfidencial.com/espana/) | Spanish | feed |
+| press | [El Derecho](https://elderecho.com/feed/) | Spanish | feed |
 | press | [El Economista](https://www.eleconomista.es/rss/rss-empresas.php) | Spanish | feed |
 | press | [El Español Invertia](https://www.elespanol.com/rss/invertia/) | Spanish | feed |
 | press | [El País Economía](https://feeds.elpais.com/mrss-s/list/ep/site/elpais.com/section/economia) | Spanish | feed |
@@ -2079,10 +2471,13 @@ On the map, not readable by script: [BOE](https://www.boe.es/rss/canal.php?c=ult
 
 ## Sri Lanka
 
-3 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Ada Derana](https://www.adaderana.lk/rss.xml) | English | feed |
+| press | [EconomyNext](https://economynext.com/feed/) | English | feed |
+| press | [The Island](https://island.lk/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Sri Lanka" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2091,10 +2486,13 @@ On the map, not readable by script: [Daily FT](https://www.ft.lk) (HTTP 403)
 
 ## Sudan
 
-3 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Ayin Network](https://3ayin.com/en/feed/) | English | feed |
+| press | [Radio Dabanga](https://www.dabangasudan.org/en/feed) | English | feed |
+| press | [Sudan Post](https://www.sudanspost.com/feed/) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Sudan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2110,20 +2508,29 @@ On the map, not readable by script: [Daily FT](https://www.ft.lk) (HTTP 403)
 
 ## Sweden
 
-3 sources read: 0 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Dagens Industri](https://www.di.se/feed/) | Swedish | feed |
+| press | [Dagens Juridik](https://www.dagensjuridik.se/feed/) | Swedish | feed |
+| press | [Dagens Nyheter](https://www.dn.se/rss/) | Swedish | feed |
+| press | [Realtid](https://www.realtid.se/feed/) | Swedish | feed |
+| press | [SVT](https://www.svt.se/rss.xml) | Swedish | feed |
+| press | [The Local Sweden](https://feeds.thelocal.com/rss/builder/se) | English | feed |
 | sweep | [Google News, Swedish edition](https://news.google.com/) | Swedish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Sweden" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Switzerland
 
-4 sources read: 0 press feeds, plus the sweeps.
+7 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Cash.ch](https://www.cash.ch/rss-article.xml) | German | feed |
+| press | [Inside Paradeplatz](https://insideparadeplatz.ch/feed/) | German | feed |
+| press | [Le Temps](https://www.letemps.ch/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, German edition](https://news.google.com/) | German | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Switzerland" with the dispute terms |
@@ -2133,19 +2540,30 @@ On the map, not readable by script: [NZZ](https://www.nzz.ch) (page, no feed)
 
 ## Syria
 
-2 sources read: 0 press feeds, plus the sweeps.
+10 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al-Watan](https://alwatan.sy/feed/) | Arabic | feed |
+| press | [Enab Baladi (EN)](https://english.enabbaladi.net/feed/) | English | feed |
+| press | [Levant24](https://levant24.com/feed/) | English | feed |
+| press | [North Press Agency](https://npasyria.com/en/feed/) | English | feed |
+| press | [SANA (EN)](https://sana.sy/feed/) | English | feed |
+| press | [Syria Direct](https://syriadirect.org/feed/) | English | feed |
+| press | [Syria TV](https://www.syria.tv/rss2) | Arabic | feed |
+| press | [The Syria Report](https://syria-report.com/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Syria" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Taiwan
 
-3 sources read: 0 press feeds, plus the sweeps.
+6 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Liberty Times](https://news.ltn.com.tw/rss/all.xml) | Chinese | feed |
+| press | [Taiwan Business Topics](https://topics.amcham.com.tw/feed/) | English | feed |
+| press | [UDN](https://udn.com/news/rssfeed) | Chinese | feed |
 | sweep | [Google News, Chinese edition](https://news.google.com/) | Chinese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Taiwan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2168,10 +2586,15 @@ On the map, not readable by script: [Focus Taiwan](https://focustaiwan.tw) (page
 
 ## Tanzania
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Daily News](https://dailynews.co.tz/feed/) | English | feed |
+| press | [Habari Leo](https://habarileo.co.tz/feed/) | Swahili | feed |
+| press | [Mwananchi](https://www.mwananchi.co.tz/rss.xml) | Swahili | feed |
+| press | [Tanzania Invest](https://www.tanzaniainvest.com/feed) | English | feed |
+| press | [The Chanzo](https://thechanzo.com/feed/) | English | feed |
 | press | [The Citizen](https://www.thecitizen.co.tz/rss.xml) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Tanzania" with the dispute terms |
@@ -2181,10 +2604,15 @@ On the map, not readable by script: [Mining Commission](https://www.tumemadini.g
 
 ## Thailand
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Khaosod English](https://www.khaosodenglish.com/feed/) | English | feed |
+| press | [Prachachat](https://www.prachachat.net/feed/) | Thai | feed |
+| press | [Thai Enquirer](https://www.thaienquirer.com/feed/) | English | feed |
+| press | [Thai Examiner](https://www.thaiexaminer.com/feed/) | English | feed |
+| press | [The Thaiger](https://thethaiger.com/feed) | English | feed |
 | sweep | [Google News, Thai edition](https://news.google.com/) | Thai | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Thailand" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2202,10 +2630,12 @@ On the map, not readable by script: [Bangkok Post](https://www.bangkokpost.com) 
 
 ## Togo
 
-2 sources read: 0 press feeds, plus the sweeps.
+4 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Togo Actualité](https://togoactualite.com/feed/) | French | feed |
+| press | [Togo Web](https://togoweb.net/feed/) | French | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Togo" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
@@ -2220,10 +2650,18 @@ On the map, not readable by script: [Bangkok Post](https://www.bangkokpost.com) 
 
 ## Tunisia
 
-3 sources read: 0 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Business News](https://businessnews.com.tn/feed/) | French | feed |
+| press | [Espace Manager](https://espacemanager.com/feed/) | French | feed |
+| press | [Kapitalis](https://kapitalis.com/tunisie/feed/) | French | feed |
+| press | [La Presse](https://www.lapresse.tn/feed/) | French | feed |
+| press | [Leaders](https://www.leaders.com.tn/rss) | French | feed |
+| press | [Mosaique FM](https://www.mosaiquefm.net/fr/rss) | French | feed |
+| press | [Réalités](https://realites.com.tn/fr/feed/) | French | feed |
+| press | [Webdo](https://www.webdo.tn/fr/feed/) | French | feed |
 | sweep | [Google News, French edition](https://news.google.com/) | French | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Tunisia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2232,15 +2670,21 @@ On the map, not readable by script: [TAP](https://www.tap.info.tn/en) (page, no 
 
 ## Turkey
 
-8 sources read: 5 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Anadolu Agency (EN)](https://www.aa.com.tr/en/rss) | English | feed |
+| press | [Bianet](https://bianet.org/english/rss) | English | feed |
 | press | [Bloomberg HT](https://www.bloomberght.com/rss) | Turkish | feed |
 | press | [Daily Sabah](https://www.dailysabah.com/rssFeed/10) | Turkish | feed |
 | press | [Dünya](https://www.dunya.com/rss) | Turkish | feed |
+| press | [Ekonomi Gazetesi](https://www.ekonomigazetesi.com/rss) | Turkish | feed |
 | press | [Ekonomim](https://www.ekonomim.com/export/rss) | Turkish | feed |
+| press | [Fortune Türkiye](https://www.fortuneturkey.com/feed) | Turkish | feed |
 | press | [Hürriyet Daily News](https://www.hurriyetdailynews.com/rss) | Turkish | feed |
+| press | [Sabah Ekonomi](https://www.sabah.com.tr/rss/ekonomi.xml) | Turkish | feed |
+| press | [Sözcü Ekonomi](https://www.sozcu.com.tr/feeds/rsssubpub) | Turkish | feed |
 | sweep | [Google News, Turkish edition](https://news.google.com/) | Turkish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Turkey" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2264,11 +2708,15 @@ On the map, not readable by script: [Turkmenportal](https://turkmenportal.com/en
 
 ## UAE
 
-5 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [AGBI](https://www.agbi.com/feed/) | English | feed |
+| press | [Arabian Business](https://www.arabianbusiness.com/feed) | English | feed |
+| press | [Emirates 24|7](https://www.emirates247.com/rss/mobile/v2/flash-news.rss) | English | feed |
 | press | [Gulf News](https://gulfnews.com/feed) | English | feed |
+| press | [Khaleej Times](https://www.khaleejtimes.com/api/v1/collections/top-section.rss) | English | feed |
 | sweep | [Google News, Arabic edition](https://news.google.com/) | Arabic | dispute and State-measure terms |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "UAE" with the dispute terms |
@@ -2278,21 +2726,27 @@ On the map, not readable by script: [The National](https://www.thenationalnews.c
 
 ## Uganda
 
-4 sources read: 1 press feeds, plus the sweeps.
+9 sources read: 6 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Business Focus](https://businessfocus.co.ug/feed/) | English | feed |
 | press | [Daily Monitor](https://www.monitor.co.ug/rss.xml) | English | feed |
+| press | [Nile Post](https://nilepost.co.ug/feed/) | English | feed |
+| press | [PML Daily](https://pmldaily.com/feed) | English | feed |
+| press | [The Independent](https://www.independent.co.ug/feed/) | English | feed |
+| press | [The Observer](https://observer.ug/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Uganda" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Ukraine
 
-12 sources read: 7 press feeds, plus the sweeps.
+13 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Biz.censor.net](https://assets.censor.net/rss/biz.censor.net/rss_uk_feed.xml) | Ukrainian | feed |
 | press | [Delo.ua](https://delo.ua/rss/news) | Ukrainian | feed |
 | press | [Kyiv Independent](https://kyivindependent.com/news-archive/rss/) | English | feed |
 | press | [LIGA.net](https://news.liga.net/ua/all/rss.xml) | Ukrainian | feed |
@@ -2310,22 +2764,33 @@ On the map, not readable by script: [Verkhovna Rada legal acts](https://zakon.ra
 
 ## United Kingdom
 
-5 sources read: 2 press feeds, plus the sweeps.
+11 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [BBC Business](https://feeds.bbci.co.uk/news/business/rss.xml) | English | feed |
+| press | [City AM](https://www.cityam.com/feed/) | English | feed |
 | press | [Financial Times - law](https://www.ft.com/rss/home/international) | English | feed |
 | press | [Law Gazette](https://www.lawgazette.co.uk/13505.rss) | English | feed |
+| press | [Legal Cheek](https://www.legalcheek.com/feed/) | English | feed |
+| press | [Legal Futures](https://www.legalfutures.co.uk/feed/) | English | feed |
+| press | [Legal IT Insider](https://legaltechnology.com/feed/) | English | feed |
+| press | [The Guardian Business](https://www.theguardian.com/uk/business/rss) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "United Kingdom" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## United States
 
-3 sources read: 0 press feeds, plus the sweeps.
+8 sources read: 5 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Above the Law](https://abovethelaw.com/feed/) | English | feed |
+| press | [Courthouse News](https://www.courthousenews.com/feed/) | English | feed |
+| press | [SCOTUSblog](https://www.scotusblog.com/feed/) | English | feed |
+| press | [The American Lawyer](https://www.law.com/americanlawyer/feed/) | English | feed |
+| press | [The Hill](https://thehill.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "United States" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2334,10 +2799,12 @@ On the map, not readable by script: [Reuters Legal](https://www.reuters.com/lega
 
 ## Uruguay
 
-3 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 2 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [La Diaria](https://ladiaria.com.uy/feeds/articulos/) | Spanish | feed |
+| press | [Telemundo](https://www.teledoce.com/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Uruguay" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2377,12 +2844,19 @@ On the map, not readable by script: [Lex.uz](https://lex.uz) (page, no feed) · 
 
 ## Venezuela
 
-5 sources read: 2 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Armando.info](https://armando.info/feed/) | Spanish | feed |
+| press | [Caracas Chronicles](https://www.caracaschronicles.com/feed/) | English | feed |
+| press | [Crónica Uno](https://cronica.uno/feed/) | Spanish | feed |
 | press | [Efecto Cocuyo](https://efectococuyo.com/feed/) | Spanish | feed |
 | press | [El Nacional](https://www.elnacional.com/feed/) | Spanish | feed |
+| press | [El Pitazo](https://elpitazo.net/feed/) | Spanish | feed |
+| press | [Finanzas Digital](https://finanzasdigital.com/feed/) | Spanish | feed |
+| press | [Runrunes](https://runrun.es/feed/) | Spanish | feed |
+| press | [Tal Cual](https://talcualdigital.com/feed/) | Spanish | feed |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Venezuela" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
@@ -2391,10 +2865,16 @@ On the map, not readable by script: [Efecto Cocuyo](https://efectococuyo.com/fee
 
 ## Vietnam
 
-4 sources read: 1 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Dan Tri](https://dantri.com.vn/rss/home.rss) | Vietnamese | feed |
+| press | [Thanh Nien](https://thanhnien.vn/rss/home.rss) | Vietnamese | feed |
+| press | [The Investor](https://theinvestor.vn/en/rss) | English | feed |
+| press | [Tuoi Tre News](https://news.tuoitre.vn/home.rss) | English | feed |
+| press | [Vietnam Investment Review](https://vir.com.vn/rss_feed/) | English | feed |
+| press | [VietnamPlus](https://en.vietnamplus.vn/rss/home.rss) | English | feed |
 | press | [VnExpress International](https://e.vnexpress.net/rss/business.rss) | English | feed |
 | sweep | [Google News, Vietnamese edition](https://news.google.com/) | Vietnamese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Vietnam" with the dispute terms |
@@ -2404,33 +2884,48 @@ On the map, not readable by script: [VietnamNet](https://vietnamnet.vn/en) (page
 
 ## Yemen
 
-2 sources read: 0 press feeds, plus the sweeps.
+5 sources read: 3 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Al Masdar Online](https://almasdaronline.com/rss) | Arabic | feed |
+| press | [Yemen Monitor](https://www.yemenmonitor.com/feed) | Arabic | feed |
+| press | [Yemen Online](https://yemenonline.info/feed/) | English | feed |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Yemen" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Zambia
 
-5 sources read: 2 press feeds, plus the sweeps.
+12 sources read: 9 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [Lusaka Times](https://www.lusakatimes.com/feed/) | English | feed |
+| press | [Mining For Zambia](https://miningforzambia.com/feed/) | English | feed |
+| press | [Mwebantu](https://www.mwebantu.com/feed/) | English | feed |
 | press | [News Diggers](https://diggers.news/feed/) | English | feed |
+| press | [Times of Zambia](https://times.co.zm/feed/) | English | feed |
+| press | [ZNBC](https://znbc.co.zm/?feed=rss2) | English | feed |
 | press | [Zambia Daily Mail](https://www.daily-mail.co.zm/feed/) | English | feed |
+| press | [Zambia Reports](https://zambiareports.news/feed/) | English | feed |
+| press | [Zambian Observer](https://zambianobserver.com/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Zambia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
 ## Zimbabwe
 
-5 sources read: 2 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
+| press | [263Chat](https://www.263chat.com/feed/) | English | feed |
+| press | [Business Times](https://businesstimes.co.zw/feed/) | English | feed |
+| press | [New Zimbabwe](https://www.newzimbabwe.com/feed/) | English | feed |
 | press | [NewsDay](https://newsday.co.zw/feed/) | English | feed |
 | press | [The Herald](https://www.heraldonline.co.zw/feed/) | English | feed |
+| press | [The Standard](https://staging-d2fb-anochav7.wpcomstaging.com/feed/) | English | feed |
+| press | [The Zimbabwe Independent](https://www.theindependent.co.zw/feed/) | English | feed |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Zimbabwe" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |

@@ -104,13 +104,13 @@ def meta_line(it: Dict[str, Any]) -> str:
         bits.append("counsel: " + esc(", ".join(f[:4])))
     elif (it.get("source_tier") or 2) == 1:
         bits.append('<em style="color:{};">no counsel on record</em>'.format(MUTE))
-    src = (it.get("source") or "source").replace("Google News / ", "")
+    src = (it.get("source") or "source").replace("Google News / ", "").lstrip("| -·").strip()
     bits.append(a(it.get("url") or "#", src))
     line = " &middot; ".join(bits)
     also = it.get("also") or []
     if also:
         line += "<br>also: " + ", ".join(
-            a(x["url"], (x.get("source") or "source").replace("Google News / ", "")) for x in also[:5] if x.get("url"))
+            a(x["url"], (x.get("source") or "source").replace("Google News / ", "").lstrip("| -·").strip()) for x in also[:5] if x.get("url"))
     return p(line, size=13, lh=1.5, color=MUTE, mb=0)
 
 
@@ -166,7 +166,7 @@ def facts(it: Dict[str, Any]) -> str:
         when_label = ""
     why = it.get("flag_reason") or ""
     if why.startswith("matched"):
-        why = "{}: {}".format((it.get("source") or "press").replace("Google News / ", ""), why)
+        why = "{}: {}".format((it.get("source") or "press").replace("Google News / ", "").lstrip("| -·").strip(), why)
     for k, v in (("Who", who(it)), ("When", when_label), ("What", what(it)), ("Why flagged", why)):
         if not v:
             continue
@@ -197,7 +197,7 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     href = it.get("site_link") or it.get("url") or "#"
     size, lh = 20, 1.3                                  # one headline size: the lead is first, not louder
     body = it.get("story") or summary_of(it)
-    src = (it.get("source") or "").replace("Google News / ", "")
+    src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
     when = _when(it)
     tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
         mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
@@ -222,7 +222,7 @@ def brief(items: List[Dict[str, Any]]) -> str:
     """The same entry as a story, without the explanation."""
     out = []
     for it in items:
-        src = (it.get("source") or "").replace("Google News / ", "")
+        src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
         when = _when(it)
         tail = '<span style="color:{mute};">&mdash; {src}{when}</span>'.format(
             mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
@@ -250,7 +250,7 @@ def _docket_parts(it: Dict[str, Any]):
 
 def _outlet(source: Any) -> str:
     """'Google News / Law360 International Arbitration (Global)' -> 'Law360 International Arbitration'."""
-    s = (source or "").replace("Google News / ", "")
+    s = (source or "").replace("Google News / ", "").lstrip("| -·").strip()
     return re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", s).strip()
 
 
@@ -286,7 +286,7 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
         # step is the explanation, the court or reference and the date the source line.
         href = it.get("url") or "#"
         src = '<span style="color:{mute};">&mdash; {t}{d}</span>'.format(
-            mute=MUTE, t=a(href, tail or (it.get("source") or "record").replace("Google News / ", ""), color=MUTE),
+            mute=MUTE, t=a(href, tail or (it.get("source") or "record").replace("Google News / ", "").lstrip("| -·").strip(), color=MUTE),
             d=(", " + esc(dlabel)) if dlabel else "")
         rows.append(entry(name, href, step or "", src))
     return "".join(rows)
@@ -321,7 +321,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
 
     web_link = ('<br><a href="{}/{}.html" style="font-size:12px;color:{};">View in browser</a>'.format(
         site_url, date[:10], MUTE) if site_url else "")
-    sources = sorted({(it.get("source") or "").replace("Google News / ", "") for it in items} - {""})
+    sources = sorted({(it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip() for it in items} - {""})
     unsubscribe = getattr(settings, "unsubscribe_url", "") or "mailto:{}?subject=unsubscribe".format(
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 

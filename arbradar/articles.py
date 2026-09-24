@@ -301,8 +301,8 @@ def _voices_block(it: Dict[str, Any]) -> str:
 
 def _signup(settings) -> str:
     """The subscribe box. Posts to the list provider when one is configured; until
-    then it opens a prepared email to the address in signup_email, so sign-ups
-    are collected from day one."""
+    then it posts to FormSubmit, which emails each sign-up to signup_email, so
+    sign-ups are collected from day one without opening anything."""
     action = (getattr(settings, "signup_url", "") or "").strip()
     field = (getattr(settings, "signup_field", "") or "email").strip()
     mailto = (getattr(settings, "signup_email", "") or "").strip()
@@ -325,12 +325,20 @@ background:var(--sunken);border:1px solid var(--hair);border-radius:12px}
 <input id="signup-email" type="email" name="{field}" placeholder="you@firm.com" autocomplete="email" required>
 <button type="submit">Subscribe</button><small>Free. One email per issue. Unsubscribe in one click.</small></form>""".format(
             action=html.escape(action), field=html.escape(field), name=name)
-    subject = "Subscribe to " + settings.newsletter_name
-    return css + """<form class="signup" id="subscribe" onsubmit="var e=this.elements['email'].value;location.href='mailto:{to}?subject={subj}&body='+encodeURIComponent('Please add '+e+' to {name}.');return false;">
+    # No list provider yet: the form posts to FormSubmit, which delivers each
+    # sign-up to signup_email as an email and shows a thank-you page. Nothing
+    # opens on the reader's machine. The first submission triggers a one-time
+    # activation email to that address.
+    from .config import live_site_url
+    site = (live_site_url(settings) or "").rstrip("/")
+    return css + """<form class="signup" id="subscribe" action="https://formsubmit.co/{to}" method="post">
 <label for="signup-email">Get {name} by email</label>
 <input id="signup-email" type="email" name="email" placeholder="you@firm.com" autocomplete="email" required>
-<button type="submit">Subscribe</button><small>Free. One email per issue. Or write to <a href="mailto:{to}?subject={subj}">{to}</a>.</small></form>""".format(
-        to=html.escape(mailto), subj=html.escape(subject.replace(" ", "%20")), name=name)
+<input type="hidden" name="_subject" value="{name} subscriber"><input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+{next}<button type="submit">Subscribe</button><small>Free. One email per issue. Unsubscribe in one click.</small></form>""".format(
+        to=html.escape(mailto), name=name,
+        next='<input type="hidden" name="_next" value="{}/subscribed.html">'.format(html.escape(site)) if site else "")
 
 
 def build(conn, settings, limit: int = 6, use_llm: bool = True) -> Dict[str, Any]:

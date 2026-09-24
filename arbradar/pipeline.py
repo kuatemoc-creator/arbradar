@@ -3,6 +3,7 @@ import datetime as dt
 import hashlib
 import json
 import logging
+import os
 import re
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlsplit, urlunsplit
@@ -312,6 +313,83 @@ def _propers(title: str) -> set:
             if w[0].isupper() and len(w) >= 4 and w.lower() not in STOP}
 
 
+def _entities(title: str) -> set:
+    """The names in a headline that are neither a State nor an ordinary word
+    capitalised by Title Case: 'Papel', 'Mellat', 'Yukos', not 'Bank' or 'Court'."""
+    from .style import _is_common
+    from .sources.editions import states_in
+    english = _english()
+    state_words = {w.lower() for s in states_in(title or "") for w in re.findall(r"[A-Za-z]+", s)}
+    state_words |= {w.lower() for w in re.findall(r"[A-Za-z]+", title or "") if w in _JUR_WORDS}
+    words = re.findall(r"[A-Za-z][A-Za-z'\u00c0-\u024f]+", title or "")
+    out = set()
+    for w in words[1:]:
+        lw = _fold(w).lower().split("'")[0].split("\u2019")[0]
+        if w[0].isupper() and len(lw) >= 4 and lw not in STOP and lw not in state_words and not _is_common(lw) \
+                and not _in_english(lw, english) and lw not in _CITIES and _stem(lw) not in _STATE_STEMS():
+            out.add(_stem(lw))
+    return out
+
+
+_ENGLISH: Optional[set] = None
+# Capitals and financial centres: a place in a headline is not a party.
+_CITIES = set("""london paris moscow beijing delhi mumbai dubai abu dhabi geneva zurich frankfurt madrid rome berlin vienna
+brussels amsterdam hague stockholm oslo copenhagen helsinki warsaw prague budapest bucharest sofia athens istanbul ankara
+cairo riyadh jeddah doha kuwait tehran baghdad erbil beirut amman damascus kyiv minsk chisinau tbilisi yerevan baku astana
+almaty tashkent bishkek dushanbe ashgabat ulaanbaatar tokyo seoul shanghai shenzhen jakarta bangkok manila hanoi kuala
+lumpur lagos abuja nairobi accra johannesburg pretoria cape town lusaka harare luanda maputo kinshasa dakar abidjan
+casablanca rabat tunis algiers tripoli khartoum addis ababa kigali kampala dodoma mexico bogota lima santiago buenos aires
+brasilia paulo caracas quito paz montevideo asuncion panama washington york houston miami toronto ottawa vancouver
+calgary sydney melbourne perth canberra wellington delaware luxembourg belgrade zagreb ljubljana skopje tirana sarajevo
+podgorica pristina riga vilnius tallinn nicosia valletta lisbon dublin edinburgh manchester milan munich hamburg""".split())
+
+
+def _in_english(w: str, english: set) -> bool:
+    """The word or its base form: 'Meets', 'Spreads', 'Granting' are English."""
+    if w in english:
+        return True
+    for suffix in ("s", "es", "ed", "d", "ing", "ies"):
+        if w.endswith(suffix) and len(w) - len(suffix) >= 3:
+            base = w[: -len(suffix)] + ("y" if suffix == "ies" else "")
+            if base in english or base + "e" in english:
+                return True
+    return False
+
+
+def _english() -> set:
+    """Ordinary English words, so that a Title Case headline's 'Anger', 'Crack'
+    and 'Sterling' are not taken for company names."""
+    global _ENGLISH
+    if _ENGLISH is None:
+        import gzip
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "english-words.txt.gz")
+        try:
+            with gzip.open(path, "rt", encoding="utf-8") as fh:
+                _ENGLISH = {w.strip() for w in fh if w.strip()}
+        except OSError:
+            _ENGLISH = set()
+    return _ENGLISH
+
+
+_JUR_WORDS = {"EU", "UK", "US", "UN", "USA"}
+_STATE_STEMS_CACHE: Optional[set] = None
+
+
+def _STATE_STEMS() -> set:
+    global _STATE_STEMS_CACHE
+    if _STATE_STEMS_CACHE is None:
+        _STATE_STEMS_CACHE = _state_stems()
+    return _STATE_STEMS_CACHE
+
+
+# Words of the trade that pair up in any headline: "high court", "court grants",
+# "interim relief". A phrase made only of these is not the signature of a story.
+_GENERIC = {_stem(w) for w in """court courts high supreme appeal appeals tribunal arbitral arbitration award awards judge judges
+ruling rules dispute disputes claim claims relief interim injunction case cases bench division commercial grants granted order
+orders decision holds held enforcement enforce set aside annul annulment application petition hearing judgment judgments
+international investor investors treaty state government ministry minister law legal firm partner partners""".split()}
+
+
 def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Greedy story clustering on headline overlap.
 
@@ -343,19 +421,26 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     _JUR_EXTRA = {"eu", "uk", "us", "un"}
 
     def _jurisdictions(it) -> set:
-        """State names in the headline, plus EU/UK/US: a UK windfall tax and an EU
-        windfall tax are two stories however alike the phrasing."""
+        """State names in the headline or on the record, plus EU/UK/US: a UK
+        windfall tax and an EU windfall tax are two stories however alike the
+        phrasing, and so are Bulgaria's and the EU's."""
         title = it.get("title_en") or it["title"]
         found = {_fold(s).lower() for s in states_in(title)}
+        found |= {_fold(s).lower() for s in (it.get("states") or []) if s}
         found |= {w for w in re.findall(r"[A-Za-z]+", title) if w.lower() in _JUR_EXTRA and w.isupper()}
         return {w.lower() for w in found}
 
     for it in items:
         toks = _tokens(it.get("title_en") or it["title"])
         names = _propers(it.get("title_en") or it["title"])
+        ents = _entities(it.get("title_en") or it["title"])
         bg = it.pop("_bg")
         home = None
         for rep in reps:
+            # Two headlines each naming a company the other does not are two
+            # matters, whatever else they share: Turkey revoking Papel's licence
+            # is not Turkey revoking Bank Mellat's, four days earlier.
+            conflict = bool(ents and rep["_ents"] and not (ents & rep["_ents"]))
             # Two different case numbers are two different matters, full stop.
             if it.get("case_ref") and rep.get("case_ref") and it["case_ref"] != rep["case_ref"]:
                 continue
@@ -365,7 +450,8 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                             & (_fold_set(rep.get("claimants")) | _fold_set(rep.get("respondents")))
                             and _fold_set(it.get("states")) & _fold_set(rep.get("states")))
             shared_phrase = {b for b in bg & rep["_bg"]
-                             if df.get(b, 0) <= rare_max and b[0] not in states and b[1] not in states}
+                             if df.get(b, 0) <= rare_max and b[0] not in states and b[1] not in states
+                             and not (b[0] in _GENERIC and b[1] in _GENERIC)}
             # A rare name in common - a project, a company, a person - plus the same
             # State is the same matter under two headlines ("Mambilla").
             rare_name = {n for n in names & rep["_names"] if dfn.get(n, 0) <= rare_max and n not in states}
@@ -373,10 +459,15 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             ja, jb = _jurisdictions(it), _jurisdictions(rep)
             if ja and jb and not (ja & jb):
                 shared_phrase, rare_name = set(), set()   # different jurisdictions named: not one story
+            if conflict:
+                shared_phrase, rare_name = set(), set()
             inter = len(toks & rep["_toks"])
             if not inter and not same_parties:
                 continue
-            jac = inter / max(1, len(toks | rep["_toks"]))
+            # Overlap is judged against the closest member, not the union of the
+            # cluster: a union grows with every member and would let a chain of
+            # loosely related headlines swallow anything with three words in common.
+            jac = max(len(toks & m) / max(1, len(toks | m)) for m in rep["_members"])
             shared_names = len(names & rep["_names"])
             # The same State and the same kind of event, with three words in
             # common, is one story told twice: "Malaysian investor threatens
@@ -384,6 +475,10 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             # India on notice of treaty dispute over enforcement proceedings".
             same_kind = bool((toks & rep["_toks"]) & states) and inter >= 3 and jac >= 0.15 \
                 and (it.get("event_type") or "") == (rep.get("event_type") or "") and it.get("event_type") not in (None, "", "commentary")
+            if conflict and not same_parties:
+                continue
+            if ja and jb and not (ja & jb) and not (same_parties or jac >= 0.5):
+                continue
             if (same_parties or shared_phrase or (rare_name and (same_state or inter >= 2))
                     or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2 or same_kind):
                 home = rep
@@ -391,6 +486,8 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         if home is None:
             it["_toks"] = set(toks)
             it["_names"] = set(names)
+            it["_ents"] = set(ents)
+            it["_members"] = [set(toks)]
             it["_bg"] = set(bg)
             it["also"] = []
             reps.append(it)
@@ -399,18 +496,22 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             # The English version tells the story; the foreign-language one hangs off it.
             it["_toks"] = home["_toks"] | toks
             it["_names"] = home["_names"] | names
+            it["_ents"] = home["_ents"] | ents
+            it["_members"] = home["_members"] + [set(toks)]
             it["_bg"] = home["_bg"] | bg
             it["also"] = home["also"] + [{"source": home.get("source"), "url": home.get("url"), "title": home.get("title")}]
             for f in ("counsel", "claimants", "respondents", "states", "sectors",
                       "arbitrators", "treaty", "amount_usd", "case_ref"):
                 if not it.get(f) and home.get(f):
                     it[f] = home[f]
-            for k in ("_toks", "_names", "_bg", "also"):
+            for k in ("_toks", "_names", "_ents", "_members", "_bg", "also"):
                 home.pop(k, None)
             reps[reps.index(home)] = it
             continue
         home["_toks"] |= toks
         home["_names"] |= names
+        home["_ents"] |= ents
+        home["_members"].append(set(toks))
         home["_bg"] |= bg
         home["also"].append({"source": it.get("source"), "url": it.get("url"),
                              "title": it.get("title")})
@@ -432,6 +533,8 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         r.pop("_toks", None)
         r.pop("_names", None)
         r.pop("_bg", None)
+        r.pop("_ents", None)
+        r.pop("_members", None)
         _cite_best(r)
     return reps
 
@@ -451,6 +554,12 @@ def _cite_best(rep: Dict[str, Any]) -> None:
         if best.get("title") and (rep.get("lang") or "en") == "en":
             rep["title"] = best["title"]
         rep["also"] = [old] + [a for a in also if a is not best]
+
+
+_PEOPLE = re.compile(r"\b(hires?|hired|hiring|joins?|joined|leaves?|left|departs?|exits?|appoint(?:s|ed)?\s+(?:as|to|of)|named\s+(?:as|to)|"
+                     r"names?\s+\w+\s+(?:as|to|head|chair|partner)|promot\w*|elected|re-?elected|becomes|takes over|steps? down|"
+                     r"new\s+(?:partner|head|chair|president|secretary|director|co-chair)|partner hires|lateral|moves? to|returns? to|"
+                     r"launches\s+\w*\s*practice|adds?\s+\w+\s+partner|bolsters|strengthens)\b", re.I)
 
 
 def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14) -> Dict[str, List[Dict[str, Any]]]:
@@ -530,6 +639,11 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         "  OR (source='ICSID docket' AND event_type='tribunal_constituted' "
         "      AND (title LIKE '%appoint%' OR title LIKE '%constituted%' OR title LIKE '%President%'))) "
         "ORDER BY score DESC, published_at DESC", (cutoff, upto), 40)
+    # A headline in the People list must be about a person's move or an
+    # appointment; "High Court's location doesn't become the seat because the
+    # HC appointed the arbitrator" is a judgment, whatever the classifier said.
+    people_rows = [it for it in people_rows if it.get("source") == "ICSID docket"
+                   or _PEOPLE.search(it.get("title_en") or it.get("title") or "")]
     people = drop_repeats(people_rows, site.people_before(as_of().isoformat()))
     moves = sorted((it for it in people if it.get("source") != "ICSID docket"),
                    key=lambda it: it.get("published_at") or "", reverse=True)
@@ -610,7 +724,7 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "
         "     AND COALESCE(published_at, substr(fetched_at,1,10)) <= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
-        (settings.min_score, cutoff, upto, settings.max_items_per_issue * (12 if extra_days else 4))).fetchall()
+        (settings.min_score, cutoff, upto, settings.max_items_per_issue * 12)).fetchall()
     # What earlier days carried is not a candidate, and must not crowd the pool either.
     from . import site as _site
     shown_urls, shown_keys = _site.shown_before(as_of().isoformat())

@@ -87,8 +87,16 @@ def relevant(text: str) -> bool:
     if _STRONG.search(text):
         return True
     # a licence/contract action needs a State or an investor in the sentence - a
-    # named country counts as the State
-    return bool(_ASSET.search(text) and _ACTION.search(text) and (_STATE.search(text) or states_in(text)))
+    # named country counts as the State - and the action word within a sentence
+    # of the asset word: "permiso" on one paragraph and "retirar" three later is
+    # a passport story, not a revoked licence
+    if not (_STATE.search(text) or states_in(text)):
+        return False
+    for m in _ASSET.finditer(text):
+        window = text[max(0, m.start() - 120): m.end() + 120]
+        if _ACTION.search(window):
+            return True
+    return False
 
 
 def _configured() -> List[Dict[str, str]]:

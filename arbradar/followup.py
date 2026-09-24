@@ -51,6 +51,9 @@ def _ident(name: str) -> str:
     return _ALIAS.get(n, n)
 
 
+from .pipeline import _entities  # noqa: E402
+
+
 def _same(a: str, b: str) -> bool:
     a, b = _ALIAS.get(a, a), _ALIAS.get(b, b)
     if not a or not b:
@@ -154,7 +157,16 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             # Common words alone ("launches", "arbitration", "group") join two
             # different stories; a shared name or the same State must anchor it.
             same_state = bool(my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])})
-            if not (my_names & _names(e["title"])) and not (same_state and shared >= 4):
+            # A company named on one side and not the other is another matter:
+            # Turkey revoking Papel's licence is not Turkey revoking Bank
+            # Mellat's, and the Bombay court's anti-suit order is not its
+            # defamation ruling. Only when neither headline names a company can
+            # the State and the wording carry the match.
+            my_ents = _entities(title)
+            their_ents = _entities(e["title"])
+            if my_ents and their_ents and not (my_ents & their_ents):
+                continue
+            if not (my_ents & their_ents) and not (same_state and shared >= 4):
                 continue
             their_states = {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}
             if my_states and their_states and not (my_states & their_states):
@@ -192,6 +204,15 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
         fetched += 1
         if text and len(text.split()) >= 12:
             e["snippet"] = _clean(text)
+    for e in picks:
+        # Google News' snippet is the headline followed by the outlet's name.
+        src = (e.get("source") or "").strip()
+        snip = (e.get("snippet") or "").strip()
+        if src and snip.lower().endswith(src.lower()):
+            snip = snip[: -len(src)].rstrip(" -|·,")
+        if snip and snip[-1] not in ".!?\u201d\u2019\")" and len(snip.split()) <= 25 and snip.lower().startswith(e.get("title", "").lower()[:30]):
+            snip = ""                                 # a headline is not an explanation
+        e["snippet"] = snip
     return {"sources": [{k: e[k] for k in ("source", "url", "title", "published_at", "snippet")} for e in picks],
             "story": compose(it, picks)}
 
