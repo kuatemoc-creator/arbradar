@@ -51,7 +51,7 @@
    "id": 6236,
    "title": "Ukraine instructs boutique to defend US investor’s ICSID claim",
    "title_en": null,
-   "summary": "Ukraine has instructed European boutique Queritius to defend it in an ICSID claim brought by a US distressed debt investor that the state alleges is linked to Russia.&nbsp;",
+   "summary": "",
    "summary_en": null,
    "url": "https://globalarbitrationreview.com/article/ukraine-instructs-boutique-defend-us-investors-icsid-claim",
    "source": "GAR",
@@ -76,19 +76,98 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "International Institute for Sustainable Development",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcWF2SVgyNzBVaGkwME55UzJtbGJjT2NLaEhQRlI4SnhXU1pWRWJqdnhxWkh6aVR1SWwzbTRMYV8zV3FRSU8wdUwyaUhQQnozaHdWUzdUNTRkdkwtbFZuREFVU05mTlN2bk5hd1E0SGZaeW5VMDhNTnk5RDIwNzVGcWwxcHhiZjE2SEVxTXNJX2ZGWkhEdW1OcHg3a0RfalpXUTlCV196NzA1Z1BEWE5rN3l6akZiUEFBVmtlZVZtS2Z2QlF0NW9ZNWp3LTY0TE1BVDRxamhCb0k0WHpvSFFCbWhEaw?oc=5",
-     "title": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors - International Institute for Sustainable Development",
-     "published_at": "2020-06-20",
-     "snippet": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors International Institute for Sustainable Development"
-    }
-   ],
+   "corroboration": [],
    "story": null,
    "tier": "development",
    "slug": "2026-09-23-ukraine-instructs-boutique-to-defend-us-investor-s-icsid-claim.html",
    "event": "Counsel instructed"
+  },
+  {
+   "id": 6905,
+   "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
+   "title_en": null,
+   "summary": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel…",
+   "summary_en": null,
+   "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
+   "source": "Google News / turkishminute.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Turkey"
+   ],
+   "sectors": [
+    "Finance & banking"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "finance.biggo.com",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9tNnhPYU01dldDdk00MEgxZWhoWllfNnR4WUpBbDUta1FEeTY0ek5BcEJHRmdoQ2E2UDhKLXFJbjlVTm5TQXFqSng4ZVpBU00tenRXdng2TUR1elhWRC1Cd2dLZTlFSzEyUFNNeXE0YUVpR0l3bWc?oc=5",
+     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para - finance.biggo.com",
+     "published_at": "2026-09-23",
+     "snippet": ""
+    },
+    {
+     "source": "ilkha.com",
+     "url": "https://ilkha.com/english/economy/turkish-central-bank-revokes-papels-electronic-money-licence-564309",
+     "title": "Turkish central bank revokes Papel's electronic money licence",
+     "published_at": "2022-10-26",
+     "snippet": "The Central Bank of the Republic of Türkiye (CBRT) has revoked the operating licence of Papel Elektronik Para ve Ödeme Hizmetleri AŞ as an electronic money institution, citing the company's failure to ..."
+    }
+   ],
+   "story": "",
+   "tier": "development",
+   "slug": "2026-09-23-turkey-s-central-bank-revokes-operating-license-of-papel-elektronik-pa.html",
+   "event": "State measure"
+  },
+  {
+   "id": 4768,
+   "title": "Paris first instance court finds that Libya’s National Oil Corporation qualifies as an emanation of the state for exequatur purposes",
+   "title_en": null,
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/paris-first-instance-court-confirms-that-libyas-national-oil-corporation-qualifies-as-an-emanation-of-the-state-for-exequatur-purposes/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Libya"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘exequatur’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": null,
+   "story": null,
+   "tier": "brief",
+   "slug": "2026-09-23-paris-first-instance-court-finds-that-libya-s-national-oil-corporation.html",
+   "event": "Enforcement"
   },
   {
    "id": 6238,
@@ -127,10 +206,97 @@
  ],
  "leads": [
   {
+   "id": 289,
+   "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA",
+   "title_en": "Green fertiliser company threatens ICSID claim against Paraguay",
+   "summary": "ATOME Paraguay arbitration notice filed under UK-Paraguay BIT threatens the Villeta green fertiliser project.",
+   "summary_en": null,
+   "url": "https://discoveryalert.com/news/atome-paraguay-arbitration-ppa-dispute-september-2026/",
+   "source": "Google News / discoveryalert.com",
+   "source_tier": 2,
+   "event_type": "notice_of_intent",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Paraguay"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘threatens arbitration’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / gasworld",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVGhlV1ZQOTdmRDZtWFY2T2VGUTBxLVNNcFZ1YUpkUGIwRzAxMTRkd2pEaTJHZ3RiMHdYaXk1ZGN3WDNfd2dITnVlMkhrNGl1T2NxNVE5T0hzWEVEMXp1R3FFR2tKRkNKUGdBSDQzajIwWXJVRVRFR3pEeFJfSzZ4eUg4LXBRcFI2OW5kWDVtZFpySVd4MXRrWVVGcm80MkdidE14ZmlzZnhkZlhxUUFiMExpTXYzcEM1cEhuV1YtYXFIYjQ?oc=5",
+     "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA"
+    }
+   ],
+   "lang": null,
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYS1KQzhpcGZ1c0Jwc0w5M0FOVUNycW9wU2VsVENYQ1luaFhPMFJqWkR2ODV2dFRhNW9QdG9SZTdCdnF1NDZBQ3d6U1k3MkQ5X1FKMWk3V2JQa3lBdnFkRmZpTWhlSjlrZmtKekJLblpiTHA5cnRuS1hQZ0N3TzFDUjRVeXNGU1NBZDZyQldpMGZNNHRZalM0OHQxWmJsUEJKVXhxQVhZcWNTN1E?oc=5",
+     "title": "Green fertiliser company threatens ICSID claim against Paraguay - Global Arbitration Review",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    }
+   ],
+   "story": null,
+   "tier": "signal",
+   "slug": "2026-09-23-green-fertiliser-company-threatens-icsid-claim-against-paraguay.html",
+   "event": "Notice of dispute"
+  },
+  {
+   "id": 6908,
+   "title": "'Oil companies are exploiting the situation': Europe eyes windfall tax on energy giants as fuel prices rise",
+   "title_en": null,
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.msn.com/en-ie/money/economy/oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on-energy-giants-as-fuel-prices-rise/ar-AA2cwfPy",
+   "source": "Google News / msn.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Ireland"
+   ],
+   "sectors": [
+    "Oil & gas",
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": null,
+   "tier": "signal",
+   "slug": "2026-09-23-oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on.html",
+   "event": "State measure"
+  },
+  {
    "id": 5784,
    "title": "CEMAC Regulator Revokes Axiome Capital’s License After Three Years Without Market Activity",
    "title_en": null,
-   "summary": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese…",
+   "summary": "",
    "summary_en": null,
    "url": "https://www.businessincameroon.com/finance/2309-16805-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-without-market-activity",
    "source": "Google News / businessincameroon.com",
@@ -168,11 +334,11 @@
   "people": [
    {
     "date": "2026-09-23",
-    "title": "Arbitration | High Court's Location Doesn't Become Arbitration's Seat Just Because HC Appointed Arbitrator : Supreme Court",
-    "main": "Arbitration | High court's Location Doesn't become Arbitration's seat just because HC appointed arbitrator : Supreme Court",
+    "title": "Freshfields’ Saudi disputes head joins Three Crowns in Dubai",
+    "main": "Freshfields’ Saudi disputes head joins Three Crowns in Dubai",
     "step": "",
-    "tail": "LiveLaw (India)",
-    "url": "https://www.livelaw.in/supreme-court/arbitration-high-courts-location-doesnt-become-arbitrations-seat-just-because-hc-appointed-arbitrator-supreme-court-551524"
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/freshfields-saudi-disputes-head-joins-three-crowns-in-dubai"
    },
    {
     "date": "2026-09-23",
@@ -187,8 +353,16 @@
     "title": "HK: Guantao strengthens practices with two partner hires",
     "main": "HK: Guantao strengthens practices with two partner hires",
     "step": "",
-    "tail": "| Asian Legal Business",
+    "tail": "Asian Legal Business",
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeEZ3NHE4bWx1MG00aHdhVlphWWNYZUFlZkdqY29GSEt5dktUTW9fVmlmZDhCNmYxTERSQnd5ZTdZejhweFNraWtkN29hejJFTE9OMFN4X1pVdjEyMGRNNWpvM0FRbTQ3WkszQUt1MXdQUHN6bGlWeUdXQlNzeE1PS1pidnNuY2s5WVFnSUM3WGtkcjk1cTN5U3lhd2RMM2xY?oc=5"
+   },
+   {
+    "date": "2026-09-21",
+    "title": "INEOS v. Belgium — following appointment by the Respondent, Jan Wouters (Belgian) accepts his appointment as arbitrator",
+    "main": "INEOS v. Belgium",
+    "step": "Following appointment by the Respondent, Jan Wouters (Belgian) accepts his appointment as arbitrator",
+    "tail": "ARB/26/30",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/30"
    }
   ]
  }
