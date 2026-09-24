@@ -8,6 +8,12 @@ the owner's accounts or DNS.
 
 ## Open
 
+000. **The feedless half of the press** [me] — done 24 September: `sitesweep`
+   (Google News site: queries, eight outlets a query, per language) and
+   `frontpage` (home-page headlines) read the 835 outlets that publish no
+   feed; the map counts them; 180 of 182 States now have five or more press
+   sources. Watch the first cloud runs for noise from the front pages.
+
 00. **Enforcement track** [me] — done 24 September: `pipeline.select_enforcement`
    and an Enforcement section in email, site and Markdown; wider enforcement
    vocabulary in the taxonomy (eleven languages); Google News `ENFORCEMENT`

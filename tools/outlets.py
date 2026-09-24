@@ -101,6 +101,11 @@ OUTLETS = {
         ("Sputnik Tajikistan", "https://tj.sputniknews.ru/", "ru"),
         ("Avesta", "https://avesta.tj/", "ru"),
         ("Times of Central Asia", "https://timesca.com/", "en"),
+        ("Pressa.tj", "https://pressa.tj/", "ru"),
+        ("Dialog.tj", "https://www.dialog.tj/", "ru"),
+        ("Jumhuriyat", "https://jumhuriyat.tj/", "tg"),
+        ("Faraj", "https://faraj.tj/", "tg"),
+        ("Ozodi (EN)", "https://www.ozodi.org/", "tg"),
     ],
     "Turkmenistan": [
         ("Turkmenportal", "https://turkmenportal.com/", "ru"),
@@ -1910,6 +1915,11 @@ OUTLETS.update({
         ("Vanuatu Business Review", "https://vbr.vu/", "en"),
         ("Islands Business", "https://islandsbusiness.com/", "en"),
         ("RNZ Pacific", "https://www.rnz.co.nz/international/pacific-news", "en"),
+        ("Loop Vanuatu", "https://vanuatu.loopnews.com/", "en"),
+        ("Vanuatu Digest", "https://vanuatudigest.com/", "en"),
+        ("ABC Pacific", "https://www.abc.net.au/pacific", "en"),
+        ("Pacific Advocate", "https://pacificadvocate.com/", "en"),
+        ("Vanuatu Government news", "https://www.gov.vu/index.php/news", "en"),
     ],
     "Kosovo": [
         ("Koha", "https://www.koha.net/", "sq"),

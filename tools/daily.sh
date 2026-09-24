@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")/.."
 PY=.venv/bin/python
 echo "== $(date '+%F %T') fetch"
-$PY -m arbradar.cli fetch --days 3 --source rss,edgar,courtlistener,icsid,pca,pca_cases,gnews,gdelt,wires,tenders,courts 2>&1 | grep -v "^INFO" || true
+$PY -m arbradar.cli fetch --days 3 --source rss,edgar,courtlistener,icsid,pca,pca_cases,gnews,gdelt,wires,tenders,courts,sitesweep,frontpage 2>&1 | grep -v "^INFO" || true
 # What this machine could not reach may have been relayed from one that could.
 $PY -m arbradar.cli import --file data/relay.jsonl 2>&1 | grep -v "^INFO" || true
 echo "== $(date '+%F %T') classify and build"

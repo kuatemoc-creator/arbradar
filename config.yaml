@@ -117,6 +117,8 @@ sources:
   gnews: true
   gdelt: true
   tenders: true
+  sitesweep: true   # feedless national press through Google News site: queries
+  frontpage: true   # feedless national press, front-page headlines
 
 recipients: []
 smtp:

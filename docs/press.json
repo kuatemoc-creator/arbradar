@@ -641,60 +641,6 @@
    "secs": 5
   },
   {
-   "country": "Tajikistan",
-   "name": "Asia-Plus",
-   "url": "https://asiaplus.news/feed/",
-   "lang": "ru",
-   "status": "ok",
-   "detail": "newest 2026-09-24",
-   "secs": 1
-  },
-  {
-   "country": "Tajikistan",
-   "name": "Ozodi (RFE/RL)",
-   "url": "https://www.azattyqasia.org/api/",
-   "lang": "ru",
-   "status": "ok",
-   "detail": "discovered; newest 2026-09-24",
-   "secs": 6
-  },
-  {
-   "country": "Tajikistan",
-   "name": "Khovar",
-   "url": "https://khovar.tj/feed/",
-   "lang": "en",
-   "status": "ok",
-   "detail": "discovered; newest 2026-09-24",
-   "secs": 7
-  },
-  {
-   "country": "Tajikistan",
-   "name": "Sputnik Tajikistan",
-   "url": "https://tj.sputniknews.ru/export/rss2/archive/index.xml",
-   "lang": "ru",
-   "status": "ok",
-   "detail": "discovered; newest 2026-09-24",
-   "secs": 4
-  },
-  {
-   "country": "Tajikistan",
-   "name": "Avesta",
-   "url": "https://avesta.tj/feed/",
-   "lang": "ru",
-   "status": "ok",
-   "detail": "discovered; newest 2026-09-24",
-   "secs": 3
-  },
-  {
-   "country": "Tajikistan",
-   "name": "Times of Central Asia",
-   "url": "https://timesca.com/feed/",
-   "lang": "en",
-   "status": "ok",
-   "detail": "discovered; newest 2026-09-24",
-   "secs": 2
-  },
-  {
    "country": "Turkmenistan",
    "name": "Turkmenportal",
    "url": "https://turkmenportal.com/",
@@ -13925,60 +13871,6 @@
    "secs": 0
   },
   {
-   "country": "Vanuatu",
-   "name": "Vanuatu Daily Post",
-   "url": "https://www.dailypost.vu/",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
-   "country": "Vanuatu",
-   "name": "VBTC",
-   "url": "https://vbtc.vu/",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
-   "country": "Vanuatu",
-   "name": "Vanuatu Independent",
-   "url": "https://www.vanuatuindependent.com/",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
-   "country": "Vanuatu",
-   "name": "Vanuatu Business Review",
-   "url": "https://vbr.vu/",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
-   "country": "Vanuatu",
-   "name": "Islands Business",
-   "url": "https://islandsbusiness.com/",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
-   "country": "Vanuatu",
-   "name": "RNZ Pacific",
-   "url": "https://www.rnz.co.nz/international/pacific-news",
-   "lang": "en",
-   "status": "none",
-   "detail": "ConnectError",
-   "secs": 0
-  },
-  {
    "country": "Kosovo",
    "name": "Koha",
    "url": "https://www.koha.net/",
@@ -15039,6 +14931,204 @@
    "status": "none",
    "detail": "ConnectError",
    "secs": 0
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Asia-Plus",
+   "url": "https://asiaplus.news/feed/",
+   "lang": "ru",
+   "status": "ok",
+   "detail": "newest 2026-09-24",
+   "secs": 1
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Ozodi (RFE/RL)",
+   "url": "https://www.azattyqasia.org/api/",
+   "lang": "ru",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 3
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Khovar",
+   "url": "https://khovar.tj/feed/",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 4
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Sputnik Tajikistan",
+   "url": "https://tj.sputniknews.ru/export/rss2/archive/index.xml",
+   "lang": "ru",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 2
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Avesta",
+   "url": "https://avesta.tj/feed/",
+   "lang": "ru",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 1
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Times of Central Asia",
+   "url": "https://timesca.com/feed/",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 1
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Pressa.tj",
+   "url": "https://pressa.tj/feed/",
+   "lang": "ru",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 4
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Dialog.tj",
+   "url": "https://www.dialog.tj/",
+   "lang": "ru",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 4
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Jumhuriyat",
+   "url": "https://jumhuriyat.tj/",
+   "lang": "tg",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 8
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Faraj",
+   "url": "https://faraj.tj/",
+   "lang": "tg",
+   "status": "none",
+   "detail": "ConnectError",
+   "secs": 1
+  },
+  {
+   "country": "Tajikistan",
+   "name": "Ozodi (EN)",
+   "url": "https://www.ozodi.org/api/",
+   "lang": "tg",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 2
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Vanuatu Daily Post",
+   "url": "https://www.dailypost.vu/",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 21
+  },
+  {
+   "country": "Vanuatu",
+   "name": "VBTC",
+   "url": "https://vbtc.vu/feed/",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 3
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Vanuatu Independent",
+   "url": "https://www.vanuatuindependent.com/",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 11
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Vanuatu Business Review",
+   "url": "https://vbr.vu/feed/",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-23",
+   "secs": 5
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Islands Business",
+   "url": "https://islandsbusiness.com/feed/",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24",
+   "secs": 12
+  },
+  {
+   "country": "Vanuatu",
+   "name": "RNZ Pacific",
+   "url": "https://www.rnz.co.nz/rss/news",
+   "lang": "en",
+   "status": "ok",
+   "detail": "discovered; newest 2026-09-24 chrome-tls",
+   "secs": 14
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Loop Vanuatu",
+   "url": "https://vanuatu.loopnews.com/",
+   "lang": "en",
+   "status": "none",
+   "detail": "ConnectError",
+   "secs": 0
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Vanuatu Digest",
+   "url": "https://vanuatudigest.com/",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 19
+  },
+  {
+   "country": "Vanuatu",
+   "name": "ABC Pacific",
+   "url": "https://www.abc.net.au/pacific",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 17
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Pacific Advocate",
+   "url": "https://pacificadvocate.com/",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 14
+  },
+  {
+   "country": "Vanuatu",
+   "name": "Vanuatu Government news",
+   "url": "https://www.gov.vu/index.php/news",
+   "lang": "en",
+   "status": "none",
+   "detail": "not a feed",
+   "secs": 24
   }
  ]
 }

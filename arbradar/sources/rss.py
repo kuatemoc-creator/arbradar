@@ -60,7 +60,7 @@ _STRONG = re.compile(
     r"міжнародн\w+ арбітраж|інвестиційн\w+ арбітраж|арбітражн\w+ трибунал|"
     r"uluslararas\u0131 tahkim|tahkim mahkemesi|hakem heyeti|yat\u0131r\u0131m tahkimi|"
     r"\barbitraj\b|արբիտրաժ|არბიტრაჟ|التحكيم الدولي|arbitrase internasional|tr\u1ecdng t\u00e0i qu\u1ed1c t\u1ebf|"
-    r"expropri|экспроприац|експропріац|kamula\u015ft\u0131r|nacionaliz|nationalis|nationaliz|национализ|націоналізац|"
+    r"expropri|экспроприац|експропріац|kamula\u015ft\u0131r|nacionaliza[cçr]|nacionaliz[oó]\b|nationali[sz](?:e|ed|es|ing|ation)|национализ(?:ац|иров)|націоналізац|"
     r"milliləşdir|ազգայնաց|ნაციონალიზ|تأميم|nasionalisasi|"
     r"investment treaty|bilateral investment|tratado bilateral|trait\u00e9 bilat|инвестиционн[а-я]+ (спор|соглашен)|"
     r"інвестиційн[а-я]+ (спір|угод)|yat\u0131r\u0131m anla\u015fmas|notice of (dispute|intent|arbitration)|"

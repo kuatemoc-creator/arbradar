@@ -4326,6 +4326,18 @@ national_press:
   enabled: true
   verified: '2026-09-24'
 - country: Tajikistan
+  name: Ozodi (EN)
+  url: https://www.ozodi.org/api/
+  lang: tg
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
+  name: Pressa.tj
+  url: https://pressa.tj/feed/
+  lang: ru
+  enabled: true
+  verified: '2026-09-24'
+- country: Tajikistan
   name: Sputnik Tajikistan
   url: https://tj.sputniknews.ru/export/rss2/archive/index.xml
   lang: ru
@@ -4793,6 +4805,24 @@ national_press:
   name: UzDaily
   url: https://uzdaily.uz/en/rss
   lang: uz
+  enabled: true
+  verified: '2026-09-24'
+- country: Vanuatu
+  name: Islands Business
+  url: https://islandsbusiness.com/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Vanuatu
+  name: VBTC
+  url: https://vbtc.vu/feed/
+  lang: en
+  enabled: true
+  verified: '2026-09-24'
+- country: Vanuatu
+  name: Vanuatu Business Review
+  url: https://vbr.vu/feed/
+  lang: en
   enabled: true
   verified: '2026-09-24'
 - country: Venezuela

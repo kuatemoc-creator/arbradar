@@ -88,6 +88,7 @@ email carries it.
 | RSS | Reported | GAR, IAReporter, Kluwer, Jus Mundi, IISD, institutions. |
 | PCA | Primary | Case list and press releases, relayed from a machine Cloudflare lets in (`tools/relay.sh`); GitHub's runners are refused. |
 | **National press**, 182 States | Reported | The business press, paper of record, legal press and wire of every State that can be a respondent: `tools/outlets.py` lists them, `tools/discover.py` finds and verifies each one's feed and wires it into `sources.yaml`. Read every run, filtered to dispute language in the feed's own language. Five or more feeds per State is the floor; `SOURCES.md` shows where it is not met yet. |
+| **Feedless national press**, 835 outlets | Reported | Half the papers on the map publish no feed. They are read anyway: `sitesweep` asks Google News for each batch of eight outlets with the dispute terms of their language (`site:` queries, nothing decoded), and `frontpage` reads the home page of every site that answers and keeps the headlines that speak of a dispute. |
 | **Google News editions**, 124 | Reported | One edition per State in its own language, swept with the dispute and State-measure terms in that language, plus an English query per State. |
 | **GDELT** | Reported | Global press with country tagging, for the States whose press has no feeds. |
 

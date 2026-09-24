@@ -838,6 +838,25 @@ def _press_map():
     return out
 
 
+def _feedless_map():
+    """Outlets with no feed that the pipeline reads anyway (docs/press.json)."""
+    path = os.path.join(ROOT, "docs", "press.json")
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    seen = set()
+    for r in json.load(open(path, encoding="utf-8")).get("results") or []:
+        if r.get("status") == "ok" or not r.get("url"):
+            continue
+        host = re.sub(r"^(www|amp|m)\.", "", __import__("urllib.parse").parse.urlsplit(r["url"]).netloc.lower())
+        if host in seen:
+            continue
+        seen.add(host)
+        out.setdefault(r["country"], []).append({"name": r["name"], "url": r["url"], "lang": r.get("lang", "en"),
+                                                 "front": r.get("status") == "none" and str(r.get("detail", "")).startswith("not a feed")})
+    return out
+
+
 def _editions_map():
     """Google News editions per country, from the sweep's own list."""
     sys.path.insert(0, ROOT)
@@ -884,15 +903,20 @@ def write_docs(results):
     glob = [c for c in countries if c == "Global"]
     countries = sorted(c for c in countries if c not in sectors and c not in glob) + sectors + glob
 
-    lines = ["# ArbRadar source map", "", "Verified {}. Every row is read on every run. `python -m tools.discover` finds and "
+    lines = ["# ArbRadar source map", "", "Verified {}. Every row is read on every run: a press feed where the paper has one; a Google News "
+             "`site:` query and the paper's own front page where it has none. `python -m tools.discover` finds and "
              "verifies press feeds; `python -m tools.sourcemap --probe` re-checks the registers, courts and gazettes.".format(today), ""]
     summary = []
     body = []
     thin = []
+    feedless = _feedless_map()
     for c in countries:
         rows = []
         for f in press.get(c, []):
             rows.append(("press", f["name"], f["url"], _LANG.get(f.get("lang", "en"), f.get("lang", "en")), "feed"))
+        for f in feedless.get(c, []):
+            rows.append(("press", f["name"], f["url"], _LANG.get(f.get("lang", "en"), f.get("lang", "en")),
+                         "no feed: read through a Google News site: query" + (" and its front page" if f["front"] else "")))
         for r in results:
             if r[0] == c and r[5] == "wired" and r[1] != "press":
                 rows.append((r[1], r[2], r[3], "", r[4].replace("WIRED", "").strip(" -;")))
@@ -902,7 +926,7 @@ def write_docs(results):
                 rows.append(("sweep", "Google News, {} edition".format(_LANG.get(lang, lang)), "https://news.google.com/", _LANG.get(lang, lang), "dispute and State-measure terms"))
             rows.append(("sweep", "Google News, State query", "https://news.google.com/", "English", '"{}" with the dispute terms'.format(c)))
             rows.append(("sweep", "GDELT, country tag", "https://www.gdeltproject.org/", "all", "dispute terms, articles tagged to the State"))
-        tried = [r for r in results if r[0] == c and r[5] != "wired" and not (r[1] == "press" and r[5] == "rss")]
+        tried = [r for r in results if r[0] == c and r[5] != "wired" and r[1] != "press"]
         n_press = sum(1 for r in rows if r[0] == "press")
         n_all = len(rows)
         if not c.startswith("Sector") and c != "Global":
