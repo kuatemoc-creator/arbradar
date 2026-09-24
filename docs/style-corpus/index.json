@@ -2329,6 +2329,34 @@
   "documents": 4
  },
  {
+  "id": "18c025d629eae97d",
+  "source": "iareporter",
+  "date": "2023-11-24",
+  "subject": "IAReporter - Latest Headlines and Documents for Download",
+  "sections": [
+   "Latest Headlines",
+   "Notable legal topics",
+   "Previous Headlines",
+   "Documents For Download"
+  ],
+  "stories": 6,
+  "documents": 4
+ },
+ {
+  "id": "18bf84c9326d6cd7",
+  "source": "iareporter",
+  "date": "2023-11-22",
+  "subject": "IAReporter - Latest Headlines and Documents for Download",
+  "sections": [
+   "Latest Headlines",
+   "Notable legal topics",
+   "Previous Headlines",
+   "Documents For Download"
+  ],
+  "stories": 8,
+  "documents": 3
+ },
+ {
   "id": "18bd953c4b3696f2",
   "source": "iareporter",
   "date": "2023-11-16",
@@ -4293,6 +4321,66 @@
   "documents": 0
  },
  {
+  "id": "19cbfcec368ffb42",
+  "source": "gar",
+  "date": "2026-03-05",
+  "subject": "Panel rules in Bahamas port dispute",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
+  "documents": 0
+ },
+ {
+  "id": "19cbb422cb99419f",
+  "source": "gar",
+  "date": "2026-03-04",
+  "subject": "UK Supreme Court affirms no state immunity from ICSID awards",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
+  "documents": 0
+ },
+ {
+  "id": "19cb5672ce47b854",
+  "source": "gar",
+  "date": "2026-03-03",
+  "subject": "Shell fails to revive claim against LNG exporter",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "19cb09a38c8d28d5",
+  "source": "gar",
+  "date": "2026-03-02",
+  "subject": "UK court enforces US$66 billion Yukos awards",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "19ca07531eb52776",
+  "source": "gar",
+  "date": "2026-02-27",
+  "subject": "Hong Kong court halts bribery claim in Congo mining saga",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
   "id": "19c9bb3d921ca7bc",
   "source": "gar",
   "date": "2026-02-26",
@@ -5046,6 +5134,66 @@
   "documents": 0
  },
  {
+  "id": "19a9416bd192f780",
+  "source": "gar",
+  "date": "2025-11-17",
+  "subject": "The NAFTA-math – Kinnear looks at Chapter 11's legacy",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "19a843c7195ae328",
+  "source": "gar",
+  "date": "2025-11-14",
+  "subject": "Russia seeks to enforce Wintershall injunction",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "19a7ee3106da706b",
+  "source": "gar",
+  "date": "2025-11-13",
+  "subject": "Russia asks US Supreme Court to hear Yukos appeal",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "19a7a2ca3797cd07",
+  "source": "gar",
+  "date": "2025-11-12",
+  "subject": "Azerbaijan oilfield claim gets all-clear",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
+  "documents": 0
+ },
+ {
+  "id": "19a74e73c8797c39",
+  "source": "gar",
+  "date": "2025-11-11",
+  "subject": "Wintershall judge steps down in Dubai",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
   "id": "19a6fa9772c90bef",
   "source": "gar",
   "date": "2025-11-10",
@@ -5244,6 +5392,78 @@
    "Recent Highlights"
   ],
   "stories": 8,
+  "documents": 0
+ },
+ {
+  "id": "199ee87b829fbedc",
+  "source": "gar",
+  "date": "2025-10-16",
+  "subject": "Spanish arbitrator's conviction upheld in Sulu saga",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 9,
+  "documents": 0
+ },
+ {
+  "id": "199e96323fa825fe",
+  "source": "gar",
+  "date": "2025-10-15",
+  "subject": "Malaysia turns to Linklaters to defend skyscraper claim",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
+  "documents": 0
+ },
+ {
+  "id": "199e42c0b181a570",
+  "source": "gar",
+  "date": "2025-10-14",
+  "subject": "Seoul skyscraper sale leads to SIAC award",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "199df06e4ff1ec1e",
+  "source": "gar",
+  "date": "2025-10-13",
+  "subject": "Petrovietnam wins set aside of power plant award in Singapore",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 6,
+  "documents": 0
+ },
+ {
+  "id": "199cee8768a372c0",
+  "source": "gar",
+  "date": "2025-10-10",
+  "subject": "BP wins claim against LNG exporter",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
+  "documents": 0
+ },
+ {
+  "id": "199ca826edbf0b80",
+  "source": "gar",
+  "date": "2025-10-09",
+  "subject": "Iraqi mobile operator wins ICC claim against Kuwaiti group",
+  "sections": [
+   "Today's Headlines",
+   "Recent Highlights"
+  ],
+  "stories": 7,
   "documents": 0
  }
 ]

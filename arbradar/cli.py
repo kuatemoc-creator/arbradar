@@ -154,8 +154,15 @@ def cmd_build(args, settings, conn):
         return 1
     # A trade-press headline that still has no text goes to 'In brief', after
     # every story that can be explained; it is never the lead or a development.
+    def _docket_text(text: str) -> bool:
+        # "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery": a docket
+        # entry, not an explanation. Mostly capitals means it reads as one.
+        letters = [c for c in text if c.isalpha()]
+        return bool(letters) and sum(1 for c in letters if c.isupper()) > 0.35 * len(letters)
+
     for it in items:
-        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))
+        text = email_html.summary_of(it)
+        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", text) or _docket_text(text)
     items = [it for it in items if not it["brief_only"]] + [it for it in items if it["brief_only"]]
     from .config import live_site_url
     base = live_site_url(settings)
