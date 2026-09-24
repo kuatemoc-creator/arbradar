@@ -10,6 +10,7 @@ for whom. The item keeps its own link; the other copies are cited beside it.
 Nothing is decoded or scraped through a challenge: Google News entries are
 cited by the outlet name the feed gives and the feed's own link.
 """
+import datetime as dt
 import html
 import json
 import re
@@ -167,6 +168,12 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             if my_ents and their_ents and not (my_ents & their_ents):
                 continue
             if not (my_ents & their_ents) and not (same_state and shared >= 4):
+                continue
+            # An article from years before the item is background, not a copy of
+            # the story: a 2021 sale of a company is not this week's petition.
+            mine = str(it.get("published_at") or "")[:10]
+            theirs_date = str(e.get("published_at") or "")[:10]
+            if mine and theirs_date and theirs_date < (dt.date.fromisoformat(mine) - dt.timedelta(days=21)).isoformat():
                 continue
             their_states = {s.lower() for s in states_in(e["title"] + " " + e["snippet"])}
             if my_states and their_states and not (my_states & their_states):

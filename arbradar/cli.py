@@ -195,7 +195,8 @@ def cmd_build(args, settings, conn):
         # A wire or a major paper writes the better headline; use it when ours
         # comes from a minor outlet and theirs is plainly the same story.
         from .outlets import rank as outlet_rank
-        if outlet_rank(it.get("source") or "", it.get("url") or "") >= 3 and not (it.get("title_en") or "").strip():
+        if outlet_rank(it.get("source") or "", it.get("url") or "") >= 3 and not (it.get("title_en") or "").strip() \
+                and not (it.get("source") or "").startswith(("US federal docket", "ICSID docket", "SEC EDGAR", "Court:", "PCA")):
             better = next((s for s in found["sources"] if outlet_rank(s.get("source") or "", s.get("url") or "") <= 2
                            and 5 <= len((s.get("title") or "").split()) <= 16), None)
             if better:
