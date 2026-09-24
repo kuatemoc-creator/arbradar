@@ -4,7 +4,7 @@ import hashlib
 import json
 import logging
 import re
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from urllib.parse import urlsplit, urlunsplit
 
 from . import db, llm, score as scoring
@@ -15,6 +15,15 @@ from . import fetch as fetch_mod
 
 log = logging.getLogger(__name__)
 TRACKING = re.compile(r"^(utm_|fbclid|gclid|mc_|ref$)")
+
+# The day an issue is built for. Today unless a past day is being rebuilt, in
+# which case nothing published after it may appear and only earlier days count
+# as already shown.
+AS_OF: Optional[dt.date] = None
+
+
+def as_of() -> dt.date:
+    return AS_OF or dt.date.today()
 
 
 def canonical(url: str) -> str:
@@ -61,8 +70,11 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
             if event_type == "commercial_dispute" and treaty_context:
                 continue                              # treaty patterns decide those
             hit = next((p for p in phrases if p in text), None)
-            if hit and event_type in ("lateral_move", "appointment") and not _PEOPLE_CONTEXT.search(text):
+            if hit and event_type in ("lateral_move", "appointment", "counsel_instructed", "counsel_change") and not _PEOPLE_CONTEXT.search(text):
                 continue
+            if hit and event_type == "award_issued" and not re.search(
+                    r"arbitra|tribunal|icsid|\bicc\b|lcia|siac|hkiac|uncitral|\bpca\b|annul|enforce", text):
+                continue                              # a road contract "award" is procurement, not an award
             if hit and event_type == "notice_of_intent" and not re.search(
                     r"arbitra|treaty|icsid|dispute|claim|investor|\bbit\b|uncitral|cooling", text):
                 continue                              # a NEPA or planning notice, not a treaty notice
@@ -90,6 +102,39 @@ def rule_classify(item: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
+def item_from_raw(name: str, raw: Dict[str, Any], now: str) -> Optional[Dict[str, Any]]:
+    """An adapter's raw item as a classified row, whether it arrived live or relayed."""
+    if not (raw.get("title") and raw.get("url")):
+        return None
+    item = {
+        "fingerprint": fingerprint(raw),
+        "url": raw["url"],
+        "source": raw.get("source") or name,
+        "source_tier": TIERS.get(name, 2),
+        "title": raw["title"][:500],
+        "summary": "" if is_paywall(raw.get("summary") or "") else (raw.get("summary") or "")[:4000],
+        "body": (raw.get("body") or "")[:20000] or None,
+        "published_at": raw.get("published_at"),
+        "fetched_at": now,
+        "event_type": raw.get("event_type"),
+        "institution": raw.get("institution"),
+        "treaty": raw.get("treaty"),
+        "case_ref": raw.get("case_ref"),
+        "sectors": raw.get("sectors") or [],
+        "claimants": raw.get("claimants") or [],
+        "respondents": raw.get("respondents") or [],
+        "states": raw.get("states") or [],
+        "counsel": raw.get("counsel") or [],
+        "arbitrators": raw.get("arbitrators") or [],
+        "amount_usd": raw.get("amount_usd"),
+        "flag_reason": raw.get("flag_reason"),
+        "lang": raw.get("lang") or "en",
+        "country": raw.get("country") or None,
+    }
+    item.update(rule_classify(item))
+    return item
+
+
 def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
     """Run every source adapter and store new items."""
     stats: Dict[str, int] = {}
@@ -106,35 +151,8 @@ def ingest(conn, settings, days: int, only: List[str] = None) -> Dict[str, int]:
         try:
             for raw in fn(days=days):
                 found += 1
-                if not (raw.get("title") and raw.get("url")):
-                    continue
-                item = {
-                    "fingerprint": fingerprint(raw),
-                    "url": raw["url"],
-                    "source": raw.get("source") or name,
-                    "source_tier": TIERS.get(name, 2),
-                    "title": raw["title"][:500],
-                    "summary": "" if is_paywall(raw.get("summary") or "") else (raw.get("summary") or "")[:4000],
-                    "body": (raw.get("body") or "")[:20000] or None,
-                    "published_at": raw.get("published_at"),
-                    "fetched_at": now,
-                    "event_type": raw.get("event_type"),
-                    "institution": raw.get("institution"),
-                    "treaty": raw.get("treaty"),
-                    "case_ref": raw.get("case_ref"),
-                    "sectors": raw.get("sectors") or [],
-                    "claimants": raw.get("claimants") or [],
-                    "respondents": raw.get("respondents") or [],
-                    "states": raw.get("states") or [],
-                    "counsel": raw.get("counsel") or [],
-                    "arbitrators": raw.get("arbitrators") or [],
-                    "amount_usd": raw.get("amount_usd"),
-                    "flag_reason": raw.get("flag_reason"),
-                    "lang": raw.get("lang") or "en",
-                    "country": raw.get("country") or None,
-                }
-                item.update(rule_classify(item))
-                if db.upsert_item(conn, item):
+                item = item_from_raw(name, raw, now)
+                if item and db.upsert_item(conn, item):
                     new += 1
         except Exception as exc:                      # noqa: BLE001 - boundary
             error = str(exc)[:300]
@@ -433,13 +451,14 @@ def _cite_best(rep: Dict[str, Any]) -> None:
 def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14) -> Dict[str, List[Dict[str, Any]]]:
     """Primary-record lists for the issue: docket movements, disclosures, court filings.
     Excludes anything already featured. Rule-based; the records are the story."""
-    cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    cutoff = (as_of() - dt.timedelta(days=days)).isoformat()
+    upto = as_of().isoformat() + "~"
     skip = {it["id"] for it in featured} | {a.get("url") for it in featured for a in (it.get("also") or [])}
     skip_titles = ({fingerprint(it) for it in featured} | {fingerprint(a) for it in featured for a in (it.get("also") or [])}
                    | {title_key(it) for it in featured} | {title_key(a) for it in featured for a in (it.get("also") or [])})
     # ...and nothing an earlier day already carried, in any list.
     from . import site
-    shown_urls, shown_fps = site.shown_before(dt.date.today().isoformat())
+    shown_urls, shown_fps = site.shown_before(as_of().isoformat())
     skip |= shown_urls
     skip_titles |= shown_fps
 
@@ -464,24 +483,24 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
         return out
 
     docket = take(
-        "SELECT * FROM items WHERE source='ICSID docket' AND relevant=1 AND published_at>=? "
+        "SELECT * FROM items WHERE source='ICSID docket' AND relevant=1 AND published_at>=? AND published_at<=? "
         "AND (event_type IN ('new_case_filed','award_issued') "
         "     OR (event_type='annulment_setaside' AND (title LIKE '%application for annulment%' "
         "         OR title LIKE '%decision on annulment%' OR title LIKE '%issues its decision%' "
         "         OR title LIKE '%Committee is constituted%')) "
         "     OR title LIKE '%resignation%' OR title LIKE '%disqualif%') "
-        "ORDER BY published_at DESC", (cutoff,), 8)
+        "ORDER BY published_at DESC", (cutoff, upto), 8)
     disclosures = take(
-        "SELECT * FROM items WHERE source='SEC EDGAR' AND relevant=1 AND published_at>=? "
+        "SELECT * FROM items WHERE source='SEC EDGAR' AND relevant=1 AND published_at>=? AND published_at<=? "
         "AND url NOT LIKE '%ex10%' AND url NOT LIKE '%ex2-%' AND url NOT LIKE '%ex4%' AND url NOT LIKE '%ex3%' "
-        "ORDER BY published_at DESC", (cutoff,), 6,
+        "ORDER BY published_at DESC", (cutoff, upto), 6,
         key=lambda it: (it.get("title") or "").split(" discloses")[0])
     court_rows = take(
-        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? "
+        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? AND published_at<=? "
         "AND (source LIKE 'Court:%' OR (source LIKE 'US federal docket%' "
         "     AND (source LIKE '%sovereign%' OR title LIKE 'In re%' OR title LIKE 'In Re%' "
         "          OR title LIKE 'IN RE%' OR summary LIKE '%foreign%'))) "
-        "ORDER BY published_at DESC", (cutoff,), 30)
+        "ORDER BY published_at DESC", (cutoff, upto), 30)
     # One list, many jurisdictions: at most two rows per country, so that a busy
     # registry cannot crowd out the rest.
     per: Dict[str, int] = {}
@@ -501,12 +520,12 @@ def record_extras(conn, settings, featured: List[Dict[str, Any]], days: int = 14
     # People: firm moves and institutional appointments from the press, and the
     # tribunal appointments the ICSID docket records - who appointed whom.
     people_rows = take(
-        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? AND ("
+        "SELECT * FROM items WHERE relevant=1 AND COALESCE(score,0)>0 AND published_at>=? AND published_at<=? AND ("
         "  event_type IN ('lateral_move','appointment') "
         "  OR (source='ICSID docket' AND event_type='tribunal_constituted' "
         "      AND (title LIKE '%appoint%' OR title LIKE '%constituted%' OR title LIKE '%President%'))) "
-        "ORDER BY score DESC, published_at DESC", (cutoff,), 40)
-    people = drop_repeats(people_rows, site.people_before(dt.date.today().isoformat()))
+        "ORDER BY score DESC, published_at DESC", (cutoff, upto), 40)
+    people = drop_repeats(people_rows, site.people_before(as_of().isoformat()))
     moves = sorted((it for it in people if it.get("source") != "ICSID docket"),
                    key=lambda it: it.get("published_at") or "", reverse=True)
     seats = sorted((it for it in people if it.get("source") == "ICSID docket"),
@@ -569,7 +588,8 @@ _ON_TOPIC = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIA
 
 
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
-    cutoff = (dt.date.today() - dt.timedelta(days=settings.lookback_days + extra_days)).isoformat()
+    cutoff = (as_of() - dt.timedelta(days=settings.lookback_days + extra_days)).isoformat()
+    upto = as_of().isoformat() + "~"
     # Pinned items always make the cut; excluded ones never do. Everything else
     # competes on score within the window.
     rows = conn.execute(
@@ -578,19 +598,20 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
         "AND source NOT LIKE 'Court:%' "          # judgments belong to the court list, not the stories
         "AND COALESCE(event_type,'') NOT IN ('lateral_move','appointment') "
         "AND (COALESCE(pinned,0)=1 OR (score >= ? "
-        "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ?)) "
+        "     AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "
+        "     AND COALESCE(published_at, substr(fetched_at,1,10)) <= ?)) "
         "ORDER BY COALESCE(pinned,0) DESC, score DESC LIMIT ?",
-        (settings.min_score, cutoff, settings.max_items_per_issue * (12 if extra_days else 4))).fetchall()
+        (settings.min_score, cutoff, upto, settings.max_items_per_issue * (12 if extra_days else 4))).fetchall()
     # What earlier days carried is not a candidate, and must not crowd the pool either.
     from . import site as _site
-    shown_urls, shown_keys = _site.shown_before(dt.date.today().isoformat())
+    shown_urls, shown_keys = _site.shown_before(as_of().isoformat())
     rows = [r for r in rows if r["url"] not in shown_urls and title_key(dict(r)) not in shown_keys]
     # A story carried on an earlier day is not news on a later one. Earlier
     # days' stories go into the clustering first, so a new copy of an old story
     # merges into them and drops out.
     from . import site
-    today = dt.date.today().isoformat()
-    since = (dt.date.today() - dt.timedelta(days=21)).isoformat()
+    today = as_of().isoformat()
+    since = (as_of() - dt.timedelta(days=21)).isoformat()
     anchors: List[Dict[str, Any]] = []
     for r in conn.execute("SELECT i.* FROM items i JOIN issues s ON s.id=i.issue_id "
                           "WHERE substr(s.created_at,1,10) < ? AND COALESCE(i.published_at,'') >= ?", (today, since)):

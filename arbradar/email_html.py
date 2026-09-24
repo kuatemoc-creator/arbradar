@@ -32,7 +32,9 @@ SHORT = {"commercial_dispute": "Commercial arbitration", "notice_of_intent": "No
          "new_case_filed": "New case", "enforcement_action": "Enforcement", "annulment_setaside": "Annulment",
          "state_measure": "State measure", "distress_event": "State measure", "award_issued": "Award",
          "treaty_action": "Treaty", "funding": "Funding", "tribunal_constituted": "Tribunal",
-         "lateral_move": "Move", "appointment": "Appointment", "counsel_tender": "Tender for counsel", "commentary": "Note"}
+         "lateral_move": "Move", "appointment": "Appointment", "counsel_tender": "Tender for counsel", "commentary": "Note",
+         "counsel_change": "Counsel replaced", "interim_relief": "Interim relief", "counsel_instructed": "Counsel instructed",
+         "settlement": "Settlement", "law_reform": "Law reform"}
 
 
 def esc(s: Any) -> str:

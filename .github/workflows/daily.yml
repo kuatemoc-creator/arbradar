@@ -46,6 +46,11 @@ jobs:
           if git fetch origin gh-pages 2>/dev/null; then
             git archive origin/gh-pages data | tar -x -C out/site && echo "day archive restored: $(ls out/site/data | wc -l) days"
           fi
+          # Sources that refuse this runner (PCA, some court sites) arrive from a
+          # machine that can read them: tools/relay.sh writes the `relay` branch.
+          if git fetch origin relay 2>/dev/null; then
+            git show origin/relay:relay.jsonl > data/relay.jsonl && echo "relay restored: $(wc -l < data/relay.jsonl) items"
+          fi
 
       - name: Build
         env:

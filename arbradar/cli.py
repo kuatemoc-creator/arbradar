@@ -25,6 +25,31 @@ def cmd_fetch(args, settings, conn):
     return 0
 
 
+def cmd_export(args, settings, conn):
+    """Fetch the sources the cloud cannot reach and write them for the relay."""
+    from . import relay
+    names = args.source.split(",") if args.source else list(relay.BLOCKED_IN_CLOUD)
+    counts = relay.export(names, days=args.days or 7, path=args.out)
+    for name, n in counts.items():
+        print("  {:16} {:>4} items".format(name, n))
+    print("wrote {}".format(args.out))
+    return 0
+
+
+def cmd_import(args, settings, conn):
+    """Store relayed items as if they had been fetched here."""
+    import os
+    from . import relay
+    if not os.path.exists(args.file):
+        print("no relay file at {}".format(args.file))
+        return 0
+    new = relay.import_file(conn, settings, args.file)
+    for name, n in new.items():
+        print("  {:16} {:>4} new".format(name, n))
+    print("{} new items from the relay".format(sum(new.values())))
+    return 0
+
+
 def cmd_email(args, settings, conn):
     """Render out/issue-<date>.html from the saved day (out/site/data/<date>.json),
     pulling the day from the published site first when it is newer there."""
@@ -79,7 +104,9 @@ def cmd_enrich(args, settings, conn):
 def cmd_build(args, settings, conn):
     # A rebuild on the same day replaces that day's issue; otherwise the second
     # build sees only what the first one left over.
-    today = dt.date.today().isoformat()
+    if getattr(args, "date", None):
+        pipeline.AS_OF = dt.date.fromisoformat(args.date)
+    today = pipeline.as_of().isoformat()
     prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
     if prior:
         marks = ",".join("?" * len(prior))
@@ -92,7 +119,7 @@ def cmd_build(args, settings, conn):
         print("Nothing scored above {} in the last {} days.".format(
             settings.min_score, settings.lookback_days))
         return 1
-    date = dt.date.today().isoformat()
+    date = today
 
     filled = enrich.enrich(conn, items)
     if filled:
@@ -157,7 +184,7 @@ def cmd_build(args, settings, conn):
     cur = conn.execute(
         "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
         "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",
-        (dt.datetime.now().isoformat(timespec="seconds"), subject,
+        (today + dt.datetime.now().isoformat(timespec="seconds")[10:], subject,
          paths["html"], paths["md"], len(items)))
     issue_id = cur.lastrowid
     conn.executemany("UPDATE items SET issue_id=? WHERE url=? OR id=?",
@@ -275,11 +302,17 @@ def main(argv=None):
     sub = p.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("fetch", parents=[common], help="pull from sources")
     f.add_argument("--source")
+    x = sub.add_parser("export", parents=[common], help="fetch the sources the cloud cannot reach, for the relay")
+    x.add_argument("--source", help="adapters to run (default: the ones GitHub's runners are refused by)")
+    x.add_argument("--out", default="out/relay.jsonl")
+    m = sub.add_parser("import", parents=[common], help="store relayed items")
+    m.add_argument("--file", default="data/relay.jsonl")
     sub.add_parser("enrich", parents=[common], help="LLM triage + extraction")
     sub.add_parser("reclassify", parents=[common], help="re-run the rule classifier after a taxonomy change")
     e = sub.add_parser("email", parents=[common], help="render the email for a saved day, from the published site")
     e.add_argument("--date", default=None)
-    sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
+    b = sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
+    b.add_argument("--date", default=None, help="rebuild a past day as of that day (YYYY-MM-DD)")
     r = sub.add_parser("run", parents=[common, llm_opts], help="fetch + enrich + build")
     r.add_argument("--source")
     t = sub.add_parser("top", parents=[common], help="inspect the ranking")
@@ -309,7 +342,7 @@ def main(argv=None):
         args.source = None
 
     conn = db.connect()
-    handler = {"fetch": cmd_fetch, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify, "email": cmd_email,
+    handler = {"fetch": cmd_fetch, "export": cmd_export, "import": cmd_import, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify, "email": cmd_email,
                "run": cmd_run, "top": cmd_top, "send": cmd_send,
                "serve": cmd_serve, "intel": cmd_intel, "articles": cmd_articles}[args.cmd]
     return handler(args, settings, conn)

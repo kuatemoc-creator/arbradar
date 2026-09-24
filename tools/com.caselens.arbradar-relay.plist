@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Relays the sources the cloud run cannot reach (PCA, some court sites) from
+       this Mac at 20:30 local, ninety minutes before the cloud build at 22:00
+       Yerevan. Install: cp to ~/Library/LaunchAgents and launchctl load it. -->
+  <key>Label</key><string>com.caselens.arbradar-relay</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>/Users/claudecodeuser/arb-radar/tools/relay.sh</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/claudecodeuser/arb-radar</string>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>20</integer><key>Minute</key><integer>30</integer></dict>
+  <key>StandardOutPath</key><string>/Users/claudecodeuser/arb-radar/out/relay.log</string>
+  <key>StandardErrorPath</key><string>/Users/claudecodeuser/arb-radar/out/relay.log</string>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string></dict>
+</dict>
+</plist>

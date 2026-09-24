@@ -127,9 +127,10 @@ posts, opinion pieces with no underlying dispute, law firm marketing with no cas
 and anything about domestic litigation unconnected to arbitration.
 
 Choose event_type from exactly these keys:
-notice_of_intent, s1782_application, new_case_filed, enforcement_action,
-annulment_setaside, distress_event, award_issued, treaty_action, funding,
-tribunal_constituted, lateral_move, commentary"""
+counsel_tender, counsel_change, notice_of_intent, s1782_application, new_case_filed,
+enforcement_action, interim_relief, annulment_setaside, state_measure, commercial_dispute,
+award_issued, distress_event, counsel_instructed, treaty_action, funding, settlement,
+law_reform, tribunal_constituted, appointment, lateral_move, commentary"""
 
 
 def triage(items: List[Dict[str, Any]], model: str, chunk: int = 20) -> Dict[int, TriageVerdict]:

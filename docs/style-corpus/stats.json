@@ -1,903 +1,935 @@
 {
  "gar": {
-  "issues": 67,
+  "issues": 223,
   "date_range": [
-   "2026-05-27",
+   "2025-10-17",
    "2026-09-23"
   ],
-  "items": 449,
+  "items": 1490,
   "items_per_issue": {
-   "n": 67,
+   "n": 223,
    "mean": 6.7,
    "median": 7,
-   "p10": 6,
+   "p10": 5,
    "p90": 8,
    "min": 1,
    "max": 9
   },
   "documents_per_issue": {},
   "sections": {
-   "Today's Headlines": 301,
-   "Recent Highlights": 148
+   "Today's Headlines": 1070,
+   "Recent Highlights": 420
   },
   "headline_words": {
-   "n": 449,
-   "mean": 7.7,
-   "median": 8,
+   "n": 1490,
+   "mean": 7.5,
+   "median": 8.0,
    "p10": 5,
    "p90": 10,
    "min": 3,
-   "max": 15
+   "max": 16
   },
   "headline_chars": {
-   "n": 449,
-   "mean": 51.8,
-   "median": 52,
-   "p10": 38,
-   "p90": 65,
+   "n": 1490,
+   "mean": 50.0,
+   "median": 50.0,
+   "p10": 34,
+   "p90": 64,
    "min": 15,
-   "max": 89
+   "max": 98
   },
   "headline_starts_with_top": [
    [
     "US",
-    15
-   ],
-   [
-    "Russian",
-    13
-   ],
-   [
-    "Canadian",
-    11
-   ],
-   [
-    "Mexico",
-    8
-   ],
-   [
-    "Ukraine",
-    6
-   ],
-   [
-    "Peter",
-    6
-   ],
-   [
-    "New",
-    6
+    42
    ],
    [
     "UK",
-    5
+    27
    ],
    [
-    "Hong",
-    5
+    "Russian",
+    25
    ],
    [
-    "LISTEN:",
-    5
+    "Canadian",
+    22
    ],
    [
-    "Colombian",
-    5
+    "New",
+    22
    ],
    [
-    "European",
-    5
+    "ICSID",
+    18
    ],
    [
     "Chinese",
-    5
-   ],
-   [
-    "Malaysian",
-    4
-   ],
-   [
-    "Italy",
-    4
-   ],
-   [
-    "Baker",
-    4
+    18
    ],
    [
     "Singapore",
-    4
+    17
    ],
    [
     "French",
-    4
+    17
    ],
    [
-    "Korean",
-    4
+    "ICC",
+    15
+   ],
+   [
+    "Indian",
+    15
+   ],
+   [
+    "German",
+    14
    ],
    [
     "Dutch",
-    4
-   ],
-   [
-    "Billion-dollar",
-    4
+    14
    ],
    [
     "Russia",
-    3
-   ],
-   [
-    "Australian",
-    3
-   ],
-   [
-    "Italian",
-    3
+    12
    ],
    [
     "Panel",
-    3
+    12
+   ],
+   [
+    "Hong",
+    11
+   ],
+   [
+    "Ukraine",
+    10
+   ],
+   [
+    "Mexico",
+    10
+   ],
+   [
+    "King",
+    10
+   ],
+   [
+    "Gazprom",
+    10
+   ],
+   [
+    "Spanish",
+    10
+   ],
+   [
+    "LCIA",
+    9
+   ],
+   [
+    "GAR",
+    9
+   ],
+   [
+    "Australian",
+    8
+   ],
+   [
+    "Peter",
+    8
    ]
   ],
   "headline_verbs_top": [
    [
     "hires",
-    17
+    75
    ],
    [
     "wins",
-    16
-   ],
-   [
-    "loses",
-    14
-   ],
-   [
-    "joins",
-    13
-   ],
-   [
-    "fails",
-    13
-   ],
-   [
-    "launches",
-    13
-   ],
-   [
-    "defeats",
-    13
-   ],
-   [
-    "claims",
-    13
-   ],
-   [
-    "seeks",
-    12
-   ],
-   [
-    "threatens",
-    9
-   ],
-   [
-    "pursues",
-    9
-   ],
-   [
-    "rules",
-    8
-   ],
-   [
-    "adds",
-    8
-   ],
-   [
-    "liable",
-    7
-   ],
-   [
-    "names",
-    7
-   ],
-   [
-    "enforces",
-    7
-   ],
-   [
-    "upholds",
-    7
-   ],
-   [
-    "faces",
-    7
-   ],
-   [
-    "takes",
-    6
+    46
    ],
    [
     "promotes",
-    6
+    43
    ],
    [
-    "leaves",
-    4
+    "launches",
+    39
    ],
    [
-    "avoids",
-    4
+    "claims",
+    38
    ],
    [
-    "surfaces",
-    4
+    "joins",
+    37
    ],
    [
-    "launches claim",
-    4
+    "threatens",
+    37
    ],
    [
-    "refuses",
-    4
+    "fails",
+    36
    ],
    [
-    "affirms",
-    3
+    "defeats",
+    36
    ],
    [
-    "opens",
-    3
+    "loses",
+    34
    ],
    [
-    "grants",
-    3
+    "faces",
+    32
    ],
    [
-    "says",
-    3
+    "brings",
+    26
    ],
    [
-    "rejects",
-    3
+    "seeks",
+    23
    ],
    [
-    "denies",
-    3
+    "upholds",
+    23
    ],
    [
-    "to consider",
-    2
+    "takes",
+    23
    ],
    [
-    "orders",
-    2
-   ],
-   [
-    "may face",
-    2
-   ],
-   [
-    "files",
-    2
+    "rules",
+    22
    ],
    [
     "settles",
-    2
+    21
    ],
    [
-    "pays",
-    2
+    "enforces",
+    18
+   ],
+   [
+    "pursues",
+    17
+   ],
+   [
+    "adds",
+    17
+   ],
+   [
+    "beats",
+    15
+   ],
+   [
+    "leaves",
+    13
+   ],
+   [
+    "refuses",
+    13
+   ],
+   [
+    "files",
+    12
+   ],
+   [
+    "launches claim",
+    12
+   ],
+   [
+    "orders",
+    10
+   ],
+   [
+    "opens",
+    10
+   ],
+   [
+    "rejects",
+    10
+   ],
+   [
+    "liable",
+    9
+   ],
+   [
+    "names",
+    9
+   ],
+   [
+    "surfaces",
+    7
+   ],
+   [
+    "to hear",
+    6
+   ],
+   [
+    "says",
+    6
+   ],
+   [
+    "affirms",
+    5
    ],
    [
     "appoints",
-    2
+    5
    ],
    [
-    "probes",
-    2
+    "blocks",
+    5
    ],
    [
-    "censured",
-    2
+    "overturns",
+    5
+   ],
+   [
+    "revives",
+    5
+   ],
+   [
+    "annuls",
+    5
+   ],
+   [
+    "sanctioned",
+    5
    ]
   ],
-  "headline_pct_with_amount": 0.0,
-  "headline_pct_with_institution": 16.5,
-  "headline_pct_with_colon": 2.4,
-  "headline_pct_with_quote": 5.6,
-  "headline_pct_sentence_case": 78.8,
+  "headline_pct_with_amount": 0.6,
+  "headline_pct_with_institution": 18.9,
+  "headline_pct_with_colon": 2.1,
+  "headline_pct_with_quote": 4.3,
+  "headline_pct_sentence_case": 76.0,
   "headline_labels": [],
-  "blurbs": 449,
+  "blurbs": 1490,
   "blurb_words": {
-   "n": 449,
-   "mean": 32.9,
-   "median": 32,
-   "p10": 24,
+   "n": 1490,
+   "mean": 32.6,
+   "median": 32.0,
+   "p10": 23,
    "p90": 43,
-   "min": 14,
-   "max": 90
+   "min": 9,
+   "max": 99
   },
   "blurb_sentences": {
-   "n": 449,
+   "n": 1490,
    "mean": 1.0,
-   "median": 1,
+   "median": 1.0,
    "p10": 1,
    "p90": 1,
    "min": 1,
    "max": 4
   },
-  "blurb_pct_one_sentence": 97.8,
-  "blurb_pct_with_amount": 45.7,
-  "blurb_pct_with_institution": 49.2,
+  "blurb_pct_one_sentence": 98.3,
+  "blurb_pct_with_amount": 38.4,
+  "blurb_pct_with_institution": 45.4,
   "blurb_opening_shape": [
    [
     "<Name> …",
-    237
+    873
    ],
    [
     "A",
-    58
+    156
    ],
    [
     "The",
-    43
-   ],
-   [
-    "An <Adjective> tribunal",
-    27
+    135
    ],
    [
     "A <Adjective> court",
-    25
+    99
    ],
    [
-    "An",
-    16
+    "An <Adjective> tribunal",
+    70
    ],
    [
     "The <Adjective> court",
-    10
+    43
+   ],
+   [
+    "An",
+    34
    ],
    [
     "A <Adjective> judge",
-    9
+    17
    ],
    [
     "A <Adjective> company",
-    6
+    14
    ],
    [
     "A <Adjective> businessman",
-    5
+    12
+   ],
+   [
+    "A <Adjective> tribunal",
+    6
    ],
    [
     "A <Adjective> investor",
-    3
-   ],
-   [
-    "A <Adjective> consortium",
-    2
+    6
    ]
   ],
   "blurb_first_two_words_top": [
    [
     "A US",
-    25
+    53
    ],
    [
     "An ICSID",
-    17
-   ],
-   [
-    "In a",
-    11
-   ],
-   [
-    "A Canadian",
-    9
+    42
    ],
    [
     "A UK",
-    9
+    31
+   ],
+   [
+    "In a",
+    25
+   ],
+   [
+    "A Canadian",
+    24
    ],
    [
     "A Russian",
-    8
+    20
    ],
    [
     "The Singapore",
-    7
-   ],
-   [
-    "An UNCITRAL",
-    7
-   ],
-   [
-    "The European",
-    6
-   ],
-   [
-    "A group",
-    5
-   ],
-   [
-    "A Dutch",
-    5
-   ],
-   [
-    "The US",
-    5
-   ],
-   [
-    "A Spanish",
-    4
-   ],
-   [
-    "An HKIAC",
-    4
-   ],
-   [
-    "A Chinese",
-    4
-   ],
-   [
-    "UPDATED WITH",
-    4
+    18
    ],
    [
     "A subsidiary",
-    4
+    16
    ],
    [
-    "A Korean",
-    4
+    "An UNCITRAL",
+    16
+   ],
+   [
+    "A Chinese",
+    15
+   ],
+   [
+    "The European",
+    14
    ],
    [
     "A panel",
-    4
+    13
    ],
    [
-    "A Swiss",
-    4
+    "A Dutch",
+    13
+   ],
+   [
+    "A Spanish",
+    11
+   ],
+   [
+    "A tribunal",
+    11
+   ],
+   [
+    "The Court",
+    11
+   ],
+   [
+    "The Paris",
+    10
+   ],
+   [
+    "A court",
+    10
+   ],
+   [
+    "UPDATED WITH",
+    9
    ],
    [
     "The International",
-    4
+    9
    ],
    [
-    "A Colombian",
-    4
+    "The French",
+    9
    ],
    [
-    "Baker McKenzie",
-    3
+    "A French",
+    9
    ],
    [
-    "An Italian",
-    3
+    "The US",
+    9
    ],
    [
-    "Ukraine’s Naftogaz",
-    3
+    "An ICC",
+    8
+   ],
+   [
+    "A Hong",
+    8
    ]
   ],
   "blurb_phrases": [
    [
     "has left",
-    31
-   ],
-   [
-    "has asked",
-    18
+    121
    ],
    [
     "says it has",
-    15
-   ],
-   [
-    "has upheld",
-    14
-   ],
-   [
-    "has won",
-    14
-   ],
-   [
-    "has launched",
-    14
-   ],
-   [
-    "reportedly",
-    13
-   ],
-   [
-    "has ruled",
-    11
-   ],
-   [
-    "has joined",
-    11
-   ],
-   [
-    "has refused",
-    11
-   ],
-   [
-    "has ordered",
-    11
+    56
    ],
    [
     "has rejected",
-    11
+    49
    ],
    [
-    "has threatened",
-    10
+    "reportedly",
+    48
    ],
    [
-    "has defeated",
-    8
-   ],
-   [
-    "has dismissed",
-    8
-   ],
-   [
-    "has found",
-    8
+    "has upheld",
+    46
    ],
    [
     "has filed",
-    7
+    45
    ],
    [
-    "has issued",
-    6
+    "has asked",
+    43
    ],
    [
-    "has applied",
-    5
+    "has ordered",
+    38
+   ],
+   [
+    "has refused",
+    36
+   ],
+   [
+    "has threatened",
+    33
+   ],
+   [
+    "has defeated",
+    32
+   ],
+   [
+    "has launched",
+    31
+   ],
+   [
+    "has joined",
+    30
+   ],
+   [
+    "has ruled",
+    29
+   ],
+   [
+    "has won",
+    27
+   ],
+   [
+    "has dismissed",
+    27
    ],
    [
     "is to",
-    5
+    26
    ],
    [
     "has opened",
-    5
+    15
    ],
    [
     "has agreed",
-    4
-   ],
-   [
-    "has lost",
-    4
-   ],
-   [
-    "has failed",
-    4
+    14
    ],
    [
     "has affirmed",
-    4
+    14
    ],
    [
-    "has named",
-    3
+    "has applied",
+    11
+   ],
+   [
+    "has found",
+    11
+   ],
+   [
+    "has failed",
+    11
    ],
    [
     "is facing",
-    3
-   ],
-   [
-    "has granted",
-    3
-   ],
-   [
-    "has declined",
-    3
-   ],
-   [
-    "has enforced",
-    3
+    11
    ],
    [
     "has hired",
-    2
+    10
+   ],
+   [
+    "has declined",
+    10
+   ],
+   [
+    "has annulled",
+    10
+   ],
+   [
+    "has brought",
+    9
+   ],
+   [
+    "has issued",
+    8
+   ],
+   [
+    "has named",
+    8
+   ],
+   [
+    "has enforced",
+    7
+   ],
+   [
+    "has lost",
+    6
    ],
    [
     "has paid",
-    2
+    6
+   ],
+   [
+    "has granted",
+    5
+   ],
+   [
+    "has secured",
+    3
+   ],
+   [
+    "has criticised",
+    3
+   ],
+   [
+    "has confirmed",
+    3
    ],
    [
     "are pursuing",
     2
    ],
    [
-    "has brought",
+    "has set aside",
     2
-   ],
-   [
-    "has criticised",
-    2
-   ],
-   [
-    "has annulled",
-    1
-   ],
-   [
-    "has confirmed",
-    1
    ]
   ]
  },
  "iareporter": {
-  "issues": 76,
+  "issues": 188,
   "date_range": [
-   "2024-03-19",
+   "2023-10-18",
    "2024-07-29"
   ],
-  "items": 707,
+  "items": 1636,
   "items_per_issue": {
-   "n": 76,
-   "mean": 9.3,
+   "n": 188,
+   "mean": 8.7,
    "median": 9.0,
-   "p10": 7,
+   "p10": 6,
    "p90": 11,
-   "min": 5,
+   "min": 4,
    "max": 13
   },
   "documents_per_issue": {
-   "n": 76,
+   "n": 188,
    "mean": 3.4,
    "median": 3.0,
-   "p10": 2,
-   "p90": 5,
+   "p10": 3,
+   "p90": 4,
    "min": 2,
    "max": 7
   },
   "sections": {
-   "Latest Headlines": 357,
-   "Previous Headlines": 350
+   "Latest Headlines": 828,
+   "Previous Headlines": 808
   },
   "headline_words": {
-   "n": 707,
-   "mean": 16.8,
-   "median": 15,
+   "n": 1636,
+   "mean": 16.7,
+   "median": 15.0,
    "p10": 8,
    "p90": 28,
-   "min": 5,
+   "min": 4,
    "max": 49
   },
   "headline_chars": {
-   "n": 707,
-   "mean": 119.7,
-   "median": 108,
-   "p10": 58,
-   "p90": 200,
-   "min": 41,
+   "n": 1636,
+   "mean": 118.6,
+   "median": 105.5,
+   "p10": 60,
+   "p90": 199,
+   "min": 24,
    "max": 364
   },
   "headline_starts_with_top": [
    [
     "ICSID",
-    75
+    187
    ],
    [
     "Tribunal",
-    30
+    72
    ],
    [
     "Three",
-    24
+    63
    ],
    [
     "In",
-    20
+    51
    ],
    [
     "UNCITRAL",
-    19
-   ],
-   [
-    "Analysis:",
-    15
-   ],
-   [
-    "ICC",
-    14
-   ],
-   [
-    "US",
-    13
-   ],
-   [
-    "European",
-    10
-   ],
-   [
-    "Paris",
-    10
-   ],
-   [
-    "Canadian",
-    10
-   ],
-   [
-    "Dutch",
-    10
-   ],
-   [
-    "South",
-    10
-   ],
-   [
-    "Russian",
-    9
-   ],
-   [
-    "Gazprom",
-    9
-   ],
-   [
-    "Gold",
-    8
-   ],
-   [
-    "Swiss",
-    8
+    44
    ],
    [
     "UK",
-    8
+    34
    ],
    [
-    "Claimant",
-    8
+    "Canadian",
+    27
    ],
    [
-    "Banking",
-    8
+    "Analysis:",
+    25
    ],
    [
-    "Investor",
-    8
+    "ICC",
+    24
    ],
    [
-    "Spain",
-    8
+    "US",
+    22
    ],
    [
-    "Spanish",
-    7
+    "European",
+    21
    ],
    [
-    "Eastern",
-    6
+    "Paris",
+    21
+   ],
+   [
+    "Dutch",
+    20
    ],
    [
     "Arbitrators",
-    6
+    18
+   ],
+   [
+    "Russian",
+    17
+   ],
+   [
+    "Spain",
+    17
+   ],
+   [
+    "ICJ",
+    16
+   ],
+   [
+    "EU",
+    14
+   ],
+   [
+    "Gold",
+    13
+   ],
+   [
+    "Spanish",
+    13
+   ],
+   [
+    "Swiss",
+    12
+   ],
+   [
+    "South",
+    12
+   ],
+   [
+    "Gazprom",
+    12
+   ],
+   [
+    "Singapore",
+    12
+   ],
+   [
+    "French",
+    10
    ]
   ],
   "headline_verbs_top": [
    [
     "claims",
-    43
-   ],
-   [
-    "to hear",
-    35
-   ],
-   [
-    "lodges",
-    33
-   ],
-   [
-    "rules",
-    33
+    126
    ],
    [
     "dismisses",
-    33
+    100
+   ],
+   [
+    "to hear",
+    98
+   ],
+   [
+    "lodges",
+    68
    ],
    [
     "declines",
-    30
+    61
    ],
    [
-    "files",
-    25
+    "rules",
+    53
    ],
    [
     "upholds",
-    24
+    52
    ],
    [
-    "liable",
-    21
+    "files",
+    44
    ],
    [
     "concludes",
-    16
-   ],
-   [
-    "orders",
-    12
-   ],
-   [
-    "announces",
-    11
-   ],
-   [
-    "held",
-    11
-   ],
-   [
-    "confirms",
-    10
+    44
    ],
    [
     "rejects",
-    10
+    39
    ],
    [
-    "seeks",
-    10
+    "liable",
+    29
    ],
    [
     "grants",
-    9
+    28
    ],
    [
-    "faces",
-    9
+    "announces",
+    26
    ],
    [
-    "fails",
-    8
+    "orders",
+    26
+   ],
+   [
+    "confirms",
+    21
+   ],
+   [
+    "seeks",
+    21
+   ],
+   [
+    "held",
+    20
+   ],
+   [
+    "refuses",
+    16
    ],
    [
     "sets aside",
-    8
+    16
+   ],
+   [
+    "fails",
+    12
    ],
    [
     "enforces",
-    7
+    12
+   ],
+   [
+    "denies",
+    10
+   ],
+   [
+    "faces",
+    10
+   ],
+   [
+    "threatens",
+    10
+   ],
+   [
+    "wins",
+    9
+   ],
+   [
+    "found liable",
+    6
    ],
    [
     "withdraws",
     6
    ],
    [
-    "refuses",
+    "ordered to pay",
+    6
+   ],
+   [
+    "sanctioned",
+    6
+   ],
+   [
+    "may face",
     5
    ],
    [
-    "found liable",
-    4
-   ],
-   [
-    "ordered to pay",
-    4
-   ],
-   [
-    "threatens",
-    4
-   ],
-   [
     "reveals",
-    3
-   ],
-   [
-    "denies",
-    2
+    4
    ],
    [
     "surfaces",
-    2
+    4
+   ],
+   [
+    "settles",
+    4
+   ],
+   [
+    "annuls",
+    4
+   ],
+   [
+    "revealed",
+    3
    ],
    [
     "affirms",
@@ -912,63 +944,75 @@
     2
    ],
    [
-    "settles",
-    2
-   ],
-   [
     "appoints",
     2
    ],
    [
-    "opens",
-    1
+    "leaves",
+    2
    ]
   ],
-  "headline_pct_with_amount": 4.1,
-  "headline_pct_with_institution": 42.0,
-  "headline_pct_with_colon": 7.4,
-  "headline_pct_with_quote": 3.3,
-  "headline_pct_sentence_case": 86.1,
+  "headline_pct_with_amount": 4.2,
+  "headline_pct_with_institution": 42.7,
+  "headline_pct_with_colon": 4.9,
+  "headline_pct_with_quote": 3.1,
+  "headline_pct_sentence_case": 85.7,
   "headline_labels": [
    [
-    "Updated",
-    86
+    "Analysis",
+    195
    ],
    [
-    "Analysis",
-    71
+    "Updated",
+    173
    ],
    [
     "Revealed",
-    19
+    41
    ],
    [
     "Updated with Award",
-    18
-   ],
-   [
-    "Gazprom Round-Up",
-    11
+    37
    ],
    [
     "Looking Back",
-    7
-   ],
-   [
-    "West Africa Round-Up",
-    6
+    19
    ],
    [
     "Uncovered",
-    4
+    14
+   ],
+   [
+    "West Africa Round-Up",
+    12
+   ],
+   [
+    "Gazprom Round-Up",
+    12
+   ],
+   [
+    "CIS Round-Up",
+    9
+   ],
+   [
+    "Updated with Decision",
+    8
+   ],
+   [
+    "Libya Round-Up",
+    6
    ],
    [
     "Investigation",
     4
    ],
    [
-    "Updated with Decision",
+    "Ecuador Round-Up",
     4
+   ],
+   [
+    "Updated with Tribunal",
+    3
    ],
    [
     "Updated with decision",
@@ -987,28 +1031,12 @@
     2
    ],
    [
+    "CIS-Round Up",
+    2
+   ],
+   [
     "Balkans Round-Up",
     2
-   ],
-   [
-    "Updated with the Award",
-    2
-   ],
-   [
-    "Libya Round-Up",
-    2
-   ],
-   [
-    "Ecuador Round-Up",
-    2
-   ],
-   [
-    "Updated with RfA",
-    2
-   ],
-   [
-    "BREAKING",
-    1
    ]
   ],
   "blurbs": 0,

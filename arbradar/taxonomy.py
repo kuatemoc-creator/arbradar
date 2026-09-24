@@ -24,6 +24,11 @@ EVENT_TYPES: Dict[str, Dict] = {
         "label": "Notice of intent / dispute",
         "why": "The cooling-off period is running and counsel is being chosen now.",
     },
+    "counsel_change": {
+        "weight": 88,
+        "label": "Counsel replaced or withdrawn",
+        "why": "A party has parted with its lawyers mid-case: the mandate is open now, with the file already built.",
+    },
     "s1782_application": {
         "weight": 85,
         "label": "s.1782 discovery application",
@@ -38,6 +43,11 @@ EVENT_TYPES: Dict[str, Dict] = {
         "weight": 78,
         "label": "Enforcement / recognition",
         "why": "Enforcement needs counsel in every jurisdiction where the assets sit.",
+    },
+    "interim_relief": {
+        "weight": 74,
+        "label": "Emergency or interim relief",
+        "why": "An emergency arbitrator, a freezing order or an anti-suit injunction means a dispute is live this week and someone needs counsel in a second forum.",
     },
     "annulment_setaside": {
         "weight": 72,
@@ -59,6 +69,11 @@ EVENT_TYPES: Dict[str, Dict] = {
         "label": "Award issued",
         "why": "The award starts the clock on annulment and enforcement.",
     },
+    "counsel_instructed": {
+        "weight": 48,
+        "label": "Counsel instructed",
+        "why": "Lead counsel is taken; local counsel, co-counsel, expert and arbitrator roles usually are not.",
+    },
     "treaty_action": {
         "weight": 45,
         "label": "Treaty signature / denunciation",
@@ -68,6 +83,16 @@ EVENT_TYPES: Dict[str, Dict] = {
         "weight": 42,
         "label": "Third-party funding",
         "why": "A funded claimant has the money to instruct.",
+    },
+    "settlement": {
+        "weight": 40,
+        "label": "Settlement or discontinuance",
+        "why": "The money moves and the parties are free: a settlement to paper, enforce or unwind, and a client whose counsel relationship has just ended.",
+    },
+    "law_reform": {
+        "weight": 35,
+        "label": "Arbitration law or rules changed",
+        "why": "A new arbitration act, seat reform or rule revision: the client alert every practice writes, and the reason seats move.",
     },
     "tribunal_constituted": {
         "weight": 35,
@@ -93,6 +118,13 @@ EVENT_TYPES: Dict[str, Dict] = {
 
 # Phrase -> event type. Ordered most-specific first; first match wins.
 EVENT_PATTERNS: List = [
+    ("counsel_change", [
+        "replaces counsel", "replaced counsel", "changes counsel", "changed counsel", "switches counsel",
+        "new counsel", "drops counsel", "dropped counsel", "parts ways with", "counsel withdraws", "counsel withdrew",
+        "withdraws as counsel", "withdrew as counsel", "ceases to act", "ceased to act", "come off the record",
+        "came off the record", "instructs new", "instructed new", "swaps counsel", "swapped counsel", "turns to new firm",
+        "brings in new counsel", "brought in new counsel", "hires new counsel", "hired new counsel",
+    ]),
     ("notice_of_intent", [
         "notice of intent", "notice of dispute", "trigger letter", "on notice of", "puts on notice",
         "threatens to bring", "threatens arbitration", "threatens treaty", "threatens india", "threatens claim",
@@ -103,6 +135,12 @@ EVENT_PATTERNS: List = [
     ]),
     ("s1782_application", [
         "1782", "section 1782", "28 u.s.c. 1782", "discovery in aid of",
+    ]),
+    ("interim_relief", [
+        "emergency arbitrator", "emergency arbitration", "interim measures", "provisional measures", "interim relief",
+        "anti-suit injunction", "anti-arbitration injunction", "anti-enforcement injunction", "freezing order",
+        "freezing injunction", "worldwide freezing", "mareva", "security for costs", "interim award", "conservatory measures",
+        "injunction in aid of", "in aid of arbitration", "stay of proceedings pending arbitration", "restrains",
     ]),
     ("commercial_dispute", [
         "request for arbitration", "commenced arbitration", "initiated arbitration", "arbitration proceedings",
@@ -136,6 +174,13 @@ EVENT_PATTERNS: List = [
         "annulment", "set aside", "setting aside", "vacatur", "vacate the award",
         "ad hoc committee", "challenge to the award", "revision of the award",
     ]),
+    ("settlement", [
+        "settlement agreement", "settled the arbitration", "settles arbitration", "settle the arbitration",
+        "settles claim", "settled the claim", "settles dispute", "settled the dispute", "agreed to settle", "reach settlement", "reach a settlement", "settles with", "settled with", "settlement with",
+        "reached a settlement", "reaches settlement", "discontinued the arbitration", "discontinues arbitration",
+        "withdraws claim", "withdrew the claim", "withdraws arbitration", "withdrew its claim", "drops arbitration",
+        "dropped the claim", "drops claim", "amicable settlement", "settlement of the dispute", "monetis", "monetiz",
+    ]),
     ("award_issued", [
         "award", "tribunal ruled", "tribunal found", "ordered to pay", "liable in", "held liable", "found liable",
         "dismissed the claim", "declined jurisdiction", "final award",
@@ -150,7 +195,13 @@ EVENT_PATTERNS: List = [
         "co-head of", "chair of the arbitration", "arbitration chair", "vice-president of the icc",
         "appointed as chair", "appointed chair", "elected chair", "appointed director general",
         "appointed registrar", "new registrar", "appointed as counsel to the",
-        "instructs", "instructed", "retains firm", "appoints counsel", "hires firm to defend", "to defend",
+        "designated to the icsid panel", "panel of arbitrators", "panel of conciliators",
+    ]),
+    ("counsel_instructed", [
+        "instructs", "instructed", "retains firm", "retains counsel", "appoints counsel", "hires firm to defend",
+        "to defend", "acts for", "acting for", "appears for", "represented by", "has hired", "has retained",
+        "turns to", "calls in", "engages firm", "engaged firm", "mandates firm", "seeks counsel", "seeking counsel",
+        "invites expressions of interest", "call for expressions of interest", "request for proposals for legal",
     ]),
     ("lateral_move", [
         "joins as partner", "joined as partner", "lateral hire", "lateral move",
@@ -169,6 +220,11 @@ EVENT_PATTERNS: List = [
         "permit cancelled", "permit canceled", "concession terminated", "seizure of",
         "asset freeze", "windfall tax", "sanctions-related claim",
         "forced divestment", "mining permit", "resource rent",
+        "capital controls", "bank resolution", "bail-in", "deposit freeze", "deposit haircut", "sovereign default",
+        "debt restructuring", "moratorium on payments", "payment moratorium", "tariff cut", "retroactive tariff",
+        "feed-in tariff cut", "power purchase agreement cancelled", "ppa cancelled", "ppa terminated",
+        "pension nationalis", "pension nationaliz", "exchange collapse", "placed under administration", "insolvency of",
+        "enters administration", "files for bankruptcy", "chapter 11",
         "экспроприац", "национализац", "отзыв лицензии", "expropiación", "nacionalización",
         "revocación de licencia", "expropriação", "nacionalização", "kamulaştırma",
         "millileştirme", "lisans iptali", "nationalisation des", "retrait de licence",
@@ -179,10 +235,18 @@ EVENT_PATTERNS: List = [
         "withdraw from the", "terminate the treaty", "sunset clause",
         "investment protection agreement", "free trade agreement", "icsid convention",
     ]),
+    ("law_reform", [
+        "arbitration act", "arbitration bill", "arbitration law", "arbitration ordinance", "arbitration code",
+        "amends the arbitration", "amendment to the arbitration", "new arbitration rules", "revised rules",
+        "revised arbitration rules", "rules revision", "rule changes", "new rules come into force", "arbitration reform",
+        "model law", "arbitration-friendly", "arbitration friendly", "seat reform", "mediation act", "singapore convention",
+    ]),
     ("funding", [
-        "third-party funding", "third party funding", "litigation funder",
-        "funding agreement", "burford", "omni bridgeway", "therium", "nivalion",
-        "fortress investment", "claim monetis", "claim monetiz",
+        "third-party funding", "third party funding", "litigation funder", "litigation finance",
+        "funding agreement", "burford", "omni bridgeway", "therium", "nivalion", "harbour litigation",
+        "fortress investment", "claim monetis", "claim monetiz", "funded claim", "funded by",
+        "political risk insurance", "political-risk insurance", "miga", "subrogat", "after-the-event insurance",
+        "ate insurance", "portfolio financing", "claim assignment", "assigned its claim", "sells its claim", "sold its claim",
     ]),
     ("tribunal_constituted", [
         "tribunal constituted", "appointed as arbitrator", "presiding arbitrator",

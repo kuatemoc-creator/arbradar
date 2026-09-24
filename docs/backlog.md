@@ -35,9 +35,12 @@ the owner's accounts or DNS.
    preview to Aram and saves the issue as a Gmail draft with the list in BCC;
    Aram taps Send. Later, a "reply SEND" gate. Needs a Gmail route usable
    from GitHub Actions (an app password or OAuth credentials as secrets).
-6. **PCA case list blocked from GitHub Actions (403)** [me] — works locally,
-   403 from the runner. Fetch locally and push into the state branch, or rely
-   on Jus Mundi / GAR for PCA cases. No bot-challenge evasion.
+6. **PCA case list blocked from GitHub Actions (403)** [me] — done 24 September:
+   `tools/relay.sh` fetches PCA (and the court sites the runner cannot reach)
+   on the Mac, pushes a `relay` branch, and the cloud run imports it. A
+   LaunchAgent (`tools/com.caselens.arbradar-relay.plist`, 20:30 Yerevan) runs
+   it daily. UNCTAD and italaw show a human-verification box even to a real
+   browser; they stay reference links, not sources.
 7. **DNS** [CTO] — Route 53: CNAME `arbradar` → `kuatemoc-creator.github.io`
    (TTL 300). Do not touch the Namecheap nameservers. Then repo Settings →
    Pages → Enforce HTTPS once the certificate is issued. Until then email
@@ -52,6 +55,12 @@ the owner's accounts or DNS.
     tiers (model-written summaries and story pages) are dormant without it.
 
 ## Done recently
+
+- 24 Sept: five event types a rainmaker watches for that the taxonomy lacked
+  (counsel replaced, emergency or interim relief, counsel instructed,
+  settlement, law reform), plus capital-control, bank-resolution, insolvency
+  and political-risk-insurance patterns. `build --date` rebuilds a past day as
+  of that day; 22-24 September rebuilt.
 
 - Cloud daily run at 18:00 UTC with state persisted on the `state` branch.
 - Per-day site archive with day switcher and subscribe box; sources page.

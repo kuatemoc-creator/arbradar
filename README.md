@@ -13,18 +13,27 @@ Scoring weight is highest where counsel is least likely to be appointed yet:
 
 | Event | Weight | Why it ranks there |
 |---|---|---|
-| Notice of intent / dispute | 100 | Cooling-off period running; counsel being chosen now |
-| s.1782 application | 85 | Discovery ahead of, or at the very start of, an arbitration |
-| New case registered | 80 | Respondent-side and co-counsel roles often still open |
-| Enforcement / recognition | 78 | Needs local counsel in every enforcement jurisdiction |
-| Annulment / set-aside | 72 | Fresh mandate, distinct team from the merits phase |
-| Expropriation / licence / sanctions | 60 | Treaty claim often follows in 6–24 months |
-| Award issued | 55 | Starts the annulment and enforcement clock |
-| Treaty signature / denunciation | 45 | Sunset-clause races |
-| Third-party funding | 42 | A funded claimant is a buyer of legal services |
-| Tribunal constituted / challenge | 35 | Appointment and conflicts intelligence |
-| Lateral move | 30 | Conflicts open up; clients become reachable |
-| Commentary | 10 | Context, not a lead |
+| Notice of intent / dispute | 100 | The cooling-off period is running and counsel is being chosen now. |
+| State tendering for counsel | 90 | A State or state enterprise is procuring arbitration counsel: the dispute exists and the instruction is open. |
+| Counsel replaced or withdrawn | 88 | A party has parted with its lawyers mid-case: the mandate is open now, with the file already built. |
+| s.1782 discovery application | 85 | Someone is gathering evidence for an arbitration that has not yet been reported. |
+| New case registered | 80 | Registration comes first; the respondent side and co-counsel are often still to be settled. |
+| Enforcement / recognition | 78 | Enforcement needs counsel in every jurisdiction where the assets sit. |
+| Emergency or interim relief | 74 | An emergency arbitrator, a freezing order or an anti-suit injunction means a dispute is live this week and someone needs counsel in a second forum. |
+| Annulment / set-aside | 72 | A second mandate, and usually a different team from the merits. |
+| State measure against a foreign investor | 70 | A licence, contract, tax or regulatory action against a foreign investor of means: the fact pattern of a treaty claim, before any notice. |
+| Commercial arbitration | 68 | A contract dispute has gone, or is going, to arbitration: EPC, JV, supply, licence, charter, offtake. |
+| Award issued | 55 | The award starts the clock on annulment and enforcement. |
+| Expropriation / licence / sanctions event | 52 | Events of this kind tend to produce a treaty claim within a year or two. |
+| Counsel instructed | 48 | Lead counsel is taken; local counsel, co-counsel, expert and arbitrator roles usually are not. |
+| Treaty signature / denunciation | 45 | Treaty changes move the deadlines for everyone with an investment covered by it. |
+| Third-party funding | 42 | A funded claimant has the money to instruct. |
+| Settlement or discontinuance | 40 | The money moves and the parties are free: a settlement to paper, enforce or unwind, and a client whose counsel relationship has just ended. |
+| Arbitration law or rules changed | 35 | A new arbitration act, seat reform or rule revision: the client alert every practice writes, and the reason seats move. |
+| Tribunal constituted / challenge | 35 | Who sits, and who put them there, is worth knowing before the next appointment. |
+| Appointment | 32 | Who now sits on the tribunal, runs the institution or leads the practice. |
+| Lateral move / team change | 30 | A move opens conflicts and makes clients reachable. |
+| Commentary / analysis | 10 | Context rather than a lead. |
 
 `score = weight × recency_decay × source_tier × (1 + watchlist_boost)
          + amount_bonus + unrepresented_bonus`
@@ -77,7 +86,7 @@ email carries it.
 | **Courts outside the US** | Primary | Judgment feeds and open APIs: England and Wales (Find Case Law), Singapore (catchwords), Canada (CanLII), Netherlands (rechtspraak), Austria (RIS), Germany (BGH), DIFC, AIFC and eleven African law reports. Set-aside, enforcement, stays, anti-suit relief, arbitrator challenges. |
 | **SEC EDGAR full-text** | Primary | Disputes disclosed in 8-K/6-K/20-F filings, often weeks ahead of the trade press. |
 | RSS | Reported | GAR, IAReporter, Kluwer, Jus Mundi, IISD, institutions. |
-| PCA | Reported | News page only — the case list is client-rendered and not exposed via its REST API. |
+| PCA | Primary | Case list and press releases, relayed from a machine Cloudflare lets in (`tools/relay.sh`); GitHub's runners are refused. |
 
 All free and unauthenticated. No API key is required to run the system.
 
@@ -211,10 +220,31 @@ own domain. `manifest.json` accumulates across issues so the index becomes an ar
 `Armenia: 1.2` makes an Armenian matter rank roughly twice as high as an
 otherwise identical one. This is the main thing to tune.
 
+## House style and the corpus behind it
+
+`docs/house-style.md` is measured from the trade press, not guessed: the GAR
+daily briefings and IAReporter headline emails in the editor's inbox, archived
+verbatim under `data/newsletters/raw/<source>/<thread>.txt` (local only, they
+are subscription content; the thread ids in `docs/style-corpus/index.json`
+let anyone re-fetch them from Gmail). `python tools/newsletter_corpus.py`
+parses the archive into `docs/style-corpus/` (index, every headline, the
+measurements, a readable README); `python tools/wordlist.py` rebuilds
+`arbradar/data/lowercase-words.txt`, the word list `style.headline()` uses to
+turn a Title Case headline into sentence case without touching names. The
+build applies the rules itself (case, whole-sentence explanations, one type
+scale, headline-only stories in In brief); the editorial model gets the whole
+style file in its brief.
+
 ## Known gaps
 
-- PCA and UNCTAD sit behind client-side rendering / Cloudflare; the UNCITRAL
-  Transparency Registry is the better route and is not yet wired in.
+- UNCTAD's ISDS Navigator and italaw put a human-verification box in front of
+  every visitor, including a real browser. We do not click through such boxes,
+  so neither is fetched. Both are compilations of the same cases ICSID, the PCA
+  and the trade press already give us, months later; they stay reference links.
+- PCA refuses GitHub's runner addresses (403) but not an ordinary connection, so
+  the case list is relayed from the Mac before each cloud run (`tools/relay.sh`,
+  `relay` branch, `arbradar.cli import`). On a day the Mac is off, the cloud
+  builds without the PCA.
 - No stock-exchange feeds yet (LSE RNS, ASX, SEDAR) — these carry notices of
   intent from junior miners, the single best early signal.
 - `amount_usd` is only populated when the extraction tier runs.
