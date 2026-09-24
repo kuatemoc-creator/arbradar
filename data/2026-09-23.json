@@ -81,7 +81,7 @@
      "source": "International Institute for Sustainable Development",
      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcWF2SVgyNzBVaGkwME55UzJtbGJjT2NLaEhQRlI4SnhXU1pWRWJqdnhxWkh6aVR1SWwzbTRMYV8zV3FRSU8wdUwyaUhQQnozaHdWUzdUNTRkdkwtbFZuREFVU05mTlN2bk5hd1E0SGZaeW5VMDhNTnk5RDIwNzVGcWwxcHhiZjE2SEVxTXNJX2ZGWkhEdW1OcHg3a0RfalpXUTlCV196NzA1Z1BEWE5rN3l6akZiUEFBVmtlZVZtS2Z2QlF0NW9ZNWp3LTY0TE1BVDRxamhCb0k0WHpvSFFCbWhEaw?oc=5",
      "title": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors - International Institute for Sustainable Development",
-     "published_at": "Sat, 20 Jun 2020",
+     "published_at": "2020-06-20",
      "snippet": "ICSID tribunal decides Ukraine did not violate due process in reclaiming three land plots from British investors International Institute for Sustainable Development"
     }
    ],
@@ -159,62 +159,6 @@
    "tier": "signal",
    "slug": "2026-09-23-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-wit.html",
    "event": "State measure"
-  },
-  {
-   "id": 5113,
-   "title": "Mambilla: TSF Hails Nigeria’s Victory At ICC Tribunal",
-   "title_en": null,
-   "summary": "President Bola Tinubu has commended the judgment of the International Chamber of Commerce (ICC) arbitration tribunal in Paris…",
-   "summary_en": null,
-   "url": "https://www.vanguardngr.com/2026/09/tinubu-hails-nigerias-victory-over-sunrises-2-35bn-mambilla-claim/",
-   "source": "Google News / vanguardngr.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-22",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Nigeria"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "THISDAYLIVE",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWVlxanc1Z0NNdkhkZ3FFaHFFeHJrWUFMQXQ4eDhzZ2Z4azdqQTM0TGhESEcyOFdPVV9PdUp6Mm44b3JidXNpeGF3czBfSkVMcE92d19BM2kwX1JqZzk0TVItTFJtQmVKV3E2YmwwRWFSUndRTlZVVnJzWG1VVWlmVDJhT2tRRjk5aW9lT2dDT016eWVmWjlOVFo4Y3JNLUw3aG9hVzhRdw?oc=5",
-     "title": "Mambilla: Tinubu Hails Nigeria’s Victory in $2.35bn ICC Arbitration - THISDAYLIVE",
-     "published_at": "Fri, 18 Sep 2026",
-     "snippet": "Mambilla: Tinubu Hails Nigeria’s Victory in $2.35bn ICC Arbitration THISDAYLIVE"
-    },
-    {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-xl/africa/nigeria/mambilla-project-arewa-group-hails-tribunal-for-dismissing-contractor-s-235bn-claim/ar-AA2czY90",
-     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
-     "published_at": "Sat, 19 Sep 2026",
-     "snippet": "The Arewa Think Tank has hailed Nigeria’s victory in the arbitration dispute with Sunrise Power concerning the long-running Mambilla Hydropower Project.Convener of the group, Muhammad Alhàji Yakubu, ..."
-    },
-    {
-     "source": "leadership.ng",
-     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
-     "title": "Arewa Group Hails Win Over Mambilla Project",
-     "published_at": "Fri, 18 Sep 2026",
-     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla Hydropower ..."
-    }
-   ],
-   "story": "",
-   "tier": "signal",
-   "slug": "2026-09-23-mambilla-tsf-hails-nigeria-s-victory-at-icc-tribunal.html",
-   "event": "Commercial arbitration"
   }
  ],
  "records": {

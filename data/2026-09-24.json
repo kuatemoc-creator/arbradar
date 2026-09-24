@@ -94,16 +94,8 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "DW.com",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZG9fWk1BZDZBQmx2ZWtnNDJyRUNPMjhYV3VreFVpMDBrS2NPZEpiZURxeEw5ZjlDSGdQUkFMbF9LQ2lMXzdSdXhfLWVHTXJjWEN5UFpMMTFaMTdYTkJEZ010TnlzNDJsODlSR09ucEZMc181QnlVSTA0NFhNVmRmeFo0VjFodHFwdjNkWlBYeVhRaXg5Vmh4TFpkTkU4dW84UllPc1l0bGRMRGI2Qm1QSi130gGyAUFVX3lxTE1zV0JrRDdiWnJrUmU3b2sxMjFFdDBaZ2w2dnpRU28xQ3dWLXM1dnBpRXY1NmZlc1RtSkNLQUhqRzU1aGNvR0MyZjNkNDFzY1E5ZG1YWTA5YXdOWk53NDRoUjNmenlfTkdSNTF1LTZJRVU3VFc2Q2g1bUJPU0xqd2tvcmp2dmdnY29EYlY2d1k4TnM2QXZPdnFleEIySUhnM3Y1cTRmQ1FDZ3lrb1BnX21kVXc?oc=5",
-     "title": "Could a Left Party government in Berlin expropriate large real estate companies? - DW.com",
-     "published_at": "Wed, 23 Sep 2026",
-     "snippet": "Could a Left Party government in Berlin expropriate large real estate companies? DW.com"
-    }
-   ],
-   "story": "Berlin’s Left Party plans to pursue the 2021 referendum on expropriating housing from large companies. Could a Left Party government in Berlin expropriate large real estate companies?",
+   "corroboration": [],
+   "story": null,
    "tier": "development",
    "slug": "2026-09-24-berlin-discusses-expropriation-of-housing-owned-by-large-companies-deu.html",
    "event": "State measure"
