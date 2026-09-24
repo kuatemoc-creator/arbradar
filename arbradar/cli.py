@@ -125,6 +125,11 @@ def cmd_build(args, settings, conn):
     if not items:
         print("Nothing with an explanation to print today.")
         return 1
+    # A trade-press headline that still has no text goes to 'In brief', after
+    # every story that can be explained; it is never the lead or a development.
+    for it in items:
+        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))
+    items = [it for it in items if not it["brief_only"]] + [it for it in items if it["brief_only"]]
     from .config import live_site_url
     base = live_site_url(settings)
     if settings.site_url and not base:

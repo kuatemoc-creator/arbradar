@@ -563,6 +563,11 @@ def reclassify(conn, settings, days: int = 21) -> int:
     return n
 
 
+_ON_TOPIC = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIAC|\bPCA\b|UNCITRAL|annul|set aside|"
+                       r"enforce|treaty claim|investor-state|\bISDS\b|investment treaty|expropriat|nationali[sz]|"
+                       r"notice of dispute|notice of intent|emergency arbitrator|\bseat\b", re.I)
+
+
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
     cutoff = (dt.date.today() - dt.timedelta(days=settings.lookback_days + extra_days)).isoformat()
     # Pinned items always make the cut; excluded ones never do. Everything else
@@ -595,6 +600,7 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
         a["_anchor"] = True
     anchor_urls = {a.get("url") for a in anchors} - {None, ""}
     reps = cluster(anchors + [db.row_to_dict(r) for r in rows])
+    from .outlets import is_trade_press
     stories = []
     floor = float(getattr(settings, "min_story_score", 0) or 0)
     for rep in reps:
@@ -604,11 +610,18 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
             continue
         if (rep.get("score") or 0) < floor and not rep.get("pinned"):
             continue                              # below the floor: leave it out rather than pad the day
+        # A firm's newsletter piece or a trade story with no arbitration in it is
+        # not a story here, however well it scores on the watchlist.
+        if (rep.get("event_type") or "commentary") == "commentary" and not rep.get("pinned") \
+                and not is_trade_press(rep.get("source") or "", rep.get("url") or "") \
+                and not _ON_TOPIC.search(" ".join([rep.get("title_en") or rep.get("title") or "",
+                                                   rep.get("summary_en") or rep.get("summary") or ""])):
+            continue
         stories.append(rep)
     if len(stories) < 3:
         # A quiet day: items just under the floor still go in 'In brief' when the
         # headline itself is about an arbitration, never on the sweep's say-so alone.
-        on_topic = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIAC|\bPCA\b|UNCITRAL|annul|set aside|enforce", re.I)
+        on_topic = _ON_TOPIC
         seen = {id(s) for s in stories}
         for rep in reps:
             if id(rep) in seen or rep.get("_anchor") or rep.get("url") in anchor_urls:

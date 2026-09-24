@@ -56,7 +56,7 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
     stories = []
     for i, it in enumerate(items):
         d = {k: it.get(k) for k in STORY_FIELDS}
-        d["tier"] = "lead" if i == 0 else "development" if i < 7 else "brief"
+        d["tier"] = "brief" if it.get("brief_only") else "lead" if i == 0 else "development" if i < 7 else "brief"
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
         stories.append(d)
@@ -171,7 +171,7 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
         when_label = ""
     outlet = (s.get("source") or "").replace("Google News / ", "")
     outlet = re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", outlet)
-    body = sentences(summary_of(s), 60 if lead else 50)
+    body = sentences(summary_of(s), 45)
     tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
         html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
     return ('<article class="story{lead}"><h2><a href="{slug}">{h}</a></h2>'

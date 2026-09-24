@@ -199,7 +199,7 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     when = _when(it)
     tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
         mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-    para = p(esc(sentences(body, 55)) + tail, size=16, lh=1.5, mb=0) if body else \
+    para = p(esc(sentences(body, 45)) + tail, size=16, lh=1.5, mb=0) if body else \
         p(tail.strip(), size=14, lh=1.5, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
             '<tr><td style="padding:{pt}px 0 22px;border-bottom:1px solid {line};">{head}{para}</td></tr></table>'
@@ -292,9 +292,12 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     site_url = live_site_url(settings)
     dl = date_label(date)
     starters = ("notice_of_intent", "new_case_filed", "counsel_tender", "s1782_application", "state_measure")
-    lead = next((it for it in items[:5] if it.get("event_type") in starters), items[0])
+    told = [it for it in items if not it.get("brief_only")] or items
+    lead = next((it for it in told[:5] if it.get("event_type") in starters), told[0])
     rest = [it for it in items if it is not lead]
-    devs, briefs = rest[:6], rest[6:9]
+    main = [it for it in rest if not it.get("brief_only")]
+    devs = main[:6]
+    briefs = (main[6:] + [it for it in rest if it.get("brief_only")])[:5]
 
     head = title_of(lead)
     if len(head) > 90:                         # cut at a word, never inside one

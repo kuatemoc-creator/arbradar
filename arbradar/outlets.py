@@ -44,7 +44,13 @@ TRADE_PRESS = ("gar", "global arbitration review", "globalarbitrationreview", "i
 
 def is_trade_press(source: str, url: str = "") -> bool:
     text = " ".join(x for x in ((source or "").replace("Google News / ", ""), _host(url or "")) if x).lower()
-    return any(k in text for k in TRADE_PRESS)
+    for k in TRADE_PRESS:
+        if len(k) <= 4:                        # "gar" is a word, not a substring: Garrigues is a law firm
+            if re.search(r"(?<![\w.])" + re.escape(k) + r"(?![\w])", text):
+                return True
+        elif k in text:
+            return True
+    return False
 
 
 def _host(url: str) -> str:

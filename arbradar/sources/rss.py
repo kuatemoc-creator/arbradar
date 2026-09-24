@@ -14,6 +14,7 @@ from typing import Dict, Iterator, List
 import feedparser
 
 from ..fetch import get, Blocked
+from ..lang import guess as lang_guess
 
 FEEDS: List[Dict[str, str]] = [
     # trade press (headlines are free even where the article is paywalled)
@@ -130,6 +131,8 @@ def run(days: int = 7, feeds: List[Dict[str, str]] = None) -> Iterator[Dict]:
                 "title": title,
                 "summary": summary[:2000],
                 "published_at": published or None,
-                "lang": feed.get("lang", "en"),
+                # A feed that does not say its language gets a guess from the text:
+                # a Spanish firm's newsletter is not English copy.
+                "lang": feed.get("lang") or lang_guess(title + " " + summary[:600]),
                 "country": feed.get("country"),
             }
