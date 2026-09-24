@@ -642,37 +642,37 @@
   ]
  },
  "iareporter": {
-  "issues": 190,
+  "issues": 199,
   "date_range": [
-   "2023-10-18",
+   "2023-10-09",
    "2024-07-29"
   ],
-  "items": 1650,
+  "items": 1732,
   "items_per_issue": {
-   "n": 190,
+   "n": 199,
    "mean": 8.7,
-   "median": 9.0,
+   "median": 9,
    "p10": 6,
    "p90": 11,
    "min": 4,
    "max": 13
   },
   "documents_per_issue": {
-   "n": 190,
+   "n": 199,
    "mean": 3.4,
-   "median": 3.0,
+   "median": 3,
    "p10": 3,
    "p90": 4,
    "min": 2,
    "max": 7
   },
   "sections": {
-   "Latest Headlines": 834,
-   "Previous Headlines": 816
+   "Latest Headlines": 877,
+   "Previous Headlines": 855
   },
   "headline_words": {
-   "n": 1650,
-   "mean": 16.7,
+   "n": 1732,
+   "mean": 16.8,
    "median": 15.0,
    "p10": 8,
    "p90": 28,
@@ -680,9 +680,9 @@
    "max": 49
   },
   "headline_chars": {
-   "n": 1650,
-   "mean": 118.7,
-   "median": 105.5,
+   "n": 1732,
+   "mean": 119.1,
+   "median": 106.0,
    "p10": 60,
    "p90": 199,
    "min": 24,
@@ -691,11 +691,11 @@
   "headline_starts_with_top": [
    [
     "ICSID",
-    187
+    191
    ],
    [
     "Tribunal",
-    72
+    73
    ],
    [
     "Three",
@@ -703,30 +703,38 @@
    ],
    [
     "In",
-    54
+    58
    ],
    [
     "UNCITRAL",
-    44
+    47
    ],
    [
     "UK",
-    34
+    37
    ],
    [
     "Canadian",
-    27
+    31
+   ],
+   [
+    "ICC",
+    28
+   ],
+   [
+    "US",
+    26
+   ],
+   [
+    "Dutch",
+    26
    ],
    [
     "Analysis:",
     25
    ],
    [
-    "ICC",
-    24
-   ],
-   [
-    "US",
+    "Paris",
     23
    ],
    [
@@ -734,36 +742,28 @@
     21
    ],
    [
-    "Paris",
-    21
-   ],
-   [
-    "Dutch",
-    20
+    "Russian",
+    19
    ],
    [
     "Arbitrators",
     18
    ],
    [
-    "Russian",
-    17
+    "ICJ",
+    18
    ],
    [
     "Spain",
-    17
+    18
    ],
    [
-    "ICJ",
-    16
+    "Gold",
+    14
    ],
    [
     "EU",
     14
-   ],
-   [
-    "Gold",
-    13
    ],
    [
     "Spanish",
@@ -787,17 +787,17 @@
    ],
    [
     "French",
-    10
+    12
    ]
   ],
   "headline_verbs_top": [
    [
     "claims",
-    126
+    131
    ],
    [
     "dismisses",
-    102
+    106
    ],
    [
     "to hear",
@@ -805,11 +805,11 @@
    ],
    [
     "lodges",
-    68
+    71
    ],
    [
     "declines",
-    63
+    70
    ],
    [
     "rules",
@@ -829,31 +829,31 @@
    ],
    [
     "rejects",
-    39
+    41
    ],
    [
     "grants",
-    29
+    34
    ],
    [
     "liable",
     29
    ],
    [
+    "orders",
+    29
+   ],
+   [
+    "confirms",
+    27
+   ],
+   [
     "announces",
     26
    ],
    [
-    "orders",
-    26
-   ],
-   [
-    "confirms",
-    23
-   ],
-   [
     "seeks",
-    22
+    23
    ],
    [
     "held",
@@ -869,10 +869,14 @@
    ],
    [
     "fails",
-    12
+    15
    ],
    [
     "enforces",
+    12
+   ],
+   [
+    "threatens",
     12
    ],
    [
@@ -884,12 +888,12 @@
     10
    ],
    [
-    "threatens",
-    10
-   ],
-   [
     "wins",
     9
+   ],
+   [
+    "sanctioned",
+    7
    ],
    [
     "found liable",
@@ -901,10 +905,6 @@
    ],
    [
     "ordered to pay",
-    6
-   ],
-   [
-    "sanctioned",
     6
    ],
    [
@@ -928,6 +928,10 @@
     4
    ],
    [
+    "overturns",
+    3
+   ],
+   [
     "revealed",
     3
    ],
@@ -946,33 +950,29 @@
    [
     "appoints",
     2
-   ],
-   [
-    "leaves",
-    2
    ]
   ],
-  "headline_pct_with_amount": 4.3,
-  "headline_pct_with_institution": 42.7,
-  "headline_pct_with_colon": 4.8,
+  "headline_pct_with_amount": 5.0,
+  "headline_pct_with_institution": 42.9,
+  "headline_pct_with_colon": 4.7,
   "headline_pct_with_quote": 3.1,
-  "headline_pct_sentence_case": 85.8,
+  "headline_pct_sentence_case": 85.9,
   "headline_labels": [
    [
     "Analysis",
-    198
+    213
    ],
    [
     "Updated",
-    173
+    177
    ],
    [
     "Revealed",
-    41
+    42
    ],
    [
     "Updated with Award",
-    37
+    39
    ],
    [
     "Looking Back",

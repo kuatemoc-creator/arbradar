@@ -162,7 +162,7 @@ def cmd_build(args, settings, conn):
 
     for it in items:
         text = email_html.summary_of(it)
-        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", text) or _docket_text(text)
+        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", text) or _docket_text(text[:200])
     items = [it for it in items if not it["brief_only"]] + [it for it in items if it["brief_only"]]
     from .config import live_site_url
     base = live_site_url(settings)

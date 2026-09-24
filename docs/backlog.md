@@ -8,13 +8,11 @@ the owner's accounts or DNS.
 
 ## Open
 
-1. **Style corpus from the inbox** [me] — archiving in progress (264 of about
-   440 emails on 24 September, 11:30). Raw text stays in `data/newsletters/`
-   (gitignored: subscription content; thread ids in `docs/style-corpus/index.json`
-   so it can be re-fetched); `tools/newsletter_corpus.py` writes the derived
-   corpus and `docs/style-corpus/README.md`; `docs/house-style.md` is written
-   from it. Left: finish the archive, regenerate the numbers, rerun
-   `tools/wordlist.py`.
+1. **Style corpus from the inbox** [me] — done 24 September: all 440 GAR and
+   IAReporter newsletters in the inbox archived under `data/newsletters/`
+   (gitignored; thread ids in `docs/style-corpus/index.json`), corpus and
+   `docs/house-style.md` regenerated from them (`tools/newsletter_corpus.py`,
+   `tools/wordlist.py`).
 2. **Apply the house style** [me] — done on 24 September for what the rules can
    do: sentence-case headlines from a measured word list, whole-sentence
    explanations within 45 words, one headline size, headline-only stories in

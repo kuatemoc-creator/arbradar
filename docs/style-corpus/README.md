@@ -35,20 +35,20 @@ Standfirst phrases: has left (125), says it has (59), has upheld (54), has rejec
 
 | measure | value |
 |---|---|
-| issues | 190 (2023-10-18 to 2024-07-29) |
-| stories | 1650 |
-| stories per issue | median 9.0, p10 6, p90 11 |
-| headline length | median 15.0 words (105.5 chars), p90 28 words |
-| headlines naming an amount | 4.3% |
-| headlines naming an institution or treaty | 42.7% |
-| headlines with a colon | 4.8% |
-| headlines in sentence case | 85.8% |
+| issues | 199 (2023-10-09 to 2024-07-29) |
+| stories | 1732 |
+| stories per issue | median 9, p10 6, p90 11 |
+| headline length | median 15.0 words (106.0 chars), p90 28 words |
+| headlines naming an amount | 5.0% |
+| headlines naming an institution or treaty | 42.9% |
+| headlines with a colon | 4.7% |
+| headlines in sentence case | 85.9% |
 
-Sections: Latest Headlines (834), Previous Headlines (816)
+Sections: Latest Headlines (877), Previous Headlines (855)
 
-Headline verbs, most used: claims (126), dismisses (102), to hear (98), lodges (68), declines (63), rules (53), upholds (52), concludes (46), files (44), rejects (39), grants (29), liable (29), announces (26), orders (26), confirms (23), seeks (22), held (20), refuses (16), sets aside (16), fails (12), enforces (12), denies (10), faces (10), threatens (10), wins (9)
+Headline verbs, most used: claims (131), dismisses (106), to hear (98), lodges (71), declines (70), rules (53), upholds (52), concludes (46), files (44), rejects (41), grants (34), liable (29), orders (29), confirms (27), announces (26), seeks (23), held (20), refuses (16), sets aside (16), fails (15), enforces (12), threatens (12), denies (10), faces (10), wins (9)
 
-Headline first words: ICSID (187), Tribunal (72), Three (63), In (54), UNCITRAL (44), UK (34), Canadian (27), Analysis: (25), ICC (24), US (23), European (21), Paris (21), Dutch (20), Arbitrators (18), Russian (17)
+Headline first words: ICSID (191), Tribunal (73), Three (63), In (58), UNCITRAL (47), UK (37), Canadian (31), ICC (28), US (26), Dutch (26), Analysis: (25), Paris (23), European (21), Russian (19), Arbitrators (18)
 
-Headline labels: Analysis (198), Updated (173), Revealed (41), Updated with Award (37), Looking Back (20), Uncovered (14), West Africa Round-Up (12), Gazprom Round-Up (12), CIS Round-Up (9), Updated with Decision (8), Libya Round-Up (6), Investigation (4), Ecuador Round-Up (4), Updated with Tribunal (3), Updated with decision (2), Romania Round-Up (2), UPDATED (2), Updated with Document (2), CIS-Round Up (2), Balkans Round-Up (2)
+Headline labels: Analysis (213), Updated (177), Revealed (42), Updated with Award (39), Looking Back (20), Uncovered (14), West Africa Round-Up (12), Gazprom Round-Up (12), CIS Round-Up (9), Updated with Decision (8), Libya Round-Up (6), Investigation (4), Ecuador Round-Up (4), Updated with Tribunal (3), Updated with decision (2), Romania Round-Up (2), UPDATED (2), Updated with Document (2), CIS-Round Up (2), Balkans Round-Up (2)
 
