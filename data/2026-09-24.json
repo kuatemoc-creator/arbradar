@@ -101,16 +101,7 @@
  "records": {
   "docket": [],
   "disclosures": [],
-  "courts": [
-   {
-    "date": "2026-09-18",
-    "title": "Tanga Cement Plc vs Willy Enterprises Limited",
-    "main": "Tanga Cement Plc vs Willy Enterprises Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/325/eng@2026-09-18"
-   }
-  ],
+  "courts": [],
   "people": []
  }
 }

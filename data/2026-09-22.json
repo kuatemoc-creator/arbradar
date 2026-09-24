@@ -197,47 +197,6 @@
    "event": "Commercial arbitration"
   },
   {
-   "id": 5062,
-   "title": "Lisbon mayor calls for Volta to be scrapped // Tax cut, proposal for windfall charge on oil companies // Cocaine gateway threat highlighted as greatest security risk",
-   "title_en": null,
-   "summary": "Lisbon Mayor Carlos Moedas has called on the government to immediately scrap Portugal’s Volta bottle and can deposit-return…",
-   "summary_en": null,
-   "url": "https://www.portugalresident.com/carlos-moedas-calls-end-volta-recycling-scheme/",
-   "source": "Google News / portugalresident.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-22",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Portugal"
-   ],
-   "sectors": [
-    "Oil & gas",
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Portugal Weekly",
-     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZOUpfRjREQXVEQmpjb2VwaHQ1UE9zYWlDYWFMMlFLVzRvTEZqZThqQmFYN2JYNlpzWDVRaUl2WW1GZzdLNllNMHFWN3ZhYm9KRGRaREotdG9XRkRwbG9BSG1iQkZCOVdvbW55VjJkV2cwbXZESWNUTg?oc=5",
-     "title": "Lisbon mayor calls for Volta to be scrapped // Tax cut, proposal for windfall charge on oil companies // Cocaine gateway threat highlighted as greatest security risk"
-    }
-   ],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-22-lisbon-mayor-calls-for-volta-to-be-scrapped-tax-cut-proposal-for-windf.html",
-   "event": "State measure"
-  },
-  {
    "id": 4785,
    "title": "AAA Launches New Group To Navigate AI In Arbitration",
    "title_en": null,
@@ -305,7 +264,7 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
    "event": "§1782 application"
   },
@@ -345,7 +304,7 @@
   },
   {
    "id": 5559,
-   "title": "Mitsui & v. Spain — mitsui & Co., Ltd",
+   "title": "Mitsui & Co. v. Spain — annulment proceeding at ICSID",
    "title_en": null,
    "summary": "Mitsui & brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on December 12, 2025 (Respondent(s)). White & Case acts for the claimant. Abogacía General del Estado, Ministry of Justice of the Government of Spain for Spain. The tribunal is Quentin Loh, presiding; Patrick Leonard; Anne Marie Mürrle Rojas. On 22 September 2026, mitsui & Co., Ltd. Files a counter-memorial on annulment.",
    "summary_en": null,
@@ -383,7 +342,7 @@
    "lang": "en",
    "country": null,
    "tier": "brief",
-   "slug": "2026-09-22-mitsui-v-spain-mitsui-co-ltd.html",
+   "slug": "2026-09-22-mitsui-co-v-spain-annulment-proceeding-at-icsid.html",
    "event": "Annulment"
   },
   {
@@ -441,20 +400,20 @@
     "url": "https://caselaw.nationalarchives.gov.uk/ewca/civ/2026/1172"
    },
    {
+    "date": "2026-09-18",
+    "title": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "main": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/325/eng@2026-09-18"
+   },
+   {
     "date": "2026-09-11",
     "title": "Bahari Beach Hotel Limited vs Taher Muccadam",
     "main": "Bahari Beach Hotel Limited vs Taher Muccadam",
     "step": "arbitration-related judgment",
     "tail": "High Court of Tanzania · [2026] TZHC 5337",
     "url": "https://tanzlii.org/en/akn/tz/judgment/tzhc/2026/5337/eng@2026-09-11"
-   },
-   {
-    "date": "2026-09-08",
-    "title": "Tata International West Asia DMCC vs FMJ Hardware Limited",
-    "main": "Tata International West Asia DMCC vs FMJ Hardware Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/306/eng@2026-09-08"
    },
    {
     "date": "2026-09-08",
@@ -466,14 +425,6 @@
    }
   ],
   "people": [
-   {
-    "date": "2026-09-22",
-    "title": "“EFCC Sets Up Special Team To Probe Mambilla Transactions” — Atiku, Malami, Dasuki, Agunloye, Others May Face Questioning",
-    "main": "“EFCC sets up special team to probe Mambilla transactions” — Atiku, Malami, Dasuki, Agunloye, others may face questioning",
-    "step": "",
-    "tail": "TheNigeriaLawyer",
-    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQLU1GNEoySWduY1lYWWswcDliZERGOXZpRkU5YVlKaTgzYWJuaWh4RmFxaUZvdlVyVEF4UUlBejNFSDdTNGVZT2toTlRyZDBlWlJvalg3aExEbXYyZTFkMlhua1BQSEx2YWtILVYzanlBWHZiUUlfLU9tdlBnbGo1dzYzNU5QZFpnSE5DTElDTFJ6UTBabkRwcEpZYTFfMjV0dWxIM1VRcmtabWJsTEJOdk5rc1RDaW8xYnZ6S3JNOWVLMFhKU19tSFF3bjBYVTdDWWhrZXJJaXAtaFk?oc=5"
-   },
    {
     "date": "2026-09-22",
     "title": "Broadfield hires Asia disputes partner from RPC",
