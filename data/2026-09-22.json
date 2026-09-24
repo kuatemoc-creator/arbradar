@@ -229,46 +229,6 @@
    "event": "Note"
   },
   {
-   "id": 4792,
-   "title": "Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y. 1:26-mc-00464)",
-   "title_en": null,
-   "summary": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee $ 52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC). (Attachments: # 1 Supplement Memorandum of Law in Support of Ex Parte Application, # 2 Affidavit Declaration of R Parties: The Bank of New York Mellon; Bank of America, N.A.; Citibank, N.A.; Deutsche Bank Trust Company Americas; Joint Stock Company Belarusian Potash Company (BPC); J.P. Morgan Chase & Co.. Counsel on record: Ford O'Brien Landy LLP.",
-   "summary_en": null,
-   "url": "https://www.courtlistener.com/docket/74828236/joint-stock-company-belarusian-potash-company-bpc-v-jp-morgan-chase/",
-   "source": "US federal docket",
-   "source_tier": 1,
-   "event_type": "s1782_application",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": "1:26-mc-00464",
-   "claimants": [
-    "The Bank of New York Mellon"
-   ],
-   "respondents": [
-    "Bank of America, N.A.",
-    "Citibank, N.A."
-   ],
-   "states": [],
-   "sectors": [
-    "Finance & banking",
-    "Transport & logistics"
-   ],
-   "counsel": [
-    "Ford O'Brien Landy LLP"
-   ],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "US federal docket: §1782 application",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
-   "event": "§1782 application"
-  },
-  {
    "id": 5412,
    "title": "Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
    "title_en": null,
@@ -298,7 +258,7 @@
    "also": [],
    "lang": "en",
    "country": "Kenya",
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-22-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
    "event": "State measure"
   },
@@ -377,6 +337,46 @@
    "tier": "brief",
    "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
    "event": "Notice of dispute"
+  },
+  {
+   "id": 4792,
+   "title": "Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y. 1:26-mc-00464)",
+   "title_en": null,
+   "summary": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee $ 52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC). (Attachments: # 1 Supplement Memorandum of Law in Support of Ex Parte Application, # 2 Affidavit Declaration of R Parties: The Bank of New York Mellon; Bank of America, N.A.; Citibank, N.A.; Deutsche Bank Trust Company Americas; Joint Stock Company Belarusian Potash Company (BPC); J.P. Morgan Chase & Co.. Counsel on record: Ford O'Brien Landy LLP.",
+   "summary_en": null,
+   "url": "https://www.courtlistener.com/docket/74828236/joint-stock-company-belarusian-potash-company-bpc-v-jp-morgan-chase/",
+   "source": "US federal docket",
+   "source_tier": 1,
+   "event_type": "s1782_application",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "1:26-mc-00464",
+   "claimants": [
+    "The Bank of New York Mellon"
+   ],
+   "respondents": [
+    "Bank of America, N.A.",
+    "Citibank, N.A."
+   ],
+   "states": [],
+   "sectors": [
+    "Finance & banking",
+    "Transport & logistics"
+   ],
+   "counsel": [
+    "Ford O'Brien Landy LLP"
+   ],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "US federal docket: §1782 application",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "brief",
+   "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
+   "event": "§1782 application"
   }
  ],
  "records": {
