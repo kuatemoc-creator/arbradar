@@ -136,7 +136,7 @@
   {
    "id": 7378,
    "title": "Roust USA, Inc. v. CEDC International sp. z o.o. (S.D.N.Y. 1:26-cv-08283)",
-   "title_en": "Alcoholic beverages group Roust to sell Poland's CEDC for almost $1 billion",
+   "title_en": null,
    "summary": "NOTICE of Petition to Vacate the Arbitration Award re: 1 Petition to Compel/Confirm/Modify/Stay/Vacate Arbitration. Document filed by Roust USA, Inc...(Rooney, Gavin) (Entered: 09/23/2026) Parties: CEDC INTERNATIONAL SP. Z O.O.; Roust USA, Inc.. Counsel on record: Lowenstein Sandler LLP (NYC).",
    "summary_en": null,
    "url": "https://www.courtlistener.com/docket/74838223/roust-usa-inc-v-cedc-international-sp-z-oo/",
@@ -165,18 +165,10 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "reuters.com",
-     "url": "https://www.reuters.com/article/business/alcoholic-beverages-group-roust-to-sell-polands-cedc-for-almost-1-billion-idUSKBN2HO1CI/",
-     "title": "Alcoholic beverages group Roust to sell Poland's CEDC for almost $1 billion",
-     "published_at": "2021-11-03",
-     "snippet": "MOSCOW (Reuters) - Alcoholic beverages group Roust, which owns Russian Standard Vodka, has agreed to sell its Polish subsidiary, CEDC, to food company Maspex in a deal that values the business at 3.89 ..."
-    }
-   ],
+   "corroboration": [],
    "story": null,
    "tier": "development",
-   "slug": "2026-09-23-alcoholic-beverages-group-roust-to-sell-poland-s-cedc-for-almost-1-bil.html",
+   "slug": "2026-09-23-roust-usa-inc-v-cedc-international-sp-z-o-o-s-d-n-y-1-26-cv-08283.html",
    "event": "Annulment"
   },
   {
