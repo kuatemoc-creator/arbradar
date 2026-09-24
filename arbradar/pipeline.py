@@ -584,7 +584,8 @@ def reclassify(conn, settings, days: int = 21) -> int:
 
 _ON_TOPIC = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIAC|\bPCA\b|UNCITRAL|annul|set aside|"
                        r"enforce|treaty claim|investor-state|\bISDS\b|investment treaty|expropriat|nationali[sz]|"
-                       r"notice of dispute|notice of intent|emergency arbitrator|\bseat\b", re.I)
+                       r"notice of dispute|notice of intent|emergency arbitrator|\bseat\b|"
+                       r"seiz|confiscat|revok|licen[cs]e|concession|asset freez|frozen assets|windfall tax", re.I)
 
 
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
@@ -633,7 +634,9 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
             continue                              # below the floor: leave it out rather than pad the day
         # A firm's newsletter piece or a trade story with no arbitration in it is
         # not a story here, however well it scores on the watchlist.
-        if (rep.get("event_type") or "commentary") == "commentary" and not rep.get("pinned") \
+        # The same test for a sweep item of any kind: "airlines cancel flights as
+        # sanctions bite" names no measure against an investor and is not a story.
+        if not rep.get("pinned") and (rep.get("source_tier") or 2) != 1 \
                 and not is_trade_press(rep.get("source") or "", rep.get("url") or "") \
                 and not _ON_TOPIC.search(" ".join([rep.get("title_en") or rep.get("title") or "",
                                                    rep.get("summary_en") or rep.get("summary") or ""])):
