@@ -302,7 +302,7 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 | sweep | [Google News, State query](https://news.google.com/) | English | "Argentina" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Procuración del Tesoro de la Nación](https://www.argentina.gob.ar/procuraciondeltesoro) (page, no feed) · [Boletín Oficial](https://www.boletinoficial.gob.ar) (page, no feed) · [COMPR.AR](https://comprar.gob.ar) (no answer) · [ENARGAS](https://www.enargas.gob.ar) (page, no feed) · [CNV](https://www.argentina.gob.ar/cnv) (page, no feed)
+On the map, not readable by script: [Procuración del Tesoro de la Nación](https://www.argentina.gob.ar/procuraciondeltesoro) (page, no feed) · [Boletín Oficial](https://www.boletinoficial.gob.ar) (page, no feed) · [COMPR.AR](https://comprar.gob.ar) (page, no feed) · [ENARGAS](https://www.enargas.gob.ar) (page, no feed) · [CNV](https://www.argentina.gob.ar/cnv) (page, no feed)
 
 ## Armenia
 
@@ -397,7 +397,7 @@ On the map, not readable by script: [DFAT - ISDS](https://www.dfat.gov.au/trade/
 | sweep | [Google News, State query](https://news.google.com/) | English | "Azerbaijan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page, no feed) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (page, no feed)
+On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page, no feed) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (no answer)
 
 ## Bahamas
 
@@ -1425,7 +1425,7 @@ On the map, not readable by script: [Legislative Herald (matsne)](https://matsne
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ghana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Minerals Commission](https://www.mincom.gov.gh) (page, no feed)
+On the map, not readable by script: [Minerals Commission](https://www.mincom.gov.gh) (no answer)
 
 ## Greece
 
@@ -1861,7 +1861,7 @@ On the map, not readable by script: [Gazzetta Ufficiale](https://www.gazzettauff
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kazakhstan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page, no feed) · [Goszakup public procurement](https://goszakup.gov.kz) (page, no feed) · [Judicial cabinet / court database](https://sud.gov.kz) (page, no feed) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page, no feed) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page, no feed) · [KASE](https://kase.kz/en/news/) (page, no feed) · [Akorda (President)](https://www.akorda.kz/en/events) (page, no feed) · [Government (primeminister.kz)](https://primeminister.kz/en/news) (page, no feed) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
+On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page, no feed) · [Goszakup public procurement](https://goszakup.gov.kz) (no answer) · [Judicial cabinet / court database](https://sud.gov.kz) (page, no feed) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page, no feed) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page, no feed) · [KASE](https://kase.kz/en/news/) (page, no feed) · [Akorda (President)](https://www.akorda.kz/en/events) (page, no feed) · [Government (primeminister.kz)](https://primeminister.kz/en/news) (page, no feed) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
 
 ## Kenya
 
