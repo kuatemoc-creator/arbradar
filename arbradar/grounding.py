@@ -56,7 +56,7 @@ def grounded(sentence: str, evidence: List[str], min_share: float = 0.7) -> bool
 
 def vet(it: Dict[str, Any]) -> Tuple[str, List[str]]:
     """The explanation with every ungrounded sentence removed, and what was removed."""
-    text = (it.get("story") or it.get("summary_en") or it.get("summary") or "").strip()
+    text = (it.get("story") or it.get("summary_en") or "").strip()
     if not text:
         return "", []
     evidence = _evidence(it)
@@ -79,15 +79,13 @@ def apply(items: List[Dict[str, Any]], date: str, out_dir: str) -> Dict[str, Any
     """Vet every entry in place and write the report for the day."""
     report = {"date": date, "entries": []}
     for it in items:
-        before = it.get("story") or it.get("summary_en") or it.get("summary") or ""
+        before = it.get("story") or it.get("summary_en") or ""
         text, dropped = vet(it)
         if before:
             if it.get("story"):
                 it["story"] = text
-            elif it.get("summary_en"):
-                it["summary_en"] = text
             else:
-                it["summary"] = text
+                it["summary_en"] = text
         report["entries"].append({
             "title": it.get("title_en") or it.get("title"), "url": it.get("url"),
             "source": (it.get("source") or "").replace("Google News / ", ""),

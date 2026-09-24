@@ -130,7 +130,8 @@ def sentences(text: str, max_words: int = 55) -> str:
             break
         out.append(p)
         n += w
-    s = " ".join(out).strip()
-    if s and s[-1] not in ".!?\u201d\u2019\"":
-        s = s.rstrip(",;:\u2026 ") + ("" if s.endswith("\u2026") else ".")
-    return s
+    # A sentence cut short by the feed ("...amid fears of a major energy price…")
+    # is not printed: better a headline and a source line than a fragment.
+    while out and (out[-1].rstrip().endswith(("\u2026", "...")) or out[-1].rstrip()[-1:] not in ".!?\u201d\u2019\")"):
+        out.pop()
+    return " ".join(out).strip()
