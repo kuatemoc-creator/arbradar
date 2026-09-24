@@ -208,6 +208,16 @@ closed. To add outlets, edit `tools/outlets.py` and run
 `python -m tools.discover`; to re-check the registers and courts, run
 `python -m tools.sourcemap --probe`.
 
+`Enforcement` is its own section of the issue: awards being enforced, resisted
+and set aside, and where the assets are. It draws on the US federal dockets
+(FSIA petitions, writs of execution against sovereign property, s.1782
+applications), the court feeds of the seats and enforcement jurisdictions, the
+ICSID annulment docket, the wires and company filings, and a Google News sweep
+of its own in eleven languages (award creditors, immunity from execution,
+attachment, exequatur and their equivalents). Domestic consumer or FINRA
+petitions on the US dockets are left out; a row needs a foreign or sovereign
+party.
+
 Syndicated coverage is clustered into one story per development (`pipeline.cluster`):
 the best-scored version leads, the other outlets hang off it as "also reported by".
 Items with different case numbers are never merged.

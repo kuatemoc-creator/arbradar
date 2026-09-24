@@ -332,6 +332,10 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
     if leads:
         sections.append(label("Leads", mb=2) + p("Measures and disputes in the making, from outside the trade press.", size=14, lh=1.5, color=MUTE, mb=0)
                         + "".join(story(it, 100 + i, False, site_url, date) for i, it in enumerate(leads, start=1)))
+    enforcement = (extras or {}).get("enforcement") or []
+    if enforcement:
+        sections.append(label("Enforcement", mb=2) + p("Awards being enforced, resisted and set aside, and where the assets are.", size=14, lh=1.5, color=MUTE, mb=0)
+                        + "".join(story(it, 200 + i, False, site_url, date) for i, it in enumerate(enforcement, start=1)))
     if briefs:                               # the same short list the day page shows
         sections.append(label("In brief", mb=2) + brief(briefs))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),

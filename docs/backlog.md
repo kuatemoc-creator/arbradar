@@ -8,6 +8,14 @@ the owner's accounts or DNS.
 
 ## Open
 
+00. **Enforcement track** [me] — done 24 September: `pipeline.select_enforcement`
+   and an Enforcement section in email, site and Markdown; wider enforcement
+   vocabulary in the taxonomy (eleven languages); Google News `ENFORCEMENT`
+   family and one enforcement query per edition language; CourtListener query
+   for execution against sovereign property; EDGAR and wire phrases. US docket
+   rows need a foreign or sovereign element. Next: the first cloud run with
+   the new sweeps shows whether the floor (40) is right.
+
 0. **Five sources per State** [me] — 24 September: `tools/outlets.py` lists
    1,671 outlets across 182 States; `tools/discover.py` verifies each feed and
    wires it; the map (`SOURCES.md`, `sources.html`) now lists only what is

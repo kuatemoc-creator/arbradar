@@ -82,6 +82,19 @@ MANDATE: List[str] = [
     '(annulment OR "set aside" OR "enforcement of the award" OR "recognition and enforcement" OR "sovereign immunity" OR attachment OR garnishment OR "assets seized") (award OR ICSID OR tribunal OR arbitration)',
 ]
 
+# The award after the award: who is enforcing what against whom, and where the
+# assets are. A creditor chasing a State needs counsel in every jurisdiction
+# with attachable property; a debtor resisting needs it in each one too.
+ENFORCEMENT: List[str] = [
+    '("award creditor" OR "award creditors" OR "enforce the award" OR "enforcement of the award" OR "enforce an arbitral award" OR "enforce the arbitral award") (court OR assets OR state OR republic OR government)',
+    '("sovereign immunity" OR "state immunity" OR "immunity from execution" OR "commercial exception" OR "Foreign Sovereign Immunities Act" OR "State Immunity Act") (award OR arbitration OR arbitral)',
+    '("seized" OR "attached" OR "attachment" OR "garnish" OR "frozen" OR "arrested") (assets OR aircraft OR vessel OR ship OR property OR accounts OR shares) (award OR arbitration OR "arbitral")',
+    '("petition to confirm" OR "confirmed the award" OR "recognition and enforcement" OR "New York Convention" OR exequatur OR "registered the award") (court OR judge OR tribunal)',
+    '("Citgo" OR "PDV Holding" OR "Yukos" OR "ConocoPhillips" OR "Tethyan" OR "Air India" OR "Cairn" OR "Devas" OR "Crystallex" OR "Nord Stream") (award OR enforcement OR creditors OR auction OR court)',
+    '("annulment" OR "set aside" OR "setting aside" OR "vacate the award" OR "annulled the award" OR "ad hoc committee") (award OR tribunal OR ICSID OR arbitration)',
+    '("section 1782" OR "1782 discovery" OR "discovery in aid") (arbitration OR award OR tribunal)',
+]
+
 COUNTRY = '"{state}" (arbitration OR ICSID OR "investment treaty" OR expropriation OR "notice of dispute" OR nationalisation OR "licence revoked")'
 
 _TRAIL = re.compile(r"\s+-\s+[^-]{2,60}$")     # "Headline - Outlet Name"
@@ -117,6 +130,8 @@ def _sweep(days: int):
         yield q, "en-GB", "GB", "GB:en", "en", "", "people"
     for q in MANDATE:
         yield q, "en-GB", "GB", "GB:en", "en", "", "mandate"
+    for q in ENFORCEMENT:
+        yield q, "en-GB", "GB", "GB:en", "en", "", "enforcement"
     wanted = set(getattr(settings, "editions", None) or [])
     for label, hl, gl, ceid, lang in EDITIONS:
         if wanted and label not in wanted:

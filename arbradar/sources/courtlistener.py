@@ -25,6 +25,9 @@ QUERIES = {
     "s1782_application": '"28 U.S.C. 1782" OR "section 1782" OR "discovery in aid of a foreign"',
     "enforcement_action": '"petition to confirm arbitration award" OR "recognition and enforcement of a foreign arbitral award"',
     "annulment_setaside": '"vacate the arbitration award" OR "motion to vacate arbitral"',
+    # Execution against a sovereign's property: the stage after confirmation,
+    # where the assets and the immunity fights are.
+    "enforcement_action:execution": '("writ of execution" OR "turnover order" OR "writ of attachment" OR "post-judgment discovery") AND ("arbitral award" OR "arbitration award") AND (Republic OR Kingdom OR "sovereign" OR "Bolivarian" OR "Federation" OR "State of")',
 }
 
 

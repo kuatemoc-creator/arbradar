@@ -92,6 +92,13 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
         if _summary(it):
             lines += [(it.get("story") or _summary(it))[:600], ""]
         lines += [_meta_line(it), ""]
+    for it in (extras or {}).get("enforcement") or []:
+        if "## Enforcement" not in lines:
+            lines += ["## Enforcement", ""]
+        lines += [_headline(it, settings, date), ""]
+        if _summary(it):
+            lines += [(it.get("story") or _summary(it))[:600], ""]
+        lines += [_meta_line(it), ""]
     if extras:
         lines += record_sections(extras)
     return "\n".join(lines)

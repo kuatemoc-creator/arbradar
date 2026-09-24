@@ -56,6 +56,7 @@ ENDPOINT = "https://efts.sec.gov/LATEST/search-index"
 DOC_URL = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc_nodash}/{doc}"
 
 QUERIES: List[str] = [
+    '"enforce the award" OR "enforcement of the award" OR "petition to confirm" OR "confirmed the award" OR "vacate the award"',
     '"notice of arbitration"',
     '"request for arbitration"',
     '"notice of intent to submit"',

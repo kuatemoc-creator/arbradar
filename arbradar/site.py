@@ -67,6 +67,13 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
         leads.append(d)
+    enforcement = []
+    for it in (extras or {}).get("enforcement") or []:
+        d = {k: it.get(k) for k in STORY_FIELDS}
+        d["tier"] = "enforcement"
+        d["slug"] = story_slug(it, date)
+        d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
+        enforcement.append(d)
     records: Dict[str, List[Dict[str, Any]]] = {}
     for key, _ in RECORD_HEADINGS:
         rows = []
@@ -77,7 +84,7 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
         records[key] = rows
     os.makedirs(DATA, exist_ok=True)
     with open(day_file(date), "w", encoding="utf-8") as fh:
-        json.dump({"date": date, "subject": subject, "stories": stories, "leads": leads, "records": records},
+        json.dump({"date": date, "subject": subject, "stories": stories, "leads": leads, "enforcement": enforcement, "records": records},
                   fh, ensure_ascii=False, indent=1)
     return day_file(date)
 
@@ -102,9 +109,12 @@ def shown_before(date: str, days: int = 30) -> Tuple[Set[str], Set[str]]:
     urls: Set[str] = set()
     fps: Set[str] = set()
     for d in load_days():
-        if not (cutoff <= d["date"] < date):
+        # Earlier days, and - when a past day is rebuilt - the later days that
+        # already carried the story: a 19 September page built on the 24th
+        # must not repeat what the 20th printed.
+        if d["date"] == date or d["date"] < cutoff:
             continue
-        for s in (d.get("stories") or []) + (d.get("leads") or []):
+        for s in (d.get("stories") or []) + (d.get("leads") or []) + (d.get("enforcement") or []):
             urls.add(s.get("url") or "")
             fps.add(fingerprint(s)); fps.add(title_key(s))
             for a in s.get("also") or []:
@@ -123,9 +133,9 @@ def anchors_before(date: str, days: int = 21) -> List[Dict[str, Any]]:
     cutoff = (dt.date.fromisoformat(date) - dt.timedelta(days=days)).isoformat()
     out = []
     for d in load_days():
-        if not (cutoff <= d["date"] < date):
+        if d["date"] == date or d["date"] < cutoff:
             continue
-        for s in (d.get("stories") or []) + (d.get("leads") or []):
+        for s in (d.get("stories") or []) + (d.get("leads") or []) + (d.get("enforcement") or []):
             out.append({"title": s.get("title") or "", "title_en": s.get("title_en"), "url": s.get("url") or "",
                         "claimants": s.get("claimants") or [], "respondents": s.get("respondents") or [],
                         "states": s.get("states") or [], "case_ref": s.get("case_ref"),
@@ -138,7 +148,7 @@ def people_before(date: str, days: int = 21) -> List[Dict[str, Any]]:
     cutoff = (dt.date.fromisoformat(date) - dt.timedelta(days=days)).isoformat()
     out = []
     for d in load_days():
-        if not (cutoff <= d["date"] < date):
+        if d["date"] == date or d["date"] < cutoff:
             continue
         for r in (d.get("records") or {}).get("people") or []:
             out.append({"title": r.get("title") or "", "url": r.get("url") or "", "also": [], "lang": "en"})
@@ -229,6 +239,10 @@ def render_day(day: Dict[str, Any], days: List[Dict[str, Any]], settings) -> str
     if leads:
         parts.append('<h2 class="sec">Leads</h2><p class="lede">Measures and disputes in the making, from outside the trade press.</p>'
                      '<div class="stories">{}</div>'.format("".join(_story_row(s) for s in leads)))
+    enforcement = day.get("enforcement") or []
+    if enforcement:
+        parts.append('<h2 class="sec">Enforcement</h2><p class="lede">Awards being enforced, resisted and set aside, and where the assets are.</p>'
+                     '<div class="stories">{}</div>'.format("".join(_story_row(s) for s in enforcement)))
     if briefs:
         parts.append('<h2 class="sec">In brief</h2><div class="stories">{}</div>'.format("".join(
             _story_row(dict(s, summary="", summary_en="", story="")) for s in briefs)))
@@ -277,7 +291,7 @@ def build(settings, use_llm: bool = True) -> Dict[str, Any]:
     written = 0
     for day in days:
         date = day["date"]
-        for s in (day.get("stories") or []) + (day.get("leads") or []):
+        for s in (day.get("stories") or []) + (day.get("leads") or []) + (day.get("enforcement") or []):
             fname = s.get("slug") or ""
             if not fname:
                 continue

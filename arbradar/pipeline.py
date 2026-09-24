@@ -790,21 +790,48 @@ _BUSINESS = re.compile(r"\b(?:Inc|Ltd|Limited|Plc|LLC|LLP|GmbH|AG|SA|SpA|NV|BV|P
                        r"Airways|Cement|Steel|Motors|Pharma|Capital|Partners|Ventures)\b(?!\s+of\s+Ministers)")
 
 
+ENFORCEMENT_EVENTS = ("enforcement_action", "s1782_application", "annulment_setaside")
+
+
 def select_leads(conn, settings, taken: List[Dict[str, Any]], limit: int = 5, floor: float = 45.0) -> List[Dict[str, Any]]:
     """The best pre-dispute hints from outside the trade press and the records,
     not already carried as a story today or on an earlier day."""
+    return _track(conn, settings, taken, LEAD_EVENTS, limit, floor, trade_ok=False, records_ok=False, business_gate=True)
+
+
+def select_enforcement(conn, settings, taken: List[Dict[str, Any]], limit: int = 6, floor: float = 40.0) -> List[Dict[str, Any]]:
+    """The award after the award: enforcement, execution against assets,
+    immunity rulings, set-aside and s.1782 applications, from the press, the
+    court feeds and the US dockets alike. Each is a mandate somewhere: the
+    creditor needs counsel where the assets are, the debtor where the fight is."""
+    return _track(conn, settings, taken, ENFORCEMENT_EVENTS, limit, floor, trade_ok=True, records_ok=True, business_gate=False)
+
+
+def _foreign_docket(d: Dict[str, Any]) -> bool:
+    """A US federal docket row with a foreign or sovereign element: an FSIA or
+    execution petition, a s.1782 application ("In re"), or a foreign party."""
+    src = (d.get("source") or "").lower()
+    title = d.get("title") or ""
+    text = (title + " " + (d.get("summary") or "")).lower()
+    return ("sovereign" in src or "execution" in src or title.lower().startswith("in re")
+            or bool(re.search(r"foreign|republic of|kingdom of|federation|\bS\.?A\.?\b|\bLtd\b|\bPLC\b|\bGmbH\b|\bB\.?V\.?\b|\bAG\b|"
+                              r"international|new york convention|1782", text)) or bool(states_in(title)))
+
+
+def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, business_gate) -> List[Dict[str, Any]]:
     from . import site as _site
     from .outlets import is_trade_press
     cutoff = (as_of() - dt.timedelta(days=settings.lookback_days)).isoformat()
     upto = as_of().isoformat() + "~"
-    marks = ",".join("?" * len(LEAD_EVENTS))
+    marks = ",".join("?" * len(events))
+    sources = "" if records_ok else "AND source NOT LIKE 'Court:%' AND source NOT IN ('ICSID docket','SEC EDGAR','PCA case list') "
     rows = conn.execute(
         "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL AND COALESCE(excluded,0)=0 "
-        "AND source NOT LIKE 'Court:%' AND source NOT IN ('ICSID docket','SEC EDGAR','PCA case list') "
+        + sources +
         "AND event_type IN ({}) AND score >= ? "
         "AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "
         "AND COALESCE(published_at, substr(fetched_at,1,10)) <= ? "
-        "ORDER BY score DESC LIMIT 120".format(marks), (*LEAD_EVENTS, floor, cutoff, upto)).fetchall()
+        "ORDER BY score DESC LIMIT 120".format(marks), (*events, floor, cutoff, upto)).fetchall()
     shown_urls, shown_keys = _site.shown_before(as_of().isoformat())
     taken_urls = {t.get("url") for t in taken} | {a.get("url") for t in taken for a in (t.get("also") or [])}
     taken_keys = {title_key(t) for t in taken} | {fingerprint(t) for t in taken}
@@ -815,12 +842,14 @@ def select_leads(conn, settings, taken: List[Dict[str, Any]], limit: int = 5, fl
             continue
         if title_key(d) in shown_keys or title_key(d) in taken_keys or fingerprint(d) in taken_keys:
             continue
-        if is_trade_press(d.get("source") or "", d.get("url") or ""):
+        if not trade_ok and is_trade_press(d.get("source") or "", d.get("url") or ""):
             continue                                  # the trade press is a story, not a hint
+        if (d.get("source") or "").startswith("US federal docket") and not _foreign_docket(d):
+            continue                                  # a domestic consumer or FINRA petition is not this newsletter's work
         text = " ".join([d.get("title_en") or d.get("title") or "", d.get("summary_en") or d.get("summary") or ""])
-        if not _ON_TOPIC.search(text):
+        if not _ON_TOPIC.search(text) and not (d.get("source") or "").startswith(("Court:", "US federal docket")):
             continue
-        if d.get("event_type") in ("state_measure", "distress_event") and not (
+        if business_gate and d.get("event_type") in ("state_measure", "distress_event") and not (
                 d.get("claimants") or d.get("amount_usd") or _BUSINESS.search(text)):
             continue                                  # a measure that lands on no named business is politics
         cands.append(d)

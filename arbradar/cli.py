@@ -179,8 +179,12 @@ def cmd_build(args, settings, conn):
         enrich.enrich(conn, leads)
         leads = [it for it in leads if enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))
                  or followup.load(it.get("corroboration"))]
+    # The enforcement track: awards being enforced, resisted and undone.
+    enforcement = pipeline.select_enforcement(conn, settings, items + leads, limit=6)
+    if enforcement:
+        enrich.enrich(conn, enforcement)
     chased = 0
-    for it in [x for x in items if not x.get("brief_only")] + leads:
+    for it in [x for x in items if not x.get("brief_only")] + leads + enforcement:
         stored = followup.load(it.get("corroboration"))
         if stored or chased >= 14:
             it["corroboration"] = stored
@@ -204,15 +208,16 @@ def cmd_build(args, settings, conn):
     conn.commit()
     leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
     if chased:
-        print("chased {} stories into other outlets; {} leads".format(chased, len(leads)))
+        print("chased {} stories into other outlets; {} leads; {} enforcement".format(chased, len(leads), len(enforcement)))
     # The last check: every printed sentence must be in a source we cite.
     from . import grounding
     from .config import OUT_DIR
-    report = grounding.apply(items + leads, date, OUT_DIR)
+    report = grounding.apply(items + leads + enforcement, date, OUT_DIR)
     if report["dropped"]:
         print("grounding: dropped {} sentence(s) no cited source carries; see out/grounding-{}.json".format(report["dropped"], date))
-    extras = pipeline.record_extras(conn, settings, items)
+    extras = pipeline.record_extras(conn, settings, items + leads + enforcement)
     extras["leads"] = leads
+    extras["enforcement"] = enforcement
     built = email_html.build(items, extras, settings, date)
     if settings.use_llm and not args.no_llm:
         print("Writing issue with {} ...".format(settings.editor_model))
@@ -237,7 +242,7 @@ def cmd_build(args, settings, conn):
          paths["html"], paths["md"], len(items)))
     issue_id = cur.lastrowid
     conn.executemany("UPDATE items SET issue_id=? WHERE url=? OR id=?",
-                     [(issue_id, a["url"], it["id"]) for it in items + leads
+                     [(issue_id, a["url"], it["id"]) for it in items + leads + enforcement
                       for a in ([{"url": it["url"]}] + (it.get("also") or []))])
     conn.commit()
 

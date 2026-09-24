@@ -30,7 +30,8 @@ PHRASES = ('"notice of dispute"', '"notice of arbitration"', '"request for arbit
            '"arbitration proceedings" (commenced OR initiated OR filed OR received)', '"arbitral award" OR "arbitration award"',
            '"investment treaty" OR "bilateral investment treaty" OR ICSID', '"emergency arbitrator" OR "interim measures"',
            '"expropriation" OR "expropriated"', '"licence revoked" OR "license revoked" OR "concession terminated"',
-           '"tax assessment" (arbitration OR treaty OR dispute)', '"settlement agreement" arbitration')
+           '"tax assessment" (arbitration OR treaty OR dispute)', '"settlement agreement" arbitration',
+           '"enforcement of the award" OR "enforce the award" OR "recognition and enforcement" OR "petition to confirm" OR "award creditor"')
 _TRAIL = re.compile(r"\s+[-|–—]\s+[^-|–—]{2,60}$")
 # Only a wire or an exchange service is a company's own disclosure. Anything
 # else the unrestricted queries bring back is press, and the sweep has it.
