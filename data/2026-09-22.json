@@ -229,40 +229,6 @@
    "event": "Note"
   },
   {
-   "id": 5412,
-   "title": "Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
-   "title_en": null,
-   "summary": "Turkish Airlines and AJet list no Iran flights until March 2027…",
-   "summary_en": null,
-   "url": "https://www.middleeasteye.net/news/turkish-airlines-pegasus-and-ajet-cancel-iran-flights-us-sanctions-bite",
-   "source": "Google News / middleeasteye.net",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Turkey"
-   ],
-   "sectors": [
-    "Oil & gas"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Kenya",
-   "tier": "development",
-   "slug": "2026-09-22-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
-   "event": "State measure"
-  },
-  {
    "id": 5559,
    "title": "Mitsui & Co. v. Spain — annulment proceeding at ICSID",
    "title_en": null,
@@ -301,7 +267,7 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-22-mitsui-co-v-spain-annulment-proceeding-at-icsid.html",
    "event": "Annulment"
   },
