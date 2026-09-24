@@ -210,7 +210,7 @@ EVENT_PATTERNS: List = [
         " hires ", " hired ", " hiring ", "joins from", "joins firm", "joins the firm", "head joins",
         "partner joins", "partners join", "relocates", "moves to", "leaves for", "departs", " exits ",
         "rejoins", "returns to", "new partner", "promoted to partner", "partner promotion", "makes up",
-        "spin-off", "spins off", "launches practice", "launches disputes", "launch of", "sets up",
+        "spin-off", "spins off", "launches practice", "launches disputes", "launch of", "sets up practice", "sets up boutique", "sets up shop", "sets up office", "sets up own",
         "poaches", "snaps up", "recruits", "adds partner", "adds arbitration", "bolsters", "strengthens",
         "expands arbitration", "grows arbitration",
     ]),

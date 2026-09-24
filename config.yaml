@@ -40,6 +40,9 @@ firms: {}
 
 # Items containing these terms are heavily demoted.
 mute:
+  - " // "
+  - "may face questioning"
+  - "special team to probe"
   - webinar
   - call for papers
   - moot

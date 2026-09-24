@@ -56,6 +56,9 @@ def title_of(it: Dict[str, Any]) -> str:
 def summary_of(it: Dict[str, Any]) -> str:
     raw = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
     text = re.sub(r"\s+", " ", raw).replace("\xa0", " ").strip()
+    # Feed boilerplate is not part of the story: "The post X appeared first on Y."
+    text = re.sub(r"\s*The post .{0,200}? appeared first on .{0,80}?(?:\.|$)", "", text).strip()
+    text = re.sub(r"\s*(?:Read more|Continue reading|The article .{0,120} first appeared on .{0,60})\.?$", "", text).strip()
     t = (it.get("title") or "").strip().lower()
     return "" if (is_paywall(text) or (t and text.lower().startswith(t[:40]))) else text
 
