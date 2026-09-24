@@ -1,7 +1,201 @@
 {
  "date": "2026-09-22",
- "subject": "ArbRadar · 22 September 2026 — Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y.…",
+ "subject": "ArbRadar · 22 September 2026 — Emergency arbitrator rules in Albanian airport dispute",
  "stories": [
+  {
+   "id": 4764,
+   "title": "Emergency arbitrator rules in Albanian airport dispute",
+   "title_en": null,
+   "summary": "An ICC emergency arbitrator has issued an interim order in a dispute over Albania’s termination of an airport concession, which is also the subject of a threatened ICSID claim.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/emergency-arbitrator-rules-in-albanian-airport-dispute",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "interim_relief",
+   "published_at": "2026-09-21",
+   "institution": "ICSID",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals",
+    "Construction",
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘emergency arbitrator’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdW90ZUhFamtXWWM3R1pmalMzakdhc3lYMHdkT3ZKQlM1c0hUMV9RdlNKZ2h4YmNwdXpQVGN0T3ZKNlpLQ0xuR2hzWUVDM1dueVEtMUNCWkhUOUJqUUsxSV9vQmtaQ1VpZFVLM3BSS0RNX2pRaGh1MVBwTFZkQ3V3cEJWelhwTDBSRUhiMFFiRWRhR0RtNXA0ZU4zdVp6NDg?oc=5",
+     "title": "Emergency arbitrator rules in Albanian airport dispute"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "lead",
+   "slug": "2026-09-22-emergency-arbitrator-rules-in-albanian-airport-dispute.html",
+   "event": "Interim relief"
+  },
+  {
+   "id": 5535,
+   "title": "Libyan state entity fails to lift French attachment",
+   "title_en": null,
+   "summary": "A Kuwaiti company seeking to enforce a billion-dollar award against Libya has persuaded a Paris court to uphold an attachment of assets belonging to the state’s national oil company.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/libyan-state-entity-fails-lift-french-attachment",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Libya",
+    "Kuwait"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘attachment of assets’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQ3JjSGFGTmxGMnNGQ1FGLUhSS2hyREhIdGI5SEw1alZqQmZYdDJ6Sy1aTG0wTF9lbkc0ZnN3UlYxVk1RWGFiT01ZdnlZbkd5UjhFcGlVTXp1S0xNSFZiaUZ1ZThtN3g4REIxMHhXQnM5S1lMcE9QU296WC1LbWNDclpPTU1OaV9SdjU4WFQ4M0I1YklaMHdN?oc=5",
+     "title": "Libyan state entity fails to lift French attachment"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-22-libyan-state-entity-fails-to-lift-french-attachment.html",
+   "event": "Enforcement"
+  },
+  {
+   "id": 5534,
+   "title": "Russia loses Singapore immunity appeal in Yukos saga",
+   "title_en": null,
+   "summary": "The Singapore Court of Appeal has upheld an order allowing the former majority shareholders of Yukos Oil Company to enforce awards now worth more than US$66 billion against Russia, finding the state’s immunity defence was precluded by transnational issue estoppel.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/russia-loses-singapore-immunity-appeal-in-yukos-saga",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Russia"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "matched ‘award’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaEgzdzBZQ25iVnlkZGVteDlmdG1SdEZNNU43ODZQOE5TOFIzaFdTME96YzlGd0MxVXRDRVkwcC05N2QxbUJUc3pWbEkzTzFBVFZ4MHdWVDRrZEtpbWhNZ0Q2Z0lac2VYMVBoZy0tRnNvLU9pY1JyZUppVlFudXFxd0NTU1EwQldLdnlEYVQxeHh5ZjUtaFBHUDR6UHU?oc=5",
+     "title": "Russia loses Singapore immunity appeal in Yukos saga"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-22-russia-loses-singapore-immunity-appeal-in-yukos-saga.html",
+   "event": "Award"
+  },
+  {
+   "id": 5533,
+   "title": "EU lifts sanctions on Fridman",
+   "title_en": null,
+   "summary": "The European Union has lifted sanctions on Russian-Israeli billionaire Mikhail Fridman,&nbsp;who has been pursuing investment treaty claims&nbsp;against western states that have frozen his assets.",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/eu-lifts-sanctions-fridman",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "IAReporter",
+     "url": "https://www.iareporter.com/articles/eu-reportedly-lifts-sanctions-against-repeat-isds-claimant-mikhail-fridman/",
+     "title": "EU reportedly lifts sanctions against repeat ISDS claimant Mikhail Fridman"
+    },
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBnMjJMajhRemdkbXI2cEczTzNTeVJjQ2ZkVlQ3VjZHd1NSbmpVeUhPMHBKMWVCV0NXelVlZ0ItTEUxbWZOYUlrZ2RSQlpqdTZicEdfRXN4RFgxeVZhaG9EdnJ3LUI1Rm5naDJxdnVDUERlMGgwcWhPcw?oc=5",
+     "title": "EU to lift sanctions on Fridman"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-22-eu-lifts-sanctions-on-fridman.html",
+   "event": "Note"
+  },
+  {
+   "id": 5849,
+   "title": "APTEL Clarifies CERC Arbitration Powers And Corrects DVC Judgment Interpretation",
+   "title_en": null,
+   "summary": "APTEL rules on Tata Power's review petition, clarifying arbitration scope under the Electricity Act.",
+   "summary_en": null,
+   "url": "https://windinsider.com/2026/09/22/aptel-clarifies-cerc-arbitration-powers-and-corrects-dvc-judgment-interpretation/",
+   "source": "Google News / windinsider.com",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "tier": "development",
+   "slug": "2026-09-22-aptel-clarifies-cerc-arbitration-powers-and-corrects-dvc-judgment-inte.html",
+   "event": "Commercial arbitration"
+  },
   {
    "id": 5062,
    "title": "Lisbon mayor calls for Volta to be scrapped // Tax cut, proposal for windfall charge on oil companies // Cocaine gateway threat highlighted as greatest security risk",
@@ -30,12 +224,50 @@
    "amount_usd": null,
    "flag_reason": "State-measure sweep; no listed investor named",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Portugal Weekly",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZOUpfRjREQXVEQmpjb2VwaHQ1UE9zYWlDYWFMMlFLVzRvTEZqZThqQmFYN2JYNlpzWDVRaUl2WW1GZzdLNllNMHFWN3ZhYm9KRGRaREotdG9XRkRwbG9BSG1iQkZCOVdvbW55VjJkV2cwbXZESWNUTg?oc=5",
+     "title": "Lisbon mayor calls for Volta to be scrapped // Tax cut, proposal for windfall charge on oil companies // Cocaine gateway threat highlighted as greatest security risk"
+    }
+   ],
    "lang": "en",
    "country": null,
-   "tier": "lead",
+   "tier": "development",
    "slug": "2026-09-22-lisbon-mayor-calls-for-volta-to-be-scrapped-tax-cut-proposal-for-windf.html",
    "event": "State measure"
+  },
+  {
+   "id": 4785,
+   "title": "AAA Launches New Group To Navigate AI In Arbitration",
+   "title_en": null,
+   "summary": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2527183?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-21",
+   "institution": "ICDR/AAA",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": [],
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "tier": "development",
+   "slug": "2026-09-22-aaa-launches-new-group-to-navigate-ai-in-arbitration.html",
+   "event": "Note"
   },
   {
    "id": 4792,
@@ -73,7 +305,7 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
    "event": "§1782 application"
   },
@@ -107,118 +339,99 @@
    "also": [],
    "lang": "en",
    "country": "Kenya",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-22-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
    "event": "State measure"
   },
   {
-   "id": 4793,
-   "title": "Spartan Capital Securities, LLC v. Voeller (S.D.N.Y. 1:26-cv-08220)",
+   "id": 5559,
+   "title": "Mitsui & v. Spain — mitsui & Co., Ltd",
    "title_en": null,
-   "summary": "MEMORANDUM OF LAW in Support re: 2 MOTION to Confirm Arbitration . . Document filed by John D. Lowry, Kim M. Monchik, Spartan Capital Securities, LLC..(Knight, Emily) (Entered: 09/21/2026) Parties: Heidi Voeller; John D. Lowry; Spartan Capital Securities, LLC; Kim M. Monchik; Michael Voeller. Counsel on record: Sichenzia Ross Ference Carmel LLP.",
+   "summary": "Mitsui & brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on December 12, 2025 (Respondent(s)). White & Case acts for the claimant. Abogacía General del Estado, Ministry of Justice of the Government of Spain for Spain. The tribunal is Quentin Loh, presiding; Patrick Leonard; Anne Marie Mürrle Rojas. On 22 September 2026, mitsui & Co., Ltd. Files a counter-memorial on annulment.",
    "summary_en": null,
-   "url": "https://www.courtlistener.com/docket/74828480/spartan-capital-securities-llc-v-voeller/",
-   "source": "US federal docket",
+   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/20/47",
+   "source": "ICSID docket",
    "source_tier": 1,
-   "event_type": "enforcement_action",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": "1:26-cv-08220",
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-22",
+   "institution": "ICSID",
+   "treaty": "ECT (Energy Charter Treaty)",
+   "case_ref": "ARB/20/47",
    "claimants": [
-    "Heidi Voeller"
+    "Mitsui & Co., Ltd."
    ],
-   "respondents": [
-    "John D. Lowry",
-    "Spartan Capital Securities, LLC"
+   "respondents": [],
+   "states": [
+    "Spain"
    ],
-   "states": [],
    "sectors": [
-    "Transport & logistics"
+    "Electric Power & Other Energy"
    ],
    "counsel": [
-    "Sichenzia Ross Ference Carmel LLP"
+    "White & Case, Madrid, Spain, Frankfurt, Germany, Miami, FL, U.S.A., and Washington, D.C., U.S.A.",
+    "Abogacía General del Estado, Ministry of Justice of the Government of Spain, Madrid, Spain"
    ],
-   "arbitrators": [],
+   "arbitrators": [
+    "Patrick LEONARD (Irish)",
+    "Anne Marie MÜRRLE ROJAS (Colombian, German)",
+    "Quentin LOH (Singaporean)"
+   ],
    "amount_usd": null,
-   "flag_reason": "US federal docket: petition to confirm or vacate an award",
+   "flag_reason": "ICSID docket: annulment step",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "development",
-   "slug": "2026-09-22-spartan-capital-securities-llc-v-voeller-s-d-n-y-1-26-cv-08220.html",
-   "event": "Enforcement"
+   "tier": "brief",
+   "slug": "2026-09-22-mitsui-v-spain-mitsui-co-ltd.html",
+   "event": "Annulment"
   },
   {
-   "id": 5078,
-   "title": "NPA seizes more than R7 million in assets linked to alleged illegal mining",
+   "id": 5537,
+   "title": "Malaysian road developer reportedly puts India on notice of treaty dispute over protracted judicial delays",
    "title_en": null,
-   "summary": "BANGKOK--Thailand has seized assets worth more than $300 million, including shares in a major regional energy company…",
+   "summary": "",
    "summary_en": null,
-   "url": "https://www.asahi.com/ajw/articles/16200351",
-   "source": "Google News / asahi.com",
+   "url": "https://www.iareporter.com/articles/malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dispute-over-protracted-judicial-delays/",
+   "source": "IAReporter",
    "source_tier": 2,
-   "event_type": "distress_event",
+   "event_type": "notice_of_intent",
    "published_at": "2026-09-22",
    "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Mining & metals"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-22-npa-seizes-more-than-r7-million-in-assets-linked-to-alleged-illegal-mi.html",
-   "event": "State measure"
-  },
-  {
-   "id": 5113,
-   "title": "Mambilla: TSF Hails Nigeria’s Victory At ICC Tribunal",
-   "title_en": null,
-   "summary": "President Bola Tinubu has commended the judgment of the International Chamber of Commerce (ICC) arbitration tribunal in Paris…",
-   "summary_en": null,
-   "url": "https://www.vanguardngr.com/2026/09/tinubu-hails-nigerias-victory-over-sunrises-2-35bn-mambilla-claim/",
-   "source": "Google News / vanguardngr.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-22",
-   "institution": "ICC",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Nigeria"
+    "Malaysia",
+    "India"
    ],
    "sectors": [],
    "counsel": [],
    "arbitrators": [],
    "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
+   "flag_reason": "matched ‘on notice of’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "tier": "development",
-   "slug": "2026-09-22-mambilla-tsf-hails-nigeria-s-victory-at-icc-tribunal.html",
-   "event": "Commercial arbitration"
+   "tier": "brief",
+   "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
+   "event": "Notice of dispute"
   }
  ],
  "records": {
   "docket": [],
   "disclosures": [],
   "courts": [
+   {
+    "date": "2026-09-22",
+    "title": "The Russian Federation v Veteran Petroleum Ltd and others",
+    "main": "The Russian Federation v Veteran Petroleum Ltd and others",
+    "step": "enforcement of an award",
+    "tail": "Court of Appeal of Singapore (SICC appeal) · [2026] SGCA(I) 5",
+    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%205.pdf"
+   },
    {
     "date": "2026-09-22",
     "title": "Benjamin Gilbert & Anor v Broadoak Private Finance Limited",
@@ -237,22 +450,30 @@
    },
    {
     "date": "2026-09-08",
-    "title": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
-    "main": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
-    "step": "recourse against an award",
-    "tail": "High Court of Singapore · [2026] SGHC 182",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20182.pdf"
-   },
-   {
-    "date": "2026-09-08",
     "title": "Tata International West Asia DMCC vs FMJ Hardware Limited",
     "main": "Tata International West Asia DMCC vs FMJ Hardware Limited",
     "step": "arbitration-related judgment",
     "tail": "High Court Commercial Division",
     "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/306/eng@2026-09-08"
+   },
+   {
+    "date": "2026-09-08",
+    "title": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
+    "main": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
+    "step": "recourse against an award",
+    "tail": "High Court of Singapore · [2026] SGHC 182",
+    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20182.pdf"
    }
   ],
   "people": [
+   {
+    "date": "2026-09-22",
+    "title": "“EFCC Sets Up Special Team To Probe Mambilla Transactions” — Atiku, Malami, Dasuki, Agunloye, Others May Face Questioning",
+    "main": "“EFCC sets up special team to probe Mambilla transactions” — Atiku, Malami, Dasuki, Agunloye, others may face questioning",
+    "step": "",
+    "tail": "TheNigeriaLawyer",
+    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQLU1GNEoySWduY1lYWWswcDliZERGOXZpRkU5YVlKaTgzYWJuaWh4RmFxaUZvdlVyVEF4UUlBejNFSDdTNGVZT2toTlRyZDBlWlJvalg3aExEbXYyZTFkMlhua1BQSEx2YWtILVYzanlBWHZiUUlfLU9tdlBnbGo1dzYzNU5QZFpnSE5DTElDTFJ6UTBabkRwcEpZYTFfMjV0dWxIM1VRcmtabWJsTEJOdk5rc1RDaW8xYnZ6S3JNOWVLMFhKU19tSFF3bjBYVTdDWWhrZXJJaXAtaFk?oc=5"
+   },
    {
     "date": "2026-09-22",
     "title": "Broadfield hires Asia disputes partner from RPC",
@@ -260,14 +481,6 @@
     "step": "",
     "tail": "FinanceAsia",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUktkaUFqem90ZmgzUjFabG9JV25sdEpZc0JFWllxZGloVnVqOHF5dk5jWXhUYTlTbTdOVXBkbk1uYnR4UnF4MF8tbThyOXRXajE4eVM2bVE2Wmh4Q29Kdmk4NDlXYWVEYWhMR3VyamN4TXFDUTB1blhpaEZ4a2l1eWcwekQ3TUh1bWNJTjBhYllKRW1J?oc=5"
-   },
-   {
-    "date": "2026-09-22",
-    "title": "“EFCC Sets Up Special Team To Probe Mambilla Transactions” — Atiku, Malami, Dasuki, Agunloye, Others May Face Questioning",
-    "main": "“EFCC Sets Up Special Team To Probe Mambilla Transactions” — Atiku, Malami, Dasuki, Agunloye, Others May Face Questioning",
-    "step": "",
-    "tail": "TheNigeriaLawyer",
-    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQLU1GNEoySWduY1lYWWswcDliZERGOXZpRkU5YVlKaTgzYWJuaWh4RmFxaUZvdlVyVEF4UUlBejNFSDdTNGVZT2toTlRyZDBlWlJvalg3aExEbXYyZTFkMlhua1BQSEx2YWtILVYzanlBWHZiUUlfLU9tdlBnbGo1dzYzNU5QZFpnSE5DTElDTFJ6UTBabkRwcEpZYTFfMjV0dWxIM1VRcmtabWJsTEJOdk5rc1RDaW8xYnZ6S3JNOWVLMFhKU19tSFF3bjBYVTdDWWhrZXJJaXAtaFk?oc=5"
    },
    {
     "date": "2026-09-20",
