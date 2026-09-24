@@ -242,6 +242,18 @@ build applies the rules itself (case, whole-sentence explanations, one type
 scale, headline-only stories in In brief); the editorial model gets the whole
 style file in its brief.
 
+## Groundedness
+
+Nothing prints that a cited source does not say. `arbradar/grounding.py` runs
+last in every build: each sentence of an explanation is matched against the
+item's own text, the corroborating outlets' text and the page text read for
+it; a sentence whose content words and numbers are not found near-verbatim in
+one of those is dropped, and a cut-off fragment is dropped. An entry that
+loses all its sentences prints as a headline and a source line. The same gate
+vets anything the model tier writes, so the model may compress the sources
+but never add to them. `out/grounding-<date>.json` records what was kept and
+dropped for every entry of every day.
+
 ## Known gaps
 
 - UNCTAD's ISDS Navigator and italaw put a human-verification box in front of

@@ -205,6 +205,12 @@ def cmd_build(args, settings, conn):
     leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
     if chased:
         print("chased {} stories into other outlets; {} leads".format(chased, len(leads)))
+    # The last check: every printed sentence must be in a source we cite.
+    from . import grounding
+    from .config import OUT_DIR
+    report = grounding.apply(items + leads, date, OUT_DIR)
+    if report["dropped"]:
+        print("grounding: dropped {} sentence(s) no cited source carries; see out/grounding-{}.json".format(report["dropped"], date))
     extras = pipeline.record_extras(conn, settings, items)
     extras["leads"] = leads
     built = email_html.build(items, extras, settings, date)

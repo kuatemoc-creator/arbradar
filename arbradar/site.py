@@ -247,10 +247,17 @@ def build(settings, use_llm: bool = True) -> Dict[str, Any]:
     if not days:
         raise RuntimeError("no day data yet - build an issue first")
     os.makedirs(SITE, exist_ok=True)
+    # The custom domain goes on the site only once it resolves. With the CNAME
+    # file in place before the DNS record exists, GitHub redirects the github.io
+    # address to a host that does not answer and every visitor gets a warning.
+    from .config import live_site_url
     host = re.sub(r"^https?://", "", (settings.site_url or "").strip()).split("/")[0]
-    if host and not host.endswith("github.io"):
-        with open(os.path.join(SITE, "CNAME"), "w", encoding="utf-8") as fh:
+    cname = os.path.join(SITE, "CNAME")
+    if host and not host.endswith("github.io") and live_site_url(settings):
+        with open(cname, "w", encoding="utf-8") as fh:
             fh.write(host + "\n")
+    elif os.path.exists(cname):
+        os.remove(cname)
     with open(os.path.join(SITE, ".nojekyll"), "w", encoding="utf-8") as fh:
         fh.write("")
     # The full list of sources, verified weekly, is part of the product.
