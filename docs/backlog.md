@@ -8,18 +8,19 @@ the owner's accounts or DNS.
 
 ## Open
 
-1. **Style corpus from the inbox** [me] — in progress. Read every GAR and
-   IAReporter newsletter in the inbox in full (Gmail connector), keep the raw
-   text locally in `data/newsletters/` (private, gitignored: it is their
-   subscription content), and commit the derived corpus to `docs/style-corpus/`:
-   subjects, section names, every headline, and the shape of each standfirst.
-   Done when at least 100 newsletters are in it and `docs/house-style.md` is
-   rewritten from that set rather than from the RSS feed.
-2. **Apply the house style** [me] — `style.headline()` for every headline and
-   `style.sentences()` for every explanation in `arbradar/email_html.py` and
-   `arbradar/site.py`; sections named Also / Filings / People. Known defect:
-   `headline()` over-lowercases ("Delhi High court"); keep Court, Tribunal,
-   Bank and similar after a proper noun. Depends on 1 for the wording rules.
+1. **Style corpus from the inbox** [me] — archiving in progress (264 of about
+   440 emails on 24 September, 11:30). Raw text stays in `data/newsletters/`
+   (gitignored: subscription content; thread ids in `docs/style-corpus/index.json`
+   so it can be re-fetched); `tools/newsletter_corpus.py` writes the derived
+   corpus and `docs/style-corpus/README.md`; `docs/house-style.md` is written
+   from it. Left: finish the archive, regenerate the numbers, rerun
+   `tools/wordlist.py`.
+2. **Apply the house style** [me] — done on 24 September for what the rules can
+   do: sentence-case headlines from a measured word list, whole-sentence
+   explanations within 45 words, one headline size, headline-only stories in
+   In brief, no firm-newsletter filler, GAR/IAReporter copies of one story
+   clustered. Left: the section names stay as they are until the user says
+   otherwise; the model-written tier needs the API key (10).
 3. **24 September issue** [me] — the local fetch finished; build, publish the
    site (`tools/publish_site.sh`), push state (`tools/push_state.sh`), send
    to aram@caselens.tech from Gmail.
@@ -29,9 +30,11 @@ the owner's accounts or DNS.
    18:00 UTC (GAR publishes about 16:00 UTC). Check the next run; if still
    missing, trace `fetch_log` for the GAR feed.
 5. **Send the daily issue from the cloud run** [me + Aram] — the workflow
-   builds and publishes but does not send. Needs a mail route usable from
-   GitHub Actions (SMTP app password or a provider API key as a repository
-   secret) and a send step in `.github/workflows/daily.yml`.
+   builds and publishes but does not send. Aram wants it automatic with an
+   approval from the phone, Gmail only. Proposed shape: the run sends a
+   preview to Aram and saves the issue as a Gmail draft with the list in BCC;
+   Aram taps Send. Later, a "reply SEND" gate. Needs a Gmail route usable
+   from GitHub Actions (an app password or OAuth credentials as secrets).
 6. **PCA case list blocked from GitHub Actions (403)** [me] — works locally,
    403 from the runner. Fetch locally and push into the state branch, or rely
    on Jus Mundi / GAR for PCA cases. No bot-challenge evasion.
