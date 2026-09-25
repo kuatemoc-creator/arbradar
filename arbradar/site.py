@@ -108,7 +108,7 @@ def load_days() -> List[Dict[str, Any]]:
 
 def shown_before(date: str, days: int = 30) -> Tuple[Set[str], Set[str]]:
     """URLs and title fingerprints of everything carried by earlier days."""
-    from .pipeline import fingerprint, title_key
+    from .match import fingerprint, title_key
     cutoff = (dt.date.fromisoformat(date) - dt.timedelta(days=days)).isoformat()
     urls: Set[str] = set()
     fps: Set[str] = set()

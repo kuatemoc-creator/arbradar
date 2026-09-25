@@ -18,7 +18,7 @@ import feedparser
 
 from . import db
 from .fetch import get
-from .pipeline import _entities, _stem
+from .match import _entities, _stem
 from .sources.editions import states_in
 
 CL = "https://www.courtlistener.com/api/rest/v4/search/"

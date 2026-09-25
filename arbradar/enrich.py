@@ -83,7 +83,7 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
     except Exception:                                 # noqa: BLE001 - boundary
         return None
     ours = {_stem(w) for w in words}
-    from .pipeline import _entities
+    from .match import _entities
     my_ents = _entities(" ".join(words))
     best, best_score = None, None
     for e in feedparser.parse(raw).entries[:8]:
@@ -102,7 +102,7 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
             continue
         if their_ents and not my_ents:
             continue
-        from .pipeline import shared_propers
+        from .match import shared_propers
         if not shared_propers(" ".join(words), title + " " + snippet_raw):
             continue                                  # no name in common beyond the words of the trade
         # A headline that names a State is about that State: a page that names
@@ -179,7 +179,7 @@ def relevant_summary(title: str, text: str) -> bool:
     """An explanation must be prose about the headline's subject: not a paywall
     notice, not the site's promotion, not the headline repeated, and it must
     share content words with the headline - two of them, or one that is a name."""
-    from .pipeline import is_paywall
+    from .match import is_paywall
     text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).replace("\xa0", " ").strip()
     if not text or len(text.split()) < 8:
         return False

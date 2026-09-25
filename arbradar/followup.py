@@ -52,7 +52,7 @@ def _ident(name: str) -> str:
     return _ALIAS.get(n, n)
 
 
-from .pipeline import _entities  # noqa: E402
+from .match import _entities  # noqa: E402
 
 
 def _same(a: str, b: str) -> bool:
@@ -248,7 +248,7 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             if not my_ents and not same_state:
                 if _dbg: print("   reject no state:", e["title"][:60])
                 continue                              # a headline that names only States is matched on those States
-            from .pipeline import shared_propers
+            from .match import shared_propers
             if not shared_propers(title, e["title"] + " " + (e.get("snippet") or "")):
                 if _dbg: print("   reject propers:", e["title"][:60])
                 continue                              # no name in common beyond the words of the trade
@@ -342,7 +342,7 @@ def _local_copies(it, title, ours, my_states, seen_outlets, seen_titles) -> List
     """Other outlets' copies of the story already fetched into the database:
     matched on the same names and States as the web copies, same guards."""
     from . import db
-    from .pipeline import shared_propers
+    from .match import shared_propers
     out: List[Dict[str, str]] = []
     when = str(it.get("published_at") or "")[:10] or dt.date.today().isoformat()
     try:

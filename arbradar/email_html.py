@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional
 
 from .config import ROOT
 from .taxonomy import EVENT_TYPES
-from .pipeline import is_paywall
+from .match import is_paywall
 
 INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
 LINE, HAIR, SUNKEN, LINK = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df"
