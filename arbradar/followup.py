@@ -376,14 +376,18 @@ def compose(it: Dict[str, Any], sources: List[Dict[str, str]], max_words: int = 
         first = sentences(base, 45)
         parts.append(first)
         have |= _stems(first)
-    ours = _stems(it.get("title_en") or it.get("title") or "")
+    ours = _stems(_flat(it.get("title_en") or it.get("title") or ""))
+    from .explain import _clause_cut
     for s in sources:
         for sent in re.split(r"(?<=[.!?])\s+(?=[A-Z“‘(])", s.get("snippet") or ""):
             sent = sent.strip()
-            if len(sent.split()) < 8 or len(sent.split()) > 45 or _PROMO.search(sent):
+            if len(sent.split()) < 8 or len(sent.split()) > 60 or _PROMO.search(sent):
                 continue
             if sent[-1] not in ".!?”’\"":
-                continue                              # a cut-off snippet, not a sentence
+                # a teaser cut mid-sentence: close it at its last clause, or leave it
+                sent = _clause_cut(sent, 36) if len(sent.split()) >= 15 else ""
+                if not sent:
+                    continue
             st = _stems(sent)
             if len(st & ours) < 2 or not _FACT.search(sent):
                 continue
