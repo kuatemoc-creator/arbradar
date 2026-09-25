@@ -1,44 +1,7 @@
 {
  "date": "2026-09-25",
- "subject": "ArbRadar · 25 September 2026 — US judge backs Iraq as net creditor in oil dispute with Turkey",
+ "subject": "ArbRadar · 25 September 2026 — IMPI seeks review of US$500,000 transaction",
  "stories": [
-  {
-   "id": 7760,
-   "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
-   "title_en": null,
-   "summary": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor.&nbsp;",
-   "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
-   "source": "GAR",
-   "source_tier": 2,
-   "event_type": "enforcement_action",
-   "published_at": "2026-09-24",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Iraq",
-    "Turkey"
-   ],
-   "sectors": [
-    "Oil & gas"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘petition to confirm’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor.",
-   "tier": "lead",
-   "slug": "2026-09-25-us-judge-backs-iraq-as-net-creditor-in-oil-dispute-with-turkey.html",
-   "event": "Enforcement"
-  },
   {
    "id": 7787,
    "title": "Mambilla: IMPI seeks review of $500,000 transaction",
@@ -71,10 +34,44 @@
    "lang": "en",
    "country": "Nigeria",
    "corroboration": [],
-   "story": "The Independent Media and Policy Initiative, IMPI, has called for further examination of a US$500,000 transaction referenced in the International Chamber of Commerce, ICC, arbitration proceedings over the long-running dispute surrounding Nigeria’s Mambilla Hydroelectric Power Project.",
-   "tier": "development",
+   "story": "The Independent Media and Policy Initiative, IMPI, has called for further examination of a US$500,000 transaction referenced in the International Chamber of Commerce, ICC.",
+   "tier": "lead",
    "slug": "2026-09-25-impi-seeks-review-of-us-500-000-transaction.html",
    "event": "Commercial arbitration"
+  },
+  {
+   "id": 7679,
+   "title": "Vonovia Balances Federal Housing Pledge Against Berlin Expropriation Risk and Rate Headwinds",
+   "title_en": "Vonovia balances Federal Housing Pledge against Berlin expropriation risk and rate Headwinds",
+   "summary": "Exane BNP Paribas rates Vonovia \"Underperform\" with a 16-euro target; Berenberg stays \"Buy\" at 34.50 euros as Berlin's expropriation debate returns.",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQX05jRWNwM3l6VW1nd1JBMV93bTcwYVRDOTFfakZGZjFRTnRLWnNMclYwYTI3Y2R0YnRIUjlTbXdaVmlRWS0yWFJhd3U0RldINF91SnNqX193clM0SlQtUUoyYzIweTQwX3BsbVowTmFySXBZMWJkOGtKU2ZiTW1CbjBXWGFydl9sS0tqSExQWDdNRVJPckNtRHBDZGUzMlIzWWNJMXZRNzVtNVRtM1c4b1dvd3RlZXdqUGw1am1SaXBZYTJLbUNxSVo5VTJoLU9fSjB3X0NLUzAzOWU3S2c?oc=5",
+   "source": "Google News / AD HOC NEWS",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-24",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘expropriat’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Nigeria",
+   "corroboration": [],
+   "story": "Exane BNP Paribas rates Vonovia \"Underperform\" with a 16-euro target; Berenberg stays \"Buy\" at 34.50 euros as Berlin's expropriation debate returns.",
+   "tier": "development",
+   "slug": "2026-09-25-vonovia-balances-federal-housing-pledge-against-berlin-expropriation-r.html",
+   "event": "State measure"
   },
   {
    "id": 7812,
@@ -103,7 +100,7 @@
    "lang": "en",
    "country": "Global",
    "corroboration": [],
-   "story": "Video-game publishers accusing Valve Corp. in a federal antitrust lawsuit of manipulating arbitration pacts with gaming customers have questioned the gamers' bid for access to the publishers' purportedly protected materials as the gamers fight a separate case against the digital content company.",
+   "story": "Video-game publishers accusing Valve Corp. in a federal antitrust lawsuit of manipulating arbitration pacts with gaming customers have questioned the gamers' bid for access to the publishers' purportedly protected materials.",
    "tier": "development",
    "slug": "2026-09-25-game-publishers-eye-doc-request-in-valve-antitrust-case.html",
    "event": "Note"
@@ -254,7 +251,45 @@
   }
  ],
  "leads": [],
- "enforcement": [],
+ "enforcement": [
+  {
+   "id": 7760,
+   "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
+   "title_en": null,
+   "summary": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-24",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Iraq",
+    "Turkey"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘petition to confirm’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
+   "tier": "enforcement",
+   "slug": "2026-09-25-us-judge-backs-iraq-as-net-creditor-in-oil-dispute-with-turkey.html",
+   "event": "Enforcement"
+  }
+ ],
  "records": {
   "docket": [],
   "disclosures": [],
