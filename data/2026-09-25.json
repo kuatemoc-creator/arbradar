@@ -1,20 +1,20 @@
 {
  "date": "2026-09-25",
- "subject": "ArbRadar · 25 September 2026 — IMPI seeks review of US$500,000 transaction",
+ "subject": "ArbRadar · 25 September 2026 — Benin-Asaba Expressway concession company appoints Emmanuel Onwodi as COO",
  "stories": [
   {
    "record": null,
-   "id": 7787,
-   "title": "Mambilla: IMPI seeks review of $500,000 transaction",
-   "title_en": "IMPI seeks review of US$500,000 transaction",
-   "summary": " Group urges authorities to examine financial records cited in ICC arbitration By Joseph Erunke, Abuja ABUJA — The Independent Media and Policy Initiative, IMPI, has called for further examination of a $500,000 transaction referenced in the International Chamber of Commerce, ICC, arbitration proceedings over the long-running dispute surrounding Nigeria’s Mambilla Hydroelectric Power Project. In a [&#8230;] \n The post  Mambilla: IMPI seeks review of $500,000 transaction  appeared first on  Vanguard News . ",
+   "id": 8134,
+   "title": "Benin-Asaba Highway: Senior Lawyer Cautions against Unilateral Revocation of 25-year Concession",
+   "title_en": "Benin-Asaba Expressway concession company appoints Emmanuel Onwodi as COO",
+   "summary": "FG orders immediate intervention, re-concessioning Felix Omoh-Asun&#160;in Benin City&#160; Senior Advocate of Nigeria (SAN), Abiodun Olatunji, has cautioned the federal government against recent pronouncements and actions concerning the state of",
    "summary_en": null,
-   "url": "https://www.vanguardngr.com/2026/09/mambilla-impi-seeks-review-of-500000-transaction/",
-   "source": "Vanguard (Nigeria)",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbHplbnFiTlVZZWl4TjctR0t0RlNSLVRkeWp6UDRuUkkzNkljVUFMSzJIOE5XMmd6YmtDNmFLV29wYU9qOXQzVU02V1lTem54U1ZXalR5XzM5QTNCRkQ1SlFUNXVoQXdOX1ZWbnBCWE1scWhYb2Qwa0UyTWliY1h2N2NpRUZpRzhVRDQxNzlFRGpPdkZ5T19jMUxGSXR1aEZXYnVNLXlMTXdjRWducnRMaVRSeWxXRVdLd2ZrLVZOLUJuWG1GZTFudFFSUk9qU1U?oc=5",
+   "source": "Google News / THISDAYLIVE",
    "source_tier": 2,
-   "event_type": "commercial_dispute",
+   "event_type": "distress_event",
    "published_at": "2026-09-25",
-   "institution": "ICC",
+   "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
@@ -24,21 +24,73 @@
    ],
    "sectors": [
     "Mining & metals",
-    "Power & renewables"
+    "Construction"
    ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘arbitration proceedings’ in the text",
+   "flag_reason": "State-measure sweep; no listed investor named",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / leadership.ng",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUFFLbkIwMXB5aDM5YW5pWmRfaWt3c2NfZHRrckJsVlltTHAzNzdwM3B2YjdDcDB1TVJ0SGlvbVE2ODdVLV9ZOGRLTmdzX1FtRVhrRk44V1NYeG1Oa1VCMlJ5bnVVM19tV0JTZ05rdzVKdlFuVEUzdklHRkdhVm1vOEYxb0EyekhLNlV4MTBlY01ENkwzMmdsUkxCS1N0WU82MjVTTTh2cw?oc=5",
+     "title": "SAN Cautions Federal Govt Against Unilateral Revocation Of Benin-Asaba Concession"
+    },
+    {
+     "source": "Google News / The Sun Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMlNfRW44SW5CMnYxNHp5Q01NNTNyenk1QklOdVVwWDJSLXRvTFM2YWFsdVI3SVJ5b0JNWTFSeGlQNmRMV3lCdVhzZFEyT3Z4WFdwU0ZyZGNyaVJrMkRxZ2tHTlU1d3JwMThjdjRCLUhkRElwQ3dLQWhtRi0zWXJQUVhJWFhFbHFQMjdxTWpQdVlTODNC?oc=5",
+     "title": "Olatunji cautions FG against revoking Benin-Asaba expressway concession"
+    },
+    {
+     "source": "Google News / streamlinefeed.co.ke",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaFcydkJjTDJpcXBhdV92OXY3Q04yM21ic2luUWN0VjlXUGRycXl0djBOMUoxeHBHN19WRjVqS0FIbmg3UGZ1bURJYzdxQjgyNFQ4WVgtT2hlQW5pd0hkalJWbE9kMlhIWXZqWkFNRzFDNFM0NnBSY0Y2WXZOTmtSaFU2dUg2TTF3T3ZTV21Gd0RtWHFvY3ZIYXBGSW12Y19KUS1OOW9EZlRxWnM2bmNJQjZ1SGYwTzVWS1lvSHBmLW0?oc=5",
+     "title": "Africa Brands Review Urges Federal Government to Suspend 35-Year King's College Concession"
+    }
+   ],
    "lang": "en",
    "country": "Nigeria",
-   "corroboration": [],
-   "story": "The Independent Media and Policy Initiative, IMPI, has called for further examination of a US$500,000 transaction referenced in the International Chamber of Commerce, ICC.",
+   "corroboration": [
+    {
+     "source": "newtelegraphng.com",
+     "url": "https://newtelegraphng.com/benin-asaba-expressway-concession-company-appoints-emmanuel-onwodi-as-coo/",
+     "title": "Benin-Asaba Expressway Concession Company Appoints Emmanuel Onwodi As COO",
+     "published_at": "2026-09-20",
+     "snippet": "The Benin-Asaba Expressway Concession Company Limited (BAECC) has announced the appointment of renowned Public-Private ..."
+    },
+    {
+     "source": "businessday.ng",
+     "url": "https://businessday.ng/news/article/fg-takes-over-benin-asaba-road-as-gridlock-worsens/",
+     "title": "FG takes over Benin-Asaba Road as gridlock worsens",
+     "published_at": "2026-09-24",
+     "snippet": "The Federal Government has taken over emergency rehabilitation of the 125-kilometre Benin-Asaba Road after worsening ..."
+    },
+    {
+     "source": "vanguardngr.com",
+     "url": "https://www.vanguardngr.com/2026/09/oborevwori-welcomes-fgs-emergency-rescue-of-benin-asaba-road/",
+     "title": "Oborevwori welcomes FG’s emergency rescue of Benin-Asaba Road",
+     "published_at": "2026-09-25",
+     "snippet": "Delta State Governor, Rt. Hon. Sheriff Oborevwori, has welcomed the Federal Government’s decision to commence emergency repairs on the Benin-Asaba Road, describing the intervention as a major step ..."
+    },
+    {
+     "source": "realnewsmagazine.net",
+     "url": "https://realnewsmagazine.net/benin-asaba-expressway-san-warns-against-unilateral-revocation-of-25-year-concession/",
+     "title": "Benin-Asaba Expressway: SAN warns against unilateral revocation of 25-year concession",
+     "published_at": "2026-09-25",
+     "snippet": "Abiodun Olatunji, has cautioned the Federal Government against recent pronouncements and actions concerning the state of the Benin-Asaba Expressway and the ongoing intervention activities on the ..."
+    },
+    {
+     "source": "ait.live",
+     "url": "https://ait.live/benin-asaba-road-fg-terminates-concession-begins-emergency-repairs-2/",
+     "title": "Benin–Asaba Road FG Terminates Concession, Begins Emergency Repairs",
+     "published_at": "2026-09-24",
+     "snippet": "The Federal Government has taken over the rehabilitation of the Benin–Asaba Road after terminating its concession arrangement, saying the concessionaire ..."
+    }
+   ],
+   "story": "FG orders immediate intervention, re-concessioning Felix Omoh-Asun in Benin City Senior Advocate of Nigeria (SAN), Abiodun Olatunji.",
    "tier": "lead",
-   "slug": "2026-09-25-impi-seeks-review-of-us-500-000-transaction.html",
-   "event": "Commercial arbitration"
+   "slug": "2026-09-25-benin-asaba-expressway-concession-company-appoints-emmanuel-onwodi-as-.html",
+   "event": "State measure"
   },
   {
    "record": null,
@@ -74,7 +126,46 @@
    "event": "Note"
   }
  ],
- "leads": [],
+ "leads": [
+  {
+   "record": null,
+   "id": 7787,
+   "title": "Mambilla: IMPI seeks review of $500,000 transaction",
+   "title_en": "IMPI seeks review of US$500,000 transaction",
+   "summary": " Group urges authorities to examine financial records cited in ICC arbitration By Joseph Erunke, Abuja ABUJA — The Independent Media and Policy Initiative, IMPI, has called for further examination of a $500,000 transaction referenced in the International Chamber of Commerce, ICC, arbitration proceedings over the long-running dispute surrounding Nigeria’s Mambilla Hydroelectric Power Project. In a [&#8230;] \n The post  Mambilla: IMPI seeks review of $500,000 transaction  appeared first on  Vanguard News . ",
+   "summary_en": null,
+   "url": "https://www.vanguardngr.com/2026/09/mambilla-impi-seeks-review-of-500000-transaction/",
+   "source": "Vanguard (Nigeria)",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-25",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Nigeria"
+   ],
+   "sectors": [
+    "Mining & metals",
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘arbitration proceedings’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Nigeria",
+   "corroboration": [],
+   "story": "The Independent Media and Policy Initiative, IMPI, has called for further examination of a US$500,000 transaction referenced in the International Chamber of Commerce, ICC.",
+   "tier": "signal",
+   "slug": "2026-09-25-impi-seeks-review-of-us-500-000-transaction.html",
+   "event": "Commercial arbitration"
+  }
+ ],
  "enforcement": [],
  "records": {
   "docket": [],

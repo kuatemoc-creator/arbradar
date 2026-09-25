@@ -54,79 +54,6 @@
   },
   {
    "record": null,
-   "id": 4307,
-   "title": "Mambilla Power ICC Case: How Nigeria win $3.38bn battle for di 1500MW Mambilla Power project",
-   "title_en": "Nigeria claims win in long-running hydropower plant feud",
-   "summary": "Nigeria has secured a major legal victory at the International Chamber of Commerce (ICC) tribunal in Paris after the arbitration panel rejected claims brought by Sunrise Power and Transmission…",
-   "summary_en": null,
-   "url": "https://therealmediang.com/news/nigeria-wins-2-35bn-mambilla-arbitration-battle-as-icc-rejects-sunrise-powers-claim",
-   "source": "Google News / therealmediang.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-20",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Nigeria"
-   ],
-   "sectors": [
-    "Construction"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "Law360 International Arbitration (Global)",
-     "url": "https://www.law360.com/internationalarbitration/articles/2527193?utm_source=rss&utm_medium=rss&utm_campaign=section",
-     "title": "Nigeria Claims Win In Long-Running Hydropower Plant Feud",
-     "published_at": "2026-09-19",
-     "snippet": "Nigeria has prevailed in a high-stakes International Chamber of Commerce arbitration over the Mambilla hydropower project, a major hydropower project in Nigeria, the country's president said Thursday."
-    },
-    {
-     "source": "TheCable",
-     "url": "https://www.thecable.ng/now-that-the-mambilla-mess-is-over/",
-     "title": "Now that the Mambilla mess is over",
-     "published_at": "2026-09-20",
-     "snippet": "Stay connected via Google News It came as a mighty relief to me when news broke on…"
-    },
-    {
-     "source": "leadership.ng",
-     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
-     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
-     "published_at": "2026-09-19",
-     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…"
-    },
-    {
-     "source": "BBC",
-     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRODl4MVNWWmQxVVBwVWJRaEZmdzNTdTNYQUxuanBmSGpkZ2daaHNZcV9jaFBqOFhRT05ORmtOSnJ4b0tNWDM3SW95Q3A1cWtnSWs1bGhYUGNNZExIbUHSAWNBVV95cUxPNkJNa24xV0NpZndEUnVuY0x2bVdKNDBVblBHb1laNmZFQjdEYVlFOGNvZFhHbzkteGc2N3pXMFRvcE15aUdBTjdMa1hqYjE1R3l6WV9FMkV5R0ludmFxMDFFRlk?oc=5",
-     "title": "Mambilla Power ICC Case: How Nigeria win $3.38bn battle for di 1500MW Mambilla Power project - BBC",
-     "published_at": "2026-09-18",
-     "snippet": ""
-    },
-    {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-xl/politics/government/mambilla-power-nigeria-wins-3-38bn-battle-1-500mw-project-gets-lifeline/ar-AA2ctrTU",
-     "title": "Mambilla power: Nigeria wins $3.38bn battle, 1,500MW project gets lifeline",
-     "published_at": "2026-09-17",
-     "snippet": "The Federal Government has won a nearly nine-year international arbitration battle against Sunrise Power and Transmission Company Limited over the long-delayed 1,500MW Mambilla Hydroelectric Power ..."
-    }
-   ],
-   "story": "Nigeria has prevailed in a high-stakes International Chamber of Commerce arbitration over the Mambilla hydropower project, a major hydropower project in Nigeria, the country's president said Thursday.",
-   "tier": "development",
-   "slug": "2026-09-20-nigeria-claims-win-in-long-running-hydropower-plant-feud.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "record": null,
    "id": 7587,
    "title": "Supreme Court Assesses SEBI Appeal Against SAT Order Setting Aside Penalties in Buyback Fraud Case. Alleged Misleading Announcement of Share Buyback with No Intent to Fulfil Under SEBI Act and PFUTP Regulations.",
    "title_en": "Supreme Court assesses SEBI appeal against SAT order setting aside penalties in Buyback fraud case. alleged Misleading announcement of share Buyback with no intent to Fulfil under SEBI act and PFUTP regulations.",
@@ -165,6 +92,63 @@
    "tier": "development",
    "slug": "2026-09-20-supreme-court-assesses-sebi-appeal-against-sat-order-setting-aside-pen.html",
    "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 382,
+   "title": "Georgia to Challenge US Enforcement of $350 Million Arbitration Award to Enka",
+   "title_en": "Georgia to Challenge US Enforcement of US$350 Million Arbitration Award to Enka",
+   "summary": "In a continuation of the Georgian government’s long-running dispute with Turkish construction giant Enka Renewables over the construction of a hydropower plant…",
+   "summary_en": null,
+   "url": "https://oc-media.org/georgias-dispute-with-enka-renewables-over-350-million-payout-for-hpp-moves-to-us-courts/",
+   "source": "Google News / oc-media.org",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Georgia"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘award’ in the text | held over from the previous day",
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Civil.ge (Georgia)",
+     "url": "https://civil.ge/archives/751450",
+     "title": "U.S. Court Grants ENKA’s Bid to Enforce Over $350M Arbitration Award Against Georgia",
+     "published_at": "2026-09-16",
+     "snippet": "A U.S. federal court has ruled in favor of Turkish company ENKA Renewables in its bid to enforce a…"
+    },
+    {
+     "source": "sovanews.tv",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeWFyRHhTdE42WUhYUWFkWjBZd1Yxbkw3N3hOcWdYamFkZmlfWmt5cVpnaElIZEdXaVIyUFU5Z1JINGxkVHRCRm9QYWJmYkNqNnVhTmVaZk12VXJ3eTd0UjJYQUFsWk5Vd1UzcHBwdF9OWXV6T0lRUVpiYW16bW45S1E5Q01uVFBjeXNGb04xWGdkVVM2Um9pejNHUTRQTndhZS0yeGtSTllPZ9IBrwFBVV95cUxOUHFIZ3RvWnA4NUljOWdyQTBpaFoyaGZ4d05IOGdfcnBVNDRaaGN4OFR4cXdkcE1yY1dPUHN6enh4TE45Y2EwSVFSOUVMOXRkYzg0X1A0b3hoQUE5TzN2VVFQUk1rN1ZldWNURko0RU51RmRuVDlHVGZxdzRLblM3V1dFd2ZrT1E5cUZ0TWozOVMyVHBwOXcxcXBRYm42Vl9ZN2pnZGh4aDE2V1ZmNGVv?oc=5",
+     "title": "US Court Orders Georgia to Pay $350M to ENKA Over Namakhvani HPP Project - sovanews.tv",
+     "published_at": "2026-09-16",
+     "snippet": ""
+    },
+    {
+     "source": "dfwatch.net",
+     "url": "https://dfwatch.net/georgia-faces-usd-400-million-bill-over-abandoned-hydropower-project-67409/",
+     "title": "Georgia faces USD 400 million bill over abandoned hydropower project",
+     "published_at": "2026-09-17",
+     "snippet": "A U.S. federal judge has allowed Turkish investor Enka Renewables to pursue enforcement of an arbitration award of more than USD 400 million for Georgia’s abandoned ..."
+    }
+   ],
+   "story": "In a continuation of the Georgian government’s long-running dispute with Turkish construction giant Enka Renewables.",
+   "tier": "development",
+   "slug": "2026-09-20-georgia-to-challenge-us-enforcement-of-us-350-million-arbitration-awar.html",
+   "event": "Award"
   }
  ],
  "leads": [],

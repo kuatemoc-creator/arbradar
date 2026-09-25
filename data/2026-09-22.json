@@ -31,7 +31,13 @@
    "amount_usd": null,
    "flag_reason": "matched ‘attachment of assets’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQ3JjSGFGTmxGMnNGQ1FGLUhSS2hyREhIdGI5SEw1alZqQmZYdDJ6Sy1aTG0wTF9lbkc0ZnN3UlYxVk1RWGFiT01ZdnlZbkd5UjhFcGlVTXp1S0xNSFZiaUZ1ZThtN3g4REIxMHhXQnM5S1lMcE9QU296WC1LbWNDclpPTU1OaV9SdjU4WFQ4M0I1YklaMHdN?oc=5",
+     "title": "Libyan state entity fails to lift French attachment"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [],
@@ -68,7 +74,13 @@
    "amount_usd": null,
    "flag_reason": "matched ‘award’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaEgzdzBZQ25iVnlkZGVteDlmdG1SdEZNNU43ODZQOE5TOFIzaFdTME96YzlGd0MxVXRDRVkwcC05N2QxbUJUc3pWbEkzTzFBVFZ4MHdWVDRrZEtpbWhNZ0Q2Z0lac2VYMVBoZy0tRnNvLU9pY1JyZUppVlFudXFxd0NTU1EwQldLdnlEYVQxeHh5ZjUtaFBHUDR6UHU?oc=5",
+     "title": "Russia loses Singapore immunity appeal in Yukos saga"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -112,40 +124,25 @@
    "amount_usd": null,
    "flag_reason": "matched ‘on notice of’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / BW Legal World",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNN1J2TUlGOFBtREplM083Z0l6VU1TV0pMaGpSdFlMTnVhbHZzUHRGRFVXcGgtVWpjWVNxZVh4bWtvRWloSU8wYnZ6MUI1Rm13b1BoUFpPc1I1WFVna1VKVy15ajFSbW9sbGlHYXg2eDF2N05OY2dFYXRoTDV1YlR6WVRWbDVRZF9lelcyVlJlVXFueXh0U01MdW9B?oc=5",
+     "title": "Dhaya Maju Issues ₹1,200 Crore BIT Claim Notice Against India Over Judicial Delays"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
     {
      "source": "GAR",
-     "url": "https://globalarbitrationreview.com/article/oil-trader-wins-hkiac-award-over-indian-deliveries",
-     "title": "Oil trader wins HKIAC award over Indian deliveries",
-     "published_at": "2026-09-08",
-     "snippet": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India."
-    },
-    {
-     "source": "PCA",
-     "url": "https://pca-cpa.org/en/news/pca-press-release-pca-case-no-2023-01-the-indus-waters-western-rivers-arbitration-islamic-republic-of-pakistan-v-republic-of-india-6/",
-     "title": "PCA Press Release – PCA Case No. 2023-01: The Indus Waters Western Rivers Arbitration (Islamic Republic of Pakistan v. Republic of India)",
-     "published_at": "",
-     "snippet": "Please see the attached press release issued on 31 August 2026 by the Permanent Court of Arbitration (PCA) in the arbitration instituted by the Islamic Republic of Pakistan against the Republic of India pursuant to the Indus Waters Treaty of…"
-    },
-    {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-in/news/other/g-r-infraprojects-terminates-rs413-crore-ntpc-bess-contract-citing-force-majeure-and-war-risk/ar-AA2cpV3x",
-     "title": "G R Infraprojects Terminates NTPC BESS EPC Contracts, Invokes Dispute Resolution",
-     "published_at": "2026-09-17",
-     "snippet": "India, Sept. 17 -- India's EPC sector runs on long-dated, fixed-scope contracts signed years before delivery, which makes force majeure and war-risk clauses far more than legal boilerplate they are"
-    },
-    {
-     "source": "thediplomat.com",
-     "url": "https://thediplomat.com/2026/09/why-malaysia-wont-extradite-dr-zakir-naik-to-india/",
-     "title": "Why Malaysia Won’t Extradite Dr. Zakir Naik to India",
-     "published_at": "2026-09-18",
-     "snippet": "Despite being wanted on various criminal charges in India, the Islamic preacher has become hugely popular since arriving in Malaysia in 2016."
+     "url": "https://globalarbitrationreview.com/article/malaysian-investor-threatens-india-over-enforcement-delays",
+     "title": "Malaysian investor threatens India over enforcement delays",
+     "published_at": "2026-09-23",
+     "snippet": "A Malaysian infrastructure company has reportedly threatened to bring a US$125 million investment treaty claim against India, alleging that judicial delays have prevented it from collecting on an arbitral award issued 12 years ago."
     }
    ],
-   "story": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India.",
+   "story": "A Malaysian infrastructure company has reportedly threatened to bring a US$125 million investment treaty claim against India.",
    "tier": "development",
    "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
    "event": "Notice of dispute"
@@ -174,7 +171,18 @@
    "amount_usd": null,
    "flag_reason": null,
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "IAReporter",
+     "url": "https://www.iareporter.com/articles/eu-reportedly-lifts-sanctions-against-repeat-isds-claimant-mikhail-fridman/",
+     "title": "EU reportedly lifts sanctions against repeat ISDS claimant Mikhail Fridman"
+    },
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBnMjJMajhRemdkbXI2cEczTzNTeVJjQ2ZkVlQ3VjZHd1NSbmpVeUhPMHBKMWVCV0NXelVlZ0ItTEUxbWZOYUlrZ2RSQlpqdTZicEdfRXN4RFgxeVZhaG9EdnJ3LUI1Rm5naDJxdnVDUERlMGgwcWhPcw?oc=5",
+     "title": "EU to lift sanctions on Fridman"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -392,7 +400,18 @@
    "amount_usd": null,
    "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / blueprint.ng",
+     "url": "https://blueprint.ng/nigeria-wont-be-soft-target-for-predatory-litigation-arbitration-agf-fagbemi/",
+     "title": "Nigeria will not be a soft target for predatory litigation, arbitration — Fagbemi"
+    },
+    {
+     "source": "Google News / THISDAYLIVE",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQS1BZSGNTYkpSQTExenE5dE51Wlc4Z0wtak5pTU1ZOHExbU5hZUdPUHNraGJjaGlzMzd1Sk1IUjlqVDBHa3lKS1pEU0VfOWVSYlgwY2RZd1hTLU43bDBnVTVwVjNMWVF5YnVwb0VCU1p4b2gtU0xvQTJZb2MxRDV1Yjh1MjhxMDBBQWFNanp0UDQ0M3pENGViRjhucFV0Sjc3RmlISA?oc=5",
+     "title": "Oye: Fagbemi’s Hardwork Saved Nigeria $14bn in Arbitration Claims"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [

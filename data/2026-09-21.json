@@ -1,7 +1,63 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
+ "subject": "ArbRadar · 21 September 2026 — Czech government reinstates fuel margin caps, plans windfall tax on refineries",
  "stories": [
+  {
+   "record": null,
+   "id": 5065,
+   "title": "Czech government reinstates fuel margin caps, plans windfall tax on refineries",
+   "title_en": null,
+   "summary": "PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax for the month of October…",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdVZJUm9nYjlBVDQ3d2R1bEQzVk5JRkFMTDE4a0RBa3dxclgzNE0wNDFJY2JHQjkxaEhVUkhKdllrb2dMWFliczdNNlV6U1pxLVlwSEpmZjFtem82aVBIS3h5M0tBMUtyVTBadzQzRjVJcEMxUFVaWERESm1RY21rRHoySTJKdUc3VHJnSDdhQWtJQUxLTWRIbEl4cWlxRE9VZTZFNFQ0UE1VSFlscXpUejhMdFdHeEZJV2U4ekFIOF9WZ0FN?oc=5",
+   "source": "Google News / Reuters",
+   "source_tier": 2,
+   "event_type": "state_measure",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Shell"
+   ],
+   "respondents": [],
+   "states": [
+    "Czechia",
+    "United Kingdom"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; investor of means named: Shell",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Yahoo Finance",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNU25HZ2dDaEVkdmpndUkyaUlfMXVpS1lCYnNTQi1WRW8zZkU1RGNrV3B2VUVXRjJRUUZtYjlhMjhhODA2ZzM4Z0FUWVh2MkZrRTZJbi1rVVQ4UGdFTkVRVGRRQkZPT1RoOFBwWjU2QXhycHRDRnU0bU1GNlllUEtKdU55X0trSmotdF9sT1ZkWVk5dHVOUkY0?oc=5",
+     "title": "Shell Falls as Europe Revives Windfall-Tax Politics"
+    },
+    {
+     "source": "Google News / msn.com",
+     "url": "https://www.msn.com/en-gb/politics/government/czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-refineries/ar-AA2cGxK7",
+     "title": "Czech government reinstates fuel margin caps, plans windfall tax on refineries"
+    },
+    {
+     "source": "Google News / oEnergetice.cz",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTGtoNzZUb2JxeHlqd2E3cDBCS1VhZzk4aFFIYWVzU1QwUzhxY0F2cjhQU1VpZUVON1NzSXlmSmJQOUxGTVFTNlBEVUhFX04wU1Rta2V2SUppMjdUYlpxZHNsaFhPdW9sOUJYa18tNnNsR3Y2X190Rk5SdzQyckh1UEE0YVBkMmlwQzRJbkxzNHk2aWZ4MGpZcGVnYVB2aFNsWU5POHZoeEgwUmVCTFpPMVJR?oc=5",
+     "title": "Billion-koruna hit to Czech refineries: government introduces two-year windfall tax"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax.",
+   "tier": "lead",
+   "slug": "2026-09-21-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
+   "event": "State measure"
+  },
   {
    "record": null,
    "id": 5412,
@@ -71,7 +127,7 @@
     }
    ],
    "story": "Turkish Airlines and AJet list no Iran flights.",
-   "tier": "lead",
+   "tier": "development",
    "slug": "2026-09-21-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
    "event": "State measure"
   },
@@ -263,7 +319,23 @@
    "amount_usd": null,
    "flag_reason": "matched ‘liable in’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "IAReporter",
+     "url": "https://www.iareporter.com/articles/spanish-company-claims-victory-in-duo-of-arbitrations-over-accra-desalination-plant/",
+     "title": "Spanish company claims victory in duo of arbitrations over Accra desalination plant"
+    },
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdXVFejRrRGhEQ0dGdU5LRnh2TktBR1NERnd1QVJ4eGtvZGktY3RQZ0NlX2IwZnY4a29yT2pVQ3lkYWRkV1dCdC1aWm1oN21ENWVTc21BOVoyRklnVzF2eW9BdHZsRUJpOGhPUlF2YkhwdUwwazBOM1pnNE1qMmpxZUlFTlVZMTRSUTdqZndyRQ?oc=5",
+     "title": "Ghana liable in desalination plant dispute"
+    },
+    {
+     "source": "Google News / Demócrata",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRWNuaU1aczJkaDBJYjE2ZlBkV0pZRUZ4QmZYSVhGdUZVUlZUd2ZVeGVNbVp2djlHd2Y1bFNCb0ZWcDZ0U2Q2a2ZEMjMtcnVDSXJrU0N5eWV6bnhGYjhuOGRnV2NBNGhvdWRHMVM1X3cyM1pkb3dib0NKaGYzZmxCajIxZjRRMDNwRW80LVdmc3BrcU9veGFUOWpEQTJ3ZjJVbDBNeDZUYjJXTlRuSlpGNzVob3kwVE9xUTZsSEpqenBfS2FBZnpj0gHMAUFVX3lxTE1qbW1HME4wRGVYMVc0V0dWcWpqU01VaG1jSFF4cHUtdTJIOWlicm5VdkRkaXdVaDVYYkg1cXFzNWctc0poQXdzbEVqdTVtbnRqQjZWR1ktb2dxby1YT1ozb21vN21uZkRETzh6YXdlMlFoQTJBREFQdXZFLURreGV3YkxjTV9xRXJfcm9rZG02N3doUFI2YXN6aTliR0hGSFFISVVTekNlWUxaT0tVcHE5ZGVIN2otY09mRTVfMk94VDNLSXQ1dXhjUk1ZQw?oc=5",
+     "title": "Cox obtains an arbitration award of 235 million dollars for the desalination plant in Accra"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [],
@@ -296,12 +368,18 @@
    "amount_usd": null,
    "flag_reason": null,
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9NaC1zOHlRUzJDd1p3LVN2bmtzS3NKeUI0NW1KZmhqWnU4TmZleWxZclpsMnYyY2trYkh3RXc4SEV6b2pQeXhOM0pnQ1ZMcmFsd0Ewb20zOWRXQ1l6TGplT25LeVhVaTdqc2FGNFo2dk5uOHVnNWFoNg?oc=5",
+     "title": "Reid leaves Debevoise for 3VB"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [],
    "story": "Natalie Reid has left Debevoise & Plimpton, where she was co-chair of the firm’s public international law group, to join 3 Verulam Buildings.",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-21-reid-leaves-debevoise-for-3vb.html",
    "event": "Note"
   },

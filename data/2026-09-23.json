@@ -50,6 +50,50 @@
   },
   {
    "record": null,
+   "id": 6235,
+   "title": "Malaysian investor threatens India over enforcement delays",
+   "title_en": null,
+   "summary": "A Malaysian infrastructure company has reportedly threatened to bring a US$125 million investment treaty claim against India, alleging that judicial delays have prevented it from collecting on an arbitral award issued 12 years ago.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/malaysian-investor-threatens-india-over-enforcement-delays",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "notice_of_intent",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Malaysia",
+    "India"
+   ],
+   "sectors": [
+    "Construction"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘threatens india’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdjdqRUItNWRwSXdJRGY3YllFelJhNWZGS3RBZEdPZGVQQ3hBbGJCVk9ycjlNNzNaTkZyeTJkUVpYSUlNb016aTBvVlVGc2VfODhpYlRzYkFnWnB0bWRFekI5YmxFSGQwYkd4WVZLaDl3Z19sc0NVRGp0QkxVank2THhlZEhHN0dPQm5Bcm93dnN5NGRhdXN1SDk0MUlQVktDSDg0Qw?oc=5",
+     "title": "Malaysian investor threatens India over enforcement delays"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "A Malaysian infrastructure company has reportedly threatened to bring a US$125 million investment treaty claim against India.",
+   "tier": "development",
+   "slug": "2026-09-23-malaysian-investor-threatens-india-over-enforcement-delays.html",
+   "event": "Notice of dispute"
+  },
+  {
+   "record": null,
    "id": 7378,
    "title": "Roust USA, Inc. v. CEDC International sp. z o.o. (S.D.N.Y. 1:26-cv-08283)",
    "title_en": null,
@@ -241,75 +285,6 @@
   },
   {
    "record": null,
-   "id": 5644,
-   "title": "Atiku Abubakar Named in ICC Arbitration Award Over Mambilla Contract",
-   "title_en": "Tribunal never convicted me of corruption, Atiku tells APC",
-   "summary": "The final award issued on 17 September by an International Chamber of Commerce (ICC) arbitration tribunal in Paris, in the dispute over the Mambilla Hydroelectric Power Project…",
-   "summary_en": null,
-   "url": "https://thenigerialawyer.com/no-charge-no-conviction-from-siemens-to-mambilla-five-international-matters-in-which-atiku-abubakar-and-his-former-wife-have-been-named/",
-   "source": "Google News / thenigerialawyer.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-23",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘icc arbitration’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "TheCable",
-     "url": "https://www.thecable.ng/now-that-the-mambilla-mess-is-over/",
-     "title": "Now that the Mambilla mess is over",
-     "published_at": "2026-09-20",
-     "snippet": "Stay connected via Google News It came as a mighty relief to me when news broke on…"
-    },
-    {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-xl/africa/other/mambilla-tinubu-hails-nigeria-s-victory-in-2-35bn-icc-arbitration/ar-AA2ctGj3",
-     "title": "Tinubu hails EFCC as Nigeria wins $6bn Mambilla arbitration in Paris",
-     "published_at": "2026-09-19",
-     "snippet": "· President says biggest legal hurdle to project execution cleared ·Applauds Obasanjo, Buhari, Fashola, EFCC, others ·Court says Atiku's wife got $500,000…"
-    },
-    {
-     "source": "leadership.ng",
-     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
-     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
-     "published_at": "2026-09-19",
-     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…"
-    },
-    {
-     "source": "guardian.ng",
-     "url": "https://guardian.ng/news/mambilla-tribunal-never-convicted-me-of-corruption-atiku-tells-apc/",
-     "title": "Mambilla: Tribunal never convicted me of corruption, Atiku tells APC",
-     "published_at": "2026-09-18",
-     "snippet": "Former Vice President Atiku Abubakar has accused the All Progressives Congress (APC) Campaign Council of distorting the outcome of the Mambilla arbitration by presenting allegations examined by the ..."
-    },
-    {
-     "source": "Premium Times Nigeria",
-     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPZjVvQ01aOGR6bmhrUVNHaDRyYlEwMzltYWlxS2R2Y1NablZ3aTFLbjNLX3k2SHgwQ1F1eEtDVjNTc01iZjFlMHZZNkQ2ZDFIeVBOOE43QzZkdkpNbEpiYVdDblU4ZUlBNlBlYmdMWVd6aTFXb2Z0STJZNkVreTZDUklhVmFqY0FzTmpnSHM4a2hBbEM3ekhuVlJ3SHdfLWZ3eDdSLWJEZ1YtSjJtVlJmZ1IybHJuclNxN2Q1VElHU1NmN1ZuWkllbHNUM21RY1BmbzVILURDSE0wNExZTE1GX1VEOVNLMnl3STlpQQ?oc=5",
-     "title": "EXCLUSIVE: EFCC sets up team to investigate Atiku, Malami, others named in ICC ruling on Mambilla deal - Premium Times Nigeria",
-     "published_at": "2026-09-20",
-     "snippet": ""
-    }
-   ],
-   "story": "The final award issued on 17 September by an International Chamber of Commerce (ICC) arbitration tribunal in Paris.",
-   "tier": "development",
-   "slug": "2026-09-23-tribunal-never-convicted-me-of-corruption-atiku-tells-apc.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "record": null,
    "id": 6238,
    "title": "Ukrainian state-owned defense equipment company seeks enforcement of award against US-based TNT supplier",
    "title_en": "Ukrainian state-owned defence equipment company seeks enforcement of award against US-based TNT supplier",
@@ -342,39 +317,6 @@
    "tier": "brief",
    "slug": "2026-09-23-ukrainian-state-owned-defence-equipment-company-seeks-enforcement-of-a.html",
    "event": "Award"
-  },
-  {
-   "record": null,
-   "id": 6237,
-   "title": "Tribunal majority declines jurisdiction over multi-billion-dollar OIC Investment Agreement claim",
-   "title_en": null,
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/tribunal-majority-declines-jurisdiction-over-multi-billion-dollar-oic-investment-agreement-claim/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-23",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-23-tribunal-majority-declines-jurisdiction-over-multi-billion-dollar-oic-.html",
-   "event": "Note"
   },
   {
    "record": null,

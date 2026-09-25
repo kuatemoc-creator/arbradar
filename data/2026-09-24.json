@@ -36,7 +36,23 @@
    "amount_usd": null,
    "flag_reason": "matched ‘petition to confirm’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdGN2SGFFMzB3eGpMUFZIdjFwY3ZhNHhSRFppcUk2MFhFMTVqckdqeE9Yc2FJY3UyNjE3U0poaTJLbkp3SjBWNl9iUnhzUkIyZjQwcFNaZHZZb2Fxc291SEQyalhiajJ1UE50TkxmVXlnSmUtVVAtQllLR2JVdFRKT2xwZTVpQ05HU2VTd294QzI1UjgyMUxyQ0dNZ2FTdm40NVQ2bGVSNGRyVkhGSVo4UmtuZm4?oc=5",
+     "title": "US judge backs Iraq as net creditor in oil dispute with Turkey"
+    },
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWVJQOXRSX3YtVmQzakE5NkJ6RHZCTXBDZmhFT2kteFR4cVpOcWk0WmRuVWN1c2NFaHExMUs0WS01MDlDUzBOazVlZmZpQm5jdXVBbUdKVW1UbXpHYUxSRnFjNlN6eC10WEpxQVQ5UlFJNzZOeVBWS2gtZnJuVzd5ZXRFM0o0MEl5Mnk2Q2ZuczBwMmpxbjl6ODhkSVRFMDA?oc=5",
+     "title": "US judge backs Iraq as net creditor in oil dispute with Turkey"
+    },
+    {
+     "source": "IAReporter",
+     "url": "https://www.iareporter.com/articles/us-court-recommends-confirmation-of-award-in-iraq-turkiye-pipeline-arbitration-amid-disagreement-over-interest-calculation/",
+     "title": "US court recommends confirmation of award in Iraq-Türkiye pipeline arbitration"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -52,20 +68,6 @@
      "title": "Iraq's $1.5B Arbitration Win Should Be Upheld, DC Judge Says",
      "published_at": "2026-09-25",
      "snippet": "A D.C. federal magistrate judge has recommended granting Iraq's Ministry of Oil's petition seeking to enforce a $1.47 billion arbitral award it won against Turkey after the country violated a pipeline agreement, but the magistrate judge held off on endorsing a specific number Turkey must pay to Iraq."
-    },
-    {
-     "source": "stockholmcf.org",
-     "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
-     "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
-     "published_at": "2026-09-21",
-     "snippet": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October, continuing the sale of businesses seized during the government’s crackdown on the faith-based Gülen movement. The sale notices were published in Tuesday’s Official Gazette, the Ekonomi newspaper reported."
-    },
-    {
-     "source": "turkishminute.com",
-     "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
-     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
-     "published_at": "2026-09-23",
-     "snippet": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel, which has been at the center of an investigation into allegations that proceeds from illegal betting, fraud and other crimes were laundered through its payment infrastructure, the T24 news website reported."
     }
    ],
    "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
@@ -143,25 +145,16 @@
    "amount_usd": null,
    "flag_reason": null,
    "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
+   "also": [
     {
-     "source": "Global Legal Post (Global)",
-     "url": "https://www.globallegalpost.com/region/middle-east/united-arab-emirates",
-     "title": "Three Crowns hires Freshfields’ Saudi disputes head for growing DIFC office",
-     "published_at": "2026-09-24",
-     "snippet": "Bashar Malkawi explores how the UAE’s emerging collective licensing model could offer a solution to copyright challenges posed by…"
-    },
-    {
-     "source": "CDR News (Global)",
-     "url": "https://www.cdr-news.com/categories/arbitration-adr/changing-the-perception-of-saudi-arbitration/",
-     "title": "Changing the perception of Saudi arbitration",
-     "published_at": "2026-09-22",
-     "snippet": "A groundbreaking report has served to dispel certain longstanding concerns about Saudi Arabia’s arbitral framework and effectiveness. CDR takes a deeper dive into the findings and how it might alter parties’ views of the Kingdom as a reliable seat."
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNa2NrRGgxa2tacndOMW96R0pNRTlBWk5aLWhRaTliN0EtTTlDbHBOR3hkcFRFWHJJY0h6VndPZUVSeTltRG9YWUVCRms3VUVtVWZpVkpQUGlzbURRdE1nQzBGeDFIVmw2akZEQURTZUdUcjIzT0RJeWJBdW82ZWFKb0ZrZ1ZNbllzTTNKczhuWWxZYjFEcThFR1U4OEM?oc=5",
+     "title": "Egypt defeats Saudi real estate investors’ mega-claim"
     }
    ],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
    "story": "Egypt has defeated claims worth more than US$34 billion brought by Saudi real estate investors under the OIC investment agreement.",
    "tier": "development",
    "slug": "2026-09-24-egypt-defeats-saudi-real-estate-investors-mega-claim.html",
@@ -193,7 +186,13 @@
    "amount_usd": null,
    "flag_reason": null,
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNclA2SUtjeTJOQUplaS02ZEVRT244Yi1oQlJrb0pSTkFBODdMcGhHX0pmZjl2dFBmZUFnOUVodlhfblVGU3h0b2NhWXBsUWRlOXdhdEVEZGprYWVNS2ZNak9XdmhaQ2piSFdtS0ZQMVhkcUVjUmxrejRKVFdCRzYtN0pidFRNUzVzWEQ1RENTcFc4a0tIVmd3?oc=5",
+     "title": "US tech company gets fraud suit sent to arbitration"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [],
@@ -238,13 +237,6 @@
      "title": "Freshfields’ Saudi disputes head joins Three Crowns in Dubai",
      "published_at": "2026-09-23",
      "snippet": "Amani Khalifa has left her role as head of the Saudi Arabia disputes practice at Freshfields to join the partnership at Three Crowns in Dubai."
-    },
-    {
-     "source": "Global Legal Post (Global)",
-     "url": "https://www.globallegalpost.com/region/middle-east/united-arab-emirates",
-     "title": "Three Crowns hires Freshfields’ Saudi disputes head for growing DIFC office",
-     "published_at": "2026-09-24",
-     "snippet": "Bashar Malkawi explores how the UAE’s emerging collective licensing model could offer a solution to copyright challenges posed by…"
     }
    ],
    "story": "Three Crowns LLP on Wednesday announced a partner hire for its new Dubai International Financial Centre office.",
@@ -278,7 +270,13 @@
    "amount_usd": null,
    "flag_reason": "matched ‘award’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Global Arbitration Review",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUW9PVXpJREhzTXdOMkQyMjJqZU4waFlOank3bmVVMHZNbUdBTDI4dWZObDZ1OHhrOGhvNDg4MTk5cldpX1NVZnpwV1pSWTNGRVcyVV8wOG1RUGNJaTNyWHFBV2pGdmFYUHJWUFJpeTFIOUxVWVFibmNWUDg5bDE5NHpTTHZSSXRSbEZOcGNPTlVwd2YzQnB2Rk1RTzJkN0dhdEZOZTNlUXM?oc=5",
+     "title": "Hong Kong court sets aside US$480 million award in IPO dispute"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [],
@@ -325,50 +323,6 @@
   },
   {
    "record": null,
-   "id": 7765,
-   "title": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction in dispute over sanctions-induced sale of insulation plant owned by Russian businessmen",
-   "title_en": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction",
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/russian-court-consults-foreign-affairs-ministry-on-polands-immunity-from-jurisdiction-in-dispute-over-sanctions-induced-sale-of-insulation-plant-owned-by-russian-businessmen/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-24",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Russia",
-    "Poland"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "theweek.in",
-     "url": "https://www.theweek.in/news/biz-tech/2026/09/19/india-energy-imports-us-tariffs.html",
-     "title": "Amid US tariff threat on Russia, India says it will continue importing energy from commercially viable sources",
-     "published_at": "2026-09-19",
-     "snippet": "Union Minister of State for External Affairs Kirti Vardhan Singh emphasised that India's decisions are driven by the interests of its 140 crore citizens, prioritising their convenience, strength…"
-    }
-   ],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-24-russian-court-consults-foreign-affairs-ministry-on-poland-s-immunity-f.html",
-   "event": "Note"
-  },
-  {
-   "record": null,
    "id": 7764,
    "title": "Troubled real estate project reportedly puts Iraq at risk of DIAC arbitration",
    "title_en": null,
@@ -403,7 +357,58 @@
    "event": "Note"
   }
  ],
- "leads": [],
+ "leads": [
+  {
+   "record": null,
+   "id": 5025,
+   "title": "Indonesia Revokes Five Company Licenses Over Kalimantan Fires",
+   "title_en": "Indonesia revokes five company licenses over Kalimantan Fires",
+   "summary": "Indonesia revokes five companies' forest-use licenses in Kalimantan after fires burned 1,169 hectares across their concession…",
+   "summary_en": null,
+   "url": "https://en.tempo.co/read/2120047/indonesia-revokes-five-company-licenses-over-kalimantan-fires",
+   "source": "Google News / en.tempo.co",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Indonesia"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "The Vibes (Malaysia)",
+     "url": "https://www.thevibes.com/articles/world/127597/indonesia-cancels-licences-of-five-companies-over-forest-land-fires",
+     "title": "Indonesia cancels licences of five companies over forest, land fires",
+     "published_at": "2026-09-23",
+     "snippet": "INDONESIA has cancelled the business licences of five companies holding a combined 92,464 hectares of concessions in Kalimantan as part of enforcement action over forest and land fires, Forestry Minister Raja Juli Antoni said. The companies are PT Wa..."
+    },
+    {
+     "source": "ANTARA News",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRElBbFRHR0lGNC1GV3hVSmxuOXRXSFNYRGwwcmxGM0VFbWpqTXRKTXA0QTE4b3VKVGJ1azk4eEhLMnRzbDg0WmV4OE9OMW81eWpzN3dEbFc3OVdxYzFYbi01YkRQVGtHMmJOT1lmV2w4enhJVzZjWkYwRnowd2lSRXdpc1MyUXU4c0ctcU9PQXliRXhFU3FUN2QzMW5fV013eDlhUGQxaWpubVdnSTdPbmpB0gGyAUFVX3lxTE9ESUFsVEdHSUY0LUZXeFVKbG45dFdIU1hEbDBybEYzRUVtampNdEpNcDRBMThvdUpUYnVrOTh4SEsydHNsODRaZXg4T04xbzV5anM3d0RsVzc5V3FjMVhuLTViRFBUa0cyYk5PWWZXbDh6eElXNmNaRjBGejB3aVJFd2lzUzJRdThzRy1xT09BeWJFeEVTcVQ3ZDMxbl9XTXd4OWFQZDFpam5tV2dJN09uakE?oc=5",
+     "title": "Indonesia revokes licenses of five companies over Kalimantan wildfires - ANTARA News",
+     "published_at": "2026-09-22",
+     "snippet": ""
+    }
+   ],
+   "story": "INDONESIA has cancelled the business licences of five companies holding a combined 92,464 hectares of concessions in Kalimantan as part of enforcement action over forest and land fires, Forestry Minister Raja Juli Antoni said.",
+   "tier": "signal",
+   "slug": "2026-09-24-indonesia-revokes-five-company-licenses-over-kalimantan-fires.html",
+   "event": "State measure"
+  }
+ ],
  "enforcement": [],
  "records": {
   "docket": [],

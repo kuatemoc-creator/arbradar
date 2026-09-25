@@ -145,7 +145,13 @@
    "amount_usd": null,
    "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / tribuneonlineng.com",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTmZYRW5qLVZuS3JqOGxGeXU4bmNydWszTjBEU3hxbHlhMS0zODZ2eXJ2MEgwbkhVbG80QmFMamFjdEJyXzlhaUppT1Q1bmk2NXphMkdPS0Jza3ZlQWs5MGktZTMwdjdMZEQ2bkN1N25selNDbFE1QlZqVVIxWGduUjZoUXRzQzZvdGx1dXpodXhTVHFaSzBQdWdiQWhvbHUteC1pRUFWSHRkQnRoaHM5NV930gG3AUFVX3lxTE1TZUFPRTIxeFBNY3dwcmhjZzJwQXNBS295SHNlLVBBckJadm5nZXZ4RFBVTnpnRUZlOWowQ1ZHNHJJcGJpSmp2VHVIUnhsck90S25yYlphTk9lTW9HdXdjdFk4NTlKUkpKdmFJb1JfZ1dpcDlzaVQwSmRkWUxZeXpOZzE4dnBRczFmU21JRDJKNllKaVpoRFVMQllmeXVreFVzMTgxaUpXbWVuTFJVQ05VR01HNUFrNA?oc=5",
+     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -237,7 +243,18 @@
    "amount_usd": null,
    "flag_reason": "matched ‘terminat’ in the text",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / Metro Detroit News",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcXRJU0s1bXFlbVlJY3M1ZlFMbC1YNzBLSjQyQ3pQbXNJQnJnWGQxbHg3ZWpoTFg1Zy1Qbnh5dG1jZFBfMmVIOFB6OUxhQmwxbGJ5cmlTY1UtVnBJN0lnLVZ1WTdHcWMxYVBxLThvTUQteFRMR05CZWtRa0h0c0ZPTEFST25HMHFVRU82X0ZTR1JKOVZ4VEhwb0FTeGlhblJFQk5YN2t5d0NCT2VvcE4xMWw2WENPdlBMZG5hamNYY3hZNDJWZUp6cFBR?oc=5",
+     "title": "2 Eastpointe Police Officers Caught Misusing Flock License Plate Cameras, City Terminates Contract"
+    },
+    {
+     "source": "Google News / Trade Brains",
+     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOS0cyUkJSaHVMUk9ZOUZnc0JFSm5kN3kxR21rdnNnRG9fOXZlM1JaMnQ4WC1mZExiRWdXZXJrZnNBNzZWQmtobXFVRzlDUmJWVW14OHBIeXNod00yT2NjakRGZG1UZi0tcHo4bE9xU2U4LTMzX2pScjVpYkRzZG1XSVZBVU5ZZzRqVWdpY3NLYjliMEJsSUZmdnR5aGx6SW5Vc1dxMnhmLWpCeXNfX3ZHUFJxS0FCTk4zRTJKcldDeGxKN1N2bHYxQUR1Ml9MM1d1N0p5RQ?oc=5",
+     "title": "G R Infraprojects Terminates ₹413 Crore NTPC BESS Contract Citing Force Majeure And War Risk"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -256,108 +273,13 @@
   },
   {
    "record": null,
-   "id": 2916,
-   "title": "Final Booking Note Excludes Arbitration Clause Despite Earlier Emails Providing London Arbitration; Delhi High Court Stops LMAA Proceedings, Says Written Contract Prevails",
-   "title_en": "Final booking note excludes arbitration clause despite earlier emails providing London arbitration; Delhi High Court stops LMAA proceedings, says written contract prevails",
-   "summary": "The apex court said National Seeds Corporation Ltd. remained liable to pay 12% interest on an arbitral award amount despite having deposited money in…",
-   "summary_en": null,
-   "url": "https://rawlaw.in/final-booking-note-excludes-arbitration-clause-despite-earlier-emails-providing-london-arbitration-delhi-high-court-stops-lmaa-proceedings-says-written-contract-prevails/",
-   "source": "Google News / rawlaw.in",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-19",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Mining & metals"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "The apex court said National Seeds Corporation Ltd. remained liable to pay 12% interest on an arbitral award amount.",
-   "tier": "development",
-   "slug": "2026-09-19-final-booking-note-excludes-arbitration-clause-despite-earlier-emails-.html",
-   "event": "Commercial arbitration"
-  }
- ],
- "leads": [
-  {
-   "record": null,
-   "id": 2607,
-   "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay",
-   "title_en": "ATOME issues notice of dispute over US$665 million Villeta fertiliser project in Paraguay",
-   "summary": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential…",
-   "summary_en": null,
-   "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
-   "source": "Google News / uk.finance.yahoo.com",
-   "source_tier": 2,
-   "event_type": "notice_of_intent",
-   "published_at": "2026-09-17",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Paraguay",
-    "United Kingdom"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘notice of dispute’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "discoveryalert.com",
-     "url": "https://discoveryalert.com/news/atome-paraguay-arbitration-ppa-dispute-september-2026/",
-     "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA",
-     "published_at": "2026-09-17",
-     "snippet": "ATOME Paraguay arbitration notice filed under UK-Paraguay BIT threatens the Villeta green fertiliser project."
-    },
-    {
-     "source": "marketscreener.com",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPanlxMW5mc1ZHV3c4eW5Ldl9CZWlxM1Y4aVowOEFid2FEUVExYS05YnRNUE01M0ZFNTlJRnFHSjNqeEc5SXl4R1RtUzExY3h2OHRKRUpiRGdsZUswUUVYbGZaZUoyZkE5T0l6MG5fWjF1NjlZTHk5c2p1M096VlBDajNMZ1RnbGFOd3JnaDJSZXVldlF2U1hGT05QZGQwVUYwY2Y2dTdaQmR5cUVVZUxKcnpoQnBCU2hUaXlIRDU2Zlp5S3lFWTJVajV3?oc=5",
-     "title": "Atome Serves Dispute Notice Against Paraguay Over $665 Million Villeta Project - marketscreener.com",
-     "published_at": "2026-09-17",
-     "snippet": ""
-    },
-    {
-     "source": "theglobeandmail.com",
-     "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4672691/atome-escalates-paraguay-dispute-over-us665m-villeta-green-fertiliser-project/",
-     "title": "ATOME escalates Paraguay dispute over US$665m Villeta green fertiliser project",
-     "published_at": "2026-09-17",
-     "snippet": "Atome Energy PLC ( ) just unveiled an update. ATOME PLC has moved to protect its interests in the US$665 million Villeta green fertiliser project in Paraguay, serving a Notice of ..."
-    }
-   ],
-   "story": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty.",
-   "tier": "signal",
-   "slug": "2026-09-19-atome-issues-notice-of-dispute-over-us-665-million-villeta-fertiliser-.html",
-   "event": "Notice of dispute"
-  },
-  {
-   "record": null,
    "id": 2855,
-   "title": "Mambilla Project: ICC Tribunal Accuses Malami of Acting Against Nigeria’s Interest",
-   "title_en": "ICC Tribunal accuses Malami of acting against Nigeria’s interest",
+   "title": "Mambilla: ICC tribunal accuses ex-AGF Malami of acting against Nigeria’s interest",
+   "title_en": "ICC tribunal accuses ex-AGF Malami of acting against Nigeria’s interest",
    "summary": "The International Chamber of Commerce arbitration tribunal has strongly criticised former Attorney-General of…",
    "summary_en": null,
-   "url": "https://therealmediang.com/news/mambilla-project-icc-tribunal-accuses-malami-of-acting-against-nigerias-interest",
-   "source": "Google News / therealmediang.com",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPc3VrclQ4dWcwYno4QXZjazYySUFrZEpaQVRJNGwydHBIalExOUpSaFBXQVVLd2V0Q2lyRzFHS2FnYWNJSWVPY21XSjdnc0lUdXo0NUQ1TmxOV1FVSlhTRE54Vm5ERzJwQWVMblp1cnRUeG96NUNFT3dNOFhkYkRHUEFDa1BtWFhOSHpTVUxvT1hRWTRuaW9NNUMwT2lBczRCazRFdUZSSQ?oc=5",
+   "source": "Google News / TheCable",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-19",
@@ -375,7 +297,13 @@
    "amount_usd": null,
    "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
-   "also": [],
+   "also": [
+    {
+     "source": "Google News / therealmediang.com",
+     "url": "https://therealmediang.com/news/mambilla-project-icc-tribunal-accuses-malami-of-acting-against-nigerias-interest",
+     "title": "Mambilla Project: ICC Tribunal Accuses Malami of Acting Against Nigeria’s Interest"
+    }
+   ],
    "lang": "en",
    "country": null,
    "corroboration": [
@@ -387,37 +315,206 @@
      "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, SAN…"
     },
     {
-     "source": "premiumtimesng.com",
-     "url": "https://www.premiumtimesng.com/business/business-news/911649-mambilla-malami-speaks-on-200m-settlement-rejects-icc-corruption-finding.html",
-     "title": "Mambilla: Malami speaks on $200m settlement, rejects ICC corruption finding",
-     "published_at": "2026-09-22",
-     "snippet": "Settlement discussions, therefore, did not arise in a vacuum. They formed part of a broader governmental effort to resolve a longstanding dispute and remove what was regarded at the time as a legal ..."
+     "source": "Real Broadcasting Network",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMFlOMUhIRXdoaVdJMWh3b2hPMFlnRzFzWlVQTkZRVks0Q0dsOFVSSmFDNnB1SGZwRUJRMVgweUQwY1ViUXZ2dDVCY0UwRXdjdGZDTkhQVEZHcm9JaTZsNjUzM1lNUGV1dnVMX1Q1MTA3Sl92Z3p1cTROc1hIOVZqN1lBTFZCUlhPbzlDU2dhcmZOeTVkOGQ5U0V1Z3NEUzcxVUVZN3dWczJ1QlZ0SDhqUGlR?oc=5",
+     "title": "Mambilla Project: ICC Tribunal Accuses Malami of Acting Against Nigeria’s Interest - Real Broadcasting Network",
+     "published_at": "2026-09-19",
+     "snippet": ""
     },
     {
-     "source": "thenigerianvoice.com",
-     "url": "https://www.thenigerianvoice.com/news/374146/mambilla-fraud-i-acted-in-nigerias-interest-former-agf.html",
-     "title": "Mambilla Fraud: ‘I acted In Nigeria’s Interest’ – Former AGF Malami Defends Role In $200m Deal",
-     "published_at": "2026-09-22",
-     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami , has defended his involvement in the controversial $200 million settl ..."
+     "source": "therealmediang.com",
+     "url": "https://therealmediang.com/news/mambilla-project-icc-tribunal-accuses-malami-of-acting-against-nigerias-interest",
+     "title": "Mambilla Project: ICC Tribunal Accuses Malami of Acting Against Nigeria’s Interest",
+     "published_at": "2026-09-19",
+     "snippet": "The International Chamber of Commerce arbitration tribunal has strongly criticised former Attorney-General of the ..."
     },
     {
-     "source": "pmnewsnigeria.com",
-     "url": "https://pmnewsnigeria.com/2026/09/22/i-acted-in-nigerias-interest-malami-defends-role-in-200m-mambilla-deal/",
-     "title": "‘I acted in Nigeria’s interest’ – Malami defends role in $200m Mambilla deal",
-     "published_at": "2026-09-22",
-     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, has defended his role in the controversial $200 million settlement between the Federal Government and Sunrise Power ..."
+     "source": "nigerianeye.com",
+     "url": "https://www.nigerianeye.com/2026/09/mambilla-icc-tribunal-finds-ex-agf.html",
+     "title": "Mambilla: ICC Tribunal Finds ex-AGF Malami Acted Against Nigeria’s Interest",
+     "published_at": "2026-09-18",
+     "snippet": "An International Chamber of Commerce (ICC) arbitration tribunal has ruled that former Attorney-General of the Federation and Minister of Justice Abubakar Malami, together with Leno Adesanya, promoter ..."
     },
     {
-     "source": "dailypost.ng",
-     "url": "https://dailypost.ng/2026/09/22/mambilla-malami-breaks-silence-over-icc-tribunals-findings/",
-     "title": "Mambilla: Malami breaks silence over ICC tribunal’s findings",
-     "published_at": "2026-09-22",
-     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, has rejected allegations of corruption arising from the findings of an ..."
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-xl/africa/other/efcc-sets-up-team-to-investigate-atiku-malami-others-named-in-icc-ruling-on-mambilla-deal/ar-AA2cES7F",
+     "title": "EFCC Sets Up Team to Investigate Atiku, Malami, Others Named in ICC Ruling On Mambilla Deal",
+     "published_at": "2026-09-20",
+     "snippet": "PREMIUM TIMES' review of the tribunal's award showed that many Nigerian politicians and individuals who held public offices were named as associates or officials who had dealings with Mr Adesanya.The ..."
     }
    ],
    "story": "The International Chamber of Commerce arbitration tribunal has strongly criticised former Attorney-General.",
+   "tier": "development",
+   "slug": "2026-09-19-icc-tribunal-accuses-ex-agf-malami-of-acting-against-nigeria-s-interes.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2916,
+   "title": "Final Booking Note Excludes Arbitration Clause Despite Earlier Emails Providing London Arbitration; Delhi High Court Stops LMAA Proceedings, Says Written Contract Prevails",
+   "title_en": "Final booking note excludes arbitration clause despite earlier emails providing London arbitration; Delhi High Court stops LMAA proceedings, says written contract prevails",
+   "summary": "The dispute arose from transportation of military cargo for the United Nations Peace Keeping Force from New Delhi to Sudan.",
+   "summary_en": null,
+   "url": "https://rawlaw.in/final-booking-note-excludes-arbitration-clause-despite-earlier-emails-providing-london-arbitration-delhi-high-court-stops-lmaa-proceedings-says-written-contract-prevails/",
+   "source": "Google News / rawlaw.in",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "The dispute arose from transportation of military cargo for the United Nations Peace Keeping Force from New Delhi to Sudan.",
+   "tier": "brief",
+   "slug": "2026-09-19-final-booking-note-excludes-arbitration-clause-despite-earlier-emails-.html",
+   "event": "Commercial arbitration"
+  }
+ ],
+ "leads": [
+  {
+   "record": null,
+   "id": 2909,
+   "title": "'Deposit Not Payment': SC Asks Law Commission To Examine Uniform Framework For Award Deposits In Appeals",
+   "title_en": "Arbitration | Supreme Court asks law Commission to examine Uniform framework",
+   "summary": " Supreme Court Allows Appeal in Part, Upholds Arbitrator's Jurisdiction on Extra Work Claim and Interest Pendente Lite. Arbitrator's Award for Extra Earth Work Is Within Scope of Reference; Interest Pendente Lite Permissible but Pre-Reference Interest Denied. &nbsp;&nbsp; Lawtext ",
+   "summary_en": null,
+   "url": "https://www.etvbharat.com/en/bharat/deposit-not-payment-sc-asks-law-commission-to-examine-uniform-framework-for-award-deposits-in-appeals-enn26091903673",
+   "source": "Google News / etvbharat.com",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Lawtext",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBfT0NEMkstc09td0pQSjFqVDRobEZURTdMZWo1YzVGOUY4TUF2OC1XbTBsMWNwNUk3RVJ0SF8zOUxoSWZJS0N4T24tTGowY3hkbGo2YzNaU0RvSUJFMDNLQ1Y0U29PZw?oc=5",
+     "title": "Supreme Court Allows Appeal in Part, Upholds Arbitrator's Jurisdiction on Extra Work Claim and Interest Pendente Lite. Arbitrator's Award for Extra Earth Work Is Within Scope of Reference; Interest Pendente Lite Permissible but Pre-Reference Interest Denied."
+    },
+    {
+     "source": "Google News / Deccan Herald",
+     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQcm4yaFhLWmVMaVJfa1JpX2xHTjVFWlc0dDJwbUFWTFBwQmNjekhWNVFxMnp2eFRvY0ZmeWVzUmVEcFRzdlZzM0U1VDZ5eDFMWTQ0ZVdKRjVtN2hTS0wtRzgwN0J4b1dMMEdjMmlOdzd2R2JzVEx3bE9LVGx0MHNxZXpxQ0Nrc1lISHE0OTVYeUlZMFlFX00xb3NLRS1INVJtVVM0cnpGbE1jMEx3VmtVcUtnWXZZWDZTVUtBS0hPQ1RwbkpOWTJ6QVVrWTFmUjFHVFlDVA?oc=5",
+     "title": "Unilateral appointment of arbitral tribunal without consent arbitrary: Supreme Court"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Supreme Court Allows Appeal in Part, Upholds Arbitrator's Jurisdiction on Extra Work Claim and Interest Pendente Lite.",
    "tier": "signal",
-   "slug": "2026-09-19-icc-tribunal-accuses-malami-of-acting-against-nigeria-s-interest.html",
+   "slug": "2026-09-19-arbitration-supreme-court-asks-law-commission-to-examine-uniform-frame.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2848,
+   "title": "Mambilla Power Project: APC PCC Cites Pzaris Arbitration Proceedings, Questions Atiku’s Presidential Bid",
+   "title_en": "APC PCC Cites Pzaris arbitration proceedings, questions Atiku’s presidential bid",
+   "summary": "Leno Adesanya, promoter of Sunrise Power, on Friday, September 18, told an International Chamber of Commerce (ICC) tribunal that the $500,000 he transferred to Jennifer Douglas…",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNGtCZE9pRGNzZTZvVVFuZFpWSkRIZF9LbGI1QU9kSGZHQWl4cXUwd0lKY2RkY2g1Y0ZCSm11SDNveFZ1RXJCSWxRYUtoMmdkY3Z0ejV1RGNzUXJuVmtuWWRySHltQTN5ZUxJelVuNFhIcy03d3VNTlJYeHFGaEp6dENhV01TZGthYVJXNjRROWpkV3dSVlhPVkpGMFdBNE15LVJqQThJRktJeWlHZGd4YmlpWTJCNlc2akhjcFc4bmZOaHdxaG9JcQ?oc=5",
+   "source": "Google News / New Telegraph",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Nigeria"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / thestreetjournal.org",
+     "url": "https://thestreetjournal.org/i-paid-500000-to-atikus-ex-wife-4-months-before-sunrise-power-got-mambila-project-contract-leno-adesanya/",
+     "title": "Mambilla Project: $500,000 Paid to Atiku’s Wife, ICC Tribunal Hears"
+    },
+    {
+     "source": "Google News / Realnews Magazine",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZ2llclVWNm5OTkpnOGN6ZkpiMXFVaURxcTlIMVFjNno0amRPMVBwT1RDODhtRnRMNUhKVlh4RDlJZG94TWg1cGFadGNIT2k5RTFjSFYzUFJKZE4tb2NxSFNFclRuTDdVMVFaT2FvWXpSRW9YQjlRdTN6TkNfNnRyRGVFWjRxUV9oNFVFRzNBWWlxRk5sdlNjWlUwaWszbUQyVTZGcEJxMGNFV052?oc=5",
+     "title": "Paris ICC arbitration court ruling: Presidency says Atiku unfit to be president"
+    },
+    {
+     "source": "Google News / Daily Times Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNNVk3U0lfNGV3cS1vWF9aN01DUGV3VURLaWltOUFncFlkSlJaWEk1TU8xX3VqbDZlcFlicExvSjg4aWNNTUVjQnBmekxYQzRuY1JZUUNVbDNMakhqODByUThfTVN3dmRERVFoSUhhZ1lJMnVfaUVnVUJ0Y1BKd2ZqS1NNZXctZUhJTTR3aXZldlo1Ti1zaEZtWVdsUkNTY1huVmxneVhzYVRIQzJlVnk3djdWQWtOVW8?oc=5",
+     "title": "$500,000 Deal: Atiku Abubakar Unfit For Nigeria Presidency, Paris ICC Arbitration Court Ruling"
+    },
+    {
+     "source": "Google News / premiumtimesng.com",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNY0VTdzhib25xaTBfV2FIT2FBOUtFUXh5WFh5VXpndmlocTlGSVlWek9GNi1yUWFmVzZva211Z2p3cUhpM0tTbVhMeU8xTVRhQ2xzaFdOVlVNeVZMd0haY1VpMmpnRzVqREtId3p3VUVTbVE1YnU5cG9TRHg3aXR5bHBETXl2Ul9wY0hKODloMWtLQlhqWEZvekpxRG40TnQtUUhSSjNrNlNPV0xvTU4xVlo1dWRmRUdlSVBCdFAwWURlc0FGdmJWag?oc=5",
+     "title": "Tinubu reacts as Nigeria wins arbitration against Sunrise Power"
+    },
+    {
+     "source": "Google News / thenationonlineng.net",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZ0Y1OUQzRkh4VkxFT2pQckFjbEFCeS1WaDRlc3dBazBqdVMzSndVS3BjQ3Q5RGFidldBSzEwZUJ1ZWxwa21EM3FzaU9QTGZwRXJuaDl1U0FkTm11cXBPWXV1azhGTE90SzU5REpvZ1p4RllKWXZndXotNmpGanhPeThqc3lpd3ZzQXJmaXBHcTZSVmstR19pcWNKbWMxMFFmdnQ0SW1KR2FnQTBkQ2NIV3p3YTZRM0ZZTm5J0gHAAUFVX3lxTE40Nks2VFZ3dm5wdkVLZkE5czNZQlhSWlVrWUhRb08xY0F2R3p2VWtYZjhzT2pIejI4MlpGcUpheFJ0aWx5cnJJRFRJdWVmVnl4LTItN3B2d05NRF9sRW9sQXB3UzVheVZkbjlhczE0RjE4dXpjNVZjX2QwY0dzYjRqV3huYWJEeXJBQlhGczZVLVZndU5FQmtod2x1RUJDUTVBdVNtQXR1TlRtanVhYW03VkdXMy1mbW5QTVMwQW9rQw?oc=5",
+     "title": "ICC Revelations: APC asks Atiku to quit race over alleged $500,000 Mambilla project bribery"
+    },
+    {
+     "source": "Google News / Legit News",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNaTA0UE0yQWRmelJhZ0Q5Yk9GdGl2SnNsWTR6OXFaY1Bia0ZkQm1iTVlqWjNUSDJ4LTQtQVZMWXBGRm0zT19EMEh5QWNGakVkTU1iZzZpV09ZME5MTXBiT1hKU013U2I2V0ZwV0FvbldYMFlMT0hvWURHY3RZNWVSUGFHWFBOam1yVHFwUEdpWlM?oc=5",
+     "title": "APC labels Atiku unfit for presidency over Paris ICC arbitration findings"
+    }
+   ],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "blueprint.ng",
+     "url": "https://blueprint.ng/mambilla-project-why-atiku-unfit-to-contest-presidency-in-2027-apc-campaign-council/",
+     "title": "Mambilla project: Why Atiku ‘unfit’ to contest presidency in 2027 – APC campaign council",
+     "published_at": "2026-09-18",
+     "snippet": "The All Progressives Congress Presidential Campaign Council (APC - PCC) has called on the African Democratic Congress (ADC) presidential candidate, Atiku ..."
+    },
+    {
+     "source": "Sahara Reporters",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY1RGNV9qOWZVREx3Rzg4SkZMSmxUaDQ3QmFaaFZPUVRwazJ0MzNKYmtURU83VXVFRG5peUJaQ3RmSm5LVk41SV8yWDl1XzdsQnB0cnh6UmpGeEtmOFhERmtXZXpQYmxrYUtaQnVVbnNlOXE3TUVId3lqbUNjcUt0a2dLdFgzZVhHZmh0VGdkbFVaaDczSUU5bnQ4b0ZVaS1UN05BNFdHcHF5MmhhanYwanpOSVM4YXk5UWc?oc=5",
+     "title": "APC Campaign Council Asks Atiku To Withdraw From 2027 Race Over $500,000 Mambilla Payment - Sahara Reporters",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    },
+    {
+     "source": "citypeopleonline.com",
+     "url": "https://www.citypeopleonline.com/mambilla-sunrise-promoter-paid-500000-to-atikus-wife-icc/",
+     "title": "Mambilla: Sunrise promoter paid $500,000 to Atiku’s wife – ICC",
+     "published_at": "2026-09-19",
+     "snippet": "Details have emerged at the International Chamber of Commerce (ICC) tribunal sitting in Paris on how a contractor transferred $500,000 to former Vice President Atiku Abubakar’s wife in 2003, a few ..."
+    }
+   ],
+   "story": "Leno Adesanya, promoter of Sunrise Power, on Friday, September 18, told an International Chamber of Commerce (ICC) tribunal that the US$500,000 he transferred.",
+   "tier": "signal",
+   "slug": "2026-09-19-apc-pcc-cites-pzaris-arbitration-proceedings-questions-atiku-s-preside.html",
    "event": "Commercial arbitration"
   }
  ],
