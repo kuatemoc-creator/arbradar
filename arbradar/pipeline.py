@@ -390,6 +390,21 @@ orders decision holds held enforcement enforce set aside annul annulment applica
 international investor investors treaty state government ministry minister law legal firm partner partners""".split()}
 
 
+_STAGES = {"award": ("award_issued", "enforcement_action", "annulment_setaside"),
+           "filing": ("new_case_filed", "notice_of_intent"),
+           "measure": ("state_measure", "distress_event")}
+
+
+def _stage(it: Dict[str, Any]):
+    """The stage of a matter an item reports, coarser than the event type: an
+    award confirmed and an award enforced are the same stage."""
+    e = it.get("event_type") or ""
+    for name, kinds in _STAGES.items():
+        if e in kinds:
+            return name
+    return None
+
+
 def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Greedy story clustering on headline overlap.
 
@@ -475,12 +490,19 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             # India on notice of treaty dispute over enforcement proceedings".
             same_kind = bool((toks & rep["_toks"]) & states) and inter >= 3 and jac >= 0.15 \
                 and (it.get("event_type") or "") == (rep.get("event_type") or "") and it.get("event_type") not in (None, "", "commentary")
+            # Two States named on both sides, the same stage of the same matter, no
+            # other company in either headline: "US judge backs Iraq as net creditor
+            # in oil dispute with Turkey" and "US court recommends confirmation of
+            # award in Iraq-Türkiye pipeline arbitration" are one story.
+            pair_a, pair_b = ja - _JUR_EXTRA, jb - _JUR_EXTRA
+            same_pair = len(pair_a) >= 2 and pair_a == pair_b and inter >= 2 and not ents and not rep["_ents"] \
+                and _stage(it) == _stage(rep) and _stage(it) is not None
             if conflict and not same_parties:
                 continue
             if ja and jb and not (ja & jb) and not (same_parties or jac >= 0.5):
                 continue
             if (same_parties or shared_phrase or (rare_name and (same_state or inter >= 2))
-                    or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2 or same_kind):
+                    or jac >= 0.5 or (inter >= 3 and jac >= 0.22) or shared_names >= 2 or same_kind or same_pair):
                 home = rep
                 break
         if home is None:

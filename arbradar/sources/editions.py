@@ -398,6 +398,7 @@ for _canon, _forms in {
         COUNTRIES.setdefault(_f, _canon)
 
 _COUNTRY_RE = None
+_HYPHENATED = [f for f in COUNTRIES if "-" in f]
 
 
 def states_in(text: str):
@@ -406,8 +407,15 @@ def states_in(text: str):
     if _COUNTRY_RE is None:
         forms = sorted(COUNTRIES, key=len, reverse=True)
         _COUNTRY_RE = __import__("re").compile(r"(?<![\w-])(" + "|".join(__import__("re").escape(f) for f in forms) + r")(?![\w-])")
+    # "Iraq-Türkiye pipeline" names two States; the hyphen must not hide them.
+    # Hyphenated names of their own (Guinea-Bissau, Timor-Leste) stay whole.
+    text = text or ""
+    if "-" in text:
+        for f in _HYPHENATED:
+            text = text.replace(f, f.replace("-", "\u2011"))
+        text = __import__("re").sub(r"(?<=[^\W\d_])-(?=[A-Z\u00c0-\u00dd])", " ", text).replace("\u2011", "-")
     out = []
-    for m in _COUNTRY_RE.finditer(text or ""):
+    for m in _COUNTRY_RE.finditer(text):
         c = COUNTRIES[m.group(1)]
         if c not in out:
             out.append(c)
