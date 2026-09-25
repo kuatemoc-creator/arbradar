@@ -15,7 +15,7 @@
   "https://www.arlis.am",
   "all legal acts; search only",
   "html",
-  "1401 KB"
+  "1402 KB"
  ],
  [
   "Armenia",
@@ -114,7 +114,7 @@
   "https://matsne.gov.ge",
   "all legal acts",
   "html",
-  "1212 KB"
+  "1211 KB"
  ],
  [
   "Georgia",
@@ -141,7 +141,7 @@
   "https://www.supremecourt.ge",
   "",
   "html",
-  "37 KB"
+  "43 KB"
  ],
  [
   "Georgia",
@@ -284,8 +284,8 @@
   "Goszakup public procurement",
   "https://goszakup.gov.kz",
   "has an open API (ows.goszakup.gov.kz)",
-  "error",
-  "ConnectTimeout"
+  "html",
+  "6 KB"
  ],
  [
   "Kazakhstan",
@@ -330,7 +330,7 @@
   "https://kase.kz/en/news/",
   "",
   "html",
-  "326 KB"
+  "377 KB"
  ],
  [
   "Kazakhstan",
@@ -419,8 +419,8 @@
   "Tashkent Stock Exchange",
   "https://uzse.uz",
   "",
-  "html",
-  "287 KB"
+  "dead",
+  "HTTP 500"
  ],
  [
   "Uzbekistan",
@@ -465,7 +465,7 @@
   "https://daryo.uz/en/feed",
   "",
   "html",
-  "816 KB"
+  "815 KB"
  ],
  [
   "Kyrgyzstan",
@@ -690,7 +690,7 @@
   "https://www.resmigazete.gov.tr",
   "daily official gazette",
   "html",
-  "195 KB"
+  "194 KB"
  ],
  [
   "Turkey",
@@ -798,7 +798,7 @@
   "https://www.bmv.com.mx",
   "",
   "html",
-  "88 KB"
+  "87 KB"
  ],
  [
   "Mexico",
@@ -942,7 +942,7 @@
   "https://www.anh.gov.co",
   "",
   "html",
-  "70 KB"
+  "71 KB"
  ],
  [
   "Colombia",
@@ -1121,8 +1121,8 @@
   "Efecto Cocuyo",
   "https://efectococuyo.com/feed/",
   "",
-  "dead",
-  "HTTP 403"
+  "rss",
+  "feed"
  ],
  [
   "Venezuela",
@@ -1382,8 +1382,8 @@
   "Minerals Commission",
   "https://www.mincom.gov.gh",
   "",
-  "error",
-  "ReadTimeout"
+  "html",
+  "285 KB"
  ],
  [
   "Ghana",
@@ -1434,10 +1434,10 @@
   "Tanzania",
   "press",
   "The Citizen",
-  "https://www.thecitizen.co.tz/rss.xml",
+  "https://www.thecitizen.co.tz/rss",
   "",
-  "rss",
-  "discovered "
+  "dead",
+  "HTTP 404"
  ],
  [
   "Zambia",
@@ -1554,7 +1554,7 @@
   "https://www.aps.dz/en/?format=feed",
   "",
   "html",
-  "230 KB"
+  "81 KB"
  ],
  [
   "Morocco",
@@ -1607,8 +1607,8 @@
   "eGazette",
   "https://egazette.gov.in",
   "",
-  "html",
-  "67 KB insecure-tls"
+  "error",
+  "ReadTimeout"
  ],
  [
   "India",
@@ -2067,7 +2067,7 @@
   "https://www.adr.org/news",
   "institution",
   "html",
-  "435 KB"
+  "438 KB"
  ],
  [
   "Global",
@@ -2192,8 +2192,8 @@
   "Pinsent Masons Out-Law",
   "https://www.pinsentmasons.com/out-law/news/rss",
   "",
-  "error",
-  "ReadTimeout"
+  "dead",
+  "HTTP 404"
  ],
  [
   "Global",
@@ -2283,7 +2283,7 @@
   "https://indiankanoon.org/feeds/latest/delhi/",
   "s.34/s.48 arbitration matters",
   "rss",
-  "feed"
+  "feed chrome-tls"
  ],
  [
   "Global",
@@ -2499,7 +2499,7 @@
   "https://www.supremecourt.gov.pk/judgement-search/",
   "refuses scripts",
   "html",
-  "131 KB chrome-tls"
+  "132 KB chrome-tls"
  ],
  [
   "Global",
@@ -2571,7 +2571,7 @@
   "https://www.freshfields.com/en/our-thinking/",
   "firm",
   "html",
-  "541 KB"
+  "540 KB"
  ],
  [
   "Global",
@@ -2867,8 +2867,8 @@
   "GRATA International news",
   "https://gratanet.com/news",
   "firm, Central Asia",
-  "error",
-  "ReadTimeout"
+  "html",
+  "363 KB"
  ],
  [
   "Global",
@@ -3174,7 +3174,7 @@
   "https://commersant.ge",
   "discover feed",
   "html",
-  "784 KB"
+  "783 KB"
  ],
  [
   "Azerbaijan",
@@ -3228,7 +3228,7 @@
   "https://www.akorda.kz/en/events",
   "",
   "html",
-  "46 KB"
+  "45 KB"
  ],
  [
   "Kazakhstan",
@@ -3264,7 +3264,7 @@
   "https://tengrinews.kz",
   "discover feed",
   "html",
-  "425 KB"
+  "424 KB"
  ],
  [
   "Kazakhstan",
@@ -3273,7 +3273,7 @@
   "https://www.zakon.kz",
   "discover feed",
   "html",
-  "286 KB"
+  "287 KB"
  ],
  [
   "Kazakhstan",
@@ -3345,7 +3345,7 @@
   "https://kaktus.media",
   "discover feed",
   "html",
-  "292 KB"
+  "264 KB"
  ],
  [
   "Kyrgyzstan",
@@ -3453,7 +3453,7 @@
   "https://www.ukrinform.net",
   "discover feed",
   "html",
-  "83 KB"
+  "84 KB"
  ],
  [
   "Ukraine",
@@ -3498,7 +3498,7 @@
   "http://government.ru/en/news/",
   "",
   "html",
-  "64 KB"
+  "65 KB"
  ],
  [
   "Russia",
@@ -3561,7 +3561,7 @@
   "https://www.hurriyet.com.tr",
   "discover feed",
   "html",
-  "242 KB"
+  "243 KB"
  ],
  [
   "Mexico",
@@ -3624,7 +3624,7 @@
   "https://www.forbes.com.mx",
   "discover feed",
   "html",
-  "239 KB"
+  "258 KB"
  ],
  [
   "Argentina",
@@ -3639,10 +3639,10 @@
   "Argentina",
   "press",
   "iProfesional",
-  "https://www.iprofesional.com/rss/home",
+  "https://www.iprofesional.com",
   "discover feed",
-  "rss",
-  "discovered "
+  "html",
+  "505 KB"
  ],
  [
   "Argentina",
@@ -3687,7 +3687,7 @@
   "https://www.eltiempo.com",
   "discover feed",
   "html",
-  "860 KB"
+  "858 KB"
  ],
  [
   "Colombia",
@@ -3705,7 +3705,7 @@
   "https://www.presidencia.gov.co",
   "",
   "html",
-  "5 KB"
+  "7 KB"
  ],
  [
   "Colombia",
@@ -3759,7 +3759,7 @@
   "https://www.df.cl",
   "discover feed",
   "html",
-  "541 KB"
+  "533 KB"
  ],
  [
   "Chile",
@@ -3786,7 +3786,7 @@
   "https://www.sernageomin.cl",
   "mining",
   "html",
-  "110 KB insecure-tls"
+  "111 KB insecure-tls"
  ],
  [
   "Ecuador",
@@ -3822,7 +3822,7 @@
   "https://www.lostiempos.com",
   "discover feed",
   "html",
-  "229 KB"
+  "230 KB"
  ],
  [
   "Brazil",
@@ -3858,7 +3858,7 @@
   "https://www.gov.br/anp",
   "oil and gas",
   "html",
-  "327 KB"
+  "329 KB"
  ],
  [
   "Brazil",
@@ -3885,7 +3885,7 @@
   "https://www.vozpopuli.com",
   "discover feed",
   "html",
-  "327 KB"
+  "305 KB"
  ],
  [
   "Spain",
@@ -3903,7 +3903,7 @@
   "https://www.milanofinanza.it",
   "discover feed",
   "html",
-  "244 KB"
+  "243 KB"
  ],
  [
   "Italy",
@@ -4089,10 +4089,10 @@
   "Estonia",
   "press",
   "ERR",
-  "https://news.err.ee",
+  "https://news.err.ee/rss",
   "discover feed",
-  "html",
-  "265 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Germany",
@@ -4101,7 +4101,7 @@
   "https://www.handelsblatt.com",
   "discover feed",
   "html",
-  "1810 KB"
+  "2167 KB"
  ],
  [
   "Germany",
@@ -4146,7 +4146,7 @@
   "https://www.nzz.ch",
   "discover feed",
   "html",
-  "1061 KB"
+  "1065 KB"
  ],
  [
   "United Kingdom",
@@ -4191,7 +4191,7 @@
   "https://today.lorientlejour.com",
   "discover feed",
   "html",
-  "114 KB"
+  "115 KB"
  ],
  [
   "Kuwait",
@@ -4200,7 +4200,7 @@
   "https://www.kuwaittimes.com",
   "discover feed",
   "html",
-  "287 KB"
+  "286 KB"
  ],
  [
   "Oman",
@@ -4218,7 +4218,7 @@
   "https://www.gdnonline.com",
   "discover feed",
   "html",
-  "693 KB"
+  "689 KB"
  ],
  [
   "UAE",
@@ -4227,7 +4227,7 @@
   "https://www.thenationalnews.com",
   "discover feed",
   "html",
-  "1774 KB"
+  "1769 KB"
  ],
  [
   "UAE",
@@ -4254,7 +4254,7 @@
   "https://www.gulf-times.com",
   "discover feed",
   "html",
-  "178 KB"
+  "180 KB"
  ],
  [
   "Iraq",
@@ -4263,7 +4263,7 @@
   "https://www.rudaw.net/english",
   "discover feed",
   "html",
-  "600 KB"
+  "603 KB"
  ],
  [
   "Libya",
@@ -4281,7 +4281,7 @@
   "https://www.tap.info.tn/en",
   "discover feed",
   "html",
-  "95 KB insecure-tls"
+  "96 KB insecure-tls"
  ],
  [
   "Egypt",
@@ -4317,7 +4317,7 @@
   "https://fr.le360.ma",
   "discover feed",
   "html",
-  "1328 KB"
+  "1351 KB"
  ],
  [
   "Morocco",
@@ -4380,7 +4380,7 @@
   "https://www.the-star.co.ke",
   "discover feed",
   "html",
-  "344 KB"
+  "352 KB"
  ],
  [
   "Kenya",
@@ -4488,7 +4488,7 @@
   "https://news.abidjan.net",
   "discover feed",
   "html",
-  "397 KB"
+  "398 KB"
  ],
  [
   "Cameroon",
@@ -4566,10 +4566,10 @@
   "Bangladesh",
   "press",
   "The Daily Star",
-  "https://www.thedailystar.net",
+  "https://www.thedailystar.net/rss.xml",
   "discover feed",
-  "html",
-  "260 KB"
+  "rss",
+  "discovered "
  ],
  [
   "Sri Lanka",
@@ -4596,7 +4596,7 @@
   "https://www.bangkokpost.com",
   "discover feed",
   "html",
-  "200 KB"
+  "194 KB"
  ],
  [
   "Cambodia",
@@ -4614,7 +4614,7 @@
   "https://theedgemalaysia.com",
   "discover feed",
   "html",
-  "248 KB"
+  "249 KB"
  ],
  [
   "Malaysia",
@@ -4623,7 +4623,7 @@
   "https://www.thestar.com.my",
   "discover feed",
   "html",
-  "300 KB"
+  "299 KB"
  ],
  [
   "Indonesia",
@@ -4632,7 +4632,7 @@
   "https://www.bisnis.com",
   "discover feed",
   "html",
-  "380 KB"
+  "381 KB"
  ],
  [
   "Indonesia",
@@ -4703,8 +4703,8 @@
   "Ministry of Justice ISDS",
   "https://www.moj.go.kr/moj_eng/1746/subview.do",
   "Korea publishes its ISDS cases",
-  "html",
-  "6 KB"
+  "error",
+  "ConnectTimeout"
  ],
  [
   "Japan",
@@ -4722,7 +4722,7 @@
   "https://www.caixinglobal.com",
   "discover feed",
   "html",
-  "93 KB"
+  "92 KB"
  ],
  [
   "Taiwan",
@@ -4758,16 +4758,16 @@
   "https://www.afr.com",
   "discover feed",
   "html",
-  "1181 KB"
+  "1158 KB"
  ],
  [
   "Australia",
   "press",
   "Lawyerly",
-  "https://www.lawyerly.com.au/feed/",
+  "https://www.lawyerly.com.au",
   "discover feed",
-  "rss",
-  "discovered chrome-tls"
+  "dead",
+  "HTTP 403"
  ],
  [
   "Canada",
@@ -4776,7 +4776,7 @@
   "https://www.theglobeandmail.com",
   "discover feed",
   "html",
-  "2884 KB"
+  "2940 KB"
  ],
  [
   "Canada",
@@ -4830,7 +4830,7 @@
   "https://www.elheraldo.hn",
   "discover feed",
   "html",
-  "479 KB"
+  "480 KB"
  ],
  [
   "El Salvador",
@@ -4902,7 +4902,7 @@
   "https://www.abc.com.py",
   "discover feed",
   "html",
-  "3305 KB"
+  "1016 KB"
  ],
  [
   "Paraguay",
@@ -4920,7 +4920,7 @@
   "https://www.elobservador.com.uy",
   "discover feed",
   "html",
-  "364 KB"
+  "367 KB"
  ],
  [
   "Sector: Construction",
@@ -5037,7 +5037,7 @@
   "https://www.upstreamonline.com/rss",
   "",
   "html",
-  "130 KB"
+  "132 KB"
  ],
  [
   "Sector: Energy",
@@ -5189,8 +5189,8 @@
   "Africa Oil+Gas Report",
   "https://africaoilgasreport.com/feed/",
   "",
-  "rss",
-  "feed"
+  "html",
+  "0 KB"
  ],
  [
   "Sector: Energy",
@@ -5406,7 +5406,7 @@
   "https://scrip.citeline.com",
   "discover feed",
   "html",
-  "300 KB"
+  "303 KB"
  ],
  [
   "Sector: Shipping",
@@ -5460,7 +5460,7 @@
   "https://www.lloydslist.com",
   "discover feed",
   "html",
-  "189 KB"
+  "190 KB"
  ],
  [
   "Sector: Aviation",
@@ -5505,7 +5505,7 @@
   "https://www.telecompaper.com/rss",
   "",
   "html",
-  "301 KB"
+  "302 KB"
  ],
  [
   "Sector: Telecoms",
@@ -5532,7 +5532,7 @@
   "https://www.capacitymedia.com/rss",
   "discover feed",
   "rss",
-  "discovered "
+  "discovered chrome-tls"
  ],
  [
   "Sector: Insurance",
@@ -5586,16 +5586,16 @@
   "https://www.privateequityinternational.com/feed/",
   "",
   "rss",
-  "feed"
+  "discovered "
  ],
  [
   "Sector: Finance",
   "press",
   "PE Hub",
-  "https://www.pehub.com/feed/",
+  "https://www.pehub.com/comments/feed/",
   "",
   "rss",
-  "feed"
+  "discovered "
  ],
  [
   "Sector: Agribusiness",
