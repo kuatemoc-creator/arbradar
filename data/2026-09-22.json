@@ -1,52 +1,7 @@
 {
  "date": "2026-09-22",
- "subject": "ArbRadar · 22 September 2026 — Emergency arbitrator rules in Albanian airport dispute",
+ "subject": "ArbRadar · 22 September 2026 — Malaysian road developer reportedly puts India on notice of treaty dispute",
  "stories": [
-  {
-   "record": null,
-   "id": 4764,
-   "title": "Emergency arbitrator rules in Albanian airport dispute",
-   "title_en": null,
-   "summary": "An ICC emergency arbitrator has issued an interim order in a dispute over Albania’s termination of an airport concession, which is also the subject of a threatened ICSID claim.&nbsp;",
-   "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/emergency-arbitrator-rules-in-albanian-airport-dispute",
-   "source": "GAR",
-   "source_tier": 2,
-   "event_type": "interim_relief",
-   "published_at": "2026-09-21",
-   "institution": "ICSID",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Mining & metals",
-    "Construction",
-    "Transport & logistics"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘emergency arbitrator’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "voxnews.al",
-     "url": "https://www.voxnews.al/english/aktualitet/gazetari-balluku-ka-marre-peng-aeroportin-e-vlores-shqiperia-mund-te--i124781",
-     "title": "Journalist: Balluku has taken Vlora Airport hostage, Albania may lose 700 million euros in arbitration",
-     "published_at": "2026-09-21",
-     "snippet": "Balluku, Rama and PacolliVlora Airport was presented as a strategic project, as a promise for development, tourism and investment ..."
-    }
-   ],
-   "story": "An ICC emergency arbitrator has issued an interim order in a dispute over Albania’s termination of an airport concession, which is also the subject of a threatened ICSID claim.",
-   "tier": "lead",
-   "slug": "2026-09-22-emergency-arbitrator-rules-in-albanian-airport-dispute.html",
-   "event": "Interim relief"
-  },
   {
    "record": null,
    "id": 5535,
@@ -81,7 +36,7 @@
    "country": null,
    "corroboration": [],
    "story": "A Kuwaiti company seeking to enforce a billion-dollar award against Libya has persuaded a Paris court to uphold an attachment of assets belonging to the state’s national oil company.",
-   "tier": "development",
+   "tier": "lead",
    "slug": "2026-09-22-libyan-state-entity-fails-to-lift-french-attachment.html",
    "event": "Enforcement"
   },
@@ -132,76 +87,68 @@
   },
   {
    "record": null,
-   "id": 5412,
-   "title": "Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
-   "title_en": null,
-   "summary": "Turkish Airlines and AJet list no Iran flights until March 2027…",
+   "id": 5537,
+   "title": "Malaysian road developer reportedly puts India on notice of treaty dispute over protracted judicial delays",
+   "title_en": "Malaysian road developer reportedly puts India on notice of treaty dispute",
+   "summary": " Dhaya Maju Issues ₹1,200 Crore BIT Claim Notice Against India Over Judicial Delays &nbsp;&nbsp; BW Legal World ",
    "summary_en": null,
-   "url": "https://www.middleeasteye.net/news/turkish-airlines-pegasus-and-ajet-cancel-iran-flights-us-sanctions-bite",
-   "source": "Google News / middleeasteye.net",
+   "url": "https://www.iareporter.com/articles/malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dispute-over-protracted-judicial-delays/",
+   "source": "IAReporter",
    "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
+   "event_type": "notice_of_intent",
+   "published_at": "2026-09-22",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Turkey"
+    "Malaysia",
+    "India"
    ],
-   "sectors": [
-    "Oil & gas"
-   ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
+   "flag_reason": "matched ‘on notice of’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": "Kenya",
+   "country": null,
    "corroboration": [
     {
-     "source": "theyeshivaworld.com",
-     "url": "https://www.theyeshivaworld.com/news/israel-news/2601503/iran-flights-halted-turkish-airlines-ajet-and-pegasus-cancel-service-amid-u-s-sanctions.html",
-     "title": "IRAN FLIGHTS HALTED: Turkish Airlines, AJet And Pegasus Cancel Service Amid U.S. Sanctions",
-     "published_at": "2026-09-22",
-     "snippet": "Turkish Airlines, AJet and Pegasus have canceled all flights to and from Iran as sweeping U.S. sanctions targeting Iran’s aviation sector take effect. The cancellations began Monday, with the Turkish ..."
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/oil-trader-wins-hkiac-award-over-indian-deliveries",
+     "title": "Oil trader wins HKIAC award over Indian deliveries",
+     "published_at": "2026-09-08",
+     "snippet": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India."
     },
     {
-     "source": "Межа. Новини України.",
-     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xZTdxNFdFXzMzY0lhUFVZdUtvb2Jwa2N0dV9wMkIzYXdCQVJWWjVKby1jR3dmcHNkRS1MdkRFcVlzMjczYjVtYXgyMVJySjVUY2hLT0ZfRkIwLXhxVlJyVHBqcjhVNFd1U1FZ?oc=5",
-     "title": "Turkish Airlines, AJet and Pegasus suspend Iran flights after new US sanctions - Межа. Новини України.",
-     "published_at": "2026-09-22",
-     "snippet": ""
+     "source": "PCA",
+     "url": "https://pca-cpa.org/en/news/pca-press-release-pca-case-no-2023-01-the-indus-waters-western-rivers-arbitration-islamic-republic-of-pakistan-v-republic-of-india-6/",
+     "title": "PCA Press Release – PCA Case No. 2023-01: The Indus Waters Western Rivers Arbitration (Islamic Republic of Pakistan v. Republic of India)",
+     "published_at": "",
+     "snippet": "Please see the attached press release issued on 31 August 2026 by the Permanent Court of Arbitration (PCA) in the arbitration instituted by the Islamic Republic of Pakistan against the Republic of India pursuant to the Indus Waters Treaty of…"
     },
     {
-     "source": "turkiyetoday.com",
-     "url": "https://www.turkiyetoday.com/business/turkish-airlines-halts-iran-flights-until-march-2027-iranian-media-reports-3228650",
-     "title": "Turkish Airlines, Pegasus, AJet halt Iran flights as US sanctions take effect",
-     "published_at": "2026-09-22",
-     "snippet": "Turkish Airlines reportedly suspends all flights to Iran until at least March 2027 while Iraq moves to ban Iranian carriers ..."
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-in/news/other/g-r-infraprojects-terminates-rs413-crore-ntpc-bess-contract-citing-force-majeure-and-war-risk/ar-AA2cpV3x",
+     "title": "G R Infraprojects Terminates NTPC BESS EPC Contracts, Invokes Dispute Resolution",
+     "published_at": "2026-09-17",
+     "snippet": "India, Sept. 17 -- India's EPC sector runs on long-dated, fixed-scope contracts signed years before delivery, which makes force majeure and war-risk clauses far more than legal boilerplate they are"
     },
     {
-     "source": "famagusta-gazette.com",
-     "url": "https://famagusta-gazette.com/turkish-airlines-cancel-iran-routes-including-turkish-airlines-ajet-and-pegasus/",
-     "title": "Turkish airlines cancel Iran routes: including Turkish Airlines, AJet, and Pegasus",
-     "published_at": "2026-09-22",
-     "snippet": "Major Turkish airlines, including Turkish Airlines, AJet, and Pegasus, have suspended their flights to Iran following the imposition of ..."
-    },
-    {
-     "source": "zamon.uz",
-     "url": "https://zamon.uz/en/2026/09/22/three-turkish-airlines-have-suspended-flights-to-iran",
-     "title": "Three Turkish airlines have suspended flights to Iran",
-     "published_at": "2026-09-22",
-     "snippet": "Turkey's Turkish Airlines, AJet, and Pegasus airlines suspended flights to and from Iran starting September 21. This occurred against the backdrop of new US sanctions taking effect against Iran's ..."
+     "source": "thediplomat.com",
+     "url": "https://thediplomat.com/2026/09/why-malaysia-wont-extradite-dr-zakir-naik-to-india/",
+     "title": "Why Malaysia Won’t Extradite Dr. Zakir Naik to India",
+     "published_at": "2026-09-18",
+     "snippet": "Despite being wanted on various criminal charges in India, the Islamic preacher has become hugely popular since arriving in Malaysia in 2016."
     }
    ],
-   "story": "",
+   "story": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India.",
    "tier": "development",
-   "slug": "2026-09-22-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
-   "event": "State measure"
+   "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
+   "event": "Notice of dispute"
   },
   {
    "record": null,
@@ -309,38 +256,38 @@
   },
   {
    "record": null,
-   "id": 4785,
-   "title": "AAA Launches New Group To Navigate AI In Arbitration",
-   "title_en": "AAA launches new group to navigate AI in arbitration",
-   "summary": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
+   "id": 6631,
+   "title": "Ukraine instructs boutique to defend US investor’s ICSID claim",
+   "title_en": null,
+   "summary": "Ukraine has instructed European boutique Queritius to defend it in an ICSID claim brought by a US distressed debt investor that the state alleges is linked to Russia.&nbsp;",
    "summary_en": null,
-   "url": "https://www.law360.com/internationalarbitration/articles/2527183?utm_source=rss&utm_medium=rss&utm_campaign=section",
-   "source": "Law360 International Arbitration (Global)",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdlhnOVpBbHBMSlVFX1A5cDhpVndXZWRHaWxMU2tkdU1udU8yb1hjUzVNYkZPaElmd0t1UFJBcGtKdWNKTmNWbFNETXlVUFlsbHMyb04tcHI0MnZWNzVUcnl5My1GMnF2WlI4Ml9wLTF0T1RmY2U5MjhlV0FJQ1FYZXBUYVJvQmZySVh1cEgtYzVQY1FWUi1jMVQ0RHZkaHB5RXZtYQ?oc=5",
+   "source": "Google News / globalarbitrationreview.com",
    "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-21",
-   "institution": "ICDR/AAA",
+   "event_type": "counsel_instructed",
+   "published_at": "2026-09-22",
+   "institution": "ICSID",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [],
-   "sectors": [
-    "Mining & metals"
+   "states": [
+    "Ukraine"
    ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": null,
+   "flag_reason": "matched ‘instructs’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": "Global",
+   "country": null,
    "corroboration": [],
-   "story": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
+   "story": "Ukraine has instructed European boutique Queritius to defend it in an ICSID claim brought by a US distressed debt investor that the state alleges is linked to Russia.",
    "tier": "development",
-   "slug": "2026-09-22-aaa-launches-new-group-to-navigate-ai-in-arbitration.html",
-   "event": "Note"
+   "slug": "2026-09-22-ukraine-instructs-boutique-to-defend-us-investor-s-icsid-claim.html",
+   "event": "Counsel instructed"
   },
   {
    "record": null,
@@ -380,7 +327,7 @@
    "country": null,
    "corroboration": [],
    "story": "Mitsui & Co. brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on December 12, 2025. White & Case acts for the claimant.",
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-22-discretion-eu-controversy-and-the-sun-flower-v-spain-decision.html",
    "event": "Annulment"
   },
@@ -416,134 +363,18 @@
    "tier": "brief",
    "slug": "2026-09-22-aaa-president-joins-clio.html",
    "event": "Note"
-  },
-  {
-   "record": null,
-   "id": 5537,
-   "title": "Malaysian road developer reportedly puts India on notice of treaty dispute over protracted judicial delays",
-   "title_en": "Malaysian road developer reportedly puts India on notice of treaty dispute",
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dispute-over-protracted-judicial-delays/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "notice_of_intent",
-   "published_at": "2026-09-22",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Malaysia",
-    "India"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘on notice of’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "GAR",
-     "url": "https://globalarbitrationreview.com/article/oil-trader-wins-hkiac-award-over-indian-deliveries",
-     "title": "Oil trader wins HKIAC award over Indian deliveries",
-     "published_at": "2026-09-08",
-     "snippet": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India."
-    },
-    {
-     "source": "PCA",
-     "url": "https://pca-cpa.org/en/news/pca-press-release-pca-case-no-2023-01-the-indus-waters-western-rivers-arbitration-islamic-republic-of-pakistan-v-republic-of-india-6/",
-     "title": "PCA Press Release – PCA Case No. 2023-01: The Indus Waters Western Rivers Arbitration (Islamic Republic of Pakistan v. Republic of India)",
-     "published_at": "",
-     "snippet": "Please see the attached press release issued on 31 August 2026 by the Permanent Court of Arbitration (PCA) in the arbitration instituted by the Islamic Republic of Pakistan against the Republic of India pursuant to the Indus Waters Treaty of…"
-    },
-    {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-in/news/other/g-r-infraprojects-terminates-rs413-crore-ntpc-bess-contract-citing-force-majeure-and-war-risk/ar-AA2cpV3x",
-     "title": "G R Infraprojects Terminates NTPC BESS EPC Contracts, Invokes Dispute Resolution",
-     "published_at": "2026-09-17",
-     "snippet": "India, Sept. 17 -- India's EPC sector runs on long-dated, fixed-scope contracts signed years before delivery, which makes force majeure and war-risk clauses far more than legal boilerplate they are"
-    },
-    {
-     "source": "thediplomat.com",
-     "url": "https://thediplomat.com/2026/09/why-malaysia-wont-extradite-dr-zakir-naik-to-india/",
-     "title": "Why Malaysia Won’t Extradite Dr. Zakir Naik to India",
-     "published_at": "2026-09-18",
-     "snippet": "Despite being wanted on various criminal charges in India, the Islamic preacher has become hugely popular since arriving in Malaysia in 2016."
-    }
-   ],
-   "story": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India.",
-   "tier": "brief",
-   "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
-   "event": "Notice of dispute"
-  },
-  {
-   "record": null,
-   "id": 4792,
-   "title": "Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y. 1:26-mc-00464)",
-   "title_en": null,
-   "summary": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee $ 52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC). (Attachments: # 1 Supplement Memorandum of Law in Support of Ex Parte Application, # 2 Affidavit Declaration of R Parties: The Bank of New York Mellon; Bank of America, N.A.; Citibank, N.A.; Deutsche Bank Trust Company Americas; Joint Stock Company Belarusian Potash Company (BPC); J.P. Morgan Chase & Co.. Counsel on record: Ford O'Brien Landy LLP.",
-   "summary_en": null,
-   "url": "https://www.courtlistener.com/docket/74828236/joint-stock-company-belarusian-potash-company-bpc-v-jp-morgan-chase/",
-   "source": "US federal docket",
-   "source_tier": 1,
-   "event_type": "s1782_application",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": "1:26-mc-00464",
-   "claimants": [
-    "The Bank of New York Mellon"
-   ],
-   "respondents": [
-    "Bank of America, N.A.",
-    "Citibank, N.A."
-   ],
-   "states": [],
-   "sectors": [
-    "Finance & banking",
-    "Transport & logistics"
-   ],
-   "counsel": [
-    "Ford O'Brien Landy LLP"
-   ],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "US federal docket: §1782 application",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "Morningstar",
-     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmUzOGxxQlh5aXgtMEZOdGJnbnNVQU9qZnRpckNVczZNSWF2VXlVQkFGZWFnTVotVHhhWkphR1BhczlMVm1GTnhoRzRISHVoUFd5aXVvTzg5WHF4WTJRZXdjZUJqRVY2RGdxNlFRQlVKWEpkNlJhSEhVZ0Z4Y3NKUmw3U1NmQmdXQThnQUdWMFZqQkFZbmdtaTBic0g5aUkwZkE?oc=5",
-     "title": "Mosaic and Nutrien: Shares Fall on US Plan to Buy Belarusian Potash - Morningstar",
-     "published_at": "2026-09-21",
-     "snippet": ""
-    }
-   ],
-   "story": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee US$52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC).",
-   "tier": "brief",
-   "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
-   "event": "§1782 application"
   }
  ],
  "leads": [
   {
    "record": null,
-   "id": 4962,
-   "title": "Nigeria Wins ICC Arbitration Case Against Sunrise Power Over Mambilla Project",
-   "title_en": "Nigeria claims win in long-running hydropower plant feud",
-   "summary": "ICC tribunal dismisses Sunrise Power’s US$2.35 billion claim over the 3,050 MW Mambilla Hydroelectric Power Project.",
+   "id": 5113,
+   "title": "Mambilla: TSF Hails Nigeria’s Victory At ICC Tribunal",
+   "title_en": "TSF Hails Nigeria’s victory at ICC Tribunal",
+   "summary": "President Bola Tinubu has commended the judgment of the International Chamber of Commerce (ICC) arbitration tribunal in Paris…",
    "summary_en": null,
-   "url": "https://www.greenbuildingafrica.co.za/nigeria-wins-us2-35-billion-mambilla-hydro-project-arbitration-case/",
-   "source": "Google News / greenbuildingafrica.co.za",
+   "url": "https://www.vanguardngr.com/2026/09/tinubu-hails-nigerias-victory-over-sunrises-2-35bn-mambilla-claim/",
+   "source": "Google News / vanguardngr.com",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-22",
@@ -559,58 +390,51 @@
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘icc arbitration’ in the text",
+   "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
    "corroboration": [
     {
-     "source": "Law360 International Arbitration (Global)",
-     "url": "https://www.law360.com/internationalarbitration/articles/2527193?utm_source=rss&utm_medium=rss&utm_campaign=section",
-     "title": "Nigeria Claims Win In Long-Running Hydropower Plant Feud",
-     "published_at": "2026-09-19",
-     "snippet": "Nigeria has prevailed in a high-stakes International Chamber of Commerce arbitration over the Mambilla hydropower project, a major hydropower project in Nigeria, the country's president said Thursday."
-    },
-    {
-     "source": "TheCable",
-     "url": "https://www.thecable.ng/now-that-the-mambilla-mess-is-over/",
-     "title": "Now that the Mambilla mess is over",
-     "published_at": "2026-09-20",
-     "snippet": "Stay connected via Google News It came as a mighty relief to me when news broke on…"
-    },
-    {
-     "source": "leadership.ng",
-     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
-     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
-     "published_at": "2026-09-19",
-     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…"
-    },
-    {
-     "source": "businessday.ng",
-     "url": "https://businessday.ng/news/article/malami-breaks-silence-on-mambilla-project-rejects-corruption-allegation/",
-     "title": "Malami breaks silence on Mambilla project, rejects corruption allegation",
+     "source": "blueprint.ng",
+     "url": "https://blueprint.ng/nigeria-wont-be-soft-target-for-predatory-litigation-arbitration-agf-fagbemi/",
+     "title": "Nigeria will not be a soft target for predatory litigation, arbitration — Fagbemi",
      "published_at": "2026-09-22",
-     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, SAN, has welcomed Nigeria’s victory in the ..."
+     "snippet": "The Attorney-General of the Federation, Lateef Fagbemi, Tuesday…"
     },
     {
-     "source": "Business News Nigeria",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ0J5VHpjaXhkb29mbVBxMW5FaFhlYlZHZXM5OHNrdXdFRWVUengwSDVKc01meWpOQ0pxcWY0dFVmQVdhYWVqNURaMjZfQkZnYlBhaF9xMVBGcG9iMlU2VjhYV2QyQW9vU1YtcVNYeXp0VlZDRjROT0xzaFYzU1NpZUQwSUFmRXFTeVI4ZkJOSjV0d1NIX1FuR0JIUlBYXzZoMk9v?oc=5",
-     "title": "Nigeria wins $2.35bn arbitration over Mambilla hydropower project - Business News Nigeria",
+     "source": "THISDAYLIVE",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWVlxanc1Z0NNdkhkZ3FFaHFFeHJrWUFMQXQ4eDhzZ2Z4azdqQTM0TGhESEcyOFdPVV9PdUp6Mm44b3JidXNpeGF3czBfSkVMcE92d19BM2kwX1JqZzk0TVItTFJtQmVKV3E2YmwwRWFSUndRTlZVVnJzWG1VVWlmVDJhT2tRRjk5aW9lT2dDT016eWVmWjlOVFo4Y3JNLUw3aG9hVzhRdw?oc=5",
+     "title": "Mambilla: Tinubu Hails Nigeria’s Victory in $2.35bn ICC Arbitration - THISDAYLIVE",
      "published_at": "2026-09-18",
      "snippet": ""
+    },
+    {
+     "source": "von.gov.ng",
+     "url": "https://von.gov.ng/president-tinubu-hails-nigerias-icc-arbitration-victory/",
+     "title": "President Tinubu Hails Nigeria’s ICC Arbitration Victory",
+     "published_at": "2026-09-18",
+     "snippet": "President Bola Ahmed Tinubu has hailed the decision of an International Arbitration Tribunal under the auspices of the International Chamber of Commerce (ICC) in Paris, which ruled in favour of ..."
+    },
+    {
+     "source": "dailytimesng.com",
+     "url": "https://dailytimesng.com/tinubu-hails-efcc-as-nigeria-wins-mambilla-arbitration/",
+     "title": "Tinubu Hails EFCC as Nigeria Wins Mambilla Arbitration",
+     "published_at": "2026-09-19",
+     "snippet": "Daily Times is Nigeria trusted source for breaking news, politics, business, sports, entertainment, and analysis bringing you stories that matter."
     }
    ],
-   "story": "ICC tribunal dismisses Sunrise Power’s US$2.35 billion claim over the 3,050 MW Mambilla Hydroelectric Power Project.",
+   "story": "President Bola Tinubu has commended the judgment of the International Chamber of Commerce (ICC) arbitration tribunal.",
    "tier": "signal",
-   "slug": "2026-09-22-nigeria-claims-win-in-long-running-hydropower-plant-feud.html",
+   "slug": "2026-09-22-tsf-hails-nigeria-s-victory-at-icc-tribunal.html",
    "event": "Commercial arbitration"
   },
   {
    "record": null,
    "id": 5114,
    "title": "Delhi High Court Keeps Anadolu Deniz-HSL Arbitration In Abeyance, Says Sovereign Decision Non-Arbitrable",
-   "title_en": "Delhi High Court Keeps Anadolu Deniz-HSL arbitration in abeyance, says sovereign decision non-arbitrable",
+   "title_en": "Delhi High Court keeps Anadolu Deniz-HSL arbitration in abeyance, says sovereign decision non-arbitrable",
    "summary": "The Delhi High Court on 18 September directed that arbitral proceedings initiated by Turkish company Anadolu Deniz against Hindustan Shipyard Limited (HSL) before the Indian Council…",
    "summary_en": null,
    "url": "https://www.livelawbiz.com/arbitration/high-court/delhi-high-court-stays-arbitration-against-hindustan-shipyard-in-navy-ship-contract-dispute-says-sovereign-decision-prima-facie-non-arbitrable-551250",
@@ -634,7 +458,7 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": "The Delhi High Court on 18 September directed that arbitral proceedings initiated by Turkish company Anadolu Deniz against Hindustan Shipyard Limited (HSL) before the Indian Council.",
+   "story": "The Delhi High Court on 18 September directed that arbitral proceedings initiated by Turkish company Anadolu Deniz against Hindustan Shipyard Limited (HSL).",
    "tier": "signal",
    "slug": "2026-09-22-delhi-high-court-keeps-anadolu-deniz-hsl-arbitration-in-abeyance-says-.html",
    "event": "Commercial arbitration"
@@ -689,35 +513,19 @@
   "courts": [
    {
     "date": "2026-09-22",
+    "title": "Shanmuganathan Paskaran v Blue Bricks London Limtied",
+    "main": "Shanmuganathan Paskaran v Blue Bricks London Limtied",
+    "step": "judgment under the Arbitration Act 1996",
+    "tail": "County Court · [2026] EWCC 57",
+    "url": "https://caselaw.nationalarchives.gov.uk/ewcc/2026/57"
+   },
+   {
+    "date": "2026-09-22",
     "title": "Benjamin Gilbert & Anor v Broadoak Private Finance Limited",
     "main": "Benjamin Gilbert & Anor v Broadoak Private Finance Limited",
     "step": "judgment under the Arbitration Act 1996",
     "tail": "Court of Appeal (Civil Division) · [2026] EWCA Civ 1172",
     "url": "https://caselaw.nationalarchives.gov.uk/ewca/civ/2026/1172"
-   },
-   {
-    "date": "2026-09-18",
-    "title": "Tanga Cement Plc vs Willy Enterprises Limited",
-    "main": "Tanga Cement Plc vs Willy Enterprises Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/325/eng@2026-09-18"
-   },
-   {
-    "date": "2026-09-11",
-    "title": "Bahari Beach Hotel Limited vs Taher Muccadam",
-    "main": "Bahari Beach Hotel Limited vs Taher Muccadam",
-    "step": "arbitration-related judgment",
-    "tail": "High Court of Tanzania · [2026] TZHC 5337",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhc/2026/5337/eng@2026-09-11"
-   },
-   {
-    "date": "2026-09-08",
-    "title": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
-    "main": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
-    "step": "recourse against an award",
-    "tail": "High Court of Singapore · [2026] SGHC 182",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20182.pdf"
    }
   ],
   "people": [
@@ -728,14 +536,6 @@
     "step": "",
     "tail": "FinanceAsia",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUktkaUFqem90ZmgzUjFabG9JV25sdEpZc0JFWllxZGloVnVqOHF5dk5jWXhUYTlTbTdOVXBkbk1uYnR4UnF4MF8tbThyOXRXajE4eVM2bVE2Wmh4Q29Kdmk4NDlXYWVEYWhMR3VyamN4TXFDUTB1blhpaEZ4a2l1eWcwekQ3TUh1bWNJTjBhYllKRW1J?oc=5"
-   },
-   {
-    "date": "2026-09-20",
-    "title": "Spectrum UA Credit v. Ukraine — following appointment by the Claimant, Nassib G. Ziadé (Chilean, Lebanese) accepts his appointment as arbitrator",
-    "main": "Spectrum UA Credit v. Ukraine",
-    "step": "Following appointment by the Claimant, Nassib G. Ziadé (Chilean, Lebanese) accepts his appointment as arbitrator",
-    "tail": "ARB/26/17",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/17"
    }
   ]
  }

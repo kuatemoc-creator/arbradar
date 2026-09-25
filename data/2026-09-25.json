@@ -44,7 +44,7 @@
    "record": null,
    "id": 7812,
    "title": "Game Publishers Eye Doc Request In Valve Antitrust Case",
-   "title_en": "Game Publishers Eye Doc request in Valve antitrust case",
+   "title_en": "Game Publishers eye Doc request in Valve antitrust case",
    "summary": "Video-game publishers accusing Valve Corp. in a federal antitrust lawsuit of manipulating arbitration pacts with gaming customers have questioned the gamers' bid for access to the publishers' purportedly protected materials as the gamers fight a separate case against the digital content company.",
    "summary_en": null,
    "url": "https://www.law360.com/internationalarbitration/articles/2529546?utm_source=rss&utm_medium=rss&utm_campaign=section",
@@ -68,230 +68,18 @@
    "lang": "en",
    "country": "Global",
    "corroboration": [],
-   "story": "Video-game publishers accusing Valve Corp. in a federal antitrust lawsuit of manipulating arbitration pacts with gaming customers have questioned the gamers' bid for access to the publishers' purportedly protected materials.",
+   "story": "Video-game publishers accusing Valve Corp. in a federal antitrust lawsuit of manipulating arbitration pacts with gaming customers have questioned the gamers' bid.",
    "tier": "development",
    "slug": "2026-09-25-game-publishers-eye-doc-request-in-valve-antitrust-case.html",
-   "event": "Note"
-  },
-  {
-   "record": null,
-   "id": 7818,
-   "title": "KS Invest v. Spain — the ad hoc Committee holds a hearing on annulment in person in Paris",
-   "title_en": null,
-   "summary": "KS Invest brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 28 July 2025. King & Spalding acts for the claimant. State Attorney´s Office and Ministry of the Presidency, Justice and Relations with Parliament for Spain. The tribunal is Michele Potestà, presiding; Tina M. Cicchetti; Tatyana Slipachuk. On 23 September 2026, the ad hoc Committee holds a hearing on annulment in person in Paris.",
-   "summary_en": null,
-   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/15/25",
-   "source": "ICSID docket",
-   "source_tier": 1,
-   "event_type": "annulment_setaside",
-   "published_at": "2026-09-23",
-   "institution": "ICSID",
-   "treaty": "ECT (Energy Charter Treaty)",
-   "case_ref": "ARB/15/25",
-   "claimants": [
-    "KS Invest GmbH and TLS Invest GmbH"
-   ],
-   "respondents": [],
-   "states": [
-    "Spain"
-   ],
-   "sectors": [
-    "Electric Power & Other Energy"
-   ],
-   "counsel": [
-    "King & Spalding, Paris, France and Houston, TX, U.S.A.",
-    "State Attorney´s Office",
-    "Ministry of the Presidency, Justice and Relations with Parliament, Madrid, Spain"
-   ],
-   "arbitrators": "[\"Tina M. CICCHETTI (Canadian, Italian)\", \"Tatyana SLIPACHUK (Ukrainian)\", \"Michele POTESTÀ (Italian, Swiss)\"]",
-   "amount_usd": null,
-   "flag_reason": "ICSID docket: annulment step",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "KS Invest brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 28 July 2025. King & Spalding acts for the claimant.",
-   "tier": "development",
-   "slug": "2026-09-25-ks-invest-v-spain-the-ad-hoc-committee-holds-a-hearing-on-annulment-in.html",
-   "event": "Annulment"
-  },
-  {
-   "record": null,
-   "id": 7766,
-   "title": "Kyrgyz national serves Kazakhstan with notice of treaty dispute",
-   "title_en": null,
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/kyrgyz-national-serves-kazakhstan-with-notice-of-treaty-dispute/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-24",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Kyrgyzstan",
-    "Kazakhstan"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-25-kyrgyz-national-serves-kazakhstan-with-notice-of-treaty-dispute.html",
-   "event": "Note"
-  },
-  {
-   "record": null,
-   "id": 7765,
-   "title": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction in dispute over sanctions-induced sale of insulation plant owned by Russian businessmen",
-   "title_en": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction",
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/russian-court-consults-foreign-affairs-ministry-on-polands-immunity-from-jurisdiction-in-dispute-over-sanctions-induced-sale-of-insulation-plant-owned-by-russian-businessmen/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-24",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Russia",
-    "Poland"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "theweek.in",
-     "url": "https://www.theweek.in/news/biz-tech/2026/09/19/india-energy-imports-us-tariffs.html",
-     "title": "Amid US tariff threat on Russia, India says it will continue importing energy from commercially viable sources",
-     "published_at": "2026-09-19",
-     "snippet": "Union Minister of State for External Affairs Kirti Vardhan Singh emphasised that India's decisions are driven by the interests of its 140 crore citizens, prioritising their convenience, strength…"
-    }
-   ],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-25-russian-court-consults-foreign-affairs-ministry-on-poland-s-immunity-f.html",
    "event": "Note"
   }
  ],
  "leads": [],
- "enforcement": [
-  {
-   "record": {
-    "source": "US court opinion",
-    "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
-    "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
-    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
-   },
-   "id": 7760,
-   "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
-   "title_en": null,
-   "summary": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor.&nbsp;",
-   "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
-   "source": "GAR",
-   "source_tier": 2,
-   "event_type": "enforcement_action",
-   "published_at": "2026-09-24",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Iraq",
-    "Turkey"
-   ],
-   "sectors": [
-    "Oil & gas"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘petition to confirm’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "US court opinion",
-     "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
-     "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
-     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
-    },
-    {
-     "source": "Law360 International Arbitration (Global)",
-     "url": "https://www.law360.com/internationalarbitration/articles/2529763?utm_source=rss&utm_medium=rss&utm_campaign=section",
-     "title": "Iraq's $1.5B Arbitration Win Should Be Upheld, DC Judge Says",
-     "published_at": "2026-09-25",
-     "snippet": "A D.C. federal magistrate judge has recommended granting Iraq's Ministry of Oil's petition seeking to enforce a $1.47 billion arbitral award it won against Turkey after the country violated a pipeline agreement, but the magistrate judge held off on endorsing a specific number Turkey must pay to Iraq."
-    },
-    {
-     "source": "stockholmcf.org",
-     "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
-     "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
-     "published_at": "2026-09-21",
-     "snippet": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October, continuing the sale of businesses seized during the government’s crackdown on the faith-based Gülen movement. The sale notices were published in Tuesday’s Official Gazette, the Ekonomi newspaper reported."
-    },
-    {
-     "source": "turkishminute.com",
-     "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
-     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
-     "published_at": "2026-09-23",
-     "snippet": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel, which has been at the center of an investigation into allegations that proceeds from illegal betting, fraud and other crimes were laundered through its payment infrastructure, the T24 news website reported."
-    }
-   ],
-   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
-   "tier": "enforcement",
-   "slug": "2026-09-25-us-judge-backs-iraq-as-net-creditor-in-oil-dispute-with-turkey.html",
-   "event": "Enforcement"
-  }
- ],
+ "enforcement": [],
  "records": {
   "docket": [],
   "disclosures": [],
-  "courts": [
-   {
-    "date": "2026-09-17",
-    "title": "Topline Logistics Ltd v Muhammed & 2 others (Sued as officials of Football Kenya Federation)",
-    "main": "Topline Logistics Ltd v Muhammed & 2 others (Sued as officials of Football Kenya Federation)",
-    "step": "enforcement of an award",
-    "tail": "High Court",
-    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13761/eng@2026-09-17"
-   },
-   {
-    "date": "2026-09-17",
-    "title": "Affaki v Technoservice Ltd",
-    "main": "Affaki v Technoservice Ltd",
-    "step": "arbitration-related judgment",
-    "tail": "High Court",
-    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13727/eng@2026-09-17"
-   }
-  ],
+  "courts": [],
   "people": []
  }
 }

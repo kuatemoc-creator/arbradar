@@ -1,12 +1,83 @@
 {
  "date": "2026-09-24",
- "subject": "ArbRadar · 24 September 2026 — Contractual bar on interest for delayed payment Ousts even Pre-reference interest…",
+ "subject": "ArbRadar · 24 September 2026 — US judge backs Iraq as net creditor in oil dispute with Turkey",
  "stories": [
+  {
+   "record": {
+    "source": "US court opinion",
+    "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
+    "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
+    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
+   },
+   "id": 7760,
+   "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
+   "title_en": null,
+   "summary": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-24",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Iraq",
+    "Turkey"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘petition to confirm’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "US court opinion",
+     "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
+     "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
+     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
+    },
+    {
+     "source": "Law360 International Arbitration (Global)",
+     "url": "https://www.law360.com/internationalarbitration/articles/2529763?utm_source=rss&utm_medium=rss&utm_campaign=section",
+     "title": "Iraq's $1.5B Arbitration Win Should Be Upheld, DC Judge Says",
+     "published_at": "2026-09-25",
+     "snippet": "A D.C. federal magistrate judge has recommended granting Iraq's Ministry of Oil's petition seeking to enforce a $1.47 billion arbitral award it won against Turkey after the country violated a pipeline agreement, but the magistrate judge held off on endorsing a specific number Turkey must pay to Iraq."
+    },
+    {
+     "source": "stockholmcf.org",
+     "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
+     "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
+     "published_at": "2026-09-21",
+     "snippet": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October, continuing the sale of businesses seized during the government’s crackdown on the faith-based Gülen movement. The sale notices were published in Tuesday’s Official Gazette, the Ekonomi newspaper reported."
+    },
+    {
+     "source": "turkishminute.com",
+     "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
+     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
+     "published_at": "2026-09-23",
+     "snippet": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel, which has been at the center of an investigation into allegations that proceeds from illegal betting, fraud and other crimes were laundered through its payment infrastructure, the T24 news website reported."
+    }
+   ],
+   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
+   "tier": "lead",
+   "slug": "2026-09-24-us-judge-backs-iraq-as-net-creditor-in-oil-dispute-with-turkey.html",
+   "event": "Enforcement"
+  },
   {
    "record": null,
    "id": 7464,
    "title": "Contractual Bar On Interest For Delayed Payment Ousts Even Pre-Reference Interest: Supreme Court In NEEPCO Arbitration Case",
-   "title_en": "Contractual bar on interest for delayed payment Ousts even Pre-reference interest: Supreme Court in NEEPCO arbitration case",
+   "title_en": "Contractual bar on interest for delayed payment ousts even pre-reference interest: Supreme Court in NEEPCO arbitration case",
    "summary": "Supreme Court rules that Clause 54 of NEEPCO’s contract barred pre-reference interest, distinguishing it from the clause examined in Harish Chandra.",
    "summary_en": null,
    "url": "https://courtbook.in/posts/supreme-court-holds-contractual-clause-can-bar-arbitrator-from-awarding-pre-reference-interest-in-public-works-dispute",
@@ -41,7 +112,7 @@
     }
    ],
    "story": "Supreme Court rules that Clause 54 of NEEPCO’s contract barred pre-reference interest, distinguishing it from the clause examined in Harish Chandra.",
-   "tier": "lead",
+   "tier": "development",
    "slug": "2026-09-24-contractual-bar-on-interest-for-delayed-payment-ousts-even-pre-referen.html",
    "event": "Commercial arbitration"
   },
@@ -135,7 +206,7 @@
    "record": null,
    "id": 7814,
    "title": "Three Crowns Taps Freshfields Pro For New Dubai Office",
-   "title_en": "Three Crowns Taps Freshfields pro for new Dubai office",
+   "title_en": "Three Crowns taps Freshfields pro for new Dubai office",
    "summary": "Three Crowns LLP on Wednesday announced a significant partner hire for its new Dubai International Financial Centre office, saying Freshfields LLP's Saudi Arabia disputes practice head has departed that firm to contribute to the global arbitration specialist.",
    "summary_en": null,
    "url": "https://www.law360.com/internationalarbitration/articles/2528853?utm_source=rss&utm_medium=rss&utm_campaign=section",
@@ -185,7 +256,7 @@
    "record": null,
    "id": 7411,
    "title": "Hong Kong court sets aside US$480 million award in IPO dispute ",
-   "title_en": null,
+   "title_en": "Hong Kong court sets aside US$480 million award in IPO dispute",
    "summary": "In a rare example of a successful set-aside in Hong Kong, a court has annulled an HKIAC award that ordered two shareholders in a listing vehicle to pay a co-investor US$480 million over a failed initial public offering, finding the tribunal did not properly address an estoppel defence.",
    "summary_en": null,
    "url": "https://globalarbitrationreview.com/article/hong-kong-court-sets-aside-us480-million-award-in-ipo-dispute",
@@ -211,85 +282,90 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": "In a rare example of a successful set-aside in Hong Kong, a court has annulled an HKIAC award that ordered two shareholders in a listing vehicle to pay a co-investor US$480 million over a failed initial.",
+   "story": "In a rare example of a successful set-aside in Hong Kong, a court has annulled an HKIAC award that ordered two shareholders in a listing vehicle to pay a co-investor US$480 million.",
    "tier": "development",
    "slug": "2026-09-24-hong-kong-court-sets-aside-us-480-million-award-in-ipo-dispute.html",
    "event": "Award"
   },
   {
-   "record": {
-    "source": "US court opinion",
-    "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
-    "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
-    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
-   },
-   "id": 7767,
-   "title": "US court recommends confirmation of award in Iraq-Türkiye pipeline arbitration",
+   "record": null,
+   "id": 7766,
+   "title": "Kyrgyz national serves Kazakhstan with notice of treaty dispute",
    "title_en": null,
    "summary": "",
    "summary_en": null,
-   "url": "https://www.iareporter.com/articles/us-court-recommends-confirmation-of-award-in-iraq-turkiye-pipeline-arbitration-amid-disagreement-over-interest-calculation/",
+   "url": "https://www.iareporter.com/articles/kyrgyz-national-serves-kazakhstan-with-notice-of-treaty-dispute/",
    "source": "IAReporter",
    "source_tier": 2,
-   "event_type": "award_issued",
+   "event_type": "commentary",
    "published_at": "2026-09-24",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [],
-   "sectors": [
-    "Oil & gas"
+   "states": [
+    "Kyrgyzstan",
+    "Kazakhstan"
    ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘award’ in the text",
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "",
+   "tier": "brief",
+   "slug": "2026-09-24-kyrgyz-national-serves-kazakhstan-with-notice-of-treaty-dispute.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 7765,
+   "title": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction in dispute over sanctions-induced sale of insulation plant owned by Russian businessmen",
+   "title_en": "Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction",
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/russian-court-consults-foreign-affairs-ministry-on-polands-immunity-from-jurisdiction-in-dispute-over-sanctions-induced-sale-of-insulation-plant-owned-by-russian-businessmen/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-24",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Russia",
+    "Poland"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
    "corroboration": [
     {
-     "source": "US court opinion",
-     "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
-     "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
-     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
-    },
-    {
-     "source": "GAR",
-     "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
-     "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
-     "published_at": "2026-09-24",
-     "snippet": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor."
-    },
-    {
-     "source": "stockholmcf.org",
-     "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
-     "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
-     "published_at": "2026-09-21",
-     "snippet": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October, continuing the sale of businesses seized during the government’s crackdown on the faith-based Gülen movement. The sale notices were published in Tuesday’s Official Gazette, the Ekonomi newspaper reported."
-    },
-    {
-     "source": "turkishminute.com",
-     "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
-     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
-     "published_at": "2026-09-23",
-     "snippet": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel, which has been at the center of an investigation into allegations that proceeds from illegal betting, fraud and other crimes were laundered through its payment infrastructure, the T24 news website reported."
-    },
-    {
-     "source": "Mealey's",
-     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xTlVHLXJEZmU3WFNXMURNT3FTTWhFRTlacThORkZWVGRHTFJ2VTBmLVpKRy1XRGFZbE5VckRpT1ZBTXFtcHZvaWY2VS1MdWY5YzFIa3dUYXUxR3hx0gFiQVVfeXFMTy1laTdFSDgweW84NjA2U0VIOU1fQXgwUkxtNzlpZDhHRWFTWkFlVHlCUFQwRHItbTJDdVNTMzdieGh1QTJjVlZfd2NHUnJIcHZGM0lnLVVLUFJkUUlabUdDRkE?oc=5",
-     "title": "Magistrate Judge: $1.5B Award Against Turkey For Pipeline Dispute Should Be Confirmed - Mealey's",
-     "published_at": "2026-09-24",
-     "snippet": ""
+     "source": "theweek.in",
+     "url": "https://www.theweek.in/news/biz-tech/2026/09/19/india-energy-imports-us-tariffs.html",
+     "title": "Amid US tariff threat on Russia, India says it will continue importing energy from commercially viable sources",
+     "published_at": "2026-09-19",
+     "snippet": "Union Minister of State for External Affairs Kirti Vardhan Singh emphasised that India's decisions are driven by the interests of its 140 crore citizens, prioritising their convenience, strength…"
     }
    ],
-   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
+   "story": "",
    "tier": "brief",
-   "slug": "2026-09-24-us-court-recommends-confirmation-of-award-in-iraq-t-rkiye-pipeline-arb.html",
-   "event": "Award"
+   "slug": "2026-09-24-russian-court-consults-foreign-affairs-ministry-on-poland-s-immunity-f.html",
+   "event": "Note"
   },
   {
    "record": null,
@@ -325,203 +401,14 @@
    "tier": "brief",
    "slug": "2026-09-24-troubled-real-estate-project-reportedly-puts-iraq-at-risk-of-diac-arbi.html",
    "event": "Note"
-  },
-  {
-   "record": null,
-   "id": 6241,
-   "title": "Dutch appellate court allows US assignees of CC/Devas v. India (1) award to replace Mauritian claimants",
-   "title_en": null,
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/dutch-appellate-court-allows-us-assignees-of-cc-devas-v-india-1-award-to-replace-mauritian-claimants/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-23",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Netherlands",
-    "India"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘award’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-24-dutch-appellate-court-allows-us-assignees-of-cc-devas-v-india-1-award-.html",
-   "event": "Note"
   }
  ],
- "leads": [
-  {
-   "record": null,
-   "id": 6908,
-   "title": "'Oil companies are exploiting the situation': Europe eyes windfall tax on energy giants as fuel prices rise",
-   "title_en": null,
-   "summary": "EU finance ministers are considering ways to tax what Germany's finance minister described as 'excessive profits' in the energy sector amid fears of a major energy price…",
-   "summary_en": null,
-   "url": "https://www.msn.com/en-ie/money/economy/oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on-energy-giants-as-fuel-prices-rise/ar-AA2cwfPy",
-   "source": "Google News / msn.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Ireland"
-   ],
-   "sectors": [
-    "Oil & gas",
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "EU finance ministers are considering ways to tax what Germany's finance minister described as 'excessive profits' in the energy sector amid fears of a major energy price.",
-   "tier": "signal",
-   "slug": "2026-09-24-oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on.html",
-   "event": "State measure"
-  },
-  {
-   "record": null,
-   "id": 5784,
-   "title": "CEMAC Regulator Revokes Axiome Capital’s License After Three Years Without Market Activity",
-   "title_en": "CEMAC regulator revokes Axiome Capital’s license after three years without market activity",
-   "summary": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese…",
-   "summary_en": null,
-   "url": "https://www.businessincameroon.com/finance/2309-16805-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-without-market-activity",
-   "source": "Google News / businessincameroon.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-23",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Cameroon"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese.",
-   "tier": "signal",
-   "slug": "2026-09-24-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-wit.html",
-   "event": "State measure"
-  }
- ],
- "enforcement": [
-  {
-   "record": {
-    "source": "US court opinion",
-    "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
-    "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
-    "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
-   },
-   "id": 2537,
-   "title": "US appeals court reverses district court’s dismissal of Laos’ bid to enforce arbitral awards against alleged alter egos of award debtors",
-   "title_en": null,
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/us-appeals-court-reverses-district-courts-dismissal-of-laos-bid-to-enforce-arbitral-awards-against-alleged-alter-egos-of-award-debtors/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "enforcement_action",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Laos"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘award debtor’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "US court opinion",
-     "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
-     "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
-     "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
-    },
-    {
-     "source": "Law360 International Arbitration (Global)",
-     "url": "https://www.law360.com/internationalarbitration/articles/2526885?utm_source=rss&utm_medium=rss&utm_campaign=section",
-     "title": "9th Circ. Revives Laos' $5M Enforcement Bid In Casino Case",
-     "published_at": "2026-09-18",
-     "snippet": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some $5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming from an ill-fated casino venture, saying a lower court should have taken a closer look at the government's arguments."
-    },
-    {
-     "source": "Mealey's",
-     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNV2Z5QUw0cjU3LWpGUDdYQ3FkRWg4ZmcxV0I2Y3ZWbUx1TEVUOVBDc0xWTzVTNFpOcVRnZkZzLXhXbE5pdkY2QUQ4N2ZLSmZyNzk0YzZldWNmU0xjM2pWTHJLR2k3Q1I0ZnFVbEc3dVFxangyMUhqS1dGLS1OTVZvYlBfQV94ck9SUDg4S2tId01hU3lNMTZyNXlYM0lvNE5WZVZkUEdCdW8tb2xUR2paRkQ0eUkwdk5xWjh2ZDk5emZqek5uR2VaNjF4UUlRVTYwQko5MUlDTFdZeHRHemF6MVIzbGF1RVdi0gFiQVVfeXFMUHFON0xsNmlHODRlRmczV1dwQVdrY3RGdFgyUTFDejFlUkRObmZVblhHS3ktbnpFTFZIVU9KY3RKRlVEcWJVRDdHeG1rMmVfVU1DLWpDakxkbG5PenVRS3VQZUE?oc=5",
-     "title": "Dismissal Of Laos’ $4.5M Casino Petition Reversed In Part By 9th Circuit - Mealey's",
-     "published_at": "2026-09-18",
-     "snippet": ""
-    }
-   ],
-   "story": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some US$5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming from an ill-fated casino venture.",
-   "tier": "enforcement",
-   "slug": "2026-09-24-us-appeals-court-reverses-district-court-s-dismissal-of-laos-bid-to-en.html",
-   "event": "Enforcement"
-  }
- ],
+ "leads": [],
+ "enforcement": [],
  "records": {
   "docket": [],
   "disclosures": [],
-  "courts": [
-   {
-    "date": "2026-09-17",
-    "title": "Stichting Kiffwa Foundation v Miraadi Limited",
-    "main": "Stichting Kiffwa Foundation v Miraadi Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court",
-    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13710/eng@2026-09-17"
-   },
-   {
-    "date": "2026-09-17",
-    "title": "Mhangami v Abedraboh",
-    "main": "Mhangami v Abedraboh",
-    "step": "enforcement of an award",
-    "tail": "High Court",
-    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13711/eng@2026-09-17"
-   }
-  ],
+  "courts": [],
   "people": []
  }
 }

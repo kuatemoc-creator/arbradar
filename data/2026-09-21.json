@@ -1,64 +1,16 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Russia takes control of US factory on Putin’s order days",
+ "subject": "ArbRadar · 21 September 2026 — Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
  "stories": [
   {
    "record": null,
-   "id": 4533,
-   "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill",
-   "title_en": "Russia takes control of US factory on Putin’s order days",
-   "summary": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation against…",
-   "summary_en": null,
-   "url": "https://www.washingtonpost.com/politics/2026/09/18/donald-trump-russia-sanctions-ukraine-lindsey-graham/4ff0e606-b3ae-11f1-92c2-5c918f4a6127_story.html",
-   "source": "Google News / washingtonpost.com",
-   "source_tier": 2,
-   "event_type": "state_measure",
-   "published_at": "2026-09-19",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [
-    "Nestle"
-   ],
-   "respondents": [],
-   "states": [
-    "Russia",
-    "Ukraine"
-   ],
-   "sectors": [
-    "Transport & logistics"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (Malaysia edition); investor of means named: Nestle",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Malaysia",
-   "corroboration": [
-    {
-     "source": "Firstpost",
-     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUE43YTg0djRTUmZybF8ybDQ3aGVBM2R4aGEtTnJnLXRLUzcyVDNtQVpfQUVuTWN4UldZdUFOYURKcWpUZFo4SURFVlJoWTMxSGJ3QlNnd2wzWWJXZ3RxUEZ4Rm5remJUejJ3UVEtRU4zWDRXRkhxSEVOMUU1cnhKUEpkLTF6X2dWbDkwbndJS0ZxZGdKejktdU56Tmo3N1BnVV9Ba1RwcURkN3lkazd3Sy1WMm1KR3B1UFdnME9yVnBPQ2Vub1Y5OEJVakxNODU0TDBJUzNfb9IB3AFBVV95cUxNdXBORnN5dVdwdTNHTGJrcWdzaXhpT3RVLU1oMFRIendLMGhfcllUTDdGNERjZUpxZVQ5WGQzOFNpdUlDMEk0RTk5MktPaFlEMjN3ZWgyaVNaZE84bWtpOHJMaVlrU3UtSDAwMExaUlFsM25INmYtTU15MlZiTkVmcFJfUVBqd1NnZ0N5V3J4WnM3OW5mNUdkLUpDSWg4ZXNpRGJNWEtBS1BwdHNhd3ZnZlFLNjhuQmRyTnlManRkck1sNXlmYlZCYllGeldTdnAxQUhobHNoNjd6b2dK?oc=5",
-     "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill - Firstpost",
-     "published_at": "2026-09-21",
-     "snippet": ""
-    }
-   ],
-   "story": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation.",
-   "tier": "lead",
-   "slug": "2026-09-21-russia-takes-control-of-us-factory-on-putin-s-order-days.html",
-   "event": "State measure"
-  },
-  {
-   "record": null,
-   "id": 3947,
-   "title": "YPF investors launch claim against Argentina",
+   "id": 5412,
+   "title": "Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
    "title_en": null,
-   "summary": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF.",
+   "summary": "Turkish Airlines and AJet list no Iran flights until March 2027…",
    "summary_en": null,
-   "url": "https://latinlawyer.com/article/ypf-investors-launch-claim-against-argentina",
-   "source": "Latin Lawyer (Global)",
+   "url": "https://www.middleeasteye.net/news/turkish-airlines-pegasus-and-ajet-cancel-iran-flights-us-sanctions-bite",
+   "source": "Google News / middleeasteye.net",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-21",
@@ -68,7 +20,7 @@
    "claimants": [],
    "respondents": [],
    "states": [
-    "Argentina"
+    "Turkey"
    ],
    "sectors": [
     "Oil & gas"
@@ -76,88 +28,87 @@
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘nationalis’ in the text",
+   "flag_reason": "State-measure sweep; no listed investor named",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": "Global",
+   "country": "Kenya",
    "corroboration": [
     {
-     "source": "GAR",
-     "url": "https://globalarbitrationreview.com/article/ypf-investors-launch-icsid-claim-against-argentina",
-     "title": "YPF investors launch ICSID claim against Argentina",
-     "published_at": "2026-09-17",
-     "snippet": "Former investors in Argentina’s nationalised oil and gas operator YPF have made good on their threat to file an investment treaty claim against the state after a US$16 billion US court judgment in their favour was overturned."
+     "source": "theyeshivaworld.com",
+     "url": "https://www.theyeshivaworld.com/news/israel-news/2601503/iran-flights-halted-turkish-airlines-ajet-and-pegasus-cancel-service-amid-u-s-sanctions.html",
+     "title": "IRAN FLIGHTS HALTED: Turkish Airlines, AJet And Pegasus Cancel Service Amid U.S. Sanctions",
+     "published_at": "2026-09-22",
+     "snippet": "Turkish Airlines, AJet and Pegasus have canceled all flights to and from Iran as sweeping U.S. sanctions targeting Iran’s aviation sector take effect. The cancellations began Monday, with the Turkish ..."
     },
     {
-     "source": "Law360 International Arbitration (Global)",
-     "url": "https://www.law360.com/internationalarbitration/articles/2526129?utm_source=rss&utm_medium=rss&utm_campaign=section",
-     "title": "Ex-YPF Investors Take Argentina To ICSID Over 2012 Seizure",
-     "published_at": "2026-09-18",
-     "snippet": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF."
-    },
-    {
-     "source": "Buenos Aires Times",
-     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUnQ3SGN3X1BwRDU3NXBSQUhBTUZldGdMMm1jQWNhWGRvNnVZbmlYME1rLTJZaTRRLThZdU9yWDg4RVVPa1ZfZ3RBVUlrQ2FKdU1PZlpJRkxZTVZUVjJjMm5jSDBBeVowR1FGWnFVNVg2eTNJd0ZDcVZ0QXlGZ0NHWkItdHJDWGV1SU00MkFpTGZpbkdiR3lCZm5zNE5SNGc3QTltLUVEYUJjalFiYmhwX3Q4V2lNdUpNWmV4QUFmZC1qZ9IBxwFBVV95cUxNOGJJS2xKOEJ6d2hiTWxFZW5zX1BWUGM1bU4wbUZBUWdaUFFqTFREYkhyV0phZHJJNEdqMlJWYWRYQUZNZk5DbEJHZGcxU2ZESFp2N1o0clBtMy03RzJsaWdfN2d2WWNpWExLSUNaUzdpejl1OS05VTNOVHg3MlVQRkEzVHJFWjBvR2gtdDRqMUdfaC1KaXphTlJLNWItZEFTR1lXeHlUMjdvaGdidnQ1Z0RaZzhDN21nMG5VOVlBendPbkw2Z3JR?oc=5",
-     "title": "Argentina, US launch ‘Andes-Atlantic Corridor’ to boost infrastructure investment - Buenos Aires Times",
-     "published_at": "2026-09-23",
+     "source": "Межа. Новини України.",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xZTdxNFdFXzMzY0lhUFVZdUtvb2Jwa2N0dV9wMkIzYXdCQVJWWjVKby1jR3dmcHNkRS1MdkRFcVlzMjczYjVtYXgyMVJySjVUY2hLT0ZfRkIwLXhxVlJyVHBqcjhVNFd1U1FZ?oc=5",
+     "title": "Turkish Airlines, AJet and Pegasus suspend Iran flights after new US sanctions - Межа. Новини України.",
+     "published_at": "2026-09-22",
      "snippet": ""
+    },
+    {
+     "source": "turkiyetoday.com",
+     "url": "https://www.turkiyetoday.com/business/turkish-airlines-halts-iran-flights-until-march-2027-iranian-media-reports-3228650",
+     "title": "Turkish Airlines, Pegasus, AJet halt Iran flights as US sanctions take effect",
+     "published_at": "2026-09-22",
+     "snippet": "Turkish Airlines reportedly suspends all flights to Iran until at least March 2027 while Iraq moves to ban Iranian carriers ..."
+    },
+    {
+     "source": "famagusta-gazette.com",
+     "url": "https://famagusta-gazette.com/turkish-airlines-cancel-iran-routes-including-turkish-airlines-ajet-and-pegasus/",
+     "title": "Turkish airlines cancel Iran routes: including Turkish Airlines, AJet, and Pegasus",
+     "published_at": "2026-09-22",
+     "snippet": "Major Turkish airlines, including Turkish Airlines, AJet, and Pegasus, have suspended their flights to Iran following the imposition of ..."
+    },
+    {
+     "source": "zamon.uz",
+     "url": "https://zamon.uz/en/2026/09/22/three-turkish-airlines-have-suspended-flights-to-iran",
+     "title": "Three Turkish airlines have suspended flights to Iran",
+     "published_at": "2026-09-22",
+     "snippet": "Turkey's Turkish Airlines, AJet, and Pegasus airlines suspended flights to and from Iran starting September 21. This occurred against the backdrop of new US sanctions taking effect against Iran's ..."
     }
    ],
-   "story": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA.",
-   "tier": "development",
-   "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
+   "story": "Turkish Airlines and AJet list no Iran flights.",
+   "tier": "lead",
+   "slug": "2026-09-21-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
    "event": "State measure"
   },
   {
    "record": null,
-   "id": 7570,
-   "title": "High Court of Judicature for Rajasthan, Bench at Jaipur considered an appeal under Section 37 of the Arbitration and Conciliation Act, 1996 against a Commercial Court order setting aside an arbitral award in a wind turbine generation dispute. The Commercia",
-   "title_en": null,
-   "summary": "Jaipur: The Central Government has entrusted Jaipur's senior advocate Lalit Sharma with a significant responsibility, appointing him as a \"Senior Panel Counsel\" in the Rajasthan High Court…",
+   "id": 4785,
+   "title": "AAA Launches New Group To Navigate AI In Arbitration",
+   "title_en": "AAA launches new group to navigate AI in arbitration",
+   "summary": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
    "summary_en": null,
-   "url": "https://www.msn.com/en-in/news/India/jaipur-s-senior-advocate-lalit-sharma-appointed-as-a-senior-panel-counsel-in-the-rajasthan-high-court-jaipur-bench/ar-AA231vWP",
-   "source": "Google News / msn.com",
+   "url": "https://www.law360.com/internationalarbitration/articles/2527183?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
    "source_tier": 2,
-   "event_type": "annulment_setaside",
-   "published_at": "2026-09-20",
-   "institution": null,
+   "event_type": "commentary",
+   "published_at": "2026-09-21",
+   "institution": "ICDR/AAA",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [],
    "sectors": [
-    "Power & renewables"
+    "Mining & metals"
    ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘setting aside’ in the text",
+   "flag_reason": null,
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "thehindu.com",
-     "url": "https://www.thehindu.com/news/national/rajasthan/rajasthan-high-court-acting-chief-justice-rejects-allegations-urges-patience/article71424266.ece",
-     "title": "Rajasthan High Court Acting Chief Justice rejects allegations, urges patience",
-     "published_at": "2026-09-03",
-     "snippet": "Breaking his silence over the letters reportedly written by a Supreme Court judge, the Rajasthan High Court’s Acting Chief Justice Sanjeev Prakash Sharma has rejected the allegations levelled against ..."
-    },
-    {
-     "source": "bhaskarenglish.in",
-     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVXpza01VODN2OFVGME5OYm8yUlowOXZCUVZYdEx6QmRaTlB2aXNvR3djZG1HZ0pNUWVWZnBvYjJyT0E4alpmOUZGc1BqVlFzLV9KQVhtNzZNTTJqT3EwdUdxaE03dnJaRElsc2FseXM1Wnd2azZwbmNONXdiVWdvajZobG1YSkQxQ0VsV0wwRXBsbWZlTXhnc2VvTjNnS0JTXzgzbF9oUzUtUW43M2UyYVlqTzJPQXh0MFNHRVhTLWh4czdob05POTJPSXF5WE5MZFHSAdcBQVVfeXFMTnN4RFctZjZZSlZ6cFBsMDZVV1h3ZjZNX2RrN3BIelIwMnpHUVNCa0JsYTlMWlMycWJyV0cxT2ZReHBZUHlIYU9UdDlhaFM2ZU9ueUJtMmcwckpjQWptaDQwVkgxNUU5alNQd0w4bzBUR0ZjakVqWXJkbk4zUl9Gc2NzNmNuRmF1UkNoeTE2Wi1SUTRtaWg3dmRna1lreU9rYnVqSExOWWtIM2dyMmhSZGZuX3NaYTMtTll6WHZGVTVfLXY0VldCWnp0ZHRDWktHd0VoanZXNGc?oc=5",
-     "title": "Mamta Kulkarni to receive Lifetime Achievement at Rajasthan Film Festival: Actress to be honoured in Jaipur... - bhaskarenglish.in",
-     "published_at": "2026-09-21",
-     "snippet": "Mamta Kulkarni to receive Lifetime Achievement at Rajasthan Film Festival: Actress to be honoured in Jaipur..."
-    }
-   ],
-   "story": "The Central Government has entrusted Jaipur's senior advocate Lalit Sharma with a responsibility.",
+   "country": "Global",
+   "corroboration": [],
+   "story": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
    "tier": "development",
-   "slug": "2026-09-21-high-court-of-judicature-for-rajasthan-bench-at-jaipur-considered-an-a.html",
-   "event": "Annulment"
+   "slug": "2026-09-21-aaa-launches-new-group-to-navigate-ai-in-arbitration.html",
+   "event": "Note"
   },
   {
    "record": null,
@@ -240,56 +191,48 @@
   },
   {
    "record": null,
-   "id": 2745,
-   "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz",
-   "title_en": "Germany Pushes EU to tax oil windfall profits Tied to Hormuz",
-   "summary": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "id": 5558,
+   "title": "Energía y Renovación v. Guatemala — energía y Renovación Holding S.A. files a counter-memorial on annulment",
+   "title_en": null,
+   "summary": "Energía y Renovación brought the claim against Guatemala under the FTA Central America - Panama 2002, in the electric power and other energy sector; it was registered on 29 October 2025. Hogan Lovells Cadwalader US LLP acts for the claimant. Ministry of Economy, Guatemala City, Guatemala, Procuraduría General de la Nación, Guatemala City, Guatemala and Three Crowns for Guatemala. The tribunal is Paul Arrighi Bustamante, presiding; Ximena Herrera-bernal; Attila Massimiliano Tanzi. On 21 September 2026, energía y Renovación Holding S.A. files a counter-memorial on annulment.",
    "summary_en": null,
-   "url": "https://www.msn.com/en-xl/news/other/six-eu-countries-push-for-windfall-tax-on-oil-companies-amid-surging-war-profits/ar-AA2b9ERT",
-   "source": "Google News / msn.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
+   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/21/56",
+   "source": "ICSID docket",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-21",
+   "institution": "ICSID",
+   "treaty": "FTA Central America - Panama 2002",
+   "case_ref": "ARB/21/56",
+   "claimants": [
+    "Energía y Renovación Holding, S.A."
+   ],
    "respondents": [],
    "states": [
-    "Germany"
+    "Guatemala",
+    "Panama"
    ],
    "sectors": [
-    "Oil & gas",
-    "Power & renewables"
+    "Electric Power & Other Energy"
    ],
-   "counsel": [],
-   "arbitrators": "[]",
+   "counsel": [
+    "Hogan Lovells Cadwalader US LLP, Miami, FL, U.S.A.",
+    "Ministry of Economy, Guatemala City, Guatemala",
+    "Procuraduría General de la Nación, Guatemala City, Guatemala",
+    "Three Crowns, London, U.K. and Madrid, Spain"
+   ],
+   "arbitrators": "[\"Ximena HERRERA-BERNAL (British, Colombian)\", \"Attila Massimiliano TANZI (Italian)\", \"Paul ARRIGHI BUSTAMANTE (French, Uruguayan)\"]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "flag_reason": "ICSID docket: annulment step",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "Global Banking & Finance Review",
-     "url": "https://www.globalbankingandfinance.com/eu-ministers-discuss-taxing-windfall-profits-energy/",
-     "title": "EU Considers Windfall Tax on Energy Companies Amid Oil Price Surge",
-     "published_at": "2026-09-18",
-     "snippet": "EU finance ministers will debate a windfall tax on energy companies profiting from surging oil prices after the Strait of Hormuz…"
-    },
-    {
-     "source": "energynews.pro",
-     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOUIxQlAyV18xQlo5ZnFLbGVCVWNFQWVhZ2taZkVQcklmVThCQ3M5S0ZWT0ZKajRmWGNCa01oQ2RwQWZ4MFNqR3BhTEVQVnB6T1FwQnczUElWemx3YW1vMTNHb29mTC1aa09kdTI2LTJGbW5NbHBBaFpleXdQSG5QekVTcDlETk9DSkNmdFJ3WQ?oc=5",
-     "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz - energynews.pro",
-     "published_at": "2026-09-18",
-     "snippet": ""
-    }
-   ],
-   "story": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "corroboration": [],
+   "story": "Energía y Renovación brought the claim against Guatemala under the FTA Central America - Panama 2002, in the electric power and other energy sector; it was registered on 29 October 2025.",
    "tier": "development",
-   "slug": "2026-09-21-germany-pushes-eu-to-tax-oil-windfall-profits-tied-to-hormuz.html",
-   "event": "State measure"
+   "slug": "2026-09-21-energ-a-y-renovaci-n-v-guatemala-energ-a-y-renovaci-n-holding-s-a-file.html",
+   "event": "Annulment"
   },
   {
    "record": null,
@@ -331,41 +274,6 @@
   },
   {
    "record": null,
-   "id": 4307,
-   "title": "Afcons Infrastructure wins arbitration award of ₹148.67 crores",
-   "title_en": null,
-   "summary": "Shares of Afcons Infrastructure gained as much as 4.40% during Tuesday’s trading session, touching an intraday high of Rs 290.90…",
-   "summary_en": null,
-   "url": "https://www.msn.com/en-in/news/other/afcons-infrastructure-shares-rally-4-after-receiving-rs-3355-crore-arbitration-award/ar-AA2aRB7J",
-   "source": "Google News / msn.com",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-20",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [],
-   "sectors": [
-    "Construction"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "Shares of Afcons Infrastructure gained as much as 4.40% during Tuesday’s trading session.",
-   "tier": "brief",
-   "slug": "2026-09-21-afcons-infrastructure-wins-arbitration-award-of-148-67-crores.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "record": null,
    "id": 4231,
    "title": "Reid leaves Debevoise for 3VB",
    "title_en": null,
@@ -393,7 +301,7 @@
    "country": null,
    "corroboration": [],
    "story": "Natalie Reid has left Debevoise & Plimpton, where she was co-chair of the firm’s public international law group, to join 3 Verulam Buildings.",
-   "tier": "brief",
+   "tier": "development",
    "slug": "2026-09-21-reid-leaves-debevoise-for-3vb.html",
    "event": "Note"
   },
@@ -432,6 +340,94 @@
   },
   {
    "record": null,
+   "id": 4768,
+   "title": "Paris first instance court finds that Libya’s National Oil Corporation qualifies as an emanation of the state for exequatur purposes",
+   "title_en": "Paris first instance court finds that Libya’s National Oil Corporation qualifies",
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/paris-first-instance-court-confirms-that-libyas-national-oil-corporation-qualifies-as-an-emanation-of-the-state-for-exequatur-purposes/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Libya"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘exequatur’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "",
+   "tier": "brief",
+   "slug": "2026-09-21-paris-first-instance-court-finds-that-libya-s-national-oil-corporation.html",
+   "event": "Enforcement"
+  },
+  {
+   "record": null,
+   "id": 4792,
+   "title": "Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y. 1:26-mc-00464)",
+   "title_en": null,
+   "summary": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee $ 52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC). (Attachments: # 1 Supplement Memorandum of Law in Support of Ex Parte Application, # 2 Affidavit Declaration of R Parties: The Bank of New York Mellon; Bank of America, N.A.; Citibank, N.A.; Deutsche Bank Trust Company Americas; Joint Stock Company Belarusian Potash Company (BPC); J.P. Morgan Chase & Co.. Counsel on record: Ford O'Brien Landy LLP.",
+   "summary_en": null,
+   "url": "https://www.courtlistener.com/docket/74828236/joint-stock-company-belarusian-potash-company-bpc-v-jp-morgan-chase/",
+   "source": "US federal docket",
+   "source_tier": 1,
+   "event_type": "s1782_application",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "1:26-mc-00464",
+   "claimants": [
+    "The Bank of New York Mellon"
+   ],
+   "respondents": [
+    "Bank of America, N.A.",
+    "Citibank, N.A."
+   ],
+   "states": [],
+   "sectors": [
+    "Finance & banking",
+    "Transport & logistics"
+   ],
+   "counsel": [
+    "Ford O'Brien Landy LLP"
+   ],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "US federal docket: §1782 application",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Morningstar",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmUzOGxxQlh5aXgtMEZOdGJnbnNVQU9qZnRpckNVczZNSWF2VXlVQkFGZWFnTVotVHhhWkphR1BhczlMVm1GTnhoRzRISHVoUFd5aXVvTzg5WHF4WTJRZXdjZUJqRVY2RGdxNlFRQlVKWEpkNlJhSEhVZ0Z4Y3NKUmw3U1NmQmdXQThnQUdWMFZqQkFZbmdtaTBic0g5aUkwZkE?oc=5",
+     "title": "Mosaic and Nutrien: Shares Fall on US Plan to Buy Belarusian Potash - Morningstar",
+     "published_at": "2026-09-21",
+     "snippet": ""
+    }
+   ],
+   "story": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee US$52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC).",
+   "tier": "brief",
+   "slug": "2026-09-21-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
+   "event": "§1782 application"
+  },
+  {
+   "record": null,
    "id": 4769,
    "title": "Ecuador Round-Up: An update on arbitration-related developments involving the state",
    "title_en": "An update on arbitration-related developments involving the state",
@@ -467,90 +463,44 @@
   }
  ],
  "leads": [],
- "enforcement": [
-  {
-   "record": null,
-   "id": 3423,
-   "title": "DPT and another v DPV and others",
-   "title_en": null,
-   "summary": "Court of Appeal of Singapore (SICC appeal) decided on 15 September 2026, [2026] SGCA(I) 4. Catchwords: Arbitration — Award.",
-   "summary_en": null,
-   "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%204.pdf",
-   "source": "Court: Singapore",
-   "source_tier": 1,
-   "event_type": "annulment_setaside",
-   "published_at": "2026-09-15",
-   "institution": null,
-   "treaty": null,
-   "case_ref": "[2026] SGCA(I) 4",
-   "claimants": [
-    "DPT and another"
-   ],
-   "respondents": [
-    "DPV and others"
-   ],
-   "states": [],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "Court of Appeal of Singapore (SICC appeal): recourse against an award",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Singapore",
-   "corroboration": [],
-   "story": "Court of Appeal of Singapore (SICC appeal) judgment of 15 September 2026, [2026] SGCA(I) 4 on arbitration — Award.",
-   "tier": "enforcement",
-   "slug": "2026-09-21-dpt-and-another-v-dpv-and-others.html",
-   "event": "Annulment"
-  }
- ],
+ "enforcement": [],
  "records": {
   "docket": [],
   "disclosures": [],
   "courts": [
    {
-    "date": "2026-09-11",
-    "title": "Kuku Project (T) Limited vs Equity Bank (T) Limited and 2 Others",
-    "main": "Kuku Project (T) Limited vs Equity Bank (T) Limited and 2 Others",
+    "date": "2026-09-17",
+    "title": "Stichting Kiffwa Foundation v Miraadi Limited",
+    "main": "Stichting Kiffwa Foundation v Miraadi Limited",
     "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/311/eng@2026-09-11"
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13710/eng@2026-09-17"
    },
    {
     "date": "2026-09-11",
-    "title": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
-    "main": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
-    "step": "arbitration agreement, stay or anti-suit relief",
-    "tail": "High Court of Singapore · [2026] SGHC 186",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20186.pdf"
+    "title": "Bahari Beach Hotel Limited vs Taher Muccadam",
+    "main": "Bahari Beach Hotel Limited vs Taher Muccadam",
+    "step": "arbitration-related judgment",
+    "tail": "High Court of Tanzania · [2026] TZHC 5337",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhc/2026/5337/eng@2026-09-11"
    },
    {
-    "date": "2026-09-11",
-    "title": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
-    "main": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
+    "date": "2026-09-08",
+    "title": "Tata International West Asia DMCC vs FMJ Hardware Limited",
+    "main": "Tata International West Asia DMCC vs FMJ Hardware Limited",
     "step": "arbitration-related judgment",
     "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/315/eng@2026-09-11"
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/306/eng@2026-09-08"
    }
   ],
   "people": [
    {
-    "date": "2026-09-11",
-    "title": "Singapore boutique hires from Reed Smith",
-    "main": "Singapore boutique hires from Reed Smith",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/singapore-boutique-hires-reed-smith"
-   },
-   {
-    "date": "2026-09-08",
-    "title": "WFW hires construction partner in Dubai",
-    "main": "WFW hires construction partner in Dubai",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/wfw-hires-construction-partner-in-dubai"
+    "date": "2026-09-21",
+    "title": "INEOS v. Belgium — following appointment by the Respondent, Jan Wouters (Belgian) accepts his appointment as arbitrator",
+    "main": "INEOS v. Belgium",
+    "step": "Following appointment by the Respondent, Jan Wouters (Belgian) accepts his appointment as arbitrator",
+    "tail": "ARB/26/30",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/30"
    }
   ]
  }

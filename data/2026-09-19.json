@@ -40,7 +40,7 @@
      "snippet": ""
     }
    ],
-   "story": "The Appellate Tribunal for Electricity (APTEL) has set aside a Haryana Electricity Regulatory Commission (HERC) order granting a solar power developer a tariff of ₹6.44 (~US$0.0671)/kWh.",
+   "story": "The Appellate Tribunal for Electricity (APTEL) has set aside a Haryana Electricity Regulatory Commission (HERC) order granting a solar power developer a tariff.",
    "tier": "lead",
    "slug": "2026-09-19-aptel-rejects-solar-tariff-hike-herc-order-set-aside.html",
    "event": "Annulment"
@@ -121,40 +121,95 @@
   },
   {
    "record": null,
-   "id": 7377,
-   "title": "Bautista v. Snyder's-Lance, Inc. (N.D. Cal. 3:26-cv-10580)",
-   "title_en": null,
-   "summary": " Parties: Bautista; Snyder's-Lance, Inc.. No counsel listed yet.",
+   "id": 2817,
+   "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
+   "title_en": "Arewa group hails tribunal for dismissing contractor’s US$2.35 billion claim",
+   "summary": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…",
    "summary_en": null,
-   "url": "https://www.courtlistener.com/docket/74803975/bautista-v-snyders-lance-inc/",
-   "source": "US federal docket",
-   "source_tier": 1,
-   "event_type": "s1782_application",
-   "published_at": "2026-09-16",
+   "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
+   "source": "Google News / leadership.ng",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
    "institution": null,
    "treaty": null,
-   "case_ref": "3:26-cv-10580",
-   "claimants": [
-    "Bautista"
-   ],
-   "respondents": [
-    "Snyder's-Lance, Inc."
-   ],
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
    "states": [],
-   "sectors": [],
+   "sectors": [
+    "Construction"
+   ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "US federal docket: §1782 application",
+   "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": "Bautista; Snyder's-Lance, Inc.. No counsel listed yet.",
+   "corroboration": [
+    {
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-xl/africa/nigeria/mambilla-project-arewa-group-hails-tribunal-for-dismissing-contractor-s-235bn-claim/ar-AA2czY90",
+     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
+     "published_at": "2026-09-19",
+     "snippet": "The Arewa Think Tank has hailed Nigeria’s victory in the arbitration dispute with Sunrise Power concerning the long-running Mambilla Hydropower Project.Convener of the group, Muhammad Alhàji Yakubu, ..."
+    },
+    {
+     "source": "The Nation Newspaper",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOMFRRVlFUeU9UMDl2bkQtY0w1ak5HMFZSbHpFaGNfV2dkUEMzaTNNSElzRTFJNHBHNWE1OUFRMjdCbU1xcjFqVWp0V2JZQnFCaElOclRfTnFkWUZRTGsxNkNjTWp4aFVIelBlLWxFaU5iOE00dWlQR25yMkRCU0xXdnRYSXo4RFBIby1hOWpLRlBMVUNRQWowaXlyNWxldV9WY1o2c3FMYkZXM0hHMG9hRHNpdFNUdjY4S0FfNG1PTzlyX2dBa3VF0gHMAUFVX3lxTE02cE9YY25IM1VmeFQ1OWY0RnI1U2Z2QVZaNzF2M3NibVlPUnV2dUoxS0I0dmtaYkF1S3FFYi10eVkxYWpjcnoxX0RCbE85cE82bTBoUGxMRkJJV2N4VkNUcFVZaWpEcG1tY2hIdTlGaGtTTVNXYUZERjk2Q1AxSV9fSlRObXhBam5sMGw1c012Z2ZDZWpqT2hsaUtFR0RDLXgyMWUtemtweDFjNDkzMGhMZTZPdUpVVDR3WjVpUEpqZFA5d3hjU3N0RGdIQw?oc=5",
+     "title": "Mambilla hydropower: Arewa Think Tank hails Tinubu as tribunal dismisses contractor’s $2.35bn claims - The Nation Newspaper",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    },
+    {
+     "source": "blueprint.ng",
+     "url": "https://blueprint.ng/mambilla-att-seeks-stronger-contract-safeguards-after-2-35bn-claim-dismissal-by-icc/",
+     "title": "Mambilla: ATT seeks stronger contract safeguards after $2.35bn claim dismissal by ICC",
+     "published_at": "2026-09-20",
+     "snippet": "The Arewa Think Tank (ATT) weekend called for stronger legal and institutional safeguards in the handling of major government contracts following the ..."
+    }
+   ],
+   "story": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute.",
    "tier": "development",
-   "slug": "2026-09-19-bautista-v-snyder-s-lance-inc-n-d-cal-3-26-cv-10580.html",
-   "event": "§1782 application"
+   "slug": "2026-09-19-arewa-group-hails-tribunal-for-dismissing-contractor-s-us-2-35-billion.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2580,
+   "title": "Jakupovic v. Intact Insurance Company, 2026 ONCA 651 (CanLII)",
+   "title_en": null,
+   "summary": "Insurance — Accident benefits — Statutory Accident Benefits Schedule, O. Reg. 34/10 — Section 34 relief for late notice — Whether claimant had a reasonable explanation for non-compliance — Licence Appeal Tribunal finding explanation neither credible nor reasonable — No basis to relieve from s. 32(1) time requirement — Appeal allowed, LAT decision restored Statutory interpretation — Modern principle — Statutory Accident Benefits Schedule, O. Reg. 34/10, s. 32(1) — Whether reporting an accident satisfies notice of intention to apply for benefits — Text, context and purpose and “text remains the anchor” — Divisional Court found to have rewritten statutory requirements — Appeal allowed, Divisional Court set aside Procedure — Appeals — Licence Appeal Tribunal Act, 1999, s. 11(6) — Question of law only — Whether Divisional Court exceeded proper appellate review by making findings of fact — Substitution of broad factual findings contrary to LAT findings — Standard of review correctness on statutory interpretation — Appeal allowed, LAT decision restored Procedure — Procedural fairness — Appellate record — Whether Divisional Court erred by referencing medical evidence that post-dated the LAT decision — Use of post-decision evidence found procedurally unfair — Scope of appeal confined to questions of law — Decision of Divisional Court set aside — Appeal allowed, LAT decision restored",
+   "summary_en": null,
+   "url": "https://www.canlii.org/en/on/onca/doc/2026/2026onca651/2026onca651.html",
+   "source": "Canada - Ontario Court of Appeal (CanLII feed) (Global)",
+   "source_tier": 2,
+   "event_type": "notice_of_intent",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Finance & banking"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘notice of intent’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [],
+   "story": "Accident benefits — Statutory Accident Benefits Schedule, O.",
+   "tier": "development",
+   "slug": "2026-09-19-jakupovic-v-intact-insurance-company-2026-onca-651-canlii.html",
+   "event": "Notice of dispute"
   },
   {
    "record": null,
@@ -201,15 +256,52 @@
   },
   {
    "record": null,
-   "id": 103,
-   "title": "Jeremy Sharpe is tapped to chair revision tribunal in Akfel v. Türkiye",
-   "title_en": null,
-   "summary": "",
+   "id": 2916,
+   "title": "Final Booking Note Excludes Arbitration Clause Despite Earlier Emails Providing London Arbitration; Delhi High Court Stops LMAA Proceedings, Says Written Contract Prevails",
+   "title_en": "Final booking note excludes arbitration clause despite earlier emails providing London arbitration; Delhi High Court stops LMAA proceedings, says written contract prevails",
+   "summary": "The apex court said National Seeds Corporation Ltd. remained liable to pay 12% interest on an arbitral award amount despite having deposited money in…",
    "summary_en": null,
-   "url": "https://www.iareporter.com/articles/jeremy-sharpe-tapped-to-chair-revision-tribunal-in-akfel-v-turkiye/",
-   "source": "IAReporter",
+   "url": "https://rawlaw.in/final-booking-note-excludes-arbitration-clause-despite-earlier-emails-providing-london-arbitration-delhi-high-court-stops-lmaa-proceedings-says-written-contract-prevails/",
+   "source": "Google News / rawlaw.in",
    "source_tier": 2,
-   "event_type": "commentary",
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "The apex court said National Seeds Corporation Ltd. remained liable to pay 12% interest on an arbitral award amount.",
+   "tier": "development",
+   "slug": "2026-09-19-final-booking-note-excludes-arbitration-clause-despite-earlier-emails-.html",
+   "event": "Commercial arbitration"
+  }
+ ],
+ "leads": [
+  {
+   "record": null,
+   "id": 2607,
+   "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay",
+   "title_en": "ATOME issues notice of dispute over US$665 million Villeta fertiliser project in Paraguay",
+   "summary": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential…",
+   "summary_en": null,
+   "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
+   "source": "Google News / uk.finance.yahoo.com",
+   "source_tier": 2,
+   "event_type": "notice_of_intent",
    "published_at": "2026-09-17",
    "institution": null,
    "treaty": null,
@@ -217,104 +309,346 @@
    "claimants": [],
    "respondents": [],
    "states": [
-    "Turkey"
+    "Paraguay",
+    "United Kingdom"
    ],
    "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": null,
+   "flag_reason": "matched ‘notice of dispute’ in the text",
    "why_it_matters": null,
    "also": [],
-   "lang": null,
+   "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-19-jeremy-sharpe-is-tapped-to-chair-revision-tribunal-in-akfel-v-t-rkiye.html",
-   "event": "Note"
+   "corroboration": [
+    {
+     "source": "discoveryalert.com",
+     "url": "https://discoveryalert.com/news/atome-paraguay-arbitration-ppa-dispute-september-2026/",
+     "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA",
+     "published_at": "2026-09-17",
+     "snippet": "ATOME Paraguay arbitration notice filed under UK-Paraguay BIT threatens the Villeta green fertiliser project."
+    },
+    {
+     "source": "marketscreener.com",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPanlxMW5mc1ZHV3c4eW5Ldl9CZWlxM1Y4aVowOEFid2FEUVExYS05YnRNUE01M0ZFNTlJRnFHSjNqeEc5SXl4R1RtUzExY3h2OHRKRUpiRGdsZUswUUVYbGZaZUoyZkE5T0l6MG5fWjF1NjlZTHk5c2p1M096VlBDajNMZ1RnbGFOd3JnaDJSZXVldlF2U1hGT05QZGQwVUYwY2Y2dTdaQmR5cUVVZUxKcnpoQnBCU2hUaXlIRDU2Zlp5S3lFWTJVajV3?oc=5",
+     "title": "Atome Serves Dispute Notice Against Paraguay Over $665 Million Villeta Project - marketscreener.com",
+     "published_at": "2026-09-17",
+     "snippet": ""
+    },
+    {
+     "source": "theglobeandmail.com",
+     "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4672691/atome-escalates-paraguay-dispute-over-us665m-villeta-green-fertiliser-project/",
+     "title": "ATOME escalates Paraguay dispute over US$665m Villeta green fertiliser project",
+     "published_at": "2026-09-17",
+     "snippet": "Atome Energy PLC ( ) just unveiled an update. ATOME PLC has moved to protect its interests in the US$665 million Villeta green fertiliser project in Paraguay, serving a Notice of ..."
+    }
+   ],
+   "story": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty.",
+   "tier": "signal",
+   "slug": "2026-09-19-atome-issues-notice-of-dispute-over-us-665-million-villeta-fertiliser-.html",
+   "event": "Notice of dispute"
   },
   {
    "record": null,
-   "id": 107,
-   "title": "Additional uranium mining arbitrations between France’s majority state-owned Orano and Niger come to light",
-   "title_en": null,
-   "summary": "",
+   "id": 2855,
+   "title": "Mambilla Project: ICC Tribunal Accuses Malami of Acting Against Nigeria’s Interest",
+   "title_en": "ICC Tribunal accuses Malami of acting against Nigeria’s interest",
+   "summary": "The International Chamber of Commerce arbitration tribunal has strongly criticised former Attorney-General of…",
    "summary_en": null,
-   "url": "https://www.iareporter.com/articles/additional-uranium-mining-arbitrations-between-frances-majority-state-owned-orano-and-niger-come-to-light/",
-   "source": "IAReporter",
+   "url": "https://therealmediang.com/news/mambilla-project-icc-tribunal-accuses-malami-of-acting-against-nigerias-interest",
+   "source": "Google News / therealmediang.com",
    "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-16",
-   "institution": null,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-19",
+   "institution": "ICC",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Niger"
+    "Nigeria"
    ],
-   "sectors": [
-    "Mining & metals"
-   ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": null,
+   "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
    "also": [],
-   "lang": null,
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "BusinessDay (Nigeria)",
+     "url": "https://businessday.ng/news/article/malami-breaks-silence-on-mambilla-project-rejects-corruption-allegation/",
+     "title": "Malami breaks silence on Mambilla project, rejects corruption allegation",
+     "published_at": "2026-09-22",
+     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, SAN…"
+    },
+    {
+     "source": "premiumtimesng.com",
+     "url": "https://www.premiumtimesng.com/business/business-news/911649-mambilla-malami-speaks-on-200m-settlement-rejects-icc-corruption-finding.html",
+     "title": "Mambilla: Malami speaks on $200m settlement, rejects ICC corruption finding",
+     "published_at": "2026-09-22",
+     "snippet": "Settlement discussions, therefore, did not arise in a vacuum. They formed part of a broader governmental effort to resolve a longstanding dispute and remove what was regarded at the time as a legal ..."
+    },
+    {
+     "source": "thenigerianvoice.com",
+     "url": "https://www.thenigerianvoice.com/news/374146/mambilla-fraud-i-acted-in-nigerias-interest-former-agf.html",
+     "title": "Mambilla Fraud: ‘I acted In Nigeria’s Interest’ – Former AGF Malami Defends Role In $200m Deal",
+     "published_at": "2026-09-22",
+     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami , has defended his involvement in the controversial $200 million settl ..."
+    },
+    {
+     "source": "pmnewsnigeria.com",
+     "url": "https://pmnewsnigeria.com/2026/09/22/i-acted-in-nigerias-interest-malami-defends-role-in-200m-mambilla-deal/",
+     "title": "‘I acted in Nigeria’s interest’ – Malami defends role in $200m Mambilla deal",
+     "published_at": "2026-09-22",
+     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, has defended his role in the controversial $200 million settlement between the Federal Government and Sunrise Power ..."
+    },
+    {
+     "source": "dailypost.ng",
+     "url": "https://dailypost.ng/2026/09/22/mambilla-malami-breaks-silence-over-icc-tribunals-findings/",
+     "title": "Mambilla: Malami breaks silence over ICC tribunal’s findings",
+     "published_at": "2026-09-22",
+     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, has rejected allegations of corruption arising from the findings of an ..."
+    }
+   ],
+   "story": "The International Chamber of Commerce arbitration tribunal has strongly criticised former Attorney-General.",
+   "tier": "signal",
+   "slug": "2026-09-19-icc-tribunal-accuses-malami-of-acting-against-nigeria-s-interest.html",
+   "event": "Commercial arbitration"
+  }
+ ],
+ "enforcement": [
+  {
+   "record": null,
+   "id": 4093,
+   "title": "Bombay High Court Dismisses Appeal Under Section 37 of Arbitration Act, Upholds Arbitral Award in LPG Distributorship Dispute. The court held that the District Judge's refusal to set aside the award under Section 34 was not perverse and that the award was",
+   "title_en": "Bombay High Court Dismisses Appeal Under Section 37 of Arbitration Act",
+   "summary": " Bombay High Court Dismisses Appeal Under Section 37 of Arbitration Act, Upholds Arbitral Award in LPG Distributorship Dispute. The court held that the District Judge's refusal to set aside the award under Section 34 was not perverse and that the award was &nbsp;&nbsp; Lawtext ",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GYkcxU1FiYndxRXBZZElOVng3YkRmM3NLdUdOY1g1VTBNWDVUcGFEc05YdXJsYm1kSXd1aUdBNHE0Umc4Mzd5VHh0bXpEM0NUZGx0d0ViTFFuV0d2SjduUU5nOGg4dw?oc=5",
+   "source": "Google News / Lawtext",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-19",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘set aside’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
    "country": null,
    "corroboration": [],
    "story": "",
-   "tier": "brief",
-   "slug": "2026-09-19-additional-uranium-mining-arbitrations-between-france-s-majority-state.html",
-   "event": "Note"
+   "tier": "enforcement",
+   "slug": "2026-09-19-bombay-high-court-dismisses-appeal-under-section-37-of-arbitration-act.html",
+   "event": "Annulment"
   },
   {
    "record": null,
-   "id": 109,
-   "title": "Looking Back: ICSID tribunal in Sadiola v. Mali found that state violated mining convention by imposing stamp duty on gold exports",
-   "title_en": "ICSID tribunal in Sadiola v. Mali found that state violated mining convention by imposing stamp duty on gold exports",
-   "summary": "",
+   "id": 2564,
+   "title": "S. Korea Wins ICSID Annulment Decision In $196M Dispute",
+   "title_en": "S. Korea wins ICSID annulment decision in US$196 million dispute",
+   "summary": "An ad hoc committee of the International Centre for Settlement of Investment Disputes has confirmed that the South Korean government is the victor in a 260 billion won ($196 million) arbitration award against a Chinese investor in a dispute over a forced real-estate share sale.",
    "summary_en": null,
-   "url": "https://www.iareporter.com/articles/looking-back-icsid-tribunal-in-sadiola-v-mali-found-that-state-violated-mining-convention-by-imposing-stamp-duty-on-gold-exports/",
-   "source": "IAReporter",
+   "url": "https://www.law360.com/internationalarbitration/articles/2524746?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
    "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-16",
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-15",
    "institution": "ICSID",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Mali"
+    "Korea",
+    "China"
    ],
-   "sectors": [
-    "Mining & metals"
-   ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": null,
+   "flag_reason": "matched ‘annulment’ in the text",
+   "why_it_matters": null,
+   "also": [
+    {
+     "source": "Google News / Law360",
+     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9acURjTXhxaGlpZWROWll5S1BHVkhUNWppeWk5ZXpIRUdhbmZ1eHhWbjJJbHhuZS1aa002QmMzcEl0X2NwQmNZRnRjTm44WVJhMG1WREF30gFWQVVfeXFMT1pxRGNNeHFoaWllZE5aWXlLUEdWSFQ1aml5aTllekhFR2FuZnV4eFZuMklseG5lLVprTTZCYzNwSXRfY3BCY1lGdGNObjhZUmEwbVZEQXc?oc=5",
+     "title": "S. Korea Wins ICSID Annulment Decision In $196M Dispute"
+    }
+   ],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [
+    {
+     "source": "en.sedaily.com",
+     "url": "https://en.sedaily.com/society/2026/09/13/korea-wins-final-isds-ruling-against-chinese-investor",
+     "title": "Korea Wins Final Ruling in $190 Million Investment Dispute With Chinese Investor",
+     "published_at": "2026-09-13",
+     "snippet": "An ICSID annulment committee rejected a Chinese investor's bid to overturn a 2024 award, finalizing South Korea's win in the ISDS case."
+    },
+    {
+     "source": "news.sbs.co.kr",
+     "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008750642",
+     "title": "South Korea Wins Final Victory in W260 Billion Investor-State Dispute Against Chinese Investor",
+     "published_at": "2026-09-13",
+     "snippet": "Kang Jun-ha, Director General for International Legal Affairs at the Ministry of Justice, explains that the South Korean government won the investor-state dispute settlement (ISDS) case filed by a ..."
+    }
+   ],
+   "story": "An ad hoc committee of the International Centre for Settlement of Investment Disputes has confirmed that the South Korean government is the victor in a 260 billion won (US$196 million) arbitration award.",
+   "tier": "enforcement",
+   "slug": "2026-09-19-s-korea-wins-icsid-annulment-decision-in-us-196-million-dispute.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 3423,
+   "title": "DPT and another v DPV and others",
+   "title_en": null,
+   "summary": "Court of Appeal of Singapore (SICC appeal) decided on 15 September 2026, [2026] SGCA(I) 4. Catchwords: Arbitration — Award.",
+   "summary_en": null,
+   "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%204.pdf",
+   "source": "Court: Singapore",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-15",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "[2026] SGCA(I) 4",
+   "claimants": [
+    "DPT and another"
+   ],
+   "respondents": [
+    "DPV and others"
+   ],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "Court of Appeal of Singapore (SICC appeal): recourse against an award",
    "why_it_matters": null,
    "also": [],
-   "lang": null,
+   "lang": "en",
+   "country": "Singapore",
+   "corroboration": [],
+   "story": "Court of Appeal of Singapore (SICC appeal) judgment of 15 September 2026, [2026] SGCA(I) 4 on arbitration — Award.",
+   "tier": "enforcement",
+   "slug": "2026-09-19-dpt-and-another-v-dpv-and-others.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 3424,
+   "title": "DWJ v DWK",
+   "title_en": null,
+   "summary": "Singapore International Commercial Court decided on 15 September 2026, [2026] SGHC(I) 18. Catchwords: Arbitration — Award.",
+   "summary_en": null,
+   "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC(I)%2018.pdf",
+   "source": "Court: Singapore",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-15",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "[2026] SGHC(I) 18",
+   "claimants": [
+    "DWJ"
+   ],
+   "respondents": [
+    "DWK"
+   ],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "Singapore International Commercial Court: recourse against an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Singapore",
+   "corroboration": [],
+   "story": "Singapore International Commercial Court judgment of 15 September 2026, [2026] SGHC(I) 18 on arbitration — Award.",
+   "tier": "enforcement",
+   "slug": "2026-09-19-dwj-v-dwk.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 3529,
+   "title": "Eiser Infrastructure v. Spain — the Kingdom of Spain files a memorial on annulment",
+   "title_en": null,
+   "summary": "Eiser Infrastructure brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 February 2026. Debevoise & Plimpton acts for the claimant. Abogacía General del Estado, The Ministry of Justice of the Government of Spain for Spain. The tribunal is Sofia Martins, presiding; Seung Wha Chang; Mika Savola. On 15 September 2026, the Kingdom of Spain files a memorial on annulment.",
+   "summary_en": null,
+   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/13/36",
+   "source": "ICSID docket",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-15",
+   "institution": "ICSID",
+   "treaty": "ECT (Energy Charter Treaty)",
+   "case_ref": "ARB/13/36",
+   "claimants": [
+    "Eiser Infrastructure Limited and Energía Solar Luxembourg S.à r.l."
+   ],
+   "respondents": [],
+   "states": [
+    "Spain"
+   ],
+   "sectors": [
+    "Electric Power & Other Energy"
+   ],
+   "counsel": [
+    "Debevoise & Plimpton, London, U.K.",
+    "Abogacía General del Estado, The Ministry of Justice of the Government of Spain, Madrid, Spain"
+   ],
+   "arbitrators": "[\"Seung Wha CHANG (Korean)\", \"Mika SAVOLA (Finnish, Israeli)\", \"Sofia MARTINS (Portuguese)\"]",
+   "amount_usd": null,
+   "flag_reason": "ICSID docket: annulment step",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-19-icsid-tribunal-in-sadiola-v-mali-found-that-state-violated-mining-conv.html",
-   "event": "Note"
+   "story": "Eiser Infrastructure brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 February 2026. Debevoise & Plimpton acts for the claimant.",
+   "tier": "enforcement",
+   "slug": "2026-09-19-eiser-infrastructure-v-spain-the-kingdom-of-spain-files-a-memorial-on-.html",
+   "event": "Annulment"
   }
  ],
- "leads": [],
- "enforcement": [],
  "records": {
   "docket": [],
   "disclosures": [],
   "courts": [
+   {
+    "date": "2026-09-18",
+    "title": "Louis & another v Duchess Park Development Company Ltd & another",
+    "main": "Louis & another v Duchess Park Development Company Ltd & another",
+    "step": "arbitration agreement, stay or anti-suit relief",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13672/eng@2026-09-18"
+   },
+   {
+    "date": "2026-09-17",
+    "title": "Bharya Engineering And Contracting Co. Ltd vs The Arab Contractors (Osman Ahmed Osman & Co. Limited) and Another",
+    "main": "Bharya Engineering And Contracting Co. Ltd vs The Arab Contractors (Osman Ahmed Osman & Co. Limited) and Another",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/321/eng@2026-09-17"
+   },
    {
     "date": "2026-09-17",
     "title": "Concise Projects Ltd v Green View Villas Ltd",
@@ -324,22 +658,39 @@
     "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13794/eng@2026-09-17"
    },
    {
-    "date": "2026-09-17",
-    "title": "Mennoite Economic Development Associates of Canada v Leja Ltd & 2 others",
-    "main": "Mennoite Economic Development Associates of Canada v Leja Ltd & 2 others",
+    "date": "2026-09-14",
+    "title": "East Africa Metals Inc vs PMM Mining Company Limited",
+    "main": "East Africa Metals Inc vs PMM Mining Company Limited",
     "step": "arbitration-related judgment",
-    "tail": "High Court",
-    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13771/eng@2026-09-17"
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/314/eng@2026-09-14"
+   },
+   {
+    "date": "2026-09-11",
+    "title": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
+    "main": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
+    "step": "arbitration agreement, stay or anti-suit relief",
+    "tail": "High Court of Singapore · [2026] SGHC 186",
+    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20186.pdf"
    },
    {
     "date": "2026-09-08",
-    "title": "Tata International West Asia DMCC vs FMJ Hardware Limited",
-    "main": "Tata International West Asia DMCC vs FMJ Hardware Limited",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/306/eng@2026-09-08"
+    "title": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
+    "main": "Far Ocean Sea Products Pte Ltd v United Overseas Insurance Ltd",
+    "step": "recourse against an award",
+    "tail": "High Court of Singapore · [2026] SGHC 182",
+    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20182.pdf"
    }
   ],
-  "people": []
+  "people": [
+   {
+    "date": "2026-09-08",
+    "title": "WFW hires construction partner in Dubai",
+    "main": "WFW hires construction partner in Dubai",
+    "step": "",
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/wfw-hires-construction-partner-in-dubai"
+   }
+  ]
  }
 }

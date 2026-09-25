@@ -1,27 +1,190 @@
 {
  "date": "2026-09-18",
- "subject": "ArbRadar · 18 September 2026 — Turkish contractor enforces against Georgia",
+ "subject": "ArbRadar · 18 September 2026 — UK fertiliser company puts Paraguay on notice of treaty dispute",
  "stories": [
   {
    "record": null,
-   "id": 11,
-   "title": "Turkish contractor enforces against Georgia",
-   "title_en": null,
-   "summary": "A US judge has agreed to enforce an ICC award requiring Georgia to pay over US$350 million to a Turkish construction group over a hydroelectric project that stalled because of public protests.",
+   "id": 102,
+   "title": "UK fertiliser company puts Paraguay on notice of treaty dispute over multi-million-USD green hydrogen and ammonia project",
+   "title_en": "UK fertiliser company puts Paraguay on notice of treaty dispute",
+   "summary": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees.",
    "summary_en": null,
-   "url": "https://globalarbitrationreview.com/article/turkish-contractor-enforces-against-georgia",
-   "source": "GAR",
+   "url": "https://www.iareporter.com/articles/uk-fertiliser-company-puts-paraguay-on-notice-of-treaty-dispute-over-multi-million-usd-green-hydrogen-and-ammonia-project/",
+   "source": "IAReporter",
    "source_tier": 2,
-   "event_type": "award_issued",
-   "published_at": "2026-09-16",
+   "event_type": "notice_of_intent",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "United Kingdom",
+    "Paraguay"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘on notice of’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": [],
+   "story": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees.",
+   "tier": "lead",
+   "slug": "2026-09-18-uk-fertiliser-company-puts-paraguay-on-notice-of-treaty-dispute.html",
+   "event": "Notice of dispute"
+  },
+  {
+   "record": null,
+   "id": 101,
+   "title": "[Updated] ICC emergency arbitrator reportedly orders Albania to refrain from taking steps that could aggravate Vlora airport concession dispute",
+   "title_en": null,
+   "summary": " Exclusive/ London Arbitration Blocks Government's Nationalization of Vlora Airport &nbsp;&nbsp; Kapitali ",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/icc-emergency-arbitrator-reportedly-orders-albania-to-refrain-from-taking-steps-that-could-aggravate-vlora-airport-concession-dispute-but-parties-provide-diverging-accounts-of-emergency-arbitration/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "interim_relief",
+   "published_at": "2026-09-17",
    "institution": "ICC",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Turkey",
-    "Georgia"
+    "Albania"
+   ],
+   "sectors": [
+    "Mining & metals",
+    "Construction",
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘emergency arbitrator’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Albanian Daily News",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTUVaR3AwS2V1Rnd1M0JETnpkbmd6d1R6TkJMQzZkVUhyemZfOExMUGgwbjhyMkFvd0M1cHNXT25sZnJ0eTl0X2JuMU95encwVkVkRnY5M2xwSzYzdUNMYUVQaDRFZXJFMHAyaUNYSVlrMnRpRmEwRlhCaU92SDRvNHlhN09jcGh4TFg5N1AwREUzTDJSczZuamxkckVaY0JwT1BXRkh6ZDNRNjcyYTNCSE9zbWhqQ3JPLVd1MTRkRGQ3bFAw?oc=5",
+     "title": "Pacolli’s Mabco Accuses Albanian Government of Seeking to Transfer Vlora Airport Concession - Albanian Daily News",
+     "published_at": "2026-09-13",
+     "snippet": ""
+    },
+    {
+     "source": "gazetaexpress.com",
+     "url": "https://www.gazetaexpress.com/en/Pacolli-urges-the-Albanian-government-to-respect-the-arbitration-order-for-Vlora-airport/",
+     "title": "Pacolli: Albanian government to respect arbitration order for Vlora Airport",
+     "published_at": "2026-09-17",
+     "snippet": "Vlora Airport faces an important legal development, as on September 16, 2026, the emergency arbitrator of the International Chamber of Commerce (ICC), within the framework of the arbitration procedure ..."
+    }
+   ],
+   "story": "Exclusive/ London Arbitration Blocks Government's Nationalization of Vlora Airport Kapitali.",
+   "tier": "development",
+   "slug": "2026-09-18-updated-icc-emergency-arbitrator-reportedly-orders-albania-to-refrain-.html",
+   "event": "Interim relief"
+  },
+  {
+   "record": null,
+   "id": 2853,
+   "title": "Paris institution launches mining group",
+   "title_en": null,
+   "summary": "The Paris International Arbitration Chamber (CAIP) has launched a working group on arbitration in the mining sector co-chaired by Aboubacar Fall&nbsp;of AF Legal in Senegal and Baptiste Rigaudeau of French disputes boutique Lead Up.",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/paris-institution-launches-mining-group",
+   "source": "Google News / Global Arbitration Review",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Mining & metals"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "The Paris International Arbitration Chamber (CAIP) has launched a working group on arbitration in the mining sector co-chaired by Aboubacar Fall of AF Legal in Senegal and Baptiste Rigaudeau of French disputes boutique Lead Up.",
+   "tier": "development",
+   "slug": "2026-09-18-paris-institution-launches-mining-group.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2852,
+   "title": "Nigeria beats Burford-backed hydropower claim",
+   "title_en": null,
+   "summary": "Nigeria says it has defeated an ICC claim worth more than US$680 million brought by a power company funded by Burford Capital, which arose out of the&nbsp;purported settlement of a prior arbitration over a hydropower project.",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOel90TE5VWEtBM1BkOS1qTm1EREZSdDhGOHNlc1ZITy1CUE1HNXlsUWFsNUtKbU1HVngzZU5WMDA4X1hnTTRodzZJMDZPUmtxYkxDWnN2dmVDQUFOR1FpUEVxek9MUjUzdnVqcHlkNlpWQ3JjYWstOTZQM1RObEp5N0xJbFVWRHRMSEtJSkY1cWo1WDQ?oc=5",
+   "source": "Google News / Global Arbitration Review",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Nigeria"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Nigeria says it has defeated an ICC claim worth more than US$680 million brought by a power company funded by Burford Capital, which arose out of the purported settlement of a prior arbitration over a hydropower project.",
+   "tier": "development",
+   "slug": "2026-09-18-nigeria-beats-burford-backed-hydropower-claim.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2528,
+   "title": "Spanish-Korean consortium wins award over biomass plant",
+   "title_en": null,
+   "summary": "A Spanish-Korean consortium has won a net sum of €120 million in a London arbitration with the owner of a UK biomass power plant over a construction contract that was terminated during the covid-19 pandemic.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/spanish-korean-consortium-wins-award-over-biomass-plant",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "United Kingdom"
    ],
    "sectors": [
     "Power & renewables",
@@ -33,21 +196,72 @@
    "flag_reason": "matched ‘award’ in the text",
    "why_it_matters": null,
    "also": [],
-   "lang": null,
+   "lang": "en",
    "country": null,
+   "corroboration": [],
+   "story": "A Spanish-Korean consortium has won a net sum of €120 million in a London arbitration with the owner of a UK biomass power plant over a construction contract that was terminated during the covid-19 pandemic.",
+   "tier": "development",
+   "slug": "2026-09-18-spanish-korean-consortium-wins-award-over-biomass-plant.html",
+   "event": "Award"
+  },
+  {
+   "record": null,
+   "id": 2553,
+   "title": "Ex-YPF Investors Take Argentina To ICSID Over 2012 Seizure",
+   "title_en": "Ex-YPF investors take Argentina to ICSID over 2012 seizure",
+   "summary": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2526129?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": "ICSID",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Argentina"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘nationaliz’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
    "corroboration": [
     {
-     "source": "Civil.ge (Georgia)",
-     "url": "https://civil.ge/archives/751450",
-     "title": "U.S. Court Grants ENKA’s Bid to Enforce Over $350M Arbitration Award Against Georgia",
-     "published_at": "2026-09-16",
-     "snippet": "A U.S. federal court has ruled in favor of Turkish company ENKA Renewables in its bid to enforce a…"
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/ypf-investors-launch-icsid-claim-against-argentina",
+     "title": "YPF investors launch ICSID claim against Argentina",
+     "published_at": "2026-09-17",
+     "snippet": "Former investors in Argentina’s nationalised oil and gas operator YPF have made good on their threat to file an investment treaty claim against the state after a US$16 billion US court judgment in their favour was overturned."
+    },
+    {
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/ypf-investors-launch-claim-against-argentina",
+     "title": "YPF investors launch claim against Argentina",
+     "published_at": "2026-09-17",
+     "snippet": "Former shareholders in oil and gas operator YPF have made good on their threat to file an investment treaty claim against Argentina over its nationalisation after a US$16 billion US court judgment in their favour was overturned."
+    },
+    {
+     "source": "Latin Lawyer (Global)",
+     "url": "https://latinlawyer.com/article/ypf-investors-launch-claim-against-argentina",
+     "title": "YPF investors launch claim against Argentina",
+     "published_at": "2026-09-21",
+     "snippet": "Former shareholders in oil and gas operator YPF have made good on their threat to file an investment treaty claim against Argentina over its nationalisation after a US$16 billion US court judgment in their favour was overturned."
     }
    ],
-   "story": "A US judge has agreed to enforce an ICC award requiring Georgia to pay over US$350 million to a Turkish construction group over a hydroelectric project that stalled because of public protests.",
-   "tier": "lead",
-   "slug": "2026-09-18-turkish-contractor-enforces-against-georgia.html",
-   "event": "Award"
+   "story": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA.",
+   "tier": "development",
+   "slug": "2026-09-18-ex-ypf-investors-take-argentina-to-icsid-over-2012-seizure.html",
+   "event": "State measure"
   },
   {
    "record": null,
@@ -152,7 +366,7 @@
     }
    ],
    "story": "Italy has applied to annul an Energy Charter Treaty award that required it to pay €86 million to French environmental services group Veolia for breaching two waste treatment concessions.",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-18-italy-seeks-to-annul-veolia-award.html",
    "event": "Award"
   },
@@ -197,7 +411,7 @@
     }
    ],
    "story": "EP Wind Project (Rom) Six, a Cypriot investor, brought the claim against Romania under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 May 2020.",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-18-icsid-renewable-energy-arbitration-against-romania-concludes-with-an-a.html",
    "event": "Award"
   },
@@ -232,8 +446,226 @@
    "country": null,
    "corroboration": [],
    "story": "Expert witnesses from Compass Lexecon and FTI Consulting have survived a challenge to their credibility in a renewables case at ICSID based on their alleged financial dependence on cases referred to them by King & Spalding.",
-   "tier": "development",
+   "tier": "brief",
    "slug": "2026-09-18-experts-survive-challenge-in-renewables-case.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 369,
+   "title": "Romania avoids damages in wind farm dispute",
+   "title_en": null,
+   "summary": "An ICSID tribunal has ruled that a Cypriot investor should receive no damages for changes to Romania’s renewable energy incentive scheme even though some of the measures violated the Energy Charter Treaty.",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWDZBWFRTNGxPOEJObXNOOVRmaFlMT3loV1pjdkowNFliUnptTTF2ZVY1UnJOTXoxckRocl84U2xyVGx0Z2Zza0RjdXNXdFVocENsOXU5aW9SOWRfMVNfdUZlZVZZclRkQUk0OEZ5VERteUctMWFaVm9hbk1tS2F3WEgzTjBwM01HSzBnLWJmb1k?oc=5",
+   "source": "Google News / Global Arbitration Review",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Romania"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": [],
+   "story": "An ICSID tribunal has ruled that a Cypriot investor should receive no damages for changes to Romania’s renewable energy incentive scheme even though some of the measures violated the Energy Charter Treaty.",
+   "tier": "brief",
+   "slug": "2026-09-18-romania-avoids-damages-in-wind-farm-dispute.html",
+   "event": "Note"
+  },
+  {
+   "record": {
+    "source": "US court opinion",
+    "url": "https://www.courtlistener.com/opinion/10975900/doe-v-islamic-republic-of-iran/",
+    "title": "Doe v. Islamic Republic of Iran (District Court, District of Columbia, 2026-09-17)",
+    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA OCHO DOE, Plaintiff, v. Case No. 26-cv-1557 (CRC) ISLAMIC REPUBLIC OF IRAN, et al., Defendants. MEMORANDUM OPINION AND ORDER Plaintiff Ocho Doe brings this case against the Islamic Republic of Iran, the Islamic Revolutionary Guard Corps ("
+   },
+   "id": 2854,
+   "title": "Nokia win confirmed by court in Iranian telecoms case",
+   "title_en": null,
+   "summary": "An award in favour of a French mobile company now owned by Nokia will stand, after a Paris court rejected allegations that an arbitrator was conflicted and death threats against witnesses were overlooked in a politically sensitive ICC dispute over a telecommunications project in Iran.",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWDJZeVVsMm1Bdi1ZSElCc0VyNnQ1QkpoeldPVEZaT3pxWUdhcEZqWGYyb2p3bmwwdG1ZQ21TTTlsNlg0Y0Q1bk1qdGVUX1g2NGxFa2x0MUZBLTZNUktTRTBsVGpqTmk1UUtjNmdwVkZxQUNQX1dYTEZVNDh2NnlvWHJIMkRWUHFyc1V3NURLR2Y4UjRUeHpxOG1B?oc=5",
+   "source": "Google News / Global Arbitration Review",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Telecoms"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "US court opinion",
+     "url": "https://www.courtlistener.com/opinion/10975900/doe-v-islamic-republic-of-iran/",
+     "title": "Doe v. Islamic Republic of Iran (District Court, District of Columbia, 2026-09-17)",
+     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA OCHO DOE, Plaintiff, v. Case No. 26-cv-1557 (CRC) ISLAMIC REPUBLIC OF IRAN, et al., Defendants. MEMORANDUM OPINION AND ORDER Plaintiff Ocho Doe brings this case against the Islamic Republic of Iran, the Islamic Revolutionary Guard Corps ("
+    },
+    {
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-in/news/other/iran-activists-sound-alarm-as-regime-seizes-bahai-assets/ar-AA2clRFQ",
+     "title": "Iran says assets of 240 people seized over alleged collaboration with hostile states",
+     "published_at": "2026-09-14",
+     "snippet": "Rights groups warn Iran is increasingly confiscating assets from government critics and members of the country's Baha'i faith, but also actors, athletes, and journalists living abroad"
+    },
+    {
+     "source": "see.news",
+     "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
+     "title": "Turkey revokes Iran’s Bank Mellat license after 44 years",
+     "published_at": "2026-09-19",
+     "snippet": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat…"
+    },
+    {
+     "source": "see.news",
+     "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
+     "title": "Will the license of the Iranian bank in Baku be revoked?",
+     "published_at": "2026-09-20",
+     "snippet": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat, according to a notice published in the country’s Official Gazette on Saturday…"
+    },
+    {
+     "source": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONG16Z1hLSjczdWVoRkFab1FfYmlON2I4M0xPdzdKYjZsNzlKU3NxLTg3SzB2UFNYV2VkWG5iM1VPamRKTWVUWk1LNVNQTWxubGtBYWVDSmpDa3oydHBKeUVXUnNPMV80M2ZQWi1BaFNsQmQ0aGVQRnlwdXYxWS1RMFdSUXFVOU5HU2pMN2NFTXZWbHdMLVVsNk5OaG80VHBwQ0trVGs0YUF5aHdycEE?oc=5",
+     "title": "TACO CONFIRMED: Oil Markets Bet Trump Would Chicken Out on Iran. They Won: Bousso - EnergyNow.com",
+     "published_at": "2026-09-24",
+     "snippet": ""
+    }
+   ],
+   "story": "An award in favour of a French mobile company now owned by Nokia will stand, after a Paris court rejected allegations that an arbitrator was conflicted and death threats against witnesses were overlooked.",
+   "tier": "brief",
+   "slug": "2026-09-18-nokia-win-confirmed-by-court-in-iranian-telecoms-case.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 3589,
+   "title": "Canadian investor to file ECHR claim in Tunisian dispute",
+   "title_en": null,
+   "summary": "A Canadian energy company that lost a US$130 million ICC claim against Tunisia says it will bring a complaint before the European Court of Human Rights, alleging that the presiding arbitrator failed to disclose her participation in conferences also attended by the state's counsel.",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHdaVDlYREZzN0VYNU5MMl9OQjVXSE1qM3hXXzgxelBPY0thV1h0NjdhMGhHRXdkcXc5U1hPSDBSWkM0OWFlU0NIMWowNm5EQ2U5UmFlX2VCanJLbTlFdzMxTE1KSDNLZG5sRlhmQ2ZSQU1ZVWVtaXNBNUtGMm14dE9vQ29mQUc3ZzJLS2Nmd3BxNkZhVFRudVFrMjJBUQ?oc=5",
+   "source": "Google News / Global Arbitration Review",
+   "source_tier": 2,
+   "event_type": "commercial_dispute",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Canada",
+    "Tunisia"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "commercial-arbitration sweep",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "A Canadian energy company that lost a US$130 million ICC claim against Tunisia says it will bring a complaint before the European Court of Human Rights.",
+   "tier": "brief",
+   "slug": "2026-09-18-canadian-investor-to-file-echr-claim-in-tunisian-dispute.html",
+   "event": "Commercial arbitration"
+  },
+  {
+   "record": null,
+   "id": 2533,
+   "title": "ICC tribunal rejects multi-million-USD claim against Nigeria stemming from settlement of previous arbitration, but state’s counterclaim suffers same fate",
+   "title_en": "ICC tribunal rejects multi-million-USD claim against Nigeria stemming from settlement of previous arbitration",
+   "summary": " Nigeria wins major ICC case as tribunal rejects $680m Sunrise claim, clears path for Mambilla Power Project &nbsp;&nbsp; National Accord Newspaper ",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/icc-tribunal-rejects-multi-million-usd-claim-against-nigeria-stemming-from-settlement-of-previous-arbitration-but-states-counterclaim-suffers-same-fate/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-18",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Nigeria"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Nigeria wins major ICC case as tribunal rejects US$680m Sunrise claim.",
+   "tier": "brief",
+   "slug": "2026-09-18-icc-tribunal-rejects-multi-million-usd-claim-against-nigeria-stemming-.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 103,
+   "title": "Jeremy Sharpe is tapped to chair revision tribunal in Akfel v. Türkiye",
+   "title_en": null,
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/jeremy-sharpe-tapped-to-chair-revision-tribunal-in-akfel-v-turkiye/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Turkey"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": null,
+   "country": null,
+   "corroboration": [],
+   "story": "",
+   "tier": "brief",
+   "slug": "2026-09-18-jeremy-sharpe-is-tapped-to-chair-revision-tribunal-in-akfel-v-t-rkiye.html",
    "event": "Note"
   },
   {
@@ -320,72 +752,35 @@
    "event": "Note"
   },
   {
-   "record": null,
-   "id": 369,
-   "title": "Romania avoids damages in wind farm dispute",
-   "title_en": null,
-   "summary": " Romania avoids damages in wind farm dispute &nbsp;&nbsp; Global Arbitration Review ",
-   "summary_en": null,
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWDZBWFRTNGxPOEJObXNOOVRmaFlMT3loV1pjdkowNFliUnptTTF2ZVY1UnJOTXoxckRocl84U2xyVGx0Z2Zza0RjdXNXdFVocENsOXU5aW9SOWRfMVNfdUZlZVZZclRkQUk0OEZ5VERteUctMWFaVm9hbk1tS2F3WEgzTjBwM01HSzBnLWJmb1k?oc=5",
-   "source": "Google News / Global Arbitration Review",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-17",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Romania"
-   ],
-   "sectors": [
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": null,
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-18-romania-avoids-damages-in-wind-farm-dispute.html",
-   "event": "Note"
-  },
-  {
    "record": {
     "source": "US court opinion",
-    "url": "https://www.courtlistener.com/opinion/10975900/doe-v-islamic-republic-of-iran/",
-    "title": "Doe v. Islamic Republic of Iran (District Court, District of Columbia, 2026-09-17)",
-    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA OCHO DOE, Plaintiff, v. Case No. 26-cv-1557 (CRC) ISLAMIC REPUBLIC OF IRAN, et al., Defendants. MEMORANDUM OPINION AND ORDER Plaintiff Ocho Doe brings this case against the Islamic Republic of Iran, the Islamic Revolutionary Guard Corps ("
+    "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
+    "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
+    "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
    },
-   "id": 2854,
-   "title": "Nokia win confirmed by court in Iranian telecoms case",
+   "id": 2537,
+   "title": "US appeals court reverses district court’s dismissal of Laos’ bid to enforce arbitral awards against alleged alter egos of award debtors",
    "title_en": null,
-   "summary": " Nokia win confirmed by court in Iranian telecoms case &nbsp;&nbsp; Global Arbitration Review ",
+   "summary": "",
    "summary_en": null,
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWDJZeVVsMm1Bdi1ZSElCc0VyNnQ1QkpoeldPVEZaT3pxWUdhcEZqWGYyb2p3bmwwdG1ZQ21TTTlsNlg0Y0Q1bk1qdGVUX1g2NGxFa2x0MUZBLTZNUktTRTBsVGpqTmk1UUtjNmdwVkZxQUNQX1dYTEZVNDh2NnlvWHJIMkRWUHFyc1V3NURLR2Y4UjRUeHpxOG1B?oc=5",
-   "source": "Google News / Global Arbitration Review",
+   "url": "https://www.iareporter.com/articles/us-appeals-court-reverses-district-courts-dismissal-of-laos-bid-to-enforce-arbitral-awards-against-alleged-alter-egos-of-award-debtors/",
+   "source": "IAReporter",
    "source_tier": 2,
-   "event_type": "commercial_dispute",
+   "event_type": "enforcement_action",
    "published_at": "2026-09-18",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [],
-   "sectors": [
-    "Telecoms"
+   "states": [
+    "Laos"
    ],
+   "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
+   "flag_reason": "matched ‘award debtor’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
@@ -393,276 +788,346 @@
    "corroboration": [
     {
      "source": "US court opinion",
-     "url": "https://www.courtlistener.com/opinion/10975900/doe-v-islamic-republic-of-iran/",
-     "title": "Doe v. Islamic Republic of Iran (District Court, District of Columbia, 2026-09-17)",
-     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA OCHO DOE, Plaintiff, v. Case No. 26-cv-1557 (CRC) ISLAMIC REPUBLIC OF IRAN, et al., Defendants. MEMORANDUM OPINION AND ORDER Plaintiff Ocho Doe brings this case against the Islamic Republic of Iran, the Islamic Revolutionary Guard Corps ("
+     "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
+     "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
+     "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
     },
     {
-     "source": "msn.com",
-     "url": "https://www.msn.com/en-in/news/other/iran-activists-sound-alarm-as-regime-seizes-bahai-assets/ar-AA2clRFQ",
-     "title": "Iran says assets of 240 people seized over alleged collaboration with hostile states",
-     "published_at": "2026-09-14",
-     "snippet": "Rights groups warn Iran is increasingly confiscating assets from government critics and members of the country's Baha'i faith, but also actors, athletes, and journalists living abroad"
+     "source": "Law360 International Arbitration (Global)",
+     "url": "https://www.law360.com/internationalarbitration/articles/2526885?utm_source=rss&utm_medium=rss&utm_campaign=section",
+     "title": "9th Circ. Revives Laos' $5M Enforcement Bid In Casino Case",
+     "published_at": "2026-09-18",
+     "snippet": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some $5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming from an ill-fated casino venture, saying a lower court should have taken a closer look at the government's arguments."
     },
     {
-     "source": "see.news",
-     "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
-     "title": "Turkey revokes Iran’s Bank Mellat license after 44 years",
-     "published_at": "2026-09-19",
-     "snippet": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat…"
-    },
-    {
-     "source": "see.news",
-     "url": "https://see.news/turkey-revokes-license-of-iranian-bank-branch-in-istanbul",
-     "title": "Will the license of the Iranian bank in Baku be revoked?",
-     "published_at": "2026-09-20",
-     "snippet": "Banking Regulation and Supervision Agency revoked the operating license of the Istanbul branch of Iranian Bank Mellat, according to a notice published in the country’s Official Gazette on Saturday…"
-    },
-    {
-     "source": "EnergyNow.com",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONG16Z1hLSjczdWVoRkFab1FfYmlON2I4M0xPdzdKYjZsNzlKU3NxLTg3SzB2UFNYV2VkWG5iM1VPamRKTWVUWk1LNVNQTWxubGtBYWVDSmpDa3oydHBKeUVXUnNPMV80M2ZQWi1BaFNsQmQ0aGVQRnlwdXYxWS1RMFdSUXFVOU5HU2pMN2NFTXZWbHdMLVVsNk5OaG80VHBwQ0trVGs0YUF5aHdycEE?oc=5",
-     "title": "TACO CONFIRMED: Oil Markets Bet Trump Would Chicken Out on Iran. They Won: Bousso - EnergyNow.com",
-     "published_at": "2026-09-24",
+     "source": "Mealey's",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNV2Z5QUw0cjU3LWpGUDdYQ3FkRWg4ZmcxV0I2Y3ZWbUx1TEVUOVBDc0xWTzVTNFpOcVRnZkZzLXhXbE5pdkY2QUQ4N2ZLSmZyNzk0YzZldWNmU0xjM2pWTHJLR2k3Q1I0ZnFVbEc3dVFxangyMUhqS1dGLS1OTVZvYlBfQV94ck9SUDg4S2tId01hU3lNMTZyNXlYM0lvNE5WZVZkUEdCdW8tb2xUR2paRkQ0eUkwdk5xWjh2ZDk5emZqek5uR2VaNjF4UUlRVTYwQko5MUlDTFdZeHRHemF6MVIzbGF1RVdi0gFiQVVfeXFMUHFON0xsNmlHODRlRmczV1dwQVdrY3RGdFgyUTFDejFlUkRObmZVblhHS3ktbnpFTFZIVU9KY3RKRlVEcWJVRDdHeG1rMmVfVU1DLWpDakxkbG5PenVRS3VQZUE?oc=5",
+     "title": "Dismissal Of Laos’ $4.5M Casino Petition Reversed In Part By 9th Circuit - Mealey's",
+     "published_at": "2026-09-18",
      "snippet": ""
     }
    ],
-   "story": "",
+   "story": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some US$5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming.",
    "tier": "brief",
-   "slug": "2026-09-18-nokia-win-confirmed-by-court-in-iranian-telecoms-case.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "record": null,
-   "id": 3589,
-   "title": "Canadian investor to file ECHR claim in Tunisian dispute",
-   "title_en": null,
-   "summary": " Canadian investor to file ECHR claim in Tunisian dispute &nbsp;&nbsp; Global Arbitration Review ",
-   "summary_en": null,
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHdaVDlYREZzN0VYNU5MMl9OQjVXSE1qM3hXXzgxelBPY0thV1h0NjdhMGhHRXdkcXc5U1hPSDBSWkM0OWFlU0NIMWowNm5EQ2U5UmFlX2VCanJLbTlFdzMxTE1KSDNLZG5sRlhmQ2ZSQU1ZVWVtaXNBNUtGMm14dE9vQ29mQUc3ZzJLS2Nmd3BxNkZhVFRudVFrMjJBUQ?oc=5",
-   "source": "Google News / Global Arbitration Review",
-   "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-17",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Canada",
-    "Tunisia"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-18-canadian-investor-to-file-echr-claim-in-tunisian-dispute.html",
-   "event": "Commercial arbitration"
-  },
-  {
-   "record": null,
-   "id": 2533,
-   "title": "ICC tribunal rejects multi-million-USD claim against Nigeria stemming from settlement of previous arbitration, but state’s counterclaim suffers same fate",
-   "title_en": "ICC tribunal rejects multi-million-USD claim against Nigeria stemming from settlement of previous arbitration",
-   "summary": "",
-   "summary_en": null,
-   "url": "https://www.iareporter.com/articles/icc-tribunal-rejects-multi-million-usd-claim-against-nigeria-stemming-from-settlement-of-previous-arbitration-but-states-counterclaim-suffers-same-fate/",
-   "source": "IAReporter",
-   "source_tier": 2,
-   "event_type": "commentary",
-   "published_at": "2026-09-18",
-   "institution": "ICC",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Nigeria"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": null,
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "",
-   "tier": "brief",
-   "slug": "2026-09-18-icc-tribunal-rejects-multi-million-usd-claim-against-nigeria-stemming-.html",
-   "event": "Note"
+   "slug": "2026-09-18-us-appeals-court-reverses-district-court-s-dismissal-of-laos-bid-to-en.html",
+   "event": "Enforcement"
   }
  ],
  "leads": [
   {
    "record": null,
-   "id": 287,
-   "title": "Atome: Notice of Dispute and Intent to Submit Claim to Arbitration under the UK – Paraguay Bilateral Investment Treaty",
-   "title_en": "Notice of Dispute and Intent to Submit Claim to Arbitration under the UK",
-   "summary": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees.",
+   "id": 2774,
+   "title": "Russia seizes assets of Nestlé and French firms Auchan and Leroy Merlin",
+   "title_en": null,
+   "summary": "Nestlé says it is considering all options to protect its rights after the Kremlin took control of its Russian business under a decree signed by Vladimir…",
    "summary_en": null,
-   "url": "https://www.prnewswire.com/news-releases/atome-plc-notice-of-dispute-and-intent-to-submit-claim-to-arbitration-under-the-uk--paraguay-bilateral-investment-treaty-the-treaty-or-bit-302881982.html",
-   "source": "Google News / prnewswire.com",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRUNTZV9waXBoVDVVUGtDQ3NmR2xYMmo5Q3o1OUd5MHNfek5HVnBvNzBZVkhiVzMzWEVSMW1QZkpGU1VUMXB4eXpuYS11UW1oV0pHQmRtT3pXMXByQW5JNWN0dGNkamdRZ0tsOVNUcXlObTdDWklHMEJoUjNjeVNMLUtGSWczN3o3bW50b3JYSm9tTkV2WjFVU3p4dDkzZ1c2R3d2S0Z5T3NhLVM1U0l6YXBFeHlYUWpsNE82Mmh0UTdZemtQNWdJbmRsTENoMEU?oc=5",
+   "source": "Google News / Le Monde.fr",
    "source_tier": 2,
-   "event_type": "notice_of_intent",
-   "published_at": "2026-09-17",
+   "event_type": "state_measure",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Nestle"
+   ],
+   "respondents": [],
+   "states": [
+    "Russia",
+    "Ukraine"
+   ],
+   "sectors": [
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); investor of means named: Nestle",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "cryptobriefing.com",
+     "url": "https://cryptobriefing.com/kremlin-seizes-nestle-auchan-assets/",
+     "title": "Kremlin takes control of Auchan, Nestle and former Leroy Merlin assets",
+     "published_at": "2026-09-18",
+     "snippet": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation against…"
+    },
+    {
+     "source": "cryptobriefing.com",
+     "url": "https://cryptobriefing.com/kremlin-seizes-nestle-auchan-assets/",
+     "title": "Kremlin seizes Nestlé’s Russian assets in new crackdown",
+     "published_at": "2026-09-18",
+     "snippet": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation against…"
+    },
+    {
+     "source": "globalbankingandfinance.com",
+     "url": "https://www.globalbankingandfinance.com/putin-puts-nestle-auchan-russian-assets-temporary/",
+     "title": "Putin Orders Temporary Administration of Nestle Assets in Russia",
+     "published_at": "2026-09-17",
+     "snippet": "Russian President Putin places Nestle and Auchan's Russian assets under temporary administration amidst new decrees on foreign-owned companies"
+    },
+    {
+     "source": "Financial Times",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdkpZcDlSbHRrWWhKU1dlUGNQYnd0WE55aXhrWFA0b3dLcndMNXQwMno0SEloRlRVX0dCemR2ODRPZTFhU25PSzRsV202d05oQl9hMlZPT2c0QUVESC1uRWZEYnk4dC1yVlRlbkVtR1ZQNElySnFfZi1raFAzYlNiaE1OUVM?oc=5",
+     "title": "Russia seizes control of Nestlé and Auchan operations - Financial Times",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    },
+    {
+     "source": "wsj.com",
+     "url": "https://www.wsj.com/articles/nestle-weighs-options-for-russia-unit-after-moscow-puts-it-under-administration-221402de",
+     "title": "Russia Seizes Control of Nestlé’s Local Operations",
+     "published_at": "2026-09-17",
+     "snippet": "Russia also placed the local businesses of French retailers Auchan and Leroy Merlin under temporary external administration, according to a presidential decree."
+    }
+   ],
+   "story": "Nestlé says it is considering all options to protect its rights after the Kremlin took control of its Russian business under a decree signed.",
+   "tier": "signal",
+   "slug": "2026-09-18-russia-seizes-assets-of-nestl-and-french-firms-auchan-and-leroy-merlin.html",
+   "event": "State measure"
+  },
+  {
+   "record": null,
+   "id": 2744,
+   "title": "EU Considers Windfall Tax on Energy Companies Amid Oil Price Surge",
+   "title_en": "EU considers windfall tax on energy companies amid oil price surge",
+   "summary": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "summary_en": null,
+   "url": "https://www.globalbankingandfinance.com/eu-ministers-discuss-taxing-windfall-profits-energy/",
+   "source": "Google News / Global Banking & Finance Review",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "United Kingdom",
-    "Paraguay"
+    "Germany"
    ],
-   "sectors": [],
+   "sectors": [
+    "Oil & gas",
+    "Power & renewables",
+    "Finance & banking"
+   ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘notice of dispute’ in the text",
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
    "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / uk.finance.yahoo.com",
-     "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
-     "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay"
-    }
-   ],
-   "lang": null,
+   "also": [],
+   "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "uk.finance.yahoo.com",
-     "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
-     "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay",
-     "published_at": "2026-09-17",
-     "snippet": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees relating to its US$665 million Villeta green fertiliser project."
-    },
-    {
-     "source": "…",
-     "url": "https://www.boersennews.de/nachrichten/meldungen/eqs/eqs-news-atome-plc-notice-of-dispute-and-intent-to-submit-claim-to-arbitration-under-the-uk-paraguay-bilateral-investment-treaty-the-treaty-or-bit/5279964/",
-     "title": "EQS-News: ATOME PLC: Notice of Dispute and Intent to Submit Claim to Arbitration under the UK",
-     "published_at": "2026-09-17",
-     "snippet": "The Notice states that an investment dispute exists as a result of Paraguay's alleged acts and omissions in violation of the BIT, including its revocation of the Presidential Decrees issued by the ..."
-    },
-    {
-     "source": "Discovery Alert",
-     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOa3VlUXFwQXFERkF5VGhPQ2t5LXJJQTlYRHVDdkgtQkliNWZYVEt5UjlTdmVoNkNxTEFTLTd4WXB5a1FEdnZ5MnRmOGRfMk9OMHpRYjE0bERrSXVNRGFxY3pEZGdSM3J5M0xLTTZId0ptUmljdHhFemNMSzN2RzlJUmpmUk1HR1JNcDljbjhIYw?oc=5",
-     "title": "ATOME Files Arbitration Notice Against Paraguay Over PPA Dispute - Discovery Alert",
-     "published_at": "2026-09-20",
-     "snippet": ""
-    }
-   ],
-   "story": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees.",
+   "corroboration": [],
+   "story": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
    "tier": "signal",
-   "slug": "2026-09-18-notice-of-dispute-and-intent-to-submit-claim-to-arbitration-under-the-.html",
-   "event": "Notice of dispute"
+   "slug": "2026-09-18-eu-considers-windfall-tax-on-energy-companies-amid-oil-price-surge.html",
+   "event": "State measure"
   },
   {
    "record": null,
-   "id": 2580,
-   "title": "Jakupovic v. Intact Insurance Company, 2026 ONCA 651 (CanLII)",
-   "title_en": null,
-   "summary": "Insurance — Accident benefits — Statutory Accident Benefits Schedule, O. Reg. 34/10 — Section 34 relief for late notice — Whether claimant had a reasonable explanation for non-compliance — Licence Appeal Tribunal finding explanation neither credible nor reasonable — No basis to relieve from s. 32(1) time requirement — Appeal allowed, LAT decision restored Statutory interpretation — Modern principle — Statutory Accident Benefits Schedule, O. Reg. 34/10, s. 32(1) — Whether reporting an accident satisfies notice of intention to apply for benefits — Text, context and purpose and “text remains the anchor” — Divisional Court found to have rewritten statutory requirements — Appeal allowed, Divisional Court set aside Procedure — Appeals — Licence Appeal Tribunal Act, 1999, s. 11(6) — Question of law only — Whether Divisional Court exceeded proper appellate review by making findings of fact — Substitution of broad factual findings contrary to LAT findings — Standard of review correctness on statutory interpretation — Appeal allowed, LAT decision restored Procedure — Procedural fairness — Appellate record — Whether Divisional Court erred by referencing medical evidence that post-dated the LAT decision — Use of post-decision evidence found procedurally unfair — Scope of appeal confined to questions of law — Decision of Divisional Court set aside — Appeal allowed, LAT decision restored",
+   "id": 3561,
+   "title": "Turkey revokes operating license of Iran's Mellat Bank amid US measures",
+   "title_en": "Turkey revokes operating licence of Iran's Mellat Bank amid US measures",
+   "summary": "Turkey's BDDK banking watchdog revoked ​the ​operating ​licence of Iranian ⁠lender Mellat Bank's branch in ⁠Istanbul, according to a ​notice published in the Official Gazette on ⁠Saturday…",
    "summary_en": null,
-   "url": "https://www.canlii.org/en/on/onca/doc/2026/2026onca651/2026onca651.html",
-   "source": "Canada - Ontario Court of Appeal (CanLII feed) (Global)",
+   "url": "https://www.thenationalnews.com/news/mena/2026/09/19/turkey-revokes-operating-license-of-irans-mellat-bank-amid-us-economic-measures-against-tehran/",
+   "source": "Google News / thenationalnews.com",
    "source_tier": 2,
-   "event_type": "notice_of_intent",
-   "published_at": "2026-09-17",
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [],
+   "states": [
+    "Turkey"
+   ],
    "sectors": [
     "Finance & banking"
    ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘notice of intent’ in the text",
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": "Global",
+   "country": null,
    "corroboration": [],
-   "story": "Accident benefits — Statutory Accident Benefits Schedule, O.",
+   "story": "Turkey's BDDK banking watchdog revoked ​the ​operating ​licence of Iranian ⁠lender Mellat Bank's branch in ⁠Istanbul.",
    "tier": "signal",
-   "slug": "2026-09-18-jakupovic-v-intact-insurance-company-2026-onca-651-canlii.html",
-   "event": "Notice of dispute"
-  },
+   "slug": "2026-09-18-turkey-revokes-operating-licence-of-iran-s-mellat-bank-amid-us-measure.html",
+   "event": "State measure"
+  }
+ ],
+ "enforcement": [
   {
    "record": null,
-   "id": 2607,
-   "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay",
-   "title_en": "ATOME issues notice of dispute over US$665 million Villeta fertiliser project in Paraguay",
-   "summary": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential…",
+   "id": 4227,
+   "title": "Spain Summoned To Answer Solar Investor’s Petition To Confirm 8.9M Euro Award",
+   "title_en": "Gujarat government is not serious about expeditious disposal of arbitration cases: Former Justice Harsha Devani",
+   "summary": " Spain Summoned To Answer Solar Investor’s Petition To Confirm 8.9M Euro Award &nbsp;&nbsp; mealeys.com ",
    "summary_en": null,
-   "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
-   "source": "Google News / uk.finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNNmFUZXU0cXZmQmJybENQV1duRHFXa2ZJS2Vvd0FheDlRc1BuU3N1S1BheU8xT2hxajBaM3ZHMnBBWkJTY09wSWdab3c0ZHVSeWYtZ045TDZneE5ZTnV0XzF0YWJlbk5fZjFpX0JRbzh1SWtXSGVzSnk1cUxMUEVTWk5xX2E2NkZVelFHektJU3pER2MwM3Bpbmg4RFpIdVIwaUg4UVVidXJ1NG84N2dLOXRHVTNFOHBNVy14UTVEbWN3Q3J0cm9PMzRXQkZvb0JqSlRsZUxmV0djWDYyTGhGbjM4OHNoczFzNWZvTkotRjd1UdIBYkFVX3lxTE1aaXIzcXppOTFYblVNY3ZvUlg1eHhHS1Bham5Zc1FuRTA0VVdVLVIwQmRlemw5SjVndm9NUllUeTZXbmV3c1pzVXJCNmF3NTFFeUFhbmJHRnFjNWFLSmQ0TDJB?oc=5",
+   "source": "Google News / mealeys.com",
    "source_tier": 2,
-   "event_type": "notice_of_intent",
-   "published_at": "2026-09-17",
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-18",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
    "states": [
-    "Paraguay",
-    "United Kingdom"
+    "Spain"
    ],
-   "sectors": [],
+   "sectors": [
+    "Power & renewables"
+   ],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘notice of dispute’ in the text",
+   "flag_reason": "matched ‘petition to confirm’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
    "corroboration": [
     {
-     "source": "discoveryalert.com",
-     "url": "https://discoveryalert.com/news/atome-paraguay-arbitration-ppa-dispute-september-2026/",
-     "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA",
-     "published_at": "2026-09-17",
-     "snippet": "ATOME Paraguay arbitration notice filed under UK-Paraguay BIT threatens the Villeta green fertiliser project."
-    },
-    {
-     "source": "marketscreener.com",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPanlxMW5mc1ZHV3c4eW5Ldl9CZWlxM1Y4aVowOEFid2FEUVExYS05YnRNUE01M0ZFNTlJRnFHSjNqeEc5SXl4R1RtUzExY3h2OHRKRUpiRGdsZUswUUVYbGZaZUoyZkE5T0l6MG5fWjF1NjlZTHk5c2p1M096VlBDajNMZ1RnbGFOd3JnaDJSZXVldlF2U1hGT05QZGQwVUYwY2Y2dTdaQmR5cUVVZUxKcnpoQnBCU2hUaXlIRDU2Zlp5S3lFWTJVajV3?oc=5",
-     "title": "Atome Serves Dispute Notice Against Paraguay Over $665 Million Villeta Project - marketscreener.com",
-     "published_at": "2026-09-17",
-     "snippet": ""
-    },
-    {
-     "source": "theglobeandmail.com",
-     "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4672691/atome-escalates-paraguay-dispute-over-us665m-villeta-green-fertiliser-project/",
-     "title": "ATOME escalates Paraguay dispute over US$665m Villeta green fertiliser project",
-     "published_at": "2026-09-17",
-     "snippet": "Atome Energy PLC ( ) just unveiled an update. ATOME PLC has moved to protect its interests in the US$665 million Villeta green fertiliser project in Paraguay, serving a Notice of ..."
+     "source": "barandbench.com",
+     "url": "https://www.barandbench.com/interviews/gujarat-government-is-not-serious-about-expeditious-disposal-of-arbitration-cases-former-justice-harsha-devani",
+     "title": "Gujarat government is not serious about expeditious disposal of arbitration cases: Former Justice Harsha Devani",
+     "published_at": "2026-09-19",
+     "snippet": "Born in Amreli district of Gujarat, Justice Harsha Devani’s path to the judiciary was anything but conventional."
     }
    ],
-   "story": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential.",
-   "tier": "signal",
-   "slug": "2026-09-18-atome-issues-notice-of-dispute-over-us-665-million-villeta-fertiliser-.html",
-   "event": "Notice of dispute"
-  }
- ],
- "enforcement": [
+   "story": "",
+   "tier": "enforcement",
+   "slug": "2026-09-18-gujarat-government-is-not-serious-about-expeditious-disposal-of-arbitr.html",
+   "event": "Enforcement"
+  },
+  {
+   "record": null,
+   "id": 2558,
+   "title": "Zenith Annulment Bid Goes To European Human Rights Court",
+   "title_en": "Zenith annulment bid goes to European Human rights court",
+   "summary": "Zenith Energy Ltd. announced Tuesday it is redoubling attempts to annul an International Chamber of Commerce arbitration award that rejected a subsidiary's $130 million in claims against Tunisia over an oilfield deal, saying the unit will contest the ICC tribunal's impartiality before the European Court of Human Rights.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2525259?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-16",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Tunisia"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘annulment’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [],
+   "story": "Zenith Energy Ltd. announced Tuesday it is redoubling attempts to annul an International Chamber of Commerce arbitration award that rejected a subsidiary's US$130 million in claims against Tunisia over an oilfield deal.",
+   "tier": "enforcement",
+   "slug": "2026-09-18-zenith-annulment-bid-goes-to-european-human-rights-court.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 7367,
+   "title": "Mhangami v Abedraboh",
+   "title_en": null,
+   "summary": "High Court, 17 September 2026. Matched the phrase ‘arbitral award’. “award or applying for its enforcement must furnish— (a)the original arbitral award … award was made; iii. the party against whom the arbitral award is invoked was not”",
+   "summary_en": null,
+   "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13711/eng@2026-09-17",
+   "source": "Court: Kenya",
+   "source_tier": 1,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Mhangami"
+   ],
+   "respondents": [
+    "Abedraboh"
+   ],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "High Court: enforcement of an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Kenya",
+   "corroboration": [],
+   "story": "High Court judgment of 17 September 2026 on enforcement of an award.",
+   "tier": "enforcement",
+   "slug": "2026-09-18-mhangami-v-abedraboh.html",
+   "event": "Enforcement"
+  },
+  {
+   "record": null,
+   "id": 7372,
+   "title": "Topline Logistics Ltd v Muhammed & 2 others (Sued as officials of Football Kenya Federation)",
+   "title_en": null,
+   "summary": "High Court, 17 September 2026. Matched the phrase ‘arbitration clause’. “cooperation when their position is that they do not recognise either the agreement or the arbitration … clause .”",
+   "summary_en": null,
+   "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13761/eng@2026-09-17",
+   "source": "Court: Kenya",
+   "source_tier": 1,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-17",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Topline Logistics Ltd"
+   ],
+   "respondents": [
+    "Muhammed & 2 others (Sued as officials of Football Kenya Federation)"
+   ],
+   "states": [
+    "Kenya"
+   ],
+   "sectors": [
+    "Transport & logistics"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "High Court: enforcement of an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Kenya",
+   "corroboration": [],
+   "story": "",
+   "tier": "enforcement",
+   "slug": "2026-09-18-topline-logistics-ltd-v-muhammed-2-others-sued-as-officials-of-footbal.html",
+   "event": "Enforcement"
+  },
   {
    "record": null,
    "id": 7509,
@@ -694,7 +1159,15 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
+   "corroboration": [
+    {
+     "source": "Business Daily",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNcXpOU1JnbnN3eGlZRTZsSjBiT2pTWURWU2I1elVRc01sSlA0NlhxY24walFrSjJHZ2pQMHQtLTdaQkt1YUNpVU9WN2tzczJOMEhaVFJONUpfeUEyTi1JamZ4T1dlb0luUjZ5VFZyZ0NQeUItSmtnQ2dLQ0Rpc2Q5QmZuTE5NaFB6OXhOM3c1cF8wSU45LVVhSEE2cUxYcTJqUDRR?oc=5",
+     "title": "Bank of Baroda faces asset seizure over Sh2.99bn court award to borrower - Business Daily",
+     "published_at": "2026-09-19",
+     "snippet": ""
+    }
+   ],
    "story": "",
    "tier": "enforcement",
    "slug": "2026-09-18-bank-of-baroda-denies-kenya-exit-rumours.html",
@@ -734,95 +1207,6 @@
    "story": "An Omani conglomerate has asked a Dubai court to set aside an ICC award that rejected its US$55 million claim against an Indian home appliances company over their failed joint venture.",
    "tier": "enforcement",
    "slug": "2026-09-18-omani-conglomerate-seeks-to-revive-claim-over-joint-venture.html",
-   "event": "Annulment"
-  },
-  {
-   "record": null,
-   "id": 2564,
-   "title": "S. Korea Wins ICSID Annulment Decision In $196M Dispute",
-   "title_en": "S. Korea wins ICSID annulment decision in US$196 million dispute",
-   "summary": "An ad hoc committee of the International Centre for Settlement of Investment Disputes has confirmed that the South Korean government is the victor in a 260 billion won ($196 million) arbitration award against a Chinese investor in a dispute over a forced real-estate share sale.",
-   "summary_en": null,
-   "url": "https://www.law360.com/internationalarbitration/articles/2524746?utm_source=rss&utm_medium=rss&utm_campaign=section",
-   "source": "Law360 International Arbitration (Global)",
-   "source_tier": 2,
-   "event_type": "annulment_setaside",
-   "published_at": "2026-09-15",
-   "institution": "ICSID",
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Korea",
-    "China"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "matched ‘annulment’ in the text",
-   "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Law360",
-     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9acURjTXhxaGlpZWROWll5S1BHVkhUNWppeWk5ZXpIRUdhbmZ1eHhWbjJJbHhuZS1aa002QmMzcEl0X2NwQmNZRnRjTm44WVJhMG1WREF30gFWQVVfeXFMT1pxRGNNeHFoaWllZE5aWXlLUEdWSFQ1aml5aTllekhFR2FuZnV4eFZuMklseG5lLVprTTZCYzNwSXRfY3BCY1lGdGNObjhZUmEwbVZEQXc?oc=5",
-     "title": "S. Korea Wins ICSID Annulment Decision In $196M Dispute"
-    },
-    {
-     "source": "Google News / mbiz.heraldcorp.com",
-     "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9PWlA0RWZCeC1fQ0pFT0ZWOFJjMU1aLXRFNl8yb3otOVVzSGVnYmcwcHRhWnV5NHNIZGRIN2Q2bmFQa0E4cU1oUi02b01BVnp6MDhLTzBrTQ?oc=5",
-     "title": "South Korea escapes W264.1b liability as ICSID rejects Chinese investor's annulment bid"
-    }
-   ],
-   "lang": "en",
-   "country": "Global",
-   "corroboration": [],
-   "story": "An ad hoc committee of the International Centre for Settlement of Investment Disputes has confirmed that the South Korean government is the victor in a 260 billion won (US$196 million) arbitration award against a Chinese investor.",
-   "tier": "enforcement",
-   "slug": "2026-09-18-s-korea-wins-icsid-annulment-decision-in-us-196-million-dispute.html",
-   "event": "Annulment"
-  },
-  {
-   "record": null,
-   "id": 3529,
-   "title": "Eiser Infrastructure v. Spain — the Kingdom of Spain files a memorial on annulment",
-   "title_en": null,
-   "summary": "Eiser Infrastructure brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 February 2026. Debevoise & Plimpton acts for the claimant. Abogacía General del Estado, The Ministry of Justice of the Government of Spain for Spain. The tribunal is Sofia Martins, presiding; Seung Wha Chang; Mika Savola. On 15 September 2026, the Kingdom of Spain files a memorial on annulment.",
-   "summary_en": null,
-   "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/13/36",
-   "source": "ICSID docket",
-   "source_tier": 1,
-   "event_type": "annulment_setaside",
-   "published_at": "2026-09-15",
-   "institution": "ICSID",
-   "treaty": "ECT (Energy Charter Treaty)",
-   "case_ref": "ARB/13/36",
-   "claimants": [
-    "Eiser Infrastructure Limited and Energía Solar Luxembourg S.à r.l."
-   ],
-   "respondents": [],
-   "states": [
-    "Spain"
-   ],
-   "sectors": [
-    "Electric Power & Other Energy"
-   ],
-   "counsel": [
-    "Debevoise & Plimpton, London, U.K.",
-    "Abogacía General del Estado, The Ministry of Justice of the Government of Spain, Madrid, Spain"
-   ],
-   "arbitrators": "[\"Seung Wha CHANG (Korean)\", \"Mika SAVOLA (Finnish, Israeli)\", \"Sofia MARTINS (Portuguese)\"]",
-   "amount_usd": null,
-   "flag_reason": "ICSID docket: annulment step",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": "Eiser Infrastructure brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on 19 February 2026. Debevoise & Plimpton acts for the claimant.",
-   "tier": "enforcement",
-   "slug": "2026-09-18-eiser-infrastructure-v-spain-the-kingdom-of-spain-files-a-memorial-on-.html",
    "event": "Annulment"
   }
  ],
@@ -885,15 +1269,23 @@
     "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/22/24"
    },
    {
-    "date": "2026-09-04",
-    "title": "Gruppo Officine Piccini v. Cameroon — the Tribunal renders its award",
-    "main": "Gruppo Officine Piccini v. Cameroon",
+    "date": "2026-09-09",
+    "title": "The Williams Companies v. Venezuela — the Tribunal renders its award",
+    "main": "The Williams Companies v. Venezuela",
     "step": "The Tribunal renders its award",
-    "tail": "ARB/23/21",
-    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/23/21"
+    "tail": "ARB(AF)/19/3",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB(AF)/19/3"
    }
   ],
   "disclosures": [
+   {
+    "date": "2026-09-18",
+    "title": "XCHG Ltd discloses notice of arbitration in 6-K filing",
+    "main": "XCHG Ltd",
+    "step": "discloses notice of arbitration in 6-K filing",
+    "tail": "",
+    "url": "https://www.sec.gov/Archives/edgar/data/1979887/000119312526395514/ck0001979887-ex99_2.htm"
+   },
    {
     "date": "2026-09-14",
     "title": "Uranium Royalty Corp. discloses ICSID in 10-Q filing",
@@ -929,14 +1321,167 @@
   ],
   "courts": [
    {
+    "date": "2026-09-18",
+    "title": "Alutalala t/a Alutalala Mukhwana & Co Advocates v Kariko alias Jeff Githinji Kariuki t/a Githinji & Associate Advocates",
+    "main": "Alutalala t/a Alutalala Mukhwana & Co Advocates v Kariko alias Jeff Githinji Kariuki t/a Githinji & Associate Advocates",
+    "step": "arbitration-related judgment",
+    "tail": "High Court",
+    "url": "https://new.kenyalaw.org/akn/ke/judgment/kehc/2026/13620/eng@2026-09-18"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "Logistik Unicorp Holdings Inc. c. Clearspring Capital Partners II",
+    "main": "Logistik Unicorp Holdings Inc. c. Clearspring Capital Partners II",
+    "step": "arbitration-related judgment",
+    "tail": "Cour d'appel du Québec · 2026 QCCA 1228",
+    "url": "https://www.canlii.org/en/qc/qcca/doc/2026/2026qcca1228/2026qcca1228.html"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "main": "Tanga Cement Plc vs Willy Enterprises Limited",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/325/eng@2026-09-18"
+   },
+   {
+    "date": "2026-09-17",
+    "title": "DYX v DYY and another matter",
+    "main": "DYX v DYY and another matter",
+    "step": "arbitration agreement, stay or anti-suit relief",
+    "tail": "Singapore International Commercial Court · [2026] SGHC(I) 19",
+    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC(I)%2019.pdf"
+   },
+   {
+    "date": "2026-09-15",
+    "title": "BGH I ZB 6/26",
+    "main": "BGH I ZB 6/26",
+    "step": "challenge to an award",
+    "tail": "Bundesgerichtshof · I ZB 6/26",
+    "url": "https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/I_ZS/2026/I_ZB___6-26.html"
+   },
+   {
+    "date": "2026-09-10",
+    "title": "Conex Oil & Gas Holdings Ltd v PSTV Energy FZCO",
+    "main": "Conex Oil & Gas Holdings Ltd v PSTV Energy FZCO",
+    "step": "anti-suit injunction",
+    "tail": "High Court (Commercial Court) · [2026] EWHC 2325 (Comm)",
+    "url": "https://caselaw.nationalarchives.gov.uk/ewhc/comm/2026/2325"
+   },
+   {
     "date": "2026-09-09",
     "title": "In Re: Diego Glozman (S.D.N.Y. 1:26-mc-00445)",
-    "main": "In Re: Diego Glozman",
+    "main": "In re: Diego Glozman",
     "step": "",
     "tail": "S.D.N.Y. 1:26-mc-00445",
     "url": "https://www.courtlistener.com/docket/74764911/in-re-diego-glozman/"
+   },
+   {
+    "date": "2026-09-08",
+    "title": "Philippina v Paola",
+    "main": "Philippina v Paola",
+    "step": "enforcement of an award",
+    "tail": "DIFC Court of First Instance · ARB 035/2026",
+    "url": "https://www.difccourts.ae/rules-decisions/judgments-orders/arbitration/arb-0352026-philippina-v-paola"
    }
   ],
-  "people": []
+  "people": [
+   {
+    "date": "2026-09-18",
+    "title": "Australian firm hires from Kennedys in Singapore",
+    "main": "Australian firm hires from Kennedys in Singapore",
+    "step": "",
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/australian-firm-hires-kennedys-in-singapore"
+   },
+   {
+    "date": "2026-09-18",
+    "title": "A company from the circle of ex-MP traitor Derkach demands $128 million from Ukraine: Ministry of Justice hires Polish lawyers",
+    "main": "A company from the circle of ex-MP traitor Derkach demands $128 million from Ukraine: Ministry of Justice hires Polish lawyers",
+    "step": "",
+    "tail": "АНТИКОР",
+    "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQX2w3X0lkb0E2UWZkZ0FMZFpsbEItOUZsTnJLaDhQRExsb201SUhJTDc3RlhVWDEzbmpZb3V4OG94SHQ1SkRYZmVFT0NaTndIczRCSkhvQTZiU18wSllpSEhENHFBN3NHYkRySUJRcjQ0VWpvdnRjVVJ0T29SbTNMeUNIaHVraVFYQ0o3T1R3RXA1SWNKeWZBN0ZvYjVwbXEtN2x3RHR3R0M4bU1kbFQzdkFNS2s1Nk85aGZBanZhWWVWUTNwSU16NTdUOUNSYjl6aEthcm1ubEtXcW9wWFBwdEpmdzY5aDFRcm5JMXQ4LVRXLUNQV2gzbDhxNkZDd2hCSFE?oc=5"
+   },
+   {
+    "date": "2026-09-17",
+    "title": "Baker McKenzie Names Longtime Partner As Arbitration Head",
+    "main": "Baker McKenzie names Longtime partner as arbitration head",
+    "step": "",
+    "tail": "Law360 International Arbitration",
+    "url": "https://www.law360.com/internationalarbitration/articles/2525584?utm_source=rss&utm_medium=rss&utm_campaign=section"
+   },
+   {
+    "date": "2026-09-16",
+    "title": "Snellman disputes head joins Swedish firm",
+    "main": "Snellman disputes head joins Swedish firm",
+    "step": "",
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/snellman-disputes-head-joins-swedish-firm"
+   },
+   {
+    "date": "2026-09-16",
+    "title": "Wotton Kearney bolsters Asia marine practice",
+    "main": "Wotton Kearney bolsters Asia marine practice",
+    "step": "",
+    "tail": "Seatrade Maritime",
+    "url": "https://www.seatrade-maritime.com/maritime-transportation/wotton-kearney-bolsters-asia-marine-practice"
+   },
+   {
+    "date": "2026-09-11",
+    "title": "Singapore boutique hires from Reed Smith",
+    "main": "Singapore boutique hires from Reed Smith",
+    "step": "",
+    "tail": "GAR",
+    "url": "https://globalarbitrationreview.com/article/singapore-boutique-hires-reed-smith"
+   },
+   {
+    "date": "2026-09-17",
+    "title": "Jupiter Lithium v. Nigeria — the Tribunal is constituted in accordance with Article 37(2)(a) of the ICSID Convention",
+    "main": "Jupiter Lithium v. Nigeria",
+    "step": "The Tribunal is constituted in accordance with Article 37(2)(a) of the ICSID Convention",
+    "tail": "ARB/26/27",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/27"
+   },
+   {
+    "date": "2026-09-16",
+    "title": "Roberto Cuadrado v. Ecuador — following appointment by the Respondent, Marcelo Kohen (Argentine, Swiss) accepts his appointment as arbitrator",
+    "main": "Roberto Cuadrado v. Ecuador",
+    "step": "Following appointment by the Respondent, Marcelo Kohen (Argentine, Swiss) accepts his appointment as arbitrator",
+    "tail": "ARB/26/26",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/26"
+   },
+   {
+    "date": "2026-09-15",
+    "title": "Glenfarne Asset v. Colombia — following appointment by the Respondent, Jean E. Kalicki (U.S.) accepts her appointment as arbitrator",
+    "main": "Glenfarne Asset v. Colombia",
+    "step": "Following appointment by the Respondent, Jean E. Kalicki (U.S.) accepts her appointment as arbitrator",
+    "tail": "ARB/26/34",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/34"
+   },
+   {
+    "date": "2026-09-15",
+    "title": "Galp Energia v. Mozambique — following appointment by the Claimants, D. Brian King (U.S.) accepts his appointment as arbitrator",
+    "main": "Galp Energia v. Mozambique",
+    "step": "Following appointment by the Claimants, D. Brian King (U.S.) accepts his appointment as arbitrator",
+    "tail": "ARB/26/31",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/31"
+   },
+   {
+    "date": "2026-09-11",
+    "title": "Karam Salah Al Din Awni Al Sadeq v. UAE — following appointment by the Respondent, Klaus Sachs (German) accepts his appointment as arbitrator",
+    "main": "Karam Salah Al Din Awni Al Sadeq v. UAE",
+    "step": "Following appointment by the Respondent, Klaus Sachs (German) accepts his appointment as arbitrator",
+    "tail": "ARB/26/23",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/23"
+   },
+   {
+    "date": "2026-09-08",
+    "title": "Jihad Abdul Qader Saleh Quzmar v. UAE — following appointment by the Claimant, Laurence Boisson de Chazournes (French, Swiss) accepts her appointment as arbitrator",
+    "main": "Jihad Abdul Qader Saleh Quzmar v. UAE",
+    "step": "Following appointment by the Claimant, Laurence Boisson de Chazournes (French, Swiss) accepts her appointment as arbitrator",
+    "tail": "ARB/26/24",
+    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/26/24"
+   }
+  ]
  }
 }
