@@ -49,8 +49,9 @@ def clean(text: str) -> str:
 
 def _clause_cut(sentence: str, max_words: int) -> str:
     """A sentence longer than the cap, closed at its last clause boundary within it."""
+    sentence = sentence.rstrip(" .\u2026")             # a feed's cut-off marker is not punctuation
     words = sentence.split()
-    if len(words) <= max_words:
+    if len(words) <= max_words and sentence and sentence[-1] in ".!?\u201d\u2019\")":
         return sentence
     head = " ".join(words[:max_words])
     cut = max(head.rfind(", "), head.rfind("; "), head.rfind(" — "), head.rfind(" – "), head.rfind(": "))
@@ -114,7 +115,9 @@ def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
             return s
         first = re.split(r"(?<=[.!?])\s+(?=[A-Z“‘(])", t)[0]
         first = first.strip()
-        if first and first[-1] in ".!?\u201d\u2019\")" and len(first.split()) <= max_words + 10:
+        if first.endswith(("\u2026", "...")):
+            first = first.rstrip(" .\u2026")            # cut by the feed: close it at a clause below
+        elif first and first[-1] in ".!?\u201d\u2019\")" and len(first.split()) <= max_words + 10:
             return first                              # one whole sentence a little over the cap beats a cut one
         c = _clause_cut(first, max_words)
         if c:

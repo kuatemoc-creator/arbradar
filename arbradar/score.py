@@ -24,7 +24,8 @@ def _age_days(item: Dict[str, Any]) -> float:
         when = dt.date.fromisoformat(str(stamp)[:10])
     except ValueError:
         return 3.0
-    return max(0.0, (dt.date.today() - when).days)
+    from .pipeline import as_of                       # the build's date, so a past day rebuilt later scores as it did then
+    return max(0.0, (as_of() - when).days)
 
 
 def _watchlist_boost(item: Dict[str, Any], settings) -> Tuple[float, list]:

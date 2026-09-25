@@ -101,6 +101,16 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
             continue
         if their_ents and not my_ents:
             continue
+        # A headline that names a State is about that State: a page that names
+        # none of its States is another story ("Laos' bid to enforce" is not a
+        # Utah police case, however alike the court words).
+        from .sources.editions import states_in
+        mine_states = set(states_in(" ".join(words)))
+        snippet_text = html.unescape(re.sub(r"<[^>]+>", " ", e.get("summary") or e.get("description") or ""))
+        if mine_states and not (mine_states & set(states_in(title + " " + snippet_text))):
+            continue
+        if not (my_ents & their_ents) and shared < 4:
+            continue                                  # common words alone do not make it the same story
         text = html.unescape(re.sub(r"<[^>]+>", " ", e.get("summary") or e.get("description") or ""))
         text = re.sub(r"\s+", " ", text).strip()
         if len(text) < 60:

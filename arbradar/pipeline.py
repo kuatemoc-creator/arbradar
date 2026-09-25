@@ -776,6 +776,13 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
             continue
         if (rep.get("score") or 0) < floor and not rep.get("pinned"):
             continue                              # below the floor: leave it out rather than pad the day
+        head = rep.get("title_en") or rep.get("title") or ""
+        body = " ".join([head, rep.get("summary_en") or rep.get("summary") or ""])
+        if not rep.get("pinned") and _NOT_NEWS.search(head) and not (rep.get("source") or "").startswith(("ICSID docket", "Court:", "US federal docket")):
+            continue                              # an awards night, a report, a survey: not a development
+        if not rep.get("pinned") and rep.get("event_type") == "commercial_dispute" \
+                and not is_trade_press(rep.get("source") or "", rep.get("url") or "") and not _DISPUTE_WORD.search(body):
+            continue                              # "terminates contracts of two soldiers" is not a commercial dispute
         # A firm's newsletter piece or a trade story with no arbitration in it is
         # not a story here, however well it scores on the watchlist.
         # The same test for a sweep item of any kind: "airlines cancel flights as
@@ -836,6 +843,7 @@ _DISPUTE_WORD = re.compile(r"arbitra|\bICC\b|\bLCIA\b|\bSIAC\b|\bHKIAC\b|\bSCC\b
 _ARBITRAL = re.compile(r"arbitra|arbitral|\baward\b|ICSID|exequatur|new york convention|seat of|\bLCIA\b|\bICC\b|\bSIAC\b|UNCITRAL|"
                        r"laudo|sentença arbitral|sentence arbitrale|Schiedsspruch|lodo|арбитраж|арбітраж|tahkim|hakem", re.I)
 _NOT_NEWS = re.compile(r"\b(report|survey|study|guide|webinar|conference|podcast|roundtable|symposium|summit|masterclass|"
+                       r"awards? \d{4}|awards (night|ceremony|shortlist)|shortlist|nominations?|rankings?|directory|"
                        r"publishes|launches its|annual review|year in review|in numbers|statistics|celebrates|anniversary)\b", re.I)
 
 

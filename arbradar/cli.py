@@ -107,6 +107,8 @@ def cmd_build(args, settings, conn):
     # build sees only what the first one left over.
     if getattr(args, "date", None):
         pipeline.AS_OF = dt.date.fromisoformat(args.date)
+        # Scores carry a recency term; a past day is rebuilt with the scores it had then.
+        pipeline.reclassify(conn, settings, days=settings.lookback_days + 7)
     today = pipeline.as_of().isoformat()
     prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
     if prior:
