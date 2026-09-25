@@ -43,6 +43,9 @@ def _names(it: Dict[str, Any]) -> List[str]:
             out.append(n)
     title = it.get("title_en") or it.get("title") or ""
     for s in states_in(title):
+        # "US court", "UK judge": the forum, not a party. They join only when the record names them.
+        if s in ("United States", "United Kingdom") and s not in (it.get("respondents") or []) + (it.get("claimants") or []):
+            continue
         if s not in out:
             out.append(s)
     for w in re.findall(r"\b[A-Z][A-Za-z&'’.-]{2,}(?:\s+[A-Z][A-Za-z&'’.-]{2,}){0,3}", title):
@@ -68,15 +71,20 @@ def _is_state(name: str) -> bool:
     return name in COUNTRIES
 
 
-def _overlap(names: List[str], text: str, need_party: bool = False) -> bool:
+def _overlap(names: List[str], text: str, need_party: bool = False, single_state_ok: bool = False) -> bool:
     """The names in the text. With need_party, a State alone is not enough: a
-    docket or case page is matched on a party, not on the country it is against."""
+    docket or case page is matched on a party, not on the country it is against.
+    single_state_ok lets one State carry the match when the caller has already
+    tied the result to the story by date and court."""
     t = (text or "").lower()
     hit_party = any(n.lower() in t for n in names if len(n) > 3 and not _is_state(n))
-    hit_state = any(any(f.lower() in t for f in _forms(n)) for n in names if _is_state(n))
+    states_hit = sum(1 for n in names if _is_state(n) and any(f.lower() in t for f in _forms(n)))
     if need_party:
-        return hit_party or (hit_state and sum(1 for n in names if _is_state(n) and any(f.lower() in t for f in _forms(n))) >= 2)
-    return hit_party or hit_state
+        # A single State carries the match only where the case name shows a
+        # sovereign party ("Republic of", "Government of"), not a person called Laos.
+        sovereign = bool(re.search(r"\b(republic|government|kingdom|state of|federation|ministry|emirate|sultanate|commonwealth|nation)\b", t))
+        return hit_party or states_hit >= 2 or (single_state_ok and states_hit >= 1 and sovereign and not any(not _is_state(n) for n in names))
+    return hit_party or states_hit >= 1
 
 
 def _window(it: Dict[str, Any], days: int = 30):
@@ -118,7 +126,7 @@ def courtlistener(it: Dict[str, Any], names: List[str]) -> Optional[Dict[str, st
     clauses = []
     for n in names[:3]:
         if _is_state(n):
-            clauses.append("caseName:({})".format(" OR ".join('"{}"'.format(f) for f in _forms(n)[:3] if len(f) >= 4)))
+            clauses.append("caseName:({})".format(" OR ".join('"{}"'.format(f) for f in _forms(n)[:3] if len(f) >= 3)))
         else:
             clauses.append('caseName:"{}"'.format(n.replace('"', "")))
     if not clauses:
@@ -144,6 +152,87 @@ def courtlistener(it: Dict[str, Any], names: List[str]) -> Optional[Dict[str, st
                 "title": "{} ({} {})".format(case, res.get("court_citation_string") or "", res.get("docketNumber") or "").strip(),
                 "snippet": "{} Parties: {}.".format(desc, "; ".join(parties[:4]))}
     return None
+
+
+def opinion(it: Dict[str, Any], names: List[str]) -> Optional[Dict[str, str]]:
+    """A US court's own opinion, order or report on CourtListener: the case name
+    carries the parties, the text is the court's, and the date is within a
+    month of the story. Better than a docket: it is the decision itself."""
+    import os
+    headers = {}
+    if os.environ.get("COURTLISTENER_TOKEN"):
+        headers["Authorization"] = "Token " + os.environ["COURTLISTENER_TOKEN"]
+    clauses = []
+    for n in names[:3]:
+        if _is_state(n):
+            clauses.append("caseName:({})".format(" OR ".join('"{}"'.format(f) for f in _forms(n)[:3] if len(f) >= 3)))
+        else:
+            clauses.append('caseName:"{}"'.format(n.replace('"', "")))
+    if not clauses:
+        return None
+    lo, hi = _window(it, 45)
+    try:
+        r = get(CL, params={"q": " AND ".join(clauses), "type": "o", "order_by": "dateFiled desc"}, ttl=6 * 3600, headers=headers)
+        results = r.json().get("results", [])
+    except Exception:                                 # noqa: BLE001 - boundary
+        return None
+    lo14, hi14 = _window(it, 14)
+    for res in results[:6]:
+        case = res.get("caseName") or ""
+        filed = str(res.get("dateFiled") or "")[:10]
+        tight = bool(filed and lo14 <= filed <= hi14)
+        if not _overlap(names, case, need_party=True, single_state_ok=tight) or (filed and not (lo <= filed <= hi)):
+            continue
+        snippet = ""
+        for op in res.get("opinions") or []:
+            snippet = _opinion_paragraph(op.get("id"), headers, CL_BASE + (res.get("absolute_url") or "")) or re.sub(r"<[^>]+>", " ", op.get("snippet") or "")
+            if snippet.strip():
+                break
+        return {"source": "US court opinion", "url": CL_BASE + (res.get("absolute_url") or ""),
+                "title": "{} ({}, {})".format(case, res.get("court") or "", filed).strip(),
+                "snippet": re.sub(r"\s+", " ", snippet).strip()}
+    return None
+
+
+def _opinion_paragraph(op_id, headers, page_url: str = "") -> str:
+    """The first substantive paragraph of the court's text: not the caption, not
+    the counsel list, a paragraph of sentences that says what the court did.
+    The API needs a token; without one the public page carries the same text."""
+    text = ""
+    if op_id:
+        try:
+            r = get(CL_BASE + "/api/rest/v4/opinions/{}/".format(op_id), ttl=7 * 24 * 3600, headers=headers)
+            j = r.json()
+            text = j.get("plain_text") or re.sub(r"<[^>]+>", " ", j.get("html_with_citations") or j.get("html") or "")
+        except Exception:                             # noqa: BLE001 - boundary
+            text = ""
+    if not text and page_url:
+        try:
+            html_page = get(page_url, ttl=7 * 24 * 3600).text
+            body = re.search(r'<(?:article|div)[^>]+(?:id="opinion-content"|class="[^"]*opinion[^"]*")[^>]*>(.*?)</(?:article|div)>', html_page, re.S)
+            chunk = body.group(1) if body else html_page
+            chunk = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", chunk, flags=re.S)
+            chunk = re.sub(r"</p>|<br\s*/?>", "\n\n", chunk)
+            text = re.sub(r"<[^>]+>", " ", chunk)
+            text = __import__("html").unescape(text)
+        except Exception:                             # noqa: BLE001 - boundary
+            text = ""
+    if re.search(r"not a robot|enable javascript|verify that you", text or "", re.I):
+        return ""                                     # a bot check is not the court's text, and is not worked around
+    for para in re.split(r"\n\s*\n", text or ""):
+        p = re.sub(r"\s+", " ", para).strip()
+        words = p.split()
+        if len(words) < 25 or len(words) > 220:
+            continue
+        letters = [c for c in p if c.isalpha()]
+        if letters and sum(1 for c in letters if c.isupper()) / len(letters) > 0.3:
+            continue                                  # a caption or a heading
+        if re.search(r"\b(Petitioner|Respondent|Plaintiff|Defendant)s?,\s+v\.", p) or p.count("v.") > 1 and len(words) < 40:
+            continue
+        if "." not in p:
+            continue
+        return p
+    return ""
 
 
 def find_case_law(it: Dict[str, Any], names: List[str]) -> Optional[Dict[str, str]]:
@@ -180,6 +269,7 @@ def find(conn, it: Dict[str, Any]) -> Optional[Dict[str, str]]:
     title = it.get("title_en") or it.get("title") or ""
     text = title + " " + (it.get("summary") or "")
     for finder in (lambda: icsid(conn, it, names) if re.search(r"ICSID|treaty|BIT\b|annulment|ad hoc committee", text, re.I) else None,
+                   lambda: opinion(it, names) if (_US.search(text) or _COURT_WORDS.search(text)) else None,
                    lambda: courtlistener(it, names) if (_US.search(text) or _COURT_WORDS.search(text)) else None,
                    lambda: find_case_law(it, names) if _ENGLAND.search(text) else None,
                    lambda: pca(conn, it, names) if re.search(r"PCA|UNCITRAL|Permanent Court", text) else None):

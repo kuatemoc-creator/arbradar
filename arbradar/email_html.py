@@ -219,6 +219,9 @@ def _record_label(rec: Dict[str, Any]) -> str:
     if src == "US federal docket":
         m = re.search(r"\(([^)]*\d[^)]*)\)\s*$", title)
         return "US docket " + m.group(1) if m else "US federal docket"
+    if src == "US court opinion":
+        m = re.search(r"\(([^)]*)\)\s*$", title)
+        return "opinion, " + m.group(1) if m else "US court opinion"
     if src == "ICSID docket":
         return "ICSID case page"
     if src.startswith("Find Case Law"):

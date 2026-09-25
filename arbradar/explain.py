@@ -164,7 +164,9 @@ def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
     rec = it.get("record") if isinstance(it.get("record"), dict) else None
     if rec and rec.get("snippet"):
         t = re.sub(r"\s*Parties:.*$", "", clean(rec["snippet"])).strip()
-        if t and len(t.split()) >= 6 and not t.isupper():
+        letters = [ch for ch in t if ch.isalpha()]
+        shouting = bool(letters) and sum(1 for ch in letters if ch.isupper()) / len(letters) > 0.3
+        if t and len(t.split()) >= 6 and not shouting:                  # a caption block is not an explanation
             s = sentences(t, max_words) or _clause_cut(t, max_words)
             if s:
                 return fit("{} ({}).".format(s.rstrip("."), _record_name(rec))) or s

@@ -85,22 +85,85 @@ def _names(text: str) -> set:
     return out
 
 
+_ACT = re.compile(r"\b(award|arbitration|arbitral|annul\w*|set aside|enforce\w*|confirm\w*|vacat\w*|tribunal|ICSID|claim|dispute|"
+                  r"treaty|expropriat\w*|licen[cs]e|concession|notice|settle\w*|damages|immunity|attach\w*|seiz\w*)\b", re.I)
+
+
+_FORUMS = [("nl", r"\b(Dutch|Netherlands|Amsterdam|Hague|rechtbank|gerechtshof)\b"),
+           ("en", r"\b(English|England|EWHC|EWCA|Commercial Court|London court|High Court of Justice|UK Supreme Court)\b"),
+           ("us", r"\b(US|U\.S\.|American|federal|district court|Circ\.?|Circuit|D\.C\.|S\.D\.N\.Y\.|DC Judge|magistrate)\b"),
+           ("fr", r"\b(Paris|French|Cour de cassation|cour d'appel)\b"), ("ch", r"\b(Swiss|Switzerland|Federal Tribunal)\b"),
+           ("sg", r"\b(Singapore|SICC|SGCA|SGHC)\b"), ("hk", r"\b(Hong Kong|HKCFI|HKCA)\b"), ("in", r"\b(Delhi High Court|Bombay High Court|Indian Supreme Court|Supreme Court of India)\b"),
+           ("au", r"\b(Australia|Australian|HCA|Federal Court of Australia)\b"), ("ca", r"\b(Canada|Canadian|Ontario|Quebec|Québec)\b"),
+           ("de", r"\b(German|Germany|Bundesgerichtshof|BGH|Oberlandesgericht)\b"), ("se", r"\b(Swedish|Sweden|Svea)\b")]
+_FORUM_RX = [(k, re.compile(rx)) for k, rx in _FORUMS]
+
+
+def _forum(text: str) -> str:
+    """The court's jurisdiction a headline names, if any: 'Dutch appellate court' is nl, '9th Circ.' is us."""
+    for k, rx in _FORUM_RX:
+        if rx.search(text or ""):
+            return k
+    return ""
+
+
+def _flat(title: str) -> str:
+    """A headline with hyphens and possessives undone and every State under its
+    plain name: 'Iraq-Türkiye pipeline' compares as 'Iraq Turkey pipeline'."""
+    from .sources.editions import COUNTRIES, _HYPHENATED
+    t = title or ""
+    for f in _HYPHENATED:
+        t = t.replace(f, f.replace("-", "\u2011"))
+    t = re.sub(r"(?<=\w)[\u2019'](?:s\b)?", "", t.replace("-", " ").replace("/", " ")).replace("\u2011", "-")
+    forms = sorted((f for f in COUNTRIES if len(f) >= 4), key=len, reverse=True)
+    for f in forms:
+        canon = COUNTRIES[f]
+        if f != canon and f in t:
+            t = re.sub(r"(?<![\w-])" + re.escape(f) + r"(?![\w-])", canon, t)
+    return t
+
+
 def _queries(it: Dict[str, Any]) -> List[str]:
-    """A few phrasings: the names in the headline, the parties on record, the
-    State plus the act. Short queries find the other copies; long ones find none."""
+    """A few phrasings that find other copies of the same story: the States
+    named (under their plain names), the companies named, the act. Hyphens and
+    possessives are undone first: 'Iraq-Türkiye' is Iraq and Turkey, 'Laos''
+    is Laos."""
+    from .sources.editions import COUNTRIES
     title = it.get("title_en") or it.get("title") or ""
-    words = _sig(title)
-    proper = [w for w in words if w[0].isupper()][:4]
+    flat = re.sub(r"[\u2019']s?\b", "", title.replace("-", " ").replace("/", " "))
+    states = []
+    for s in states_in(flat):
+        plain = {"United States": "US", "United Kingdom": "UK", "United Arab Emirates": "UAE", "Congo (DRC)": "Congo",
+                 "Congo (Brazzaville)": "Congo", "Korea": "Korea"}.get(s, s)
+        if plain not in states:
+            states.append(plain)
+    states = [s for s in states if s not in ("US", "UK")][:3] or states[:2]
+    ents = []
+    for w in re.findall(r"\b[A-Z][A-Za-z&.]{2,}(?:\s+[A-Z][A-Za-z&.]{2,}){0,2}", flat):
+        if _stem(w.split()[0].lower()) in _entities(flat) and w not in ents and not states_in(w):
+            ents.append(w)
+    acts = [m.group(1).lower() for m in _ACT.finditer(flat)]
+    order = ("award", "arbitration", "arbitral", "tribunal", "icsid", "treaty", "expropriation", "enforcement", "annulment")
+    acts = sorted(dict.fromkeys(a for a in acts if a not in ("dispute", "claim")),
+                  key=lambda a: next((i for i, o in enumerate(order) if a.startswith(o[:5])), 99))[:2] or ["arbitration"]
     names = [n for n in (it.get("claimants") or []) + (it.get("respondents") or []) if n][:2]
-    states = list(it.get("states") or [])[:1]
     out = []
     if names:
-        out.append(" ".join(names + states)[:80])
-    if proper:
-        out.append(" ".join(proper))
+        out.append(" ".join('"{}"'.format(n) for n in names) + " " + " ".join(acts[:1]))
+    if ents:
+        out.append(" ".join('"{}"'.format(e) for e in ents[:2]) + " " + " ".join(acts[:1]))
+    if len(states) >= 2:
+        out.append(" ".join('"{}"'.format(s) for s in states[:2]) + " " + " ".join(acts[:1]))
+    elif states:
+        out.append('"{}" {}'.format(states[0], " ".join(acts[:2])))
+    if re.search(r"\b(court|judge|magistrate|circuit|tribunal)\b", flat, re.I):
+        anchor = " ".join('"{}"'.format(x) for x in (ents[:1] or states[:2]))
+        if anchor:
+            out.append(anchor + " court " + " ".join(acts[:1]))
+    words = [w for w in _sig(flat) if w.isascii()]
     if len(words) >= 3:
-        out.append(" ".join(words[:5]))
-    return list(dict.fromkeys(q for q in out if len(q.split()) >= 2))
+        out.append(" ".join(words[:6]))
+    return list(dict.fromkeys(q for q in out if len(q.split()) >= 2))[:5]
 
 
 def _entries(query: str) -> List[Dict[str, str]]:
@@ -136,7 +199,7 @@ def _entries(query: str) -> List[Dict[str, str]]:
 
 def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
     """Other outlets' copies of the same event, and the story built from them."""
-    title = it.get("title_en") or it.get("title") or ""
+    title = _flat(it.get("title_en") or it.get("title") or "")
     ours = _stems(title)
     if len(ours) < 2:
         return {"sources": [], "story": ""}
@@ -149,12 +212,21 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
     seen_outlets = {own_outlet, _ALIAS.get(own_outlet, own_outlet)} | ({own_host} if own_host else set())
     seen_titles = {re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()}
     picks: List[Dict[str, str]] = []
+    # Copies already in our own database come first: the outlets' own feeds,
+    # with their own text, linking straight to the publisher.
+    for e in _local_copies(it, title, ours, my_states, seen_outlets, seen_titles):
+        seen_titles.add(re.sub(r"[^a-z0-9]+", " ", e["title"].lower()).strip())
+        seen_outlets.add(_ident(e["source"]))
+        seen_outlets.add(_domain(e["url"]))
+        picks.append(e)
     for q in _queries(it)[:3]:
         for e in _entries(q):
-            theirs = _stems(e["title"])
+            theirs = _stems(_flat(e["title"]))
             shared = len(ours & theirs)
-            if shared < max(2, min(3, len(ours) // 2)):
-                continue
+            _dbg = __import__("os").environ.get("ARB_DEBUG")
+            if shared < 2:
+                if _dbg: print("   reject stems<2:", e["title"][:60])
+                continue                              # the anchoring below does the real work; two stems is the floor
             # Common words alone ("launches", "arbitration", "group") join two
             # different stories; a shared name or the same State must anchor it.
             same_state = bool(my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])})
@@ -166,12 +238,21 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             my_ents = _entities(title)
             their_ents = _entities(e["title"]) | _entities(e.get("snippet") or "")
             if my_ents and not (my_ents & their_ents):
+                if _dbg: print("   reject ents:", e["title"][:60], my_ents, their_ents)
                 continue                              # the party in our headline is nowhere in theirs: another matter
-            if not my_ents and not (same_state and shared >= 4):
-                continue
+            if not my_ents and not same_state:
+                if _dbg: print("   reject no state:", e["title"][:60])
+                continue                              # a headline that names only States is matched on those States
             from .pipeline import shared_propers
             if not shared_propers(title, e["title"] + " " + (e.get("snippet") or "")):
+                if _dbg: print("   reject propers:", e["title"][:60])
                 continue                              # no name in common beyond the words of the trade
+            # The same parties before different courts are different stories:
+            # the Dutch appeal in Devas is not the Ninth Circuit's rehearing.
+            mine_forum, theirs_forum = _forum(title), _forum(e["title"] + " " + (e.get("snippet") or ""))
+            if mine_forum and theirs_forum and mine_forum != theirs_forum:
+                if _dbg: print("   reject forum:", e["title"][:60], mine_forum, theirs_forum)
+                continue
             # An article from years before the item is background, not a copy of
             # the story: a 2021 sale of a company is not this week's petition.
             mine = str(it.get("published_at") or "")[:10]
@@ -195,7 +276,10 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             picks.append(e)
         if len(picks) >= max_sources * 2:
             break
-    picks.sort(key=lambda e: (outlet_rank(e["source"], e["url"]), -e["shared"]))
+    # Copies already in our own database - the outlets' own feeds, with their
+    # own text - come before anything the web search found: they link straight
+    # to the publisher and carry a paragraph, not a headline.
+    picks.sort(key=lambda e: (0 if e.get("local") else 1, outlet_rank(e["source"], e["url"]), -e["shared"]))
     picks = picks[:max_sources]
     # A cut-off snippet is not a sentence. For the two best copies that link
     # straight to the publisher, read the page for its opening paragraph.
@@ -225,6 +309,58 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
         e["snippet"] = snip
     return {"sources": [{k: e[k] for k in ("source", "url", "title", "published_at", "snippet")} for e in picks],
             "story": compose(it, picks)}
+
+
+def _local_copies(it, title, ours, my_states, seen_outlets, seen_titles) -> List[Dict[str, str]]:
+    """Other outlets' copies of the story already fetched into the database:
+    matched on the same names and States as the web copies, same guards."""
+    from . import db
+    from .pipeline import shared_propers
+    out: List[Dict[str, str]] = []
+    when = str(it.get("published_at") or "")[:10] or dt.date.today().isoformat()
+    try:
+        lo = (dt.date.fromisoformat(when) - dt.timedelta(days=14)).isoformat()
+        hi = (dt.date.fromisoformat(when) + dt.timedelta(days=3)).isoformat()
+    except ValueError:
+        return out
+    try:
+        conn = db.connect()
+        rows = conn.execute("SELECT id, title, title_en, url, source, summary, published_at FROM items WHERE id != ? "
+                            "AND COALESCE(published_at, substr(fetched_at,1,10)) BETWEEN ? AND ? AND url NOT LIKE '%news.google.com%' "
+                            "AND length(COALESCE(summary,'')) > 60 AND source NOT LIKE 'Court:%' AND source NOT IN ('ICSID docket','SEC EDGAR')",
+                            (it.get("id") or -1, lo, hi)).fetchall()
+    except Exception:                                 # noqa: BLE001 - boundary
+        return out
+    my_ents = _entities(title)
+    mine_forum = _forum(title)
+    for r in rows:
+        t2 = _flat(r["title_en"] or r["title"] or "")
+        shared = len(ours & _stems(t2))
+        if shared < 1:
+            continue                                  # the name and forum checks below carry a local copy
+        outlet = _ident((r["source"] or "").replace("Google News / ", ""))
+        if outlet in seen_outlets or any(_same(outlet, o) for o in seen_outlets):
+            continue
+        key = re.sub(r"[^a-z0-9]+", " ", t2.lower()).strip()
+        if key in seen_titles:
+            continue
+        text2 = t2 + " " + (r["summary"] or "")
+        their_ents = _entities(text2)
+        if my_ents and not (my_ents & their_ents):
+            continue
+        same_state = bool(my_states & {x.lower() for x in states_in(text2)})
+        if not my_ents and not same_state:
+            continue
+        if not shared_propers(title, text2):
+            continue
+        f2 = _forum(text2)
+        if mine_forum and f2 and mine_forum != f2:
+            continue
+        out.append({"title": r["title"], "source": (r["source"] or "").replace("Google News / ", ""), "url": r["url"],
+                    "published_at": r["published_at"] or "", "snippet": _clean(r["summary"] or ""), "shared": shared, "local": True})
+        if len(out) >= 3:
+            break
+    return out
 
 
 def compose(it: Dict[str, Any], sources: List[Dict[str, str]], max_words: int = 70) -> str:

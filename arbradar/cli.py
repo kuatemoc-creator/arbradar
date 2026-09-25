@@ -192,7 +192,7 @@ def cmd_build(args, settings, conn):
     if enforcement:
         enrich.enrich(conn, enforcement)
     chased = 0
-    for it in [x for x in items if not x.get("brief_only")] + leads + enforcement:
+    for it in items + leads + enforcement:            # the headline-only items are the ones that need other copies most
         stored = followup.load(it.get("corroboration"))
         if stored or chased >= 14:
             it["corroboration"] = stored
@@ -220,7 +220,7 @@ def cmd_build(args, settings, conn):
     from . import record
     for it in items + leads + enforcement:
         stored = followup.load(it.get("corroboration"))
-        rec = next((c for c in stored if isinstance(c, dict) and c.get("source") in ("ICSID docket", "US federal docket", "Find Case Law (England and Wales)", "PCA case list")), None)
+        rec = next((c for c in stored if isinstance(c, dict) and c.get("source") in ("ICSID docket", "US federal docket", "US court opinion", "Find Case Law (England and Wales)", "PCA case list")), None)
         if rec:
             it["record"] = rec
     found = record.attach(conn, items + leads + enforcement)
