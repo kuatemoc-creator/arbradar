@@ -807,6 +807,16 @@ def select_enforcement(conn, settings, taken: List[Dict[str, Any]], limit: int =
     return _track(conn, settings, taken, ENFORCEMENT_EVENTS, limit, floor, trade_ok=True, records_ok=True, business_gate=False)
 
 
+_DISPUTE_WORD = re.compile(r"arbitra|\bICC\b|\bLCIA\b|\bSIAC\b|\bHKIAC\b|\bSCC\b|\bICSID\b|\baward\b|tribunal|\bclaim(s|ed)?\b|"
+                           r"\bdispute|lawsuit|litigation|\bsues?\b|\bsued\b|damages|breach of contract|notice of|"
+                           r"arbitraje|laudo|litigio|demanda|arbitragem|sentença arbitral|arbitrage|sentence arbitrale|litige|"
+                           r"арбитраж|иск|спор|арбітраж|позов|спір|tahkim|dava|uyuşmazlık", re.I)
+_ARBITRAL = re.compile(r"arbitra|arbitral|\baward\b|ICSID|exequatur|new york convention|seat of|\bLCIA\b|\bICC\b|\bSIAC\b|UNCITRAL|"
+                       r"laudo|sentença arbitral|sentence arbitrale|Schiedsspruch|lodo|арбитраж|арбітраж|tahkim|hakem", re.I)
+_NOT_NEWS = re.compile(r"\b(report|survey|study|guide|webinar|conference|podcast|roundtable|symposium|summit|masterclass|"
+                       r"publishes|launches its|annual review|year in review|in numbers|statistics|celebrates|anniversary)\b", re.I)
+
+
 def _foreign_docket(d: Dict[str, Any]) -> bool:
     """A US federal docket row with a foreign or sovereign element: an FSIA or
     execution petition, a s.1782 application ("In re"), or a foreign party."""
@@ -852,6 +862,13 @@ def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, bu
         if business_gate and d.get("event_type") in ("state_measure", "distress_event") and not (
                 d.get("claimants") or d.get("amount_usd") or _BUSINESS.search(text)):
             continue                                  # a measure that lands on no named business is politics
+        if business_gate and d.get("event_type") == "commercial_dispute" and not _DISPUTE_WORD.search(text):
+            continue                                  # "terminates contracts of two soldiers" is not a commercial dispute
+        if _NOT_NEWS.search(d.get("title_en") or d.get("title") or ""):
+            continue                                  # a report, survey or event notice is not a lead
+        if events is ENFORCEMENT_EVENTS and not (d.get("source") or "").startswith(("Court:", "US federal docket", "ICSID docket", "PCA")) \
+                and not _ARBITRAL.search(text):
+            continue                                  # an "annulment" with no award in sight is another kind of law
         cands.append(d)
     anchors = _site.anchors_before(as_of().isoformat())
     for a in anchors:
