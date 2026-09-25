@@ -8,6 +8,16 @@ the owner's accounts or DNS.
 
 ## Open
 
+0000. **Record pages without feeds** [me] — done 25 September: `arbradar/sources/pages.py`
+   reads the 115 registers, gazettes, regulators, exchanges, courts and
+   tender portals that answer but publish no feed, following each site's
+   news or decisions link; `python -m arbradar.sources.pages` writes
+   `docs/pages.json` with each page's yield and the map lists the 51 that
+   give a script nothing (script-rendered or search-only). Those need a
+   headless browser or a per-site API; the UNCITRAL Transparency Registry,
+   LSE RNS, ASX and the Indian and Pakistani court sites are the ones worth
+   that effort first.
+
 000. **The feedless half of the press** [me] — done 24 September: `sitesweep`
    (Google News site: queries, eight outlets a query, per language) and
    `frontpage` (home-page headlines) read the 835 outlets that publish no

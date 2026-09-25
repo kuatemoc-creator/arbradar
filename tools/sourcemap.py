@@ -838,6 +838,18 @@ def _press_map():
     return out
 
 
+_PAGES = None
+
+
+def _page_yield(url: str) -> int:
+    """Headlines the page reader gets from a record page (docs/pages.json), -1 if never probed."""
+    global _PAGES
+    if _PAGES is None:
+        path = os.path.join(ROOT, "docs", "pages.json")
+        _PAGES = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    return int((_PAGES.get(url) or {}).get("headlines", -1))
+
+
 def _feedless_map():
     """Outlets with no feed that the pipeline reads anyway (docs/press.json)."""
     path = os.path.join(ROOT, "docs", "press.json")
@@ -920,13 +932,16 @@ def write_docs(results):
         for r in results:
             if r[0] == c and r[5] == "wired" and r[1] != "press":
                 rows.append((r[1], r[2], r[3], "", r[4].replace("WIRED", "").strip(" -;")))
+            elif r[0] == c and r[5] == "html" and r[1] != "press" and _page_yield(r[3]) > 0:
+                rows.append((r[1], r[2], r[3], "", "page, no feed: {} headline links read every run".format(_page_yield(r[3]))))
         is_state = c in states or c in _SHORT.values()
         if is_state:
             for lang in editions.get(c, []) or editions.get(_SHORT.get(c, c), []):
                 rows.append(("sweep", "Google News, {} edition".format(_LANG.get(lang, lang)), "https://news.google.com/", _LANG.get(lang, lang), "dispute and State-measure terms"))
             rows.append(("sweep", "Google News, State query", "https://news.google.com/", "English", '"{}" with the dispute terms'.format(c)))
             rows.append(("sweep", "GDELT, country tag", "https://www.gdeltproject.org/", "all", "dispute terms, articles tagged to the State"))
-        tried = [r for r in results if r[0] == c and r[5] != "wired" and r[1] != "press"]
+        tried = [r for r in results if r[0] == c and r[1] != "press"
+                 and (r[5] not in ("wired", "html") or (r[5] == "html" and _page_yield(r[3]) == 0))]
         n_press = sum(1 for r in rows if r[0] == "press")
         n_all = len(rows)
         if not c.startswith("Sector") and c != "Global":
@@ -941,7 +956,7 @@ def write_docs(results):
         if tried:
             parts = []
             for _, kind, name, url, note, status, detail in tried:
-                what = {"html": "page, no feed", "dead": detail, "blocked": "refuses scripts", "error": "no answer", "rss": "feed, unverified"}.get(status, status)
+                what = {"html": "page is script-rendered or search-only", "dead": detail, "blocked": "refuses scripts", "error": "no answer", "rss": "feed, unverified"}.get(status, status)
                 parts.append("[{}]({}) ({})".format(name, url, what))
             body += ["", "On the map, not readable by script: " + " · ".join(parts)]
         body.append("")

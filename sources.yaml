@@ -5461,5 +5461,17 @@ national_press:
   url: https://www.lightreading.com/rss.xml
   lang: en
   enabled: true
+- country: Global
+  name: India - Supreme Court (Indian Kanoon feed)
+  url: https://indiankanoon.org/feeds/latest/supremecourt/
+  lang: en
+  enabled: true
+  verified: '2026-09-25'
+- country: Global
+  name: India - Delhi High Court (Indian Kanoon feed)
+  url: https://indiankanoon.org/feeds/latest/delhi/
+  lang: en
+  enabled: true
+  verified: '2026-09-25'
 national_press_note: 'Verified feeds from tools/sourcemap.py. Read on every run but FILTERED: an item is kept only if it mentions arbitration, a treaty, an expropriation or nationalisation, or a licence,
   concession or contract being revoked, cancelled or terminated - in any of the sweep languages.'

@@ -1,0 +1,462 @@
+{
+ "https://www.gov.am/en/decrees/": {
+  "sections": 0,
+  "headlines": 9
+ },
+ "https://www.arlis.am": {
+  "sections": 2,
+  "headlines": 2
+ },
+ "https://www.armeps.am": {
+  "sections": 0,
+  "headlines": 5
+ },
+ "https://www.datalex.am": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://amx.am/en": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://matsne.gov.ge": {
+  "sections": 0,
+  "headlines": 85
+ },
+ "https://tenders.procurement.gov.ge": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.supremecourt.ge": {
+  "sections": 2,
+  "headlines": 1
+ },
+ "https://gnerc.org": {
+  "sections": 2,
+  "headlines": 502
+ },
+ "https://e-qanun.az": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://adilet.zan.kz": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://goszakup.gov.kz": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://sud.gov.kz": {
+  "sections": 2,
+  "headlines": 71
+ },
+ "https://www.gov.kz/memleket/entities/mic": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.gov.kz/memleket/entities/energo": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://kase.kz/en/news/": {
+  "sections": 2,
+  "headlines": 10
+ },
+ "https://lex.uz": {
+  "sections": 2,
+  "headlines": 21
+ },
+ "https://xarid.uzex.uz": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://uzse.uz": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://cbd.minjust.gov.kg": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://zakupki.gov.kg": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://zakon.rada.gov.ua": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://minjust.gov.ua": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://reyestr.court.gov.ua": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.nerc.gov.ua": {
+  "sections": 2,
+  "headlines": 509
+ },
+ "http://publication.pravo.gov.ru": {
+  "sections": 0,
+  "headlines": 9
+ },
+ "https://kad.arbitr.ru": {
+  "sections": 0,
+  "headlines": 2
+ },
+ "https://www.resmigazete.gov.tr": {
+  "sections": 0,
+  "headlines": 6
+ },
+ "https://www.kap.org.tr/en": {
+  "sections": 1,
+  "headlines": 0
+ },
+ "https://www.epdk.gov.tr": {
+  "sections": 2,
+  "headlines": 0
+ },
+ "https://www.mapeg.gov.tr": {
+  "sections": 2,
+  "headlines": 29
+ },
+ "https://www.bmv.com.mx": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.argentina.gob.ar/procuraciondeltesoro": {
+  "sections": 2,
+  "headlines": 17
+ },
+ "https://www.boletinoficial.gob.ar": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.defensajuridica.gov.co": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.colombiacompra.gov.co": {
+  "sections": 1,
+  "headlines": 46
+ },
+ "https://www.anm.gov.co": {
+  "sections": 2,
+  "headlines": 56
+ },
+ "https://www.anh.gov.co": {
+  "sections": 2,
+  "headlines": 66
+ },
+ "https://www.consejodeestado.gov.co": {
+  "sections": 0,
+  "headlines": 12
+ },
+ "https://www.mef.gob.pe": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://elperuano.pe": {
+  "sections": 0,
+  "headlines": 1
+ },
+ "https://www.osinergmin.gob.pe": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.mercadopublico.cl": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.pge.gob.ec": {
+  "sections": 2,
+  "headlines": 3
+ },
+ "https://www.registroficial.gob.ec": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.in.gov.br": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.boe.es/rss/canal.php?c=ultimos": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.cnmv.es": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://contrataciondelestado.es": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.gazzettaufficiale.it": {
+  "sections": 0,
+  "headlines": 20
+ },
+ "https://www.bpp.gov.ng": {
+  "sections": 2,
+  "headlines": 2
+ },
+ "https://www.nuprc.gov.ng": {
+  "sections": 2,
+  "headlines": 6
+ },
+ "https://miningcadastre.gov.ng": {
+  "sections": 2,
+  "headlines": 43
+ },
+ "https://ngxgroup.com": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.mincom.gov.gh": {
+  "sections": 1,
+  "headlines": 31
+ },
+ "https://www.tumemadini.go.tz": {
+  "sections": 2,
+  "headlines": 24
+ },
+ "https://www.cami.cd": {
+  "sections": 2,
+  "headlines": 0
+ },
+ "https://www.egx.com.eg": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://egazette.gov.in": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.bseindia.com/corporates/ann.html": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://jdih.setneg.go.id": {
+  "sections": 1,
+  "headlines": 0
+ },
+ "https://www.esdm.go.id": {
+  "sections": 2,
+  "headlines": 86
+ },
+ "https://www.uncitral.org/transparency-registry/registry/index.jspx": {
+  "sections": 1,
+  "headlines": 0
+ },
+ "https://www.londonstockexchange.com/news": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.asx.com.au/markets/trade-our-cash-market/announcements": {
+  "sections": 2,
+  "headlines": 38
+ },
+ "https://www.sedarplus.ca": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.courdecassation.fr/en/actualites": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.elitigation.sg/gd/Home/Index": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp": {
+  "sections": 0,
+  "headlines": 2
+ },
+ "https://www.courts.ie/judgments": {
+  "sections": 2,
+  "headlines": 1
+ },
+ "https://www.qicdrc.gov.qa/judgments": {
+  "sections": 2,
+  "headlines": 26
+ },
+ "https://www.adgm.com/adgm-courts/judgments": {
+  "sections": 2,
+  "headlines": 0
+ },
+ "https://www.judicial.ky/judgments": {
+  "sections": 2,
+  "headlines": 21
+ },
+ "https://www.courtsofnz.govt.nz/judgments/": {
+  "sections": 2,
+  "headlines": 39
+ },
+ "https://www.caselaw.nsw.gov.au/search/advanced": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.supremecourt.gov.pk/judgement-search/": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.investegate.co.uk/rss.aspx": {
+  "sections": 2,
+  "headlines": 81
+ },
+ "https://www.tsx.com/news": {
+  "sections": 2,
+  "headlines": 45
+ },
+ "https://www.ebrd.com/news.html": {
+  "sections": 2,
+  "headlines": 36
+ },
+ "https://disclosures.ifc.org": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.primeminister.am/en/press-release/": {
+  "sections": 2,
+  "headlines": 18
+ },
+ "https://www.president.am/en/press-release/": {
+  "sections": 2,
+  "headlines": 0
+ },
+ "https://www.competition.am/en/news/": {
+  "sections": 2,
+  "headlines": 59
+ },
+ "https://nbg.gov.ge/en/media/news": {
+  "sections": 2,
+  "headlines": 73
+ },
+ "https://www.cbar.az/news": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.akorda.kz/en/events": {
+  "sections": 2,
+  "headlines": 37
+ },
+ "https://primeminister.kz/en/news": {
+  "sections": 2,
+  "headlines": 69
+ },
+ "https://president.uz/en": {
+  "sections": 2,
+  "headlines": 45
+ },
+ "https://cbu.uz/en/press_center/news/": {
+  "sections": 2,
+  "headlines": 239
+ },
+ "https://mrpam.gov.mn": {
+  "sections": 2,
+  "headlines": 321
+ },
+ "https://www.kmu.gov.ua/en/news": {
+  "sections": 2,
+  "headlines": 331
+ },
+ "https://bank.gov.ua/en/news": {
+  "sections": 2,
+  "headlines": 89
+ },
+ "https://arma.gov.ua/news": {
+  "sections": 2,
+  "headlines": 12
+ },
+ "http://government.ru/en/news/": {
+  "sections": 1,
+  "headlines": 33
+ },
+ "https://www.tccb.gov.tr/en/": {
+  "sections": 2,
+  "headlines": 24
+ },
+ "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements": {
+  "sections": 2,
+  "headlines": 27
+ },
+ "https://www.rekabet.gov.tr/en": {
+  "sections": 2,
+  "headlines": 18
+ },
+ "https://www.dof.gob.mx": {
+  "sections": 0,
+  "headlines": 25
+ },
+ "https://www.enargas.gob.ar": {
+  "sections": 0,
+  "headlines": 9
+ },
+ "https://www.argentina.gob.ar/cnv": {
+  "sections": 2,
+  "headlines": 21
+ },
+ "https://www.presidencia.gov.co": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.superfinanciera.gov.co": {
+  "sections": 1,
+  "headlines": 88
+ },
+ "https://www.gob.pe/ingemmet": {
+  "sections": 2,
+  "headlines": 136
+ },
+ "https://www.perupetro.com.pe": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.sernageomin.cl": {
+  "sections": 1,
+  "headlines": 20
+ },
+ "https://www.controlrecursosyenergia.gob.ec": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://www.gov.br/cvm": {
+  "sections": 2,
+  "headlines": 105
+ },
+ "https://www.gov.br/anp": {
+  "sections": 2,
+  "headlines": 205
+ },
+ "https://www.gov.br/anm": {
+  "sections": 2,
+  "headlines": 246
+ },
+ "https://www.avvocaturastato.it": {
+  "sections": 0,
+  "headlines": 0
+ },
+ "https://mfinante.gov.ro": {
+  "sections": 2,
+  "headlines": 105
+ },
+ "https://www.gov.pl/web/prokuratoria": {
+  "sections": 0,
+  "headlines": 11
+ },
+ "https://www.mfcr.cz/en/": {
+  "sections": 2,
+  "headlines": 53
+ },
+ "https://www.gafi.gov.eg": {
+  "sections": 1,
+  "headlines": 0
+ },
+ "https://www.moj.go.kr/moj_eng/1746/subview.do": {
+  "sections": 0,
+  "headlines": 0
+ }
+}

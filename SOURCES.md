@@ -1,59 +1,59 @@
 # ArbRadar source map
 
-Verified 2026-09-24. Every row is read on every run: a press feed where the paper has one; a Google News `site:` query and the paper's own front page where it has none. `python -m tools.discover` finds and verifies press feeds; `python -m tools.sourcemap --probe` re-checks the registers, courts and gazettes.
+Verified 2026-09-25. Every row is read on every run: a press feed where the paper has one; a Google News `site:` query and the paper's own front page where it has none. `python -m tools.discover` finds and verifies press feeds; `python -m tools.sourcemap --probe` re-checks the registers, courts and gazettes.
 
 182 States on the map; 182 with five or more press feeds; 0 with fewer: none.
 
 | State | Press feeds | All sources |
 |---|---|---|
-| Brazil | 17 | 20 |
+| Brazil | 17 | 23 |
 | India | 17 | 21 |
-| Turkey | 16 | 19 |
-| Ukraine | 16 | 21 |
-| Armenia | 14 | 18 |
+| Turkey | 16 | 24 |
+| Ukraine | 16 | 25 |
+| Armenia | 14 | 23 |
 | Canada | 14 | 18 |
-| Colombia | 14 | 17 |
+| Colombia | 14 | 22 |
 | France | 14 | 17 |
-| Italy | 14 | 17 |
-| Kazakhstan | 14 | 18 |
-| Mexico | 14 | 17 |
-| Nigeria | 14 | 17 |
-| Peru | 14 | 17 |
+| Italy | 14 | 18 |
+| Kazakhstan | 14 | 22 |
+| Mexico | 14 | 18 |
+| Nigeria | 14 | 20 |
+| Peru | 14 | 19 |
 | South Africa | 14 | 17 |
 | Spain | 14 | 17 |
 | United States | 14 | 17 |
-| Argentina | 13 | 16 |
+| Argentina | 13 | 19 |
 | Australia | 13 | 16 |
 | Azerbaijan | 13 | 16 |
 | China | 13 | 16 |
-| Indonesia | 13 | 16 |
+| Indonesia | 13 | 17 |
 | United Kingdom | 13 | 16 |
-| Chile | 12 | 15 |
-| Georgia | 12 | 15 |
+| Chile | 12 | 16 |
+| Georgia | 12 | 19 |
 | Germany | 12 | 15 |
 | Kenya | 12 | 15 |
 | Morocco | 12 | 16 |
-| Poland | 12 | 15 |
-| Russia | 12 | 15 |
+| Poland | 12 | 16 |
+| Russia | 12 | 18 |
 | Venezuela | 12 | 15 |
 | Vietnam | 12 | 15 |
 | DRC | 11 | 14 |
-| Ecuador | 11 | 14 |
+| Ecuador | 11 | 15 |
 | Egypt | 11 | 14 |
-| Ghana | 11 | 14 |
+| Ghana | 11 | 15 |
 | Korea | 11 | 14 |
 | Malaysia | 11 | 15 |
 | Netherlands | 11 | 14 |
 | Pakistan | 11 | 14 |
 | Philippines | 11 | 14 |
-| Romania | 11 | 14 |
+| Romania | 11 | 15 |
 | Switzerland | 11 | 15 |
 | Algeria | 10 | 14 |
 | Bangladesh | 10 | 14 |
 | Belgium | 10 | 14 |
 | Bolivia | 10 | 13 |
 | Bulgaria | 10 | 13 |
-| Czechia | 10 | 13 |
+| Czechia | 10 | 14 |
 | Greece | 10 | 13 |
 | Hungary | 10 | 13 |
 | Iran | 10 | 12 |
@@ -69,7 +69,7 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 | Tunisia | 10 | 13 |
 | UAE | 10 | 14 |
 | Uganda | 10 | 13 |
-| Uzbekistan | 10 | 14 |
+| Uzbekistan | 10 | 17 |
 | Zambia | 10 | 13 |
 | Albania | 9 | 11 |
 | Angola | 9 | 12 |
@@ -139,7 +139,7 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 | Sweden | 8 | 11 |
 | Syria | 8 | 10 |
 | Taiwan | 8 | 11 |
-| Tanzania | 8 | 11 |
+| Tanzania | 8 | 12 |
 | Togo | 8 | 10 |
 | Trinidad and Tobago | 8 | 10 |
 | Uruguay | 8 | 11 |
@@ -154,7 +154,7 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 | Lesotho | 7 | 9 |
 | Lithuania | 7 | 10 |
 | Mauritius | 7 | 9 |
-| Mongolia | 7 | 9 |
+| Mongolia | 7 | 10 |
 | Myanmar | 7 | 9 |
 | Nicaragua | 7 | 9 |
 | Niger | 7 | 9 |
@@ -281,7 +281,7 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 
 ## Argentina
 
-16 sources read: 13 press feeds, plus the sweeps.
+19 sources read: 13 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -298,15 +298,18 @@ Verified 2026-09-24. Every row is read on every run: a press feed where the pape
 | press | [Ámbito](https://www.ambito.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [La Política Online](https://www.lapoliticaonline.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Diario Judicial](https://www.diariojudicial.com/) | Spanish | no feed: read through a Google News site: query and its front page |
+| register | [Procuración del Tesoro de la Nación](https://www.argentina.gob.ar/procuraciondeltesoro) |  | page, no feed: 17 headline links read every run |
+| regulator | [ENARGAS](https://www.enargas.gob.ar) |  | page, no feed: 9 headline links read every run |
+| exchange | [CNV](https://www.argentina.gob.ar/cnv) |  | page, no feed: 21 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Argentina" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Procuración del Tesoro de la Nación](https://www.argentina.gob.ar/procuraciondeltesoro) (page, no feed) · [Boletín Oficial](https://www.boletinoficial.gob.ar) (page, no feed) · [COMPR.AR](https://comprar.gob.ar) (page, no feed) · [ENARGAS](https://www.enargas.gob.ar) (page, no feed) · [CNV](https://www.argentina.gob.ar/cnv) (page, no feed)
+On the map, not readable by script: [Boletín Oficial](https://www.boletinoficial.gob.ar) (page is script-rendered or search-only) · [COMPR.AR](https://comprar.gob.ar) (no answer)
 
 ## Armenia
 
-18 sources read: 14 press feeds, plus the sweeps.
+23 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -324,12 +327,17 @@ On the map, not readable by script: [Procuración del Tesoro de la Nación](http
 | press | [CivilNet](https://www.civilnet.am/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Aysor.am](https://www.aysor.am/en) | English | no feed: read through a Google News site: query and its front page |
 | press | [1lurer](https://www.1lurer.am/en) | English | no feed: read through a Google News site: query and its front page |
+| gazette | [Government decisions](https://www.gov.am/en/decrees/) |  | page, no feed: 9 headline links read every run |
+| gazette | [ARLIS legal information system](https://www.arlis.am) |  | page, no feed: 2 headline links read every run |
+| tenders | [ARMEPS procurement](https://www.armeps.am) |  | page, no feed: 5 headline links read every run |
+| gazette | [Prime Minister press releases](https://www.primeminister.am/en/press-release/) |  | page, no feed: 18 headline links read every run |
+| regulator | [Competition Protection Commission](https://www.competition.am/en/news/) |  | page, no feed: 59 headline links read every run |
 | sweep | [Google News, Armenian edition](https://news.google.com/) | Armenian | dispute and State-measure terms |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Armenia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Government decisions](https://www.gov.am/en/decrees/) (page, no feed) · [ARLIS legal information system](https://www.arlis.am) (page, no feed) · [ARMEPS procurement](https://www.armeps.am) (page, no feed) · [gnumner.am announcements](https://gnumner.am) (no answer) · [DataLex court database](https://www.datalex.am) (page, no feed) · [Public Services Regulatory Commission](https://psrc.am/en) (HTTP 404) · [Armenia Securities Exchange](https://amx.am/en) (page, no feed) · [Prime Minister press releases](https://www.primeminister.am/en/press-release/) (page, no feed) · [President](https://www.president.am/en/press-release/) (page, no feed) · [Central Bank of Armenia](https://www.cba.am/en/SitePages/newsevents.aspx) (HTTP 404) · [Competition Protection Commission](https://www.competition.am/en/news/) (page, no feed) · [State Revenue Committee](https://www.petekamutner.am/en/) (no answer) · [Ministry of Justice](https://www.moj.am/en) (HTTP 403)
+On the map, not readable by script: [gnumner.am announcements](https://gnumner.am) (no answer) · [DataLex court database](https://www.datalex.am) (page is script-rendered or search-only) · [Public Services Regulatory Commission](https://psrc.am/en) (HTTP 404) · [Armenia Securities Exchange](https://amx.am/en) (page is script-rendered or search-only) · [President](https://www.president.am/en/press-release/) (page is script-rendered or search-only) · [Central Bank of Armenia](https://www.cba.am/en/SitePages/newsevents.aspx) (HTTP 404) · [State Revenue Committee](https://www.petekamutner.am/en/) (no answer) · [Ministry of Justice](https://www.moj.am/en) (HTTP 403)
 
 ## Australia
 
@@ -397,7 +405,7 @@ On the map, not readable by script: [DFAT - ISDS](https://www.dfat.gov.au/trade/
 | sweep | [Google News, State query](https://news.google.com/) | English | "Azerbaijan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page, no feed) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (no answer)
+On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page is script-rendered or search-only) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (page is script-rendered or search-only)
 
 ## Bahamas
 
@@ -614,7 +622,7 @@ On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (pa
 
 ## Brazil
 
-20 sources read: 17 press feeds, plus the sweeps.
+23 sources read: 17 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -635,11 +643,14 @@ On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (pa
 | press | [The Brazilian Report](https://brazilian.report/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Brasil Energia](https://brasilenergia.com.br/) | Portuguese | no feed: read through a Google News site: query and its front page |
 | press | [Notícias de Mineração](https://www.noticiasdemineracao.com/) | Portuguese | no feed: read through a Google News site: query and its front page |
+| exchange | [CVM](https://www.gov.br/cvm) |  | page, no feed: 105 headline links read every run |
+| regulator | [ANP](https://www.gov.br/anp) |  | page, no feed: 205 headline links read every run |
+| regulator | [ANM](https://www.gov.br/anm) |  | page, no feed: 246 headline links read every run |
 | sweep | [Google News, Portuguese edition](https://news.google.com/) | Portuguese | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Brazil" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Diário Oficial da União](https://www.in.gov.br) (page, no feed) · [CVM](https://www.gov.br/cvm) (page, no feed) · [ANP](https://www.gov.br/anp) (page, no feed) · [ANM](https://www.gov.br/anm) (page, no feed)
+On the map, not readable by script: [Diário Oficial da União](https://www.in.gov.br) (page is script-rendered or search-only)
 
 ## Brunei
 
@@ -818,7 +829,7 @@ On the map, not readable by script: [Diário Oficial da União](https://www.in.g
 
 ## Chile
 
-15 sources read: 12 press feeds, plus the sweeps.
+16 sources read: 12 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -834,11 +845,12 @@ On the map, not readable by script: [Diário Oficial da União](https://www.in.g
 | press | [La Segunda](https://www.lasegunda.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Cooperativa](https://www.cooperativa.cl/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [El Líbero](https://ellibero.cl/) | Spanish | no feed: read through a Google News site: query and its front page |
+| regulator | [SERNAGEOMIN](https://www.sernageomin.cl) |  | page, no feed: 20 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Chile" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Mercado Público](https://www.mercadopublico.cl) (page, no feed) · [SERNAGEOMIN](https://www.sernageomin.cl) (page, no feed)
+On the map, not readable by script: [Mercado Público](https://www.mercadopublico.cl) (page is script-rendered or search-only)
 
 ## China
 
@@ -865,7 +877,7 @@ On the map, not readable by script: [Mercado Público](https://www.mercadopublic
 
 ## Colombia
 
-17 sources read: 14 press feeds, plus the sweeps.
+22 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -883,11 +895,16 @@ On the map, not readable by script: [Mercado Público](https://www.mercadopublic
 | press | [Portafolio](https://www.portafolio.co/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Valora Analitik](https://www.valoraanalitik.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [El Colombiano](https://www.elcolombiano.com/) | Spanish | no feed: read through a Google News site: query and its front page |
+| tenders | [SECOP / Colombia Compra](https://www.colombiacompra.gov.co) |  | page, no feed: 46 headline links read every run |
+| regulator | [ANM mining](https://www.anm.gov.co) |  | page, no feed: 56 headline links read every run |
+| regulator | [ANH hydrocarbons](https://www.anh.gov.co) |  | page, no feed: 66 headline links read every run |
+| courts | [Consejo de Estado](https://www.consejodeestado.gov.co) |  | page, no feed: 12 headline links read every run |
+| regulator | [Superintendencia Financiera](https://www.superfinanciera.gov.co) |  | page, no feed: 88 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Colombia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [ANDJE - defensa internacional](https://www.defensajuridica.gov.co) (page, no feed) · [SECOP / Colombia Compra](https://www.colombiacompra.gov.co) (page, no feed) · [ANM mining](https://www.anm.gov.co) (page, no feed) · [ANH hydrocarbons](https://www.anh.gov.co) (page, no feed) · [Consejo de Estado](https://www.consejodeestado.gov.co) (page, no feed) · [Presidencia](https://www.presidencia.gov.co) (page, no feed) · [Superintendencia Financiera](https://www.superfinanciera.gov.co) (page, no feed)
+On the map, not readable by script: [ANDJE - defensa internacional](https://www.defensajuridica.gov.co) (page is script-rendered or search-only) · [Presidencia](https://www.presidencia.gov.co) (page is script-rendered or search-only)
 
 ## Comoros
 
@@ -995,7 +1012,7 @@ On the map, not readable by script: [ANDJE - defensa internacional](https://www.
 
 ## Czechia
 
-13 sources read: 10 press feeds, plus the sweeps.
+14 sources read: 10 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1009,11 +1026,10 @@ On the map, not readable by script: [ANDJE - defensa internacional](https://www.
 | press | [Česká justice](https://www.ceska-justice.cz/feed/) | Czech | feed |
 | press | [ČTK / České noviny](https://www.ceskenoviny.cz/) | Czech | no feed: read through a Google News site: query and its front page |
 | press | [Radio Prague International](https://english.radio.cz/) | English | no feed: read through a Google News site: query and its front page |
+| register | [Ministry of Finance - arbitration](https://www.mfcr.cz/en/) |  | page, no feed: 53 headline links read every run |
 | sweep | [Google News, Czech edition](https://news.google.com/) | Czech | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Czechia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
-
-On the map, not readable by script: [Ministry of Finance - arbitration](https://www.mfcr.cz/en/) (page, no feed)
 
 ## Côte d'Ivoire
 
@@ -1054,7 +1070,7 @@ On the map, not readable by script: [Ministry of Finance - arbitration](https://
 | sweep | [Google News, State query](https://news.google.com/) | English | "DRC" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) (page, no feed)
+On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) (page is script-rendered or search-only)
 
 ## Denmark
 
@@ -1125,7 +1141,7 @@ On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) 
 
 ## Ecuador
 
-14 sources read: 11 press feeds, plus the sweeps.
+15 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1140,11 +1156,12 @@ On the map, not readable by script: [CAMI mining cadastre](https://www.cami.cd) 
 | press | [Ecuavisa](https://www.ecuavisa.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [GK](https://gk.city/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Diario Correo](https://diariocorreo.com.ec/) | Spanish | no feed: read through a Google News site: query and its front page |
+| register | [Procuraduría General del Estado](https://www.pge.gob.ec) |  | page, no feed: 3 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ecuador" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Procuraduría General del Estado](https://www.pge.gob.ec) (page, no feed) · [Registro Oficial](https://www.registroficial.gob.ec) (page, no feed) · [ARCERNNR](https://www.controlrecursosyenergia.gob.ec) (page, no feed)
+On the map, not readable by script: [Registro Oficial](https://www.registroficial.gob.ec) (page is script-rendered or search-only) · [ARCERNNR](https://www.controlrecursosyenergia.gob.ec) (page is script-rendered or search-only)
 
 ## Egypt
 
@@ -1167,7 +1184,7 @@ On the map, not readable by script: [Procuraduría General del Estado](https://w
 | sweep | [Google News, State query](https://news.google.com/) | English | "Egypt" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) (page, no feed) · [GAFI](https://www.gafi.gov.eg) (page, no feed)
+On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) (page is script-rendered or search-only) · [GAFI](https://www.gafi.gov.eg) (page is script-rendered or search-only)
 
 ## El Salvador
 
@@ -1360,7 +1377,7 @@ On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) 
 
 ## Georgia
 
-15 sources read: 12 press feeds, plus the sweeps.
+19 sources read: 12 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1376,11 +1393,15 @@ On the map, not readable by script: [Egyptian Exchange](https://www.egx.com.eg) 
 | press | [Formula News](https://formulanews.ge/) | Georgian | no feed: read through a Google News site: query and its front page |
 | press | [Commersant.ge](https://commersant.ge/) | Georgian | no feed: read through a Google News site: query and its front page |
 | press | [Georgian Public Broadcaster](https://1tv.ge/en/) | English | no feed: read through a Google News site: query and its front page |
+| gazette | [Legislative Herald (matsne)](https://matsne.gov.ge) |  | page, no feed: 85 headline links read every run |
+| courts | [Supreme Court](https://www.supremecourt.ge) |  | page, no feed: 1 headline links read every run |
+| regulator | [GNERC energy regulator](https://gnerc.org) |  | page, no feed: 502 headline links read every run |
+| regulator | [National Bank of Georgia](https://nbg.gov.ge/en/media/news) |  | page, no feed: 73 headline links read every run |
 | sweep | [Google News, Georgian edition](https://news.google.com/) | Georgian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Georgia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Legislative Herald (matsne)](https://matsne.gov.ge) (page, no feed) · [State Procurement Agency](https://tenders.procurement.gov.ge) (page, no feed) · [Ministry of Justice](https://www.justice.gov.ge) (HTTP 404) · [Supreme Court](https://www.supremecourt.ge) (page, no feed) · [GNERC energy regulator](https://gnerc.org) (page, no feed) · [National Agency of Mines](https://nam.gov.ge) (no answer) · [Government of Georgia](https://www.gov.ge/en/news) (no answer) · [National Bank of Georgia](https://nbg.gov.ge/en/media/news) (page, no feed) · [Competition Agency](https://gca.gov.ge/en/news) (no answer) · [Ministry of Justice (justice.gov.ge)](https://www.justice.gov.ge/en) (HTTP 404)
+On the map, not readable by script: [State Procurement Agency](https://tenders.procurement.gov.ge) (page is script-rendered or search-only) · [Ministry of Justice](https://www.justice.gov.ge) (HTTP 404) · [National Agency of Mines](https://nam.gov.ge) (no answer) · [Government of Georgia](https://www.gov.ge/en/news) (no answer) · [Competition Agency](https://gca.gov.ge/en/news) (no answer) · [Ministry of Justice (justice.gov.ge)](https://www.justice.gov.ge/en) (HTTP 404)
 
 ## Germany
 
@@ -1406,7 +1427,7 @@ On the map, not readable by script: [Legislative Herald (matsne)](https://matsne
 
 ## Ghana
 
-14 sources read: 11 press feeds, plus the sweeps.
+15 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1421,11 +1442,10 @@ On the map, not readable by script: [Legislative Herald (matsne)](https://matsne
 | press | [Business & Financial Times](https://thebftonline.com/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Ghana News Agency](https://gna.org.gh/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Modern Ghana](https://www.modernghana.com/) | English | no feed: read through a Google News site: query and its front page |
+| regulator | [Minerals Commission](https://www.mincom.gov.gh) |  | page, no feed: 31 headline links read every run |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ghana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
-
-On the map, not readable by script: [Minerals Commission](https://www.mincom.gov.gh) (no answer)
 
 ## Greece
 
@@ -1649,11 +1669,11 @@ On the map, not readable by script: [Minerals Commission](https://www.mincom.gov
 | sweep | [Google News, State query](https://news.google.com/) | English | "India" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [eGazette](https://egazette.gov.in) (page, no feed) · [BSE corporate announcements](https://www.bseindia.com/corporates/ann.html) (page, no feed)
+On the map, not readable by script: [eGazette](https://egazette.gov.in) (page is script-rendered or search-only) · [BSE corporate announcements](https://www.bseindia.com/corporates/ann.html) (page is script-rendered or search-only)
 
 ## Indonesia
 
-16 sources read: 13 press feeds, plus the sweeps.
+17 sources read: 13 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1670,11 +1690,12 @@ On the map, not readable by script: [eGazette](https://egazette.gov.in) (page, n
 | press | [Kompas](https://www.kompas.com/) | Indonesian | no feed: read through a Google News site: query and its front page |
 | press | [Hukumonline](https://www.hukumonline.com/) | Indonesian | no feed: read through a Google News site: query and its front page |
 | press | [Tempo](https://www.tempo.co/) | Indonesian | no feed: read through a Google News site: query and its front page |
+| regulator | [ESDM ministry](https://www.esdm.go.id) |  | page, no feed: 86 headline links read every run |
 | sweep | [Google News, Indonesian edition](https://news.google.com/) | Indonesian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Indonesia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [JDIH Setneg](https://jdih.setneg.go.id) (page, no feed) · [ESDM ministry](https://www.esdm.go.id) (page, no feed) · [IDX](https://www.idx.co.id) (HTTP 403)
+On the map, not readable by script: [JDIH Setneg](https://jdih.setneg.go.id) (page is script-rendered or search-only) · [IDX](https://www.idx.co.id) (HTTP 403)
 
 ## Iran
 
@@ -1756,7 +1777,7 @@ On the map, not readable by script: [JDIH Setneg](https://jdih.setneg.go.id) (pa
 
 ## Italy
 
-17 sources read: 14 press feeds, plus the sweeps.
+18 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1774,11 +1795,12 @@ On the map, not readable by script: [JDIH Setneg](https://jdih.setneg.go.id) (pa
 | press | [Italia Oggi](https://www.italiaoggi.it/) | Italian | no feed: read through a Google News site: query and its front page |
 | press | [Reuters Italia](https://www.reuters.com/world/europe/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Diritto24](https://www.diritto24.ilsole24ore.com/) | Italian | no feed: read through a Google News site: query and its front page |
+| gazette | [Gazzetta Ufficiale](https://www.gazzettaufficiale.it) |  | page, no feed: 20 headline links read every run |
 | sweep | [Google News, Italian edition](https://news.google.com/) | Italian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Italy" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Gazzetta Ufficiale](https://www.gazzettaufficiale.it) (page, no feed) · [Avvocatura dello Stato](https://www.avvocaturastato.it) (page, no feed)
+On the map, not readable by script: [Avvocatura dello Stato](https://www.avvocaturastato.it) (page is script-rendered or search-only)
 
 ## Jamaica
 
@@ -1838,7 +1860,7 @@ On the map, not readable by script: [Gazzetta Ufficiale](https://www.gazzettauff
 
 ## Kazakhstan
 
-18 sources read: 14 press feeds, plus the sweeps.
+22 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1856,12 +1878,16 @@ On the map, not readable by script: [Gazzetta Ufficiale](https://www.gazzettauff
 | press | [KazTAG](https://kaztag.kz/) | Russian | no feed: read through a Google News site: query and its front page |
 | press | [Interfax Kazakhstan](https://www.interfax.kz/) | Russian | no feed: read through a Google News site: query and its front page |
 | press | [Kazinform](https://www.inform.kz/en/) | English | no feed: read through a Google News site: query and its front page |
+| courts | [Judicial cabinet / court database](https://sud.gov.kz) |  | page, no feed: 71 headline links read every run |
 | courts | [AIFC Court judgments](https://court.aifc.kz/judgments/) |  | judgments list with summaries |
+| exchange | [KASE](https://kase.kz/en/news/) |  | page, no feed: 10 headline links read every run |
+| gazette | [Akorda (President)](https://www.akorda.kz/en/events) |  | page, no feed: 37 headline links read every run |
+| gazette | [Government (primeminister.kz)](https://primeminister.kz/en/news) |  | page, no feed: 69 headline links read every run |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kazakhstan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page, no feed) · [Goszakup public procurement](https://goszakup.gov.kz) (no answer) · [Judicial cabinet / court database](https://sud.gov.kz) (page, no feed) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page, no feed) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page, no feed) · [KASE](https://kase.kz/en/news/) (page, no feed) · [Akorda (President)](https://www.akorda.kz/en/events) (page, no feed) · [Government (primeminister.kz)](https://primeminister.kz/en/news) (page, no feed) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
+On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page is script-rendered or search-only) · [Goszakup public procurement](https://goszakup.gov.kz) (page is script-rendered or search-only) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page is script-rendered or search-only) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page is script-rendered or search-only) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
 
 ## Kenya
 
@@ -1906,7 +1932,7 @@ On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (
 | sweep | [Google News, State query](https://news.google.com/) | English | "Korea" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Ministry of Justice ISDS](https://www.moj.go.kr/moj_eng/1746/subview.do) (page, no feed)
+On the map, not readable by script: [Ministry of Justice ISDS](https://www.moj.go.kr/moj_eng/1746/subview.do) (page is script-rendered or search-only)
 
 ## Kosovo
 
@@ -1963,7 +1989,7 @@ On the map, not readable by script: [Ministry of Justice ISDS](https://www.moj.g
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kyrgyzstan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Ministry of Justice legal database](https://cbd.minjust.gov.kg) (page, no feed) · [zakupki.gov.kg](https://zakupki.gov.kg) (page, no feed)
+On the map, not readable by script: [Ministry of Justice legal database](https://cbd.minjust.gov.kg) (page is script-rendered or search-only) · [zakupki.gov.kg](https://zakupki.gov.kg) (page is script-rendered or search-only)
 
 ## Laos
 
@@ -2246,7 +2272,7 @@ On the map, not readable by script: [Ministry of Justice legal database](https:/
 
 ## Mexico
 
-17 sources read: 14 press feeds, plus the sweeps.
+18 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2264,11 +2290,12 @@ On the map, not readable by script: [Ministry of Justice legal database](https:/
 | press | [Animal Político](https://animalpolitico.com/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Forbes México](https://www.forbes.com.mx/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [La Jornada](https://www.jornada.com.mx/) | Spanish | no feed: read through a Google News site: query and its front page |
+| gazette | [DOF (main)](https://www.dof.gob.mx) |  | page, no feed: 25 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Mexico" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Secretaría de Economía ISDS register](https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado) (refuses scripts) · [Diario Oficial de la Federación](https://www.dof.gob.mx/rss) (HTTP 404) · [CompraNet](https://compranet.hacienda.gob.mx) (no answer) · [CNH hydrocarbons](https://www.gob.mx/cnh) (refuses scripts) · [BMV](https://www.bmv.com.mx) (page, no feed) · [DOF (main)](https://www.dof.gob.mx) (page, no feed) · [CRE energy regulator](https://www.gob.mx/cre) (refuses scripts) · [Secretaría de Economía (main)](https://www.gob.mx/se) (refuses scripts)
+On the map, not readable by script: [Secretaría de Economía ISDS register](https://www.gob.mx/se/acciones-y-programas/comercio-exterior-solucion-de-controversias-inversionista-estado) (refuses scripts) · [Diario Oficial de la Federación](https://www.dof.gob.mx/rss) (HTTP 404) · [CompraNet](https://compranet.hacienda.gob.mx) (no answer) · [CNH hydrocarbons](https://www.gob.mx/cnh) (refuses scripts) · [BMV](https://www.bmv.com.mx) (page is script-rendered or search-only) · [CRE energy regulator](https://www.gob.mx/cre) (refuses scripts) · [Secretaría de Economía (main)](https://www.gob.mx/se) (refuses scripts)
 
 ## Moldova
 
@@ -2291,7 +2318,7 @@ On the map, not readable by script: [Secretaría de Economía ISDS register](htt
 
 ## Mongolia
 
-9 sources read: 7 press feeds, plus the sweeps.
+10 sources read: 7 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2302,10 +2329,9 @@ On the map, not readable by script: [Secretaría de Economía ISDS register](htt
 | press | [The UB Post](https://theubposts.com/) | English | no feed: read through a Google News site: query and its front page |
 | press | [GoGo Mongolia](https://gogo.mn/) | Mongolian | no feed: read through a Google News site: query and its front page |
 | press | [Mining Mongolia](https://www.miningmongolia.mn/) | English | no feed: read through a Google News site: query and its front page |
+| regulator | [Mineral Resources and Petroleum Authority](https://mrpam.gov.mn) |  | page, no feed: 321 headline links read every run |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Mongolia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
-
-On the map, not readable by script: [Mineral Resources and Petroleum Authority](https://mrpam.gov.mn) (page, no feed)
 
 ## Montenegro
 
@@ -2492,7 +2518,7 @@ On the map, not readable by script: [Mineral Resources and Petroleum Authority](
 
 ## Nigeria
 
-17 sources read: 14 press feeds, plus the sweeps.
+20 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2510,11 +2536,14 @@ On the map, not readable by script: [Mineral Resources and Petroleum Authority](
 | press | [The Cable](https://www.thecable.ng/) | English | no feed: read through a Google News site: query and its front page |
 | press | [The Guardian Nigeria](https://guardian.ng/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Leadership](https://leadership.ng/) | English | no feed: read through a Google News site: query and its front page |
+| tenders | [Bureau of Public Procurement](https://www.bpp.gov.ng) |  | page, no feed: 2 headline links read every run |
+| regulator | [NUPRC upstream regulator](https://www.nuprc.gov.ng) |  | page, no feed: 6 headline links read every run |
+| regulator | [Mining Cadastre Office](https://miningcadastre.gov.ng) |  | page, no feed: 43 headline links read every run |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Nigeria" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Bureau of Public Procurement](https://www.bpp.gov.ng) (page, no feed) · [NUPRC upstream regulator](https://www.nuprc.gov.ng) (page, no feed) · [Mining Cadastre Office](https://miningcadastre.gov.ng) (page, no feed) · [NGX](https://ngxgroup.com) (page, no feed)
+On the map, not readable by script: [NGX](https://ngxgroup.com) (page is script-rendered or search-only)
 
 ## North Macedonia
 
@@ -2647,7 +2676,7 @@ On the map, not readable by script: [Bureau of Public Procurement](https://www.b
 
 ## Peru
 
-17 sources read: 14 press feeds, plus the sweeps.
+19 sources read: 14 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2665,11 +2694,13 @@ On the map, not readable by script: [Bureau of Public Procurement](https://www.b
 | press | [Perú21](https://peru21.pe/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Diario Expreso](https://www.expreso.com.pe/) | Spanish | no feed: read through a Google News site: query and its front page |
 | press | [Ojo Público](https://ojo-publico.com/) | Spanish | no feed: read through a Google News site: query and its front page |
+| gazette | [El Peruano](https://elperuano.pe) |  | page, no feed: 1 headline links read every run |
+| regulator | [INGEMMET](https://www.gob.pe/ingemmet) |  | page, no feed: 136 headline links read every run |
 | sweep | [Google News, Spanish edition](https://news.google.com/) | Spanish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Peru" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [MEF - SICRECI (State coordination for investment disputes)](https://www.mef.gob.pe) (page, no feed) · [El Peruano](https://elperuano.pe) (page, no feed) · [SEACE](https://www.gob.pe/seace) (HTTP 404) · [Osinergmin](https://www.osinergmin.gob.pe) (page, no feed) · [INGEMMET](https://www.gob.pe/ingemmet) (page, no feed) · [Perupetro](https://www.perupetro.com.pe) (page, no feed)
+On the map, not readable by script: [MEF - SICRECI (State coordination for investment disputes)](https://www.mef.gob.pe) (page is script-rendered or search-only) · [SEACE](https://www.gob.pe/seace) (HTTP 404) · [Osinergmin](https://www.osinergmin.gob.pe) (page is script-rendered or search-only) · [Perupetro](https://www.perupetro.com.pe) (page is script-rendered or search-only)
 
 ## Philippines
 
@@ -2694,7 +2725,7 @@ On the map, not readable by script: [MEF - SICRECI (State coordination for inves
 
 ## Poland
 
-15 sources read: 12 press feeds, plus the sweeps.
+16 sources read: 12 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2710,11 +2741,10 @@ On the map, not readable by script: [MEF - SICRECI (State coordination for inves
 | press | [Prawo.pl](https://www.prawo.pl/) | Polish | no feed: read through a Google News site: query and its front page |
 | press | [Polish Press Agency (EN)](https://www.pap.pl/en) | English | no feed: read through a Google News site: query and its front page |
 | press | [ISBnews](https://isbnews.pl/) | Polish | no feed: read through a Google News site: query |
+| register | [Prokuratoria Generalna](https://www.gov.pl/web/prokuratoria) |  | page, no feed: 11 headline links read every run |
 | sweep | [Google News, Polish edition](https://news.google.com/) | Polish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Poland" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
-
-On the map, not readable by script: [Prokuratoria Generalna](https://www.gov.pl/web/prokuratoria) (page, no feed)
 
 ## Portugal
 
@@ -2756,7 +2786,7 @@ On the map, not readable by script: [Prokuratoria Generalna](https://www.gov.pl/
 
 ## Romania
 
-14 sources read: 11 press feeds, plus the sweeps.
+15 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2771,15 +2801,14 @@ On the map, not readable by script: [Prokuratoria Generalna](https://www.gov.pl/
 | press | [Ziarul Financiar](https://www.zf.ro/rss) | Romanian | feed |
 | press | [Agerpres](https://www.agerpres.ro/) | Romanian | no feed: read through a Google News site: query and its front page |
 | press | [Bursa](https://www.bursa.ro/) | Romanian | no feed: read through a Google News site: query and its front page |
+| register | [Ministry of Finance](https://mfinante.gov.ro) |  | page, no feed: 105 headline links read every run |
 | sweep | [Google News, Romanian edition](https://news.google.com/) | Romanian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Romania" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Ministry of Finance](https://mfinante.gov.ro) (page, no feed)
-
 ## Russia
 
-15 sources read: 12 press feeds, plus the sweeps.
+18 sources read: 12 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -2795,11 +2824,14 @@ On the map, not readable by script: [Ministry of Finance](https://mfinante.gov.r
 | press | [Zakon.ru](https://zakon.ru/) | Russian | no feed: read through a Google News site: query and its front page |
 | press | [Interfax (EN)](https://interfax.com/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Legal.Report](https://legal.report/) | Russian | no feed: read through a Google News site: query and its front page |
+| gazette | [Official publication of legal acts](http://publication.pravo.gov.ru) |  | page, no feed: 9 headline links read every run |
+| courts | [Commercial courts case database (kad.arbitr)](https://kad.arbitr.ru) |  | page, no feed: 2 headline links read every run |
+| gazette | [Government](http://government.ru/en/news/) |  | page, no feed: 33 headline links read every run |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Russia" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Official publication of legal acts](http://publication.pravo.gov.ru) (page, no feed) · [Commercial courts case database (kad.arbitr)](https://kad.arbitr.ru) (page, no feed) · [Government](http://government.ru/en/news/) (page, no feed) · [Central Bank](https://www.cbr.ru/eng/press/) (HTTP 404)
+On the map, not readable by script: [Central Bank](https://www.cbr.ru/eng/press/) (HTTP 404)
 
 ## Rwanda
 
@@ -3105,7 +3137,7 @@ On the map, not readable by script: [JSE SENS](https://www.jse.co.za) (HTTP 403)
 | sweep | [Google News, State query](https://news.google.com/) | English | "Spain" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [BOE](https://www.boe.es/rss/canal.php?c=ultimos) (page, no feed) · [CNMV](https://www.cnmv.es) (page, no feed) · [PLACSP](https://contrataciondelestado.es) (page, no feed) · [Abogacía General del Estado](https://www.mjusticia.gob.es/es/ministerio/organismos-entidades/abogacia-general) (HTTP 404)
+On the map, not readable by script: [BOE](https://www.boe.es/rss/canal.php?c=ultimos) (page is script-rendered or search-only) · [CNMV](https://www.cnmv.es) (page is script-rendered or search-only) · [PLACSP](https://contrataciondelestado.es) (page is script-rendered or search-only) · [Abogacía General del Estado](https://www.mjusticia.gob.es/es/ministerio/organismos-entidades/abogacia-general) (HTTP 404)
 
 ## Sri Lanka
 
@@ -3255,7 +3287,7 @@ On the map, not readable by script: [BOE](https://www.boe.es/rss/canal.php?c=ult
 
 ## Tanzania
 
-11 sources read: 8 press feeds, plus the sweeps.
+12 sources read: 8 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -3267,11 +3299,10 @@ On the map, not readable by script: [BOE](https://www.boe.es/rss/canal.php?c=ult
 | press | [The Citizen](https://www.thecitizen.co.tz/rss.xml) | English | feed |
 | press | [The Citizen](https://www.thecitizen.co.tz/rss.xml) | English | no feed: read through a Google News site: query and its front page |
 | press | [The Guardian Tanzania](https://www.ippmedia.com/en) | English | no feed: read through a Google News site: query and its front page |
+| regulator | [Mining Commission](https://www.tumemadini.go.tz) |  | page, no feed: 24 headline links read every run |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Tanzania" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
-
-On the map, not readable by script: [Mining Commission](https://www.tumemadini.go.tz) (page, no feed)
 
 ## Thailand
 
@@ -3365,7 +3396,7 @@ On the map, not readable by script: [Mining Commission](https://www.tumemadini.g
 
 ## Turkey
 
-19 sources read: 16 press feeds, plus the sweeps.
+24 sources read: 16 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -3385,11 +3416,16 @@ On the map, not readable by script: [Mining Commission](https://www.tumemadini.g
 | press | [T24](https://t24.com.tr/) | Turkish | no feed: read through a Google News site: query and its front page |
 | press | [Türkiye Today](https://www.turkiyetoday.com/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Duvar English](https://www.duvarenglish.com/) | English | no feed: read through a Google News site: query and its front page |
+| gazette | [Resmî Gazete](https://www.resmigazete.gov.tr) |  | page, no feed: 6 headline links read every run |
+| regulator | [MAPEG mining](https://www.mapeg.gov.tr) |  | page, no feed: 29 headline links read every run |
+| gazette | [Presidency](https://www.tccb.gov.tr/en/) |  | page, no feed: 24 headline links read every run |
+| regulator | [Central Bank](https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements) |  | page, no feed: 27 headline links read every run |
+| regulator | [Competition Authority](https://www.rekabet.gov.tr/en) |  | page, no feed: 18 headline links read every run |
 | sweep | [Google News, Turkish edition](https://news.google.com/) | Turkish | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Turkey" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Resmî Gazete](https://www.resmigazete.gov.tr) (page, no feed) · [KAP public disclosure platform](https://www.kap.org.tr/en) (page, no feed) · [EPDK energy regulator](https://www.epdk.gov.tr) (page, no feed) · [MAPEG mining](https://www.mapeg.gov.tr) (page, no feed) · [Presidency](https://www.tccb.gov.tr/en/) (page, no feed) · [Central Bank](https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements) (page, no feed) · [Competition Authority](https://www.rekabet.gov.tr/en) (page, no feed)
+On the map, not readable by script: [KAP public disclosure platform](https://www.kap.org.tr/en) (page is script-rendered or search-only) · [EPDK energy regulator](https://www.epdk.gov.tr) (page is script-rendered or search-only)
 
 ## Turkmenistan
 
@@ -3449,7 +3485,7 @@ On the map, not readable by script: [Resmî Gazete](https://www.resmigazete.gov.
 
 ## Ukraine
 
-21 sources read: 16 press feeds, plus the sweeps.
+25 sources read: 16 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -3470,12 +3506,16 @@ On the map, not readable by script: [Resmî Gazete](https://www.resmigazete.gov.
 | press | [Ukrainian News](https://ukranews.com/) | Ukrainian | no feed: read through a Google News site: query and its front page |
 | press | [Mind.ua](https://mind.ua/) | Ukrainian | no feed: read through a Google News site: query and its front page |
 | tenders | [Prozorro](https://prozorro.gov.ua/api/search/tenders) |  |  |
+| regulator | [NEURC energy regulator](https://www.nerc.gov.ua) |  | page, no feed: 509 headline links read every run |
+| gazette | [Cabinet of Ministers](https://www.kmu.gov.ua/en/news) |  | page, no feed: 331 headline links read every run |
+| regulator | [National Bank](https://bank.gov.ua/en/news) |  | page, no feed: 89 headline links read every run |
+| regulator | [ARMA (asset recovery)](https://arma.gov.ua/news) |  | page, no feed: 12 headline links read every run |
 | sweep | [Google News, Ukrainian edition](https://news.google.com/) | Ukrainian | dispute and State-measure terms |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ukraine" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Verkhovna Rada legal acts](https://zakon.rada.gov.ua) (page, no feed) · [Ministry of Justice - international disputes](https://minjust.gov.ua) (page, no feed) · [Unified State Register of Court Decisions](https://reyestr.court.gov.ua) (page, no feed) · [NEURC energy regulator](https://www.nerc.gov.ua) (page, no feed) · [President](https://www.president.gov.ua/en/news/all) (HTTP 403) · [Cabinet of Ministers](https://www.kmu.gov.ua/en/news) (page, no feed) · [National Bank](https://bank.gov.ua/en/news) (page, no feed) · [State Property Fund](https://www.spfu.gov.ua/en/news) (HTTP 404) · [ARMA (asset recovery)](https://arma.gov.ua/news) (page, no feed)
+On the map, not readable by script: [Verkhovna Rada legal acts](https://zakon.rada.gov.ua) (page is script-rendered or search-only) · [Ministry of Justice - international disputes](https://minjust.gov.ua) (page is script-rendered or search-only) · [Unified State Register of Court Decisions](https://reyestr.court.gov.ua) (page is script-rendered or search-only) · [President](https://www.president.gov.ua/en/news/all) (HTTP 403) · [State Property Fund](https://www.spfu.gov.ua/en/news) (HTTP 404)
 
 ## United Kingdom
 
@@ -3544,7 +3584,7 @@ On the map, not readable by script: [Verkhovna Rada legal acts](https://zakon.ra
 
 ## Uzbekistan
 
-14 sources read: 10 press feeds, plus the sweeps.
+17 sources read: 10 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -3558,12 +3598,15 @@ On the map, not readable by script: [Verkhovna Rada legal acts](https://zakon.ra
 | press | [UzA](https://uza.uz/en/rss) | English | feed |
 | press | [UzDaily](https://uzdaily.uz/en/rss) | Uzbek | feed |
 | press | [Daryo](https://daryo.uz/) | Uzbek | no feed: read through a Google News site: query and its front page |
+| gazette | [Lex.uz](https://lex.uz) |  | page, no feed: 21 headline links read every run |
+| gazette | [President](https://president.uz/en) |  | page, no feed: 45 headline links read every run |
+| regulator | [Central Bank](https://cbu.uz/en/press_center/news/) |  | page, no feed: 239 headline links read every run |
 | sweep | [Google News, Russian edition](https://news.google.com/) | Russian | dispute and State-measure terms |
 | sweep | [Google News, Uzbek edition](https://news.google.com/) | Uzbek | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Uzbekistan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Lex.uz](https://lex.uz) (page, no feed) · [UZEX e-procurement](https://xarid.uzex.uz) (page, no feed) · [Ministry of Mining and Geology](https://mmg.gov.uz) (no answer) · [Tashkent Stock Exchange](https://uzse.uz) (page, no feed) · [President](https://president.uz/en) (page, no feed) · [Central Bank](https://cbu.uz/en/press_center/news/) (page, no feed)
+On the map, not readable by script: [UZEX e-procurement](https://xarid.uzex.uz) (page is script-rendered or search-only) · [Ministry of Mining and Geology](https://mmg.gov.uz) (no answer) · [Tashkent Stock Exchange](https://uzse.uz) (page is script-rendered or search-only)
 
 ## Vanuatu
 
@@ -3816,7 +3859,7 @@ On the map, not readable by script: [Lex.uz](https://lex.uz) (page, no feed) · 
 
 ## Global
 
-58 sources read: 36 press feeds.
+69 sources read: 38 press feeds.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -3856,15 +3899,20 @@ On the map, not readable by script: [Lex.uz](https://lex.uz) (page, no feed) · 
 | press | [Uría Menéndez news](https://www.uria.com/rss/all) | English | feed |
 | press | [VIAC news](https://www.viac.eu/feed/) | English | feed |
 | press | [Volterra Fietta news](https://www.volterrafietta.com/rss) | English | feed |
+| press | [India - Supreme Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/supremecourt/) | English | feed |
+| press | [India - Delhi High Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/delhi/) | English | feed |
 | register | [ICSID docket API](https://icsid.worldbank.org/api/cases/pending) |  |  |
 | courts | [CourtListener / RECAP](https://www.courtlistener.com/api/rest/v4/search/) |  |  |
 | exchange | [SEC EDGAR full-text](https://efts.sec.gov/LATEST/search-index) |  |  |
 | tenders | [TED](https://api.ted.europa.eu/v3/notices/search) |  |  |
+| exchange | [ASX announcements](https://www.asx.com.au/markets/trade-our-cash-market/announcements) |  | page, no feed: 38 headline links read every run |
 | courts | [England and Wales - Find Case Law search feed](https://caselaw.nationalarchives.gov.uk/atom.xml?query=%22Arbitration+Act+1996%22&order=-date) |  | s.67/68/69, anti-suit, s.9 stays, enforcement; search feed only, judgments not downloaded |
 | courts | [Netherlands - rechtspraak open data](https://data.rechtspraak.nl/uitspraken/zoeken?return=DOC&max=50&sort=DESC) |  | civil decisions filtered on the court summary |
 | courts | [Singapore - Law Watch judgments feed](https://www.singaporelawwatch.sg/Portals/0/RSS/Judgments.xml) |  | SGHC, SICC, SGCA with catchwords |
+| courts | [Hong Kong - judiciary legal reference](https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp) |  | page, no feed: 2 headline links read every run |
 | courts | [Canada - CanLII court feeds](https://www.canlii.org/en/on/onca/rss_new.xml) |  | SCC, FCA, FC, ONCA, ONSC, BCCA, BCSC, ABCA, ABKB, QCCA, QCCS with catchwords |
 | courts | [Germany - Bundesgerichtshof decisions feed](https://www.bundesgerichtshof.de/DE/Service/RSSFeed/Function/RSS_EN.xml) |  | I ZB dockets confirmed against the decision text |
+| courts | [Ireland - judgments](https://www.courts.ie/judgments) |  | page, no feed: 1 headline links read every run |
 | courts | [Kenya Law - search API](https://new.kenyalaw.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) |  | arbitration causes and miscellaneous applications |
 | courts | [Austria - RIS Judikatur API](https://data.bka.gv.at/ris/api/v2.6/Judikatur?Applikation=Justiz&Suchworte=Schiedsspruch&DokumenteProSeite=Ten) |  | OGH and lower-court decision texts |
 | courts | [DIFC Courts - arbitration list](https://www.difccourts.ae/rules-decisions/judgments-orders/arbitration) |  | ARB and ENF claims |
@@ -3878,5 +3926,11 @@ On the map, not readable by script: [Lex.uz](https://lex.uz) (page, no feed) · 
 | courts | [ZimLII - search API](https://zimlii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) |  |  |
 | courts | [SierraLII - search API](https://sierralii.gov.sl/search/api/documents/?search=%22arbitral+award%22&ordering=-date) |  |  |
 | courts | [EswatiniLII - search API](https://eswatinilii.org/search/api/documents/?search=%22arbitral+award%22&ordering=-date) |  |  |
+| courts | [Qatar - QICDRC judgments](https://www.qicdrc.gov.qa/judgments) |  | page, no feed: 26 headline links read every run |
+| courts | [Cayman Islands - judgments](https://www.judicial.ky/judgments) |  | page, no feed: 21 headline links read every run |
+| courts | [New Zealand - judgments search](https://www.courtsofnz.govt.nz/judgments/) |  | page, no feed: 39 headline links read every run |
+| exchange | [Investegate (LSE RNS)](https://www.investegate.co.uk/rss.aspx) |  | page, no feed: 81 headline links read every run |
+| exchange | [TSX - Market Activity](https://www.tsx.com/news) |  | page, no feed: 45 headline links read every run |
+| register | [EBRD news](https://www.ebrd.com/news.html) |  | page, no feed: 36 headline links read every run |
 
-On the map, not readable by script: [UNCITRAL Transparency Registry](https://www.uncitral.org/transparency-registry/registry/index.jspx) (page, no feed) · [PCA cases](https://pca-cpa.org/en/cases/) (HTTP 403) · [italaw](https://www.italaw.com) (HTTP 403) · [UNCTAD ISDS Navigator](https://investmentpolicy.unctad.org/investment-dispute-settlement) (HTTP 403) · [LSE RNS](https://www.londonstockexchange.com/news) (page, no feed) · [ASX announcements](https://www.asx.com.au/markets/trade-our-cash-market/announcements) (page, no feed) · [SEDAR+](https://www.sedarplus.ca) (page, no feed) · [England - judiciary.uk judgments](https://www.judiciary.uk/feed/) (feed, unverified) · [Switzerland - Federal Supreme Court](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_) (HTTP 503) · [France - Cour de cassation news](https://www.courdecassation.fr/en/actualites) (page, no feed) · [Singapore - eLitigation judgments](https://www.elitigation.sg/gd/Home/Index) (page, no feed) · [Hong Kong - judiciary legal reference](https://legalref.judiciary.hk/lrs/common/ju/judgment.jsp) (page, no feed) · [India - Supreme Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/supremecourt/) (feed, unverified) · [India - Delhi High Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/delhi/) (feed, unverified) · [Australia - Federal Court (AustLII feed)](https://www.austlii.edu.au/rss/au/cases/cth/FCA.xml) (HTTP 403) · [Ireland - judgments](https://www.courts.ie/judgments) (page, no feed) · [Qatar - QICDRC judgments](https://www.qicdrc.gov.qa/judgments) (page, no feed) · [UAE - ADGM Courts judgments](https://www.adgm.com/adgm-courts/judgments) (page, no feed) · [Cayman Islands - judgments](https://www.judicial.ky/judgments) (page, no feed) · [New Zealand - judgments search](https://www.courtsofnz.govt.nz/judgments/) (page, no feed) · [Australia - NSW Caselaw](https://www.caselaw.nsw.gov.au/search/advanced) (page, no feed) · [Brazil - STJ jurisprudence search](https://scon.stj.jus.br/SCON/) (HTTP 403) · [Pakistan - Supreme Court judgments](https://www.supremecourt.gov.pk/judgement-search/) (page, no feed) · [GlobeNewswire - ICSID](https://www.globenewswire.com/RssFeed/keyword/ICSID) (no answer) · [GlobeNewswire - investment treaty](https://www.globenewswire.com/RssFeed/keyword/investment%20treaty) (no answer) · [GlobeNewswire - notice of arbitration](https://www.globenewswire.com/RssFeed/keyword/notice%20of%20arbitration) (no answer) · [GlobeNewswire - arbitration award](https://www.globenewswire.com/RssFeed/keyword/arbitration%20award) (no answer) · [GlobeNewswire - expropriation](https://www.globenewswire.com/RssFeed/keyword/expropriation) (no answer) · [Newsfile (Canadian juniors)](https://www.newsfilecorp.com/newsroom/rss) (HTTP 404) · [ACCESSWIRE](https://www.accesswire.com/rss/newsroom) (HTTP 403) · [Business Wire - legal](https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==) (feed, unverified) · [Investegate (LSE RNS)](https://www.investegate.co.uk/rss.aspx) (page, no feed) · [TSX - Market Activity](https://www.tsx.com/news) (page, no feed) · [EBRD news](https://www.ebrd.com/news.html) (page, no feed) · [IFC disclosures](https://disclosures.ifc.org) (page, no feed) · [MIGA news](https://www.miga.org/news) (HTTP 404) · [OECD investment news](https://www.oecd.org/en/topics/investment.html) (HTTP 403)
+On the map, not readable by script: [UNCITRAL Transparency Registry](https://www.uncitral.org/transparency-registry/registry/index.jspx) (page is script-rendered or search-only) · [PCA cases](https://pca-cpa.org/en/cases/) (HTTP 403) · [italaw](https://www.italaw.com) (HTTP 403) · [UNCTAD ISDS Navigator](https://investmentpolicy.unctad.org/investment-dispute-settlement) (HTTP 403) · [LSE RNS](https://www.londonstockexchange.com/news) (page is script-rendered or search-only) · [SEDAR+](https://www.sedarplus.ca) (page is script-rendered or search-only) · [England - judiciary.uk judgments](https://www.judiciary.uk/feed/) (feed, unverified) · [Switzerland - Federal Supreme Court](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=4A_) (HTTP 503) · [France - Cour de cassation news](https://www.courdecassation.fr/en/actualites) (page is script-rendered or search-only) · [Singapore - eLitigation judgments](https://www.elitigation.sg/gd/Home/Index) (page is script-rendered or search-only) · [India - Supreme Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/supremecourt/) (feed, unverified) · [India - Delhi High Court (Indian Kanoon feed)](https://indiankanoon.org/feeds/latest/delhi/) (feed, unverified) · [Australia - Federal Court (AustLII feed)](https://www.austlii.edu.au/rss/au/cases/cth/FCA.xml) (HTTP 403) · [UAE - ADGM Courts judgments](https://www.adgm.com/adgm-courts/judgments) (page is script-rendered or search-only) · [Australia - NSW Caselaw](https://www.caselaw.nsw.gov.au/search/advanced) (page is script-rendered or search-only) · [Brazil - STJ jurisprudence search](https://scon.stj.jus.br/SCON/) (HTTP 403) · [Pakistan - Supreme Court judgments](https://www.supremecourt.gov.pk/judgement-search/) (page is script-rendered or search-only) · [GlobeNewswire - ICSID](https://www.globenewswire.com/RssFeed/keyword/ICSID) (no answer) · [GlobeNewswire - investment treaty](https://www.globenewswire.com/RssFeed/keyword/investment%20treaty) (no answer) · [GlobeNewswire - notice of arbitration](https://www.globenewswire.com/RssFeed/keyword/notice%20of%20arbitration) (no answer) · [GlobeNewswire - arbitration award](https://www.globenewswire.com/RssFeed/keyword/arbitration%20award) (no answer) · [GlobeNewswire - expropriation](https://www.globenewswire.com/RssFeed/keyword/expropriation) (no answer) · [Newsfile (Canadian juniors)](https://www.newsfilecorp.com/newsroom/rss) (HTTP 404) · [ACCESSWIRE](https://www.accesswire.com/rss/newsroom) (HTTP 403) · [Business Wire - legal](https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpRXg==) (feed, unverified) · [IFC disclosures](https://disclosures.ifc.org) (page is script-rendered or search-only) · [MIGA news](https://www.miga.org/news) (HTTP 404) · [OECD investment news](https://www.oecd.org/en/topics/investment.html) (HTTP 403)

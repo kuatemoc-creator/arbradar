@@ -119,6 +119,7 @@ sources:
   tenders: true
   sitesweep: true   # feedless national press through Google News site: queries
   frontpage: true   # feedless national press, front-page headlines
+  pages: true       # registers, gazettes, regulators, exchanges, courts with a page but no feed
 
 recipients: []
 smtp:
