@@ -7,7 +7,7 @@ import json
 import logging
 import sys
 
-from . import config, db, email_html, enrich, llm, pipeline, render, send as sender
+from . import config, db, pipeline, send as sender
 
 
 def _log(verbose: bool) -> None:
@@ -51,42 +51,6 @@ def cmd_import(args, settings, conn):
     return 0
 
 
-def cmd_email(args, settings, conn):
-    """Render out/issue-<date>.html from the saved day (out/site/data/<date>.json),
-    pulling the day from the published site first when it is newer there."""
-    import json
-    import subprocess
-    from . import site
-    from .config import live_site_url, OUT_DIR, ROOT
-    date = args.date or dt.date.today().isoformat()
-    path = site.day_file(date)
-    try:
-        raw = subprocess.run(["git", "show", "origin/gh-pages:data/{}.json".format(date)],
-                             capture_output=True, text=True, cwd=ROOT)
-        if raw.returncode == 0 and raw.stdout.strip():
-            os.makedirs(site.DATA, exist_ok=True)
-            with open(path, "w", encoding="utf-8") as fh:
-                fh.write(raw.stdout)
-            print("day {} taken from the published site".format(date))
-    except Exception:                                 # noqa: BLE001 - offline is fine
-        pass
-    if not os.path.exists(path):
-        print("no saved day for {}".format(date))
-        return 1
-    with open(path, encoding="utf-8") as fh:
-        day = json.load(fh)
-    base = live_site_url(settings)
-    items = day.get("stories") or []
-    for it in items:
-        it["site_link"] = "{}/{}".format(base, it["slug"]) if (base and it.get("slug")) else None
-    built = email_html.build(items, day.get("records") or {}, settings, date)
-    out = os.path.join(OUT_DIR, "issue-{}.html".format(date))
-    with open(out, "w", encoding="utf-8") as fh:
-        fh.write(built["html"])
-    print("{}\n  subject: {}".format(out, built["subject"]))
-    return 0
-
-
 def cmd_reclassify(args, settings, conn):
     n = pipeline.reclassify(conn, settings, days=args.days or 21)
     print("reclassified {} items".format(n))
@@ -103,225 +67,43 @@ def cmd_enrich(args, settings, conn):
 
 
 
-def _fill_summaries(conn, rows):
-    """A story whose copy arrived cut short ("... after the Congolese") takes the
-    fullest text our own database holds for the same article or the same headline."""
-    import re as _re
-    n = 0
-    for it in rows:
-        cur = (it.get("summary") or "").strip()
-        if cur and len(cur) >= 200 and not cur.endswith(("\u2026", "...")):
-            continue
-        urls = [u for u in [it.get("url")] + [a.get("url") for a in it.get("also") or []] if u]
-        q = "SELECT summary FROM items WHERE summary IS NOT NULL AND (url IN ({}) OR title=?)".format(",".join("?" * len(urls)) or "''")
-        best = ""
-        for (txt,) in conn.execute(q, (*urls, it.get("title") or "")):
-            plain = _re.sub(r"<[^>]+>", " ", txt or "").strip()
-            if plain.endswith(("\u2026", "...")) or plain.lower().startswith((it.get("title") or "").lower()[:40]):
-                continue
-            if len(plain) > len(best):
-                best = txt
-        if best and len(best) > len(cur) + 20:
-            it["summary"] = best
-            n += 1
-    return n
-
 def cmd_build(args, settings, conn):
-    # A rebuild on the same day replaces that day's issue; otherwise the second
-    # build sees only what the first one left over.
-    if getattr(args, "date", None):
-        pipeline.AS_OF = dt.date.fromisoformat(args.date)
-        # A day that has gone to readers is fixed; it is not rebuilt without --force.
-        sent = conn.execute("SELECT sent_at FROM issues WHERE html_path LIKE ? AND sent_at IS NOT NULL", ("%issue-{}.%".format(args.date),)).fetchone()
-        if sent and not getattr(args, "force", False):
-            print("refused: the issue of {} was sent on {}; pass --force to rebuild it anyway".format(args.date, sent[0][:16]))
-            return 1
-        # Scores carry a recency term; a past day is rebuilt with the scores it had then.
-        pipeline.reclassify(conn, settings, days=settings.lookback_days + 7)
-    today = pipeline.as_of().isoformat()
-    prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
-    if prior:
-        marks = ",".join("?" * len(prior))
-        conn.execute("UPDATE items SET issue_id=NULL WHERE issue_id IN ({})".format(marks), prior)
-        conn.execute("DELETE FROM issues WHERE id IN ({})".format(marks), prior)
-        conn.commit()
-    pipeline.rescore(conn, settings)
-    items = pipeline.select(conn, settings)
-    if not items:
-        print("Nothing scored above {} in the last {} days.".format(
-            settings.min_score, settings.lookback_days))
+    """Today's issue, or a past day's with --date: one pipeline, in arbradar/build.py."""
+    from . import build
+    try:
+        out = build.build_issue(conn, settings, date=args.date, force=args.force, use_llm=not args.no_llm)
+    except build.Refused as exc:
+        print("refused: {}".format(exc))
         return 1
-    date = today
-
-    _fill_summaries(conn, items)
-    filled = enrich.enrich(conn, items)
-    if filled:
-        print("filled in text for {} headline-only stories".format(filled))
-    # Every printed headline carries an explanation. A story that is still only a
-    # headline after enrichment is left out; the records (tier 1) always have prose.
-    from .outlets import is_trade_press
-
-    def _with_text(rows):
-        gone = [it for it in rows if (it.get("source_tier") or 2) != 1
-                and not is_trade_press(it.get("source") or "", it.get("url") or "")
-                and not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))]
-        if gone:
-            print("left out {} headline-only stories: {}".format(len(gone), "; ".join(it["title"][:50] for it in gone)))
-        return [it for it in rows if it not in gone]
-
-    items = _with_text(items)
-    if len(items) < 3:
-        # A thin day: as an exception, reach one day further back for stories that
-        # were never printed, and give them the same enrichment.
-        have = {it["id"] for it in items}
-        more = [it for it in pipeline.select(conn, settings, extra_days=1) if it["id"] not in have]
-        if more:
-            enrich.enrich(conn, more)
-            more = _with_text(more)
-            for it in more:
-                it["flag_reason"] = ((it.get("flag_reason") or "") + " | held over from the previous day").strip(" |")
-            print("thin day: held over {} stories from the previous day".format(len(more)))
-            items = (items + more)[:settings.max_items_per_issue]
-    if not items:
-        print("Nothing with an explanation to print today.")
+    if not out["items"]:
         return 1
-    # A trade-press headline that still has no text goes to 'In brief', after
-    # every story that can be explained; it is never the lead or a development.
-    def _docket_text(text: str) -> bool:
-        # "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery": a docket
-        # entry, not an explanation. Mostly capitals means it reads as one.
-        letters = [c for c in text if c.isalpha()]
-        return bool(letters) and sum(1 for c in letters if c.isupper()) > 0.35 * len(letters)
-
-    for it in items:
-        text = email_html.summary_of(it)
-        it["brief_only"] = not enrich.relevant_summary(it.get("title_en") or it.get("title") or "", text) or _docket_text(text[:200])
-    items = [it for it in items if not it["brief_only"]] + [it for it in items if it["brief_only"]]
-    from .config import live_site_url
-    base = live_site_url(settings)
-    if settings.site_url and not base:
-        print("site host does not resolve yet; email links go to the sources")
-    for it in items:
-        it["site_link"] = "{}/{}".format(base, render.story_slug(it, date)) if base else None
-    # The leads: pre-dispute hints from outside the trade press, with their own
-    # slots. Then every story and lead is chased into other outlets and the
-    # explanation built from what they add.
-    from . import followup
-    leads = pipeline.select_leads(conn, settings, items, limit=5)
-    if leads:
-        enrich.enrich(conn, leads)
-        leads = [it for it in leads if enrich.relevant_summary(it.get("title_en") or it.get("title") or "", email_html.summary_of(it))
-                 or followup.load(it.get("corroboration"))]
-    # The enforcement track: awards being enforced, resisted and undone.
-    enforcement = pipeline.select_enforcement(conn, settings, items + leads, limit=6)
-    if enforcement:
-        enrich.enrich(conn, enforcement)
-    chased = 0
-    for it in items + leads + enforcement:            # the headline-only items are the ones that need other copies most
-        stored = followup.load(it.get("corroboration"))
-        if stored or chased >= 14:
-            it["corroboration"] = stored
-            continue
-        found = followup.corroborate(it)
-        chased += 1
-        it["corroboration"] = found["sources"]
-        # A wire or a major paper writes the better headline; use it when ours
-        # comes from a minor outlet and theirs is plainly the same story.
-        from .outlets import rank as outlet_rank
-        if outlet_rank(it.get("source") or "", it.get("url") or "") >= 3 and not (it.get("title_en") or "").strip() \
-                and not (it.get("source") or "").startswith(("US federal docket", "ICSID docket", "SEC EDGAR", "Court:", "PCA")):
-            better = next((s for s in found["sources"] if outlet_rank(s.get("source") or "", s.get("url") or "") <= 2
-                           and 5 <= len((s.get("title") or "").split()) <= 16), None)
-            if better:
-                it["title_en"] = better["title"]
-                conn.execute("UPDATE items SET title_en=? WHERE id=?", (better["title"], it["id"]))
-        if found["story"] and len(found["story"]) > len(email_html.summary_of(it) or ""):
-            it["story"] = found["story"]
-        conn.execute("UPDATE items SET corroboration=?, story=? WHERE id=?",
-                     (json.dumps(found["sources"], ensure_ascii=False), it.get("story") or None, it["id"]))
-    conn.commit()
-    # The record behind the report: the docket, the case page, the judgment the
-    # press wrote from. Cited first when found; the report becomes the "also".
-    from . import record
-    for it in items + leads + enforcement:
-        stored = followup.load(it.get("corroboration"))
-        rec = next((c for c in stored if isinstance(c, dict) and c.get("source") in ("ICSID docket", "US federal docket", "US court opinion", "Find Case Law (England and Wales)", "PCA case list")), None)
-        if rec:
-            it["record"] = rec
-    found = record.attach(conn, items + leads + enforcement)
-    if found:
-        for it in items + leads + enforcement:
-            if it.get("record"):
-                conn.execute("UPDATE items SET corroboration=? WHERE id=?", (json.dumps(it.get("corroboration") or [], ensure_ascii=False), it["id"]))
-        conn.commit()
-        print("records attached: {}".format(found))
-    leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
-    if chased:
-        print("chased {} stories into other outlets; {} leads; {} enforcement".format(chased, len(leads), len(enforcement)))
-    # The partner's edit, when the editorial tier is on: headline and explanation
-    # rewritten to the arb-editor brief from each entry's own sources. The
-    # grounding check that follows keeps it honest.
-    _fill_summaries(conn, leads + enforcement)
-    llm_pass = False
-    if settings.use_llm and not args.no_llm and os.environ.get("ANTHROPIC_API_KEY"):
-        try:
-            n = llm.edit_entries(items + leads + enforcement, settings.editor_model)
-            llm_pass = n > 0
-            print("editor pass: {} entries edited".format(n))
-        except Exception as exc:                      # noqa: BLE001 - boundary
-            print("editor pass skipped ({})".format(exc))
-    # The copy desk runs on every build, key or no key: house forms, banned
-    # words, headline shape, explanation length. Its report names the entries
-    # that still need a person.
-    from . import copydesk
-    from .config import OUT_DIR as _OUT
-    desk = copydesk.apply(items + leads + enforcement, date, _OUT, llm_pass)
-    print("copy desk: {} entries, {} need a person; see out/editor-{}.json".format(len(desk["entries"]), desk["needs_person"], date))
-    # The last check: every printed sentence must be in a source we cite.
-    from . import grounding
-    from .config import OUT_DIR
-    report = grounding.apply(items + leads + enforcement, date, OUT_DIR)
-    if report["dropped"]:
-        print("grounding: dropped {} sentence(s) no cited source carries; see out/grounding-{}.json".format(report["dropped"], date))
-    extras = pipeline.record_extras(conn, settings, items + leads + enforcement)
-    extras["leads"] = leads
-    extras["enforcement"] = enforcement
-    built = email_html.build(items, extras, settings, date)
-    if settings.use_llm and not args.no_llm:
-        print("Writing issue with {} ...".format(settings.editor_model))
-        try:
-            text = llm.write_issue(items, settings.editor_model,
-                                   settings.newsletter_name, date, effort=args.effort)
-            text += "\n\n" + "\n".join(render.record_sections(extras))
-        except Exception as exc:                      # noqa: BLE001 - boundary
-            print("editorial pass failed ({}); falling back to template".format(exc))
-            text = render.fallback_markdown(items, settings.newsletter_name, date, settings, extras=extras)
-    else:
-        text = render.fallback_markdown(items, settings.newsletter_name, date, settings, extras=extras)
-
-    paths = render.write_issue(text, items, settings, date=date, html_doc=built["html"])
-    subject = built["subject"]
-    from . import site
-    site.write_day(date, items, extras, settings, subject)     # the day the web site shows
-    cur = conn.execute(
-        "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
-        "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",
-        (today + dt.datetime.now().isoformat(timespec="seconds")[10:], subject,
-         paths["html"], paths["md"], len(items)))
-    issue_id = cur.lastrowid
-    conn.executemany("UPDATE items SET issue_id=? WHERE url=? OR id=?",
-                     [(issue_id, a["url"], it["id"]) for it in items + leads + enforcement
-                      for a in ([{"url": it["url"]}] + (it.get("also") or []))])
-    conn.commit()
-
-    print("\n{} items\n  {}\n  {}".format(len(items), paths["md"], paths["html"]))
+    print("\n{} items\n  {}".format(len(out["items"]), out["paths"]["html"]))
     return 0
 
 
-def cmd_run(args, settings, conn):
-    cmd_fetch(args, settings, conn)
-    cmd_enrich(args, settings, conn)
-    return cmd_build(args, settings, conn)
+def cmd_test(args, settings, conn):
+    """The same build, recorded nowhere: out/test-issue-<date>.html and .eml to
+    read before anything goes to readers. No issue row, no day file, no item marked."""
+    from . import build
+    out = build.build_issue(conn, settings, date=args.date, use_llm=not args.no_llm, dry_run=True)
+    if not out["items"]:
+        return 1
+    eml = sender.write_eml(out["paths"]["html"], None, out["subject"], settings, None)
+    print("\ntest issue: {} items, {} leads, {} enforcement\n  {}\n  {}\n  subject: {}".format(
+        len(out["items"]), len(out["leads"]), len(out["enforcement"]), out["paths"]["html"], eml, out["subject"]))
+    return 0
+
+
+def cmd_rebuild(args, settings, conn):
+    """Past days rebuilt in order after the range is cleared, so no stale later day steers an earlier one."""
+    from . import build
+    try:
+        built = build.rebuild_range(conn, settings, args.start, args.end, force=args.force, use_llm=not args.no_llm)
+    except build.Refused as exc:
+        print("refused: {}".format(exc))
+        return 1
+    print("\nrebuilt {} days: {}".format(len(built), ", ".join(b["date"] for b in built)))
+    return 0
 
 
 def cmd_top(args, settings, conn):
@@ -462,13 +244,15 @@ def main(argv=None):
     m.add_argument("--file", default="data/relay.jsonl")
     sub.add_parser("enrich", parents=[common], help="LLM triage + extraction")
     sub.add_parser("reclassify", parents=[common], help="re-run the rule classifier after a taxonomy change")
-    e = sub.add_parser("email", parents=[common], help="render the email for a saved day, from the published site")
-    e.add_argument("--date", default=None)
     b = sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
     b.add_argument("--date", default=None, help="rebuild a past day as of that day (YYYY-MM-DD)")
     b.add_argument("--force", action="store_true", help="rebuild a day that was already sent")
-    r = sub.add_parser("run", parents=[common, llm_opts], help="fetch + enrich + build")
-    r.add_argument("--source")
+    t2 = sub.add_parser("test", parents=[common, llm_opts], help="build an issue and record nothing: out/test-issue-<date>.html")
+    t2.add_argument("--date", default=None, help="as of that day (YYYY-MM-DD); default today")
+    rb = sub.add_parser("rebuild", parents=[common, llm_opts], help="rebuild a range of past days in order, cleared first")
+    rb.add_argument("--from", dest="start", required=True, help="first day (YYYY-MM-DD)")
+    rb.add_argument("--to", dest="end", required=True, help="last day (YYYY-MM-DD)")
+    rb.add_argument("--force", action="store_true", help="rebuild days that were already sent")
     t = sub.add_parser("top", parents=[common], help="inspect the ranking")
     t.add_argument("--limit", type=int, default=25)
     t.add_argument("--why", action="store_true")
@@ -499,8 +283,8 @@ def main(argv=None):
         args.source = None
 
     conn = db.connect()
-    handler = {"fetch": cmd_fetch, "export": cmd_export, "import": cmd_import, "enrich": cmd_enrich, "build": cmd_build, "reclassify": cmd_reclassify, "email": cmd_email,
-               "run": cmd_run, "top": cmd_top, "send": cmd_send,
+    handler = {"fetch": cmd_fetch, "export": cmd_export, "import": cmd_import, "enrich": cmd_enrich, "build": cmd_build,
+               "test": cmd_test, "rebuild": cmd_rebuild, "reclassify": cmd_reclassify, "top": cmd_top, "send": cmd_send,
                "serve": cmd_serve, "intel": cmd_intel, "articles": cmd_articles}[args.cmd]
     return handler(args, settings, conn)
 

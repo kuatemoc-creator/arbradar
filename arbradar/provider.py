@@ -40,8 +40,3 @@ def draft(subject: str, html: str, publish: bool = False) -> Dict[str, Any]:
         return {"status": "error", "reason": str(exc)[:300]}
     return {"status": "published" if publish else "drafted", "id": out.get("id"),
             "url": "https://buttondown.com/emails/{}".format(out.get("id")) if out.get("id") else None}
-
-
-def form_action(username: Optional[str]) -> str:
-    """The form endpoint the subscribe box posts to."""
-    return "https://buttondown.com/api/emails/embed-subscribe/{}".format(username) if username else ""

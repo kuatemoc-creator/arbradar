@@ -128,23 +128,54 @@ Three tiers, because volume drops sharply at each stage:
 Without `ANTHROPIC_API_KEY` the system falls back to rule-based classification
 and a deterministic template. It still works — it is just blunter.
 
+## The pipeline
+
+There is one build, in `arbradar/build.py`, and every entry point runs it: the
+daily workflow, `cli build`, `cli test`, `cli rebuild` and the review UI's
+Build button.
+
+```
+fetch ──► classify/score ──► prepare (pin the day, release its earlier issue)
+                              │
+                              ▼
+                        select: Today (2 days) · Leads (7 days) · Enforcement (7 days)
+                              │   clustering: same story under any headline, other copies kept as "also"
+                              ▼
+                        texts: fullest copy from the database, then the web; headline-only stories out
+                              ▼
+                        chase: other outlets' copies (database first), the record behind the report
+                              ▼
+                        edit: the partner's pass (with a key) · the copy desk · the grounding check
+                              ▼
+                        render: one HTML issue ──► out/issue-<date>.html, the day file, the issue row
+```
+
+`cli test` runs the same steps and records nothing: no issue row, no day file,
+no item marked. It writes `out/test-issue-<date>.html` and a `.eml` to open in
+a mail client. `cli rebuild --from A --to B` clears a range of past days and
+rebuilds them in order, so no stale later day steers an earlier one.
+
 ## Usage
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...      # optional but a large quality jump
-./.venv/bin/python -m arbradar.cli run --days 7
-
-./.venv/bin/python -m arbradar.cli fetch --days 7    # ingest only
-./.venv/bin/python -m arbradar.cli enrich            # triage + extract
-./.venv/bin/python -m arbradar.cli build             # write the issue
+./.venv/bin/python -m arbradar.cli fetch --days 3    # ingest
+./.venv/bin/python -m arbradar.cli reclassify        # apply the rules
+./.venv/bin/python -m arbradar.cli test              # build today, record nothing: out/test-issue-<date>.html
+./.venv/bin/python -m arbradar.cli build             # build and record today's issue
+./.venv/bin/python -m arbradar.cli build --date 2026-09-24      # a past day, as of that day
+./.venv/bin/python -m arbradar.cli rebuild --from 2026-09-18 --to 2026-09-25
 ./.venv/bin/python -m arbradar.cli top --why         # inspect the ranking
 ./.venv/bin/python -m arbradar.cli send              # dry run by default
 ./.venv/bin/python -m arbradar.cli send --confirm    # actually send
+./.venv/bin/python -m pytest -q tests                # the cases that went wrong once
 ```
 
-Issues are written to `out/` as Markdown and email-safe HTML. **Nothing is ever
-emailed as a side effect of building** — `send` is a separate command and dry-runs
-unless you pass `--confirm`.
+Issues are written to `out/` as email-safe HTML; the plain-text alternative is
+derived from the same rendering at send time. **Nothing is ever emailed as a
+side effect of building** — `send` is a separate command and dry-runs unless
+you pass `--confirm`, and it refuses an issue the editor pass has not read
+unless `--force` says a person has.
 
 ## Review UI
 

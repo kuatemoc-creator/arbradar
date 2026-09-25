@@ -49,40 +49,6 @@ def _nice(date: str) -> str:
         return date
 
 
-def _slug(text: str, date: str) -> str:
-    s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:70]
-    return "{}-{}".format(date, s)
-
-
-def _facts(it: Dict[str, Any]) -> List[List[str]]:
-    from .email_html import who, what, date_label
-    ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    when = str(it.get("published_at") or "")[:10]
-    try:
-        when_label = date_label(when)
-    except ValueError:
-        when_label = when
-    rows = [["Who", who(it)], ["When", when_label], ["What", what(it)],
-            ["Why flagged", it.get("flag_reason") or ""]]
-    if it.get("institution"):
-        rows.append(["Forum", it["institution"]])
-    if it.get("case_ref"):
-        rows.append(["Reference", it["case_ref"]])
-    if it.get("treaty"):
-        rows.append(["Instrument", it["treaty"]])
-    if it.get("amount_usd"):
-        rows.append(["Amount", "US${:,.0f}m".format(it["amount_usd"] / 1e6)])
-    if it.get("claimants"):
-        rows.append(["Claimant", "; ".join(it["claimants"][:3])])
-    if it.get("respondents"):
-        rows.append(["Respondent", "; ".join(it["respondents"][:3])])
-    if it.get("counsel"):
-        rows.append(["Counsel on record", "; ".join(it["counsel"][:4])])
-    elif (it.get("source_tier") or 2) == 1:
-        rows.append(["Counsel on record", "None listed"])
-    return rows
-
-
 def _template_article(it: Dict[str, Any]) -> Article:
     """No model available: assemble from the record, in plain professional English."""
     ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})

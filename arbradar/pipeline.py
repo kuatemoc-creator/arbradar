@@ -767,6 +767,17 @@ def _read_in_full(it: Dict[str, Any]) -> bool:
     return bool(_FULL_READ.search(text))
 
 
+# A dry run of a day that already has an issue must see that day's own items:
+# the build module lists the issue ids to treat as unassigned, without touching them.
+FREE_ISSUES: set = set()
+
+
+def _free() -> str:
+    if not FREE_ISSUES:
+        return "issue_id IS NULL"
+    return "(issue_id IS NULL OR issue_id IN ({}))".format(",".join(str(int(i)) for i in FREE_ISSUES))
+
+
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
     # Today is what was published in the last two days: a wire story three days
     # old that Google News surfaced late is not the lead of a daily.
@@ -775,7 +786,7 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
     # Pinned items always make the cut; excluded ones never do. Everything else
     # competes on score within the window.
     rows = conn.execute(
-        "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL "
+        "SELECT * FROM items WHERE relevant=1 AND " + _free() + " "
         "AND COALESCE(excluded,0)=0 "
         "AND source NOT LIKE 'Court:%' "          # judgments belong to the court list, not the stories
         "AND COALESCE(event_type,'') NOT IN ('lateral_move','appointment') "
@@ -982,7 +993,7 @@ def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, bu
     marks = ",".join("?" * len(events))
     sources = "" if records_ok else "AND source NOT LIKE 'Court:%' AND source NOT IN ('ICSID docket','SEC EDGAR','PCA case list') "
     rows = conn.execute(
-        "SELECT * FROM items WHERE relevant=1 AND issue_id IS NULL AND COALESCE(excluded,0)=0 "
+        "SELECT * FROM items WHERE relevant=1 AND " + _free() + " AND COALESCE(excluded,0)=0 "
         + sources +
         "AND event_type IN ({}) AND score >= ? "
         "AND COALESCE(published_at, substr(fetched_at,1,10)) >= ? "

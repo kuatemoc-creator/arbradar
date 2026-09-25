@@ -8,13 +8,12 @@ Bound to 127.0.0.1 - this is a private desk tool, not a public service.
 """
 import datetime as dt
 import html
-import json
 import os
 from typing import Any, Dict, List
 
 from flask import Flask, jsonify, redirect, request, url_for
 
-from . import config, db, email_html, enrich, llm, pipeline, render, send as sender
+from . import config, db, pipeline, send as sender
 from .taxonomy import EVENT_TYPES
 
 app = Flask(__name__)
@@ -205,38 +204,13 @@ def do_fetch():
 
 @app.post("/build")
 def do_build():
+    """The same build as the command line, through arbradar/build.py."""
+    from . import build
     conn = db.connect()
-    pipeline.rescore(conn, SETTINGS)
-    items = pipeline.select(conn, SETTINGS)
-    if not items:
+    out = build.build_issue(conn, SETTINGS, use_llm=SETTINGS.use_llm)
+    if not out["items"]:
         return redirect(url_for("index", msg="Nothing qualified - lower min_score or widen the window."))
-    date = dt.date.today().isoformat()
-    enrich.enrich(conn, items)
-    if SETTINGS.use_llm:
-        try:
-            text = llm.write_issue(items, SETTINGS.editor_model,
-                                   SETTINGS.newsletter_name, date)
-        except Exception as exc:                      # noqa: BLE001 - boundary
-            text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS,
-                                        extras=pipeline.record_extras(conn, SETTINGS, items))
-    else:
-        extras = pipeline.record_extras(conn, SETTINGS, items)
-        text = render.fallback_markdown(items, SETTINGS.newsletter_name, date, SETTINGS, extras=extras)
-        built = email_html.build(items, extras, SETTINGS, date)
-    paths = render.write_issue(text, items, SETTINGS, date=date,
-                               html_doc=built["html"] if 'built' in dir() else None)
-    subject = built["subject"] if 'built' in dir() else "{} · {}".format(
-        SETTINGS.newsletter_name, email_html.date_label(date))
-    cur = conn.execute(
-        "INSERT INTO issues (number, created_at, subject, html_path, md_path, item_count) "
-        "VALUES ((SELECT COALESCE(MAX(number),0)+1 FROM issues),?,?,?,?,?)",
-        (dt.datetime.now().isoformat(timespec="seconds"), subject,
-         paths["html"], paths["md"], len(items)))
-    conn.executemany("UPDATE items SET issue_id=? WHERE id=?",
-                     [(cur.lastrowid, it["id"]) for it in items])
-    conn.commit()
     return redirect(url_for("preview"))
-
 
 @app.route("/preview")
 def preview():

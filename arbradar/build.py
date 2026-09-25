@@ -49,13 +49,15 @@ def prepare(conn, settings, date: Optional[str], force: bool, dry_run: bool) -> 
         # Scores carry a recency term; a past day is rebuilt with the scores it had then.
         pipeline.reclassify(conn, settings, days=settings.lookback_days + 7)
     today = pipeline.as_of().isoformat()
-    if not dry_run:
-        prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
-        if prior:
-            marks = ",".join("?" * len(prior))
-            conn.execute("UPDATE items SET issue_id=NULL WHERE issue_id IN ({})".format(marks), prior)
-            conn.execute("DELETE FROM issues WHERE id IN ({})".format(marks), prior)
-            conn.commit()
+    prior = [r[0] for r in conn.execute("SELECT id FROM issues WHERE substr(created_at,1,10)=?", (today,))]
+    pipeline.FREE_ISSUES = set()
+    if prior and dry_run:
+        pipeline.FREE_ISSUES = set(prior)             # the day's own items are candidates again, on paper only
+    elif prior:
+        marks = ",".join("?" * len(prior))
+        conn.execute("UPDATE items SET issue_id=NULL WHERE issue_id IN ({})".format(marks), prior)
+        conn.execute("DELETE FROM issues WHERE id IN ({})".format(marks), prior)
+        conn.commit()
     pipeline.rescore(conn, settings)
     return today
 
@@ -276,6 +278,7 @@ def build_issue(conn, settings, date: Optional[str] = None, force: bool = False,
         fh.write(built["html"])
     out = {"date": today, "items": items, "leads": leads, "enforcement": enforcement, "html": built["html"],
            "subject": built["subject"], "paths": {"html": html_path}, "extras": built["extras"]}
+    pipeline.FREE_ISSUES = set()
     if not dry_run:
         out["issue_id"] = record_issue(conn, settings, items, leads, enforcement, built["extras"], built["subject"], html_path, today)
     return out

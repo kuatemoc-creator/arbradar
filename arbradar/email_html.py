@@ -17,7 +17,6 @@ from typing import Any, Dict, List, Optional
 from .config import ROOT
 from .taxonomy import EVENT_TYPES
 from .pipeline import is_paywall
-from .sources.editions import LANG_NAMES
 
 INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
 LINE, HAIR, SUNKEN, LINK = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df"
@@ -87,32 +86,6 @@ def label(text: str, mb=10, top=True) -> str:
     return ('<h2 style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;'
             'font-weight:700;color:{accent};{border}margin:0 0 {mb}px;">{t}</h2>').format(
         sans=SANS, accent=ACCENT, border=border, mb=mb, t=esc(text))
-
-
-def meta_line(it: Dict[str, Any]) -> str:
-    ev = EVENT_TYPES.get(it.get("event_type") or "commentary", {})
-    bits = ['<span style="color:{};font-weight:700;">{}</span>'.format(INK2, esc(ev.get("label", "")))]
-    if (it.get("lang") or "en") != "en":
-        bits.append(esc("{}-language press".format(LANG_NAMES.get(it["lang"], it["lang"]))))
-    if it.get("institution"):
-        bits.append(esc(it["institution"]))
-    if it.get("treaty"):
-        bits.append(esc(it["treaty"]))
-    if it.get("amount_usd"):
-        bits.append("US${:,.0f}m".format(it["amount_usd"] / 1e6))
-    f = firms(it)
-    if f:
-        bits.append("counsel: " + esc(", ".join(f[:4])))
-    elif (it.get("source_tier") or 2) == 1:
-        bits.append('<em style="color:{};">no counsel on record</em>'.format(MUTE))
-    src = (it.get("source") or "source").replace("Google News / ", "").lstrip("| -·").strip()
-    bits.append(a(it.get("url") or "#", src))
-    line = " &middot; ".join(bits)
-    also = it.get("also") or []
-    if also:
-        line += "<br>also: " + ", ".join(
-            a(x["url"], (x.get("source") or "source").replace("Google News / ", "").lstrip("| -·").strip()) for x in also[:5] if x.get("url"))
-    return p(line, size=13, lh=1.5, color=MUTE, mb=0)
 
 
 def who(it: Dict[str, Any]) -> str:
