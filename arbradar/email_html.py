@@ -192,24 +192,43 @@ def _when(it: Dict[str, Any]) -> str:
         return ""
 
 
+def other_copies(it: Dict[str, Any]) -> List[Dict[str, str]]:
+    """Every other outlet carrying the story, once each: the copies that were
+    chased down and the ones the clustering merged, the trade press first."""
+    from .followup import load as _load_cites
+    from .outlets import is_trade_press
+    seen = {it.get("url") or ""}
+    out: List[Dict[str, str]] = []
+    for c in [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)] + list(it.get("also") or []):
+        url = c.get("url") or ""
+        if not url or url in seen or "news.google." in url:
+            continue
+        seen.add(url)
+        src = (c.get("source") or "source").replace("Google News / ", "").lstrip("| -·").strip()
+        if src in {o["source"] for o in out}:
+            continue
+        out.append({"source": src, "url": url})
+    out.sort(key=lambda c: 0 if is_trade_press(c["source"], c["url"]) else 1)
+    return out
+
+
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
     """Headline, one explanation, source. The shape of every good legal newsletter."""
     from .explain import explain
     href = it.get("site_link") or it.get("url") or "#"
     src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
     when = _when(it)
-    from .followup import load as _load_cites
-    cites_all = [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)]
+    cites_all = other_copies(it)
     rec = it.get("record") if isinstance(it.get("record"), dict) else None
     if rec and rec.get("url"):
         tail = 'Record: {rec} &middot; reported by {src}{when}'.format(
             rec=a(rec["url"], _record_label(rec), color=INK2), src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-        cites = [c for c in cites_all if c.get("url") and c.get("url") != rec["url"]][:2]
+        cites = [c for c in cites_all if c.get("url") != rec["url"]][:3]
     else:
         tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-        cites = [c for c in cites_all[:2] if c.get("url")]
+        cites = cites_all[:3]
     if cites:
-        tail += ' &middot; also {}'.format(", ".join(a(c["url"], c.get("source") or "source", color=MUTE) for c in cites))
+        tail += ' &middot; also {}'.format(", ".join(a(c["url"], c["source"], color=MUTE) for c in cites))
     return entry(title_of(it), href, explain(it), tail.strip())
 
 

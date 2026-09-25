@@ -531,7 +531,7 @@ def cluster(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             it["_ents"] = set(ents)
             it["_members"] = [set(toks)]
             it["_bg"] = set(bg)
-            it["also"] = []
+            it["also"] = list(it.get("also") or [])   # a story clustered once keeps the copies it already has
             reps.append(it)
             continue
         if (home.get("lang") or "en") != "en" and (it.get("lang") or "en") == "en":
@@ -1022,7 +1022,9 @@ def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, bu
     anchor_urls = {a.get("url") for a in anchors} - {None, ""}
     seen_topics = _topics_of(anchors + taken)
     out = []
-    for rep in cluster(anchors + taken + cands):
+    # The clustering rewrites its inputs; the day's stories go in as copies so
+    # their own "also" lists come out of this untouched.
+    for rep in cluster(anchors + [dict(t) for t in taken] + cands):
         if rep.get("_anchor") or rep.get("url") in anchor_urls or rep.get("url") in taken_urls:
             continue
         if any(a.get("url") in anchor_urls or a.get("url") in taken_urls for a in rep.get("also") or []):

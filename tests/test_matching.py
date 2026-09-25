@@ -54,3 +54,25 @@ def test_a_capital_names_its_state():
     prague = pipeline._topics_of([_it("Prague caps fuel prices and taxes refiners' windfall profits")])
     czech = pipeline._topics_of([_it("Czech government reinstates fuel margin caps, plans windfall tax on refineries")])
     assert prague & czech
+
+
+def test_clustering_keeps_the_copies_a_story_already_has():
+    rep = _it("US judge backs Iraq as net creditor in oil dispute with Turkey", event_type="enforcement_action",
+              also=[{"source": "IAReporter", "url": "https://iareporter.example/x", "title": "US court recommends confirmation"}])
+    out = pipeline.cluster([rep, _it("Unrelated mining licence revoked in Ghana", event_type="state_measure")])
+    assert len(out) == 2
+    copies = {out[0]["source"]} | {a["source"] for a in out[0]["also"]}
+    assert copies == {"IAReporter", "Google News / x"}     # the better copy is cited; the other hangs off it
+
+
+def test_a_state_alone_does_not_make_another_outlets_copy():
+    from arbradar.followup import _substantive, _index_page
+    assert not _substantive("US judge backs Iraq as net creditor in oil dispute with Turkey",
+                            "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report")
+    assert not _substantive("Egypt defeats Saudi real estate investors’ mega-claim",
+                            "Three Crowns hires Freshfields’ Saudi disputes head for growing DIFC office")
+    assert not _substantive("Russian court consults Foreign Affairs Ministry on Poland’s immunity from jurisdiction",
+                            "Amid US tariff threat on Russia, India says it will continue importing energy")
+    assert _substantive("Egypt defeats Saudi real estate investors’ mega-claim", "Egypt wins US$34bn OIC claim by Saudi investors")
+    assert _index_page("https://www.globallegalpost.com/region/middle-east/united-arab-emirates")
+    assert not _index_page("https://www.cdr-news.com/categories/arbitration-adr/changing-the-perception-of-saudi-arbitration/")

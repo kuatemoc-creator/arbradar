@@ -51,3 +51,13 @@ def test_wire_datelines_come_off():
     assert clean("PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps.") == \
         "The Czech government will reintroduce caps."
     assert clean("LONDON — A court has ruled.") == "A court has ruled."
+
+
+def test_source_line_lists_every_other_copy_once():
+    from arbradar.email_html import other_copies
+    it = {"url": "https://gar.example/a", "source": "GAR",
+          "corroboration": [{"source": "Law360", "url": "https://law360.example/b"}],
+          "also": [{"source": "IAReporter", "url": "https://iareporter.example/c"},
+                   {"source": "Google News / GAR", "url": "https://news.google.com/rss/articles/x"},
+                   {"source": "Law360", "url": "https://law360.example/b"}]}
+    assert [c["source"] for c in other_copies(it)] == ["IAReporter", "Law360"]

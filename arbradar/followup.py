@@ -227,6 +227,11 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             if shared < 2:
                 if _dbg: print("   reject stems<2:", e["title"][:60])
                 continue                              # the anchoring below does the real work; two stems is the floor
+            if not _substantive(title, _flat(e["title"])):
+                if _dbg: print("   reject state-only:", e["title"][:60])
+                continue                              # only a State in common: another story in the same country
+            if _index_page(e.get("url") or ""):
+                continue                              # a section page, not an article
             # Common words alone ("launches", "arbitration", "group") join two
             # different stories; a shared name or the same State must anchor it.
             same_state = bool(my_states & {s.lower() for s in states_in(e["title"] + " " + e["snippet"])})
@@ -311,6 +316,28 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             "story": compose(it, picks)}
 
 
+
+def _substantive(mine: str, theirs: str) -> set:
+    """Stems two headlines share that are not a State or a demonym: "Turkey"
+    alone joins a Gülen-crackdown report to an Iraq award; "Saudi" alone joins
+    a law-firm hire to Egypt's defence of a claim. A copy shares something else."""
+    def _state_words(text):
+        words = {_stem(w.lower()) for w in _sig(text) if states_in(w)}          # a demonym: "Turkish", "Saudi"
+        for name in states_in(text):
+            words |= {_stem(w.lower()) for w in _sig(name)}                      # "Saudi Arabia": both words
+        return words
+    return (_stems(mine) & _stems(theirs)) - _state_words(mine) - _state_words(theirs)
+
+
+_INDEX_PAGE = re.compile(r"/(?:region|regions|category|categories|tag|tags|topic|topics|section|sections)/(?:[^/]+/){0,2}([^/]*)/?$")
+
+
+def _index_page(url: str) -> bool:
+    """A section or region page carries a listing, not the story: its last path
+    segment is a short label ("united-arab-emirates"), not an article slug."""
+    m = _INDEX_PAGE.search(up.urlsplit(url or "").path.rstrip("/"))
+    return bool(m) and len([w for w in m.group(1).split("-") if w]) <= 4
+
 def _local_copies(it, title, ours, my_states, seen_outlets, seen_titles) -> List[Dict[str, str]]:
     """Other outlets' copies of the story already fetched into the database:
     matched on the same names and States as the web copies, same guards."""
@@ -336,8 +363,10 @@ def _local_copies(it, title, ours, my_states, seen_outlets, seen_titles) -> List
     for r in rows:
         t2 = _flat(r["title_en"] or r["title"] or "")
         shared = len(ours & _stems(t2))
-        if shared < 1:
-            continue                                  # the name and forum checks below carry a local copy
+        if shared < 2 or not _substantive(title, t2):
+            continue                                  # a State alone is not a copy; the name and forum checks carry the rest
+        if _index_page(r["url"] or ""):
+            continue
         outlet = _ident((r["source"] or "").replace("Google News / ", ""))
         if outlet in seen_outlets or any(_same(outlet, o) for o in seen_outlets):
             continue
