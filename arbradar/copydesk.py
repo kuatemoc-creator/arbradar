@@ -51,7 +51,8 @@ def _forms(text: str) -> str:
 def fix_headline(it: Dict[str, Any]) -> List[str]:
     """Sentence case, label off, house forms, closed at a clause when over-long."""
     notes = []
-    h = (it.get("title_en") or it.get("title") or "").strip()
+    raw = it.get("title_en") or it.get("title") or ""
+    h = raw.strip()
     keep = list(it.get("claimants") or []) + list(it.get("respondents") or []) + list(it.get("counsel") or [])
     new = sentence_case(h, keep)
     m = _LABEL.match(new)
@@ -69,7 +70,7 @@ def fix_headline(it: Dict[str, Any]) -> List[str]:
             notes.append("headline closed at a clause")
         else:
             notes.append("headline over {} words; needs a person".format(HEADLINE_MAX))
-    if new != h:
+    if new != raw:
         it["title_en"] = new
     return notes
 

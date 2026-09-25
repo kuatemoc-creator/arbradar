@@ -12,6 +12,8 @@ will would shall should may might can could must not no its their his her our yo
 it he she they we you who whom whose which what when where why how new old more most less least first second
 third last next big small large major minor top key own same other another such each every all any some both
 few many much several wins win won loses lose lost defeats defeat seeks seek sought threatens threaten launches
+oust ousts ousted affirm affirms affirmed expropriate expropriates expropriated resign resigns resigned tap taps tapped pick picks picked owe owes owed accept accepts accepted slam slams slammed eye eyes eyed mull mulls mulled urge urges urged push pushes pushed press presses pressed tell tells told keep keeps kept cut cuts slash slashes slashed raise raises raised scrap scraps scrapped strike strikes struck
+pre post non anti pro co re ex semi multi sub inter intra quasi self
 launch files file filed lodges lodge brings bring pursues pursue enforces enforce pays pay settles settle fails
 fail faces face avoids avoid upholds uphold annuls annul sides side sends send orders order joins join leaves
 leave names name instructs instruct takes take rejoins opens open probes probe rules rule declares declare

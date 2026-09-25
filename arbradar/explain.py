@@ -65,11 +65,24 @@ def _clause_cut(sentence: str, max_words: int) -> str:
         return text[:cut].rstrip(" ,;:\u2014\u2013") + "."
     while head and head[-1].lower().strip(",;:") in _FUNCTION:
         head.pop()
+    # "...to pay US$480 million over a failed initial": the trailing phrase
+    # began at a preposition a few words back; the sentence closes before it.
+    idx = [i for i in range(8, len(head)) if head[i].lower().strip(",;:") in _PHRASE_OPENERS]
+    if idx and idx[-1] >= len(head) - 7:
+        cut = idx[-1]
+        while len(idx) >= 2 and cut - idx[-2] <= 3:      # "amid fears of": one chained phrase, cut before it
+            idx.pop()
+            cut = idx[-1]
+        head = head[:cut]
     if len(head) < 8:
         return ""
     return " ".join(head).rstrip(" ,;:") + "."
 
 
+_PHRASE_OPENERS = {"of", "in", "on", "at", "to", "for", "by", "with", "from", "as", "that", "which", "who", "over",
+                   "under", "after", "before", "during", "about", "against", "between", "through", "while", "amid",
+                   "into", "than", "and", "or", "but", "because", "since", "until", "unless", "whether", "when",
+                   "where", "if", "following", "despite", "including", "without", "within", "via", "per"}
 _FUNCTION = {"a", "an", "the", "of", "in", "on", "at", "to", "for", "and", "or", "but", "by", "with", "from", "as", "that",
              "which", "who", "whom", "is", "are", "was", "were", "has", "have", "had", "been", "be", "its", "their", "his",
              "her", "than", "into", "over", "under", "after", "before", "during", "about", "against", "between", "through",

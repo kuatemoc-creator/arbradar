@@ -800,6 +800,7 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
     for a in anchors:
         a["_anchor"] = True
     anchor_urls = {a.get("url") for a in anchors} - {None, ""}
+    anchor_topics = _topics_of(anchors)
     reps = cluster(anchors + [db.row_to_dict(r) for r in rows])
     from .outlets import is_trade_press
     stories = []
@@ -809,6 +810,9 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
             continue
         if any((a.get("url") in anchor_urls) for a in rep.get("also") or []):
             continue
+        if rep.get("event_type") in ("state_measure", "distress_event") and not rep.get("pinned") \
+                and _topics_of([rep]) & anchor_topics:
+            continue                              # the same measure in the same place as an earlier day's story
         if (rep.get("score") or 0) < floor and not rep.get("pinned"):
             continue                              # below the floor: leave it out rather than pad the day
         head = rep.get("title_en") or rep.get("title") or ""
@@ -921,6 +925,36 @@ def _foreign_docket(d: Dict[str, Any]) -> bool:
                               r"international|new york convention|1782", text)) or bool(states_in(title)))
 
 
+# A lead is a measure against investors in a place. Four days of headlines on
+# the EU windfall tax are one lead, whatever each outlet called it.
+_MEASURES = [("windfall tax", re.compile(r"windfall[ -](?:tax|profit|charge|levy)", re.I)),
+             ("nationalisation", re.compile(r"nationali[sz]", re.I)),
+             ("expropriation", re.compile(r"expropriat", re.I)),
+             ("licence revoked", re.compile(r"licen[cs]e\w*.{0,40}\b(?:revok|suspend|cancel|withdr|strip)|(?:revok|suspend|cancel|withdr|strip)\w*.{0,40}licen[cs]e", re.I)),
+             ("price cap", re.compile(r"price caps?|caps? (?:on )?(?:fuel|energy|electricity|gas|margin)|margin caps?", re.I)),
+             ("export ban", re.compile(r"export (?:ban|curb|restriction|halt)|bans? (?:the )?exports?", re.I)),
+             ("concession terminated", re.compile(r"concession\w*.{0,40}\b(?:terminat|cancel|revok|annul)|(?:terminat|cancel|revok|annul)\w*.{0,40}concession", re.I)),
+             ("moratorium", re.compile(r"moratori", re.I)),
+             ("mining halt", re.compile(r"mining (?:ban|halt|suspen|permit)", re.I)),
+             ("asset seizure", re.compile(r"seiz\w*.{0,30}\b(?:asset|plant|refiner|mine|stake|shares)|(?:asset|plant|refiner|mine|stake|shares)\w*.{0,30}\bseiz", re.I))]
+_REGION = re.compile(r"\b(?:EU|E\.U\.|European Union|Europe|Brussels|Eurogroup|European Commission|eurozone)\b", re.I)
+
+
+def _topics_of(items: List[Dict[str, Any]]) -> set:
+    """(measure, place) pairs a set of items is about; empty when a text names neither."""
+    out = set()
+    for it in items:
+        text = " ".join([it.get("title_en") or it.get("title") or "", (it.get("summary_en") or it.get("summary") or "")[:400]])
+        measures = [name for name, rx in _MEASURES if rx.search(text)]
+        if not measures:
+            continue
+        places = {_fold(s).lower() for s in states_in(text)}
+        if _REGION.search(text):
+            places.add("eu")
+        out.update((m, p) for m in measures for p in places)
+    return out
+
+
 def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, business_gate) -> List[Dict[str, Any]]:
     from . import site as _site
     from .outlets import is_trade_press
@@ -967,13 +1001,17 @@ def _track(conn, settings, taken, events, limit, floor, trade_ok, records_ok, bu
     for a in anchors:
         a["_anchor"] = True
     anchor_urls = {a.get("url") for a in anchors} - {None, ""}
+    seen_topics = _topics_of(anchors + taken)
     out = []
     for rep in cluster(anchors + taken + cands):
         if rep.get("_anchor") or rep.get("url") in anchor_urls or rep.get("url") in taken_urls:
             continue
         if any(a.get("url") in anchor_urls or a.get("url") in taken_urls for a in rep.get("also") or []):
             continue
+        if _topics_of([rep]) & seen_topics:
+            continue                                  # the same measure in the same place: a lead already carried
         out.append(rep)
+        seen_topics |= _topics_of([rep])
         if len(out) >= limit:
             break
     return out

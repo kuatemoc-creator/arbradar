@@ -102,6 +102,30 @@ def cmd_enrich(args, settings, conn):
     return 0
 
 
+
+def _fill_summaries(conn, rows):
+    """A story whose copy arrived cut short ("... after the Congolese") takes the
+    fullest text our own database holds for the same article or the same headline."""
+    import re as _re
+    n = 0
+    for it in rows:
+        cur = (it.get("summary") or "").strip()
+        if cur and len(cur) >= 200 and not cur.endswith(("\u2026", "...")):
+            continue
+        urls = [u for u in [it.get("url")] + [a.get("url") for a in it.get("also") or []] if u]
+        q = "SELECT summary FROM items WHERE summary IS NOT NULL AND (url IN ({}) OR title=?)".format(",".join("?" * len(urls)) or "''")
+        best = ""
+        for (txt,) in conn.execute(q, (*urls, it.get("title") or "")):
+            plain = _re.sub(r"<[^>]+>", " ", txt or "").strip()
+            if plain.endswith(("\u2026", "...")) or plain.lower().startswith((it.get("title") or "").lower()[:40]):
+                continue
+            if len(plain) > len(best):
+                best = txt
+        if best and len(best) > len(cur) + 20:
+            it["summary"] = best
+            n += 1
+    return n
+
 def cmd_build(args, settings, conn):
     # A rebuild on the same day replaces that day's issue; otherwise the second
     # build sees only what the first one left over.
@@ -129,6 +153,7 @@ def cmd_build(args, settings, conn):
         return 1
     date = today
 
+    _fill_summaries(conn, items)
     filled = enrich.enrich(conn, items)
     if filled:
         print("filled in text for {} headline-only stories".format(filled))
@@ -236,6 +261,7 @@ def cmd_build(args, settings, conn):
     # The partner's edit, when the editorial tier is on: headline and explanation
     # rewritten to the arb-editor brief from each entry's own sources. The
     # grounding check that follows keeps it honest.
+    _fill_summaries(conn, leads + enforcement)
     llm_pass = False
     if settings.use_llm and not args.no_llm and os.environ.get("ANTHROPIC_API_KEY"):
         try:
