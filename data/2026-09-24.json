@@ -75,7 +75,22 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
+   "corroboration": [
+    {
+     "source": "Global Legal Post (Global)",
+     "url": "https://www.globallegalpost.com/region/middle-east/united-arab-emirates",
+     "title": "Three Crowns hires Freshfields’ Saudi disputes head for growing DIFC office",
+     "published_at": "2026-09-24",
+     "snippet": "Bashar Malkawi explores how the UAE’s emerging collective licensing model could offer a solution to copyright challenges posed by…"
+    },
+    {
+     "source": "CDR News (Global)",
+     "url": "https://www.cdr-news.com/categories/arbitration-adr/changing-the-perception-of-saudi-arbitration/",
+     "title": "Changing the perception of Saudi arbitration",
+     "published_at": "2026-09-22",
+     "snippet": "A groundbreaking report has served to dispel certain longstanding concerns about Saudi Arabia’s arbitral framework and effectiveness. CDR takes a deeper dive into the findings and how it might alter parties’ views of the Kingdom as a reliable seat."
+    }
+   ],
    "story": "Egypt has defeated claims worth more than US$34 billion brought by Saudi real estate investors under the OIC investment agreement.",
    "tier": "development",
    "slug": "2026-09-24-egypt-defeats-saudi-real-estate-investors-mega-claim.html",
@@ -145,7 +160,22 @@
    "also": [],
    "lang": "en",
    "country": "Global",
-   "corroboration": [],
+   "corroboration": [
+    {
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/freshfields-saudi-disputes-head-joins-three-crowns-in-dubai",
+     "title": "Freshfields’ Saudi disputes head joins Three Crowns in Dubai",
+     "published_at": "2026-09-23",
+     "snippet": "Amani Khalifa has left her role as head of the Saudi Arabia disputes practice at Freshfields to join the partnership at Three Crowns in Dubai."
+    },
+    {
+     "source": "Global Legal Post (Global)",
+     "url": "https://www.globallegalpost.com/region/middle-east/united-arab-emirates",
+     "title": "Three Crowns hires Freshfields’ Saudi disputes head for growing DIFC office",
+     "published_at": "2026-09-24",
+     "snippet": "Bashar Malkawi explores how the UAE’s emerging collective licensing model could offer a solution to copyright challenges posed by…"
+    }
+   ],
    "story": "Three Crowns LLP on Wednesday announced a partner hire for its new Dubai International Financial Centre office.",
    "tier": "development",
    "slug": "2026-09-24-three-crowns-taps-freshfields-pro-for-new-dubai-office.html",
@@ -188,10 +218,10 @@
   },
   {
    "record": {
-    "source": "US federal docket",
-    "url": "https://www.courtlistener.com/docket/67165242/republic-of-iraq-v-republic-of-turkey/",
-    "title": "REPUBLIC OF IRAQ v. REPUBLIC OF TURKEY (D.D.C. 1:23-cv-00978)",
-    "snippet": " Parties: REPUBLIC OF TURKEY; REPUBLIC OF IRAQ."
+    "source": "US court opinion",
+    "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
+    "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
+    "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
    },
    "id": 7767,
    "title": "US court recommends confirmation of award in Iraq-Türkiye pipeline arbitration",
@@ -222,13 +252,41 @@
    "country": null,
    "corroboration": [
     {
-     "source": "US federal docket",
-     "url": "https://www.courtlistener.com/docket/67165242/republic-of-iraq-v-republic-of-turkey/",
-     "title": "REPUBLIC OF IRAQ v. REPUBLIC OF TURKEY (D.D.C. 1:23-cv-00978)",
-     "snippet": " Parties: REPUBLIC OF TURKEY; REPUBLIC OF IRAQ."
+     "source": "US court opinion",
+     "url": "https://www.courtlistener.com/opinion/10981174/republic-of-iraq-v-republic-of-turkey/",
+     "title": "Republic of Iraq v. Republic of Turkey (District Court, District of Columbia, 2026-09-23)",
+     "snippet": "UNITED STATES DISTRICT COURT FOR THE DISTRICT OF COLUMBIA THE REPUBLIC OF IRAQ, Petitioner, v. No. 23-cv-00978-SLS-ZMF THE REPUBLIC OF TURKEY, Respondent. REPORT AND RECOMMENDATION Petitioner Republic of Iraq (“Iraq”) filed this action to confirm an award issued by an international arbitration panel pursuant to 9 U.S.C. § 20"
+    },
+    {
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/us-judge-backs-iraq-net-creditor-in-oil-dispute-turkey",
+     "title": "US judge backs Iraq as net creditor in oil dispute with Turkey",
+     "published_at": "2026-09-24",
+     "snippet": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports, rejecting Turkey’s arguments that it should be considered the net award creditor."
+    },
+    {
+     "source": "stockholmcf.org",
+     "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
+     "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
+     "published_at": "2026-09-21",
+     "snippet": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October, continuing the sale of businesses seized during the government’s crackdown on the faith-based Gülen movement. The sale notices were published in Tuesday’s Official Gazette, the Ekonomi newspaper reported."
+    },
+    {
+     "source": "turkishminute.com",
+     "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
+     "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
+     "published_at": "2026-09-23",
+     "snippet": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel, which has been at the center of an investigation into allegations that proceeds from illegal betting, fraud and other crimes were laundered through its payment infrastructure, the T24 news website reported."
+    },
+    {
+     "source": "Mealey's",
+     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xTlVHLXJEZmU3WFNXMURNT3FTTWhFRTlacThORkZWVGRHTFJ2VTBmLVpKRy1XRGFZbE5VckRpT1ZBTXFtcHZvaWY2VS1MdWY5YzFIa3dUYXUxR3hx0gFiQVVfeXFMTy1laTdFSDgweW84NjA2U0VIOU1fQXgwUkxtNzlpZDhHRWFTWkFlVHlCUFQwRHItbTJDdVNTMzdieGh1QTJjVlZfd2NHUnJIcHZGM0lnLVVLUFJkUUlabUdDRkE?oc=5",
+     "title": "Magistrate Judge: $1.5B Award Against Turkey For Pipeline Dispute Should Be Confirmed - Mealey's",
+     "published_at": "2026-09-24",
+     "snippet": ""
     }
    ],
-   "story": "",
+   "story": "A US magistrate judge has recommended that a district court grant Iraq’s petition to confirm an ICC award issued in a multibillion-dollar dispute with Turkey over crude oil exports.",
    "tier": "brief",
    "slug": "2026-09-24-us-court-recommends-confirmation-of-award-in-iraq-t-rkiye-pipeline-arb.html",
    "event": "Award"
@@ -305,10 +363,89 @@
    "event": "Note"
   }
  ],
- "leads": [],
- "enforcement": [
+ "leads": [
   {
    "record": null,
+   "id": 6908,
+   "title": "'Oil companies are exploiting the situation': Europe eyes windfall tax on energy giants as fuel prices rise",
+   "title_en": null,
+   "summary": "EU finance ministers are considering ways to tax what Germany's finance minister described as 'excessive profits' in the energy sector amid fears of a major energy price…",
+   "summary_en": null,
+   "url": "https://www.msn.com/en-ie/money/economy/oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on-energy-giants-as-fuel-prices-rise/ar-AA2cwfPy",
+   "source": "Google News / msn.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Ireland"
+   ],
+   "sectors": [
+    "Oil & gas",
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "EU finance ministers are considering ways to tax what Germany's finance minister described as 'excessive profits' in the energy sector amid fears of a major energy price.",
+   "tier": "signal",
+   "slug": "2026-09-24-oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on.html",
+   "event": "State measure"
+  },
+  {
+   "record": null,
+   "id": 5784,
+   "title": "CEMAC Regulator Revokes Axiome Capital’s License After Three Years Without Market Activity",
+   "title_en": "CEMAC regulator revokes Axiome Capital’s license after three years without market activity",
+   "summary": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese…",
+   "summary_en": null,
+   "url": "https://www.businessincameroon.com/finance/2309-16805-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-without-market-activity",
+   "source": "Google News / businessincameroon.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Cameroon"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese.",
+   "tier": "signal",
+   "slug": "2026-09-24-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-wit.html",
+   "event": "State measure"
+  }
+ ],
+ "enforcement": [
+  {
+   "record": {
+    "source": "US court opinion",
+    "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
+    "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
+    "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
+   },
    "id": 2537,
    "title": "US appeals court reverses district court’s dismissal of Laos’ bid to enforce arbitral awards against alleged alter egos of award debtors",
    "title_en": null,
@@ -336,8 +473,29 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": "",
+   "corroboration": [
+    {
+     "source": "US court opinion",
+     "url": "https://www.courtlistener.com/opinion/10975731/the-government-of-the-lao-peoples-democratic-republic-v-baldwin/",
+     "title": "The Government of the Lao People's Democratic Republic v. Baldwin (Court of Appeals for the Ninth Circuit, 2026-09-17)",
+     "snippet": "FOR PUBLICATION UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT THE GOVERNMENT OF THE LAO No. 25-2562 PEOPLE’S DEMOCRATIC D.C. No. REPUBLIC, 1:22-cv-00011 Petitioner - Appellant, v. OPINION JOHN K. BALDWIN; and BRIDGE CAPITAL, LLC, Respondents - Appellees. Appeal from the United States District"
+    },
+    {
+     "source": "Law360 International Arbitration (Global)",
+     "url": "https://www.law360.com/internationalarbitration/articles/2526885?utm_source=rss&utm_medium=rss&utm_campaign=section",
+     "title": "9th Circ. Revives Laos' $5M Enforcement Bid In Casino Case",
+     "published_at": "2026-09-18",
+     "snippet": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some $5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming from an ill-fated casino venture, saying a lower court should have taken a closer look at the government's arguments."
+    },
+    {
+     "source": "Mealey's",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNV2Z5QUw0cjU3LWpGUDdYQ3FkRWg4ZmcxV0I2Y3ZWbUx1TEVUOVBDc0xWTzVTNFpOcVRnZkZzLXhXbE5pdkY2QUQ4N2ZLSmZyNzk0YzZldWNmU0xjM2pWTHJLR2k3Q1I0ZnFVbEc3dVFxangyMUhqS1dGLS1OTVZvYlBfQV94ck9SUDg4S2tId01hU3lNMTZyNXlYM0lvNE5WZVZkUEdCdW8tb2xUR2paRkQ0eUkwdk5xWjh2ZDk5emZqek5uR2VaNjF4UUlRVTYwQko5MUlDTFdZeHRHemF6MVIzbGF1RVdi0gFiQVVfeXFMUHFON0xsNmlHODRlRmczV1dwQVdrY3RGdFgyUTFDejFlUkRObmZVblhHS3ktbnpFTFZIVU9KY3RKRlVEcWJVRDdHeG1rMmVfVU1DLWpDakxkbG5PenVRS3VQZUE?oc=5",
+     "title": "Dismissal Of Laos’ $4.5M Casino Petition Reversed In Part By 9th Circuit - Mealey's",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    }
+   ],
+   "story": "The Ninth Circuit on Thursday revived the government of Laos' bid to enforce some US$5 million in arbitral awards against an entrepreneur who was not party to an underlying arbitration stemming from an ill-fated casino venture.",
    "tier": "enforcement",
    "slug": "2026-09-24-us-appeals-court-reverses-district-court-s-dismissal-of-laos-bid-to-en.html",
    "event": "Enforcement"

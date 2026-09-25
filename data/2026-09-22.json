@@ -3,6 +3,7 @@
  "subject": "ArbRadar · 22 September 2026 — Emergency arbitrator rules in Albanian airport dispute",
  "stories": [
   {
+   "record": null,
    "id": 4764,
    "title": "Emergency arbitrator rules in Albanian airport dispute",
    "title_en": null,
@@ -32,13 +33,22 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": null,
+   "corroboration": [
+    {
+     "source": "voxnews.al",
+     "url": "https://www.voxnews.al/english/aktualitet/gazetari-balluku-ka-marre-peng-aeroportin-e-vlores-shqiperia-mund-te--i124781",
+     "title": "Journalist: Balluku has taken Vlora Airport hostage, Albania may lose 700 million euros in arbitration",
+     "published_at": "2026-09-21",
+     "snippet": "Balluku, Rama and PacolliVlora Airport was presented as a strategic project, as a promise for development, tourism and investment ..."
+    }
+   ],
+   "story": "An ICC emergency arbitrator has issued an interim order in a dispute over Albania’s termination of an airport concession, which is also the subject of a threatened ICSID claim.",
    "tier": "lead",
    "slug": "2026-09-22-emergency-arbitrator-rules-in-albanian-airport-dispute.html",
    "event": "Interim relief"
   },
   {
+   "record": null,
    "id": 5535,
    "title": "Libyan state entity fails to lift French attachment",
    "title_en": null,
@@ -70,12 +80,13 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": null,
+   "story": "A Kuwaiti company seeking to enforce a billion-dollar award against Libya has persuaded a Paris court to uphold an attachment of assets belonging to the state’s national oil company.",
    "tier": "development",
    "slug": "2026-09-22-libyan-state-entity-fails-to-lift-french-attachment.html",
    "event": "Enforcement"
   },
   {
+   "record": null,
    "id": 5534,
    "title": "Russia loses Singapore immunity appeal in Yukos saga",
    "title_en": null,
@@ -105,13 +116,22 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": null,
+   "corroboration": [
+    {
+     "source": "iareporter.com",
+     "url": "https://www.iareporter.com/articles/singapore-court-of-appeal-confirms-dismissal-of-russias-immunity-claims-based-on-issue-estoppel-in-yukos-shareholders-enforcement-case/",
+     "title": "Singapore Court of Appeal confirms dismissal of Russia’s immunity claims based on issue estoppel in Yukos shareholders’ enforcement case",
+     "published_at": "2026-09-22",
+     "snippet": "Dive Deeper into Research The Topic Tool shows you case law discussion for 3000+ topics and how concepts have been interpreted by a particular arbitrator, under a specific treaty, ..."
+    }
+   ],
+   "story": "The Singapore Court of Appeal has upheld an order allowing the former majority shareholders of Yukos Oil Company to enforce awards now worth more than US$66 billion against Russia.",
    "tier": "development",
    "slug": "2026-09-22-russia-loses-singapore-immunity-appeal-in-yukos-saga.html",
    "event": "Award"
   },
   {
+   "record": null,
    "id": 5412,
    "title": "Turkish Airlines, Pegasus and AJet cancel Iran flights as US sanctions bite",
    "title_en": null,
@@ -143,25 +163,25 @@
    "country": "Kenya",
    "corroboration": [
     {
-     "source": "hurriyetdailynews.com",
-     "url": "https://www.hurriyetdailynews.com/turkish-cyprus-inks-protocol-with-turkish-airlines-ajet-211211",
-     "title": "Turkish Cyprus inks protocol with Turkish Airlines, AJet",
-     "published_at": "2025-07-08",
-     "snippet": "The Turkish Cyprus inked a protocol Monday with Türkiye's flag carrier Turkish Airlines and low-cost carrier AJet under a project which aims to make air transportation to the Turkish Cyprus easier and ..."
+     "source": "theyeshivaworld.com",
+     "url": "https://www.theyeshivaworld.com/news/israel-news/2601503/iran-flights-halted-turkish-airlines-ajet-and-pegasus-cancel-service-amid-u-s-sanctions.html",
+     "title": "IRAN FLIGHTS HALTED: Turkish Airlines, AJet And Pegasus Cancel Service Amid U.S. Sanctions",
+     "published_at": "2026-09-22",
+     "snippet": "Turkish Airlines, AJet and Pegasus have canceled all flights to and from Iran as sweeping U.S. sanctions targeting Iran’s aviation sector take effect. The cancellations began Monday, with the Turkish ..."
     },
     {
-     "source": "Türkiye Today",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVUs3MTdfcFJaWlV0cVY0YkdxVk9NWWowTFFsTlJCWTNVREdNOXNZcUdJMnRUQkJ3MUlFUW1GbHpfMVN6YXM0RFNDY0Z0TmJnbnhHMlZsQTZPWUZEUFFpOEZuX1llRU5sb3RYeE13U2tkN20zRF9EbldWcW91RllhMC12YXpObkNOUVRER2hnLXY3NlZvcHMwNUlUZlhZdHd6UGh1TllrZXpnR1M2QS02QjVqc2JDaWlXR0VQbw?oc=5",
-     "title": "Turkish Airlines, Pegasus, AJet halt Iran flights as US sanctions take effect - Türkiye Today",
-     "published_at": "2026-09-21",
-     "snippet": "Turkish Airlines, Pegasus, AJet halt Iran flights as US sanctions take effect Türkiye Today"
+     "source": "Межа. Новини України.",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xZTdxNFdFXzMzY0lhUFVZdUtvb2Jwa2N0dV9wMkIzYXdCQVJWWjVKby1jR3dmcHNkRS1MdkRFcVlzMjczYjVtYXgyMVJySjVUY2hLT0ZfRkIwLXhxVlJyVHBqcjhVNFd1U1FZ?oc=5",
+     "title": "Turkish Airlines, AJet and Pegasus suspend Iran flights after new US sanctions - Межа. Новини України.",
+     "published_at": "2026-09-22",
+     "snippet": ""
     },
     {
-     "source": "i24news.tv",
-     "url": "https://www.i24news.tv/en/news/middle-east/artc-three-turkish-airlines-cancel-flights-to-iran-as-us-sanctions-take-effect",
-     "title": "Three Turkish airlines cancel flights to Iran as US sanctions take effect",
-     "published_at": "2026-09-21",
-     "snippet": "US Treasury Secretary Scott Bessent said companies servicing sanctioned Iranian carriers risk losing access to fuel, landing services and the dollar system ..."
+     "source": "turkiyetoday.com",
+     "url": "https://www.turkiyetoday.com/business/turkish-airlines-halts-iran-flights-until-march-2027-iranian-media-reports-3228650",
+     "title": "Turkish Airlines, Pegasus, AJet halt Iran flights as US sanctions take effect",
+     "published_at": "2026-09-22",
+     "snippet": "Turkish Airlines reportedly suspends all flights to Iran until at least March 2027 while Iraq moves to ban Iranian carriers ..."
     },
     {
      "source": "famagusta-gazette.com",
@@ -171,19 +191,20 @@
      "snippet": "Major Turkish airlines, including Turkish Airlines, AJet, and Pegasus, have suspended their flights to Iran following the imposition of ..."
     },
     {
-     "source": "turkishminute.com",
-     "url": "https://www.turkishminute.com/2026/09/22/turkish-carriers-remove-iran-flights-from-schedules-into-2027-amid-us-sanctions/",
-     "title": "Turkish carriers remove Iran flights from schedules into 2027 amid US sanctions",
+     "source": "zamon.uz",
+     "url": "https://zamon.uz/en/2026/09/22/three-turkish-airlines-have-suspended-flights-to-iran",
+     "title": "Three Turkish airlines have suspended flights to Iran",
      "published_at": "2026-09-22",
-     "snippet": "Turkey’s flag carrier, Turkish Airlines, its low-cost subsidiary AJet and private budget carrier Pegasus have removed flights to Iran from their booking systems, suggesting that a suspension imposed ..."
+     "snippet": "Turkey's Turkish Airlines, AJet, and Pegasus airlines suspended flights to and from Iran starting September 21. This occurred against the backdrop of new US sanctions taking effect against Iran's ..."
     }
    ],
-   "story": null,
+   "story": "",
    "tier": "development",
    "slug": "2026-09-22-turkish-airlines-pegasus-and-ajet-cancel-iran-flights-as-us-sanctions-.html",
    "event": "State measure"
   },
   {
+   "record": null,
    "id": 5533,
    "title": "EU lifts sanctions on Fridman",
    "title_en": null,
@@ -211,22 +232,51 @@
    "country": null,
    "corroboration": [
     {
-     "source": "Global Investigations Review",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNE8zVXVDVThwRkhxSmhqUjNjRnl1R2Q4ZG90SlhWamNFcDNUNFNUVHN1b3VLTnQ4MHhVOWFER3ZOY0NxYkZxaWw3dU5EZGJDQWpwWW5KZmE5MFN3Xzc3YjcyLWxUTzgxdENCQnFDRkgydndwdlRIRUQxR3l6NG9JdVlmczYzeEg5Qi1WTXVfeFZYeG1rNmlkTzlhaTY?oc=5",
-     "title": "EU lifts sanctions on Fridman, Usmanov - Global Investigations Review",
-     "published_at": "2026-09-23",
-     "snippet": "EU lifts sanctions on Fridman, Usmanov Global Investigations Review"
+     "source": "Reuters",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcEVKdjlhcGtLRzFtNF9yOExCc0JNZG9VazZPNlpqdG1rQWc5ejhjMjdPSF9uSjJ3UnJxcXBKMWkyMXhOSUJleEZObXNlVzB5VHA2UUhpRGRNSHA3dXNqekZ0Y0EtMEhxMjNyeHBMLXhGM2hYa3ZvMXdFUWhnZ1Mxb1hpN1BCTVdMOFhoQlBTM3F1dGZPVTBZdTlyUjZjYjJBODJjaFJDbFE4MnpaNDlZ?oc=5",
+     "title": "EU continues talks on deal to lift sanctions on Russia-linked billionaires Usmanov and Fridman, diplomats say - Reuters",
+     "published_at": "2026-09-21",
+     "snippet": ""
+    },
+    {
+     "source": "en.interfax.com.ua",
+     "url": "https://en.interfax.com.ua/news/general/1209842.html",
+     "title": "Zelenskyy: British PM assures London will not lift sanctions against Usmanov, Fridman",
+     "published_at": "2026-09-24",
+     "snippet": "British Prime Minister Andy Burnham assured Ukrainian President Volodymyr Zelenskyy that London will not lift sanctions against Russian businessmen Alisher Usmanov and Mikhail Fridman."
+    },
+    {
+     "source": "hindustantimes.com",
+     "url": "https://www.hindustantimes.com/world-news/us-news/ukraine-anger-as-eu-lifts-sanctions-on-russian-oligarchs-usmanov-fridman-101790104791822.html",
+     "title": "Ukraine anger as EU lifts sanctions on Russian oligarchs Usmanov, Fridman",
+     "published_at": "2026-09-22",
+     "snippet": "A deal to extend the sanctions against some 3,000 individuals and entities, including President Vladimir Putin, was agreed just ahead of a Tuesday deadline when Latvia agreed to drop its veto opposing ..."
+    },
+    {
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-us/news/other/eu-officially-lifts-sanctions-on-russian-oligarchs-usmanov-and-fridman/ar-AA2cMj7G",
+     "title": "EU officially lifts sanctions on Russian oligarchs Usmanov and Fridman",
+     "published_at": "2026-09-22",
+     "snippet": "European Union countries have officially extended anti-Russian sanctions, but Russian oligarchs Alisher Usmanov and Mikhail Fridman are no longer on the list, according to a statement by the European ..."
+    },
+    {
+     "source": "tradersunion.com",
+     "url": "https://tradersunion.com/news/financial-news/show/3435467-eu-lifts-sanctions-fridman-usmanov/",
+     "title": "EU agrees to lift sanctions on Fridman, Usmanov in Russia curbs extension deal",
+     "published_at": "2026-09-22",
+     "snippet": "EU removes Mikhail Fridman and Alisher Usmanov from sanctions in exchange for renewing Russia curbs, extending measures for three years."
     }
    ],
-   "story": null,
+   "story": "The European Union has lifted sanctions on Russian-Israeli billionaire Mikhail Fridman, who has been pursuing investment treaty claims against western states that have frozen his assets.",
    "tier": "development",
    "slug": "2026-09-22-eu-lifts-sanctions-on-fridman.html",
    "event": "Note"
   },
   {
+   "record": null,
    "id": 5849,
    "title": "APTEL Clarifies CERC Arbitration Powers And Corrects DVC Judgment Interpretation",
-   "title_en": null,
+   "title_en": "APTEL clarifies CERC arbitration powers and corrects DVC judgment interpretation",
    "summary": "APTEL rules on Tata Power's review petition, clarifying arbitration scope under the Electricity Act.",
    "summary_en": null,
    "url": "https://windinsider.com/2026/09/22/aptel-clarifies-cerc-arbitration-powers-and-corrects-dvc-judgment-interpretation/",
@@ -252,15 +302,16 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": null,
+   "story": "APTEL rules on Tata Power's review petition, clarifying arbitration scope under the Electricity Act.",
    "tier": "development",
    "slug": "2026-09-22-aptel-clarifies-cerc-arbitration-powers-and-corrects-dvc-judgment-inte.html",
    "event": "Commercial arbitration"
   },
   {
+   "record": null,
    "id": 4785,
    "title": "AAA Launches New Group To Navigate AI In Arbitration",
-   "title_en": null,
+   "title_en": "AAA launches new group to navigate AI in arbitration",
    "summary": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
    "summary_en": null,
    "url": "https://www.law360.com/internationalarbitration/articles/2527183?utm_source=rss&utm_medium=rss&utm_campaign=section",
@@ -285,24 +336,17 @@
    "also": [],
    "lang": "en",
    "country": "Global",
-   "corroboration": [
-    {
-     "source": "Law.com",
-     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQTlJDOHk4b0hqVGNiMElLbUUtQXE3bzFadXNQajdQNkh2TjJmY0xoVzJPQ0tVMmlSc2hMeHctRktRY0lxaGxkU3VCQjY2ejF0UWZIWDk0clVlcjJuNXNoTVkxTkxhSGxvcXMzYXZFYjZLenJxMmFjWlhGT2VLTkl2a01CYmlTcVJaUWFDem80TTY3UW9iX3ViQlVWWXoxdVpkZFdyOU9TX3NpWDc2RFJ4cE04aEk0a2lHc2tXeEF6M1RtdTRlaG8tbzdRN2w?oc=5",
-     "title": "CMS Launches Ibero-American Arbitration Group To Tackle Cross-Border Conflicts - Law.com",
-     "published_at": "2026-06-02",
-     "snippet": "CMS Launches Ibero-American Arbitration Group To Tackle Cross-Border Conflicts Law.com"
-    }
-   ],
-   "story": null,
+   "corroboration": [],
+   "story": "The American Arbitration Association has announced it launched an artificial intelligence ambassador program to examine emerging issues related to the technology and dispute resolution.",
    "tier": "development",
    "slug": "2026-09-22-aaa-launches-new-group-to-navigate-ai-in-arbitration.html",
    "event": "Note"
   },
   {
+   "record": null,
    "id": 5559,
    "title": "Mitsui & Co. v. Spain — annulment proceeding at ICSID",
-   "title_en": "ICSID Enforcement in Israel: Discretion, EU Controversy, and the Sun-Flower v. Spain Decision",
+   "title_en": "Discretion, EU Controversy, and the Sun-Flower v. Spain Decision",
    "summary": "Mitsui & Co. brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on December 12, 2025. White & Case acts for the claimant. Abogacía General del Estado, Ministry of Justice of the Government of Spain for Spain. The tribunal is Quentin Loh, presiding; Patrick Leonard; Anne Marie Mürrle Rojas. On 22 September 2026, mitsui & Co., Ltd. Files a counter-memorial on annulment.",
    "summary_en": null,
    "url": "https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/20/47",
@@ -334,31 +378,50 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "jdsupra.com",
-     "url": "https://www.jdsupra.com/legalnews/the-sun-flower-v-spain-decision-4797955/",
-     "title": "ICSID Enforcement in Israel: Discretion, EU Controversy, and the Sun-Flower v. Spain Decision",
-     "published_at": "2025-09-03",
-     "snippet": "The Tel Aviv District Court has, for the first time, considered a request to enforce an ICSID award in Israel. In the case against Spain, the Court declined enforcement, holding that Israel was not ..."
-    },
-    {
-     "source": "law.com",
-     "url": "https://www.law.com/international-edition/2025/10/17/investor-state-annulments-stark-differences-between-icsid-and-national-courts/",
-     "title": "Investor-State Annulments: Stark Differences Between ICSID and National Courts",
-     "published_at": "2025-10-16",
-     "snippet": "International Centre for Settlement of Investment Disputes (ICSID) annulments remain rare compared with the success rate before national courts, where broader grounds and differing legal standards ..."
-    }
-   ],
-   "story": null,
+   "corroboration": [],
+   "story": "Mitsui & Co. brought the claim against Spain under the ECT (Energy Charter Treaty), in the electric power and other energy sector; it was registered on December 12, 2025. White & Case acts for the claimant.",
    "tier": "brief",
-   "slug": "2026-09-22-icsid-enforcement-in-israel-discretion-eu-controversy-and-the-sun-flow.html",
+   "slug": "2026-09-22-discretion-eu-controversy-and-the-sun-flower-v-spain-decision.html",
    "event": "Annulment"
   },
   {
+   "record": null,
+   "id": 5536,
+   "title": "AAA president joins Clio",
+   "title_en": null,
+   "summary": "Bridget McCormack, who next month will step down as president and CEO of the American Arbitration Association, has joined legal AI company Clio to help expand the use of its technology in the judiciary.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/aaa-president-joins-clio",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-22",
+   "institution": "ICDR/AAA",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Bridget McCormack, who next month will step down as president and CEO of the American Arbitration Association, has joined legal AI company Clio to help expand the use of its technology in the judiciary.",
+   "tier": "brief",
+   "slug": "2026-09-22-aaa-president-joins-clio.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
    "id": 5537,
    "title": "Malaysian road developer reportedly puts India on notice of treaty dispute over protracted judicial delays",
-   "title_en": null,
+   "title_en": "Malaysian road developer reportedly puts India on notice of treaty dispute",
    "summary": "",
    "summary_en": null,
    "url": "https://www.iareporter.com/articles/malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dispute-over-protracted-judicial-delays/",
@@ -384,13 +447,43 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": null,
-   "story": null,
+   "corroboration": [
+    {
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/oil-trader-wins-hkiac-award-over-indian-deliveries",
+     "title": "Oil trader wins HKIAC award over Indian deliveries",
+     "published_at": "2026-09-08",
+     "snippet": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India."
+    },
+    {
+     "source": "PCA",
+     "url": "https://pca-cpa.org/en/news/pca-press-release-pca-case-no-2023-01-the-indus-waters-western-rivers-arbitration-islamic-republic-of-pakistan-v-republic-of-india-6/",
+     "title": "PCA Press Release – PCA Case No. 2023-01: The Indus Waters Western Rivers Arbitration (Islamic Republic of Pakistan v. Republic of India)",
+     "published_at": "",
+     "snippet": "Please see the attached press release issued on 31 August 2026 by the Permanent Court of Arbitration (PCA) in the arbitration instituted by the Islamic Republic of Pakistan against the Republic of India pursuant to the Indus Waters Treaty of…"
+    },
+    {
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-in/news/other/g-r-infraprojects-terminates-rs413-crore-ntpc-bess-contract-citing-force-majeure-and-war-risk/ar-AA2cpV3x",
+     "title": "G R Infraprojects Terminates NTPC BESS EPC Contracts, Invokes Dispute Resolution",
+     "published_at": "2026-09-17",
+     "snippet": "India, Sept. 17 -- India's EPC sector runs on long-dated, fixed-scope contracts signed years before delivery, which makes force majeure and war-risk clauses far more than legal boilerplate they are"
+    },
+    {
+     "source": "thediplomat.com",
+     "url": "https://thediplomat.com/2026/09/why-malaysia-wont-extradite-dr-zakir-naik-to-india/",
+     "title": "Why Malaysia Won’t Extradite Dr. Zakir Naik to India",
+     "published_at": "2026-09-18",
+     "snippet": "Despite being wanted on various criminal charges in India, the Islamic preacher has become hugely popular since arriving in Malaysia in 2016."
+    }
+   ],
+   "story": "An HKIAC tribunal has reportedly awarded more than US$100 million to an oil trader in a dispute with a Turkish company over oil deliveries to India.",
    "tier": "brief",
    "slug": "2026-09-22-malaysian-road-developer-reportedly-puts-india-on-notice-of-treaty-dis.html",
    "event": "Notice of dispute"
   },
   {
+   "record": null,
    "id": 4792,
    "title": "Joint Stock Company Belarusian Potash Company (BPC) v. J.P. Morgan Chase & Co. (S.D.N.Y. 1:26-mc-00464)",
    "title_en": null,
@@ -426,8 +519,16 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": null,
-   "story": null,
+   "corroboration": [
+    {
+     "source": "Morningstar",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmUzOGxxQlh5aXgtMEZOdGJnbnNVQU9qZnRpckNVczZNSWF2VXlVQkFGZWFnTVotVHhhWkphR1BhczlMVm1GTnhoRzRISHVoUFd5aXVvTzg5WHF4WTJRZXdjZUJqRVY2RGdxNlFRQlVKWEpkNlJhSEhVZ0Z4Y3NKUmw3U1NmQmdXQThnQUdWMFZqQkFZbmdtaTBic0g5aUkwZkE?oc=5",
+     "title": "Mosaic and Nutrien: Shares Fall on US Plan to Buy Belarusian Potash - Morningstar",
+     "published_at": "2026-09-21",
+     "snippet": ""
+    }
+   ],
+   "story": "MISCELLANEOUS CASE INITIATING DOCUMENT - MOTION for Discovery . (Filing Fee US$52.00, Receipt Number ANYSDC-33473198)Document filed by Joint Stock Company Belarusian Potash Company (BPC).",
    "tier": "brief",
    "slug": "2026-09-22-joint-stock-company-belarusian-potash-company-bpc-v-j-p-morgan-chase-c.html",
    "event": "§1782 application"
@@ -435,17 +536,18 @@
  ],
  "leads": [
   {
-   "id": 5856,
-   "title": "Nigeria will not be a soft target for predatory litigation, arbitration — Fagbemi",
-   "title_en": "Oye Hails Fagbemi For Saving Nigeria Over $14bn In Arbitration Claims",
-   "summary": "The Attorney-General of the Federation, Lateef Fagbemi, Tuesday…",
+   "record": null,
+   "id": 4962,
+   "title": "Nigeria Wins ICC Arbitration Case Against Sunrise Power Over Mambilla Project",
+   "title_en": "Nigeria claims win in long-running hydropower plant feud",
+   "summary": "ICC tribunal dismisses Sunrise Power’s US$2.35 billion claim over the 3,050 MW Mambilla Hydroelectric Power Project.",
    "summary_en": null,
-   "url": "https://blueprint.ng/nigeria-wont-be-soft-target-for-predatory-litigation-arbitration-agf-fagbemi/",
-   "source": "Google News / blueprint.ng",
+   "url": "https://www.greenbuildingafrica.co.za/nigeria-wins-us2-35-billion-mambilla-hydro-project-arbitration-case/",
+   "source": "Google News / greenbuildingafrica.co.za",
    "source_tier": 2,
    "event_type": "commercial_dispute",
    "published_at": "2026-09-22",
-   "institution": null,
+   "institution": "ICC",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
@@ -457,111 +559,64 @@
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
+   "flag_reason": "matched ‘icc arbitration’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
    "corroboration": [
     {
-     "source": "newtelegraphng.com",
-     "url": "https://newtelegraphng.com/oye-hails-fagbemi-for-saving-nigeria-over-14bn-in-arbitration-claims/",
-     "title": "Oye Hails Fagbemi For Saving Nigeria Over $14bn In Arbitration Claims",
+     "source": "Law360 International Arbitration (Global)",
+     "url": "https://www.law360.com/internationalarbitration/articles/2527193?utm_source=rss&utm_medium=rss&utm_campaign=section",
+     "title": "Nigeria Claims Win In Long-Running Hydropower Plant Feud",
      "published_at": "2026-09-19",
-     "snippet": "Chairman of the Alliance for Economic Research and Ethics, Dele Kelvin Oye, has hailed the Attorney-General of the Federation and Minister of Justice, Prince Lateef Fagbemi, SAN, for his role in ..."
+     "snippet": "Nigeria has prevailed in a high-stakes International Chamber of Commerce arbitration over the Mambilla hydropower project, a major hydropower project in Nigeria, the country's president said Thursday."
     },
     {
-     "source": "premiumtimesng.com",
-     "url": "https://www.premiumtimesng.com/news/top-news/911518-nigeria-wont-be-soft-target-for-predatory-litigation-arbitration-fagbemi.html",
-     "title": "Nigeria won’t be soft target for predatory litigation, arbitration – Fagbemi",
-     "published_at": "2026-09-22",
-     "snippet": "Mr Fagbemi said this while reacting to Nigeria’s victory in the International Arbitration instituted by Sunrise Power and Transmission Company Limited (Sunrise) and its principal, Leno Adesanya."
+     "source": "TheCable",
+     "url": "https://www.thecable.ng/now-that-the-mambilla-mess-is-over/",
+     "title": "Now that the Mambilla mess is over",
+     "published_at": "2026-09-20",
+     "snippet": "Stay connected via Google News It came as a mighty relief to me when news broke on…"
     },
     {
-     "source": "Pointblank News",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWExSZHY2ZjlPa3czbUZsQVVWSFVaY18tUkt6ZGlZZFBYRnNYUklMTjRqWElHWGhHUnVubm5iSWE2Nl96ZUpTODhzSFh3TXE1eXg4SkdoXzBjNS1VaXhVTEcwdm51eF84NXEwNkJfWXl5Q0lsZjhsRnlLM0Rid3UzWHJORXhJQVRkZnVhcDlxQlV2WVc4UGQzMmU1TWhwTW8xWUxBTDVWUFdYVFBKUkRtOFhDUExDZw?oc=5",
-     "title": "Mambilla: Nigeria Won’t Be Target for Predatory Litigation, Says AGF Fagbemi - Pointblank News",
+     "source": "leadership.ng",
+     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
+     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
+     "published_at": "2026-09-19",
+     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…"
+    },
+    {
+     "source": "businessday.ng",
+     "url": "https://businessday.ng/news/article/malami-breaks-silence-on-mambilla-project-rejects-corruption-allegation/",
+     "title": "Malami breaks silence on Mambilla project, rejects corruption allegation",
      "published_at": "2026-09-22",
-     "snippet": "Mambilla: Nigeria Won’t Be Target for Predatory Litigation, Says AGF Fagbemi Pointblank News"
+     "snippet": "Former Attorney-General of the Federation and Minister of Justice, Abubakar Malami, SAN, has welcomed Nigeria’s victory in the ..."
+    },
+    {
+     "source": "Business News Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ0J5VHpjaXhkb29mbVBxMW5FaFhlYlZHZXM5OHNrdXdFRWVUengwSDVKc01meWpOQ0pxcWY0dFVmQVdhYWVqNURaMjZfQkZnYlBhaF9xMVBGcG9iMlU2VjhYV2QyQW9vU1YtcVNYeXp0VlZDRjROT0xzaFYzU1NpZUQwSUFmRXFTeVI4ZkJOSjV0d1NIX1FuR0JIUlBYXzZoMk9v?oc=5",
+     "title": "Nigeria wins $2.35bn arbitration over Mambilla hydropower project - Business News Nigeria",
+     "published_at": "2026-09-18",
+     "snippet": ""
     }
    ],
-   "story": "The Attorney-General of the Federation, Lateef Fagbemi, Tuesday Mr Fagbemi said this while reacting to Nigeria’s victory in the International Arbitration instituted by Sunrise Power and Transmission Company Limited (Sunrise) and its principal, Leno Adesanya.",
+   "story": "ICC tribunal dismisses Sunrise Power’s US$2.35 billion claim over the 3,050 MW Mambilla Hydroelectric Power Project.",
    "tier": "signal",
-   "slug": "2026-09-22-oye-hails-fagbemi-for-saving-nigeria-over-14bn-in-arbitration-claims.html",
+   "slug": "2026-09-22-nigeria-claims-win-in-long-running-hydropower-plant-feud.html",
    "event": "Commercial arbitration"
   },
   {
-   "id": 5025,
-   "title": "Indonesia Revokes Five Company Licenses Over Kalimantan Fires",
-   "title_en": null,
-   "summary": "Indonesia revokes five companies' forest-use licenses in Kalimantan after fires burned 1,169 hectares across their concession…",
+   "record": null,
+   "id": 5114,
+   "title": "Delhi High Court Keeps Anadolu Deniz-HSL Arbitration In Abeyance, Says Sovereign Decision Non-Arbitrable",
+   "title_en": "Delhi High Court Keeps Anadolu Deniz-HSL arbitration in abeyance, says sovereign decision non-arbitrable",
+   "summary": "The Delhi High Court on 18 September directed that arbitral proceedings initiated by Turkish company Anadolu Deniz against Hindustan Shipyard Limited (HSL) before the Indian Council…",
    "summary_en": null,
-   "url": "https://en.tempo.co/read/2120047/indonesia-revokes-five-company-licenses-over-kalimantan-fires",
-   "source": "Google News / en.tempo.co",
+   "url": "https://www.livelawbiz.com/arbitration/high-court/delhi-high-court-stays-arbitration-against-hindustan-shipyard-in-navy-ship-contract-dispute-says-sovereign-decision-prima-facie-non-arbitrable-551250",
+   "source": "Google News / livelawbiz.com",
    "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-22",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Indonesia"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Tempo.co English",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbVpLQ21HYXlwckhRWmNaVEplLWhvUEJKVjBfYU1xZzMyU1ZFOXRUUm9WaUxoTzlFbzBJN0M2QmJzNlE4d2xGUDZQMFR5R2g1SkszaUhkdkhZbDRteW93WXNtNXZRUzJCS1JtY2ZNVkFEeng0U292NElsNUlzUC13MU1BNlRLWUllZEx1ZEJlbVRvLWRSWnZnQw?oc=5",
-     "title": "Indonesia Revokes Five Company Licenses Over Kalimantan Fires"
-    }
-   ],
-   "lang": "en",
-   "country": null,
-   "corroboration": [
-    {
-     "source": "tanahair.net",
-     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONnMwMFNkTmFJTDhFQWNXVC1PVXBzR3BNUEhKTXdFODZ0WUl6TFhtb2dVdTZjTFpZVVFpMzUzb01kaTZPa3JVM3dIMWdLaUJEWlhqdENUdUt2M0FsdW1uWGZhbm1rMWpramFNQVhTQ1ZiYUh2czI3MWtBTllLQndGV29HWDJTUEUxQWV3elhsVVhtM3JIM3ZpbFlROUNxdTdRMUE?oc=5",
-     "title": "Indonesia revokes five company permits over forest, land fires as hotspots rise - tanahair.net",
-     "published_at": "2026-09-22",
-     "snippet": "Indonesia revokes five company permits over forest, land fires as hotspots rise tanahair.net"
-    },
-    {
-     "source": "jatim.antaranews.com",
-     "url": "https://jatim.antaranews.com/berita/1100801/indonesia-revokes-licenses-of-five-companies-over-kalimantan-wildfires",
-     "title": "Indonesia revokes licenses of five companies over Kalimantan wildfires",
-     "published_at": "2026-09-22",
-     "snippet": "Indonesian Minister of Forestry Raja Juli Antoni announced the revocation of business licenses for five companies as part of a sweeping crackdown on land and ..."
-    },
-    {
-     "source": "jakartaglobe.id",
-     "url": "https://jakartaglobe.id/news/govt-revokes-permits-of-five-companies-over-kalimantan-forest-fires",
-     "title": "Gov't Revokes Permits of Five Companies over Kalimantan Forest Fires",
-     "published_at": "2026-09-21",
-     "snippet": "The government revoked 5 forestry permits covering 92,464 hectares after fires were recorded within company concessions across Kalimantan."
-    }
-   ],
-   "story": "The government revoked 5 forestry permits covering 92,464 hectares after fires were recorded within company concessions across Kalimantan.",
-   "tier": "signal",
-   "slug": "2026-09-22-indonesia-revokes-five-company-licenses-over-kalimantan-fires.html",
-   "event": "State measure"
-  },
-  {
-   "id": 5565,
-   "title": "‘Direct threat’: US warns expropriation law could damage SA economy",
-   "title_en": null,
-   "summary": "US Ambassador to South Africa Leo Brent Bozell III has warned that the country’s expropriation without compensation policy could deter investment and damage the…",
-   "summary_en": null,
-   "url": "https://www.africaninsider.com/business/direct-threat-us-warns-expropriation-law-could-damage-sa-economy/",
-   "source": "Google News / africaninsider.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
+   "event_type": "commercial_dispute",
    "published_at": "2026-09-22",
    "institution": null,
    "treaty": null,
@@ -573,38 +628,65 @@
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘expropriat’ in the text",
+   "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "Daily Investor",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObWgzaVZibmY3VlUwd3MtZDhLOTgxRTh1NlBmNFFNSUJWYkxfUU1TQVpwTW5kVEtLbWRxTk94dGxKaEtBZFVhX2RITWZzWVNUTkpldG1Xc0dqLXAyajlLaVBaOTJyY0ZfajRNZ1VCVU13WDJJTndSYjBpV2JhUzY5RUp1ZDh2a0pKTC1WX3BnNjV4cmJkZ3dZRFVVSVQ0WXB4bVotRFpkSU9aMFFfeUVSZ0Ezc29NdUVMNGZLblNIM3hxYk9nZWtFR2Roa2lDdGs?oc=5",
-     "title": "United States warns expropriation without compensation will crush South Africa’s economy - Daily Investor",
-     "published_at": "2026-09-22",
-     "snippet": "United States warns expropriation without compensation will crush South Africa’s economy Daily Investor"
-    }
-   ],
-   "story": null,
+   "corroboration": [],
+   "story": "The Delhi High Court on 18 September directed that arbitral proceedings initiated by Turkish company Anadolu Deniz against Hindustan Shipyard Limited (HSL) before the Indian Council.",
    "tier": "signal",
-   "slug": "2026-09-22-direct-threat-us-warns-expropriation-law-could-damage-sa-economy.html",
-   "event": "State measure"
+   "slug": "2026-09-22-delhi-high-court-keeps-anadolu-deniz-hsl-arbitration-in-abeyance-says-.html",
+   "event": "Commercial arbitration"
+  }
+ ],
+ "enforcement": [
+  {
+   "record": null,
+   "id": 6233,
+   "title": "The Russian Federation v Veteran Petroleum Ltd and others",
+   "title_en": null,
+   "summary": "Court of Appeal of Singapore (SICC appeal) decided on 22 September 2026, [2026] SGCA(I) 5. Catchwords: Arbitration — Enforcement; Arbitration — Conduct of arbitration.",
+   "summary_en": null,
+   "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%205.pdf",
+   "source": "Court: Singapore",
+   "source_tier": 1,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-22",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "[2026] SGCA(I) 5",
+   "claimants": [
+    "The Russian Federation"
+   ],
+   "respondents": [
+    "Veteran Petroleum Ltd and others"
+   ],
+   "states": [
+    "Russia"
+   ],
+   "sectors": [
+    "Oil & gas"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "Court of Appeal of Singapore (SICC appeal): enforcement of an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Singapore",
+   "corroboration": [],
+   "story": "Court of Appeal of Singapore (SICC appeal) judgment of 22 September 2026, [2026] SGCA(I) 5 on arbitration — Enforcement; Arbitration — Conduct of arbitration.",
+   "tier": "enforcement",
+   "slug": "2026-09-22-the-russian-federation-v-veteran-petroleum-ltd-and-others.html",
+   "event": "Enforcement"
   }
  ],
  "records": {
   "docket": [],
   "disclosures": [],
   "courts": [
-   {
-    "date": "2026-09-22",
-    "title": "The Russian Federation v Veteran Petroleum Ltd and others",
-    "main": "The Russian Federation v Veteran Petroleum Ltd and others",
-    "step": "enforcement of an award",
-    "tail": "Court of Appeal of Singapore (SICC appeal) · [2026] SGCA(I) 5",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%205.pdf"
-   },
    {
     "date": "2026-09-22",
     "title": "Benjamin Gilbert & Anor v Broadoak Private Finance Limited",

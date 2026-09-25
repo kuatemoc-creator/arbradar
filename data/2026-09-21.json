@@ -1,48 +1,64 @@
 {
  "date": "2026-09-21",
- "subject": "ArbRadar · 21 September 2026 — Government Ends Turkish Firm’s Indian Navy Ship Contract on National Security Grounds…",
+ "subject": "ArbRadar · 21 September 2026 — Russia takes control of US factory on Putin’s order days",
  "stories": [
   {
-   "id": 4310,
-   "title": "Government Ends Turkish Firm’s Indian Navy Ship Contract on National Security Grounds; Delhi High Court Prima Facie Holds Sovereign Decision Cannot Be Arbitrated",
-   "title_en": null,
-   "summary": "Government Removes Turkish Company From Indian Navy Fleet Support Ship Project…",
+   "record": null,
+   "id": 4533,
+   "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill",
+   "title_en": "Russia takes control of US factory on Putin’s order days",
+   "summary": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation against…",
    "summary_en": null,
-   "url": "https://rawlaw.in/government-ends-turkish-firms-indian-navy-ship-contract-on-national-security-grounds-delhi-high-court-prima-facie-holds-sovereign-decision-cannot-be-arbitrated/",
-   "source": "Google News / rawlaw.in",
+   "url": "https://www.washingtonpost.com/politics/2026/09/18/donald-trump-russia-sanctions-ukraine-lindsey-graham/4ff0e606-b3ae-11f1-92c2-5c918f4a6127_story.html",
+   "source": "Google News / washingtonpost.com",
    "source_tier": 2,
-   "event_type": "commercial_dispute",
-   "published_at": "2026-09-21",
+   "event_type": "state_measure",
+   "published_at": "2026-09-19",
    "institution": null,
    "treaty": null,
    "case_ref": null,
-   "claimants": [],
+   "claimants": [
+    "Nestle"
+   ],
    "respondents": [],
    "states": [
-    "Turkey",
-    "India"
+    "Russia",
+    "Ukraine"
    ],
-   "sectors": [],
+   "sectors": [
+    "Transport & logistics"
+   ],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "commercial-arbitration sweep",
+   "flag_reason": "State-measure sweep (Malaysia edition); investor of means named: Nestle",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": null,
+   "country": "Malaysia",
+   "corroboration": [
+    {
+     "source": "Firstpost",
+     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUE43YTg0djRTUmZybF8ybDQ3aGVBM2R4aGEtTnJnLXRLUzcyVDNtQVpfQUVuTWN4UldZdUFOYURKcWpUZFo4SURFVlJoWTMxSGJ3QlNnd2wzWWJXZ3RxUEZ4Rm5remJUejJ3UVEtRU4zWDRXRkhxSEVOMUU1cnhKUEpkLTF6X2dWbDkwbndJS0ZxZGdKejktdU56Tmo3N1BnVV9Ba1RwcURkN3lkazd3Sy1WMm1KR3B1UFdnME9yVnBPQ2Vub1Y5OEJVakxNODU0TDBJUzNfb9IB3AFBVV95cUxNdXBORnN5dVdwdTNHTGJrcWdzaXhpT3RVLU1oMFRIendLMGhfcllUTDdGNERjZUpxZVQ5WGQzOFNpdUlDMEk0RTk5MktPaFlEMjN3ZWgyaVNaZE84bWtpOHJMaVlrU3UtSDAwMExaUlFsM25INmYtTU15MlZiTkVmcFJfUVBqd1NnZ0N5V3J4WnM3OW5mNUdkLUpDSWg4ZXNpRGJNWEtBS1BwdHNhd3ZnZlFLNjhuQmRyTnlManRkck1sNXlmYlZCYllGeldTdnAxQUhobHNoNjd6b2dK?oc=5",
+     "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill - Firstpost",
+     "published_at": "2026-09-21",
+     "snippet": ""
+    }
+   ],
+   "story": "Russia seizes Nestle and Auchan assets under Putin decree, placing operations under Moscow-based management firm in retaliation.",
    "tier": "lead",
-   "slug": "2026-09-21-government-ends-turkish-firm-s-indian-navy-ship-contract-on-national-s.html",
-   "event": "Commercial arbitration"
+   "slug": "2026-09-21-russia-takes-control-of-us-factory-on-putin-s-order-days.html",
+   "event": "State measure"
   },
   {
-   "id": 4264,
-   "title": "NTPC terminates 400 MWh BESS contract at Mouda thermal power plant over contractor default",
+   "record": null,
+   "id": 3947,
+   "title": "YPF investors launch claim against Argentina",
    "title_en": null,
-   "summary": "NTPC Ltd has terminated the contract awarded to GR Infraprojects Ltd (GRIL) for the 400 MWh battery energy storage system (BESS) project at Mouda Super Thermal Power Station, Maharashtra…",
+   "summary": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF.",
    "summary_en": null,
-   "url": "https://www.pv-magazine-india.com/2026/09/21/ntpc-terminates-400-mwh-bess-contract-at-mouda-thermal-power-plant-over-contractor-default/",
-   "source": "Google News / pv-magazine-india.com",
+   "url": "https://latinlawyer.com/article/ypf-investors-launch-claim-against-argentina",
+   "source": "Latin Lawyer (Global)",
    "source_tier": 2,
    "event_type": "distress_event",
    "published_at": "2026-09-21",
@@ -52,36 +68,269 @@
    "claimants": [],
    "respondents": [],
    "states": [
-    "India"
+    "Argentina"
    ],
    "sectors": [
-    "Power & renewables",
-    "Construction"
+    "Oil & gas"
    ],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "flag_reason": "matched ‘nationalis’ in the text",
    "why_it_matters": null,
-   "also": [
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [
     {
-     "source": "Google News / solarquarter.com",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaFR3bUgteUpIblR5d0VobEo3bGI4TjI3LTJ6R3V4M1hYMnhXdnVwMHBjZzlhQTVubTllUlNzX2prdzRJejFYNGpwUl9SeEVsMndOUndPdFlXbTRkRHpIS1VMWmZWU2JGTUJYcnhsbzRjNnkyek55M05wUXBDbTY3TzJxZzMwcTduMVY5NGliYTQ4cjhtMTZXTzFfY3VuZFBaQ1pWbVlVakZQblRpbEFJSGZmZ3NmYnFHMUEyR2N5Uk9pTktTTkMybmhJWVZTVWs?oc=5",
-     "title": "G R Infraprojects Terminates NTPC Mouda BESS Contract, Faces INR 90.86 Crore Guarantee Invocations"
+     "source": "GAR",
+     "url": "https://globalarbitrationreview.com/article/ypf-investors-launch-icsid-claim-against-argentina",
+     "title": "YPF investors launch ICSID claim against Argentina",
+     "published_at": "2026-09-17",
+     "snippet": "Former investors in Argentina’s nationalised oil and gas operator YPF have made good on their threat to file an investment treaty claim against the state after a US$16 billion US court judgment in their favour was overturned."
     },
     {
-     "source": "Google News / ET EnergyWorld",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOLUUzY3RaTXo3ejYySmFzd0FmenU1NWM2OUd5OUo0N1M1WjFtZ1NSWDN5dlh3bWxnNWsyTXlIMllsTjZXRFBhN2V4X1dLSFpHVFNuTkItSVh1N3JzVlFYRG1mLV9CZ2xUcDZZbWpQYVVTSkJmQjZBTDFYRUpVLV9sWnQ1WGQ4dkpSUld3bkw4ZkthYnI0YTB5Tlc5Wm5Ocm9pNUFST0ZLNE5yRmwtczdIeVY3TTJhYkVWSUkxSGxYdmQ3UnJrbnQ1dHpZbHoxaEVY0gHWAUFVX3lxTE4zd180QjJRaW0tS084QTRkdi1WQ2ZJN0pOQ2hmU3dCd00tUjVvRUVmVmt6YmhfR29vNDF2WEVlMUdRY1A4Tm9UTXhjTURJeFV1c3RaalRJVTRFVEdqd2g0YmJZVkRnRnBORVdMeGJtMG9QekVYWHRBeHFib1cwdU8tNTBRcHc4MENRVUN5MjFZbHpRUnA0ZTd1cVBpTzY0SFo0WDlaQzhQem90dXBkUjlQdTdLWGkxN3ZPbU1zQ2RFV3hxZHJ3LTNvTnBhWndNME1ycHV4Z1E?oc=5",
-     "title": "NTPC terminates ₹413 crore Mouda BESS contract after contractor default"
+     "source": "Law360 International Arbitration (Global)",
+     "url": "https://www.law360.com/internationalarbitration/articles/2526129?utm_source=rss&utm_medium=rss&utm_campaign=section",
+     "title": "Ex-YPF Investors Take Argentina To ICSID Over 2012 Seizure",
+     "published_at": "2026-09-18",
+     "snippet": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA, making good on their statement to a New York federal judge that they will arbitrate their claims over Argentina's nationalization of YPF."
+    },
+    {
+     "source": "Buenos Aires Times",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUnQ3SGN3X1BwRDU3NXBSQUhBTUZldGdMMm1jQWNhWGRvNnVZbmlYME1rLTJZaTRRLThZdU9yWDg4RVVPa1ZfZ3RBVUlrQ2FKdU1PZlpJRkxZTVZUVjJjMm5jSDBBeVowR1FGWnFVNVg2eTNJd0ZDcVZ0QXlGZ0NHWkItdHJDWGV1SU00MkFpTGZpbkdiR3lCZm5zNE5SNGc3QTltLUVEYUJjalFiYmhwX3Q4V2lNdUpNWmV4QUFmZC1qZ9IBxwFBVV95cUxNOGJJS2xKOEJ6d2hiTWxFZW5zX1BWUGM1bU4wbUZBUWdaUFFqTFREYkhyV0phZHJJNEdqMlJWYWRYQUZNZk5DbEJHZGcxU2ZESFp2N1o0clBtMy03RzJsaWdfN2d2WWNpWExLSUNaUzdpejl1OS05VTNOVHg3MlVQRkEzVHJFWjBvR2gtdDRqMUdfaC1KaXphTlJLNWItZEFTR1lXeHlUMjdvaGdidnQ1Z0RaZzhDN21nMG5VOVlBendPbkw2Z3JR?oc=5",
+     "title": "Argentina, US launch ‘Andes-Atlantic Corridor’ to boost infrastructure investment - Buenos Aires Times",
+     "published_at": "2026-09-23",
+     "snippet": ""
     }
    ],
-   "lang": "en",
-   "country": null,
+   "story": "The International Centre for Settlement of Investment Disputes has picked up a bid for arbitration by investors in Argentine oil and gas exploration company YPF SA.",
    "tier": "development",
-   "slug": "2026-09-21-ntpc-terminates-400-mwh-bess-contract-at-mouda-thermal-power-plant-ove.html",
+   "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
    "event": "State measure"
   },
   {
+   "record": null,
+   "id": 7570,
+   "title": "High Court of Judicature for Rajasthan, Bench at Jaipur considered an appeal under Section 37 of the Arbitration and Conciliation Act, 1996 against a Commercial Court order setting aside an arbitral award in a wind turbine generation dispute. The Commercia",
+   "title_en": null,
+   "summary": "Jaipur: The Central Government has entrusted Jaipur's senior advocate Lalit Sharma with a significant responsibility, appointing him as a \"Senior Panel Counsel\" in the Rajasthan High Court…",
+   "summary_en": null,
+   "url": "https://www.msn.com/en-in/news/India/jaipur-s-senior-advocate-lalit-sharma-appointed-as-a-senior-panel-counsel-in-the-rajasthan-high-court-jaipur-bench/ar-AA231vWP",
+   "source": "Google News / msn.com",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-20",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘setting aside’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "thehindu.com",
+     "url": "https://www.thehindu.com/news/national/rajasthan/rajasthan-high-court-acting-chief-justice-rejects-allegations-urges-patience/article71424266.ece",
+     "title": "Rajasthan High Court Acting Chief Justice rejects allegations, urges patience",
+     "published_at": "2026-09-03",
+     "snippet": "Breaking his silence over the letters reportedly written by a Supreme Court judge, the Rajasthan High Court’s Acting Chief Justice Sanjeev Prakash Sharma has rejected the allegations levelled against ..."
+    },
+    {
+     "source": "bhaskarenglish.in",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVXpza01VODN2OFVGME5OYm8yUlowOXZCUVZYdEx6QmRaTlB2aXNvR3djZG1HZ0pNUWVWZnBvYjJyT0E4alpmOUZGc1BqVlFzLV9KQVhtNzZNTTJqT3EwdUdxaE03dnJaRElsc2FseXM1Wnd2azZwbmNONXdiVWdvajZobG1YSkQxQ0VsV0wwRXBsbWZlTXhnc2VvTjNnS0JTXzgzbF9oUzUtUW43M2UyYVlqTzJPQXh0MFNHRVhTLWh4czdob05POTJPSXF5WE5MZFHSAdcBQVVfeXFMTnN4RFctZjZZSlZ6cFBsMDZVV1h3ZjZNX2RrN3BIelIwMnpHUVNCa0JsYTlMWlMycWJyV0cxT2ZReHBZUHlIYU9UdDlhaFM2ZU9ueUJtMmcwckpjQWptaDQwVkgxNUU5alNQd0w4bzBUR0ZjakVqWXJkbk4zUl9Gc2NzNmNuRmF1UkNoeTE2Wi1SUTRtaWg3dmRna1lreU9rYnVqSExOWWtIM2dyMmhSZGZuX3NaYTMtTll6WHZGVTVfLXY0VldCWnp0ZHRDWktHd0VoanZXNGc?oc=5",
+     "title": "Mamta Kulkarni to receive Lifetime Achievement at Rajasthan Film Festival: Actress to be honoured in Jaipur... - bhaskarenglish.in",
+     "published_at": "2026-09-21",
+     "snippet": "Mamta Kulkarni to receive Lifetime Achievement at Rajasthan Film Festival: Actress to be honoured in Jaipur..."
+    }
+   ],
+   "story": "The Central Government has entrusted Jaipur's senior advocate Lalit Sharma with a responsibility.",
+   "tier": "development",
+   "slug": "2026-09-21-high-court-of-judicature-for-rajasthan-bench-at-jaipur-considered-an-a.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 3927,
+   "title": "Construction arbitration in the Philippines",
+   "title_en": null,
+   "summary": "The Philippine construction arbitration sits at the intersection of rapid infrastructure growth, mandatory CIAC jurisdiction and evolving procurement rules. With courts reinforcing CIAC’s authority despite parties’ chosen forums, foreign investors and contractors face important questions over party autonomy, enforcement risk and the balance between specialist domestic dispute resolution and intern...",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/guide/the-guide-construction-arbitration/sixth-edition/article/construction-arbitration-in-the-philippines",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Philippines"
+   ],
+   "sectors": [
+    "Construction"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "The Philippine construction arbitration sits at the intersection of rapid infrastructure growth, mandatory CIAC jurisdiction and evolving procurement rules.",
+   "tier": "development",
+   "slug": "2026-09-21-construction-arbitration-in-the-philippines.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 4793,
+   "title": "Spartan Capital Securities, LLC v. Voeller (S.D.N.Y. 1:26-cv-08220)",
+   "title_en": null,
+   "summary": "MEMORANDUM OF LAW in Support re: 2 MOTION to Confirm Arbitration . . Document filed by John D. Lowry, Kim M. Monchik, Spartan Capital Securities, LLC..(Knight, Emily) (Entered: 09/21/2026) Parties: Heidi Voeller; John D. Lowry; Spartan Capital Securities, LLC; Kim M. Monchik; Michael Voeller. Counsel on record: Sichenzia Ross Ference Carmel LLP.",
+   "summary_en": null,
+   "url": "https://www.courtlistener.com/docket/74828480/spartan-capital-securities-llc-v-voeller/",
+   "source": "US federal docket",
+   "source_tier": 1,
+   "event_type": "enforcement_action",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "1:26-cv-08220",
+   "claimants": [
+    "Heidi Voeller"
+   ],
+   "respondents": [
+    "John D. Lowry",
+    "Spartan Capital Securities, LLC"
+   ],
+   "states": [],
+   "sectors": [
+    "Transport & logistics"
+   ],
+   "counsel": [
+    "Sichenzia Ross Ference Carmel LLP"
+   ],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "US federal docket: petition to confirm or vacate an award",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "MEMORANDUM OF LAW in Support re: 2 MOTION to Confirm Arbitration . . Document filed by John D. Lowry, Kim M. Monchik, Spartan Capital Securities, LLC..(Knight, Emily) (Entered: 09/21/2026) Parties: Heidi Voeller; John D.",
+   "tier": "development",
+   "slug": "2026-09-21-spartan-capital-securities-llc-v-voeller-s-d-n-y-1-26-cv-08220.html",
+   "event": "Enforcement"
+  },
+  {
+   "record": null,
+   "id": 2745,
+   "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz",
+   "title_en": "Germany Pushes EU to tax oil windfall profits Tied to Hormuz",
+   "summary": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "summary_en": null,
+   "url": "https://www.msn.com/en-xl/news/other/six-eu-countries-push-for-windfall-tax-on-oil-companies-amid-surging-war-profits/ar-AA2b9ERT",
+   "source": "Google News / msn.com",
+   "source_tier": 2,
+   "event_type": "distress_event",
+   "published_at": "2026-09-18",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Germany"
+   ],
+   "sectors": [
+    "Oil & gas",
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep (global edition); no listed investor named",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "Global Banking & Finance Review",
+     "url": "https://www.globalbankingandfinance.com/eu-ministers-discuss-taxing-windfall-profits-energy/",
+     "title": "EU Considers Windfall Tax on Energy Companies Amid Oil Price Surge",
+     "published_at": "2026-09-18",
+     "snippet": "EU finance ministers will debate a windfall tax on energy companies profiting from surging oil prices after the Strait of Hormuz…"
+    },
+    {
+     "source": "energynews.pro",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOUIxQlAyV18xQlo5ZnFLbGVCVWNFQWVhZ2taZkVQcklmVThCQ3M5S0ZWT0ZKajRmWGNCa01oQ2RwQWZ4MFNqR3BhTEVQVnB6T1FwQnczUElWemx3YW1vMTNHb29mTC1aa09kdTI2LTJGbW5NbHBBaFpleXdQSG5QekVTcDlETk9DSkNmdFJ3WQ?oc=5",
+     "title": "Germany Pushes EU To Tax Oil Windfall Profits Tied To Hormuz - energynews.pro",
+     "published_at": "2026-09-18",
+     "snippet": ""
+    }
+   ],
+   "story": "Six EU countries are intensifying calls for a bloc-wide windfall tax on oil companies as profits surge amid the war in the Middle East, according to a letter seen by Euronews.",
+   "tier": "development",
+   "slug": "2026-09-21-germany-pushes-eu-to-tax-oil-windfall-profits-tied-to-hormuz.html",
+   "event": "State measure"
+  },
+  {
+   "record": null,
+   "id": 4763,
+   "title": "Ghana liable in desalination plant dispute",
+   "title_en": null,
+   "summary": "A Spanish construction company says it has won US$235 million in an ICC dispute with Ghana and a state utility over a desalination plant in Accra.&nbsp;",
+   "summary_en": null,
+   "url": "https://globalarbitrationreview.com/article/ghana-liable-in-desalination-plant-dispute",
+   "source": "GAR",
+   "source_tier": 2,
+   "event_type": "award_issued",
+   "published_at": "2026-09-21",
+   "institution": "ICC",
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Ghana",
+    "Spain"
+   ],
+   "sectors": [
+    "Construction"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘liable in’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "A Spanish construction company says it has won US$235 million in an ICC dispute with Ghana and a state utility over a desalination plant in Accra.",
+   "tier": "development",
+   "slug": "2026-09-21-ghana-liable-in-desalination-plant-dispute.html",
+   "event": "Award"
+  },
+  {
+   "record": null,
    "id": 4307,
    "title": "Afcons Infrastructure wins arbitration award of ₹148.67 crores",
    "title_en": null,
@@ -102,169 +351,31 @@
     "Construction"
    ],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
    "flag_reason": "commercial-arbitration sweep",
    "why_it_matters": null,
-   "also": [
-    {
-     "source": "Google News / Demócrata",
-     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRWNuaU1aczJkaDBJYjE2ZlBkV0pZRUZ4QmZYSVhGdUZVUlZUd2ZVeGVNbVp2djlHd2Y1bFNCb0ZWcDZ0U2Q2a2ZEMjMtcnVDSXJrU0N5eWV6bnhGYjhuOGRnV2NBNGhvdWRHMVM1X3cyM1pkb3dib0NKaGYzZmxCajIxZjRRMDNwRW80LVdmc3BrcU9veGFUOWpEQTJ3ZjJVbDBNeDZUYjJXTlRuSlpGNzVob3kwVE9xUTZsSEpqenBfS2FBZnpj0gHMAUFVX3lxTE1qbW1HME4wRGVYMVc0V0dWcWpqU01VaG1jSFF4cHUtdTJIOWlicm5VdkRkaXdVaDVYYkg1cXFzNWctc0poQXdzbEVqdTVtbnRqQjZWR1ktb2dxby1YT1ozb21vN21uZkRETzh6YXdlMlFoQTJBREFQdXZFLURreGV3YkxjTV9xRXJfcm9rZG02N3doUFI2YXN6aTliR0hGSFFISVVTekNlWUxaT0tVcHE5ZGVIN2otY09mRTVfMk94VDNLSXQ1dXhjUk1ZQw?oc=5",
-     "title": "Cox obtains an arbitration award of 235 million dollars for the desalination plant in Accra"
-    }
-   ],
+   "also": [],
    "lang": "en",
    "country": null,
-   "tier": "development",
+   "corroboration": [],
+   "story": "Shares of Afcons Infrastructure gained as much as 4.40% during Tuesday’s trading session.",
+   "tier": "brief",
    "slug": "2026-09-21-afcons-infrastructure-wins-arbitration-award-of-148-67-crores.html",
    "event": "Commercial arbitration"
   },
   {
-   "id": 4277,
-   "title": "Russia takes control of US factory on Putin’s order days after Trump signed news sanctions bill",
+   "record": null,
+   "id": 4231,
+   "title": "Reid leaves Debevoise for 3VB",
    "title_en": null,
-   "summary": "President Donald Trump has signed a major sanctions package targeting Russian officials and key sectors of its…",
+   "summary": "Natalie Reid has left Debevoise &amp; Plimpton, where she was co-chair of the firm’s public international law group, to join 3 Verulam Buildings.&nbsp;",
    "summary_en": null,
-   "url": "https://www.washingtonpost.com/politics/2026/09/18/donald-trump-russia-sanctions-ukraine-lindsey-graham/4ff0e606-b3ae-11f1-92c2-5c918f4a6127_story.html",
-   "source": "Google News / washingtonpost.com",
+   "url": "https://globalarbitrationreview.com/article/reid-leaves-debevoise-3vb",
+   "source": "GAR",
    "source_tier": 2,
-   "event_type": "distress_event",
+   "event_type": "commentary",
    "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Russia"
-   ],
-   "sectors": [],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-russia-takes-control-of-us-factory-on-putin-s-order-days-after-trump-s.html",
-   "event": "State measure"
-  },
-  {
-   "id": 3947,
-   "title": "YPF investors launch claim against Argentina",
-   "title_en": null,
-   "summary": "Former shareholders in oil and gas operator YPF have made good on their threat to file an investment treaty claim against Argentina over its nationalisation after a US$16 billion US court judgment in their favour was overturned.",
-   "summary_en": null,
-   "url": "https://latinlawyer.com/article/ypf-investors-launch-claim-against-argentina",
-   "source": "Latin Lawyer (Global)",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Argentina"
-   ],
-   "sectors": [
-    "Oil & gas"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "matched ‘nationalis’ in the text",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Global",
-   "tier": "development",
-   "slug": "2026-09-21-ypf-investors-launch-claim-against-argentina.html",
-   "event": "State measure"
-  },
-  {
-   "id": 4272,
-   "title": "Czech government reinstates fuel margin caps, plans windfall tax on refineries",
-   "title_en": null,
-   "summary": "PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax for the month of October…",
-   "summary_en": null,
-   "url": "https://www.msn.com/en-gb/politics/government/czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-refineries/ar-AA2cGxK7",
-   "source": "Google News / msn.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Czechia",
-    "United Kingdom"
-   ],
-   "sectors": [
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (global edition); no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "tier": "development",
-   "slug": "2026-09-21-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
-   "event": "State measure"
-  },
-  {
-   "id": 4534,
-   "title": "Turkey seized 1,326 companies, $32 billion in assets in Gülen crackdown: report",
-   "title_en": null,
-   "summary": "Turkey’s Savings Deposit Insurance Fund (TMSF) has announced auctions for insurance agency Sürat Sigorta and paper company Kaynak Kağıt in October…",
-   "summary_en": null,
-   "url": "https://stockholmcf.org/turkey-announces-sale-of-2-more-companies-seized-over-gulen-links/",
-   "source": "Google News / stockholmcf.org",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-21",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Turkey"
-   ],
-   "sectors": [
-    "Transport & logistics"
-   ],
-   "counsel": [],
-   "arbitrators": [],
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep (Zimbabwe edition); no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": "Zimbabwe",
-   "tier": "development",
-   "slug": "2026-09-21-turkey-seized-1-326-companies-32-billion-in-assets-in-g-len-crackdown-.html",
-   "event": "State measure"
-  },
-  {
-   "id": 2703,
-   "title": "Medvedev called for a move toward the mass seizure of Western companies' assets",
-   "title_en": null,
-   "summary": "Dmitry Medvedev, Deputy Chairman of the Russian Federation Security Council…",
-   "summary_en": null,
-   "url": "https://ua.news/en/world/medvediev-zaklikav-pereiti-do-masovogo-viluchennia-aktiviv-zakhidnikh-kompanii",
-   "source": "Google News / UA.NEWS",
-   "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-20",
    "institution": null,
    "treaty": null,
    "case_ref": null,
@@ -273,62 +384,132 @@
    "states": [],
    "sectors": [],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "matched ‘seizure of’ in the text",
+   "flag_reason": null,
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
+   "corroboration": [],
+   "story": "Natalie Reid has left Debevoise & Plimpton, where she was co-chair of the firm’s public international law group, to join 3 Verulam Buildings.",
    "tier": "brief",
-   "slug": "2026-09-21-medvedev-called-for-a-move-toward-the-mass-seizure-of-western-companie.html",
-   "event": "State measure"
+   "slug": "2026-09-21-reid-leaves-debevoise-for-3vb.html",
+   "event": "Note"
   },
   {
-   "id": 4267,
-   "title": "Karnataka FSDA cancels 16 pharmacy licences, suspends 8, including Pfizer depot",
+   "record": null,
+   "id": 4766,
+   "title": "Willkie names two new practice heads",
    "title_en": null,
-   "summary": "FDA cancels 16 pharmacy licenses, including Pfizer's, amid investigation into a major spurious drug repackaging operation in…",
+   "summary": "Willkie Farr &amp; Gallagher has named Kristen Young in Washington, DC, as global co-chair of international arbitration and Dharshini Prasad as London chair of the practice.",
    "summary_en": null,
-   "url": "https://www.thehindu.com/news/cities/bangalore/fda-cancels-16-pharmacy-licences-suspends-8-including-pfizer-depot/article71488486.ece",
-   "source": "Google News / thehindu.com",
+   "url": "https://globalarbitrationreview.com/article/willkie-names-two-new-practice-heads",
+   "source": "GAR",
    "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-20",
+   "event_type": "commentary",
+   "published_at": "2026-09-21",
    "institution": null,
    "treaty": null,
    "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "Willkie Farr & Gallagher has named Kristen Young in Washington, DC, as global co-chair of international arbitration and Dharshini Prasad as London chair of the practice.",
+   "tier": "brief",
+   "slug": "2026-09-21-willkie-names-two-new-practice-heads.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 4769,
+   "title": "Ecuador Round-Up: An update on arbitration-related developments involving the state",
+   "title_en": "An update on arbitration-related developments involving the state",
+   "summary": "",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/ecuador-round-up-an-update-on-arbitration-related-developments-involving-the-state/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Ecuador"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "",
+   "tier": "brief",
+   "slug": "2026-09-21-an-update-on-arbitration-related-developments-involving-the-state.html",
+   "event": "Note"
+  }
+ ],
+ "leads": [],
+ "enforcement": [
+  {
+   "record": null,
+   "id": 3423,
+   "title": "DPT and another v DPV and others",
+   "title_en": null,
+   "summary": "Court of Appeal of Singapore (SICC appeal) decided on 15 September 2026, [2026] SGCA(I) 4. Catchwords: Arbitration — Award.",
+   "summary_en": null,
+   "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%204.pdf",
+   "source": "Court: Singapore",
+   "source_tier": 1,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-15",
+   "institution": null,
+   "treaty": null,
+   "case_ref": "[2026] SGCA(I) 4",
    "claimants": [
-    "Pfizer"
+    "DPT and another"
    ],
-   "respondents": [],
+   "respondents": [
+    "DPV and others"
+   ],
    "states": [],
    "sectors": [],
    "counsel": [],
-   "arbitrators": [],
+   "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
+   "flag_reason": "Court of Appeal of Singapore (SICC appeal): recourse against an award",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
-   "country": null,
-   "tier": "brief",
-   "slug": "2026-09-21-karnataka-fsda-cancels-16-pharmacy-licences-suspends-8-including-pfize.html",
-   "event": "State measure"
+   "country": "Singapore",
+   "corroboration": [],
+   "story": "Court of Appeal of Singapore (SICC appeal) judgment of 15 September 2026, [2026] SGCA(I) 4 on arbitration — Award.",
+   "tier": "enforcement",
+   "slug": "2026-09-21-dpt-and-another-v-dpv-and-others.html",
+   "event": "Annulment"
   }
  ],
  "records": {
   "docket": [],
   "disclosures": [],
   "courts": [
-   {
-    "date": "2026-09-15",
-    "title": "DPT and another v DPV and others",
-    "main": "DPT and another v DPV and others",
-    "step": "recourse against an award",
-    "tail": "Court of Appeal of Singapore (SICC appeal) · [2026] SGCA(I) 4",
-    "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGCA(I)%204.pdf"
-   },
    {
     "date": "2026-09-11",
     "title": "Kuku Project (T) Limited vs Equity Bank (T) Limited and 2 Others",
@@ -339,46 +520,22 @@
    },
    {
     "date": "2026-09-11",
-    "title": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
-    "main": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
-    "step": "arbitration-related judgment",
-    "tail": "High Court Commercial Division",
-    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/315/eng@2026-09-11"
-   },
-   {
-    "date": "2026-09-11",
     "title": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
     "main": "Zhejiang Crystal-Optech Co Ltd v Moveon Technologies Pte Ltd",
     "step": "arbitration agreement, stay or anti-suit relief",
     "tail": "High Court of Singapore · [2026] SGHC 186",
     "url": "https://www.singaporelawwatch.sg/Portals/0/Docs/Judgments/2026/2026%20SGHC%20186.pdf"
+   },
+   {
+    "date": "2026-09-11",
+    "title": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
+    "main": "Tanzania National Roads Agency (TANROADS) vs Kay Bouvet Engineering Ltd",
+    "step": "arbitration-related judgment",
+    "tail": "High Court Commercial Division",
+    "url": "https://tanzlii.org/en/akn/tz/judgment/tzhccomd/2026/315/eng@2026-09-11"
    }
   ],
   "people": [
-   {
-    "date": "2026-09-16",
-    "title": "Pérez-Llorca relocates Colombian partners to New York and Madrid",
-    "main": "Pérez-Llorca relocates Colombian partners to New York and Madrid",
-    "step": "",
-    "tail": "Global Legal Post",
-    "url": "https://www.globallegalpost.com/region/latin-america/colombia"
-   },
-   {
-    "date": "2026-09-14",
-    "title": "Ex-King & Spalding lawyer returns to Mattos Filho",
-    "main": "Ex-King & Spalding lawyer returns to Mattos Filho",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/ex-king-spalding-lawyer-returns-mattos-filho"
-   },
-   {
-    "date": "2026-09-14",
-    "title": "Ex-White & Case partner launches UAE boutique",
-    "main": "Ex-White & Case partner launches UAE boutique",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/ex-white-case-partner-launches-uae-boutique"
-   },
    {
     "date": "2026-09-11",
     "title": "Singapore boutique hires from Reed Smith",
@@ -386,14 +543,6 @@
     "step": "",
     "tail": "GAR",
     "url": "https://globalarbitrationreview.com/article/singapore-boutique-hires-reed-smith"
-   },
-   {
-    "date": "2026-09-10",
-    "title": "French Arbitration Association president goes solo",
-    "main": "French Arbitration Association president goes solo",
-    "step": "",
-    "tail": "GAR",
-    "url": "https://globalarbitrationreview.com/article/french-arbitration-association-president-goes-solo"
    },
    {
     "date": "2026-09-08",

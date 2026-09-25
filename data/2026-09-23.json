@@ -3,6 +3,7 @@
  "subject": "ArbRadar · 23 September 2026 — Maksim Vladimirovich Poletaev v. Uzbekistan — new case registered at ICSID",
  "stories": [
   {
+   "record": null,
    "id": 6260,
    "title": "Maksim Vladimirovich Poletaev v. Uzbekistan — new case registered at ICSID",
    "title_en": null,
@@ -42,12 +43,13 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": null,
+   "story": "Maksim Vladimirovich Poletaev and Solfy RUS, Russian investors, have registered a claim at ICSID against Uzbekistan under the BIT Russian Federation - Uzbekistan 2013, in the finance sector.",
    "tier": "lead",
    "slug": "2026-09-23-maksim-vladimirovich-poletaev-v-uzbekistan-new-case-registered-at-icsi.html",
    "event": "New case"
   },
   {
+   "record": null,
    "id": 6236,
    "title": "Ukraine instructs boutique to defend US investor’s ICSID claim",
    "title_en": null,
@@ -77,15 +79,55 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": null,
+   "story": "Ukraine has instructed European boutique Queritius to defend it in an ICSID claim brought by a US distressed debt investor that the state alleges is linked to Russia.",
    "tier": "development",
    "slug": "2026-09-23-ukraine-instructs-boutique-to-defend-us-investor-s-icsid-claim.html",
    "event": "Counsel instructed"
   },
   {
+   "record": null,
+   "id": 5065,
+   "title": "Czech government reinstates fuel margin caps, plans windfall tax on refineries",
+   "title_en": null,
+   "summary": "PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax for the month of October…",
+   "summary_en": null,
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdVZJUm9nYjlBVDQ3d2R1bEQzVk5JRkFMTDE4a0RBa3dxclgzNE0wNDFJY2JHQjkxaEhVUkhKdllrb2dMWFliczdNNlV6U1pxLVlwSEpmZjFtem82aVBIS3h5M0tBMUtyVTBadzQzRjVJcEMxUFVaWERESm1RY21rRHoySTJKdUc3VHJnSDdhQWtJQUxLTWRIbEl4cWlxRE9VZTZFNFQ0UE1VSFlscXpUejhMdFdHeEZJV2U4ekFIOF9WZ0FN?oc=5",
+   "source": "Google News / Reuters",
+   "source_tier": 2,
+   "event_type": "state_measure",
+   "published_at": "2026-09-21",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [
+    "Shell"
+   ],
+   "respondents": [],
+   "states": [
+    "Czechia"
+   ],
+   "sectors": [
+    "Power & renewables"
+   ],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "State-measure sweep; investor of means named: Shell",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [],
+   "story": "PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps on retailers' fuel margins and cut the diesel tax for the month of October.",
+   "tier": "development",
+   "slug": "2026-09-23-czech-government-reinstates-fuel-margin-caps-plans-windfall-tax-on-ref.html",
+   "event": "State measure"
+  },
+  {
+   "record": null,
    "id": 6905,
    "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para",
-   "title_en": null,
+   "title_en": "Turkey's Central Bank revokes operating licence of Papel Elektronik Para",
    "summary": "Turkey’s central bank has revoked the operating license of electronic money and payment services company Papel…",
    "summary_en": null,
    "url": "https://www.turkishminute.com/2026/09/23/turkeys-central-bank-revokes-license-of-papel-payments-company-amid-money-laundering-case/",
@@ -119,21 +161,15 @@
      "title": "Turkey's Central Bank Revokes Operating License of Papel Elektronik Para - finance.biggo.com",
      "published_at": "2026-09-23",
      "snippet": ""
-    },
-    {
-     "source": "ilkha.com",
-     "url": "https://ilkha.com/english/economy/turkish-central-bank-revokes-papels-electronic-money-licence-564309",
-     "title": "Turkish central bank revokes Papel's electronic money licence",
-     "published_at": "2022-10-26",
-     "snippet": "The Central Bank of the Republic of Türkiye (CBRT) has revoked the operating licence of Papel Elektronik Para ve Ödeme Hizmetleri AŞ as an electronic money institution, citing the company's failure to ..."
     }
    ],
-   "story": "",
+   "story": "Turkey’s central bank has revoked the operating licence of electronic money and payment services company Papel.",
    "tier": "development",
-   "slug": "2026-09-23-turkey-s-central-bank-revokes-operating-license-of-papel-elektronik-pa.html",
+   "slug": "2026-09-23-turkey-s-central-bank-revokes-operating-licence-of-papel-elektronik-pa.html",
    "event": "State measure"
   },
   {
+   "record": null,
    "id": 7378,
    "title": "Roust USA, Inc. v. CEDC International sp. z o.o. (S.D.N.Y. 1:26-cv-08283)",
    "title_en": null,
@@ -166,15 +202,90 @@
    "lang": "en",
    "country": null,
    "corroboration": [],
-   "story": null,
+   "story": "NOTICE of Petition to Vacate the Arbitration Award re: 1 Petition to Compel/Confirm/Modify/Stay/Vacate Arbitration. Document filed by Roust USA, Inc...(Rooney, Gavin) (Entered: 09/23/2026) Parties: CEDC INTERNATIONAL SP.",
    "tier": "development",
    "slug": "2026-09-23-roust-usa-inc-v-cedc-international-sp-z-o-o-s-d-n-y-1-26-cv-08283.html",
    "event": "Annulment"
   },
   {
+   "record": null,
+   "id": 7579,
+   "title": "Once GST Registrations Restored on FAA Orders, GST Dept Cannot Later Seek their Annulment: GSTAT [Read Order]",
+   "title_en": "Once GST Registrations Restored on FAA Orders",
+   "summary": "The Department could not implement the appellate order restoring taxpayers' registrations and later seek to invalidate the same orders before…",
+   "summary_en": null,
+   "url": "https://www.taxscan.in/top-stories/once-gst-registrations-restored-on-faa-orders-gst-dept-cannot-later-seek-their-annulment-gstat-read-order-1451867",
+   "source": "Google News / taxscan.in",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘annulment’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": [
+    {
+     "source": "jurishour.in",
+     "url": "https://www.jurishour.in/gst/faa-delay-s-107-4-limit-appeal-registration-restoration/",
+     "title": "FAA Can’t Condone Delay Beyond S. 107(4) Limit, But Dismisses Dept. Appeals After Registration Restoration: GSTAT",
+     "published_at": "2026-09-19",
+     "snippet": "Hyderabad Division Bench, Court-II, has held that a First Appellate Authority (FAA) cannot condone delay in filing a GST appeal beyond the outer statutory limit prescribed under Section 107(4) of the ..."
+    }
+   ],
+   "story": "The Department could not implement the appellate order restoring taxpayers' registrations and later seek to invalidate the same orders.",
+   "tier": "development",
+   "slug": "2026-09-23-once-gst-registrations-restored-on-faa-orders.html",
+   "event": "Annulment"
+  },
+  {
+   "record": null,
+   "id": 6250,
+   "title": "Calif. Bill Goes Too Far In Trying To Regulate Attorney AI Use",
+   "title_en": "Calif. Bill goes too far in trying to Regulate Attorney AI use",
+   "summary": "California’s first-in-the-nation act regulating how attorneys and arbitrators use generative artificial intelligence will likely soon become law, but read broadly, the provisions may dissuade lawyers from employing AI at all, thereby depriving them of key work tools, says Joshua Wurtzel at Schlam Stone.",
+   "summary_en": null,
+   "url": "https://www.law360.com/internationalarbitration/articles/2528670?utm_source=rss&utm_medium=rss&utm_campaign=section",
+   "source": "Law360 International Arbitration (Global)",
+   "source_tier": 2,
+   "event_type": "commentary",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": null,
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": "Global",
+   "corroboration": [],
+   "story": "California’s first-in-the-nation act regulating how attorneys and arbitrators use generative artificial intelligence will likely soon become law, but read broadly.",
+   "tier": "development",
+   "slug": "2026-09-23-calif-bill-goes-too-far-in-trying-to-regulate-attorney-ai-use.html",
+   "event": "Note"
+  },
+  {
+   "record": null,
    "id": 4768,
    "title": "Paris first instance court finds that Libya’s National Oil Corporation qualifies as an emanation of the state for exequatur purposes",
-   "title_en": null,
+   "title_en": "Paris first instance court finds that Libya’s National Oil Corporation qualifies",
    "summary": "",
    "summary_en": null,
    "url": "https://www.iareporter.com/articles/paris-first-instance-court-confirms-that-libyas-national-oil-corporation-qualifies-as-an-emanation-of-the-state-for-exequatur-purposes/",
@@ -201,16 +312,17 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": null,
-   "story": null,
+   "corroboration": [],
+   "story": "",
    "tier": "brief",
    "slug": "2026-09-23-paris-first-instance-court-finds-that-libya-s-national-oil-corporation.html",
    "event": "Enforcement"
   },
   {
+   "record": null,
    "id": 6238,
    "title": "Ukrainian state-owned defense equipment company seeks enforcement of award against US-based TNT supplier",
-   "title_en": null,
+   "title_en": "Ukrainian state-owned defence equipment company seeks enforcement of award against US-based TNT supplier",
    "summary": "",
    "summary_en": null,
    "url": "https://www.iareporter.com/articles/ukrainian-state-owned-defense-equipment-company-seeks-enforcement-of-award-against-us-tnt-supplier/",
@@ -235,15 +347,16 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": null,
-   "story": null,
+   "corroboration": [],
+   "story": "",
    "tier": "brief",
-   "slug": "2026-09-23-ukrainian-state-owned-defense-equipment-company-seeks-enforcement-of-a.html",
+   "slug": "2026-09-23-ukrainian-state-owned-defence-equipment-company-seeks-enforcement-of-a.html",
    "event": "Award"
   }
  ],
  "leads": [
   {
+   "record": null,
    "id": 289,
    "title": "Atome threatens arbitration against Paraguay over green fertiliser project PPA",
    "title_en": "Green fertiliser company threatens ICSID claim against Paraguay",
@@ -275,6 +388,20 @@
    "country": null,
    "corroboration": [
     {
+     "source": "prnewswire.com",
+     "url": "https://www.prnewswire.com/news-releases/atome-plc-notice-of-dispute-and-intent-to-submit-claim-to-arbitration-under-the-uk--paraguay-bilateral-investment-treaty-the-treaty-or-bit-302881982.html",
+     "title": "Atome: Notice of Dispute and Intent to Submit Claim to Arbitration under the UK – Paraguay Bilateral Investment Treaty",
+     "published_at": "2026-09-17",
+     "snippet": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees."
+    },
+    {
+     "source": "uk.finance.yahoo.com",
+     "url": "https://uk.finance.yahoo.com/news/atome-issues-notice-dispute-over-071036523.html",
+     "title": "ATOME Issues Notice of Dispute Over US$665 Million Villeta Fertiliser Project in Paraguay",
+     "published_at": "2026-09-17",
+     "snippet": "ATOME PLC (LSE:ATOM) has issued a Notice of Dispute and Intent to Submit a Claim to Arbitration under the UK–Paraguay Bilateral Investment Treaty following the revocation of presidential decrees relating to its US$665 million Villeta green fertiliser project."
+    },
+    {
      "source": "Global Arbitration Review",
      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYS1KQzhpcGZ1c0Jwc0w5M0FOVUNycW9wU2VsVENYQ1luaFhPMFJqWkR2ODV2dFRhNW9QdG9SZTdCdnF1NDZBQ3d6U1k3MkQ5X1FKMWk3V2JQa3lBdnFkRmZpTWhlSjlrZmtKekJLblpiTHA5cnRuS1hQZ0N3TzFDUjRVeXNGU1NBZDZyQldpMGZNNHRZalM0OHQxWmJsUEJKVXhxQVhZcWNTN1E?oc=5",
      "title": "Green fertiliser company threatens ICSID claim against Paraguay - Global Arbitration Review",
@@ -282,85 +409,84 @@
      "snippet": ""
     }
    ],
-   "story": null,
+   "story": "ATOME Paraguay arbitration notice filed under UK-Paraguay BIT threatens the Villeta green fertiliser project.",
    "tier": "signal",
    "slug": "2026-09-23-green-fertiliser-company-threatens-icsid-claim-against-paraguay.html",
    "event": "Notice of dispute"
   },
   {
-   "id": 6908,
-   "title": "'Oil companies are exploiting the situation': Europe eyes windfall tax on energy giants as fuel prices rise",
-   "title_en": null,
-   "summary": "EU finance ministers are considering ways to tax what Germany's finance minister described as 'excessive profits' in the energy sector amid fears of a major energy price…",
+   "record": null,
+   "id": 5644,
+   "title": "Atiku Abubakar Named in ICC Arbitration Award Over Mambilla Contract",
+   "title_en": "Tribunal never convicted me of corruption, Atiku tells APC",
+   "summary": "The final award issued on 17 September by an International Chamber of Commerce (ICC) arbitration tribunal in Paris, in the dispute over the Mambilla Hydroelectric Power Project…",
    "summary_en": null,
-   "url": "https://www.msn.com/en-ie/money/economy/oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on-energy-giants-as-fuel-prices-rise/ar-AA2cwfPy",
-   "source": "Google News / msn.com",
+   "url": "https://thenigerialawyer.com/no-charge-no-conviction-from-siemens-to-mambilla-five-international-matters-in-which-atiku-abubakar-and-his-former-wife-have-been-named/",
+   "source": "Google News / thenigerialawyer.com",
    "source_tier": 2,
-   "event_type": "distress_event",
-   "published_at": "2026-09-18",
-   "institution": null,
-   "treaty": null,
-   "case_ref": null,
-   "claimants": [],
-   "respondents": [],
-   "states": [
-    "Ireland"
-   ],
-   "sectors": [
-    "Oil & gas",
-    "Power & renewables"
-   ],
-   "counsel": [],
-   "arbitrators": "[]",
-   "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
-   "why_it_matters": null,
-   "also": [],
-   "lang": "en",
-   "country": null,
-   "corroboration": [],
-   "story": null,
-   "tier": "signal",
-   "slug": "2026-09-23-oil-companies-are-exploiting-the-situation-europe-eyes-windfall-tax-on.html",
-   "event": "State measure"
-  },
-  {
-   "id": 5784,
-   "title": "CEMAC Regulator Revokes Axiome Capital’s License After Three Years Without Market Activity",
-   "title_en": null,
-   "summary": "Central Africa’s financial market regulator has revoked Axiome Capital’s license and initiated its liquidation after the Congolese…",
-   "summary_en": null,
-   "url": "https://www.businessincameroon.com/finance/2309-16805-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-without-market-activity",
-   "source": "Google News / businessincameroon.com",
-   "source_tier": 2,
-   "event_type": "distress_event",
+   "event_type": "commercial_dispute",
    "published_at": "2026-09-23",
-   "institution": null,
+   "institution": "ICC",
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [
-    "Cameroon"
-   ],
+   "states": [],
    "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
+   "flag_reason": "matched ‘icc arbitration’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [],
-   "story": null,
+   "corroboration": [
+    {
+     "source": "TheCable",
+     "url": "https://www.thecable.ng/now-that-the-mambilla-mess-is-over/",
+     "title": "Now that the Mambilla mess is over",
+     "published_at": "2026-09-20",
+     "snippet": "Stay connected via Google News It came as a mighty relief to me when news broke on…"
+    },
+    {
+     "source": "msn.com",
+     "url": "https://www.msn.com/en-xl/africa/other/mambilla-tinubu-hails-nigeria-s-victory-in-2-35bn-icc-arbitration/ar-AA2ctGj3",
+     "title": "Tinubu hails EFCC as Nigeria wins $6bn Mambilla arbitration in Paris",
+     "published_at": "2026-09-19",
+     "snippet": "· President says biggest legal hurdle to project execution cleared ·Applauds Obasanjo, Buhari, Fashola, EFCC, others ·Court says Atiku's wife got $500,000…"
+    },
+    {
+     "source": "leadership.ng",
+     "url": "https://leadership.ng/arewa-group-hails-win-over-mambilla-project/",
+     "title": "Mambilla project: Arewa group hails tribunal for dismissing contractor’s $2.35bn claim",
+     "published_at": "2026-09-19",
+     "snippet": "The Arewa Think Tank has commended the federal government on Nigeria’s victory in the arbitration dispute with Sunrise Power over the Mambilla…"
+    },
+    {
+     "source": "guardian.ng",
+     "url": "https://guardian.ng/news/mambilla-tribunal-never-convicted-me-of-corruption-atiku-tells-apc/",
+     "title": "Mambilla: Tribunal never convicted me of corruption, Atiku tells APC",
+     "published_at": "2026-09-18",
+     "snippet": "Former Vice President Atiku Abubakar has accused the All Progressives Congress (APC) Campaign Council of distorting the outcome of the Mambilla arbitration by presenting allegations examined by the ..."
+    },
+    {
+     "source": "Premium Times Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPZjVvQ01aOGR6bmhrUVNHaDRyYlEwMzltYWlxS2R2Y1NablZ3aTFLbjNLX3k2SHgwQ1F1eEtDVjNTc01iZjFlMHZZNkQ2ZDFIeVBOOE43QzZkdkpNbEpiYVdDblU4ZUlBNlBlYmdMWVd6aTFXb2Z0STJZNkVreTZDUklhVmFqY0FzTmpnSHM4a2hBbEM3ekhuVlJ3SHdfLWZ3eDdSLWJEZ1YtSjJtVlJmZ1IybHJuclNxN2Q1VElHU1NmN1ZuWkllbHNUM21RY1BmbzVILURDSE0wNExZTE1GX1VEOVNLMnl3STlpQQ?oc=5",
+     "title": "EXCLUSIVE: EFCC sets up team to investigate Atiku, Malami, others named in ICC ruling on Mambilla deal - Premium Times Nigeria",
+     "published_at": "2026-09-20",
+     "snippet": ""
+    }
+   ],
+   "story": "The final award issued on 17 September by an International Chamber of Commerce (ICC) arbitration tribunal in Paris.",
    "tier": "signal",
-   "slug": "2026-09-23-cemac-regulator-revokes-axiome-capital-s-license-after-three-years-wit.html",
-   "event": "State measure"
+   "slug": "2026-09-23-tribunal-never-convicted-me-of-corruption-atiku-tells-apc.html",
+   "event": "Commercial arbitration"
   }
  ],
  "enforcement": [
   {
+   "record": null,
    "id": 5558,
    "title": "Energía y Renovación v. Guatemala — energía y Renovación Holding S.A. files a counter-memorial on annulment",
    "title_en": null,
@@ -398,24 +524,17 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "Wolters Kluwer",
-     "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPMVNHMXNUcEtLd01MTE5IX1J4U0dMWXVvdDd5N2t0YTZDU2RqQzAzaks4RlF5VGJGX0drX1RhMEJOZngzZEJaUklpV1pNVlNZWl9MZG5BaTc5NnhibjRwdWVJNThRTlNIZGRsV1VqOUpsSHkwVERDRjBCeDJCRGVld1hrMXpXTXFTSF9KZmpCZmliU0toRXJ0RF9jdDdLYU9qdFE2MWNfY1NsdmtJNElhOVR5WEdoZHVOTmFaZnVjRnctT3VYWENob1lYM2dKd0pjWERGczJLT1B3eTVCOGluMU5RWURFaXRvblVXcDMyNkp5SWlzRk8zemhlU1NFbHRQajF5N2wyd0d5ZThGaVB4c2JLVHZqUFlxRmFr?oc=5",
-     "title": "Can a Breach of Constitutional Law of the Host State Nullify Investment Protection? The Case of Energía y Renovación Holdings v. Guatemala - Wolters Kluwer",
-     "published_at": "2025-05-21",
-     "snippet": ""
-    }
-   ],
-   "story": null,
+   "corroboration": [],
+   "story": "Energía y Renovación brought the claim against Guatemala under the FTA Central America - Panama 2002, in the electric power and other energy sector; it was registered on 29 October 2025.",
    "tier": "enforcement",
    "slug": "2026-09-23-energ-a-y-renovaci-n-v-guatemala-energ-a-y-renovaci-n-holding-s-a-file.html",
    "event": "Annulment"
   },
   {
+   "record": null,
    "id": 2558,
    "title": "Zenith Annulment Bid Goes To European Human Rights Court",
-   "title_en": null,
+   "title_en": "Zenith annulment bid goes to European Human rights court",
    "summary": "Zenith Energy Ltd. announced Tuesday it is redoubling attempts to annul an International Chamber of Commerce arbitration award that rejected a subsidiary's $130 million in claims against Tunisia over an oilfield deal, saying the unit will contest the ICC tribunal's impartiality before the European Court of Human Rights.",
    "summary_en": null,
    "url": "https://www.law360.com/internationalarbitration/articles/2525259?utm_source=rss&utm_medium=rss&utm_campaign=section",
@@ -443,7 +562,7 @@
    "lang": "en",
    "country": "Global",
    "corroboration": [],
-   "story": null,
+   "story": "Zenith Energy Ltd. announced Tuesday it is redoubling attempts to annul an International Chamber of Commerce arbitration award that rejected a subsidiary's US$130 million in claims against Tunisia over an oilfield deal.",
    "tier": "enforcement",
    "slug": "2026-09-23-zenith-annulment-bid-goes-to-european-human-rights-court.html",
    "event": "Annulment"
