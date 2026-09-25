@@ -953,7 +953,7 @@ _CAPITALS = {"prague": "czechia", "warsaw": "poland", "budapest": "hungary", "bu
              "yerevan": "armenia", "bishkek": "kyrgyzstan", "dushanbe": "tajikistan", "ashgabat": "turkmenistan",
              "berlin": "germany", "paris": "france", "madrid": "spain", "rome": "italy", "lisbon": "portugal",
              "dublin": "ireland", "london": "united kingdom", "washington": "united states", "ottawa": "canada",
-             "brasilia": "brazil", "canberra": "australia", "tokyo": "japan", "seoul": "south korea"}
+             "brasilia": "brazil", "canberra": "australia", "tokyo": "japan", "seoul": "korea"}
 _REGION = re.compile(r"\b(?:EU|E\.U\.|European Union|Europe|Brussels|Eurogroup|European Commission|eurozone)\b", re.I)
 
 
