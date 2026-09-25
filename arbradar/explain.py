@@ -213,6 +213,10 @@ def from_court(it: Dict[str, Any]) -> str:
         what = ("enforcement of an arbitral award" if "enforc" in low else "an arbitral award" if "award" in low
                 else "an arbitration agreement" if "agreement" in low else "arbitration")
     parts = ["{} judgment{}{}".format(court, " of " + date if date else "", ", " + cite if cite else "")]
-    parts.append("on " + what[:1].lower() + what[1:] if not what.lower().startswith("on ") else what)
+    what = what[:1].lower() + what[1:]
+    if "judgment" in what or "related" in what:
+        parts.append("in an arbitration-related matter")
+    else:
+        parts.append(what if what.startswith(("on ", "in ", "under ")) else "on " + what)
     out = " ".join(parts).strip()
     return out[:1].upper() + out[1:].rstrip(".") + "."
