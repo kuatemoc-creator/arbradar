@@ -2,6 +2,7 @@
 import argparse
 import datetime as dt
 import os
+import re
 import json
 import logging
 import sys
@@ -213,12 +214,21 @@ def cmd_build(args, settings, conn):
     # The partner's edit, when the editorial tier is on: headline and explanation
     # rewritten to the arb-editor brief from each entry's own sources. The
     # grounding check that follows keeps it honest.
+    llm_pass = False
     if settings.use_llm and not args.no_llm and os.environ.get("ANTHROPIC_API_KEY"):
         try:
             n = llm.edit_entries(items + leads + enforcement, settings.editor_model)
+            llm_pass = n > 0
             print("editor pass: {} entries edited".format(n))
         except Exception as exc:                      # noqa: BLE001 - boundary
             print("editor pass skipped ({})".format(exc))
+    # The copy desk runs on every build, key or no key: house forms, banned
+    # words, headline shape, explanation length. Its report names the entries
+    # that still need a person.
+    from . import copydesk
+    from .config import OUT_DIR as _OUT
+    desk = copydesk.apply(items + leads + enforcement, date, _OUT, llm_pass)
+    print("copy desk: {} entries, {} need a person; see out/editor-{}.json".format(len(desk["entries"]), desk["needs_person"], date))
     # The last check: every printed sentence must be in a source we cite.
     from . import grounding
     from .config import OUT_DIR
@@ -281,12 +291,33 @@ def cmd_top(args, settings, conn):
     return 0
 
 
+def _edited(date: str) -> bool:
+    """True when the editor pass (the model) read the issue of that date."""
+    from .config import OUT_DIR
+    path = os.path.join(OUT_DIR, "editor-{}.json".format(date))
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return bool(json.load(fh).get("llm_pass"))
+    except (OSError, ValueError):
+        return False
+
+
 def cmd_send(args, settings, conn):
     row = conn.execute("SELECT * FROM issues ORDER BY id DESC LIMIT 1").fetchone()
     if not row:
         print("no issue built yet - run `build` first")
         return 1
     to = [x.strip() for x in args.to.split(",")] if getattr(args, "to", None) else None
+    # Nothing goes to readers that the editor pass has not read. A draft for
+    # the editor's own approval is allowed; a publish or a real send is not,
+    # unless --force says a person has read it instead.
+    m = re.search(r"issue-(\d{4}-\d{2}-\d{2})", row["html_path"] or "")
+    issue_date = m.group(1) if m else ""
+    outward = bool(getattr(args, "publish", False) or getattr(args, "confirm", False))
+    if outward and not _edited(issue_date) and not getattr(args, "force", False):
+        print("refused: the editor pass has not read issue {} (no ANTHROPIC_API_KEY at build time). "
+              "Rebuild with the key, or pass --force after reading out/editor-{}.json yourself.".format(issue_date, issue_date))
+        return 1
     if getattr(args, "draft", False) or getattr(args, "publish", False):
         from . import provider
         with open(row["html_path"], encoding="utf-8") as fh:
@@ -393,6 +424,7 @@ def main(argv=None):
     t.add_argument("--limit", type=int, default=25)
     t.add_argument("--why", action="store_true")
     s = sub.add_parser("send", parents=[common], help="email the latest issue")
+    s.add_argument("--force", action="store_true", help="send an issue the editor pass has not read (you have read it)")
     s.add_argument("--confirm", action="store_true", help="actually send")
     s.add_argument("--to", help="override recipients (comma separated)")
     s.add_argument("--eml", action="store_true", help="write an .eml file instead of sending")

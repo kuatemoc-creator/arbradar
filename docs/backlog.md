@@ -8,6 +8,13 @@ the owner's accounts or DNS.
 
 ## Open
 
+00000. **Editor pass before anything goes out** [Aram] — the brief
+   (`.claude/skills/arb-editor/SKILL.md`), the model pass (`llm.edit_entries`),
+   the copy desk (`copydesk.py`) and the send gate are in place, 25 September.
+   The model pass needs `ANTHROPIC_API_KEY` as a repository secret; until it
+   is set, every build prints the copy-desk report and `send --publish`
+   refuses. Add the secret, then check `out/editor-<date>.json` on the next run.
+
 0000. **Record pages without feeds** [me] — done 25 September: `arbradar/sources/pages.py`
    reads the 115 registers, gazettes, regulators, exchanges, courts and
    tender portals that answer but publish no feed, following each site's

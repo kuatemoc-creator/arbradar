@@ -106,6 +106,15 @@ is set. The grounding check runs after it, so the editor may compress the
 sources but never add to them. One text, two uses: change the brief and both
 change.
 
+Two more steps make the brief binding rather than advisory. The copy desk
+(`arbradar/copydesk.py`) runs on every build, key or no key: house forms for
+amounts and spelling, banned words out, labels off headlines, over-long
+headlines closed at a clause, explanations within the cap, and a report in
+`out/editor-<date>.json` naming the entries that still need a person. And
+`send --publish` and `send --confirm` refuse an issue the editor pass has not
+read; only `send --draft`, which goes to the editor's own approval queue, is
+allowed without it. `--force` overrides after a person has read the report.
+
 ## Models
 
 Three tiers, because volume drops sharply at each stage:
