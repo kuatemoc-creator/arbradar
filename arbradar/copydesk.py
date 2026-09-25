@@ -79,7 +79,7 @@ def fix_explanation(it: Dict[str, Any]) -> List[str]:
     notes = []
     text = explain(it)
     if it.get("_restated"):
-        notes.append("no source text: paywall note printed; needs a person")
+        notes.append("no source text: headline printed alone; needs a person")
     fixed = _forms(text)
     if fixed != text:
         notes.append("amounts or spelling to house form")

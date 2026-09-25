@@ -109,5 +109,6 @@ Margin: sentence case; "licence" not "license"; the source is a press report, so
 
 If the cited source is a paywalled headline and nothing else, the honest explanation is
 the record: the State, the forum, the instrument, the stage, from the docket or from a
-second source you can cite. If there is none, say the outlet reports the development and
-stop. Never fill a gap with a plausible sentence.
+second source you can cite. If there is none, the headline and the source line stand
+alone: no note about paywalls, no restatement, no sentence about what could not be
+found. Never fill a gap with a plausible sentence.

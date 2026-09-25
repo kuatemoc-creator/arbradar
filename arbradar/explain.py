@@ -109,17 +109,11 @@ def from_record(it: Dict[str, Any]) -> str:
 
 
 def restated(it: Dict[str, Any]) -> str:
-    """When nothing but the headline is on record, say so rather than dress the
-    headline up as an explanation: the reader learns where the text is and
-    that no other source or record was found."""
-    from .email_html import _outlet
-    outlet = _outlet(it.get("source") or "") or "The source"
-    url = (it.get("url") or "").lower()
-    rec = it.get("record") if isinstance(it.get("record"), dict) else None
-    tail = "the record is cited below." if rec and rec.get("url") else "no other outlet or record carrying the development was found."
-    if "iareporter" in url or "law360" in url:
-        return "{}'s report is behind its paywall; {}".format(outlet, tail)
-    return "Reported by {}; {}".format(outlet, tail)
+    """Nothing but a headline on record: the brief says print the headline and
+    the source line and stop. No note, no restatement. The copy desk flags the
+    entry for a person, and the editor pass writes the line from the record
+    when it runs."""
+    return ""
 
 
 def fit(text: str, max_chars: int = MAX_CHARS) -> str:
