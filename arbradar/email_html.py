@@ -393,7 +393,6 @@ a{{color:{link}}}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
   <tr><td bgcolor="{ink}" style="background-color:{ink};padding:16px 22px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td width="40" style="width:40px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="28" height="28" alt="" style="border:0;display:block;width:28px;height:28px;max-width:28px;"></a></td>
       <td style="font-family:{serif};font-size:24px;line-height:1;font-weight:700;letter-spacing:0;color:#ffffff;vertical-align:middle;">{name}</td>
       <td align="right" style="font-family:{sans};font-size:13px;color:#c9ccd6;white-space:nowrap;">{dl}</td>
     </tr></table>
@@ -402,6 +401,7 @@ a{{color:{link}}}
   {body}
   <tr><td style="padding:22px 0 0;border-top:1px solid {line};">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="padding-right:10px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="28" height="28" alt="CaseLens" style="border:0;display:block;width:28px;height:28px;max-width:28px;"></a></td>
       <td style="vertical-align:middle;font-family:{sans};font-size:13px;line-height:1.35;color:{ink};">
         <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};">Published by</span><br>
         <a href="https://caselens.tech" style="font-size:15px;font-weight:700;color:{ink};text-decoration:none;">CaseLens</a></td>
