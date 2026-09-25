@@ -96,11 +96,15 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
         # revokes operating licence" fits Papel and Bank Mellat alike, and
         # only the name tells them apart. A page that names a company the
         # headline does not, or none where the headline names one, is skipped.
-        their_ents = _entities(title)
+        snippet_raw = html.unescape(re.sub(r"<[^>]+>", " ", e.get("summary") or e.get("description") or ""))
+        their_ents = _entities(title) | _entities(snippet_raw)
         if my_ents and not (my_ents & their_ents):
             continue
         if their_ents and not my_ents:
             continue
+        from .pipeline import shared_propers
+        if not shared_propers(" ".join(words), title + " " + snippet_raw):
+            continue                                  # no name in common beyond the words of the trade
         # A headline that names a State is about that State: a page that names
         # none of its States is another story ("Laos' bid to enforce" is not a
         # Utah police case, however alike the court words).
@@ -120,6 +124,9 @@ def _search(query: str, words: List[str]) -> Optional[Dict[str, str]]:
         # opening ("X, the leading developer of...").
         newsy = sum(1 for k in _NEWSY if k in text.lower())
         boilerplate = bool(re.match(r"^[A-Z][\w .&'-]{0,40}, (the|a) ", text))
+        if newsy == 0 or re.search(r"\b(shows you|sign up|subscribe|log in|cookies|our (tool|platform|database)|"
+                                   r"topic tool|browse|search results)\b", text, re.I):
+            continue                                  # a site's own blurb is not the story
         score = newsy * 2 - (5 if boilerplate else 0) + min(shared, 3) * 0.5
         if best_score is None or score > best_score:
             outlet = ((e.get("source") or {}).get("title")) or ""

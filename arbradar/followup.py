@@ -164,11 +164,14 @@ def corroborate(it: Dict[str, Any], max_sources: int = 5) -> Dict[str, Any]:
             # defamation ruling. Only when neither headline names a company can
             # the State and the wording carry the match.
             my_ents = _entities(title)
-            their_ents = _entities(e["title"])
-            if my_ents and their_ents and not (my_ents & their_ents):
+            their_ents = _entities(e["title"]) | _entities(e.get("snippet") or "")
+            if my_ents and not (my_ents & their_ents):
+                continue                              # the party in our headline is nowhere in theirs: another matter
+            if not my_ents and not (same_state and shared >= 4):
                 continue
-            if not (my_ents & their_ents) and not (same_state and shared >= 4):
-                continue
+            from .pipeline import shared_propers
+            if not shared_propers(title, e["title"] + " " + (e.get("snippet") or "")):
+                continue                              # no name in common beyond the words of the trade
             # An article from years before the item is background, not a copy of
             # the story: a 2021 sale of a company is not this week's petition.
             mine = str(it.get("published_at") or "")[:10]

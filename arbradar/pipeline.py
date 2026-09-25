@@ -313,6 +313,17 @@ def _propers(title: str) -> set:
             if w[0].isupper() and len(w) >= 4 and w.lower() not in STOP}
 
 
+def shared_propers(a: str, b: str) -> set:
+    """Capitalised words two headlines share, minus the words of the trade
+    (court, tribunal, award) and the first word of each. 'Devas', 'Iraq',
+    'Turkey' count; 'Court', 'Appeal', 'Award' do not."""
+    def props(t):
+        words = re.findall(r"[A-Za-z][A-Za-z'\u00c0-\u024f]+", (t or "").replace("-", " "))
+        return {_stem(_fold(w).lower()) for w in words[1:] if w[:1].isupper() and len(w) >= 3 and w.lower() not in STOP}
+    # a State in common is the subject of a hundred stories a week, not a signature
+    return (props(a) & props(b)) - _GENERIC - _STATE_STEMS() - {"us", "uk", "new", "high", "supreme", "state", "federal", "district", "national"}
+
+
 def _entities(title: str) -> set:
     """The names in a headline that are neither a State nor an ordinary word
     capitalised by Title Case: 'Papel', 'Mellat', 'Yukos', not 'Bank' or 'Court'."""
@@ -349,10 +360,10 @@ def _in_english(w: str, english: set) -> bool:
     if w in english:
         return True
     for suffix in ("s", "es", "ed", "d", "ing", "ies"):
-        if w.endswith(suffix) and len(w) - len(suffix) >= 3:
+        if w.endswith(suffix) and len(w) - len(suffix) >= (5 if suffix == "s" else 3):
             base = w[: -len(suffix)] + ("y" if suffix == "ies" else "")
             if base in english or base + "e" in english:
-                return True
+                return True                           # 'Devas' is not the plural of a deva; a five-letter base is
     return False
 
 
@@ -569,8 +580,11 @@ def _cite_best(rep: Dict[str, Any]) -> None:
     also = rep.get("also") or []
     if not also:
         return
-    best = min(also, key=lambda a: rank(a.get("source"), a.get("url")))
-    if rank(best.get("source"), best.get("url")) < rank(rep.get("source"), rep.get("url")) and best.get("url"):
+    # A Google News link is a detour; the outlet's own link is the citation.
+    def _r(x):
+        return rank(x.get("source"), x.get("url")) + (0.5 if "news.google." in (x.get("url") or "") else 0)
+    best = min(also, key=_r)
+    if _r(best) < _r(rep) and best.get("url"):
         old = {"source": rep.get("source"), "url": rep.get("url"), "title": rep.get("title")}
         rep["source"], rep["url"] = best.get("source"), best.get("url")
         if best.get("title") and (rep.get("lang") or "en") == "en":

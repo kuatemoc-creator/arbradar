@@ -198,14 +198,16 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     href = it.get("site_link") or it.get("url") or "#"
     src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
     when = _when(it)
+    from .followup import load as _load_cites
+    cites_all = [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)]
     rec = it.get("record") if isinstance(it.get("record"), dict) else None
     if rec and rec.get("url"):
         tail = 'Record: {rec} &middot; reported by {src}{when}'.format(
             rec=a(rec["url"], _record_label(rec), color=INK2), src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-        cites = [c for c in (it.get("corroboration") or []) if c.get("url") and c.get("url") != rec["url"]][:2]
+        cites = [c for c in cites_all if c.get("url") and c.get("url") != rec["url"]][:2]
     else:
         tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-        cites = [c for c in (it.get("corroboration") or [])[:2] if c.get("url")]
+        cites = [c for c in cites_all[:2] if c.get("url")]
     if cites:
         tail += ' &middot; also {}'.format(", ".join(a(c["url"], c.get("source") or "source", color=MUTE) for c in cites))
     return entry(title_of(it), href, explain(it), tail.strip())
@@ -339,7 +341,9 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
 
     web_link = ('<br><a href="{}/{}.html" style="font-size:12px;color:{};">View in browser</a>'.format(
         site_url, date[:10], MUTE) if site_url else "")
-    sources = sorted({(it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip() for it in items} - {""})
+    _alias = {"global arbitration review": "GAR", "globalarbitrationreview": "GAR", "investment arbitration reporter": "IAReporter",
+              "law360 international arbitration (global)": "Law360"}
+    sources = sorted({_alias.get(n.lower(), n) for n in ((it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip() for it in items)} - {""})
     unsubscribe = getattr(settings, "unsubscribe_url", "") or "mailto:{}?subject=unsubscribe".format(
         (settings.smtp or {}).get("from") or "newsletter@caselens.tech")
 
