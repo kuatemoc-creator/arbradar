@@ -198,11 +198,30 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
     href = it.get("site_link") or it.get("url") or "#"
     src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
     when = _when(it)
-    tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-    cites = [c for c in (it.get("corroboration") or [])[:2] if c.get("url")]
+    rec = it.get("record") if isinstance(it.get("record"), dict) else None
+    if rec and rec.get("url"):
+        tail = 'Record: {rec} &middot; reported by {src}{when}'.format(
+            rec=a(rec["url"], _record_label(rec), color=INK2), src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
+        cites = [c for c in (it.get("corroboration") or []) if c.get("url") and c.get("url") != rec["url"]][:2]
+    else:
+        tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
+        cites = [c for c in (it.get("corroboration") or [])[:2] if c.get("url")]
     if cites:
         tail += ' &middot; also {}'.format(", ".join(a(c["url"], c.get("source") or "source", color=MUTE) for c in cites))
     return entry(title_of(it), href, explain(it), tail.strip())
+
+
+def _record_label(rec: Dict[str, Any]) -> str:
+    src = rec.get("source") or "record"
+    title = rec.get("title") or ""
+    if src == "US federal docket":
+        m = re.search(r"\(([^)]*\d[^)]*)\)\s*$", title)
+        return "US docket " + m.group(1) if m else "US federal docket"
+    if src == "ICSID docket":
+        return "ICSID case page"
+    if src.startswith("Find Case Law"):
+        return "judgment, Find Case Law"
+    return src
 
 
 def entry(head: str, href: str, body: str, tail: str) -> str:
@@ -326,7 +345,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
 
     sections = []
     stories = [lead] + devs
-    sections.append(label("Today", mb=0, top=False) + "".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories[:6], start=1)))
+    sections.append(label("Today", mb=0, top=False) + "".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories[:12], start=1)))
     leads = ((extras or {}).get("leads") or [])[:3]
     if leads:
         sections.append(label("Leads", mb=0) + "".join(story(it, 100 + i, False, site_url, date) for i, it in enumerate(leads, start=1)))
@@ -367,9 +386,10 @@ a{{color:{link}}}
 <tr><td align="center" class="wrap" style="padding:24px 16px;">
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
-  <tr><td bgcolor="{ink}" style="background-color:{ink};padding:18px 22px;">
+  <tr><td bgcolor="{ink}" style="background-color:{ink};padding:16px 22px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{serif};font-size:24px;line-height:1;font-weight:700;letter-spacing:0;color:#ffffff;">{name}</td>
+      <td width="40" style="width:40px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="28" height="28" alt="" style="border:0;display:block;width:28px;height:28px;max-width:28px;"></a></td>
+      <td style="font-family:{serif};font-size:24px;line-height:1;font-weight:700;letter-spacing:0;color:#ffffff;vertical-align:middle;">{name}</td>
       <td align="right" style="font-family:{sans};font-size:13px;color:#c9ccd6;white-space:nowrap;">{dl}</td>
     </tr></table>
   </td></tr>
@@ -377,7 +397,6 @@ a{{color:{link}}}
   {body}
   <tr><td style="padding:22px 0 0;border-top:1px solid {line};">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="padding-right:10px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="28" height="28" alt="CaseLens" style="border:0;display:block;width:28px;height:28px;max-width:28px;"></a></td>
       <td style="vertical-align:middle;font-family:{sans};font-size:13px;line-height:1.35;color:{ink};">
         <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};">Published by</span><br>
         <a href="https://caselens.tech" style="font-size:15px;font-weight:700;color:{ink};text-decoration:none;">CaseLens</a></td>

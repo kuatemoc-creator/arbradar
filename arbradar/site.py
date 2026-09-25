@@ -19,7 +19,7 @@ from .config import OUT_DIR
 SITE = os.path.join(OUT_DIR, "site")
 DATA = os.path.join(SITE, "data")
 
-STORY_FIELDS = ("id", "title", "title_en", "summary", "summary_en", "url", "source", "source_tier",
+STORY_FIELDS = ("record", "id", "title", "title_en", "summary", "summary_en", "url", "source", "source_tier",
                 "event_type", "published_at", "institution", "treaty", "case_ref", "claimants",
                 "respondents", "states", "sectors", "counsel", "arbitrators", "amount_usd",
                 "flag_reason", "why_it_matters", "also", "lang", "country", "corroboration", "story")

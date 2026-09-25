@@ -732,6 +732,18 @@ _ON_TOPIC = re.compile(r"arbitra|\baward\b|tribunal|ICSID|\bICC\b|LCIA|SIAC|HKIA
                        r"cancel|terminat|renegotiat|nationali|sanction|fine[ds]?\b|penalt|moratorium|blocked the", re.I)
 
 
+# The two titles that are read cover to cover: every GAR and IAReporter headline
+# of the day is carried. Law360's arbitration feed mixes in US domestic and
+# opinion pieces and stays on the scored path.
+_FULL_READ = re.compile(r"globalarbitrationreview|global arbitration review|(?<![\w.])gar(?![\w])|iareporter", re.I)
+
+
+def _read_in_full(it: Dict[str, Any]) -> bool:
+    text = " ".join([(it.get("source") or "").replace("Google News / ", ""), it.get("url") or ""]
+                    + [(a.get("source") or "") + " " + (a.get("url") or "") for a in (it.get("also") or [])])
+    return bool(_FULL_READ.search(text))
+
+
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
     cutoff = (as_of() - dt.timedelta(days=settings.lookback_days + extra_days)).isoformat()
     upto = as_of().isoformat() + "~"
@@ -783,6 +795,10 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
         if not rep.get("pinned") and rep.get("event_type") == "commercial_dispute" \
                 and not is_trade_press(rep.get("source") or "", rep.get("url") or "") and not _DISPUTE_WORD.search(body):
             continue                              # "terminates contracts of two soldiers" is not a commercial dispute
+        if not rep.get("pinned") and rep.get("event_type") in ("state_measure", "distress_event") \
+                and not is_trade_press(rep.get("source") or "", rep.get("url") or "") \
+                and not (rep.get("claimants") or rep.get("amount_usd") or _BUSINESS.search(body)):
+            continue                              # a measure that lands on no named business is politics, not a story
         # A firm's newsletter piece or a trade story with no arbitration in it is
         # not a story here, however well it scores on the watchlist.
         # The same test for a sweep item of any kind: "airlines cancel flights as
@@ -793,6 +809,25 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
                                                    rep.get("summary_en") or rep.get("summary") or ""])):
             continue
         stories.append(rep)
+    # The trade press is read in full: every GAR, IAReporter or Law360 headline
+    # of the day is carried, whatever its score, so the reader never has to
+    # wonder what was left out. It joins after the scored stories.
+    day_lo = (as_of() - dt.timedelta(days=1)).isoformat()
+    have = {id(s) for s in stories}
+    for rep in reps:
+        if id(rep) in have or rep.get("_anchor") or rep.get("url") in anchor_urls:
+            continue
+        if any((a.get("url") in anchor_urls) for a in rep.get("also") or []):
+            continue
+        if not _read_in_full(rep):
+            continue
+        if str(rep.get("published_at") or "")[:10] < day_lo:
+            continue
+        head = rep.get("title_en") or rep.get("title") or ""
+        if _NOT_NEWS.search(head):
+            continue
+        stories.append(rep)
+        have.add(id(rep))
     if len(stories) < 3:
         # A quiet day: items just under the floor still go in 'In brief' when the
         # headline itself is about an arbitration, never on the sweep's say-so alone.
@@ -805,7 +840,12 @@ def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
                 stories.append(rep)
             if len(stories) >= 6:
                 break
-    return stories[:settings.max_items_per_issue]
+    # The cap falls on the sweep, never on the trade press of the day.
+    trade = [s for s in stories if _read_in_full(s) and str(s.get("published_at") or "")[:10] >= day_lo]
+    others = [s for s in stories if s not in trade]
+    room = max(0, settings.max_items_per_issue - len(trade))
+    keep = trade + others[:room]
+    return sorted(keep, key=lambda s: (s.get("score") or 0), reverse=True)
 
 # The events a rainmaker watches for before any tribunal exists. A lead is a
 # sweep or feed item of one of these kinds; it never competes with the trade

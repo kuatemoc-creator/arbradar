@@ -107,6 +107,11 @@ def cmd_build(args, settings, conn):
     # build sees only what the first one left over.
     if getattr(args, "date", None):
         pipeline.AS_OF = dt.date.fromisoformat(args.date)
+        # A day that has gone to readers is fixed; it is not rebuilt without --force.
+        sent = conn.execute("SELECT sent_at FROM issues WHERE html_path LIKE ? AND sent_at IS NOT NULL", ("%issue-{}.%".format(args.date),)).fetchone()
+        if sent and not getattr(args, "force", False):
+            print("refused: the issue of {} was sent on {}; pass --force to rebuild it anyway".format(args.date, sent[0][:16]))
+            return 1
         # Scores carry a recency term; a past day is rebuilt with the scores it had then.
         pipeline.reclassify(conn, settings, days=settings.lookback_days + 7)
     today = pipeline.as_of().isoformat()
@@ -210,6 +215,21 @@ def cmd_build(args, settings, conn):
         conn.execute("UPDATE items SET corroboration=?, story=? WHERE id=?",
                      (json.dumps(found["sources"], ensure_ascii=False), it.get("story") or None, it["id"]))
     conn.commit()
+    # The record behind the report: the docket, the case page, the judgment the
+    # press wrote from. Cited first when found; the report becomes the "also".
+    from . import record
+    for it in items + leads + enforcement:
+        stored = followup.load(it.get("corroboration"))
+        rec = next((c for c in stored if isinstance(c, dict) and c.get("source") in ("ICSID docket", "US federal docket", "Find Case Law (England and Wales)", "PCA case list")), None)
+        if rec:
+            it["record"] = rec
+    found = record.attach(conn, items + leads + enforcement)
+    if found:
+        for it in items + leads + enforcement:
+            if it.get("record"):
+                conn.execute("UPDATE items SET corroboration=? WHERE id=?", (json.dumps(it.get("corroboration") or [], ensure_ascii=False), it["id"]))
+        conn.commit()
+        print("records attached: {}".format(found))
     leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
     if chased:
         print("chased {} stories into other outlets; {} leads; {} enforcement".format(chased, len(leads), len(enforcement)))
@@ -420,6 +440,7 @@ def main(argv=None):
     e.add_argument("--date", default=None)
     b = sub.add_parser("build", parents=[common, llm_opts], help="write an issue")
     b.add_argument("--date", default=None, help="rebuild a past day as of that day (YYYY-MM-DD)")
+    b.add_argument("--force", action="store_true", help="rebuild a day that was already sent")
     r = sub.add_parser("run", parents=[common, llm_opts], help="fetch + enrich + build")
     r.add_argument("--source")
     t = sub.add_parser("top", parents=[common], help="inspect the ranking")

@@ -240,6 +240,23 @@ attachment, exequatur and their equivalents). Domestic consumer or FINRA
 petitions on the US dockets are left out; a row needs a foreign or sovereign
 party.
 
+**The record behind the report.** GAR and IAReporter write from documents. For
+every press story, `arbradar/record.py` looks for the primary record it reports,
+by the parties named: the ICSID case page, the US federal docket on
+CourtListener (a fielded case-name query, the States under every name the
+gazetteer knows, dockets of the last four years), the English judgment on Find
+Case Law, the PCA case. A record found is cited first on the source line; the
+report becomes "reported by". Nothing is attached on a State name alone.
+
+**The trade press is read in full.** Every GAR and IAReporter headline of the
+day is carried, whatever its score; the cap on an issue falls on the sweep,
+never on those two. Law360's arbitration feed mixes in US domestic and opinion
+pieces and stays on the scored path.
+
+**A day that has gone out is fixed.** `build --date` refuses to rebuild an issue
+that was sent unless `--force`, and a past day rebuilt later is scored as it was
+then, so rebuilds do not reshuffle what readers already have.
+
 Syndicated coverage is clustered into one story per development (`pipeline.cluster`):
 the best-scored version leads, the other outlets hang off it as "also reported by".
 Items with different case numbers are never merged.
