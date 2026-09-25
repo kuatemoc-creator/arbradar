@@ -33,14 +33,15 @@ the local language.
    arbitration counsel), and the Canadian and US treaty-case registers.
 
 2. **Depth per country.** A verified, editable source map of 609 sources across
-   118 countries and 12 sectors: press, official gazettes, regulators, stock
+   182 countries and 12 sectors: press, official gazettes, regulators, stock
    exchanges, courts, case registers and procurement portals. Every source is
    listed with its status, so a reader can see exactly what is checked.
 
-3. **Languages the usual services skip.** News is searched in 14 languages
-   across 36 national editions, including Armenian, Georgian, Azerbaijani,
-   Uzbek, Ukrainian, Russian, Turkish, Arabic, Vietnamese and Indonesian,
-   alongside English, French, Spanish and Portuguese.
+3. **Languages the usual services skip.** News is searched in 42 languages
+   across 125 national editions, and the national press is read in 44,
+   including Armenian, Georgian, Azerbaijani, Uzbek, Ukrainian, Russian,
+   Turkish, Arabic, Vietnamese and Indonesian, alongside English, French,
+   Spanish and Portuguese.
 
 4. **State measures before they become claims.** Expropriations, licence
    revocations, windfall taxes, sanctions and asset seizures are tracked as a
@@ -125,13 +126,32 @@ free and public; nothing is scraped from behind a paywall or a bot challenge.
 
 > New from CaseLens: ArbRadar, a newsletter on international arbitration that
 > reads the record rather than the reports. ICSID and PCA dockets, SEC filings,
-> court dockets, procurement portals and local press in 14 languages, across
-> 609 sources in 118 countries. Plain design, plain language, every source
+> court dockets, procurement portals and local press in 44 languages, across
+> 1,900 sources in 182 countries. Plain design, plain language, every source
 > listed. Message me if you want the first issues.
 
 **X / Twitter**
 
 > ArbRadar: a newsletter on international arbitration built from the primary
 > record. ICSID, PCA, SEC filings, court dockets, State tenders and local press
-> in 14 languages, 609 sources, 118 countries. Published by CaseLens. First
+> in 44 languages, 1,900 sources, 182 countries. Published by CaseLens. First
 > issues ready; DM for a copy.
+
+
+## The numbers, as of 25 September 2026
+
+Use these, and only these, on any panel or slide; they are counted from the
+map, not estimated.
+
+| Figure | Value | Counted from |
+|---|---|---|
+| Sources read every run | 1,975 | 922 feeds, 840 feedless outlets read through Google News and their front pages, 64 record pages, 24 wired registers/courts/tenders, 125 Google News editions |
+| Sources on the map (probed) | 1,871 | 1,681 press outlets and 190 registers, gazettes, regulators, exchanges, courts and tender portals |
+| Countries | 182 | every State on the map has five or more press sources |
+| Languages, press feeds | 44 | distinct languages in sources.yaml |
+| Languages, news search | 42 | Google News editions swept |
+| Languages, site sweep | 50 | dispute terms for the feedless press |
+
+Round "1,975" to "1,900+" on a panel if a round figure reads better; never
+round up. `python -m tools.sourcemap --map` prints the country line; the rest
+are in this table's second column.
