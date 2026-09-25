@@ -88,11 +88,11 @@ Hydroelectric Power Project."
 
 Edited: *Nigerian policy group seeks review of Mambilla payment* — "A Nigerian policy
 group has asked the authorities to examine a US$500,000 payment cited in the ICC
-arbitration over the Mambilla hydropower project, the US$2.3 billion claim Nigeria
-defeated this month."
+arbitration over the Mambilla hydropower project."
 
-Margin: stripped the byline and the outlet's standfirst; named the party by kind; tied the
-payment to the award the reader knows; the US$2.3 billion figure is in the cited source.
+Margin: stripped the byline and the outlet's standfirst; named the party by kind; kept
+only what the Vanguard piece carries. The award Nigeria won this month is in other
+sources; it goes in only if one of them is cited on the entry.
 
 Draft: *Turkey's Central Bank Revokes Operating License of Papel Elektronik Para* — no
 explanation.
