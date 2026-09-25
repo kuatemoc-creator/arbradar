@@ -3,6 +3,7 @@
  "subject": "ArbRadar · 24 September 2026 — Egypt defeats Saudi real estate investors’ mega-claim",
  "stories": [
   {
+   "record": null,
    "id": 7759,
    "title": "Egypt defeats Saudi real estate investors’ mega-claim",
    "title_en": null,
@@ -38,6 +39,7 @@
    "event": "Note"
   },
   {
+   "record": null,
    "id": 7763,
    "title": "US tech company gets fraud suit sent to arbitration",
    "title_en": null,
@@ -72,6 +74,7 @@
    "event": "Note"
   },
   {
+   "record": null,
    "id": 7814,
    "title": "Three Crowns Taps Freshfields Pro For New Dubai Office",
    "title_en": "Three Crowns Taps Freshfields pro for new Dubai office",
@@ -106,53 +109,47 @@
    "event": "Note"
   },
   {
-   "id": 6374,
-   "title": "Edo revokes Benin-Abraka road contract, plans fresh award",
+   "record": null,
+   "id": 7411,
+   "title": "Hong Kong court sets aside US$480 million award in IPO dispute",
    "title_en": null,
-   "summary": "The Edo State Governor, Monday Okpebholo, has approved the revocation and re-award of the contract for the failed section of the Benin-Abraka Road at Ikpe Waterside in Orhionmwon Local Government…",
+   "summary": "In a rare example of a successful set-aside in Hong Kong, a court has annulled an HKIAC award that ordered two shareholders in a listing vehicle to pay a co-investor US$480 million over a failed initial public offering, finding the tribunal did not properly address an estoppel defence.",
    "summary_en": null,
-   "url": "https://www.msn.com/en-xl/africa/nigeria/edo-revokes-benin-abraka-road-contract-plans-fresh-award/ar-AA2cRFnq",
-   "source": "Google News / msn.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUW9PVXpJREhzTXdOMkQyMjJqZU4waFlOank3bmVVMHZNbUdBTDI4dWZObDZ1OHhrOGhvNDg4MTk5cldpX1NVZnpwV1pSWTNGRVcyVV8wOG1RUGNJaTNyWHFBV2pGdmFYUHJWUFJpeTFIOUxVWVFibmNWUDg5bDE5NHpTTHZSSXRSbEZOcGNPTlVwd2YzQnB2Rk1RTzJkN0dhdEZOZTNlUXM?oc=5",
+   "source": "Google News / Global Arbitration Review",
    "source_tier": 2,
-   "event_type": "distress_event",
+   "event_type": "award_issued",
    "published_at": "2026-09-24",
    "institution": null,
    "treaty": null,
    "case_ref": null,
    "claimants": [],
    "respondents": [],
-   "states": [],
+   "states": [
+    "Hong Kong"
+   ],
    "sectors": [],
    "counsel": [],
    "arbitrators": "[]",
    "amount_usd": null,
-   "flag_reason": "State-measure sweep; no listed investor named",
+   "flag_reason": "matched ‘award’ in the text",
    "why_it_matters": null,
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": [
-    {
-     "source": "Punch Newspapers",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYk5BQ0RQelZmUExtNkV2ODlXQ0g4czljY19CTE9DbTJUWXl3NkUxcVpSTi00eTNzN1o3Z0lCRlpCN2xQQjk1NUhrMVlobVRNeEQ1LXhTb25UTTNoUEFoY0xkS0FxandVQkNab19jcVVGXzV0b1V1cmdnOWp4aThXN3NkVQ?oc=5",
-     "title": "Edo revokes Benin-Abraka road contract, plans fresh award - Punch Newspapers",
-     "published_at": "2026-09-24",
-     "snippet": ""
-    },
-    {
-     "source": "nigeriainfo.fm",
-     "url": "https://www.nigeriainfo.fm/lagos/news/homepagelagos/edo-revokes-plans-to-re-award-benin-abraka-road-contract/",
-     "title": "Edo Revokes, Plans to Re-award Benin-Abraka Road Contract",
-     "published_at": "2026-09-23",
-     "snippet": "The Edo State Government has approved the revocation and re-award of the contract for the failed section of the Benin-Abraka Road at Ikpe Waterside in Orhionmwon Local Government Area."
-    }
-   ],
-   "story": "The Edo State Governor, Monday Okpebholo, has approved the revocation and re-award of the contract for the failed section of the Benin-Abraka Road at Ikpe Waterside in Orhionmwon Local Government.",
+   "corroboration": [],
+   "story": "In a rare example of a successful set-aside in Hong Kong, a court has annulled an HKIAC award that ordered two shareholders in a listing vehicle to pay a co-investor US$480 million over a failed initial.",
    "tier": "development",
-   "slug": "2026-09-24-edo-revokes-benin-abraka-road-contract-plans-fresh-award.html",
-   "event": "State measure"
+   "slug": "2026-09-24-hong-kong-court-sets-aside-us-480-million-award-in-ipo-dispute.html",
+   "event": "Award"
   },
   {
+   "record": {
+    "source": "US federal docket",
+    "url": "https://www.courtlistener.com/docket/67165242/republic-of-iraq-v-republic-of-turkey/",
+    "title": "REPUBLIC OF IRAQ v. REPUBLIC OF TURKEY (D.D.C. 1:23-cv-00978)",
+    "snippet": " Parties: REPUBLIC OF TURKEY; REPUBLIC OF IRAQ."
+   },
    "id": 7767,
    "title": "US court recommends confirmation of award in Iraq-Türkiye pipeline arbitration",
    "title_en": null,
@@ -180,13 +177,21 @@
    "also": [],
    "lang": "en",
    "country": null,
-   "corroboration": null,
+   "corroboration": [
+    {
+     "source": "US federal docket",
+     "url": "https://www.courtlistener.com/docket/67165242/republic-of-iraq-v-republic-of-turkey/",
+     "title": "REPUBLIC OF IRAQ v. REPUBLIC OF TURKEY (D.D.C. 1:23-cv-00978)",
+     "snippet": " Parties: REPUBLIC OF TURKEY; REPUBLIC OF IRAQ."
+    }
+   ],
    "story": "",
    "tier": "brief",
    "slug": "2026-09-24-us-court-recommends-confirmation-of-award-in-iraq-t-rkiye-pipeline-arb.html",
    "event": "Award"
   },
   {
+   "record": null,
    "id": 7764,
    "title": "Troubled real estate project reportedly puts Iraq at risk of DIAC arbitration",
    "title_en": null,
@@ -219,11 +224,48 @@
    "tier": "brief",
    "slug": "2026-09-24-troubled-real-estate-project-reportedly-puts-iraq-at-risk-of-diac-arbi.html",
    "event": "Note"
+  },
+  {
+   "record": null,
+   "id": 7569,
+   "title": "Dutch appellate court allows US assignees of CC/Devas v. India (1) award to replace Mauritian claimants",
+   "title_en": null,
+   "summary": " Bombay High Court Allows Customs Appeal Against Tribunal Order Setting Aside Suspension of CHA License. Commissioner's Suspension Order Under Regulation 21(2) of CHALR, 2004 Upheld as Reasonable and Not Requiring Prior Show Cause Notice. &nbsp;&nbsp; Lawtext ",
+   "summary_en": null,
+   "url": "https://www.iareporter.com/articles/dutch-appellate-court-allows-us-assignees-of-cc-devas-v-india-1-award-to-replace-mauritian-claimants/",
+   "source": "IAReporter",
+   "source_tier": 2,
+   "event_type": "annulment_setaside",
+   "published_at": "2026-09-23",
+   "institution": null,
+   "treaty": null,
+   "case_ref": null,
+   "claimants": [],
+   "respondents": [],
+   "states": [
+    "Netherlands",
+    "India"
+   ],
+   "sectors": [],
+   "counsel": [],
+   "arbitrators": "[]",
+   "amount_usd": null,
+   "flag_reason": "matched ‘setting aside’ in the text",
+   "why_it_matters": null,
+   "also": [],
+   "lang": "en",
+   "country": null,
+   "corroboration": null,
+   "story": "Bombay High Court Allows Customs Appeal Against Tribunal Order Setting Aside Suspension of CHA License.",
+   "tier": "brief",
+   "slug": "2026-09-24-dutch-appellate-court-allows-us-assignees-of-cc-devas-v-india-1-award-.html",
+   "event": "Annulment"
   }
  ],
  "leads": [],
  "enforcement": [
   {
+   "record": null,
    "id": 2537,
    "title": "US appeals court reverses district court’s dismissal of Laos’ bid to enforce arbitral awards against alleged alter egos of award debtors",
    "title_en": null,
