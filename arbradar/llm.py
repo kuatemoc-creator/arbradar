@@ -107,6 +107,82 @@ try:
 except OSError:
     pass
 
+# The editor's brief is the arb-editor skill: the same rules a person applies
+# when editing by hand are the rules the model edits by.
+EDITOR_BRIEF = ""
+try:
+    with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".claude", "skills", "arb-editor", "SKILL.md"),
+              encoding="utf-8") as _fh:
+        _raw = _fh.read()
+        EDITOR_BRIEF = _raw.split("---", 2)[2].strip() if _raw.startswith("---") else _raw
+except OSError:
+    pass
+
+
+class EntryEdit(BaseModel):
+    ref: int
+    headline: str = Field(description="Six to twelve words, sentence case, present tense, no colon.")
+    explanation: str = Field(description="Whole sentences, 36 words or fewer, only facts in the supplied source text.")
+    margin: str = Field(description="One line: what was changed and why.")
+
+
+class EntryEdits(BaseModel):
+    edits: List[EntryEdit]
+
+
+EDIT_SYSTEM = """You are the editor described below. Edit each entry's headline and explanation. \
+Use only facts present in that entry's own source text and corroborating snippets; if the source \
+carries no text, write the explanation from the record fields supplied, and if those are empty, \
+say the outlet reports the development and stop. Return every entry, by ref.
+
+{brief}"""
+
+
+def edit_entries(items: List[Dict[str, Any]], model: str, chunk: int = 8) -> int:
+    """The partner's edit of every entry: headline and explanation rewritten to the
+    brief, from the entry's own sources. Sets title_en and story; the grounding
+    check that follows drops anything the sources do not carry."""
+    if not EDITOR_BRIEF or not items:
+        return 0
+    done = 0
+    for start in range(0, len(items), chunk):
+        batch = items[start:start + chunk]
+        payload = []
+        for i, it in enumerate(batch):
+            payload.append({
+                "ref": i,
+                "headline": it.get("title_en") or it.get("title"),
+                "source": it.get("source"), "url": it.get("url"), "published": it.get("published_at"),
+                "event_type": it.get("event_type"),
+                "source_text": (it.get("story") or it.get("summary_en") or it.get("summary") or "")[:1500],
+                "corroborating_snippets": [{"source": c.get("source"), "snippet": (c.get("snippet") or "")[:500]}
+                                           for c in (it.get("corroboration") or [])[:3] if isinstance(c, dict)],
+                "record": {k: it.get(k) for k in ("claimants", "respondents", "states", "institution", "treaty",
+                                                  "amount_usd", "counsel", "arbitrators", "case_ref") if it.get(k)},
+            })
+        try:
+            resp = client().messages.parse(
+                model=model, max_tokens=4000,
+                system=EDIT_SYSTEM.format(brief=EDITOR_BRIEF),
+                messages=[{"role": "user", "content": json.dumps(payload, ensure_ascii=False, indent=1)}],
+                output_format=EntryEdits,
+            )
+            edits = resp.parsed_output.edits if resp.parsed_output else []
+        except Exception as exc:                      # noqa: BLE001 - boundary
+            log.warning("editor pass failed on a batch: %s", exc)
+            continue
+        for e in edits:
+            if 0 <= e.ref < len(batch):
+                it = batch[e.ref]
+                if e.headline.strip():
+                    it["title_en"] = e.headline.strip()
+                if e.explanation.strip():
+                    it["story"] = e.explanation.strip()
+                it["margin"] = e.margin
+                done += 1
+    return done
+
+
 # --------------------------------------------------------------------------
 # stage 1 - triage (Haiku 4.5)
 # --------------------------------------------------------------------------

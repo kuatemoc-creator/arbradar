@@ -210,6 +210,15 @@ def cmd_build(args, settings, conn):
     leads = [it for it in leads if email_html.summary_of(it) or it.get("story")]
     if chased:
         print("chased {} stories into other outlets; {} leads; {} enforcement".format(chased, len(leads), len(enforcement)))
+    # The partner's edit, when the editorial tier is on: headline and explanation
+    # rewritten to the arb-editor brief from each entry's own sources. The
+    # grounding check that follows keeps it honest.
+    if settings.use_llm and not args.no_llm and os.environ.get("ANTHROPIC_API_KEY"):
+        try:
+            n = llm.edit_entries(items + leads + enforcement, settings.editor_model)
+            print("editor pass: {} entries edited".format(n))
+        except Exception as exc:                      # noqa: BLE001 - boundary
+            print("editor pass skipped ({})".format(exc))
     # The last check: every printed sentence must be in a source we cite.
     from . import grounding
     from .config import OUT_DIR

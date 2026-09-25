@@ -95,6 +95,17 @@ email carries it.
 
 All free and unauthenticated. No API key is required to run the system.
 
+## The editor
+
+`.claude/skills/arb-editor/SKILL.md` is the editorial brief: how a partner with
+thirty years in international arbitration edits a draft. It is a Claude Code
+skill (`/arb-editor` in a session, on any issue file or entry) and the system
+prompt of the pipeline's editor pass (`llm.edit_entries`), which rewrites every
+headline and explanation from the entry's own sources when `ANTHROPIC_API_KEY`
+is set. The grounding check runs after it, so the editor may compress the
+sources but never add to them. One text, two uses: change the brief and both
+change.
+
 ## Models
 
 Three tiers, because volume drops sharply at each stage:
