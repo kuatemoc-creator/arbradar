@@ -40,7 +40,7 @@ Verified 2026-09-25. Every row is read on every run: a press feed where the pape
 | DRC | 11 | 14 |
 | Ecuador | 11 | 15 |
 | Egypt | 11 | 14 |
-| Ghana | 11 | 15 |
+| Ghana | 11 | 14 |
 | Korea | 11 | 14 |
 | Malaysia | 11 | 15 |
 | Netherlands | 11 | 14 |
@@ -305,7 +305,7 @@ Verified 2026-09-25. Every row is read on every run: a press feed where the pape
 | sweep | [Google News, State query](https://news.google.com/) | English | "Argentina" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Boletín Oficial](https://www.boletinoficial.gob.ar) (page is script-rendered or search-only) · [COMPR.AR](https://comprar.gob.ar) (no answer)
+On the map, not readable by script: [Boletín Oficial](https://www.boletinoficial.gob.ar) (page is script-rendered or search-only)
 
 ## Armenia
 
@@ -405,7 +405,7 @@ On the map, not readable by script: [DFAT - ISDS](https://www.dfat.gov.au/trade/
 | sweep | [Google News, State query](https://news.google.com/) | English | "Azerbaijan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page is script-rendered or search-only) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (page is script-rendered or search-only)
+On the map, not readable by script: [e-qanun legal acts](https://e-qanun.az) (page is script-rendered or search-only) · [President's decrees](https://president.az/en/rss) (feed, unverified) · [etender.gov.az](https://etender.gov.az) (no answer) · [Cabinet of Ministers](https://cabmin.gov.az/en/news) (HTTP 403) · [Central Bank](https://www.cbar.az/news) (no answer)
 
 ## Bahamas
 
@@ -1427,7 +1427,7 @@ On the map, not readable by script: [State Procurement Agency](https://tenders.p
 
 ## Ghana
 
-15 sources read: 11 press feeds, plus the sweeps.
+14 sources read: 11 press feeds, plus the sweeps.
 
 | Type | Source | Language | Note |
 |---|---|---|---|
@@ -1442,10 +1442,11 @@ On the map, not readable by script: [State Procurement Agency](https://tenders.p
 | press | [Business & Financial Times](https://thebftonline.com/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Ghana News Agency](https://gna.org.gh/) | English | no feed: read through a Google News site: query and its front page |
 | press | [Modern Ghana](https://www.modernghana.com/) | English | no feed: read through a Google News site: query and its front page |
-| regulator | [Minerals Commission](https://www.mincom.gov.gh) |  | page, no feed: 31 headline links read every run |
 | sweep | [Google News, English edition](https://news.google.com/) | English | dispute and State-measure terms |
 | sweep | [Google News, State query](https://news.google.com/) | English | "Ghana" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
+
+On the map, not readable by script: [Minerals Commission](https://www.mincom.gov.gh) (no answer)
 
 ## Greece
 
@@ -1887,7 +1888,7 @@ On the map, not readable by script: [Avvocatura dello Stato](https://www.avvocat
 | sweep | [Google News, State query](https://news.google.com/) | English | "Kazakhstan" with the dispute terms |
 | sweep | [GDELT, country tag](https://www.gdeltproject.org/) | all | dispute terms, articles tagged to the State |
 
-On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page is script-rendered or search-only) · [Goszakup public procurement](https://goszakup.gov.kz) (page is script-rendered or search-only) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page is script-rendered or search-only) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page is script-rendered or search-only) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
+On the map, not readable by script: [Adilet legal acts](https://adilet.zan.kz) (page is script-rendered or search-only) · [Goszakup public procurement](https://goszakup.gov.kz) (no answer) · [Ministry of Industry and Construction (subsoil)](https://www.gov.kz/memleket/entities/mic) (page is script-rendered or search-only) · [Ministry of Energy](https://www.gov.kz/memleket/entities/energo) (page is script-rendered or search-only) · [National Bank](https://www.nationalbank.kz/en/news) (HTTP 404) · [Samruk-Kazyna](https://sk.kz/en/press-center/news/) (HTTP 404)
 
 ## Kenya
 
