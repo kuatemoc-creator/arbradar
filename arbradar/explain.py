@@ -90,8 +90,8 @@ def from_record(it: Dict[str, Any]) -> str:
 
 def restated(it: Dict[str, Any]) -> str:
     """The headline as a sentence with its attribution, when nothing else is on record."""
-    from .email_html import _outlet
-    title = (it.get("title_en") or it.get("title") or "").strip().rstrip(".")
+    from .email_html import _outlet, title_of
+    title = title_of(it).strip().rstrip(".")
     if not title:
         return ""
     from .sources.editions import states_in
@@ -113,6 +113,9 @@ def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
         if s and len(s.split()) <= max_words + 5:
             return s
         first = re.split(r"(?<=[.!?])\s+(?=[A-Z“‘(])", t)[0]
+        first = first.strip()
+        if first and first[-1] in ".!?\u201d\u2019\")" and len(first.split()) <= max_words + 10:
+            return first                              # one whole sentence a little over the cap beats a cut one
         c = _clause_cut(first, max_words)
         if c:
             return c
