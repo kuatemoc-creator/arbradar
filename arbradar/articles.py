@@ -283,7 +283,8 @@ def _voices_block(it: Dict[str, Any]) -> str:
     own_outlet = (it.get("source") or "").replace("Google News / ", "")
     if own and not own.lower().startswith((it.get("title") or "").lower()[:30]):
         voices.append((own_outlet, it.get("url"), str(it.get("published_at") or "")[:10], sentences(own, 90)))
-    for c in it.get("corroboration") or []:
+    from .followup import load as _load_cites
+    for c in [x for x in _load_cites(it.get("corroboration")) if isinstance(x, dict)]:
         if not isinstance(c, dict) or not c.get("url"):
             continue
         text = sentences(c.get("snippet") or "", 90)

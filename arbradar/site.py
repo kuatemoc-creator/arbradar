@@ -56,6 +56,8 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
     stories = []
     for i, it in enumerate(items):
         d = {k: it.get(k) for k in STORY_FIELDS}
+        from .followup import load as _load_cites
+        d["corroboration"] = [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)]
         d["tier"] = "brief" if it.get("brief_only") else "lead" if i == 0 else "development" if i < 7 else "brief"
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
@@ -63,6 +65,7 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
     leads = []
     for it in (extras or {}).get("leads") or []:
         d = {k: it.get(k) for k in STORY_FIELDS}
+        d["corroboration"] = [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)]
         d["tier"] = "signal"
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
@@ -70,6 +73,7 @@ def write_day(date: str, items: List[Dict[str, Any]], extras: Dict[str, List[Dic
     enforcement = []
     for it in (extras or {}).get("enforcement") or []:
         d = {k: it.get(k) for k in STORY_FIELDS}
+        d["corroboration"] = [c for c in _load_cites(it.get("corroboration")) if isinstance(c, dict)]
         d["tier"] = "enforcement"
         d["slug"] = story_slug(it, date)
         d["event"] = SHORT.get(it.get("event_type") or "commentary", "Note")
@@ -192,7 +196,8 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
     body = explain(s)
     tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
         html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
-    cites = [c for c in (s.get("corroboration") or [])[:3] if c.get("url")]
+    from .followup import load as _load_cites
+    cites = [c for c in _load_cites(s.get("corroboration")) if isinstance(c, dict) and c.get("url")][:3]
     if cites:
         tail += '<span class="tail"> &middot; also ' + ", ".join(
             '<a href="{}" rel="noopener">{}</a>'.format(html.escape(c["url"]), html.escape(c.get("source") or "source")) for c in cites) + "</span>"
