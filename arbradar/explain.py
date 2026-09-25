@@ -109,17 +109,17 @@ def from_record(it: Dict[str, Any]) -> str:
 
 
 def restated(it: Dict[str, Any]) -> str:
-    """The headline as a sentence with its attribution, when nothing else is on record."""
-    from .email_html import _outlet, title_of
-    title = title_of(it).strip().rstrip(".")
-    if not title:
-        return ""
-    from .sources.editions import states_in
+    """When nothing but the headline is on record, say so rather than dress the
+    headline up as an explanation: the reader learns where the text is and
+    that no other source or record was found."""
+    from .email_html import _outlet
     outlet = _outlet(it.get("source") or "") or "The source"
-    from .style import _is_common
-    w = title.split()[0]
-    body = title[:1].lower() + title[1:] if _is_common(w.lower()) and not states_in(w) else title
-    return "{} reports that {}.".format(outlet, body)
+    url = (it.get("url") or "").lower()
+    rec = it.get("record") if isinstance(it.get("record"), dict) else None
+    tail = "the record is cited below." if rec and rec.get("url") else "no other outlet or record carrying the development was found."
+    if "iareporter" in url or "law360" in url:
+        return "{}'s report is behind its paywall; {}".format(outlet, tail)
+    return "Reported by {}; {}".format(outlet, tail)
 
 
 def fit(text: str, max_chars: int = MAX_CHARS) -> str:
@@ -136,7 +136,6 @@ def fit(text: str, max_chars: int = MAX_CHARS) -> str:
             break
     if out:
         return out
-    # one sentence over the cap: close it at a clause or a content word within the cap
     head = parts[0][:max_chars]
     head = head[:head.rfind(" ")] if " " in head else head
     return _clause_cut(head, 10 ** 6)
@@ -145,6 +144,9 @@ def fit(text: str, max_chars: int = MAX_CHARS) -> str:
 def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
     """The explanation printed under a headline: never empty, never over three lines."""
     from .email_html import summary_of
+    c = from_court(it)                                # a judgment row is composed from the judgment, never from the search hit
+    if c:
+        return fit(c) or c
     for text in (it.get("story") or "", summary_of(it) or ""):
         t = clean(text)
         if not t:
@@ -165,7 +167,52 @@ def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
         c = _clause_cut(first, max_words)
         if c:
             return c
+    rec = it.get("record") if isinstance(it.get("record"), dict) else None
+    if rec and rec.get("snippet"):
+        t = re.sub(r"\s*Parties:.*$", "", clean(rec["snippet"])).strip()
+        if t and len(t.split()) >= 6 and not t.isupper():
+            s = sentences(t, max_words) or _clause_cut(t, max_words)
+            if s:
+                return fit("{} ({}).".format(s.rstrip("."), _record_name(rec))) or s
     r = from_record(it)
     if r:
         return fit(r) or r
     return fit(restated(it)) or restated(it)
+
+
+def _record_name(rec: Dict[str, Any]) -> str:
+    src = rec.get("source") or "record"
+    if src == "US federal docket":
+        m = re.search(r"\(([^)]*\d[^)]*)\)\s*$", rec.get("title") or "")
+        return "US docket " + m.group(1) if m else "US federal docket"
+    if src == "ICSID docket":
+        return "ICSID case page"
+    return src
+
+
+_CATCH = re.compile(r"Catchwords?:\s*(.+?)(?:\.|$)")
+_COURT_HEAD = re.compile(r"^(?P<court>[^,.]+?)(?:,| decided on)\s+(?P<date>\d{1,2} \w+ \d{4})(?:,\s*(?P<cite>\[[^\]]+\][^.]*|\d{4} \w+ \d+))?")
+
+
+def from_court(it: Dict[str, Any]) -> str:
+    """A judgment row: the court, the date, the citation and the catchwords the
+    court itself gave; never the search phrase that matched."""
+    if not (it.get("source") or "").startswith("Court:"):
+        return ""
+    text = clean(it.get("summary") or "")
+    m = _COURT_HEAD.match(text)
+    court = m.group("court").strip() if m else (it.get("source") or "")[6:].strip()
+    date = m.group("date") if m else ""
+    cite = (m.group("cite") or "").strip() if m else ""
+    catch = _CATCH.search(text)
+    what = catch.group(1).strip() if catch else (it.get("flag_reason") or "").strip()
+    what = re.sub(r"^[^:]{0,40}:\s*", "", what).strip()             # "High Court: enforcement of an award" -> the matter
+    what = re.sub(r"^matched the phrase.*$", "", what, flags=re.I).strip()
+    if not what:
+        low = text.lower()
+        what = ("enforcement of an arbitral award" if "enforc" in low else "an arbitral award" if "award" in low
+                else "an arbitration agreement" if "agreement" in low else "arbitration")
+    parts = ["{} judgment{}{}".format(court, " of " + date if date else "", ", " + cite if cite else "")]
+    parts.append("on " + what[:1].lower() + what[1:] if not what.lower().startswith("on ") else what)
+    out = " ".join(parts).strip()
+    return out[:1].upper() + out[1:].rstrip(".") + "."

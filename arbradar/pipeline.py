@@ -320,8 +320,17 @@ def shared_propers(a: str, b: str) -> set:
     def props(t):
         words = re.findall(r"[A-Za-z][A-Za-z'\u00c0-\u024f]+", (t or "").replace("-", " "))
         return {_stem(_fold(w).lower()) for w in words[1:] if w[:1].isupper() and len(w) >= 3 and w.lower() not in STOP}
-    # a State in common is the subject of a hundred stories a week, not a signature
-    return (props(a) & props(b)) - _GENERIC - _STATE_STEMS() - {"us", "uk", "new", "high", "supreme", "state", "federal", "district", "national"}
+    # A State in common is the subject of a hundred stories a week, not a
+    # signature - unless the headline names nothing but States (Iraq v Turkey,
+    # Laos' enforcement bid), in which case the States are all there is.
+    noise = {"us", "uk", "new", "high", "supreme", "state", "federal", "district", "national"}
+    pa, pb = props(a), props(b)
+    named = (pa & pb) - _GENERIC - _STATE_STEMS() - noise
+    if named:
+        return named
+    if not (pa - _GENERIC - _STATE_STEMS() - noise):          # the headline has no other name to match on
+        return (pa & pb) & _STATE_STEMS()
+    return set()
 
 
 def _entities(title: str) -> set:

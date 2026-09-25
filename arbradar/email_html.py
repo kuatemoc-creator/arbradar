@@ -308,7 +308,8 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
             t=a(href, tail or (it.get("source") or "record").replace("Google News / ", "").lstrip("| -·").strip(), color=MUTE),
             d=(", " + esc(dlabel)) if dlabel else "")
         from .explain import explain
-        rows.append(entry(name, href, (step[:1].upper() + step[1:] + ("" if step.endswith(".") else ".")) if step else explain(it), src))
+        body = explain(it) if kind == "courts" else ((step[:1].upper() + step[1:] + ("" if step.endswith(".") else ".")) if step else explain(it))
+        rows.append(entry(name, href, body, src))
     return "".join(rows)
 
 
