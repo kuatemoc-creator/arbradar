@@ -188,7 +188,8 @@ def _story_row(s: Dict[str, Any], lead: bool = False) -> str:
         when_label = ""
     outlet = (s.get("source") or "").replace("Google News / ", "")
     outlet = re.sub(r"\s*\((?:Global|Sector: [^)]*)\)\s*$", "", outlet)
-    body = sentences(s.get("story") or summary_of(s), 70 if s.get("story") else 45)
+    from .explain import explain
+    body = explain(s)
     tail = '<span class="tail">&mdash; <a href="{}" rel="noopener">{}</a>{}</span>'.format(
         html.escape(s.get("url") or "#"), html.escape(outlet or "source"), (", " + html.escape(when_label)) if when_label else "")
     cites = [c for c in (s.get("corroboration") or [])[:3] if c.get("url")]

@@ -192,30 +192,27 @@ def _when(it: Dict[str, Any]) -> str:
 
 
 def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> str:
-    """Headline, one paragraph, source. The shape of every good legal newsletter."""
-    from .style import sentences
+    """Headline, one explanation, source. The shape of every good legal newsletter."""
+    from .explain import explain
     href = it.get("site_link") or it.get("url") or "#"
-    size, lh = 20, 1.3                                  # one headline size: the lead is first, not louder
-    body = it.get("story") or summary_of(it)
     src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
     when = _when(it)
-    tail = ' <span style="color:{mute};white-space:nowrap;">&mdash; {src}{when}</span>'.format(
-        mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-    cites = [c for c in (it.get("corroboration") or [])[:3] if c.get("url")]
+    tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
+    cites = [c for c in (it.get("corroboration") or [])[:2] if c.get("url")]
     if cites:
-        tail += ' <span style="color:{mute};">&middot; also {}</span>'.format(
-            mute=MUTE, *[", ".join(a(c["url"], c.get("source") or "source", color=MUTE) for c in cites)])
-    return entry(title_of(it), href, sentences(body, 70 if it.get("story") else 45) if body else "", tail.strip())
+        tail += ' &middot; also {}'.format(", ".join(a(c["url"], c.get("source") or "source", color=MUTE) for c in cites))
+    return entry(title_of(it), href, explain(it), tail.strip())
 
 
 def entry(head: str, href: str, body: str, tail: str) -> str:
     """Every entry in every section has this shape: a headline, an explanation
-    when there is one, and a source line. One headline size, one text size."""
-    h = ('<h3 style="font-family:{sans};font-size:18px;line-height:1.3;font-weight:700;letter-spacing:-0.2px;margin:0 0 6px;">'
+    of at most three lines, and a source line of its own. One size each."""
+    h = ('<h3 style="font-family:{sans};font-size:17px;line-height:1.3;font-weight:700;letter-spacing:-0.2px;margin:0 0 5px;">'
          '<a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>').format(sans=SANS, href=esc(href), ink=INK, t=esc(head))
-    para = p(esc(body) + " " + tail, size=16, lh=1.5, mb=0) if body else p(tail, size=14, lh=1.5, color=MUTE, mb=0)
+    para = p(esc(body), size=15, lh=1.5, color=INK2, mb=5) if body else ""
+    src = p(tail, size=13, lh=1.4, color=MUTE, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-            '<tr><td style="padding:16px 0 18px;border-bottom:1px solid {line};">{h}{para}</td></tr></table>').format(line=LINE, h=h, para=para)
+            '<tr><td style="padding:14px 0 15px;border-bottom:1px solid {line};">{h}{para}{src}</td></tr></table>').format(line=LINE, h=h, para=para, src=src)
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
@@ -224,9 +221,9 @@ def brief(items: List[Dict[str, Any]]) -> str:
     for it in items:
         src = (it.get("source") or "").replace("Google News / ", "").lstrip("| -·").strip()
         when = _when(it)
-        tail = '<span style="color:{mute};">&mdash; {src}{when}</span>'.format(
-            mute=MUTE, src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
-        out.append(entry(title_of(it), it.get("url") or "#", "", tail))
+        from .explain import explain
+        tail = '{src}{when}'.format(src=a(it.get("url") or "#", src, color=MUTE), when=(", " + esc(when)) if when else "")
+        out.append(entry(title_of(it), it.get("url") or "#", explain(it), tail))
     return "".join(out)
 
 
@@ -285,10 +282,11 @@ def record_rows(kind: str, items: List[Dict[str, Any]]) -> str:
         # The same entry as a story: the record's name is the headline, the
         # step is the explanation, the court or reference and the date the source line.
         href = it.get("url") or "#"
-        src = '<span style="color:{mute};">&mdash; {t}{d}</span>'.format(
-            mute=MUTE, t=a(href, tail or (it.get("source") or "record").replace("Google News / ", "").lstrip("| -·").strip(), color=MUTE),
+        src = '{t}{d}'.format(
+            t=a(href, tail or (it.get("source") or "record").replace("Google News / ", "").lstrip("| -·").strip(), color=MUTE),
             d=(", " + esc(dlabel)) if dlabel else "")
-        rows.append(entry(name, href, step or "", src))
+        from .explain import explain
+        rows.append(entry(name, href, (step[:1].upper() + step[1:] + ("" if step.endswith(".") else ".")) if step else explain(it), src))
     return "".join(rows)
 
 
@@ -327,24 +325,22 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
 
     sections = []
     stories = [lead] + devs
-    sections.append(label("Today", mb=2, top=False) + "".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories, start=1)))
-    leads = (extras or {}).get("leads") or []
+    sections.append(label("Today", mb=0, top=False) + "".join(story(it, i, i == 1, site_url, date) for i, it in enumerate(stories[:6], start=1)))
+    leads = ((extras or {}).get("leads") or [])[:3]
     if leads:
-        sections.append(label("Leads", mb=2) + p("Measures and disputes in the making, from outside the trade press.", size=14, lh=1.5, color=MUTE, mb=0)
-                        + "".join(story(it, 100 + i, False, site_url, date) for i, it in enumerate(leads, start=1)))
-    enforcement = (extras or {}).get("enforcement") or []
+        sections.append(label("Leads", mb=0) + "".join(story(it, 100 + i, False, site_url, date) for i, it in enumerate(leads, start=1)))
+    enforcement = ((extras or {}).get("enforcement") or [])[:3]
     if enforcement:
-        sections.append(label("Enforcement", mb=2) + p("Awards being enforced, resisted and set aside, and where the assets are.", size=14, lh=1.5, color=MUTE, mb=0)
-                        + "".join(story(it, 200 + i, False, site_url, date) for i, it in enumerate(enforcement, start=1)))
+        sections.append(label("Enforcement", mb=0) + "".join(story(it, 200 + i, False, site_url, date) for i, it in enumerate(enforcement, start=1)))
     if briefs:                               # the same short list the day page shows
         sections.append(label("In brief", mb=2) + brief(briefs))
     for key, heading in (("docket", "From the ICSID docket"), ("disclosures", "Company disclosures"),
                          ("courts", "In the courts"), ("people", "People and appointments")):
-        rows = (extras or {}).get(key) or []
+        rows = ((extras or {}).get(key) or [])[:4]
         if rows:
-            sections.append(label(heading, mb=4) + record_rows(key, rows))
+            sections.append(label(heading, mb=0) + record_rows(key, rows))
 
-    body = "".join('<tr><td style="padding:0 0 26px;">{}</td></tr>'.format(sec) for sec in sections)
+    body = "".join('<tr><td style="padding:0 0 30px;">{}</td></tr>'.format(sec) for sec in sections)
 
     html_doc = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">

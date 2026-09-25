@@ -90,14 +90,14 @@ def fallback_markdown(items: List[Dict[str, Any]], name: str, date: str, setting
             lines += ["## Leads", ""]
         lines += [_headline(it, settings, date), ""]
         if _summary(it):
-            lines += [(it.get("story") or _summary(it))[:600], ""]
+            lines += [_summary(it), ""]
         lines += [_meta_line(it), ""]
     for it in (extras or {}).get("enforcement") or []:
         if "## Enforcement" not in lines:
             lines += ["## Enforcement", ""]
         lines += [_headline(it, settings, date), ""]
         if _summary(it):
-            lines += [(it.get("story") or _summary(it))[:600], ""]
+            lines += [_summary(it), ""]
         lines += [_meta_line(it), ""]
     if extras:
         lines += record_sections(extras)
@@ -123,12 +123,8 @@ def _headline(it: Dict[str, Any], settings, date: str) -> str:
 
 
 def _summary(it: Dict[str, Any]) -> str:
-    text = html.unescape(re.sub(r"<[^>]+>", " ", it.get("summary_en") or it.get("summary") or ""))
-    text = re.sub(r"\s+", " ", text).replace("\xa0", " ").strip()
-    title = (it.get("title") or "").strip().lower()
-    if is_paywall(text) or (title and text.lower().startswith(title[:40])):
-        return ""
-    return text
+    from .explain import explain
+    return explain(it)
 
 
 def _meta_line(it: Dict[str, Any]) -> str:
