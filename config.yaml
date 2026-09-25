@@ -10,6 +10,7 @@ signup_email: aram@caselens.tech   # until signup_url is set, the subscribe box 
 mark_url: https://raw.githubusercontent.com/kuatemoc-creator/arbradar/gh-pages/caselens-mark.png   # the mark in the email until the site is live
 
 lookback_days: 7
+today_days: 2            # Today: published within two days; leads and enforcement use lookback_days
 max_items_per_issue: 12
 min_score: 20
 min_story_score: 65     # a story needs this much to be printed; a quiet day is short rather than padded

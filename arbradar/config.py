@@ -33,7 +33,8 @@ class Settings:
     signup_email: str = ""      # until a provider is set, the subscribe box sends sign-ups here by email
     mark_url: str = ""          # a reachable copy of the CaseLens mark for the email while the site is not live
     timezone: str = "Asia/Yerevan"
-    lookback_days: int = 7
+    lookback_days: int = 7      # leads, enforcement and records look back this far
+    today_days: int = 2         # Today carries what was published within this many days
     max_items_per_issue: int = 25
     min_score: float = 20.0
     min_story_score: float = 65.0   # stories below this are left out; a thin day is short, not padded

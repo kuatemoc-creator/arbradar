@@ -768,7 +768,9 @@ def _read_in_full(it: Dict[str, Any]) -> bool:
 
 
 def select(conn, settings, extra_days: int = 0) -> List[Dict[str, Any]]:
-    cutoff = (as_of() - dt.timedelta(days=settings.lookback_days + extra_days)).isoformat()
+    # Today is what was published in the last two days: a wire story three days
+    # old that Google News surfaced late is not the lead of a daily.
+    cutoff = (as_of() - dt.timedelta(days=getattr(settings, "today_days", 2) + extra_days)).isoformat()
     upto = as_of().isoformat() + "~"
     # Pinned items always make the cut; excluded ones never do. Everything else
     # competes on score within the window.
@@ -937,6 +939,21 @@ _MEASURES = [("windfall tax", re.compile(r"windfall[ -](?:tax|profit|charge|levy
              ("moratorium", re.compile(r"moratori", re.I)),
              ("mining halt", re.compile(r"mining (?:ban|halt|suspen|permit)", re.I)),
              ("asset seizure", re.compile(r"seiz\w*.{0,30}\b(?:asset|plant|refiner|mine|stake|shares)|(?:asset|plant|refiner|mine|stake|shares)\w*.{0,30}\bseiz", re.I))]
+_CAPITALS = {"prague": "czechia", "warsaw": "poland", "budapest": "hungary", "bucharest": "romania", "sofia": "bulgaria",
+             "athens": "greece", "ankara": "turkey", "istanbul": "turkey", "cairo": "egypt", "riyadh": "saudi arabia",
+             "doha": "qatar", "tehran": "iran", "baghdad": "iraq", "kyiv": "ukraine", "moscow": "russia", "delhi": "india",
+             "mumbai": "india", "beijing": "china", "abuja": "nigeria", "lagos": "nigeria", "nairobi": "kenya",
+             "accra": "ghana", "kinshasa": "congo (drc)", "caracas": "venezuela", "bogota": "colombia", "lima": "peru",
+             "quito": "ecuador", "santiago": "chile", "buenos aires": "argentina", "mexico city": "mexico",
+             "jakarta": "indonesia", "manila": "philippines", "hanoi": "vietnam", "bangkok": "thailand",
+             "islamabad": "pakistan", "dhaka": "bangladesh", "colombo": "sri lanka", "harare": "zimbabwe",
+             "lusaka": "zambia", "maputo": "mozambique", "luanda": "angola", "addis ababa": "ethiopia",
+             "algiers": "algeria", "tunis": "tunisia", "rabat": "morocco", "tripoli": "libya", "khartoum": "sudan",
+             "astana": "kazakhstan", "tashkent": "uzbekistan", "baku": "azerbaijan", "tbilisi": "georgia",
+             "yerevan": "armenia", "bishkek": "kyrgyzstan", "dushanbe": "tajikistan", "ashgabat": "turkmenistan",
+             "berlin": "germany", "paris": "france", "madrid": "spain", "rome": "italy", "lisbon": "portugal",
+             "dublin": "ireland", "london": "united kingdom", "washington": "united states", "ottawa": "canada",
+             "brasilia": "brazil", "canberra": "australia", "tokyo": "japan", "seoul": "south korea"}
 _REGION = re.compile(r"\b(?:EU|E\.U\.|European Union|Europe|Brussels|Eurogroup|European Commission|eurozone)\b", re.I)
 
 
@@ -949,6 +966,8 @@ def _topics_of(items: List[Dict[str, Any]]) -> set:
         if not measures:
             continue
         places = {_fold(s).lower() for s in states_in(text)}
+        low = _fold(text).lower()
+        places.update(state for city, state in _CAPITALS.items() if re.search(r"\b" + city + r"\b", low))
         if _REGION.search(text):
             places.add("eu")
         out.update((m, p) for m in measures for p in places)

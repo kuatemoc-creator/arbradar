@@ -18,7 +18,9 @@ MAX_CHARS = 230          # three lines at 15px in a 560px column
 
 # "By Joseph Erunke, Abuja ABUJA — The Independent..." / "MUMBAI: The Bombay..."
 _BYLINE = re.compile(r"^(?P<lede>.{0,160}?)\s*\bBy [A-Z][\w.'’-]+(?: [A-Z][\w.'’-]+){0,3}(?:,\s*[A-Z][a-z]+)?\s*", re.S)
-_DATELINE = re.compile(r"^(?:[A-Z][A-Z .'’-]{2,30}|[A-Z][a-z]+(?: [A-Z][a-z]+)?)\s*[—–:-]\s+(?=[A-Z])")
+_DATELINE = re.compile(r"^(?:[A-Z][A-Z .'’-]{2,30}|[A-Z][a-z]+(?: [A-Z][a-z]+)?)"
+                       r"(?:,\s*[A-Z][a-z]{2,8}\.?\s+\d{1,2}(?:,\s*\d{4})?)?\s*(?:\((?:Reuters|AP|AFP|Bloomberg|Xinhua|dpa|PTI|ANI)\))?"
+                       r"\s*[—–:-]\s+(?=[A-Z])")
 _TAG = re.compile(r"<[^>]+>")
 _TRAILERS = re.compile(r"\s*(?:The post .{0,200}? appeared first on .{0,80}?(?:\.|$)|Read more.{0,40}$|Continue reading.{0,40}$|"
                        r"The article .{0,120} first appeared on .{0,60}\.?$)", re.S)

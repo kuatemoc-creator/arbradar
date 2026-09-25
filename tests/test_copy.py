@@ -44,3 +44,10 @@ def test_banned_words_leave_the_explanation():
     copydesk.fix_explanation(it)
     assert "significant" not in it["story"]
     assert it["story"].endswith(".")
+
+
+def test_wire_datelines_come_off():
+    from arbradar.explain import clean
+    assert clean("PRAGUE, Sept 21 (Reuters) - The Czech government will reintroduce caps.") == \
+        "The Czech government will reintroduce caps."
+    assert clean("LONDON — A court has ruled.") == "A court has ruled."

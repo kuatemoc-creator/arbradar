@@ -48,3 +48,9 @@ def test_entities_ignore_dictionary_words_and_states():
     ents = pipeline._entities("Turkey revokes Iran’s Bank Mellat license after 44 years")
     assert "mellat" in ents
     assert "turkey" not in ents and "license" not in ents
+
+
+def test_a_capital_names_its_state():
+    prague = pipeline._topics_of([_it("Prague caps fuel prices and taxes refiners' windfall profits")])
+    czech = pipeline._topics_of([_it("Czech government reinstates fuel margin caps, plans windfall tax on refineries")])
+    assert prague & czech
