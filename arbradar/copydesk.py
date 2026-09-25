@@ -98,6 +98,7 @@ def fix_explanation(it: Dict[str, Any]) -> List[str]:
         first = _SENT.split(fixed)[0]
         fixed = first if len(first.split()) <= MAX_WORDS + 10 else fixed
         notes.append("explanation cut to its first sentence")
+    fixed = re.sub(r"\s*(?:\u2026|\.\.\.)\.?$", "", fixed).strip()
     if fixed and fixed[-1] not in ".!?”’\")":
         fixed = fixed.rstrip(" ,;:") + "."
     it["story"] = fixed

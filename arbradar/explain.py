@@ -48,16 +48,32 @@ def clean(text: str) -> str:
 
 
 def _clause_cut(sentence: str, max_words: int) -> str:
-    """A sentence longer than the cap, closed at its last clause boundary within it."""
-    sentence = sentence.rstrip(" .\u2026")             # a feed's cut-off marker is not punctuation
+    """A sentence over the cap, or one the feed cut short, closed where a
+    clause ends: at the last clause boundary within the cap, else at the last
+    word that is not a function word. Never mid-phrase."""
+    sentence = sentence.rstrip(" .\u2026")
     words = sentence.split()
-    if len(words) <= max_words and sentence and sentence[-1] in ".!?\u201d\u2019\")":
+    if not words:
+        return ""
+    if len(words) <= max_words and sentence[-1] in "!?\u201d\u2019\")":
         return sentence
-    head = " ".join(words[:max_words])
-    cut = max(head.rfind(", "), head.rfind("; "), head.rfind(" — "), head.rfind(" – "), head.rfind(": "))
-    if cut < len(head) // 2:
-        return ""                                     # no clause to close on: leave it to the fallback
-    return head[:cut].rstrip(" ,;:—–") + "."
+    head = words[:max_words]
+    text = " ".join(head)
+    cut = max(text.rfind(", "), text.rfind("; "), text.rfind(" \u2014 "), text.rfind(" \u2013 "), text.rfind(": "))
+    if cut >= len(text) * 0.6:
+        return text[:cut].rstrip(" ,;:\u2014\u2013") + "."
+    while head and head[-1].lower().strip(",;:") in _FUNCTION:
+        head.pop()
+    if len(head) < 8:
+        return ""
+    return " ".join(head).rstrip(" ,;:") + "."
+
+
+_FUNCTION = {"a", "an", "the", "of", "in", "on", "at", "to", "for", "and", "or", "but", "by", "with", "from", "as", "that",
+             "which", "who", "whom", "is", "are", "was", "were", "has", "have", "had", "been", "be", "its", "their", "his",
+             "her", "than", "into", "over", "under", "after", "before", "during", "about", "against", "between", "through",
+             "while", "amid", "per", "via", "not", "no", "nor", "so", "if", "when", "where", "will", "would", "can", "could",
+             "may", "might", "shall", "should", "this", "these", "those", "such", "also", "both", "either"}
 
 
 def from_record(it: Dict[str, Any]) -> str:
@@ -97,9 +113,9 @@ def restated(it: Dict[str, Any]) -> str:
         return ""
     from .sources.editions import states_in
     outlet = _outlet(it.get("source") or "") or "The source"
+    from .style import _is_common
     w = title.split()[0]
-    proper = w.isupper() or (len(w) > 1 and w[1:2].isupper()) or bool(states_in(w)) or w in ("I",)
-    body = title if proper else title[:1].lower() + title[1:]
+    body = title[:1].lower() + title[1:] if _is_common(w.lower()) and not states_in(w) else title
     return "{} reports that {}.".format(outlet, body)
 
 
