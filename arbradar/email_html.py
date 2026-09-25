@@ -21,7 +21,8 @@ from .sources.editions import LANG_NAMES
 
 INK, INK2, MUTE = "#131726", "#535865", "#6d717e"
 LINE, HAIR, SUNKEN, LINK = "#dddfe7", "#eceef3", "#f5f7fa", "#3e55df"
-SERIF = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+ACCENT = "#4D68F9"
+SERIF = "Georgia,'Times New Roman',Times,serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 
 P = ('font-family:{sans};font-size:{size}px;line-height:{lh};color:{color};margin:0 0 {mb}px;'
@@ -82,10 +83,10 @@ def a(href: str, text: str, color=LINK, weight="normal") -> str:
 
 
 def label(text: str, mb=10, top=True) -> str:
-    border = 'border-top:1px solid {};padding-top:22px;'.format(LINE) if top else ''
-    return ('<h2 style="font-family:{sans};font-size:12px;letter-spacing:1.5px;text-transform:uppercase;'
-            'font-weight:700;color:{ink};{border}margin:0 0 {mb}px;">{t}</h2>').format(
-        sans=SANS, ink=INK, border=border, mb=mb, t=esc(text))
+    border = 'padding-top:26px;' if top else ''
+    return ('<h2 style="font-family:{sans};font-size:11px;letter-spacing:2px;text-transform:uppercase;'
+            'font-weight:700;color:{accent};{border}margin:0 0 {mb}px;">{t}</h2>').format(
+        sans=SANS, accent=ACCENT, border=border, mb=mb, t=esc(text))
 
 
 def meta_line(it: Dict[str, Any]) -> str:
@@ -207,12 +208,12 @@ def story(it: Dict[str, Any], n: int, lead: bool, site_url: str, date: str) -> s
 def entry(head: str, href: str, body: str, tail: str) -> str:
     """Every entry in every section has this shape: a headline, an explanation
     of at most three lines, and a source line of its own. One size each."""
-    h = ('<h3 style="font-family:{sans};font-size:17px;line-height:1.3;font-weight:700;letter-spacing:-0.2px;margin:0 0 5px;">'
-         '<a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>').format(sans=SANS, href=esc(href), ink=INK, t=esc(head))
-    para = p(esc(body), size=15, lh=1.5, color=INK2, mb=5) if body else ""
-    src = p(tail, size=13, lh=1.4, color=MUTE, mb=0)
+    h = ('<h3 style="font-family:{serif};font-size:18px;line-height:1.3;font-weight:700;letter-spacing:0;margin:0 0 6px;">'
+         '<a href="{href}" style="color:{ink};text-decoration:none;">{t}</a></h3>').format(serif=SERIF, href=esc(href), ink=INK, t=esc(head))
+    para = p(esc(body), size=15, lh=1.5, color=INK2, mb=6) if body else ""
+    src = p(tail, size=12, lh=1.4, color=MUTE, mb=0)
     return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-            '<tr><td style="padding:14px 0 15px;border-bottom:1px solid {line};">{h}{para}{src}</td></tr></table>').format(line=LINE, h=h, para=para, src=src)
+            '<tr><td style="padding:16px 0 16px;border-bottom:1px solid {line};">{h}{para}{src}</td></tr></table>').format(line=HAIR, h=h, para=para, src=src)
 
 
 def brief(items: List[Dict[str, Any]]) -> str:
@@ -340,7 +341,7 @@ def build(items: List[Dict[str, Any]], extras: Dict[str, List[Dict[str, Any]]], 
         if rows:
             sections.append(label(heading, mb=0) + record_rows(key, rows))
 
-    body = "".join('<tr><td style="padding:0 0 30px;">{}</td></tr>'.format(sec) for sec in sections)
+    body = "".join('<tr><td style="padding:0 0 8px;">{}</td></tr>'.format(sec) for sec in sections)
 
     html_doc = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -363,25 +364,26 @@ a{{color:{link}}}
 <body bgcolor="#ffffff" style="margin:0;padding:0;background-color:#ffffff;">
 <div style="display:none;max-height:0;overflow:hidden;font-size:1px;line-height:1px;color:#ffffff;opacity:0;">{preheader}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff;">
-<tr><td align="center" class="wrap" style="padding:32px 20px;">
+<tr><td align="center" class="wrap" style="padding:24px 16px;">
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;">
-  <tr><td style="padding:0 0 14px;border-bottom:1px solid {ink};">
+  <tr><td bgcolor="{ink}" style="background-color:{ink};padding:18px 22px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="font-family:{serif};font-size:22px;line-height:1;font-weight:700;letter-spacing:-0.2px;color:{ink};">{name}</td>
-      <td align="right" style="font-family:{sans};font-size:13px;color:{mute};white-space:nowrap;">{dl}</td>
+      <td style="font-family:{serif};font-size:24px;line-height:1;font-weight:700;letter-spacing:0;color:#ffffff;">{name}</td>
+      <td align="right" style="font-family:{sans};font-size:13px;color:#c9ccd6;white-space:nowrap;">{dl}</td>
     </tr></table>
   </td></tr>
+  <tr><td style="padding:2px 0 0;font-family:{sans};font-size:12px;line-height:1.5;color:{mute};border-bottom:1px solid {line};padding-bottom:8px;">{tagline}</td></tr>
   {body}
   <tr><td style="padding:22px 0 0;border-top:1px solid {line};">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="padding-right:10px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="32" height="32" alt="CaseLens" style="border:0;display:block;"></a></td>
+      <td style="padding-right:10px;vertical-align:middle;"><a href="https://caselens.tech"><img src="{mark}" width="28" height="28" alt="CaseLens" style="border:0;display:block;width:28px;height:28px;max-width:28px;"></a></td>
       <td style="vertical-align:middle;font-family:{sans};font-size:13px;line-height:1.35;color:{ink};">
         <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:{mute};">Published by</span><br>
         <a href="https://caselens.tech" style="font-size:15px;font-weight:700;color:{ink};text-decoration:none;">CaseLens</a></td>
     </tr></table>
   </td></tr>
-  <tr><td style="padding:16px 0 0;font-family:{sans};font-size:12px;line-height:1.6;color:{mute};">
+  <tr><td style="padding:16px 0 0;font-family:{sans};font-size:11px;line-height:1.6;color:{mute};">
     Compiled from {sources}. Verify against the underlying record before relying on any item.<br>
     You are receiving {name} because you asked for it. <a href="{unsub}" style="color:{mute};">Unsubscribe</a>.
   </td></tr>

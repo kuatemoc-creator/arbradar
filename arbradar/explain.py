@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 from .style import sentences
 
 MAX_WORDS = 36
+MAX_CHARS = 230          # three lines at 15px in a 560px column
 
 # "By Joseph Erunke, Abuja ABUJA — The Independent..." / "MUMBAI: The Bombay..."
 _BYLINE = re.compile(r"^(?P<lede>.{0,160}?)\s*\bBy [A-Z][\w.'’-]+(?: [A-Z][\w.'’-]+){0,3}(?:,\s*[A-Z][a-z]+)?\s*", re.S)
@@ -60,7 +61,7 @@ def _clause_cut(sentence: str, max_words: int) -> str:
     head = words[:max_words]
     text = " ".join(head)
     cut = max(text.rfind(", "), text.rfind("; "), text.rfind(" \u2014 "), text.rfind(" \u2013 "), text.rfind(": "))
-    if cut >= len(text) * 0.6:
+    if cut >= len(text) * 0.5:
         return text[:cut].rstrip(" ,;:\u2014\u2013") + "."
     while head and head[-1].lower().strip(",;:") in _FUNCTION:
         head.pop()
@@ -73,7 +74,9 @@ _FUNCTION = {"a", "an", "the", "of", "in", "on", "at", "to", "for", "and", "or",
              "which", "who", "whom", "is", "are", "was", "were", "has", "have", "had", "been", "be", "its", "their", "his",
              "her", "than", "into", "over", "under", "after", "before", "during", "about", "against", "between", "through",
              "while", "amid", "per", "via", "not", "no", "nor", "so", "if", "when", "where", "will", "would", "can", "could",
-             "may", "might", "shall", "should", "this", "these", "those", "such", "also", "both", "either"}
+             "may", "might", "shall", "should", "this", "these", "those", "such", "also", "both", "either", "another",
+             "other", "any", "some", "each", "every", "all", "most", "several", "many", "using", "including", "without",
+             "within", "because", "since", "until", "unless", "whether", "what", "how", "why", "then", "yet", "just"}
 
 
 def from_record(it: Dict[str, Any]) -> str:
@@ -119,8 +122,28 @@ def restated(it: Dict[str, Any]) -> str:
     return "{} reports that {}.".format(outlet, body)
 
 
+def fit(text: str, max_chars: int = MAX_CHARS) -> str:
+    """Whole sentences within the character cap; the last one closed at a clause if it must be."""
+    text = (text or "").strip()
+    if len(text) <= max_chars:
+        return text
+    parts = [p.strip() for p in re.split(r"(?<=[.!?])\s+(?=[A-Z\u201c\u2018(])", text) if p.strip()]
+    out = ""
+    for p in parts:
+        if len((out + " " + p).strip()) <= max_chars:
+            out = (out + " " + p).strip()
+        else:
+            break
+    if out:
+        return out
+    # one sentence over the cap: close it at a clause or a content word within the cap
+    head = parts[0][:max_chars]
+    head = head[:head.rfind(" ")] if " " in head else head
+    return _clause_cut(head, 10 ** 6)
+
+
 def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
-    """The explanation printed under a headline: never empty, never over the cap."""
+    """The explanation printed under a headline: never empty, never over three lines."""
     from .email_html import summary_of
     for text in (it.get("story") or "", summary_of(it) or ""):
         t = clean(text)
@@ -128,17 +151,21 @@ def explain(it: Dict[str, Any], max_words: int = MAX_WORDS) -> str:
             continue
         s = sentences(t, max_words)
         if s and len(s.split()) <= max_words + 5:
-            return s
+            f = fit(s)
+            if f:
+                return f
         first = re.split(r"(?<=[.!?])\s+(?=[A-Z“‘(])", t)[0]
         first = first.strip()
         if first.endswith(("\u2026", "...")):
             first = first.rstrip(" .\u2026")            # cut by the feed: close it at a clause below
         elif first and first[-1] in ".!?\u201d\u2019\")" and len(first.split()) <= max_words + 10:
-            return first                              # one whole sentence a little over the cap beats a cut one
+            f = fit(first)
+            if f:
+                return f                              # one whole sentence a little over the cap beats a cut one
         c = _clause_cut(first, max_words)
         if c:
             return c
     r = from_record(it)
     if r:
-        return r
-    return restated(it)
+        return fit(r) or r
+    return fit(restated(it)) or restated(it)

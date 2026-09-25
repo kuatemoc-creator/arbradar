@@ -93,6 +93,10 @@ def fix_explanation(it: Dict[str, Any]) -> List[str]:
             fixed = _BANNED.sub("", fixed)
             fixed = re.sub(r"\s{2,}", " ", fixed).replace(" ,", ",").replace(" .", ".").strip()
             notes.append("banned word removed")
+    from .explain import fit, MAX_CHARS
+    if len(fixed) > MAX_CHARS:
+        fixed = fit(fixed) or fixed
+        notes.append("explanation cut to three lines")
     words = fixed.split()
     if len(words) > MAX_WORDS + 10:
         first = _SENT.split(fixed)[0]
